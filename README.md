@@ -1,4 +1,4 @@
-﻿# 🚀 Nadakki AI Collections - Multi-Tenant Credit Evaluation Platform
+# ?? Nadakki AI Collections - Multi-Tenant Credit Evaluation Platform
 
 [![Python Version](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
 [![Flask Version](https://img.shields.io/badge/flask-3.1.1-green.svg)](https://flask.palletsprojects.com/)
@@ -10,7 +10,7 @@
 
 ---
 
-## 📋 Table of Contents
+## ?? Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -24,11 +24,11 @@
 
 ---
 
-## 🎯 Overview
+## ?? Overview
 
 **Nadakki AI Collections** is a comprehensive SaaS platform providing 350+ specialized AI agents for financial institutions including banks, credit unions, fintechs, and insurance companies. Built with enterprise-grade security, compliance, and multi-jurisdictional support.
 
-### 💼 Ideal For:
+### ?? Ideal For:
 - **Banks & Credit Unions** - Credit risk assessment and portfolio management
 - **Fintechs** - Rapid credit decisions with AI-powered evaluation
 - **Insurance Companies** - Risk scoring and underwriting automation
@@ -36,85 +36,85 @@
 
 ---
 
-## ✨ Features
+## ? Features
 
-### 🤖 AI Agent Ecosystem (350+ Agents)
+### ?? AI Agent Ecosystem (350+ Agents)
 
 The platform includes **21 specialized cores** with 350+ AI agents:
 
 #### **Core Modules:**
-- 🔍 **Originación Inteligente** (4 agents) - Predictive risk analysis, credit profiling
-- 🧠 **Decisión Cuántica** (4 agents) - Hybrid similarity engine, instant approvals
-- 📊 **Vigilancia Continua** (4 agents) - Portfolio monitoring, early warning systems
-- 💸 **Recuperación Máxima** (4 agents) - Collections optimization, legal pathways
-- 🛡️ **Compliance Supremo** (4 agents) - Regulatory monitoring, audit automation
-- 📈 **Marketing Intelligence** (40 agents) - Lead scoring, campaign optimization
-- 📚 **Legal Suite** (33 agents) - Contract analysis, regulatory compliance
-- 💰 **Contabilidad** (29+ agents) - Financial reporting, IFRS compliance
-- 🚚 **Logística** (23 agents) - Supply chain optimization
-- 💼 **RRHH** (10 agents) - Talent acquisition, performance analytics
+- ?? **Originaci�n Inteligente** (4 agents) - Predictive risk analysis, credit profiling
+- ?? **Decisi�n Cu�ntica** (4 agents) - Hybrid similarity engine, instant approvals
+- ?? **Vigilancia Continua** (4 agents) - Portfolio monitoring, early warning systems
+- ?? **Recuperaci�n M�xima** (4 agents) - Collections optimization, legal pathways
+- ??? **Compliance Supremo** (4 agents) - Regulatory monitoring, audit automation
+- ?? **Marketing Intelligence** (40 agents) - Lead scoring, campaign optimization
+- ?? **Legal Suite** (33 agents) - Contract analysis, regulatory compliance
+- ?? **Contabilidad** (29+ agents) - Financial reporting, IFRS compliance
+- ?? **Log�stica** (23 agents) - Supply chain optimization
+- ?? **RRHH** (10 agents) - Talent acquisition, performance analytics
 - ... and 11 more specialized cores
 
-### 🏗️ Enterprise Architecture
+### ??? Enterprise Architecture
 
-- ✅ **Multi-Tenant by Design** - Isolated data, custom configurations per institution
-- ✅ **Hybrid Similarity Engine** - Cosine + Euclidean + Jaccard algorithms
-- ✅ **AWS Lambda Ready** - Serverless deployment with auto-scaling
-- ✅ **Circuit Breaker Pattern** - Resilient microservices architecture
-- ✅ **Compliance First** - GDPR, CCPA, AML/KYC ready
-- ✅ **Multi-Jurisdictional** - Support for LATAM, US, EU regulations
+- ? **Multi-Tenant by Design** - Isolated data, custom configurations per institution
+- ? **Hybrid Similarity Engine** - Cosine + Euclidean + Jaccard algorithms
+- ? **AWS Lambda Ready** - Serverless deployment with auto-scaling
+- ? **Circuit Breaker Pattern** - Resilient microservices architecture
+- ? **Compliance First** - GDPR, CCPA, AML/KYC ready
+- ? **Multi-Jurisdictional** - Support for LATAM, US, EU regulations
 
-### 🔒 Security & Compliance
+### ?? Security & Compliance
 
-- 🔐 JWT Authentication with role-based access control (RBAC)
-- 🛡️ PII Detection and data masking
-- 📝 Complete audit trail for all operations
-- 🔍 Real-time compliance monitoring
-- 📊 Explainable AI decisions for regulatory requirements
-
----
-
-## 🏗️ Architecture
-
-\\\
-nadakki-ai-collections/
-├── agents/                    # 350+ AI agents organized by ecosystem
-│   ├── marketing/            # 40 agents - Lead scoring, campaigns
-│   ├── legal/                # 33 agents - Contract analysis
-│   ├── contabilidad/         # 29 agents - Financial reporting
-│   ├── originacion/          # Credit origination agents
-│   ├── decision/             # Decision engine agents
-│   ├── vigilancia/           # Monitoring agents
-│   ├── compliance/           # Compliance agents
-│   └── [15+ more cores]      # Additional specialized agents
-│
-├── core/                      # Enterprise core components
-│   ├── credit_engine.py      # Main credit evaluation engine
-│   ├── hybrid_similarity_engine.py  # Similarity algorithms
-│   ├── billing_system.py     # Usage tracking & billing
-│   ├── authentication/       # JWT auth & RBAC
-│   ├── tenant/               # Multi-tenant management
-│   └── similarity/           # Advanced similarity algorithms
-│
-├── api/                       # REST API endpoints
-│   ├── powerbi_api.py        # Power BI integration
-│   └── powerbi_endpoints.py  # BI data endpoints
-│
-├── config/                    # Multi-tenant configurations
-│   └── tenants/              # 15 institution configs
-│       ├── banreservas.json
-│       ├── credicefi.json
-│       ├── popular.json
-│       └── [12 more...]
-│
-├── app.py                     # Flask application entry point
-├── credicefi_api.py          # Main API implementation
-└── requirements.txt           # Python dependencies
-\\\
+- ?? JWT Authentication with role-based access control (RBAC)
+- ??? PII Detection and data masking
+- ?? Complete audit trail for all operations
+- ?? Real-time compliance monitoring
+- ?? Explainable AI decisions for regulatory requirements
 
 ---
 
-## 🚀 Quick Start
+## ??? Architecture
+
+\\\
+nadakki-ai-suite/
++-- agents/                    # 350+ AI agents organized by ecosystem
+�   +-- marketing/            # 40 agents - Lead scoring, campaigns
+�   +-- legal/                # 33 agents - Contract analysis
+�   +-- contabilidad/         # 29 agents - Financial reporting
+�   +-- originacion/          # Credit origination agents
+�   +-- decision/             # Decision engine agents
+�   +-- vigilancia/           # Monitoring agents
+�   +-- compliance/           # Compliance agents
+�   +-- [15+ more cores]      # Additional specialized agents
+�
++-- core/                      # Enterprise core components
+�   +-- credit_engine.py      # Main credit evaluation engine
+�   +-- hybrid_similarity_engine.py  # Similarity algorithms
+�   +-- billing_system.py     # Usage tracking & billing
+�   +-- authentication/       # JWT auth & RBAC
+�   +-- tenant/               # Multi-tenant management
+�   +-- similarity/           # Advanced similarity algorithms
+�
++-- api/                       # REST API endpoints
+�   +-- powerbi_api.py        # Power BI integration
+�   +-- powerbi_endpoints.py  # BI data endpoints
+�
++-- config/                    # Multi-tenant configurations
+�   +-- tenants/              # 15 institution configs
+�       +-- banreservas.json
+�       +-- credicefi.json
+�       +-- popular.json
+�       +-- [12 more...]
+�
++-- app.py                     # Flask application entry point
++-- credicefi_api.py          # Main API implementation
++-- requirements.txt           # Python dependencies
+\\\
+
+---
+
+## ?? Quick Start
 
 ### Prerequisites
 
@@ -127,8 +127,8 @@ nadakki-ai-collections/
 
 \\\ash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/nadakki-ai-collections.git
-cd nadakki-ai-collections
+git clone https://github.com/YOUR_USERNAME/nadakki-ai-suite.git
+cd nadakki-ai-suite
 
 # 2. Create virtual environment
 python -m venv venv
@@ -159,7 +159,7 @@ curl http://localhost:5000/api/v1/health
 
 ---
 
-## 🏢 Multi-Tenant Configuration
+## ?? Multi-Tenant Configuration
 
 ### Adding a New Institution
 
@@ -201,16 +201,16 @@ curl -X POST http://localhost:5000/api/v1/evaluate \\
 ### Supported Institutions
 
 Currently configured for **15 institutions**:
-- 🏦 Banco de Reservas (Dominican Republic)
-- 🏦 Banco Popular (Dominican Republic)
-- 🏦 Scotiabank
-- 🏦 CrediFace
-- 🏦 COFACI
+- ?? Banco de Reservas (Dominican Republic)
+- ?? Banco Popular (Dominican Republic)
+- ?? Scotiabank
+- ?? CrediFace
+- ?? COFACI
 - ... and 10 more
 
 ---
 
-## 📚 API Reference
+## ?? API Reference
 
 ### Base URL
 \\\
@@ -265,7 +265,7 @@ For complete API documentation, see [API.md](docs/API.md)
 
 ---
 
-## 🚀 Deployment
+## ?? Deployment
 
 ### AWS Lambda Deployment
 
@@ -293,7 +293,7 @@ See [DEPLOYMENT.md](docs/DEPLOYMENT.md) for complete deployment guide including:
 
 ---
 
-## 🤝 Contributing
+## ?? Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
@@ -313,13 +313,13 @@ black agents/ core/ api/
 
 ---
 
-## 📄 License
+## ?? License
 
 This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🌟 Key Differentiators
+## ?? Key Differentiators
 
 | Feature | Nadakki AI Collections | Traditional Solutions |
 |---------|----------------------|----------------------|
@@ -332,18 +332,18 @@ This project is licensed under the **Apache License 2.0** - see the [LICENSE](LI
 
 ---
 
-## 📞 Support & Contact
+## ?? Support & Contact
 
 - **Documentation**: [docs.nadakki.com](https://docs.nadakki.com)
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/nadakki-ai-collections/issues)
+- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/nadakki-ai-suite/issues)
 - **Email**: support@nadakki.com
 - **Website**: [nadakki.com](https://nadakki.com)
 
 ---
 
-## 🙏 Acknowledgments
+## ?? Acknowledgments
 
-Built with ❤️ by the Nadakki team for financial institutions worldwide.
+Built with ?? by the Nadakki team for financial institutions worldwide.
 
 **Tech Stack:**
 - Python 3.12 | Flask 3.1 | AWS Lambda | PostgreSQL | Redis
@@ -352,5 +352,5 @@ Built with ❤️ by the Nadakki team for financial institutions worldwide.
 ---
 
 <div align="center">
-  <strong>⭐ Star this repository if you find it useful!</strong>
+  <strong>? Star this repository if you find it useful!</strong>
 </div>
