@@ -1,0 +1,67 @@
+{
+  "tenant_info": {
+    "id": "cofaci-rd",
+    "name": "COFACI",
+    "type": "financial",
+    "country": "RD",
+    "created_at": "2025-08-08T10:17:36.133946",
+    "status": "active"
+  },
+  "ai_engine": {
+    "similarity_thresholds": {
+      "reject_auto": 0.9,
+      "high_risk": 0.8,
+      "risky": 0.7,
+      "medium_risk": 0.5,
+      "low_risk": 0.0
+    },
+    "algorithm_weights": {
+      "cosine": 0.4,
+      "euclidean": 0.3,
+      "jaccard": 0.3
+    },
+    "feature_weights": {
+      "credit_score": 0.25,
+      "income": 0.2,
+      "debt_to_income": 0.2,
+      "employment_history": 0.15,
+      "payment_history": 0.2
+    }
+  },
+  "agents_config": {
+    "enabled_modules": [
+      "originacion",
+      "decision",
+      "vigilancia",
+      "recuperacion",
+      "compliance",
+      "operacional",
+      "experiencia",
+      "inteligencia",
+      "fortaleza",
+      "orchestration"
+    ]
+  },
+  "business_rules": {
+    "max_loan_amount": 5000000,
+    "min_credit_score": 600,
+    "max_debt_to_income": 0.5,
+    "required_documents": [
+      "cedula",
+      "certificacion_ingresos",
+      "referencias_comerciales",
+      "estados_cuenta"
+    ]
+  },
+  "pricing_plan": {
+    "tier": "starter",
+    "monthly_evaluations_limit": 1000,
+    "price_per_month": 999,
+    "overage_price_per_evaluation": 0.05
+  },
+  "performance_targets": {
+    "response_time_ms": 3000,
+    "accuracy_threshold": 0.95,
+    "uptime_sla": 0.995
+  }
+}
