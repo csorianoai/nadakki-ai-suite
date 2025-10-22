@@ -113,3 +113,7 @@ pip-delete-this-directory.txt
 *.bak
 *_backup_*/
 **/*_backup_*/
+
+# Large deployment packages - can be regenerated
+*.zip
+nadakki-lambda-deployment.zip
