@@ -127,7 +127,7 @@ nadakki-ai-suite/
 
 \\\ash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/nadakki-ai-suite.git
+git clone https://github.com/csorianoai/nadakki-ai-suite.git
 cd nadakki-ai-suite
 
 # 2. Create virtual environment
@@ -335,7 +335,7 @@ This project is licensed under the **Apache License 2.0** - see the [LICENSE](LI
 ## ?? Support & Contact
 
 - **Documentation**: [docs.nadakki.com](https://docs.nadakki.com)
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/nadakki-ai-suite/issues)
+- **Issues**: [GitHub Issues](https://github.com/csorianoai/nadakki-ai-suite/issues)
 - **Email**: support@nadakki.com
 - **Website**: [nadakki.com](https://nadakki.com)
 
