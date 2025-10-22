@@ -1,7 +1,0 @@
-{
-    "region":  "us-east-1",
-    "baseUrl":  "https://v5mi0idfy0.execute-api.us-east-2.amazonaws.com/prod",
-    "roleArn":  null,
-    "apiGatewayId":  "v5mi0idfy0",
-    "lambdaFunction":  "nadakki-ai-suite"
-}
