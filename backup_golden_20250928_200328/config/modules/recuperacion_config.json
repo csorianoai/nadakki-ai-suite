@@ -1,0 +1,72 @@
+{
+  "module_name": "recuperacion",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #ff9f43 0%, #ff6348 100%)",
+  "agents": {
+    "CollectionMaster": {
+      "class_name": "CollectionMasterOptimizer",
+      "description": "Estrategias de cobranza optimizadas con machine learning y análisis comportamental",
+      "algorithms": [
+        "collection_optimization",
+        "behavioral_analysis",
+        "contact_strategy"
+      ],
+      "features": [
+        "collection_strategy",
+        "recovery_optimization",
+        "contact_timing"
+      ],
+      "performance_target": 94.3
+    },
+    "NegotiationBot": {
+      "class_name": "NegotiationBotEngine",
+      "description": "Automatización de renegociaciones inteligentes con propuestas personalizadas",
+      "algorithms": [
+        "negotiation_strategy",
+        "offer_optimization",
+        "payment_modeling"
+      ],
+      "features": [
+        "automated_negotiation",
+        "personalized_offers",
+        "payment_plans"
+      ],
+      "performance_target": 91.7
+    },
+    "RecoveryOptimizer": {
+      "class_name": "RecoveryOptimizationEngine",
+      "description": "Machine learning para maximizar recuperación y minimizar costos legales",
+      "algorithms": [
+        "recovery_optimization",
+        "cost_minimization",
+        "legal_prediction"
+      ],
+      "features": [
+        "recovery_maximization",
+        "cost_optimization",
+        "legal_efficiency"
+      ],
+      "performance_target": 89.2
+    },
+    "LegalPathway": {
+      "class_name": "LegalPathwayManager",
+      "description": "Gestión automática de procesos legales y decisiones de escalamiento",
+      "algorithms": [
+        "legal_decision_tree",
+        "escalation_optimization",
+        "process_automation"
+      ],
+      "features": [
+        "legal_automation",
+        "escalation_management",
+        "process_optimization"
+      ],
+      "performance_target": 92.8
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.200266",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

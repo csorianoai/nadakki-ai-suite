@@ -1,0 +1,28 @@
+﻿{
+    "name": "nadakki/ai-suite",
+    "description": "Enterprise AI Suite for Financial Institutions",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.8",
+        "firebase/php-jwt": "^6.9",
+        "monolog/monolog": "^3.4",
+        "symfony/dotenv": "^6.3",
+        "respect/validation": "^2.2",
+        "league/container": "^4.2",
+        "composer/installers": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nadakki\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}

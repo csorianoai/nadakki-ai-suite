@@ -1,0 +1,21 @@
+{
+  "institution_name": "Test Bank Enterprise",
+  "country": "DO",
+  "plan": "enterprise",
+  "risk_policy": "balanced",
+  "enterprise_features": {
+    "redis_cache": true,
+    "advanced_logging": true,
+    "prompt_auditing": true,
+    "performance_monitoring": true,
+    "health_checks": true
+  },
+  "originacion_config": {
+    "sentinel_thresholds": {
+      "critical": 0.8,
+      "high": 0.65,
+      "medium": 0.45,
+      "low": 0.25
+    }
+  }
+}

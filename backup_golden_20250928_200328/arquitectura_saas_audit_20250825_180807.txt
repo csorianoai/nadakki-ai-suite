@@ -1,0 +1,291 @@
+﻿NADAKKI AI SUITE - ANÁLISIS ARQUITECTURA SAAS
+============================================
+Fecha: 08/25/2025 18:08:07
+Ubicación: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite
+
+RESUMEN COMPONENTES:
+- Agentes totales: 232
+- Configuraciones tenant: 0 
+- Endpoints API: 12
+- Tamaño proyecto: 912.91 MB
+
+COMPONENTES SAAS IDENTIFICADOS:
+
+credicefi_api.py:2:🚀 FLASK API MULTI-TENANT PARA CREDICEFI - VERSIÓN RENDER
+credicefi_api.py:25:# 🏢 CONFIGURACIÓN MULTI-TENANT
+credicefi_api.py:290:        'message': '🚀 Sistema de evaluación crediticia con IA multi-tenant',
+credicefi_api.py:315:            'multi_tenant': 'operational',
+credicefi_api.py:600:    print("📊 Configuración Multi-Tenant cargada")
+generate_contabilidad_enterprise.py:5:Arquitectura SaaS Multi-Tenant para Instituciones Financieras RD
+generate_contabilidad_enterprise.py:11:✅ Multi-tenant segregado por institución
+generate_contabilidad_enterprise.py:248:# CONFIGURACIÓN MULTI-TENANT DOMINICANA
+generate_contabilidad_enterprise.py:920:# ORQUESTADOR ENTERPRISE MULTI-TENANT
+generate_legal_module.py:7:en derecho dominicano con RAG, integración judicial y multi-tenant.
+generate_legal_module.py:25:    """Generador especializado para módulo Legal Intelligence PhD multi-tenant"""
+generate_legal_module.py:637:Arquitectura multi-tenant para múltiples instituciones legales.
+generate_legal_module.py:644:Multi-Tenant: Reusable para múltiples instituciones financieras
+generate_legal_module.py:688:    """Configuración específica para {config['class_name']} PhD - Multi-Tenant"""
+generate_legal_module.py:712:    # Configuración multi-tenant específica
+generate_legal_module.py:725:    Multi-Tenant: Reusable para múltiples instituciones financieras
+generate_legal_module.py:743:        # Métricas específicas jurídicas multi-tenant
+generate_legal_module.py:771:        # Configuración multi-tenant personalizada
+generate_legal_module.py:777:        """Configura logging específico del agente jurídico PhD multi-tenant"""
+generate_legal_module.py:826:        """Carga base de conocimiento jurídico específico - Multi-Tenant"""
+generate_legal_module.py:856:        Análisis específico para {config['specialization']} - Multi-Tenant
+generate_legal_module.py:883:                'multi_tenant': True,
+generate_legal_module.py:906:        """Análisis especializado según área jurídica - Multi-Tenant"""
+generate_legal_module.py:925:        """Evalúa normas aplicables al caso - Multi-Tenant"""
+generate_legal_module.py:939:        """Genera recomendaciones jurídicas PhD nivel - Multi-Tenant"""
+generate_legal_module.py:956:    {"    \"\"\"Recupera jurisprudencia relevante usando RAG - Multi-Tenant\"\"\"" if 
+config['rag_enabled'] else ""}
+generate_legal_module.py:978:        """Actualiza métricas específicas jurídicas multi-tenant"""
+generate_legal_module.py:1014:        # Boost por configuración multi-tenant personalizada
+generate_legal_module.py:1022:        """Retorna métricas específicas jurídicas multi-tenant"""
+generate_legal_module.py:1030:            'multi_tenant': True,
+generate_legal_module.py:1043:        """Verifica estado de salud del agente jurídico PhD multi-tenant"""
+generate_legal_module.py:1053:            'multi_tenant_ready': True,
+generate_legal_module.py:1066:            'multi_tenant': True,
+generate_legal_module.py:1076:    Factory function para crear instancia del agente jurídico PhD multi-tenant
+generate_legal_module.py:1111:        'multi_tenant': True,
+generate_legal_module.py:1120:    # Testing del agente jurídico PhD multi-tenant
+generate_legal_module.py:1148:        print(f"🏢 Multi-tenant ready: {{result.get('multi_tenant', False)}}")
+generate_legal_module.py:1156:        """Genera módulo Legal Intelligence PhD completo multi-tenant"""
+generate_legal_module.py:1164:        print("⚖️ Generando Módulo Legal Intelligence PhD Multi-Tenant")
+generate_legal_module.py:1175:            f.write('"""Módulo Legal Intelligence PhD - Nadakki AI Suite 
+Multi-Tenant"""\n')
+generate_legal_module.py:1183:            # Generar código del agente jurídico multi-tenant
+generate_legal_module.py:1193:            print(f"  ✅ {agent_config['class_name']} PhD generado (Multi-Tenant)")
+generate_legal_module.py:1195:        # Generar coordinador legal multi-tenant
+generate_legal_module.py:1199:        print(f"  ✅ LegalCoordinator PhD Multi-Tenant generado")
+generate_legal_module.py:1201:        # Generar archivos de configuración legal multi-tenant
+generate_legal_module.py:1205:        print(f"\n🎉 Módulo Legal Intelligence PhD Multi-Tenant completado!")
+generate_legal_module.py:1209:        print(f"🏢 Multi-Tenant: ✅ Reusable para múltiples instituciones")
+generate_legal_module.py:1214:        """Genera coordinador legal multi-tenant"""
+generate_legal_module.py:1217:⚖️ Legal Intelligence PhD Coordinator - Multi-Tenant
+generate_legal_module.py:1222:Arquitectura multi-tenant reutilizable para múltiples instituciones financieras.
+generate_legal_module.py:1226:Módulo: Legal Intelligence PhD Multi-Tenant
+generate_legal_module.py:1238:# Importación dinámica de agentes jurídicos PhD multi-tenant
+generate_legal_module.py:1262:    """Configuración del coordinador Legal Intelligence PhD Multi-Tenant"""
+generate_legal_module.py:1272:    # Configuración específica jurídica multi-tenant
+generate_legal_module.py:1280:    Coordinador del módulo Legal Intelligence PhD Multi-Tenant
+generate_legal_module.py:1297:        # Inicializar agentes jurídicos PhD multi-tenant
+generate_legal_module.py:1300:        # Métricas específicas legales multi-tenant
+generate_legal_module.py:1313:            'multi_tenant_ready': True
+generate_legal_module.py:1319:        """Configura logging del coordinador jurídico multi-tenant"""
+generate_legal_module.py:1334:        """Inicializa todos los agentes jurídicos PhD multi-tenant"""
+generate_legal_module.py:1343:        # Configuración multi-tenant personalizada
+generate_legal_module.py:1387:        Multi-Tenant para cualquier institución financiera
+generate_legal_module.py:1437:                'module': 'legal_intelligence_phd_multi_tenant',
+generate_legal_module.py:1451:                    'multi_tenant_analysis': True
+generate_legal_module.py:1469:        """Determina qué especialistas PhD son relevantes para el caso - Multi-Tenant"""
+generate_legal_module.py:1507:        """Ejecuta análisis por especialistas jurídicos PhD multi-tenant"""
+generate_legal_module.py:1539:        """Ejecuta análisis de un especialista jurídico PhD individual multi-tenant"""
+generate_legal_module.py:1555:        """Retorna métricas del coordinador legal PhD multi-tenant"""
+generate_legal_module.py:1569:            'module': 'legal_intelligence_phd_multi_tenant',
+generate_legal_module.py:1575:            'multi_tenant': True,
+generate_legal_module.py:1581:        """Verifica salud del coordinador legal y todos los especialistas PhD 
+multi-tenant"""
+generate_legal_module.py:1589:            'multi_tenant_ready': True
+generate_legal_module.py:1612:            'module': 'legal_intelligence_phd_multi_tenant',
+generate_legal_module.py:1616:            'multi_tenant': True,
+generate_legal_module.py:1631:            'multi_tenant_analysis': True
+generate_legal_module.py:1648:        return {{'level': 'high', 'score': 0.85, 'multi_tenant_adjusted': True}}
+generate_legal_module.py:1661:    Factory function para crear coordinador legal PhD multi-tenant
+generate_legal_module.py:1670:        Instancia del coordinador legal PhD multi-tenant
+generate_legal_module.py:1682:    # Testing del coordinador legal PhD multi-tenant
+generate_legal_module.py:1685:    async def test_legal_coordinator_multi_tenant():
+generate_legal_module.py:1693:        print(f"⚖️  Legal Intelligence PhD Coordinator Multi-Tenant initialized")
+generate_legal_module.py:1697:        # Test de coordinación legal multi-tenant
+generate_legal_module.py:1711:            print(f"🏢 Multi-tenant: 
+{{result['execution_summary']['multi_tenant_analysis']}}")
+generate_legal_module.py:1716:    asyncio.run(test_legal_coordinator_multi_tenant())
+generate_legal_module.py:1724:        """Genera archivos de configuración para el módulo legal multi-tenant"""
+generate_legal_module.py:1726:        # 1. Configuración multi-tenant de instituciones
+generate_legal_module.py:1727:        multi_tenant_config = {
+generate_legal_module.py:1775:        config_file = self.legal_data_path / "multi_tenant_config.json"
+generate_legal_module.py:1777:            json.dump(multi_tenant_config, f, indent=2, ensure_ascii=False)
+generate_legal_module.py:1779:        # 2. Script de setup multi-tenant
+generate_legal_module.py:1782:🏢 SETUP MULTI-TENANT LEGAL INTELLIGENCE PhD
+generate_legal_module.py:1796:    Configura nueva institución en el sistema legal PhD multi-tenant
+generate_legal_module.py:1808:    config_path = Path("legal_data/multi_tenant_config.json")
+generate_legal_module.py:1876:    parser = argparse.ArgumentParser(description='Setup Multi-Tenant Legal Intelligence 
+PhD')
+generate_legal_module.py:1885:    print("🏢 SETUP MULTI-TENANT LEGAL INTELLIGENCE PhD")
+generate_legal_module.py:1904:        setup_file = self.base_path / "setup_multi_tenant_legal.py"
+generate_legal_module.py:1952:🔍 VALIDACIÓN COMPLETA MÓDULO LEGAL INTELLIGENCE PhD MULTI-TENANT
+generate_legal_module.py:1955:Script para validar funcionamiento completo del sistema legal multi-tenant
+generate_legal_module.py:1965:def validate_multi_tenant_legal_system():
+generate_legal_module.py:1966:    """Valida sistema legal multi-tenant completo"""
+generate_legal_module.py:1968:    print("🔍 VALIDACIÓN SISTEMA LEGAL MULTI-TENANT PhD")
+generate_legal_module.py:1974:        'multi_tenant_ready': False,
+generate_legal_module.py:2008:                if health['healthy'] and health.get('multi_tenant'):
+generate_legal_module.py:2014:            print(f"  ✅ {{agent_name}} - Multi-tenant ready")
+generate_legal_module.py:2020:    # 2. Validar coordinador multi-tenant
+generate_legal_module.py:2021:    print("\\n🎯 Validando coordinador legal PhD multi-tenant...")
+generate_legal_module.py:2041:            if health['healthy'] and health.get('multi_tenant'):
+generate_legal_module.py:2048:        print("  ✅ Coordinador multi-tenant funcional")
+generate_legal_module.py:2054:    # 3. Probar análisis legal multi-tenant
+generate_legal_module.py:2055:    print("\\n⚖️ Probando análisis legal multi-tenant...")
+generate_legal_module.py:2067:                'request_id': 'multi-tenant-test-001',
+generate_legal_module.py:2069:                'case_description': 'Análisis compliance bancario multi-tenant',
+generate_legal_module.py:2076:                return result.get('execution_summary', 
+{{}}).get('multi_tenant_analysis', False)
+generate_legal_module.py:2078:            multi_tenant_success = asyncio.run(run_analysis_test())
+generate_legal_module.py:2079:            if multi_tenant_success:
+generate_legal_module.py:2080:                validation_results['multi_tenant_ready'] = True
+generate_legal_module.py:2081:                print("  ✅ Análisis multi-tenant exitoso")
+generate_legal_module.py:2083:                print("  ⚠️ Análisis multi-tenant con problemas")
+generate_legal_module.py:2086:            print(f"  ❌ Error en análisis multi-tenant: {{e}}")
+generate_legal_module.py:2087:            validation_results['errors'].append(f"Multi-tenant analysis: {{e}}")
+generate_legal_module.py:2093:    print("\\n📊 REPORTE DE VALIDACIÓN MULTI-TENANT")
+generate_legal_module.py:2097:    print(f"🎯 Coordinador multi-tenant: {{'✅' if results['coordinator_validated'] else 
+'❌'}}")
+generate_legal_module.py:2099:    print(f"🔄 Multi-tenant listo: {{'✅' if results['multi_tenant_ready'] else '❌'}}")
+generate_legal_module.py:2104:         (1 if results['multi_tenant_ready'] else 0)) / 18
+generate_legal_module.py:2115:        print("\\n🎉 SISTEMA LEGAL MULTI-TENANT PhD VALIDADO")
+generate_legal_module.py:2123:    results = validate_multi_tenant_legal_system()
+generate_legal_module.py:2131:        validation_file = self.base_path / "validate_multi_tenant_legal.py"
+generate_legal_module.py:2135:        print("📋 Archivos de configuración multi-tenant generados:")
+generate_legal_module.py:2136:        print(f"  - multi_tenant_config.json")
+generate_legal_module.py:2137:        print(f"  - setup_multi_tenant_legal.py")
+generate_legal_module.py:2139:        print(f"  - validate_multi_tenant_legal.py")
+generate_legal_module.py:2143:    Función principal para generar módulo Legal Intelligence PhD completo multi-tenant
+generate_legal_module.py:2145:    print("⚖️ INICIANDO GENERACIÓN MÓDULO LEGAL INTELLIGENCE PhD MULTI-TENANT")
+generate_legal_module.py:2153:    print("\n🎉 MÓDULO LEGAL INTELLIGENCE PhD MULTI-TENANT GENERADO")
+generate_legal_module.py:2156:    print("1. 🔍 Ejecutar: python validate_multi_tenant_legal.py")
+generate_legal_module.py:2157:    print("2. 🏢 Configurar instituciones: python setup_multi_tenant_legal.py 
+--tenant-id banco-test --name 'Banco Test'")
+generate_legal_module.py:2158:    print("3. ⚖️ Probar análisis multi-tenant para diferentes instituciones")
+generate_legal_module.py:2168:    parser = argparse.ArgumentParser(description='Generador Legal Intelligence PhD 
+Multi-Tenant')
+generate_legal_module.py:2176:    # Generar módulo legal multi-tenant
+generate_legal_module.py:2181:        print("\n🔍 EJECUTANDO VALIDACIÓN MULTI-TENANT...")
+generate_legal_module.py:2185:                sys.executable, 'validate_multi_tenant_legal.py'
+generate_legal_module.py:2193:    print(f"\n✅ MÓDULO LEGAL MULTI-TENANT COMPLETADO")
+install_originacion_ecosystem_v2.py:24:✅ Multi-tenant enterprise configuration
+install_originacion_ecosystem_v2.py:1355:    print("   🏢 Multi-tenant: Configuración independiente + segregación 
+completa")
+install_originacion_ecosystem_v2.py:1368:    """Crear configuración avanzada multi-tenant enterprise"""
+install_originacion_ecosystem_v2.py:1469:    print("\\n⚙️ Creando configuraciones multi-tenant enterprise...")
+install_originacion_ecosystem_v2.py:1528:            print("   ✅ Multi-tenant con segregación completa")
+lambda_function.py:11:    """NADAKKI AI SUITE Enterprise v2.1.0 - Sistema Multi-tenant para LATAM"""
+lambda_function.py:37:        # CONFIGURACIÓN MULTI-TENANT
+lambda_function.py:103:                'multi_tenant_system': 'operational',
+lambda_function.py:327:    """Configuración multi-tenant de instituciones"""
+lambda_function.py:359:            'multi_tenant_enabled': True
+lambda_function.py:434:            'description': 'Sistema multi-tenant de evaluación crediticia con IA para 
+instituciones financieras LATAM',
+lambda_function.py:439:                'Multi-tenant enterprise',
+lambda_function.py:447:                'GET /api/v1/institutions - Configuración multi-tenant',
+nadakki_enterprise_v3_clean.py:4:🏛️ NADAKKI AI ENTERPRISE MULTI-TENANT PLATFORM V3.0
+nadakki_enterprise_v3_clean.py:6:Arquitectura SaaS Multi-Tenant - República Dominicana
+nadakki_enterprise_v3_clean.py:9:✅ Multi-tenant completo por institución
+nadakki_enterprise_v3_clean.py:132:# CONFIGURACIÓN MULTI-TENANT
+nadakki_enterprise_v3_clean.py:680:# ORQUESTADOR ENTERPRISE MULTI-TENANT
+nadakki_enterprise_v3_clean.py:808:async def demo_multi_tenant_system():
+nadakki_enterprise_v3_clean.py:809:    """Demostración del sistema multi-tenant"""
+nadakki_enterprise_v3_clean.py:811:    print("🏛️ NADAKKI AI ENTERPRISE MULTI-TENANT PLATFORM")
+nadakki_enterprise_v3_clean.py:824:    print("\n📊 Demo Evaluación Crediticia Multi-Tenant:")
+nadakki_enterprise_v3_clean.py:941:    print("\n✅ Demo Multi-Tenant completado exitosamente!")
+nadakki_enterprise_v3_clean.py:950:    asyncio.run(demo_multi_tenant_system())
+prompt-generator.py:6:Multi-tenant, Enterprise-grade, Compliance-ready
+prompt-generator.py:890:Nadakki AI Suite - Enterprise Multi-Tenant
+prompt-generator.py:938:Nadakki AI Suite - Enterprise Multi-Tenant
+prompt-generator.py:1033:Nadakki AI Suite - Enterprise Multi-Tenant
+setup_multi_tenant_legal.py:3:Setup Multi-Tenant Legal System for Nadakki AI Suite
+setup_multi_tenant_legal.py:14:class MultiTenantSetup:
+setup_multi_tenant_legal.py:159:    parser = argparse.ArgumentParser(description='Setup Multi-Tenant para Nadakki AI 
+Suite')
+setup_multi_tenant_legal.py:167:    setup = MultiTenantSetup()
+test_multi_tenant.py:3:Script de test para verificar configuraciones multi-tenant
+test_multi_tenant.py:12:    print("🧪 Testing configuraciones multi-tenant de Nadakki AI Suite\n")
+test_multi_tenant.py:30:        print("   python setup_multi_tenant_legal.py --tenant-id banco-popular-rd --name 
+'Banco Popular' --test")
+test_multi_tenant.py:67:    print("🎉 Tests de multi-tenant completados")
+test_super_agentes_contabilidad.py:30:    print("⚡ Arquitectura: Enterprise SaaS Multi-tenant")
+
+
+
+
+CAPACIDAD DE ESCALABILIDAD:
+
+credicefi_api.py:297:            'tenant_info': 'GET /api/v1/tenant/{id}',
+credicefi_api.py:475:@app.route('/api/v1/tenant/<tenant_id>')
+credicefi_api.py:485:        'evaluations_this_month': np.random.randint(100, tenant_info['monthly_limit'] // 10),
+credicefi_api.py:551:@app.route('/api/v1/tenants')
+credicefi_api.py:584:            'GET /api/v1/tenants',
+credicefi_api.py:609:    print("   GET  /api/v1/tenants")
+credicefi_api.py:610:    print("   GET  /api/v1/tenant/<id>")
+generate_legal_module.py:1648:        return {{'level': 'high', 'score': 0.85, 'multi_tenant_adjusted': True}}
+generate_legal_module.py:1726:        # 1. Configuración multi-tenant de instituciones
+generate_legal_module.py:1779:        # 2. Script de setup multi-tenant
+generate_legal_module.py:2020:    # 2. Validar coordinador multi-tenant
+generate_legal_module.py:2054:    # 3. Probar análisis legal multi-tenant
+generate_legal_module.py:2104:         (1 if results['multi_tenant_ready'] else 0)) / 18
+generate_legal_module.py:2156:    print("1. 🔍 Ejecutar: python validate_multi_tenant_legal.py")
+generate_legal_module.py:2157:    print("2. 🏢 Configurar instituciones: python setup_multi_tenant_legal.py 
+--tenant-id banco-test --name 'Banco Test'")
+generate_legal_module.py:2158:    print("3. ⚖️ Probar análisis multi-tenant para diferentes instituciones")
+install_originacion_ecosystem_v2.py:153:        hash_key = 
+hashlib.sha256(f"{self.tenant_id}_{self.agent_type}_{data_str}".encode()).hexdigest()[:16]
+install_originacion_ecosystem_v2.py:200:        prompt_id = 
+hashlib.md5(f"{time.time()}_{self.tenant_id}_{self.agent_name}".encode()).hexdigest()[:12]
+install_originacion_ecosystem_v2.py:262:            'prompt_id': 
+hashlib.md5(f"{time.time()}_{self.tenant_id}".encode()).hexdigest()[:8]
+lambda_function.py:11:    """NADAKKI AI SUITE Enterprise v2.1.0 - Sistema Multi-tenant para LATAM"""
+lambda_function.py:54:        elif path == '/api/v1/institutions':
+lambda_function.py:72:                        'GET /api/v1/institutions',
+lambda_function.py:447:                'GET /api/v1/institutions - Configuración multi-tenant',
+lambda-search-detailed-2025-07-26-23-52.json:25:                               "Content":  "# lambda_function.py - 
+Nadakki AI Suite AWS Lambda Handler\r\nimport json\r\nimport os\r\nfrom datetime import datetime\r\n\r\ndef 
+lambda_handler(event, context):\r\n    \"\"\"\r\n    Handler principal de AWS Lambda para Nadakki AI Suite\r\n    
+\"\"\"\r\n    try:\r\n        # Obtener mÃ©todo HTTP y path\r\n        http_method = event.get(\u0027httpMethod\u0027, 
+\u0027GET\u0027)\r\n        path = event.get(\u0027path\u0027, \u0027/\u0027)\r\n        headers = 
+event.get(\u0027headers\u0027, {})\r\n        body = event.get(\u0027body\u0027, \u0027{}\u0027)\r\n        \r\n       
+ # Obtener tenant_id desde",
+lambda-search-detailed-2025-07-26-23-52.json:32:                               "Content":  "# lambda_function.py - 
+Nadakki AI Suite AWS Lambda Handler\r\nimport json\r\nimport os\r\nfrom datetime import datetime\r\n\r\ndef 
+lambda_handler(event, context):\r\n    \"\"\"\r\n    Handler principal de AWS Lambda para Nadakki AI Suite\r\n    
+\"\"\"\r\n    try:\r\n        # Obtener mÃ©todo HTTP y path\r\n        http_method = event.get(\u0027httpMethod\u0027, 
+\u0027GET\u0027)\r\n        path = event.get(\u0027path\u0027, \u0027/\u0027)\r\n        headers = 
+event.get(\u0027headers\u0027, {})\r\n        body = event.get(\u0027body\u0027, \u0027{}\u0027)\r\n        \r\n       
+ # Obtener tenant_id desde",
+lambda-search-detailed-2025-07-26-23-52.json:46:                               "Content":  "# lambda_function.py - 
+Nadakki AI Suite AWS Lambda Handler\r\nimport json\r\nimport os\r\nfrom datetime import datetime\r\n\r\ndef 
+lambda_handler(event, context):\r\n    \"\"\"\r\n    Handler principal de AWS Lambda para Nadakki AI Suite\r\n    
+\"\"\"\r\n    try:\r\n        # Obtener mÃ©todo HTTP y path\r\n        http_method = event.get(\u0027httpMethod\u0027, 
+\u0027GET\u0027)\r\n        path = event.get(\u0027path\u0027, \u0027/\u0027)\r\n        headers = 
+event.get(\u0027headers\u0027, {})\r\n        body = event.get(\u0027body\u0027, \u0027{}\u0027)\r\n        \r\n       
+ # Obtener tenant_id desde",
+nadakki-diagnostic-2025-07-26-23-30.json:1209:                              "FullURL":  
+"https://nadakki-ai-suite.onrender.com/api/v1/tenants",
+nadakki-diagnostic-2025-07-26-23-30.json:1256:                              "FullURL":  
+"https://nadakki-ai-suite.onrender.com/api/v1/institutions",
+nadakki-diagnostic-2025-07-26-23-30.json:1310:                              "FullURL":  
+"https://nadakki.onrender.com/api/v1/tenants",
+nadakki-diagnostic-2025-07-26-23-30.json:1319:                              "FullURL":  
+"https://nadakki.onrender.com/api/v1/institutions",
+nadakki-diagnostic-2025-07-26-23-30.json:1373:                              "FullURL":  
+"https://credicefi.onrender.com/api/v1/tenants",
+nadakki-diagnostic-2025-07-26-23-30.json:1382:                              "FullURL":  
+"https://credicefi.onrender.com/api/v1/institutions",
+nadakki-diagnostic-2025-07-26-23-30.json:1436:                              "FullURL":  
+"https://ai-suite.onrender.com/api/v1/tenants",
+nadakki-diagnostic-2025-07-26-23-30.json:1445:                              "FullURL":  
+"https://ai-suite.onrender.com/api/v1/institutions",
+nadakki-diagnostic-2025-07-26-23-30.json:1499:                              "FullURL":  
+"http://localhost:5000/api/v1/tenants",
+nadakki-diagnostic-2025-07-26-23-30.json:1508:                              "FullURL":  
+"http://localhost:5000/api/v1/institutions",
+nadakki-diagnostic-2025-07-26-23-30.json:1562:                              "FullURL":  
+"http://127.0.0.1:5000/api/v1/tenants",
+nadakki-diagnostic-2025-07-26-23-30.json:1571:                              "FullURL":  
+"http://127.0.0.1:5000/api/v1/institutions",
+outfile.json:1:{"statusCode": 404, "headers": {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*", 
+"Access-Control-Allow-Headers": "Content-Type,X-Tenant-ID", "Access-Control-Allow-Methods": "GET,POST,OPTIONS"}, 
+"body": "{\n  \"error\": \"Endpoint not found\",\n  \"path\": \"/\",\n  \"available_endpoints\": [\n    \"/health\",\n 
+   \"/evaluate\",\n    \"/similarity/compare\",\n    \"/batch\"\n  ]\n}"}
+
+
+
+

@@ -1,0 +1,6 @@
+﻿{
+  "starter": { "agents": 15, "evaluations": 1000, "price": 999, "ecosystems": 9 },
+  "professional": { "agents": 28, "evaluations": 10000, "price": 1999, "ecosystems": 9 },
+  "enterprise": { "agents": 40, "evaluations": "unlimited", "price": 4999, "ecosystems": 12 },
+  "enterprise_plus": { "agents": "60+", "evaluations": "unlimited", "price": 15000, "ecosystems": "15+" }
+}

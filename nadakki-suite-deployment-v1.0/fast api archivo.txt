@@ -1,0 +1,23 @@
+# AÑADIR al final del script:
+
+def archive_fastapi():
+    """Archive FastAPI code for future v2.0 reference"""
+    fastapi_dir = ROOT / "backend" / "fastapi"
+    archive_dir = ROOT / "archive" / "fastapi_reference_2025"
+    
+    if fastapi_dir.exists():
+        archive_dir.mkdir(parents=True, exist_ok=True)
+        import shutil
+        shutil.move(str(fastapi_dir), str(archive_dir))
+        print(f"✅ FastAPI code archived to: {archive_dir}")
+    else:
+        print("⚠️  No FastAPI directory found")
+
+# Ejecutar al final de main():
+if __name__ == "__main__":
+    main()
+    
+    # Preguntar antes de archivar FastAPI
+    response = input("\n📦 Archive FastAPI code for v2.0? (yes/no): ")
+    if response.lower() == "yes":
+        archive_fastapi()

@@ -1,0 +1,224 @@
+{
+  "ecosystems": {
+    "originacion": {
+      "description": "Originación Inteligente - Captación y análisis inicial",
+      "agents": [
+        {"name": "SentinelBot", "desc": "Análisis predictivo de riesgo crediticio con ML cuántico", "complexity": "high", "perf": 97.2},
+        {"name": "DNAProfiler", "desc": "Perfilado genómico crediticio con algoritmos híbridos", "complexity": "high", "perf": 98.1},
+        {"name": "IncomeOracle", "desc": "Verificación y validación de ingresos con APIs nómina", "complexity": "medium", "perf": 95.8},
+        {"name": "BehaviorMiner", "desc": "Análisis de patrones transaccionales con ML", "complexity": "medium", "perf": 94.3}
+      ]
+    },
+    "decision": {
+      "description": "Decisión Cuántica - Motor híbrido de decisiones",
+      "agents": [
+        {"name": "QuantumDecision", "desc": "Motor híbrido principal Coseno+Euclidiana+Jaccard", "complexity": "critical", "perf": 99.1},
+        {"name": "RiskOracle", "desc": "Scoring multidimensional con 50+ variables financieras", "complexity": "high", "perf": 98.4},
+        {"name": "PolicyGuardian", "desc": "Validación automática contra políticas internas", "complexity": "medium", "perf": 99.7},
+        {"name": "TurboApprover", "desc": "Aprobación instantánea para casos bajo riesgo", "complexity": "medium", "perf": 97.8}
+      ]
+    },
+    "vigilancia": {
+      "description": "Vigilancia Continua - Monitoreo predictivo",
+      "agents": [
+        {"name": "EarlyWarning", "desc": "Detección deterioro crediticio 90 días antes", "complexity": "high", "perf": 96.3},
+        {"name": "PortfolioSentinel", "desc": "Monitoreo cartera en tiempo real", "complexity": "high", "perf": 94.8},
+        {"name": "StressTester", "desc": "Simulación escenarios de estrés económico", "complexity": "high", "perf": 89.7},
+        {"name": "MarketRadar", "desc": "Análisis condiciones macroeconómicas", "complexity": "medium", "perf": 91.2}
+      ]
+    },
+    "recuperacion": {
+      "description": "Recuperación Máxima - Cobranza inteligente",
+      "agents": [
+        {"name": "CollectionMaster", "desc": "Estrategias de cobranza optimizadas con ML", "complexity": "high", "perf": 87.4},
+        {"name": "NegotiationBot", "desc": "Automatización renegociaciones inteligentes", "complexity": "high", "perf": 83.6},
+        {"name": "RecoveryOptimizer", "desc": "ML para maximizar recuperación de carteras", "complexity": "high", "perf": 85.9},
+        {"name": "LegalPathway", "desc": "Gestión automática de procesos legales", "complexity": "medium", "perf": 92.1}
+      ]
+    },
+    "compliance": {
+      "description": "Compliance Supremo - Cumplimiento regulatorio",
+      "agents": [
+        {"name": "ComplianceWatchdog", "desc": "Monitoreo regulatorio continuo multi-jurisdicción", "complexity": "high", "perf": 96.7},
+        {"name": "AuditMaster", "desc": "Preparación automática de auditorías financieras", "complexity": "medium", "perf": 94.2},
+        {"name": "DocGuardian", "desc": "Validación documentos con OCR+IA avanzado", "complexity": "medium", "perf": 97.3},
+        {"name": "RegulatoryRadar", "desc": "Seguimiento de cambios regulatorios automático", "complexity": "medium", "perf": 93.8}
+      ]
+    },
+    "operacional": {
+      "description": "Excelencia Operacional - Optimización procesos",
+      "agents": [
+        {"name": "ProcessGenius", "desc": "Optimización de procesos automática con IA", "complexity": "medium", "perf": 91.8},
+        {"name": "CostOptimizer", "desc": "Reducción de costos operativos inteligente", "complexity": "medium", "perf": 88.4},
+        {"name": "QualityController", "desc": "Control de calidad automatizado empresarial", "complexity": "medium", "perf": 93.6},
+        {"name": "WorkflowMaster", "desc": "Maestro de flujos de trabajo empresariales", "complexity": "medium", "perf": 90.7}
+      ]
+    },
+    "experiencia": {
+      "description": "Experiencia Suprema - UX personalizada",
+      "agents": [
+        {"name": "CustomerGenius", "desc": "Experiencia cliente personalizada con IA avanzada", "complexity": "high", "perf": 95.1},
+        {"name": "PersonalizationEngine", "desc": "Motor de personalización avanzado multi-canal", "complexity": "high", "perf": 92.8},
+        {"name": "ChatbotSupreme", "desc": "Chatbot conversacional avanzado con NLP", "complexity": "high", "perf": 89.3},
+        {"name": "OnboardingWizard", "desc": "Onboarding automático inteligente personalizado", "complexity": "medium", "perf": 94.7}
+      ]
+    },
+    "inteligencia": {
+      "description": "Inteligencia Financiera - Analytics avanzado",
+      "agents": [
+        {"name": "ProfitMaximizer", "desc": "Maximización de ganancias con algoritmos IA", "complexity": "high", "perf": 93.2},
+        {"name": "CashFlowOracle", "desc": "Predicción de flujo de caja empresarial avanzada", "complexity": "high", "perf": 91.6},
+        {"name": "PricingGenius", "desc": "Optimización de precios dinámicos inteligente", "complexity": "medium", "perf": 88.9},
+        {"name": "ROIMaster", "desc": "Análisis de rentabilidad avanzado multi-producto", "complexity": "medium", "perf": 92.4}
+      ]
+    },
+    "fortaleza": {
+      "description": "Fortaleza Digital - Seguridad y protección",
+      "agents": [
+        {"name": "CyberSentinel", "desc": "Seguridad cibernética con IA predictiva avanzada", "complexity": "high", "perf": 96.8},
+        {"name": "DataVault", "desc": "Protección de datos inteligente multi-capa", "complexity": "high", "perf": 98.2},
+        {"name": "SystemHealthMonitor", "desc": "Monitoreo de salud del sistema predictivo", "complexity": "medium", "perf": 94.5},
+        {"name": "BackupGuardian", "desc": "Respaldo automático inteligente empresarial", "complexity": "medium", "perf": 97.9}
+      ]
+    },
+    "orchestration": {
+      "description": "Orchestration Master - Coordinación central",
+      "agents": [
+        {"name": "OrchestrationMaster", "desc": "Coordinador maestro de todos los agentes", "complexity": "critical", "perf": 99.5},
+        {"name": "LoadBalancer", "desc": "Balanceador de cargas inteligente", "complexity": "high", "perf": 97.3},
+        {"name": "ResourceManager", "desc": "Gestor de recursos computacionales", "complexity": "high", "perf": 95.7},
+        {"name": "HealthChecker", "desc": "Monitor de salud de agentes en tiempo real", "complexity": "medium", "perf": 96.9}
+      ]
+    },
+    "legal": {
+      "description": "Legal Intelligence PhD Enterprise",
+      "agents": [
+        {"name": "DerechoPenalPhD", "desc": "Doctor en Derecho Penal dominicano especializado", "complexity": "critical", "perf": 99.2},
+        {"name": "DerechoProcesalPenalPhD", "desc": "Doctor en Derecho Procesal Penal RD", "complexity": "critical", "perf": 98.7},
+        {"name": "DerechoConstitucionalPhD", "desc": "Doctor Constitucionalista con precedentes TC", "complexity": "critical", "perf": 99.4},
+        {"name": "DerechoInmobiliarioPhD", "desc": "Doctor especialista en Ley 108-05 registro", "complexity": "high", "perf": 97.8},
+        {"name": "DerechoComercialePhD", "desc": "Doctor en Derecho Comercial y Societario RD", "complexity": "high", "perf": 96.9},
+        {"name": "DerechoLaboralPhD", "desc": "Doctor especialista en Código Laboral RD", "complexity": "high", "perf": 97.1},
+        {"name": "DerechoTributarioPhD", "desc": "Doctor en Derecho Tributario y DGII", "complexity": "high", "perf": 98.3},
+        {"name": "DerechoCivilPhD", "desc": "Doctor en Derecho Civil y obligaciones RD", "complexity": "high", "perf": 97.5},
+        {"name": "DerechoAdministrativoPhD", "desc": "Doctor en Derecho Administrativo público", "complexity": "high", "perf": 96.2},
+        {"name": "DerechoFamiliaPhD", "desc": "Doctor especialista en Derecho de Familia", "complexity": "medium", "perf": 95.8},
+        {"name": "DerechoAmbiental", "desc": "Especialista en Derecho Ambiental RD", "complexity": "medium", "perf": 94.1},
+        {"name": "DerechoMarcario", "desc": "Especialista en Propiedad Intelectual y Marcas", "complexity": "medium", "perf": 93.7},
+        {"name": "DerechoNotarial", "desc": "Especialista en Derecho Notarial y Registral", "complexity": "medium", "perf": 95.3},
+        {"name": "DerechoMigratorio", "desc": "Especialista en Derecho Migratorio RD", "complexity": "medium", "perf": 92.8},
+        {"name": "DerechoContratacion", "desc": "Especialista en Contratación Pública Ley 340-06", "complexity": "medium", "perf": 94.6},
+        {"name": "DerechoFinanciero", "desc": "Especialista en Derecho Financiero y Bancario", "complexity": "high", "perf": 97.9}
+      ]
+    },
+    "marketing": {
+      "description": "Marketing IA Generativo - Campañas automáticas",
+      "agents": [
+        {"name": "MinimalFormIA", "desc": "Optimiza formularios de precalificación con IA", "complexity": "medium", "perf": 94.7},
+        {"name": "FidelizedProfileIA", "desc": "Identifica clientes con potencial de fidelización", "complexity": "high", "perf": 89.2},
+        {"name": "CashOfferFilterIA", "desc": "Determina monto y momento óptimo para ofertas", "complexity": "high", "perf": 91.8},
+        {"name": "ContactQualityIA", "desc": "Optimiza llamadas con análisis de sentimiento", "complexity": "high", "perf": 88.3},
+        {"name": "GeoSegmentationIA", "desc": "Segmentación geográfica inteligente", "complexity": "medium", "perf": 92.4},
+        {"name": "ProductAffinityIA", "desc": "Predice afinidad de productos por cliente", "complexity": "high", "perf": 90.7},
+        {"name": "ConversionCohortIA", "desc": "Análisis de cohortes de conversión", "complexity": "medium", "perf": 87.9},
+        {"name": "ABTestingImpactIA", "desc": "Motor automatizado de A/B testing", "complexity": "medium", "perf": 93.1},
+        {"name": "SocialPostGeneratorIA", "desc": "Genera contenido visual y copy automático", "complexity": "high", "perf": 85.6},
+        {"name": "VideoReelAutogenIA", "desc": "Crea videos cortos y reels virales", "complexity": "high", "perf": 87.4},
+        {"name": "InfluencerMatchIA", "desc": "Matching inteligente con influencers", "complexity": "medium", "perf": 86.2},
+        {"name": "ContentViralityIA", "desc": "Predictor de viralidad de contenido", "complexity": "high", "perf": 84.8},
+        {"name": "BrandSentimentIA", "desc": "Análisis de sentimiento de marca en tiempo real", "complexity": "medium", "perf": 91.3},
+        {"name": "CompetitorIntelligenceIA", "desc": "Inteligencia competitiva automatizada", "complexity": "medium", "perf": 89.7}
+      ]
+    },
+    "contabilidad": {
+      "description": "Contabilidad Inteligente - DGII automático",
+      "agents": [
+        {"name": "DGIIAutoReporter", "desc": "Reporte automático DGII con validaciones", "complexity": "high", "perf": 96.8},
+        {"name": "FacturacionElectronica", "desc": "Facturación electrónica automatizada", "complexity": "medium", "perf": 95.2},
+        {"name": "ConciliacionBancaria", "desc": "Conciliación bancaria automática inteligente", "complexity": "medium", "perf": 94.7},
+        {"name": "ControlGastos", "desc": "Control de gastos con categorización IA", "complexity": "medium", "perf": 92.3},
+        {"name": "PrevisionFiscal", "desc": "Previsión fiscal y optimización tributaria", "complexity": "high", "perf": 91.8},
+        {"name": "AuditoriaInterna", "desc": "Auditoría interna automatizada", "complexity": "medium", "perf": 93.9},
+        {"name": "FlujoCajaIA", "desc": "Predicción de flujo de caja con IA", "complexity": "high", "perf": 89.4},
+        {"name": "ActivosFijos", "desc": "Gestión inteligente de activos fijos", "complexity": "medium", "perf": 90.1},
+        {"name": "CierreContable", "desc": "Cierre contable automático mensual", "complexity": "medium", "perf": 95.6},
+        {"name": "ReportingFinanciero", "desc": "Reportes financieros ejecutivos automáticos", "complexity": "medium", "perf": 94.1}
+      ]
+    },
+    "presupuesto": {
+      "description": "Presupuesto Predictivo - Planificación automática",
+      "agents": [
+        {"name": "PresupuestoMaestro", "desc": "Presupuesto maestro con predicción IA", "complexity": "high", "perf": 93.7},
+        {"name": "VarianzaAnalisis", "desc": "Análisis de varianzas automático", "complexity": "medium", "perf": 91.2},
+        {"name": "ForecastingIA", "desc": "Forecasting financiero con machine learning", "complexity": "high", "perf": 88.9},
+        {"name": "CostoCentros", "desc": "Distribución de costos por centros", "complexity": "medium", "perf": 90.4},
+        {"name": "ROIPredictor", "desc": "Predicción de ROI por proyecto", "complexity": "medium", "perf": 87.6},
+        {"name": "BudgetOptimizer", "desc": "Optimización de asignación presupuestaria", "complexity": "high", "perf": 92.8}
+      ]
+    },
+    "rrhh": {
+      "description": "Recursos Humanos IA - Talento inteligente",
+      "agents": [
+        {"name": "CVAnalyzerIA", "desc": "Análisis automático de CV con ranking", "complexity": "high", "perf": 94.3},
+        {"name": "NominaAutomatica", "desc": "Nómina automática con TSS integration", "complexity": "medium", "perf": 97.1},
+        {"name": "TalentoPredictor", "desc": "Predicción de talento y retención", "complexity": "high", "perf": 89.7},
+        {"name": "PerformanceTracker", "desc": "Seguimiento de performance automático", "complexity": "medium", "perf": 91.4},
+        {"name": "CapacitacionIA", "desc": "Sistema de capacitación personalizada", "complexity": "medium", "perf": 88.2}
+      ]
+    },
+    "ventascrm": {
+      "description": "Ventas & CRM Cuántico - Pipeline automático",
+      "agents": [
+        {"name": "LeadScoringIA", "desc": "Scoring automático de leads con ML", "complexity": "high", "perf": 92.8},
+        {"name": "PipelineOptimizer", "desc": "Optimización de pipeline de ventas", "complexity": "medium", "perf": 89.3},
+        {"name": "ChurnPredictor", "desc": "Predicción de churn de clientes", "complexity": "high", "perf": 87.6},
+        {"name": "UpsellEngine", "desc": "Motor de upselling inteligente", "complexity": "medium", "perf": 90.7}
+      ]
+    },
+    "logistica": {
+      "description": "Logística Inteligente - Supply chain automático",
+      "agents": [
+        {"name": "OptimizadorRutasIA", "desc": "Optimización de rutas con algoritmos genéticos", "complexity": "high", "perf": 95.2},
+        {"name": "PrevisionInventarioIA", "desc": "Previsión de inventario con ML", "complexity": "high", "perf": 92.1},
+        {"name": "ControlPedidosIA", "desc": "Gestión automatizada de pedidos", "complexity": "medium", "perf": 94.3},
+        {"name": "EvaluadorProveedoresIA", "desc": "Evaluación automática de proveedores", "complexity": "medium", "perf": 89.7},
+        {"name": "AlertasInventario", "desc": "Alertas inteligentes de inventario", "complexity": "medium", "perf": 93.8},
+        {"name": "LogisticaReversa", "desc": "Gestión de logística reversa", "complexity": "medium", "perf": 87.9},
+        {"name": "ControlCalidad", "desc": "Control de calidad automatizado", "complexity": "medium", "perf": 91.6},
+        {"name": "TrazabilidadIA", "desc": "Sistema de trazabilidad inteligente", "complexity": "medium", "perf": 90.4},
+        {"name": "PrediccionDemanda", "desc": "Predicción de demanda con IA", "complexity": "high", "perf": 88.7},
+        {"name": "OptimizacionAlmacen", "desc": "Optimización de almacenaje", "complexity": "medium", "perf": 92.5},
+        {"name": "TransportePredictivo", "desc": "Predicción de tiempos de transporte", "complexity": "medium", "perf": 89.1},
+        {"name": "CostosLogisticos", "desc": "Análisis y optimización de costos", "complexity": "medium", "perf": 90.8},
+        {"name": "SeguridadCarga", "desc": "Sistema de seguridad de carga IA", "complexity": "high", "perf": 96.3}
+      ]
+    },
+    "investigacion": {
+      "description": "Investigación I+D - Innovación automática",
+      "agents": [
+        {"name": "PatentesAnalyzer", "desc": "Análisis automático de patentes y IP", "complexity": "high", "perf": 91.8},
+        {"name": "TendenciasIA", "desc": "Identificación de tendencias tecnológicas", "complexity": "medium", "perf": 88.4},
+        {"name": "PrototipoGenerator", "desc": "Generación automática de prototipos", "complexity": "high", "perf": 85.7},
+        {"name": "InnovacionTracker", "desc": "Seguimiento de innovaciones del mercado", "complexity": "medium", "perf": 89.9}
+      ]
+    },
+    "educacion": {
+      "description": "Educación IA Adaptativa - Competencias automáticas",
+      "agents": [
+        {"name": "CurriculumAdaptativo", "desc": "Currículo adaptativo por competencias", "complexity": "high", "perf": 92.6},
+        {"name": "EvaluacionIA", "desc": "Evaluación automática de competencias", "complexity": "medium", "perf": 89.8},
+        {"name": "ContenidoPersonalizado", "desc": "Contenido educativo personalizado", "complexity": "high", "perf": 87.3},
+        {"name": "ProgresionEstudiante", "desc": "Seguimiento de progresión estudiantil", "complexity": "medium", "perf": 91.1}
+      ]
+    },
+    "regtech": {
+      "description": "RegTech Compliance - KYC automático",
+      "agents": [
+        {"name": "KYCAutomatico", "desc": "KYC automático con ML y OCR", "complexity": "critical", "perf": 97.4},
+        {"name": "AMLDetector", "desc": "Detección de lavado de dinero en tiempo real", "complexity": "critical", "perf": 96.8},
+        {"name": "SancionesChecker", "desc": "Verificación automática de listas de sanciones", "complexity": "high", "perf": 98.1},
+        {"name": "ReportingRegulatorio", "desc": "Reportes regulatorios automáticos", "complexity": "medium", "perf": 95.3}
+      ]
+    }
+  }
+}

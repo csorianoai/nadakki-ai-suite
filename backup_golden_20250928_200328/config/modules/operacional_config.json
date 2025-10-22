@@ -1,0 +1,72 @@
+{
+  "module_name": "operacional",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #26de81 0%, #20bf6b 100%)",
+  "agents": {
+    "ProcessGenius": {
+      "class_name": "ProcessGeniusOptimizer",
+      "description": "Optimización de procesos automática con análisis de eficiencia y cuellos de botella",
+      "algorithms": [
+        "process_mining",
+        "bottleneck_analysis",
+        "efficiency_optimization"
+      ],
+      "features": [
+        "process_optimization",
+        "efficiency_analysis",
+        "bottleneck_detection"
+      ],
+      "performance_target": 94.8
+    },
+    "CostOptimizer": {
+      "class_name": "CostOptimizerEngine",
+      "description": "Reducción de costos operativos con IA y análisis predictivo de gastos",
+      "algorithms": [
+        "cost_analysis",
+        "predictive_budgeting",
+        "expense_optimization"
+      ],
+      "features": [
+        "cost_reduction",
+        "budget_optimization",
+        "expense_prediction"
+      ],
+      "performance_target": 92.4
+    },
+    "QualityController": {
+      "class_name": "QualityControllerMonitor",
+      "description": "Control de calidad automatizado con métricas en tiempo real y alertas",
+      "algorithms": [
+        "quality_metrics",
+        "real_time_monitoring",
+        "quality_prediction"
+      ],
+      "features": [
+        "quality_control",
+        "metrics_monitoring",
+        "quality_alerts"
+      ],
+      "performance_target": 96.7
+    },
+    "WorkflowMaster": {
+      "class_name": "WorkflowMasterOrchestrator",
+      "description": "Maestro de flujos de trabajo con automatización inteligente y optimización",
+      "algorithms": [
+        "workflow_optimization",
+        "task_automation",
+        "flow_analysis"
+      ],
+      "features": [
+        "workflow_automation",
+        "task_optimization",
+        "flow_management"
+      ],
+      "performance_target": 95.1
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.211405",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

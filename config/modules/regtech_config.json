@@ -1,0 +1,72 @@
+{
+  "module_name": "regtech",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #e17055 0%, #d63031 100%)",
+  "agents": {
+    "KYCAutomatico": {
+      "class_name": "AutomaticKYCEngine",
+      "description": "Know Your Customer automatizado con IA",
+      "algorithms": [
+        "identity_verification",
+        "document_analysis",
+        "risk_assessment"
+      ],
+      "features": [
+        "kyc_automation",
+        "identity_validation",
+        "risk_scoring"
+      ],
+      "performance_target": 97.8
+    },
+    "AMLTiempoReal": {
+      "class_name": "RealTimeAMLEngine",
+      "description": "Anti-Money Laundering en tiempo real",
+      "algorithms": [
+        "transaction_monitoring",
+        "pattern_detection",
+        "suspicious_activity"
+      ],
+      "features": [
+        "aml_monitoring",
+        "fraud_detection",
+        "compliance_reporting"
+      ],
+      "performance_target": 98.9
+    },
+    "ReportesRegulatorios": {
+      "class_name": "RegulatoryReportingEngine",
+      "description": "Generación automática de reportes regulatorios",
+      "algorithms": [
+        "report_automation",
+        "compliance_validation",
+        "regulatory_mapping"
+      ],
+      "features": [
+        "automated_reporting",
+        "compliance_assurance",
+        "regulatory_submission"
+      ],
+      "performance_target": 99.2
+    },
+    "MonitoreoTransacciones": {
+      "class_name": "TransactionMonitoringEngine",
+      "description": "Monitoreo inteligente de transacciones sospechosas",
+      "algorithms": [
+        "transaction_analysis",
+        "anomaly_detection",
+        "behavioral_monitoring"
+      ],
+      "features": [
+        "transaction_monitoring",
+        "suspicious_detection",
+        "behavioral_analysis"
+      ],
+      "performance_target": 96.5
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.325008",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

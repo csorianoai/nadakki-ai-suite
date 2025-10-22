@@ -1,0 +1,102 @@
+{
+  "module_name": "presupuesto",
+  "total_agents": 6,
+  "color": "linear-gradient(135deg, #e17055 0%, #d63031 100%)",
+  "agents": {
+    "PresupuestoPredictivoIA": {
+      "class_name": "PredictiveBudgetEngine",
+      "description": "Planificación presupuestaria predictiva con IA",
+      "algorithms": [
+        "budget_forecasting",
+        "predictive_modeling",
+        "variance_analysis"
+      ],
+      "features": [
+        "budget_planning",
+        "predictive_analysis",
+        "variance_tracking"
+      ],
+      "performance_target": 94.7
+    },
+    "ControlPresupuestario": {
+      "class_name": "BudgetControlEngine",
+      "description": "Control presupuestario en tiempo real con alertas",
+      "algorithms": [
+        "budget_monitoring",
+        "variance_detection",
+        "alert_generation"
+      ],
+      "features": [
+        "budget_control",
+        "real_time_monitoring",
+        "automated_alerts"
+      ],
+      "performance_target": 96.2
+    },
+    "PlanificacionEstrategica": {
+      "class_name": "StrategicPlanningEngine",
+      "description": "Planificación estratégica financiera con escenarios",
+      "algorithms": [
+        "strategic_planning",
+        "scenario_modeling",
+        "goal_optimization"
+      ],
+      "features": [
+        "strategic_planning",
+        "scenario_analysis",
+        "goal_tracking"
+      ],
+      "performance_target": 92.8
+    },
+    "OptimizacionRecursos": {
+      "class_name": "ResourceOptimizationEngine",
+      "description": "Optimización de recursos con análisis de eficiencia",
+      "algorithms": [
+        "resource_allocation",
+        "efficiency_analysis",
+        "optimization_modeling"
+      ],
+      "features": [
+        "resource_optimization",
+        "efficiency_tracking",
+        "allocation_analysis"
+      ],
+      "performance_target": 90.5
+    },
+    "AnalisisVarianza": {
+      "class_name": "VarianceAnalysisEngine",
+      "description": "Análisis de varianza presupuestaria automático",
+      "algorithms": [
+        "variance_calculation",
+        "root_cause_analysis",
+        "trend_identification"
+      ],
+      "features": [
+        "variance_analysis",
+        "cause_identification",
+        "trend_analysis"
+      ],
+      "performance_target": 93.1
+    },
+    "ForecastingAvanzado": {
+      "class_name": "AdvancedForecastingEngine",
+      "description": "Forecasting financiero con machine learning",
+      "algorithms": [
+        "ml_forecasting",
+        "time_series_analysis",
+        "predictive_modeling"
+      ],
+      "features": [
+        "advanced_forecasting",
+        "ml_prediction",
+        "financial_projection"
+      ],
+      "performance_target": 91.7
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.282556",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

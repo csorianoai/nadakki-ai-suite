@@ -1,0 +1,45 @@
+﻿# 🏦 Configuración de Feature Flags - Nadakki AI Suite
+# Control de rollout para integración Bureau DataCrédito RD
+
+integracion_bureau:
+  habilitado: false  # Interruptor global de emergencia
+  descripcion: "Integración DataCrédito RD + TransUnion como fallback"
+  estrategia_rollout: "por_anillos"
+  
+  # Rollout por anillos (rings)
+  anillo_0:  # Pruebas internas
+    habilitado: false
+    inquilinos: ["nadakki-interno", "tenant-prueba"]
+    descripcion: "Pruebas internas - desarrollo"
+    
+  anillo_1:  # Piloto con partners
+    habilitado: false
+    inquilinos: ["credicefi-piloto", "banreservas-test"]
+    descripcion: "Piloto con instituciones partner"
+    
+  anillo_2:  # Producción completa
+    habilitado: false
+    inquilinos: ["banco-popular-rd", "scotiabank-rd", "banreservas"]
+    descripcion: "Rollout completo en producción"
+
+# Configuración de gating inteligente
+gating_bureau_inteligente:
+  habilitado: true
+  descripcion: "Solo consulta bureau para scores borderline (0.4-0.7)"
+  umbral_minimo: 0.4  # Por debajo: auto-rechazo, no consultar bureau
+  umbral_maximo: 0.7  # Por encima: auto-aprobación, no consultar bureau
+  reduccion_estimada: "~60% menos consultas"
+
+# Logging mejorado para compliance
+logging_compliance_mejorado:
+  habilitado: true
+  descripcion: "Logging estructurado para operaciones bureau"
+  incluir_pii: false  # NUNCA incluir datos personales en logs
+  audit_trail: true
+  
+# Configuración de costos y límites
+limites_costo:
+  habilitado: true
+  limite_diario_por_inquilino: 100.00  # USD
+  limite_consulta_individual: 0.50     # USD
+  alertas_costo: true

@@ -1,0 +1,49 @@
+﻿{
+    "cost_settings":  {
+                          "monthly_budget_usd":  12000,
+                          "daily_budget_usd":  500,
+                          "cost_per_call_max":  0.043,
+                          "auto_suspend":  true
+                      },
+    "name":  "CrediFace República Dominicana",
+    "carriers":  {
+                     "claro":  {
+                                   "prefixes":  [
+                                                    "829"
+                                                ],
+                                   "cost_per_minute":  0.02,
+                                   "enabled":  true
+                               },
+                     "altice":  {
+                                    "prefixes":  [
+                                                     "809"
+                                                 ],
+                                    "cost_per_minute":  0.018,
+                                    "enabled":  true
+                                },
+                     "plivo":  {
+                                   "fallback":  true,
+                                   "cost_per_minute":  0.076,
+                                   "enabled":  true
+                               },
+                     "viva":  {
+                                  "prefixes":  [
+                                                   "849"
+                                               ],
+                                  "cost_per_minute":  0.022,
+                                  "enabled":  true
+                              }
+                 },
+    "compliance_settings":  {
+                                "opt_out_dtmf":  "9",
+                                "timezone":  "America/Santo_Domingo",
+                                "recording_retention_years":  5,
+                                "call_window_start":  "07:00",
+                                "indotel_enabled":  true,
+                                "call_window_end":  "19:00",
+                                "max_daily_attempts":  3
+                            },
+    "tenant_id":  "credicefi",
+    "collections_enabled":  true,
+    "enabled":  true
+}

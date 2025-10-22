@@ -1,0 +1,72 @@
+{
+  "module_name": "fortaleza",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+  "agents": {
+    "CyberSentinel": {
+      "class_name": "CyberSentinelDefender",
+      "description": "Seguridad cibernética avanzada con detección de amenazas en tiempo real",
+      "algorithms": [
+        "threat_detection",
+        "anomaly_analysis",
+        "security_monitoring"
+      ],
+      "features": [
+        "cyber_security",
+        "threat_analysis",
+        "security_alerts"
+      ],
+      "performance_target": 98.7
+    },
+    "DataVault": {
+      "class_name": "DataVaultProtector",
+      "description": "Protección de datos con encriptación avanzada y control de acceso granular",
+      "algorithms": [
+        "data_encryption",
+        "access_control",
+        "privacy_protection"
+      ],
+      "features": [
+        "data_protection",
+        "encryption_management",
+        "access_security"
+      ],
+      "performance_target": 99.2
+    },
+    "SystemHealthMonitor": {
+      "class_name": "SystemHealthMonitorWatcher",
+      "description": "Monitoreo de salud del sistema con métricas de performance y alertas",
+      "algorithms": [
+        "system_monitoring",
+        "performance_analysis",
+        "health_prediction"
+      ],
+      "features": [
+        "system_health",
+        "performance_monitoring",
+        "predictive_maintenance"
+      ],
+      "performance_target": 97.8
+    },
+    "BackupGuardian": {
+      "class_name": "BackupGuardianManager",
+      "description": "Respaldo automático inteligente con recuperación rápida y verificación",
+      "algorithms": [
+        "backup_optimization",
+        "recovery_planning",
+        "integrity_verification"
+      ],
+      "features": [
+        "automated_backup",
+        "disaster_recovery",
+        "data_integrity"
+      ],
+      "performance_target": 96.5
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.234659",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

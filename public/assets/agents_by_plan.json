@@ -1,0 +1,33 @@
+﻿{
+  "starter": {
+    "total_agents": 4,
+    "agents": {
+      "inteligencia": ["BasicROI", "SimpleAnalyzer"],
+      "decision": ["QuickRisk", "RuleCheck"]
+    }
+  },
+  "professional": {
+    "total_agents": 18,
+    "agents": {
+      "originacion": ["AgentA", "AgentB", "AgentC", "AgentD"],
+      "decision": ["AgentE", "AgentF", "AgentG", "AgentH"],
+      "monitor": ["AgentI", "AgentJ", "AgentK", "AgentL"],
+      "procesos": ["AgentM", "AgentN", "AgentO", "AgentP"],
+      "inteligencia": ["AgentQ", "AgentR"]
+    }
+  },
+  "enterprise": {
+    "total_agents": 36,
+    "agents": {
+      "originacion": ["OriginOne", "OriginTwo", "OriginThree", "OriginFour"],
+      "decision": ["DeciderOne", "DeciderTwo", "DeciderThree", "DeciderFour"],
+      "monitor": ["MonitorA", "MonitorB", "MonitorC", "MonitorD"],
+      "cobranza": ["Recover1", "Recover2", "Recover3", "Recover4"],
+      "compliance": ["Compliance1", "Compliance2", "Compliance3", "Compliance4"],
+      "procesos": ["Ops1", "Ops2", "Ops3", "Ops4"],
+      "ux": ["UX1", "UX2", "UX3", "UX4"],
+      "financiero": ["FinAI1", "FinAI2", "FinAI3", "FinAI4"],
+      "seguridad": ["Sec1", "Sec2", "Sec3", "Sec4"]
+    }
+  }
+}

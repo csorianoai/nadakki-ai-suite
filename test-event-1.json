@@ -1,0 +1,19 @@
+﻿{
+    "headers":  {
+                    "Accept":  "application/json",
+                    "User-Agent":  "PowerShell-Debug"
+                },
+    "requestContext":  {
+                           "apiId":  "v5mi0idfy0",
+                           "path":  "/",
+                           "requestId":  "debug-test-1",
+                           "stage":  "prod",
+                           "httpMethod":  "GET"
+                       },
+    "queryStringParameters":  null,
+    "pathParameters":  null,
+    "body":  null,
+    "path":  "/",
+    "isBase64Encoded":  false,
+    "httpMethod":  "GET"
+}

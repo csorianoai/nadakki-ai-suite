@@ -1,0 +1,72 @@
+{
+  "module_name": "investigacion",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #fd79a8 0%, #e84393 100%)",
+  "agents": {
+    "InnovacionIA": {
+      "class_name": "InnovationAIEngine",
+      "description": "Motor de innovación con generación automática de ideas",
+      "algorithms": [
+        "innovation_generation",
+        "idea_evaluation",
+        "trend_analysis"
+      ],
+      "features": [
+        "idea_generation",
+        "innovation_scoring",
+        "trend_identification"
+      ],
+      "performance_target": 87.3
+    },
+    "PatentesAutomaticos": {
+      "class_name": "AutomaticPatentEngine",
+      "description": "Generación automática de patentes y propiedad intelectual",
+      "algorithms": [
+        "patent_generation",
+        "ip_analysis",
+        "prior_art_search"
+      ],
+      "features": [
+        "patent_automation",
+        "ip_protection",
+        "prior_art_analysis"
+      ],
+      "performance_target": 91.8
+    },
+    "PrototiposGenerativos": {
+      "class_name": "GenerativePrototypeEngine",
+      "description": "Creación de prototipos usando IA generativa",
+      "algorithms": [
+        "generative_design",
+        "prototype_optimization",
+        "3d_modeling"
+      ],
+      "features": [
+        "prototype_generation",
+        "design_optimization",
+        "rapid_prototyping"
+      ],
+      "performance_target": 84.6
+    },
+    "AnalisisTendencias": {
+      "class_name": "TrendAnalysisEngine",
+      "description": "Análisis de tendencias tecnológicas y de mercado",
+      "algorithms": [
+        "trend_analysis",
+        "market_intelligence",
+        "technology_forecasting"
+      ],
+      "features": [
+        "trend_identification",
+        "market_analysis",
+        "technology_prediction"
+      ],
+      "performance_target": 89.2
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.313841",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

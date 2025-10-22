@@ -1,0 +1,54 @@
+﻿
+agents\compliance\compliance_coordinator.py:58:            # Determinar el método principal del agente
+agents\compliance\compliance_coordinator.py:93:        """Ejecuta todos los agentes habilitados"""
+agents\compliance\regulatory_radar.py:125:        regulaciones_mock = [
+agents\compliance\regulatory_radar.py:178:        return regulaciones_mock
+agents\contabilidad\analisis_financiero.py:78:        """Entrena todos los modelos ML con datos históricos"""
+agents\contabilidad\analisis_financiero.py:1024:    # Métodos auxiliares
+agents\contabilidad\contabilidad_coordinator.py:113:        """Inicializa todos los agentes disponibles"""
+agents\contabilidad\contabilidad_coordinator.py:145:        """Ejecuta proceso completo de todos los agentes de 
+contabilidad"""
+agents\contabilidad\contabilidad_coordinator.py:300:        """Obtiene status de todos los agentes"""
+agents\contabilidad\inventariovaloracion.py:4:InventarioValoracion - Valoración de inventario con métodos contables IA
+agents\contabilidad\reportes_fiscales.py:459:    # Métodos auxiliares empresariales
+agents\decision\decision_coordinator.py:56:            # Determinar el método principal del agente
+agents\decision\decision_coordinator.py:91:        """Ejecuta todos los agentes habilitados"""
+agents\educacion\educacion_coordinator.py:74:            # Determinar el método principal del agente
+agents\educacion\educacion_coordinator.py:109:        """Ejecuta todos los agentes habilitados"""
+agents\experiencia\experiencia_coordinator.py:70:            # Determinar el método principal del agente
+agents\experiencia\experiencia_coordinator.py:105:        """Ejecuta todos los agentes habilitados"""
+agents\fortaleza\fortaleza_coordinator.py:70:            # Determinar el método principal del agente
+agents\fortaleza\fortaleza_coordinator.py:105:        """Ejecuta todos los agentes habilitados"""
+agents\inteligencia\inteligencia_coordinator.py:70:            # Determinar el método principal del agente
+agents\inteligencia\inteligencia_coordinator.py:105:        """Ejecuta todos los agentes habilitados"""
+agents\investigacion\investigacion_coordinator.py:74:            # Determinar el método principal del agente
+agents\investigacion\investigacion_coordinator.py:109:        """Ejecuta todos los agentes habilitados"""
+agents\legal\legal_coordinator.py:109:            # Determinar el método principal del agente
+agents\legal\legal_coordinator.py:144:        """Ejecuta todos los agentes habilitados"""
+agents\logistica\logistica_coordinator.py:97:            # Determinar el método principal del agente
+agents\logistica\logistica_coordinator.py:132:        """Ejecuta todos los agentes habilitados"""
+agents\marketing\marketing_coordinator.py:94:            # Determinar el método principal del agente
+agents\marketing\marketing_coordinator.py:129:        """Ejecuta todos los agentes habilitados"""
+agents\operacional\operacional_coordinator.py:70:            # Determinar el método principal del agente
+agents\operacional\operacional_coordinator.py:105:        """Ejecuta todos los agentes habilitados"""
+agents\orchestration\orchestrationmaster.py:3:Coordinador maestro de todos los agentes
+agents\orchestration\orchestrationmaster.py:27:    Coordinador maestro de todos los agentes
+agents\originacion\base_components_v2.py:216:    def simulate_historical_query(self, profile: Dict, query_type: str) 
+-> List[Dict]:
+agents\originacion\base_components_v2.py:481:    """Clase base enterprise para todos los agentes del ecosistema"""
+agents\originacion\originacion_coordinator.py:56:            # Determinar el método principal del agente
+agents\originacion\originacion_coordinator.py:91:        """Ejecuta todos los agentes habilitados"""
+agents\presupuesto\presupuesto_coordinator.py:80:            # Determinar el método principal del agente
+agents\presupuesto\presupuesto_coordinator.py:115:        """Ejecuta todos los agentes habilitados"""
+agents\recuperacion\recuperacion_coordinator.py:56:            # Determinar el método principal del agente
+agents\recuperacion\recuperacion_coordinator.py:91:        """Ejecuta todos los agentes habilitados"""
+agents\regtech\regtech_coordinator.py:73:            # Determinar el método principal del agente
+agents\regtech\regtech_coordinator.py:108:        """Ejecuta todos los agentes habilitados"""
+agents\rrhh\rrhh_coordinator.py:76:            # Determinar el método principal del agente
+agents\rrhh\rrhh_coordinator.py:111:        """Ejecuta todos los agentes habilitados"""
+agents\ventascrm\ventascrm_coordinator.py:74:            # Determinar el método principal del agente
+agents\ventascrm\ventascrm_coordinator.py:109:        """Ejecuta todos los agentes habilitados"""
+agents\vigilancia\vigilancia_coordinator.py:56:            # Determinar el método principal del agente
+agents\vigilancia\vigilancia_coordinator.py:91:        """Ejecuta todos los agentes habilitados"""
+
+

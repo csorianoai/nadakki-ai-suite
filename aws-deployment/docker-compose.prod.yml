@@ -1,0 +1,53 @@
+﻿version: '3.8'
+services:
+  nadakki-api:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://nadakki:secure_password@nadakki-db:5432/nadakki_prod
+      - REDIS_URL=redis://nadakki-redis:6379/0
+      - ENVIRONMENT=production
+    depends_on:
+      - nadakki-db
+      - nadakki-redis
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  nadakki-db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=nadakki_prod
+      - POSTGRES_USER=nadakki
+      - POSTGRES_PASSWORD=secure_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  nadakki-redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/ssl/certs
+    depends_on:
+      - nadakki-api
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

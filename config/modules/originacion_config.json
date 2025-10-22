@@ -1,0 +1,72 @@
+{
+  "module_name": "originacion",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)",
+  "agents": {
+    "SentinelBot": {
+      "class_name": "SentinelBotAnalyzer",
+      "description": "Análisis predictivo de riesgo crediticio con machine learning cuántico",
+      "algorithms": [
+        "cosine_similarity",
+        "random_forest",
+        "neural_network"
+      ],
+      "features": [
+        "risk_prediction",
+        "anomaly_detection",
+        "profile_scoring"
+      ],
+      "performance_target": 97.2
+    },
+    "DNAProfiler": {
+      "class_name": "DNAProfilerEngine",
+      "description": "Perfilado genómico crediticio con algoritmos cuánticos híbridos",
+      "algorithms": [
+        "genetic_algorithm",
+        "clustering",
+        "feature_engineering"
+      ],
+      "features": [
+        "dna_profiling",
+        "genetic_scoring",
+        "heritage_analysis"
+      ],
+      "performance_target": 98.1
+    },
+    "IncomeOracle": {
+      "class_name": "IncomeVerificationOracle",
+      "description": "Verificación y validación de ingresos usando APIs de nómina y TSS",
+      "algorithms": [
+        "regression_analysis",
+        "outlier_detection",
+        "time_series"
+      ],
+      "features": [
+        "income_verification",
+        "salary_prediction",
+        "employment_validation"
+      ],
+      "performance_target": 95.7
+    },
+    "BehaviorMiner": {
+      "class_name": "BehaviorMiningEngine",
+      "description": "Análisis de patrones transaccionales con machine learning avanzado",
+      "algorithms": [
+        "pattern_mining",
+        "sequence_analysis",
+        "markov_chains"
+      ],
+      "features": [
+        "transaction_analysis",
+        "behavior_prediction",
+        "spending_patterns"
+      ],
+      "performance_target": 96.3
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.426819",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

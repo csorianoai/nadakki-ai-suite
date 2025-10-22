@@ -1,0 +1,72 @@
+{
+  "module_name": "experiencia",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #5b86e5 0%, #36d1dc 100%)",
+  "agents": {
+    "CustomerGenius": {
+      "class_name": "CustomerGeniusPersonalizer",
+      "description": "Experiencia de cliente personalizada con IA y análisis de comportamiento",
+      "algorithms": [
+        "personalization",
+        "behavior_analysis",
+        "experience_optimization"
+      ],
+      "features": [
+        "customer_personalization",
+        "experience_optimization",
+        "behavior_prediction"
+      ],
+      "performance_target": 93.6
+    },
+    "PersonalizationEngine": {
+      "class_name": "PersonalizationEngineCore",
+      "description": "Motor de personalización con machine learning y segmentación avanzada",
+      "algorithms": [
+        "ml_personalization",
+        "advanced_segmentation",
+        "recommendation"
+      ],
+      "features": [
+        "personalization_engine",
+        "customer_segmentation",
+        "recommendation_system"
+      ],
+      "performance_target": 91.8
+    },
+    "ChatbotSupreme": {
+      "class_name": "ChatbotSupremeAI",
+      "description": "Chatbot conversacional avanzado con procesamiento de lenguaje natural",
+      "algorithms": [
+        "nlp",
+        "conversation_ai",
+        "intent_recognition"
+      ],
+      "features": [
+        "conversational_ai",
+        "nlp_processing",
+        "intent_analysis"
+      ],
+      "performance_target": 89.4
+    },
+    "OnboardingWizard": {
+      "class_name": "OnboardingWizardGuide",
+      "description": "Onboarding automático inteligente con guías personalizadas y seguimiento",
+      "algorithms": [
+        "onboarding_optimization",
+        "progress_tracking",
+        "personalized_guidance"
+      ],
+      "features": [
+        "automated_onboarding",
+        "progress_monitoring",
+        "personalized_guides"
+      ],
+      "performance_target": 88.2
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.220406",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

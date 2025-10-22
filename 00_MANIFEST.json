@@ -1,0 +1,16 @@
+﻿{
+  "manifest_version": "3.1.0",
+  "generated_at": "2025-08-27T12:00:00Z",
+  "project_name": "Nadakki Collections Enterprise",
+  "total_files": 12,
+  "files": [
+    {"path": "docs/assumptions.md", "type": "text", "encoding": "utf8"},
+    {"path": "config/collections.env.example", "type": "text", "encoding": "utf8"},
+    {"path": "config/tenants/credicefi_collections_extension.json", "type": "json", "encoding": "utf8"},
+    {"path": "apps/api/collections_blueprint.py", "type": "python", "encoding": "utf8"},
+    {"path": "app_collections_extension.py", "type": "python", "encoding": "utf8"},
+    {"path": "apps/compliance/indotel_basic.py", "type": "python", "encoding": "utf8"},
+    {"path": "apps/voice/carrier_manager_basic.py", "type": "python", "encoding": "utf8"},
+    {"path": "requirements-collections.txt", "type": "text", "encoding": "utf8"}
+  ]
+}

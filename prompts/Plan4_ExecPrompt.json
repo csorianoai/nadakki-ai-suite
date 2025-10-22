@@ -1,0 +1,27 @@
+{
+  "prompt_type": "MasterPromptExecution",
+  "description": "Ejecución integral del Plan 4 para cobranzas automatizadas SaaS multi-tenant.",
+  "objectives": [
+    "Costo por llamada ≤ $0.05",
+    "Cumplimiento total Ley 172-13",
+    "Escalabilidad institucional",
+    "Deployment en 9 semanas",
+    "Preparación onboarding 2da institución"
+  ],
+  "steps": [
+    {
+      "name": "Calculate_Unit_Economics",
+      "action": "Calcula el costo por llamada con parámetros predefinidos.",
+      "output": "unit_cost"
+    },
+    {
+      "name": "Design_Architecture",
+      "action": "Diseña la arquitectura técnica completa multi-tenant.",
+      "output": "infra"
+    }
+  ],
+  "final_output": {
+    "type": "ExecutionPlan",
+    "format": "Markdown"
+  }
+}

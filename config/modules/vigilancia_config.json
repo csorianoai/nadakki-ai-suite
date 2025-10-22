@@ -1,0 +1,72 @@
+{
+  "module_name": "vigilancia",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #ff6b9d 0%, #ff4757 100%)",
+  "agents": {
+    "EarlyWarning": {
+      "class_name": "EarlyWarningSystem",
+      "description": "Sistema predictivo que detecta deterioro crediticio 90 días antes del default",
+      "algorithms": [
+        "time_series_forecasting",
+        "lstm",
+        "survival_analysis"
+      ],
+      "features": [
+        "early_detection",
+        "predictive_alerts",
+        "deterioration_analysis"
+      ],
+      "performance_target": 96.8
+    },
+    "PortfolioSentinel": {
+      "class_name": "PortfolioSentinelMonitor",
+      "description": "Monitoreo de cartera en tiempo real con alertas automáticas",
+      "algorithms": [
+        "real_time_monitoring",
+        "portfolio_analysis",
+        "alert_optimization"
+      ],
+      "features": [
+        "portfolio_monitoring",
+        "real_time_alerts",
+        "risk_concentration"
+      ],
+      "performance_target": 95.2
+    },
+    "StressTester": {
+      "class_name": "StressTestingEngine",
+      "description": "Simulación de escenarios de estrés económico y evaluación de impacto",
+      "algorithms": [
+        "monte_carlo",
+        "scenario_simulation",
+        "stress_modeling"
+      ],
+      "features": [
+        "stress_testing",
+        "scenario_analysis",
+        "impact_assessment"
+      ],
+      "performance_target": 94.7
+    },
+    "MarketRadar": {
+      "class_name": "MarketRadarAnalyzer",
+      "description": "Análisis de condiciones macroeconómicas y su impacto en el riesgo crediticio",
+      "algorithms": [
+        "macro_analysis",
+        "market_indicators",
+        "economic_modeling"
+      ],
+      "features": [
+        "market_analysis",
+        "economic_indicators",
+        "macro_impact"
+      ],
+      "performance_target": 93.1
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.193266",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

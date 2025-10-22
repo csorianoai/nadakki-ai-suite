@@ -1,0 +1,222 @@
+{
+  "generation_summary": {
+    "total_agents_generated": 116,
+    "total_agents_planned": 116,
+    "success_rate": "100.0%",
+    "generation_date": "2025-08-05T09:14:53.326008",
+    "modules_generated": 19
+  },
+  "modules": {
+    "originacion": {
+      "agent_count": 4,
+      "agents": [
+        "SentinelBot",
+        "DNAProfiler",
+        "IncomeOracle",
+        "BehaviorMiner"
+      ]
+    },
+    "decision": {
+      "agent_count": 4,
+      "agents": [
+        "QuantumDecision",
+        "RiskOracle",
+        "PolicyGuardian",
+        "TurboApprover"
+      ]
+    },
+    "vigilancia": {
+      "agent_count": 4,
+      "agents": [
+        "EarlyWarning",
+        "PortfolioSentinel",
+        "StressTester",
+        "MarketRadar"
+      ]
+    },
+    "recuperacion": {
+      "agent_count": 4,
+      "agents": [
+        "CollectionMaster",
+        "NegotiationBot",
+        "RecoveryOptimizer",
+        "LegalPathway"
+      ]
+    },
+    "compliance": {
+      "agent_count": 4,
+      "agents": [
+        "ComplianceWatchdog",
+        "AuditMaster",
+        "DocGuardian",
+        "RegulatoryRadar"
+      ]
+    },
+    "operacional": {
+      "agent_count": 4,
+      "agents": [
+        "ProcessGenius",
+        "CostOptimizer",
+        "QualityController",
+        "WorkflowMaster"
+      ]
+    },
+    "experiencia": {
+      "agent_count": 4,
+      "agents": [
+        "CustomerGenius",
+        "PersonalizationEngine",
+        "ChatbotSupreme",
+        "OnboardingWizard"
+      ]
+    },
+    "inteligencia": {
+      "agent_count": 4,
+      "agents": [
+        "ProfitMaximizer",
+        "CashFlowOracle",
+        "PricingGenius",
+        "ROIMaster"
+      ]
+    },
+    "fortaleza": {
+      "agent_count": 4,
+      "agents": [
+        "CyberSentinel",
+        "DataVault",
+        "SystemHealthMonitor",
+        "BackupGuardian"
+      ]
+    },
+    "legal": {
+      "agent_count": 16,
+      "agents": [
+        "DerechoPenal",
+        "DerechoProcesalPenal",
+        "DerechoConstitucional",
+        "DerechoInmobiliario",
+        "DerechoComercial",
+        "DerechoLaboral",
+        "DerechoTributario",
+        "DerechoAmbiental",
+        "DerechoFamiliar",
+        "DerechoAdministrativo",
+        "DerechoIntelectual",
+        "DerechoInternacional",
+        "DerechoMinero",
+        "DerechoMaritimo",
+        "DerechoBancario",
+        "DerechoSeguros"
+      ]
+    },
+    "marketing": {
+      "agent_count": 14,
+      "agents": [
+        "MinimalFormIA",
+        "FidelizedProfileIA",
+        "CashOfferFilterIA",
+        "ContactQualityIA",
+        "GeoSegmentationIA",
+        "ProductAffinityIA",
+        "ConversionCohortIA",
+        "ABTestingImpactIA",
+        "SocialPostGeneratorIA",
+        "VideoReelAutogenIA",
+        "InfluencerMatcherIA",
+        "CampaignOptimizerIA",
+        "LeadScoringIA",
+        "EmailAutomationIA"
+      ]
+    },
+    "contabilidad": {
+      "agent_count": 10,
+      "agents": [
+        "ContabilidadInteligente",
+        "ConciliacionBancaria",
+        "FacturacionIA",
+        "AnalisisFinanciero",
+        "ControlGastos",
+        "TributarioIA",
+        "AuditoriaInterna",
+        "FlujoCajaPrediccion",
+        "InventarioValoracion",
+        "ReportesEjecutivos"
+      ]
+    },
+    "presupuesto": {
+      "agent_count": 6,
+      "agents": [
+        "PresupuestoPredictivoIA",
+        "ControlPresupuestario",
+        "PlanificacionEstrategica",
+        "OptimizacionRecursos",
+        "AnalisisVarianza",
+        "ForecastingAvanzado"
+      ]
+    },
+    "rrhh": {
+      "agent_count": 5,
+      "agents": [
+        "SelectionCVIA",
+        "NominaInteligente",
+        "PerformanceAnalyzer",
+        "TalentoPrediccion",
+        "CapacitacionIA"
+      ]
+    },
+    "ventascrm": {
+      "agent_count": 4,
+      "agents": [
+        "PipelinePredictivoIA",
+        "CierrePredictivoIA",
+        "CommunicationBot",
+        "ClienteLifecycleIA"
+      ]
+    },
+    "logistica": {
+      "agent_count": 13,
+      "agents": [
+        "OptimizadorRutasIA",
+        "PrevisionInventarioIA",
+        "ControlPedidosIA",
+        "EvaluadorProveedoresIA",
+        "AlmacenInteligente",
+        "TransporteOptimizado",
+        "TrazabilidadTotal",
+        "PlanificacionDemanda",
+        "ControlCalidadIA",
+        "OptimizacionCostos",
+        "GestionRiesgos",
+        "AnalisisRendimiento",
+        "SostenibilidadIA"
+      ]
+    },
+    "investigacion": {
+      "agent_count": 4,
+      "agents": [
+        "InnovacionIA",
+        "PatentesAutomaticos",
+        "PrototiposGenerativos",
+        "AnalisisTendencias"
+      ]
+    },
+    "educacion": {
+      "agent_count": 4,
+      "agents": [
+        "CursosAutomaticos",
+        "CompetenciasIA",
+        "TutorVirtualIA",
+        "EvaluacionAdaptativa"
+      ]
+    },
+    "regtech": {
+      "agent_count": 4,
+      "agents": [
+        "KYCAutomatico",
+        "AMLTiempoReal",
+        "ReportesRegulatorios",
+        "MonitoreoTransacciones"
+      ]
+    }
+  }
+}

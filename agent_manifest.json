@@ -1,0 +1,842 @@
+[
+  {
+    "name": "Sentinelbot",
+    "ecosystem": "originacion",
+    "path": "agents\\originacion\\sentinelbot.py",
+    "hash": "e8cb48a57134bce090b7d07e8a3496fb2adff7375983cdb5c5e3fbb3edccc5ce",
+    "timestamp": "2025-08-07T13:29:03.965876"
+  },
+  {
+    "name": "Dnaprofiler",
+    "ecosystem": "originacion",
+    "path": "agents\\originacion\\dnaprofiler.py",
+    "hash": "2d57f1855371e1f6b4c95f40ec1e27d743cc2814b7ee1c9c599a48194e0cb944",
+    "timestamp": "2025-08-07T13:29:03.970876"
+  },
+  {
+    "name": "Incomeoracle",
+    "ecosystem": "originacion",
+    "path": "agents\\originacion\\incomeoracle.py",
+    "hash": "189cf7421c8f27d839d34ee4e60aa9bc481343403e3215596c5b2aa95adab6e5",
+    "timestamp": "2025-08-07T13:29:03.976513"
+  },
+  {
+    "name": "Behaviorminer",
+    "ecosystem": "originacion",
+    "path": "agents\\originacion\\behaviorminer.py",
+    "hash": "e9bc7dd8977a71c51fade25e82a9c76a861355e36e98289b27706df77e0c03a6",
+    "timestamp": "2025-08-07T13:29:03.981511"
+  },
+  {
+    "name": "Quantumdecision",
+    "ecosystem": "decision",
+    "path": "agents\\decision\\quantumdecision.py",
+    "hash": "6281d105800a2c084ed37856a697d90a1bce1ccf63fefafe0250f0173a11d00e",
+    "timestamp": "2025-08-07T13:29:03.987515"
+  },
+  {
+    "name": "Riskoracle",
+    "ecosystem": "decision",
+    "path": "agents\\decision\\riskoracle.py",
+    "hash": "930dfc528ec86c9f7884ed5c7e9e744fb4dfd544ca26a250f250cf399d7ec388",
+    "timestamp": "2025-08-07T13:29:03.995133"
+  },
+  {
+    "name": "Policyguardian",
+    "ecosystem": "decision",
+    "path": "agents\\decision\\policyguardian.py",
+    "hash": "a7a6e0eb3b373d4883a0b8b08792c898828cdad4d80465eaa3b88356280c8818",
+    "timestamp": "2025-08-07T13:29:04.000130"
+  },
+  {
+    "name": "Turboapprover",
+    "ecosystem": "decision",
+    "path": "agents\\decision\\turboapprover.py",
+    "hash": "34e5edf32246eaa5af0b47edcce84cea230b9d2f21206d70b032a38d2fb610ec",
+    "timestamp": "2025-08-07T13:29:04.005130"
+  },
+  {
+    "name": "Earlywarning",
+    "ecosystem": "vigilancia",
+    "path": "agents\\vigilancia\\earlywarning.py",
+    "hash": "4fd551dd45d1dbf40a9b438f167c0f5823135989ad0c369152b1059dd36d8ba6",
+    "timestamp": "2025-08-07T13:29:04.012843"
+  },
+  {
+    "name": "Portfoliosentinel",
+    "ecosystem": "vigilancia",
+    "path": "agents\\vigilancia\\portfoliosentinel.py",
+    "hash": "f727e4e8912bd234499439b2defb71efabb390ffd579063c7813a2695bbcd36c",
+    "timestamp": "2025-08-07T13:29:04.017842"
+  },
+  {
+    "name": "Stresstester",
+    "ecosystem": "vigilancia",
+    "path": "agents\\vigilancia\\stresstester.py",
+    "hash": "a8506276f4d3b939ca3b2e44ceb713cfeb50986ee8f60946f24234fa8b1072c5",
+    "timestamp": "2025-08-07T13:29:04.022842"
+  },
+  {
+    "name": "Marketradar",
+    "ecosystem": "vigilancia",
+    "path": "agents\\vigilancia\\marketradar.py",
+    "hash": "019bcb76c8382c1cad0e600f0a66111e2b945bffa6652e7ea26d29c7a27670c3",
+    "timestamp": "2025-08-07T13:29:04.028090"
+  },
+  {
+    "name": "Collectionmaster",
+    "ecosystem": "recuperacion",
+    "path": "agents\\recuperacion\\collectionmaster.py",
+    "hash": "6d1e1c321ea818c142e09026568136cc5b11428a82299ae4353dc076b046887f",
+    "timestamp": "2025-08-07T13:29:04.034090"
+  },
+  {
+    "name": "Negotiationbot",
+    "ecosystem": "recuperacion",
+    "path": "agents\\recuperacion\\negotiationbot.py",
+    "hash": "de59535a071928e513b2d3eef310b89105408b8e1322e6c874a3fd8416b3e9a4",
+    "timestamp": "2025-08-07T13:29:04.040192"
+  },
+  {
+    "name": "Recoveryoptimizer",
+    "ecosystem": "recuperacion",
+    "path": "agents\\recuperacion\\recoveryoptimizer.py",
+    "hash": "84ee5adaae49187c5c405ae3cc8d726cdc6671d4cd3517b54e36be4393aa0869",
+    "timestamp": "2025-08-07T13:29:04.045752"
+  },
+  {
+    "name": "Legalpathway",
+    "ecosystem": "recuperacion",
+    "path": "agents\\recuperacion\\legalpathway.py",
+    "hash": "a1a91825d2982f4769538cef504f7b8262ec829fd6b2e2fb9f16a48b97cc07a9",
+    "timestamp": "2025-08-07T13:29:04.050751"
+  },
+  {
+    "name": "Compliancewatchdog",
+    "ecosystem": "compliance",
+    "path": "agents\\compliance\\compliancewatchdog.py",
+    "hash": "186688aad42d0df645385fb633f267f41d1c7d755832fc97bd9f3ddcf406ad95",
+    "timestamp": "2025-08-07T13:29:04.056849"
+  },
+  {
+    "name": "Auditmaster",
+    "ecosystem": "compliance",
+    "path": "agents\\compliance\\auditmaster.py",
+    "hash": "821918915f3303b583462bd97384faf4e6bbe1263c6ac267e2716303ef481c9d",
+    "timestamp": "2025-08-07T13:29:04.061367"
+  },
+  {
+    "name": "Docguardian",
+    "ecosystem": "compliance",
+    "path": "agents\\compliance\\docguardian.py",
+    "hash": "5f75f842de9fbe594d1b84db40443b0234185a41e11e0efbd6f73028ba804994",
+    "timestamp": "2025-08-07T13:29:04.066367"
+  },
+  {
+    "name": "Regulatoryradar",
+    "ecosystem": "compliance",
+    "path": "agents\\compliance\\regulatoryradar.py",
+    "hash": "b7df793e76efc7844ff426b011ec705a4f1d11c9e6552d4255890db356e7bb11",
+    "timestamp": "2025-08-07T13:29:04.072369"
+  },
+  {
+    "name": "Processgenius",
+    "ecosystem": "operacional",
+    "path": "agents\\operacional\\processgenius.py",
+    "hash": "fc14130e57481f919b4d22c308931fbad7f7ece1980c89276851bc650f332d12",
+    "timestamp": "2025-08-07T13:29:04.078077"
+  },
+  {
+    "name": "Costoptimizer",
+    "ecosystem": "operacional",
+    "path": "agents\\operacional\\costoptimizer.py",
+    "hash": "4a2e320bd68d78106453ae0f471bb6211bae6f528d72572ddf73ccabb65580f8",
+    "timestamp": "2025-08-07T13:29:04.083077"
+  },
+  {
+    "name": "Qualitycontroller",
+    "ecosystem": "operacional",
+    "path": "agents\\operacional\\qualitycontroller.py",
+    "hash": "d96fa5ad53b6ac56543b7ec7bec9418e278e48f43bd529105e10f1006e671015",
+    "timestamp": "2025-08-07T13:29:04.088077"
+  },
+  {
+    "name": "Workflowmaster",
+    "ecosystem": "operacional",
+    "path": "agents\\operacional\\workflowmaster.py",
+    "hash": "9825681395f563cb33b48b7fc2786e9c18a72a369f7322b8570ef57597f0b5d6",
+    "timestamp": "2025-08-07T13:29:04.094728"
+  },
+  {
+    "name": "Customergenius",
+    "ecosystem": "experiencia",
+    "path": "agents\\experiencia\\customergenius.py",
+    "hash": "1787707f5a0d3e75d9967f7cee7e31ee8dbceefe99df0a70c6a143d0aa8d8124",
+    "timestamp": "2025-08-07T13:29:04.099726"
+  },
+  {
+    "name": "Personalizationengine",
+    "ecosystem": "experiencia",
+    "path": "agents\\experiencia\\personalizationengine.py",
+    "hash": "4391957a4d71d518532f1a95dc4c2a3089d549ddfd07feea95f1d38ba7104094",
+    "timestamp": "2025-08-07T13:29:04.105729"
+  },
+  {
+    "name": "Chatbotsupreme",
+    "ecosystem": "experiencia",
+    "path": "agents\\experiencia\\chatbotsupreme.py",
+    "hash": "498bbaee360db391b094c071415ecd41d52a7b93863b07b2fd32b939b44fc6d0",
+    "timestamp": "2025-08-07T13:29:04.111390"
+  },
+  {
+    "name": "Onboardingwizard",
+    "ecosystem": "experiencia",
+    "path": "agents\\experiencia\\onboardingwizard.py",
+    "hash": "9b6c3fe683f379a3da4d504526e5fe65d92c67abc990f299cd2e123c9819500b",
+    "timestamp": "2025-08-07T13:29:04.116391"
+  },
+  {
+    "name": "Profitmaximizer",
+    "ecosystem": "inteligencia",
+    "path": "agents\\inteligencia\\profitmaximizer.py",
+    "hash": "0b4b28c82a45f018c60ebd2e9babddc26f5580c037017228294d1400ebb45aab",
+    "timestamp": "2025-08-07T13:29:04.124555"
+  },
+  {
+    "name": "Cashfloworacle",
+    "ecosystem": "inteligencia",
+    "path": "agents\\inteligencia\\cashfloworacle.py",
+    "hash": "4921c6fe7597446d4c3e8eefaf83b9e819d68edbbe23cc8dd28b296c23bb93cf",
+    "timestamp": "2025-08-07T13:29:04.130980"
+  },
+  {
+    "name": "Pricinggenius",
+    "ecosystem": "inteligencia",
+    "path": "agents\\inteligencia\\pricinggenius.py",
+    "hash": "5b1123ff077b2645f9797237d778e4373e755067d8496328f0996060c829345e",
+    "timestamp": "2025-08-07T13:29:04.137979"
+  },
+  {
+    "name": "Roimaster",
+    "ecosystem": "inteligencia",
+    "path": "agents\\inteligencia\\roimaster.py",
+    "hash": "1d13c5f7beed5115aa1caaae35eb6cf344534c54ba2de7fcc4c1c45c192925f6",
+    "timestamp": "2025-08-07T13:29:04.144653"
+  },
+  {
+    "name": "Cybersentinel",
+    "ecosystem": "fortaleza",
+    "path": "agents\\fortaleza\\cybersentinel.py",
+    "hash": "ccb225e7e9be15b292bcf5f186cdfd44af82c3c53c3fee462862fcbd2e57c29d",
+    "timestamp": "2025-08-07T13:29:04.151653"
+  },
+  {
+    "name": "Datavault",
+    "ecosystem": "fortaleza",
+    "path": "agents\\fortaleza\\datavault.py",
+    "hash": "7a78e2861974efd080001eb6faa8e249eeb396c24726c1f90ce36f3da7624fe8",
+    "timestamp": "2025-08-07T13:29:04.158317"
+  },
+  {
+    "name": "Systemhealthmonitor",
+    "ecosystem": "fortaleza",
+    "path": "agents\\fortaleza\\systemhealthmonitor.py",
+    "hash": "0b97232eab97cef087bb404c9c9487c6aa9a832dd499fbdb888e11d277fb763f",
+    "timestamp": "2025-08-07T13:29:04.164314"
+  },
+  {
+    "name": "Backupguardian",
+    "ecosystem": "fortaleza",
+    "path": "agents\\fortaleza\\backupguardian.py",
+    "hash": "c10e995440b3fd99f765863d9269aa6b93431ea4d5c0ade363cf4d973ac93657",
+    "timestamp": "2025-08-07T13:29:04.170313"
+  },
+  {
+    "name": "Orchestrationmaster",
+    "ecosystem": "orchestration",
+    "path": "agents\\orchestration\\orchestrationmaster.py",
+    "hash": "1ad93a6545bf1bcc62f4c2240d0cb67e1640821b5fdd492dba34e440813fff4f",
+    "timestamp": "2025-08-07T13:29:04.177090"
+  },
+  {
+    "name": "Loadbalancer",
+    "ecosystem": "orchestration",
+    "path": "agents\\orchestration\\loadbalancer.py",
+    "hash": "250b1633871b12ff38da884e320b23141760ab53d1942b650b10623ce3322ef1",
+    "timestamp": "2025-08-07T13:29:04.190176"
+  },
+  {
+    "name": "Resourcemanager",
+    "ecosystem": "orchestration",
+    "path": "agents\\orchestration\\resourcemanager.py",
+    "hash": "b01c2e33427edbf8dabe37bdc1d1d0d9bb3badfa7ec3cc1b006a3e2faef8c013",
+    "timestamp": "2025-08-07T13:29:04.195737"
+  },
+  {
+    "name": "Healthchecker",
+    "ecosystem": "orchestration",
+    "path": "agents\\orchestration\\healthchecker.py",
+    "hash": "ce634c3a31cecbe581c9e8cb8a4a102060f33a8287d5db8ecbd2045c73c97910",
+    "timestamp": "2025-08-07T13:29:04.201737"
+  },
+  {
+    "name": "Derechopenalphd",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechopenalphd.py",
+    "hash": "1245f5783948a5b41a96a10ee18763ffc9ae5b2fc5abfc6ee3dc4380d1e3b749",
+    "timestamp": "2025-08-07T13:29:04.209818"
+  },
+  {
+    "name": "Derechoprocesalpenalphd",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechoprocesalpenalphd.py",
+    "hash": "4a3d6a70e93512d1e68437038e247eddb2a5cb1034c308b01afbb93a6f8dc5e0",
+    "timestamp": "2025-08-07T13:29:04.216816"
+  },
+  {
+    "name": "Derechoconstitucionalphd",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechoconstitucionalphd.py",
+    "hash": "60930eee7097671440e4059bcfdf448204eeda1b5208f97d535fb782f13e8b35",
+    "timestamp": "2025-08-07T13:29:04.223917"
+  },
+  {
+    "name": "Derechoinmobiliariophd",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechoinmobiliariophd.py",
+    "hash": "15fd29fb67035c888385be343d7fc5def7804f569effeb34264cab282cb44f46",
+    "timestamp": "2025-08-07T13:29:04.230483"
+  },
+  {
+    "name": "Derechocomercialephd",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechocomercialephd.py",
+    "hash": "9ae824559fcfb82d42ca9f78099082839de5be7823f6d15888a393fd61a8b01a",
+    "timestamp": "2025-08-07T13:29:04.236478"
+  },
+  {
+    "name": "Derecholaboralphd",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derecholaboralphd.py",
+    "hash": "116f1b2148d7f953d7ef70d92689c4e24e97e29ee2d50e09659c85995ec2a3da",
+    "timestamp": "2025-08-07T13:29:04.243193"
+  },
+  {
+    "name": "Derechotributariophd",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechotributariophd.py",
+    "hash": "6dad47e4e74bf35a5739b6afef07e7469b8ee24cbc100c48923d074a8066722e",
+    "timestamp": "2025-08-07T13:29:04.248190"
+  },
+  {
+    "name": "Derechocivilphd",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechocivilphd.py",
+    "hash": "a3501585a589d3d5f2f05634ad765f6176d9d8e5ce50a6bcf52ea36043715e28",
+    "timestamp": "2025-08-07T13:29:04.254189"
+  },
+  {
+    "name": "Derechoadministrativophd",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechoadministrativophd.py",
+    "hash": "6f9f36981841e27611a5eca86ba31a045db566fe676bf5fb2591c9723ea977c7",
+    "timestamp": "2025-08-07T13:29:04.260844"
+  },
+  {
+    "name": "Derechofamiliaphd",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechofamiliaphd.py",
+    "hash": "f930541085c366e9d1d8ff1525a25a328551d7645b16b6a5a42f27c74faceb12",
+    "timestamp": "2025-08-07T13:29:04.266844"
+  },
+  {
+    "name": "Derechoambiental",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechoambiental.py",
+    "hash": "770c6502313fbe9081fe9786999767b5ce77956bd0e9f3a990b49cf2ccbbe595",
+    "timestamp": "2025-08-07T13:29:04.272845"
+  },
+  {
+    "name": "Derechomarcario",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechomarcario.py",
+    "hash": "9170d2a05d43960dd45dd8767c5c314eab60271c427e526c5424729c647f87ca",
+    "timestamp": "2025-08-07T13:29:04.293275"
+  },
+  {
+    "name": "Derechonotarial",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechonotarial.py",
+    "hash": "fe84d3bab856de0a9d3ef845cbc582fd534df27e222d2566053b420098278fe9",
+    "timestamp": "2025-08-07T13:29:04.301273"
+  },
+  {
+    "name": "Derechomigratorio",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechomigratorio.py",
+    "hash": "1550506c9c7381413cd90065aef6f25adde5b60c02dc4aa5917e86175ad4a35b",
+    "timestamp": "2025-08-07T13:29:04.308461"
+  },
+  {
+    "name": "Derechocontratacion",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechocontratacion.py",
+    "hash": "4cacd393f54c21b91868bde2c28101d95ac4995e2107292ab39f87336283aaad",
+    "timestamp": "2025-08-07T13:29:04.314461"
+  },
+  {
+    "name": "Derechofinanciero",
+    "ecosystem": "legal",
+    "path": "agents\\legal\\derechofinanciero.py",
+    "hash": "54e332daa7459f4113661d6bbf51df4d71a073791170707b2ff81220bfd6b570",
+    "timestamp": "2025-08-07T13:29:04.320461"
+  },
+  {
+    "name": "Minimalformia",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\minimalformia.py",
+    "hash": "3ad818e4e8f73fec17e3c7391c01d23fd6b543cd8045b74fc8c79b0a62ea6a0f",
+    "timestamp": "2025-08-07T13:29:04.328289"
+  },
+  {
+    "name": "Fidelizedprofileia",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\fidelizedprofileia.py",
+    "hash": "8bbf32f4c70d93391c713ec37e1b044b4ee2159b18770029dd6459ac142e4ae3",
+    "timestamp": "2025-08-07T13:29:04.345949"
+  },
+  {
+    "name": "Cashofferfilteria",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\cashofferfilteria.py",
+    "hash": "9a6177d531210a78b8cb5aca3a95ee61887051a510b4d1fd86f55fe905fc79c2",
+    "timestamp": "2025-08-07T13:29:04.363597"
+  },
+  {
+    "name": "Contactqualityia",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\contactqualityia.py",
+    "hash": "5ad20e012d2c16c96ecc0f75e1d05617dd357ddaf3a04c7cb9198d175ba56fb7",
+    "timestamp": "2025-08-07T13:29:04.381259"
+  },
+  {
+    "name": "Geosegmentationia",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\geosegmentationia.py",
+    "hash": "30cbac687a664624bc539658d90e8fe4d30939f4024debe0cd16eebc77a7823b",
+    "timestamp": "2025-08-07T13:29:04.398604"
+  },
+  {
+    "name": "Productaffinityia",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\productaffinityia.py",
+    "hash": "883ef5a95e30fd7329e4f8c117e7861106e850a1a56aa8d242e81c37e4931d49",
+    "timestamp": "2025-08-07T13:29:04.416260"
+  },
+  {
+    "name": "Conversioncohortia",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\conversioncohortia.py",
+    "hash": "9738b349484263609dd220698acb856f42addfb0ce9951585ecba5cddef46549",
+    "timestamp": "2025-08-07T13:29:04.434937"
+  },
+  {
+    "name": "Abtestingimpactia",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\abtestingimpactia.py",
+    "hash": "6f4165136b517f9a18e503690cce63005e2ea590e8ab7a167ab0a17160ae5495",
+    "timestamp": "2025-08-07T13:29:04.454643"
+  },
+  {
+    "name": "Socialpostgeneratoria",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\socialpostgeneratoria.py",
+    "hash": "48cef6f5ff99dc344af64bd5a22b1e56c6184924a1a65abc2e151554e62b0072",
+    "timestamp": "2025-08-07T13:29:04.472321"
+  },
+  {
+    "name": "Videoreelautogenia",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\videoreelautogenia.py",
+    "hash": "75a0b7a7695b17ed51762db6893fd79797c37ba4f49ec0cda55d0c0b13e33bcf",
+    "timestamp": "2025-08-07T13:29:04.489436"
+  },
+  {
+    "name": "Influencermatchia",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\influencermatchia.py",
+    "hash": "1b8213743ed01bd11eb89cf11aa0b7084983b6700239f958dead564a1ba38586",
+    "timestamp": "2025-08-07T13:29:04.506071"
+  },
+  {
+    "name": "Contentviralityia",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\contentviralityia.py",
+    "hash": "9463bca40e13373c520a5ae69c5cfd4a44737c16735fe67869da6fce0289e1e4",
+    "timestamp": "2025-08-07T13:29:04.513753"
+  },
+  {
+    "name": "Brandsentimentia",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\brandsentimentia.py",
+    "hash": "f1f9079de09ad1aa5d10952215b2561e188b49b6cab077186b07df32c2e6e33f",
+    "timestamp": "2025-08-07T13:29:04.526730"
+  },
+  {
+    "name": "Competitorintelligenceia",
+    "ecosystem": "marketing",
+    "path": "agents\\marketing\\competitorintelligenceia.py",
+    "hash": "88bccb730ade747914be33ce84bf0a8e1267934f1264a99676e1fcd6051f4755",
+    "timestamp": "2025-08-07T13:29:04.532731"
+  },
+  {
+    "name": "Dgiiautoreporter",
+    "ecosystem": "contabilidad",
+    "path": "agents\\contabilidad\\dgiiautoreporter.py",
+    "hash": "8c77f3cf5ad02fc77c3bb17896d2b51718575e73530fdfc2054898cb210e8d89",
+    "timestamp": "2025-08-07T13:29:04.538730"
+  },
+  {
+    "name": "Facturacionelectronica",
+    "ecosystem": "contabilidad",
+    "path": "agents\\contabilidad\\facturacionelectronica.py",
+    "hash": "ee63d42a2d8613b53ce5ed96d59dd2fec531e906f1309887fa202ef557dec11c",
+    "timestamp": "2025-08-07T13:29:04.545486"
+  },
+  {
+    "name": "Conciliacionbancaria",
+    "ecosystem": "contabilidad",
+    "path": "agents\\contabilidad\\conciliacionbancaria.py",
+    "hash": "275fc10b86ff82c52d5dd94f5c08c94b55db2fddad1228c10d82b537632c854a",
+    "timestamp": "2025-08-07T13:29:04.551485"
+  },
+  {
+    "name": "Controlgastos",
+    "ecosystem": "contabilidad",
+    "path": "agents\\contabilidad\\controlgastos.py",
+    "hash": "01d9aaea3aaea8f597eba43c0c8a51f77ebf5d1646c4cfeb6976f342f71f8d03",
+    "timestamp": "2025-08-07T13:29:04.569201"
+  },
+  {
+    "name": "Previsionfiscal",
+    "ecosystem": "contabilidad",
+    "path": "agents\\contabilidad\\previsionfiscal.py",
+    "hash": "8da0ca077747c3e28b821e2570a972aa73860ffaa322209c06cc510ea768f713",
+    "timestamp": "2025-08-07T13:29:04.587435"
+  },
+  {
+    "name": "Auditoriainterna",
+    "ecosystem": "contabilidad",
+    "path": "agents\\contabilidad\\auditoriainterna.py",
+    "hash": "010cd7cb99e8d59eca78010005c690e6ad5b628eefd49a94cb953568883524ce",
+    "timestamp": "2025-08-07T13:29:04.593203"
+  },
+  {
+    "name": "Flujocajaia",
+    "ecosystem": "contabilidad",
+    "path": "agents\\contabilidad\\flujocajaia.py",
+    "hash": "163ea9a78a862676c927678d1fe391432dca2425c5f1c9c4cb2b8f7dff559173",
+    "timestamp": "2025-08-07T13:29:04.611020"
+  },
+  {
+    "name": "Activosfijos",
+    "ecosystem": "contabilidad",
+    "path": "agents\\contabilidad\\activosfijos.py",
+    "hash": "acaf6ff2ae342f10ae50a1a09d7e4f21243fcc08bb3cf8abc24fb83c2caac80a",
+    "timestamp": "2025-08-07T13:29:04.624014"
+  },
+  {
+    "name": "Cierrecontable",
+    "ecosystem": "contabilidad",
+    "path": "agents\\contabilidad\\cierrecontable.py",
+    "hash": "6cf2c6f27bd88e1d8bf8733a5d96dc314e2812bff83e6477aad4fd0545942851",
+    "timestamp": "2025-08-07T13:29:04.630770"
+  },
+  {
+    "name": "Reportingfinanciero",
+    "ecosystem": "contabilidad",
+    "path": "agents\\contabilidad\\reportingfinanciero.py",
+    "hash": "43463e953364517db312af22cfc1faeed4940b57e1ce584b350764f419694caf",
+    "timestamp": "2025-08-07T13:29:04.636766"
+  },
+  {
+    "name": "Presupuestomaestro",
+    "ecosystem": "presupuesto",
+    "path": "agents\\presupuesto\\presupuestomaestro.py",
+    "hash": "782ab07a08100676b572fa77ef38e7a2924237a853260a0567e32e1865a96b3b",
+    "timestamp": "2025-08-07T13:29:04.644642"
+  },
+  {
+    "name": "Varianzaanalisis",
+    "ecosystem": "presupuesto",
+    "path": "agents\\presupuesto\\varianzaanalisis.py",
+    "hash": "9c282b9b42168a0c12576e926671abbe3df5d669fd6f9cbb3e2d9b875c4f72e7",
+    "timestamp": "2025-08-07T13:29:04.651642"
+  },
+  {
+    "name": "Forecastingia",
+    "ecosystem": "presupuesto",
+    "path": "agents\\presupuesto\\forecastingia.py",
+    "hash": "b099fb68aff3761a97765533edf6733d3d7afbd3742d4c00c2687389476bcfff",
+    "timestamp": "2025-08-07T13:29:04.658946"
+  },
+  {
+    "name": "Costocentros",
+    "ecosystem": "presupuesto",
+    "path": "agents\\presupuesto\\costocentros.py",
+    "hash": "accb2ce72063e4bdcf6b391e240d11472d71e931fa9a6cc2b2ba2c79bd6fa38d",
+    "timestamp": "2025-08-07T13:29:04.664941"
+  },
+  {
+    "name": "Roipredictor",
+    "ecosystem": "presupuesto",
+    "path": "agents\\presupuesto\\roipredictor.py",
+    "hash": "100573e6b796872f5b2dcded637b94d95428ef50037548c24c70d3e01dcdda98",
+    "timestamp": "2025-08-07T13:29:04.670942"
+  },
+  {
+    "name": "Budgetoptimizer",
+    "ecosystem": "presupuesto",
+    "path": "agents\\presupuesto\\budgetoptimizer.py",
+    "hash": "c77cddf2b8a0c86ef4cc650acb12d217b3275e3c3ff554c2578be11351a45474",
+    "timestamp": "2025-08-07T13:29:04.679747"
+  },
+  {
+    "name": "Cvanalyzeria",
+    "ecosystem": "rrhh",
+    "path": "agents\\rrhh\\cvanalyzeria.py",
+    "hash": "f010f0db320491da53bf6d5e086e09933ab3737e1a0ab6dc4cfa1325fea3678a",
+    "timestamp": "2025-08-07T13:29:04.686750"
+  },
+  {
+    "name": "Nominaautomatica",
+    "ecosystem": "rrhh",
+    "path": "agents\\rrhh\\nominaautomatica.py",
+    "hash": "b5998a71de783919687f759666f511f52469cbb08903d474035c1655b9f21a03",
+    "timestamp": "2025-08-07T13:29:04.693378"
+  },
+  {
+    "name": "Talentopredictor",
+    "ecosystem": "rrhh",
+    "path": "agents\\rrhh\\talentopredictor.py",
+    "hash": "153b8e7d537ef24d240347e74a29a9c582358074e51c083cccc8efface94fda9",
+    "timestamp": "2025-08-07T13:29:04.699374"
+  },
+  {
+    "name": "Performancetracker",
+    "ecosystem": "rrhh",
+    "path": "agents\\rrhh\\performancetracker.py",
+    "hash": "1d8d37e37091ef346881678812bb26c7aad3c0183bda61dc044ae53420836625",
+    "timestamp": "2025-08-07T13:29:04.706377"
+  },
+  {
+    "name": "Capacitacionia",
+    "ecosystem": "rrhh",
+    "path": "agents\\rrhh\\capacitacionia.py",
+    "hash": "1041975bea25ce3e6234b8b64d3c9d4bd8c7a3d56cf1baa58779d4e813323eec",
+    "timestamp": "2025-08-07T13:29:04.712084"
+  },
+  {
+    "name": "Leadscoringia",
+    "ecosystem": "ventascrm",
+    "path": "agents\\ventascrm\\leadscoringia.py",
+    "hash": "c28289d44e3cba851452f941f5e1271c216075b8d488c6b9515f0c582e6aedb9",
+    "timestamp": "2025-08-07T13:29:04.730752"
+  },
+  {
+    "name": "Pipelineoptimizer",
+    "ecosystem": "ventascrm",
+    "path": "agents\\ventascrm\\pipelineoptimizer.py",
+    "hash": "742b9ed6fb0c63cc5dd85166d175c04068da0958d33a7b84321d8354e2ac3d85",
+    "timestamp": "2025-08-07T13:29:04.736750"
+  },
+  {
+    "name": "Churnpredictor",
+    "ecosystem": "ventascrm",
+    "path": "agents\\ventascrm\\churnpredictor.py",
+    "hash": "9a31ac73b3ff452a2d370126387c3f6343060e40be0b121943261084522f934a",
+    "timestamp": "2025-08-07T13:29:04.743463"
+  },
+  {
+    "name": "Upsellengine",
+    "ecosystem": "ventascrm",
+    "path": "agents\\ventascrm\\upsellengine.py",
+    "hash": "29c394104fb7352fbd528ba60e070d88592094d131f411d4c899d34be67d567f",
+    "timestamp": "2025-08-07T13:29:04.749464"
+  },
+  {
+    "name": "Optimizadorrutasia",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\optimizadorrutasia.py",
+    "hash": "862f07b6ba9357e156983cbd9227f9ddf5b22fc734e09e8d2f45f187b6b9e3e7",
+    "timestamp": "2025-08-07T13:29:04.756461"
+  },
+  {
+    "name": "Previsioninventarioia",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\previsioninventarioia.py",
+    "hash": "3a55bfc421645a2c28e445be27264cea475bbb6576c95558a319a6c342562907",
+    "timestamp": "2025-08-07T13:29:04.774400"
+  },
+  {
+    "name": "Controlpedidosia",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\controlpedidosia.py",
+    "hash": "d8760c89dc0515432704d607b6f2ffe03a3478d7055c9f69040e929286d171d8",
+    "timestamp": "2025-08-07T13:29:04.791069"
+  },
+  {
+    "name": "Evaluadorproveedoresia",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\evaluadorproveedoresia.py",
+    "hash": "296b9398e0fa4ee90daebbe1ca9c627b1fa534223b7d5b21994cf696f1ca798e",
+    "timestamp": "2025-08-07T13:29:04.811735"
+  },
+  {
+    "name": "Alertasinventario",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\alertasinventario.py",
+    "hash": "c5a969bdffc4262e6a9442710e8e67905ecf652fee47b95dbf3133323fd3812a",
+    "timestamp": "2025-08-07T13:29:04.830379"
+  },
+  {
+    "name": "Logisticareversa",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\logisticareversa.py",
+    "hash": "b57c5d4d87ca09a2ded7924ddfb9e4fe2e8716daafb97857f6184cc92a58e91c",
+    "timestamp": "2025-08-07T13:29:04.837381"
+  },
+  {
+    "name": "Controlcalidad",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\controlcalidad.py",
+    "hash": "2def6704aa025b92ab64a230a4ca0e871ea55856ee9d105580d7ee4741040703",
+    "timestamp": "2025-08-07T13:29:04.846670"
+  },
+  {
+    "name": "Trazabilidadia",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\trazabilidadia.py",
+    "hash": "7bc0414c5a51e272e2c7412e48404396fdac66e4325f4093ac84ee337a141fd7",
+    "timestamp": "2025-08-07T13:29:04.853670"
+  },
+  {
+    "name": "Predicciondemanda",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\predicciondemanda.py",
+    "hash": "619f39d8009ef3037570a3cd3d14cc6d090601494a676314fba4de575e18de1b",
+    "timestamp": "2025-08-07T13:29:04.860335"
+  },
+  {
+    "name": "Optimizacionalmacen",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\optimizacionalmacen.py",
+    "hash": "5799f9628f68fbfbb525355e1469e10e1dce089d052eca1b84bc824fb632eaf7",
+    "timestamp": "2025-08-07T13:29:04.867330"
+  },
+  {
+    "name": "Transportepredictivo",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\transportepredictivo.py",
+    "hash": "c75c5d5b0a8d2ae454eb322cdb95e2c98b06db213bf7943036a2435927928258",
+    "timestamp": "2025-08-07T13:29:04.873435"
+  },
+  {
+    "name": "Costoslogisticos",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\costoslogisticos.py",
+    "hash": "75f599b05f5b3251ac692370ebe8a6c6ebe583ace26618fe149ee5b02f9c7e7c",
+    "timestamp": "2025-08-07T13:29:04.881014"
+  },
+  {
+    "name": "Seguridadcarga",
+    "ecosystem": "logistica",
+    "path": "agents\\logistica\\seguridadcarga.py",
+    "hash": "8c494a777edfdc0773b48f9c33e98a22143b64dd69d2804896e1151f86334dc1",
+    "timestamp": "2025-08-07T13:29:04.887013"
+  },
+  {
+    "name": "Patentesanalyzer",
+    "ecosystem": "investigacion",
+    "path": "agents\\investigacion\\patentesanalyzer.py",
+    "hash": "b8bd4f7a339288c318bdb68aa5758bc47474a64c597d87cdda085e0f2662034e",
+    "timestamp": "2025-08-07T13:29:04.895818"
+  },
+  {
+    "name": "Tendenciasia",
+    "ecosystem": "investigacion",
+    "path": "agents\\investigacion\\tendenciasia.py",
+    "hash": "3c8b20ed0d9f8fe79e12c839a571cb414ee82b3ccf17782d6674695ce41b0db8",
+    "timestamp": "2025-08-07T13:29:04.902813"
+  },
+  {
+    "name": "Prototipogenerator",
+    "ecosystem": "investigacion",
+    "path": "agents\\investigacion\\prototipogenerator.py",
+    "hash": "fb656eccc180ba1ca492a21e1b97b743d833adf1d118a52fafd38fc0a5f36193",
+    "timestamp": "2025-08-07T13:29:04.910475"
+  },
+  {
+    "name": "Innovaciontracker",
+    "ecosystem": "investigacion",
+    "path": "agents\\investigacion\\innovaciontracker.py",
+    "hash": "40ec4d704b4f9190d4f12d9682dcc2c2c730b1a4c8d81364ff4b0fb8b1dcec17",
+    "timestamp": "2025-08-07T13:29:04.916476"
+  },
+  {
+    "name": "Curriculumadaptativo",
+    "ecosystem": "educacion",
+    "path": "agents\\educacion\\curriculumadaptativo.py",
+    "hash": "0a49c45b8fbfb937582bc59360a8f78fbfa9a6d2d1c856ab73fc33ffe5cea109",
+    "timestamp": "2025-08-07T13:29:04.924608"
+  },
+  {
+    "name": "Evaluacionia",
+    "ecosystem": "educacion",
+    "path": "agents\\educacion\\evaluacionia.py",
+    "hash": "a222ea8f83603cab572554b44407c8d00c39b3502665cf848417481c9f46a481",
+    "timestamp": "2025-08-07T13:29:04.931610"
+  },
+  {
+    "name": "Contenidopersonalizado",
+    "ecosystem": "educacion",
+    "path": "agents\\educacion\\contenidopersonalizado.py",
+    "hash": "1b8b269435d38ef054160165308462d5c66ae6d638a8197b4121b9ea6f20b6a5",
+    "timestamp": "2025-08-07T13:29:04.937613"
+  },
+  {
+    "name": "Progresionestudiante",
+    "ecosystem": "educacion",
+    "path": "agents\\educacion\\progresionestudiante.py",
+    "hash": "e377e0586856dc7056d54110d36fa1331da021d2fff4449459be4583e9e5f86c",
+    "timestamp": "2025-08-07T13:29:04.945313"
+  },
+  {
+    "name": "Kycautomatico",
+    "ecosystem": "regtech",
+    "path": "agents\\regtech\\kycautomatico.py",
+    "hash": "11f05f4cf0f306b744278ae4f52b766c802352098dc0e876cb23554fef7e926e",
+    "timestamp": "2025-08-07T13:29:04.953317"
+  },
+  {
+    "name": "Amldetector",
+    "ecosystem": "regtech",
+    "path": "agents\\regtech\\amldetector.py",
+    "hash": "d638b0d97adc11a27e9178a1ddab650bfa9940d9732b76429446c4ab09127e01",
+    "timestamp": "2025-08-07T13:29:04.972964"
+  },
+  {
+    "name": "Sancioneschecker",
+    "ecosystem": "regtech",
+    "path": "agents\\regtech\\sancioneschecker.py",
+    "hash": "538dcd0b9eaa4e2b661e13f2df0ec8214c175649790d4d6816725fd6790d541a",
+    "timestamp": "2025-08-07T13:29:04.979606"
+  },
+  {
+    "name": "Reportingregulatorio",
+    "ecosystem": "regtech",
+    "path": "agents\\regtech\\reportingregulatorio.py",
+    "hash": "6f36bcd0ebb3c409deee0079ad797574131e1d8ca44f9a67b9386f00d139ba8c",
+    "timestamp": "2025-08-07T13:29:04.986608"
+  }
+]

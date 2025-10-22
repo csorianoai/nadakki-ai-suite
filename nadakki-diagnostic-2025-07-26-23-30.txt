@@ -1,0 +1,88 @@
+﻿=== DIAGNÓSTICO COMPLETO NADAKKI AI SUITE ===
+Fecha: 2025-07-26 23:30:04
+
+ENDPOINTS FUNCIONANDO: 7/42 (16.7%)
+
+URLS LAMBDA ENCONTRADAS:
+
+
+RENDER.COM STATUS:
+https://nadakki-ai-suite.onrender.com: ❌ ERROR
+https://nadakki.onrender.com: ❌ ERROR
+https://credicefi.onrender.com: ❌ ERROR
+https://ai-suite.onrender.com: ❌ ERROR
+
+
+INTEGRACIONES DETECTADAS:
+JWT en TENANT_TOKENS.json
+OAuth en utils.py
+OAuth en docs.py
+APIs en docs.py
+OAuth en models.py
+JWT en models.py
+JWT en api_key.py
+APIs en http.py
+JWT en http.py
+OAuth en oauth2.py
+OAuth en oauth2.py
+OAuth en oauth2.py
+APIs en oauth2.py
+JWT en oauth2.py
+OAuth en __init__.py
+JWT en __init__.py
+OAuth en applications.py
+APIs en applications.py
+APIs en background.py
+APIs en datastructures.py
+APIs en encoders.py
+APIs en exceptions.py
+OAuth en param_functions.py
+APIs en param_functions.py
+APIs en responses.py
+APIs en routing.py
+APIs en utils.py
+OAuth en models.py
+OAuth en request.py
+OAuth en utils.py
+OAuth en docs.py
+APIs en docs.py
+OAuth en models.py
+JWT en models.py
+JWT en api_key.py
+APIs en http.py
+JWT en http.py
+OAuth en oauth2.py
+OAuth en oauth2.py
+OAuth en oauth2.py
+APIs en oauth2.py
+JWT en oauth2.py
+OAuth en __init__.py
+JWT en __init__.py
+OAuth en applications.py
+APIs en applications.py
+APIs en background.py
+APIs en datastructures.py
+APIs en encoders.py
+APIs en exceptions.py
+OAuth en param_functions.py
+APIs en param_functions.py
+APIs en responses.py
+APIs en routing.py
+APIs en utils.py
+OAuth en core.py
+WordPress en utils.py
+OAuth en frame.py
+OAuth en gbq.py
+OAuth en models.py
+OAuth en request.py
+WordPress en test_stats.py
+WordPress en _continuous_distns.py
+WordPress en _ransac.py
+JWT en auth.py
+WordPress en credicefi_api.py
+
+
+RECOMENDACIÓN:
+ACTIVAR INFRAESTRUCTURA PRIMARIA
+
+=== FIN DIAGNÓSTICO ===

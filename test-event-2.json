@@ -1,0 +1,19 @@
+﻿{
+    "headers":  {
+                    "Accept":  "application/json",
+                    "Content-Type":  "application/json"
+                },
+    "requestContext":  {
+                           "apiId":  "v5mi0idfy0",
+                           "path":  "/api/v1/health",
+                           "requestId":  "debug-test-2",
+                           "stage":  "prod",
+                           "httpMethod":  "GET"
+                       },
+    "queryStringParameters":  null,
+    "pathParameters":  null,
+    "body":  null,
+    "path":  "/api/v1/health",
+    "isBase64Encoded":  false,
+    "httpMethod":  "GET"
+}

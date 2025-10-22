@@ -1,0 +1,541 @@
+﻿{
+  "nadakki_agent_templates": {
+    "version": "2.0",
+    "generated_date": "2025-08-04",
+    "description": "Templates JSON para creaciÃ³n form-based de agentes Nadakki AI Suite",
+    
+    "form_schemas": {
+      "agent_creation_form": {
+        "title": "Crear Nuevo Agente IA",
+        "description": "Formulario para generar automÃ¡ticamente agentes especializados",
+        "sections": [
+          {
+            "section_name": "basic_info",
+            "title": "InformaciÃ³n BÃ¡sica",
+            "fields": [
+              {
+                "field_name": "agent_name",
+                "label": "Nombre del Agente",
+                "type": "text",
+                "required": true,
+                "placeholder": "Ej: SentinelBot, RiskOracle",
+                "validation": {
+                  "pattern": "^[A-Za-z][A-Za-z0-9]*$",
+                  "message": "Solo letras y nÃºmeros, debe comenzar con letra"
+                }
+              },
+              {
+                "field_name": "class_name",
+                "label": "Nombre de la Clase",
+                "type": "text",
+                "required": true,
+                "placeholder": "Ej: SentinelBotAnalyzer",
+                "auto_generate": "from agent_name + 'Engine/Analyzer/Manager'"
+              },
+              {
+                "field_name": "description",
+                "label": "DescripciÃ³n del Agente",
+                "type": "textarea",
+                "required": true,
+                "placeholder": "Describe la funcionalidad principal del agente...",
+                "maxlength": 500
+              },
+              {
+                "field_name": "module",
+                "label": "MÃ³dulo/Ecosistema",
+                "type": "select",
+                "required": true,
+                "options": [
+                  {"value": "originacion", "label": "ðŸ” OriginaciÃ³n Inteligente"},
+                  {"value": "decision", "label": "ðŸ§  DecisiÃ³n CuÃ¡ntica"},
+                  {"value": "vigilancia", "label": "ðŸ‘ï¸ Vigilancia Continua"},
+                  {"value": "recuperacion", "label": "ðŸ’° RecuperaciÃ³n MÃ¡xima"},
+                  {"value": "compliance", "label": "ðŸ›¡ï¸ Compliance Supremo"},
+                  {"value": "operacional", "label": "âš™ï¸ Excelencia Operacional"},
+                  {"value": "experiencia", "label": "ðŸŽ­ Experiencia Suprema"},
+                  {"value": "inteligencia", "label": "ðŸ’Ž Inteligencia Financiera"},
+                  {"value": "fortaleza", "label": "ðŸ” Fortaleza Digital"},
+                  {"value": "legal", "label": "âš–ï¸ Legal Intelligence PhD"},
+                  {"value": "marketing", "label": "ðŸŽ¯ Marketing IA Generativo"},
+                  {"value": "contabilidad", "label": "ðŸ“Š Contabilidad Inteligente"},
+                  {"value": "presupuesto", "label": "ðŸ’¹ Presupuesto Predictivo"},
+                  {"value": "rrhh", "label": "ðŸ‘¥ Recursos Humanos IA"},
+                  {"value": "ventascrm", "label": "ðŸ¤ Ventas & CRM CuÃ¡ntico"},
+                  {"value": "logistica", "label": "ðŸšš LogÃ­stica Inteligente"},
+                  {"value": "investigacion", "label": "ðŸ”¬ InvestigaciÃ³n I+D"},
+                  {"value": "educacion", "label": "ðŸŽ“ EducaciÃ³n IA Adaptativa"},
+                  {"value": "regtech", "label": "ðŸ” RegTech Compliance"}
+                ]
+              }
+            ]
+          },
+          {
+            "section_name": "technical_specs",
+            "title": "Especificaciones TÃ©cnicas",
+            "fields": [
+              {
+                "field_name": "algorithms",
+                "label": "Algoritmos IA",
+                "type": "multiselect",
+                "required": true,
+                "options": [
+                  {"value": "cosine_similarity", "label": "Similitud Coseno", "category": "similarity"},
+                  {"value": "euclidean_distance", "label": "Distancia Euclidiana", "category": "similarity"},
+                  {"value": "jaccard_index", "label": "Ãndice Jaccard", "category": "similarity"},
+                  {"value": "random_forest", "label": "Random Forest", "category": "ml"},
+                  {"value": "neural_network", "label": "Red Neuronal", "category": "ml"},
+                  {"value": "lstm", "label": "LSTM", "category": "ml"},
+                  {"value": "svm", "label": "Support Vector Machine", "category": "ml"},
+                  {"value": "clustering", "label": "Clustering", "category": "ml"},
+                  {"value": "regression_analysis", "label": "AnÃ¡lisis de RegresiÃ³n", "category": "statistics"},
+                  {"value": "time_series", "label": "Series Temporales", "category": "statistics"},
+                  {"value": "monte_carlo", "label": "Monte Carlo", "category": "simulation"},
+                  {"value": "genetic_algorithm", "label": "Algoritmo GenÃ©tico", "category": "optimization"},
+                  {"value": "rule_engine", "label": "Motor de Reglas", "category": "logic"},
+                  {"value": "nlp", "label": "Procesamiento Lenguaje Natural", "category": "nlp"},
+                  {"value": "computer_vision", "label": "VisiÃ³n por Computadora", "category": "vision"},
+                  {"value": "ensemble_learning", "label": "Aprendizaje Conjunto", "category": "ml"}
+                ],
+                "min_selections": 1,
+                "max_selections": 5
+              },
+              {
+                "field_name": "features",
+                "label": "Features/Capacidades",
+                "type": "tag_input",
+                "required": true,
+                "placeholder": "Ej: risk_prediction, anomaly_detection, profile_scoring",
+                "suggestions": [
+                  "risk_prediction", "anomaly_detection", "profile_scoring", 
+                  "fraud_detection", "compliance_monitoring", "automated_approval",
+                  "predictive_analysis", "real_time_monitoring", "optimization",
+                  "personalization", "recommendation_engine", "automated_reporting"
+                ]
+              },
+              {
+                "field_name": "performance_target",
+                "label": "Target de Performance (%)",
+                "type": "number",
+                "required": true,
+                "min": 70,
+                "max": 99.9,
+                "step": 0.1,
+                "default": 95.0,
+                "suffix": "%"
+              },
+              {
+                "field_name": "agent_type",
+                "label": "Tipo de Agente",
+                "type": "radio",
+                "required": true,
+                "options": [
+                  {
+                    "value": "credit_analysis",
+                    "label": "AnÃ¡lisis Crediticio",
+                    "description": "Para evaluaciÃ³n de riesgo crediticio y scoring"
+                  },
+                  {
+                    "value": "compliance_monitoring", 
+                    "label": "Monitoreo de Cumplimiento",
+                    "description": "Para cumplimiento regulatorio y compliance"
+                  },
+                  {
+                    "value": "optimization_engine",
+                    "label": "Motor de OptimizaciÃ³n", 
+                    "description": "Para optimizaciÃ³n de procesos y operaciones"
+                  },
+                  {
+                    "value": "predictive_analysis",
+                    "label": "AnÃ¡lisis Predictivo",
+                    "description": "Para predicciones y forecasting"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "section_name": "business_config",
+            "title": "ConfiguraciÃ³n de Negocio",
+            "fields": [
+              {
+                "field_name": "target_institutions",
+                "label": "Instituciones Objetivo",
+                "type": "multiselect",
+                "options": [
+                  {"value": "banreservas", "label": "Banco de Reservas"},
+                  {"value": "banco_popular", "label": "Banco Popular"},
+                  {"value": "scotiabank", "label": "Scotiabank"},
+                  {"value": "banco_bhd", "label": "Banco BHD LeÃ³n"},
+                  {"value": "cofaci", "label": "COFACI"},
+                  {"value": "all_institutions", "label": "Todas las Instituciones"}
+                ]
+              },
+              {
+                "field_name": "risk_thresholds",
+                "label": "Umbrales de Riesgo",
+                "type": "object",
+                "fields": [
+                  {
+                    "field_name": "high_risk",
+                    "label": "Alto Riesgo",
+                    "type": "number",
+                    "min": 0.5,
+                    "max": 1.0,
+                    "step": 0.01,
+                    "default": 0.8
+                  },
+                  {
+                    "field_name": "medium_risk",
+                    "label": "Riesgo Medio",
+                    "type": "number", 
+                    "min": 0.2,
+                    "max": 0.8,
+                    "step": 0.01,
+                    "default": 0.5
+                  }
+                ]
+              },
+              {
+                "field_name": "integration_apis",
+                "label": "APIs de IntegraciÃ³n",
+                "type": "multiselect",
+                "options": [
+                  {"value": "core_bancario", "label": "Core Bancario"},
+                  {"value": "datacredito", "label": "DataCrÃ©dito"},
+                  {"value": "tss_rd", "label": "TSS RepÃºblica Dominicana"},
+                  {"value": "dgii", "label": "DGII"},
+                  {"value": "power_bi", "label": "Power BI"},
+                  {"value": "email_service", "label": "Servicio de Email"},
+                  {"value": "sms_service", "label": "Servicio SMS"},
+                  {"value": "whatsapp_api", "label": "WhatsApp Business API"}
+                ]
+              }
+            ]
+          },
+          {
+            "section_name": "advanced_options",
+            "title": "Opciones Avanzadas",
+            "collapsible": true, 
+            "fields": [
+              {
+                "field_name": "custom_methods",
+                "label": "MÃ©todos Personalizados",
+                "type": "code_editor",
+                "language": "python",
+                "placeholder": "def custom_analysis(self, data):\n    # Tu cÃ³digo personalizado aquÃ­\n    return result"
+              },
+              {
+                "field_name": "dependencies",
+                "label": "Dependencias Adicionales",
+                "type": "tag_input",
+                "placeholder": "pandas, numpy, scikit-learn"
+              },
+              {
+                "field_name": "enable_caching",
+                "label": "Habilitar Cache",
+                "type": "checkbox",
+                "default": true
+              },
+              {
+                "field_name": "enable_logging",
+                "label": "Habilitar Logging Detallado",
+                "type": "checkbox", 
+                "default": true
+              },
+              {
+                "field_name": "circuit_breaker",
+                "label": "Circuit Breaker",
+                "type": "checkbox",
+                "default": true,
+                "description": "ProtecciÃ³n contra fallos en cascada"
+              }
+            ]
+          }
+        ],
+        "submit_button": {
+          "text": "ðŸš€ Generar Agente",
+          "loading_text": "Generando cÃ³digo...",
+          "success_message": "Â¡Agente generado exitosamente!"
+        }
+      }
+    },
+
+    "ui_components": {
+      "agent_preview_card": {
+        "template": {
+          "title": "{{agent_name}}",
+          "subtitle": "{{module}} â€¢ {{agent_type}}",
+          "description": "{{description}}",
+          "metrics": {
+            "performance": "{{performance_target}}%",
+            "algorithms": "{{algorithms.length}} algoritmos",
+            "features": "{{features.length}} features"
+          },
+          "color": "{{module_color}}",
+          "icon": "{{module_icon}}"
+        }
+      },
+      
+      "generation_progress": {
+        "steps": [
+          {"id": "validate", "label": "Validando formulario", "icon": "âœ“"},
+          {"id": "generate_code", "label": "Generando cÃ³digo Python", "icon": "ðŸ"},
+          {"id": "create_tests", "label": "Creando tests unitarios", "icon": "ðŸ§ª"},
+          {"id": "setup_config", "label": "Configurando tenant", "icon": "âš™ï¸"},
+          {"id": "integrate", "label": "Integrando con sistema", "icon": "ðŸ”—"},
+          {"id": "complete", "label": "Â¡Agente listo!", "icon": "ðŸŽ‰"}
+        ]
+      },
+
+      "algorithm_selector": {
+        "categories": {
+          "similarity": {
+            "label": "Algoritmos de Similitud",
+            "color": "#00d4ff",
+            "icon": "ðŸ”",
+            "algorithms": ["cosine_similarity", "euclidean_distance", "jaccard_index"]
+          },
+          "ml": {
+            "label": "Machine Learning",
+            "color": "#00ff88", 
+            "icon": "ðŸ¤–",
+            "algorithms": ["random_forest", "neural_network", "lstm", "svm", "clustering"]
+          },
+          "statistics": {
+            "label": "AnÃ¡lisis EstadÃ­stico",
+            "color": "#ff6b9d",
+            "icon": "ðŸ“Š", 
+            "algorithms": ["regression_analysis", "time_series", "correlation_analysis"]
+          },
+          "optimization": {
+            "label": "OptimizaciÃ³n",
+            "color": "#ff9f43",
+            "icon": "âš¡",
+            "algorithms": ["genetic_algorithm", "simulated_annealing", "particle_swarm"]
+          },
+          "logic": {
+            "label": "LÃ³gica y Reglas",
+            "color": "#a55eea",
+            "icon": "ðŸ§ ",
+            "algorithms": ["rule_engine", "decision_trees", "fuzzy_logic"]
+          },
+          "nlp": {
+            "label": "Procesamiento de Lenguaje",
+            "color": "#26de81",
+            "icon": "ðŸ’¬",
+            "algorithms": ["nlp", "sentiment_analysis", "text_classification"]
+          }
+        }
+      }
+    },
+
+    "validation_rules": {
+      "agent_name": {
+        "required": true,
+        "pattern": "^[A-Za-z][A-Za-z0-9]*$",
+        "min_length": 3,
+        "max_length": 50,
+        "reserved_words": ["Agent", "Engine", "Bot", "System", "Manager", "Controller"]
+      },
+      "class_name": {
+        "required": true,  
+        "pattern": "^[A-Z][A-Za-z0-9]*$",
+        "must_end_with": ["Engine", "Analyzer", "Manager", "Controller", "Optimizer", "Predictor"]
+      },
+      "algorithms": {
+        "min_selections": 1,
+        "max_selections": 5,
+        "recommended_combinations": {
+          "credit_analysis": ["cosine_similarity", "random_forest", "neural_network"],
+          "compliance_monitoring": ["rule_engine", "anomaly_detection", "pattern_matching"],
+          "optimization_engine": ["genetic_algorithm", "regression_analysis", "clustering"],
+          "predictive_analysis": ["lstm", "time_series", "neural_network"]
+        }
+      },
+      "performance_target": {
+        "min": 70.0,
+        "max": 99.9,
+        "recommended_ranges": {
+          "credit_analysis": {"min": 90, "max": 99},
+          "compliance_monitoring": {"min": 95, "max": 99.9},
+          "optimization_engine": {"min": 85, "max": 95},
+          "predictive_analysis": {"min": 80, "max": 95}
+        }
+      }
+    },
+
+    "code_generation_templates": {
+      "base_structure": {
+        "imports": [
+          "import logging", 
+          "import json",
+          "from datetime import datetime, timedelta",
+          "import random",
+          "import numpy as np",
+          "from typing import Dict, List, Any, Optional"
+        ],
+        "class_template": "class {{class_name}}:\n    def __init__(self, tenant_config):\n        # ConfiguraciÃ³n del agente\n        pass",
+        "logger_setup": "logger = logging.getLogger(__name__)",
+        "test_function": "def test_{{agent_name_lower}}():\n    # Test bÃ¡sico del agente\n    pass"
+      },
+      
+      "method_templates": {
+        "credit_analysis": {
+          "main_method": "analyze_credit_profile",
+          "helper_methods": ["_preprocess_data", "_extract_features", "_ensemble_scoring", "_determine_risk_level"]
+        },
+        "compliance_monitoring": {
+          "main_method": "monitor_compliance", 
+          "helper_methods": ["_validate_transaction", "_check_compliance_rules", "_assess_regulatory_risk", "_generate_alerts"]
+        },
+        "optimization_engine": {
+          "main_method": "optimize_operation",
+          "helper_methods": ["_analyze_current_state", "_run_optimization", "_generate_recommendations", "_calculate_metrics"]
+        },
+        "predictive_analysis": {
+          "main_method": "predict_outcome",
+          "helper_methods": ["_prepare_data", "_engineer_features", "_get_model", "_make_predictions", "_calculate_confidence"]
+        }
+      }
+    },
+
+    "file_structure_templates": {
+      "agent_file": {
+        "filename": "{{agent_name_lower}}.py",
+        "path": "agents/{{module}}/{{filename}}",
+        "template": "agent_code_template"
+      },
+      "test_file": {
+        "filename": "test_{{agent_name_lower}}.py", 
+        "path": "tests/agents/{{module}}/{{filename}}",
+        "template": "test_code_template"
+      },
+      "config_file": {
+        "filename": "{{agent_name_lower}}_config.json",
+        "path": "config/agents/{{module}}/{{filename}}",
+        "template": "agent_config_template"
+      }
+    },
+
+    "module_mappings": {
+      "originacion": {
+        "icon": "ðŸ”",
+        "color": "linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)",
+        "recommended_type": "credit_analysis"
+      },
+      "decision": {
+        "icon": "ðŸ§ ", 
+        "color": "linear-gradient(135deg, #00ff88 0%, #00cc6a 100%)",
+        "recommended_type": "credit_analysis"
+      },
+      "vigilancia": {
+        "icon": "ðŸ‘ï¸",
+        "color": "linear-gradient(135deg, #ff6b9d 0%, #ff4757 100%)",
+        "recommended_type": "predictive_analysis"
+      },
+      "recuperacion": {
+        "icon": "ðŸ’°",
+        "color": "linear-gradient(135deg, #ff9f43 0%, #ff6348 100%)",
+        "recommended_type": "optimization_engine"
+      },
+      "compliance": {
+        "icon": "ðŸ›¡ï¸",
+        "color": "linear-gradient(135deg, #a55eea 0%, #8b4cf7 100%)",
+        "recommended_type": "compliance_monitoring"
+      },
+      "operacional": {
+        "icon": "âš™ï¸",
+        "color": "linear-gradient(135deg, #26de81 0%, #20bf6b 100%)",
+        "recommended_type": "optimization_engine"
+      },
+      "experiencia": {
+        "icon": "ðŸŽ­",
+        "color": "linear-gradient(135deg, #5b86e5 0%, #36d1dc 100%)",
+        "recommended_type": "optimization_engine"
+      },
+      "inteligencia": {
+        "icon": "ðŸ’Ž",
+        "color": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+        "recommended_type": "predictive_analysis"
+      },
+      "fortaleza": {
+        "icon": "ðŸ”",
+        "color": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+        "recommended_type": "compliance_monitoring"
+      },
+      "legal": {
+        "icon": "âš–ï¸",
+        "color": "linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%)",
+        "recommended_type": "compliance_monitoring"
+      },
+      "marketing": {
+        "icon": "ðŸŽ¯", 
+        "color": "linear-gradient(135deg, #fd79a8 0%, #e84393 100%)",
+        "recommended_type": "optimization_engine"
+      },
+      "contabilidad": {
+        "icon": "ðŸ“Š",
+        "color": "linear-gradient(135deg, #00cec9 0%, #00b894 100%)",
+        "recommended_type": "compliance_monitoring"
+      },
+      "presupuesto": {
+        "icon": "ðŸ’¹",
+        "color": "linear-gradient(135deg, #e17055 0%, #d63031 100%)",
+        "recommended_type": "predictive_analysis"
+      },
+      "rrhh": {
+        "icon": "ðŸ‘¥",
+        "color": "linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%)",
+        "recommended_type": "optimization_engine"
+      },
+      "ventascrm": {
+        "icon": "ðŸ¤",
+        "color": "linear-gradient(135deg, #74b9ff 0%, #0984e3 100%)",
+        "recommended_type": "predictive_analysis"
+      },
+      "logistica": {
+        "icon": "ðŸšš",
+        "color": "linear-gradient(135deg, #55a3ff 0%, #003d82 100%)",
+        "recommended_type": "optimization_engine"
+      },
+      "investigacion": {
+        "icon": "ðŸ”¬",
+        "color": "linear-gradient(135deg, #fd79a8 0%, #e84393 100%)",
+        "recommended_type": "predictive_analysis"
+      },
+      "educacion": {
+        "icon": "ðŸŽ“",
+        "color": "linear-gradient(135deg, #fdcb6e 0%, #e17055 100%)",
+        "recommended_type": "optimization_engine"
+      },
+      "regtech": {
+        "icon": "ðŸ”",
+        "color": "linear-gradient(135deg, #e17055 0%, #d63031 100%)",
+        "recommended_type": "compliance_monitoring"
+      }
+    },
+
+    "example_generated_agents": {
+      "sample_credit_agent": {
+        "agent_name": "ScoreBooster",
+        "class_name": "ScoreBoosterAnalyzer", 
+        "description": "Agente que optimiza el scoring crediticio usando ensemble learning",
+        "module": "decision",
+        "algorithms": ["ensemble_learning", "random_forest", "gradient_boosting"],
+        "features": ["score_optimization", "ensemble_modeling", "feature_importance"],
+        "performance_target": 96.5,
+        "agent_type": "credit_analysis"
+      },
+      "sample_compliance_agent": {
+        "agent_name": "AMLDetector",
+        "class_name": "AMLDetectionEngine",
+        "description": "Detector de lavado de dinero en tiempo real con IA",
+        "module": "compliance", 
+        "algorithms": ["anomaly_detection", "pattern_matching", "rule_engine"],
+        "features": ["aml_detection", "suspicious_activity", "real_time_monitoring"],
+        "performance_target": 98.7,
+        "agent_type": "compliance_monitoring"
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+﻿{
+  "tenant_id": "credicefi",
+  "institution_name": "Credicefi Dominicana S.A.",
+  "legal_name": "Credicefi Dominicana Sociedad Anónima",
+  "country": "RD",
+  "currency": "DOP",
+  "timezone": "America/Santo_Domingo",
+  "regulatory_framework": "SIB_RD",
+  "created_date": "2024-12-01",
+  "status": "active",
+  
+  "branding": {
+    "logo_url": "https://credicefi.com/assets/logo.png",
+    "primary_color": "#1E40AF",
+    "secondary_color": "#3B82F6",
+    "accent_color": "#EF4444",
+    "company_url": "https://credicefi.com",
+    "support_email": "soporte@credicefi.com"
+  },
+  
+  "contact": {
+    "primary_email": "admin@credicefi.com",
+    "technical_contact": "tech@credicefi.com", 
+    "billing_contact": "billing@credicefi.com",
+    "phone": "+1809-555-0100",
+    "address": "Av. Winston Churchill, Torre Empresarial, Santo Domingo, RD"
+  },
+  
+  "subscription": {
+    "plan": "enterprise",
+    "tier": "unlimited",
+    "monthly_limit": 100000,
+    "price_per_evaluation": 0.045,
+    "bulk_discount": 0.035,
+    "billing_day": 1,
+    "payment_method": "wire_transfer",
+    "auto_billing": true,
+    "contract_start": "2025-01-01",
+    "contract_end": "2026-12-31"
+  },
+  
+  "risk_thresholds": {
+    "reject_automatic": 0.92,
+    "high_risk": 0.82,
+    "medium_risk": 0.68,
+    "low_risk": 0.45,
+    "approve_automatic": 0.25,
+    "bureau_weight": 0.4,
+    "similarity_weight": 0.6,
+    "custom_rules": {
+      "income_debt_ratio_max": 0.6,
+      "employment_stability_months": 12,
+      "credit_history_required": true,
+      "collateral_coverage_min": 1.2
+    }
+  },
+  
+  "bureau_integration": {
+    "provider": "datacredito_rd",
+    "enabled": true,
+    "api_endpoint": "https://api.datacredito.com.do/v2",
+    "max_queries_per_day": 15000,
+    "timeout_seconds": 25,
+    "retry_attempts": 3,
+    "cache_results_hours": 24,
+    "sandbox_mode": false,
+    "cost_per_query": 2.50
+  },
+  
+  "powerbi_integration": {
+    "enabled": true,
+    "tenant_id": "credicefi-powerbi-tenant-2025",
+    "workspace_name": "Credicefi AI Analytics",
+    "datasets": {
+      "historical_defaults": "credicefi-historical-morosos",
+      "ai_evaluations": "credicefi-evaluaciones-ia", 
+      "daily_metrics": "credicefi-metricas-diarias"
+    },
+    "refresh_schedule": {
+      "historical": "every_6_hours",
+      "evaluations": "every_15_minutes",
+      "metrics": "every_hour"
+    },
+    "webhook_enabled": true,
+    "auto_sync": true
+  },
+  
+  "features_enabled": {
+    "hybrid_similarity_engine": true,
+    "bureau_integration": true,
+    "automated_billing": true,
+    "compliance_reporting": true,
+    "audit_logging": true,
+    "api_rate_limiting": true,
+    "powerbi_sync": true,
+    "real_time_dashboard": true,
+    "bulk_evaluations": true,
+    "custom_scoring_rules": true,
+    "collections_module": true,
+    "risk_monitoring": true,
+    "fraud_detection": true,
+    "portfolio_analytics": true
+  },
+  
+  "compliance_settings": {
+    "data_retention_days": 2555,
+    "audit_log_retention_days": 3650,
+    "pii_encryption": "AES-256-GCM",
+    "data_residency": "dominican_republic",
+    "gdpr_compliance": true,
+    "sib_reporting": true,
+    "audit_frequency": "quarterly",
+    "consent_required": true,
+    "right_to_delete": true
+  },
+  
+  "api_settings": {
+    "rate_limit_per_minute": 500,
+    "rate_limit_per_hour": 15000,
+    "burst_limit": 100,
+    "timeout_seconds": 30,
+    "max_concurrent_requests": 50,
+    "authentication_method": "jwt_bearer",
+    "api_version": "v1",
+    "ip_whitelist": ["190.164.0.0/16", "200.88.0.0/16"]
+  },
+  
+  "notifications": {
+    "email_alerts": true,
+    "webhook_url": "https://credicefi.com/webhooks/nadakki",
+    "slack_integration": false,
+    "alert_thresholds": {
+      "high_volume_hour": 5000,
+      "error_rate_percent": 2.0,
+      "response_time_ms": 3000,
+      "risk_drift_percent": 15.0
+    }
+  },
+  
+  "custom_fields": {
+    "industry_focus": "consumer_lending",
+    "loan_products": ["personal", "auto", "mortgage", "business"],
+    "target_segments": ["premium", "mass_market", "sme"],
+    "special_programs": ["first_time_buyers", "loyalty_customers"],
+    "geographic_focus": ["santo_domingo", "santiago", "la_vega"],
+    "loan_amount_ranges": {
+      "personal": {"min": 10000, "max": 500000},
+      "auto": {"min": 200000, "max": 2000000},
+      "mortgage": {"min": 500000, "max": 10000000}
+    }
+  }
+}

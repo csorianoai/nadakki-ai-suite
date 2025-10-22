@@ -1,0 +1,3632 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Nadakki AI Enterprise Suite - Plataforma Multi-Tenant LATAM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* CORE FINANCIERO (PRESERVADO) */
+            --core-financiero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --originacion: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            --decision: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+            --vigilancia: linear-gradient(135deg, #ff6b9d 0%, #ff4757 100%);
+            --recuperacion: linear-gradient(135deg, #ff9f43 0%, #ff6348 100%);
+            --compliance: linear-gradient(135deg, #a55eea 0%, #8b4cf7 100%);
+            --operacional: linear-gradient(135deg, #26de81 0%, #20bf6b 100%);
+            --experiencia: linear-gradient(135deg, #5b86e5 0%, #36d1dc 100%);
+            --inteligencia: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --fortaleza: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --orchestration: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            
+            /* MÓDULOS COMPLEMENTARIOS */
+            --legal: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            --marketing: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            --contabilidad: linear-gradient(135deg, #00cec9 0%, #00b894 100%);
+            --presupuesto: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+            --rrhh: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            --ventascrm: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            --logistica: linear-gradient(135deg, #55a3ff 0%, #003d82 100%);
+            --investigacion: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            --educacion: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+            --regtech: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+            
+            /* SISTEMA DE COLORES FUTURISTA */
+            --bg-primary: #0a0f1c;
+            --bg-secondary: #1a1f2e;
+            --bg-tertiary: #252b3f;
+            
+            --glass-primary: rgba(26, 31, 46, 0.95);
+            --glass-secondary: rgba(37, 43, 63, 0.9);
+            --glass-tertiary: rgba(51, 65, 85, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-hover: rgba(255, 255, 255, 0.08);
+            
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #94a3b8;
+            --text-accent: #60a5fa;
+            
+            --neon-blue: #00d4ff;
+            --neon-purple: #a855f7;
+            --neon-green: #00ff88;
+            --neon-pink: #ff6b9d;
+            --neon-orange: #ff9f43;
+            
+            /* SOMBRAS Y EFECTOS */
+            --shadow-glow: 0 0 20px rgba(96, 165, 250, 0.3);
+            --shadow-neon: 0 0 30px rgba(0, 212, 255, 0.4);
+            --shadow-quantum: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(96, 165, 250, 0.2);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(96, 165, 250, 0.3);
+            
+            /* DIMENSIONES */
+            --sidebar-width: 320px;
+            --sidebar-collapsed: 80px;
+            --header-height: 80px;
+            
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-2xl: 24px;
+            
+            --transition-ultra: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-bounce: 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Orbitron', 'Inter', monospace;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* BACKGROUND FUTURISTA */
+        .quantum-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -10;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 40% 70%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
+                var(--bg-primary);
+            animation: quantumPulse 20s ease-in-out infinite;
+        }
+
+        @keyframes quantumPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 1.2; }
+        }
+
+        /* GRID CUÁNTICO */
+        .quantum-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(96, 165, 250, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(96, 165, 250, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -8;
+            animation: gridMove 30s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* LAYOUT */
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR FUTURISTA */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--glass-primary);
+            backdrop-filter: blur(30px);
+            border-right: 1px solid var(--glass-border);
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            z-index: 1000;
+            transition: all var(--transition-bounce);
+            overflow-y: auto;
+            box-shadow: var(--shadow-quantum);
+        }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                var(--neon-blue) 25%, 
+                var(--neon-purple) 50%, 
+                var(--neon-green) 75%, 
+                transparent 100%
+            );
+            animation: neonFlow 3s ease-in-out infinite;
+        }
+
+        @keyframes neonFlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .sidebar.collapsed {
+            width: var(--sidebar-collapsed);
+        }
+
+        .sidebar-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-height: var(--header-height);
+        }
+
+        .sidebar.collapsed .sidebar-header {
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--core-financiero);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-neon);
+            position: relative;
+            overflow: hidden;
+            animation: logoGlow 4s ease-in-out infinite;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, 
+                rgba(0, 212, 255, 0.6), 
+                transparent, 
+                rgba(168, 85, 247, 0.6)
+            );
+            border-radius: var(--radius-xl);
+            z-index: -1;
+            animation: borderSpin 3s linear infinite;
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { 
+                box-shadow: var(--shadow-neon);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes borderSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo-text {
+            opacity: 1;
+            transition: all var(--transition-smooth);
+        }
+
+        .sidebar.collapsed .logo-text {
+            opacity: 0;
+            width: 0;
+            overflow: hidden;
+        }
+
+        .logo-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            font-family: var(--font-display);
+            background: linear-gradient(135deg, 
+                var(--neon-blue) 0%, 
+                var(--text-primary) 50%, 
+                var(--neon-purple) 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-family: var(--font-mono);
+            opacity: 0.8;
+        }
+
+        .collapse-btn {
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0.75rem;
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-smooth);
+            margin-left: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .collapse-btn:hover {
+            color: var(--text-primary);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* NAVEGACIÓN */
+        .nav-menu {
+            padding: 1.5rem;
+        }
+
+        .nav-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+            font-family: var(--font-display);
+            position: relative;
+        }
+
+        .nav-section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -0.25rem;
+            height: 1px;
+            width: 30px;
+            background: linear-gradient(90deg, var(--neon-blue), transparent);
+        }
+
+        .sidebar.collapsed .nav-section-title {
+            opacity: 0;
+            height: 0;
+            margin-bottom: 0;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: var(--radius-xl);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all var(--transition-smooth);
+            position: relative;
+            cursor: pointer;
+            border: 1px solid transparent;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            background: var(--module-gradient);
+            transition: width var(--transition-smooth);
+            border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+        }
+
+        .nav-link:hover {
+            background: var(--glass-hover);
+            color: var(--text-primary);
+            transform: translateX(5px) translateY(-2px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--glass-border);
+        }
+
+        .nav-link:hover::before {
+            width: 4px;
+        }
+
+        .nav-link.active {
+            background: var(--module-gradient);
+            color: white;
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(8px) translateY(-3px);
+        }
+
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .nav-text {
+            font-weight: 600;
+            font-size: 0.95rem;
+            opacity: 1;
+            transition: all var(--transition-smooth);
+            flex: 1;
+        }
+
+        .sidebar.collapsed .nav-text {
+            opacity: 0;
+            width: 0;
+            overflow: hidden;
+        }
+
+        .nav-badge {
+            background: rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-family: var(--font-mono);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar.collapsed .nav-badge {
+            opacity: 0;
+            width: 0;
+            overflow: hidden;
+        }
+
+        /* Gradientes por módulo */
+        .nav-link.core-financiero.active { --module-gradient: var(--core-financiero); }
+        .nav-link.legal.active { --module-gradient: var(--legal); }
+        .nav-link.marketing.active { --module-gradient: var(--marketing); }
+        .nav-link.contabilidad.active { --module-gradient: var(--contabilidad); }
+        .nav-link.presupuesto.active { --module-gradient: var(--presupuesto); }
+        .nav-link.rrhh.active { --module-gradient: var(--rrhh); }
+        .nav-link.ventascrm.active { --module-gradient: var(--ventascrm); }
+        .nav-link.logistica.active { --module-gradient: var(--logistica); }
+        .nav-link.investigacion.active { --module-gradient: var(--investigacion); }
+        .nav-link.educacion.active { --module-gradient: var(--educacion); }
+        .nav-link.regtech.active { --module-gradient: var(--regtech); }
+
+        /* CONTENIDO PRINCIPAL */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            transition: margin-left var(--transition-bounce);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar.collapsed + .main-content {
+            margin-left: var(--sidebar-collapsed);
+        }
+
+        /* HEADER */
+        .main-header {
+            height: var(--header-height);
+            background: var(--glass-secondary);
+            backdrop-filter: blur(30px);
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-quantum);
+        }
+
+        .header-title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .module-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            letter-spacing: 0.5px;
+        }
+
+        .module-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            opacity: 0.8;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .stats-summary {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 900;
+            font-family: var(--font-mono);
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: statGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes statGlow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: var(--font-display);
+        }
+
+        .action-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--glass-tertiary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all var(--transition-smooth);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-btn:hover {
+            background: var(--glass-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--neon-blue);
+        }
+
+        /* ÁREA DE CONTENIDO */
+        .content-area {
+            flex: 1;
+            padding: 2.5rem;
+            overflow-y: auto;
+        }
+
+        /* OVERVIEW CARDS */
+        .module-overview {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .overview-card {
+            background: var(--glass-secondary);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-2xl);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-quantum);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+        }
+
+        .overview-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                var(--neon-blue) 0%, 
+                var(--neon-purple) 33%, 
+                var(--neon-green) 66%, 
+                var(--neon-pink) 100%
+            );
+            animation: cardGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes cardGlow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .overview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .overview-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--font-display);
+        }
+
+        .overview-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--neon-blue);
+        }
+
+        .overview-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .metric-card {
+            background: var(--glass-tertiary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            text-align: center;
+            transition: all var(--transition-smooth);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 900;
+            font-family: var(--font-mono);
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            animation: metricPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes metricPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: var(--font-display);
+        }
+
+        /* SECCIÓN DE AGENTES */
+        .agents-section {
+            margin-top: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--font-display);
+        }
+
+        .agents-controls {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-input {
+            background: var(--glass-tertiary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 0.75rem 1.25rem 0.75rem 3rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            width: 300px;
+            transition: all var(--transition-smooth);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.25rem;
+            background: var(--glass-tertiary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover {
+            background: var(--glass-hover);
+            color: var(--text-primary);
+            border-color: var(--neon-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* GRID DE AGENTES */
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+
+        .agent-card {
+            background: var(--glass-secondary);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-2xl);
+            padding: 2rem;
+            transition: all var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: var(--shadow-quantum);
+        }
+
+        .agent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--agent-gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-smooth);
+        }
+
+        .agent-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .agent-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .agent-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .agent-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-2xl);
+            background: var(--agent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-neon);
+            animation: avatarGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes avatarGlow {
+            0%, 100% { box-shadow: var(--shadow-neon); }
+            50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.6); }
+        }
+
+        .agent-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .agent-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-display);
+        }
+
+        .agent-category {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: var(--font-mono);
+        }
+
+        .agent-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .agent-metrics {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--glass-tertiary);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--glass-border);
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: var(--font-mono);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--neon-green);
+            animation: statusPulse 2s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { 
+                opacity: 1; 
+                transform: scale(1);
+                box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            }
+            50% { 
+                opacity: 0.7; 
+                transform: scale(1.2);
+                box-shadow: 0 0 20px rgba(0, 255, 136, 0.8);
+            }
+        }
+
+        .efficiency-display {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+        }
+
+        .efficiency-bar {
+            flex: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .efficiency-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-green), var(--neon-blue));
+            border-radius: 3px;
+            transition: width 2s ease-out;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+        }
+
+        .efficiency-value {
+            font-family: var(--font-mono);
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        /* BOTONES DE AGENTES */
+        .agent-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-agent {
+            flex: 1;
+            padding: 1rem 1.25rem;
+            border: none;
+            border-radius: var(--radius-xl);
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all var(--transition-bounce);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            position: relative;
+            overflow: hidden;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--agent-gradient);
+            color: white;
+            border: 1px solid transparent;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: var(--glass-tertiary);
+            color: var(--text-secondary);
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--glass-hover);
+            color: var(--text-primary);
+            border-color: var(--neon-blue);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* LOADING OVERLAY */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(10, 15, 28, 0.95);
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-smooth);
+        }
+
+        .loading-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid var(--neon-blue);
+            border-radius: 50%;
+            animation: loadingSpin 1s linear infinite;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+
+        @keyframes loadingSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: textGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        /* COLORES POR ECOSISTEMA */
+        .agent-card.originacion { --agent-gradient: var(--originacion); }
+        .agent-card.decision { --agent-gradient: var(--decision); }
+        .agent-card.vigilancia { --agent-gradient: var(--vigilancia); }
+        .agent-card.recuperacion { --agent-gradient: var(--recuperacion); }
+        .agent-card.compliance { --agent-gradient: var(--compliance); }
+        .agent-card.operacional { --agent-gradient: var(--operacional); }
+        .agent-card.experiencia { --agent-gradient: var(--experiencia); }
+        .agent-card.inteligencia { --agent-gradient: var(--inteligencia); }
+        .agent-card.fortaleza { --agent-gradient: var(--fortaleza); }
+        .agent-card.orchestration { --agent-gradient: var(--orchestration); }
+        .agent-card.legal { --agent-gradient: var(--legal); }
+        .agent-card.marketing { --agent-gradient: var(--marketing); }
+        .agent-card.contabilidad { --agent-gradient: var(--contabilidad); }
+        .agent-card.presupuesto { --agent-gradient: var(--presupuesto); }
+        .agent-card.rrhh { --agent-gradient: var(--rrhh); }
+        .agent-card.ventascrm { --agent-gradient: var(--ventascrm); }
+        .agent-card.logistica { --agent-gradient: var(--logistica); }
+        .agent-card.investigacion { --agent-gradient: var(--investigacion); }
+        .agent-card.educacion { --agent-gradient: var(--educacion); }
+        .agent-card.regtech { --agent-gradient: var(--regtech); }
+
+        /* ANIMACIONES DE ENTRADA */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            animation: fadeInUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
+        .fade-in:nth-child(5) { animation-delay: 0.5s; }
+        .fade-in:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* QUICK STATS */
+        .quick-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--glass-border);
+            transition: all var(--transition-ultra);
+        }
+
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+
+        .stat-row:hover {
+            background: var(--glass-hover);
+            border-radius: var(--radius-lg);
+            padding: 1rem;
+            margin: 0 -1rem;
+        }
+
+        .stat-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .stat-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-name {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .stat-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+        }
+
+        .stat-value-sm {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        /* ICONOS ESPECÍFICOS */
+        .stat-icon.originacion { background: var(--originacion); }
+        .stat-icon.decision { background: var(--decision); }
+        .stat-icon.vigilancia { background: var(--vigilancia); }
+        .stat-icon.recuperacion { background: var(--recuperacion); }
+        .stat-icon.compliance { background: var(--compliance); }
+        .stat-icon.operacional { background: var(--operacional); }
+        .stat-icon.experiencia { background: var(--experiencia); }
+        .stat-icon.inteligencia { background: var(--inteligencia); }
+        .stat-icon.fortaleza { background: var(--fortaleza); }
+        .stat-icon.orchestration { background: var(--orchestration); }
+        .stat-icon.legal { background: var(--legal); }
+        .stat-icon.marketing { background: var(--marketing); }
+        .stat-icon.contabilidad { background: var(--contabilidad); }
+        .stat-icon.presupuesto { background: var(--presupuesto); }
+        .stat-icon.rrhh { background: var(--rrhh); }
+        .stat-icon.ventascrm { background: var(--ventascrm); }
+        .stat-icon.logistica { background: var(--logistica); }
+        .stat-icon.investigacion { background: var(--investigacion); }
+        .stat-icon.educacion { background: var(--educacion); }
+        .stat-icon.regtech { background: var(--regtech); }
+
+        /* NOTIFICACIONES */
+        .notification {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem 2rem;
+            color: var(--text-primary);
+            backdrop-filter: blur(30px);
+            box-shadow: var(--shadow-hover);
+            z-index: 10000;
+            animation: slideIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+        }
+
+        @keyframes slideIn {
+            from { 
+                transform: translateX(100%) translateY(-20px); 
+                opacity: 0; 
+            }
+            to { 
+                transform: translateX(0) translateY(0); 
+                opacity: 1; 
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1400px) {
+            .agents-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+            
+            .module-overview {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                width: var(--sidebar-width);
+            }
+
+            .sidebar.mobile-open {
+                transform: translateX(0);
+                box-shadow: var(--shadow-hover);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .stats-summary {
+                display: none;
+            }
+
+            .content-area {
+                padding: 1.5rem;
+            }
+
+            .agents-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--glass-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Futurista -->
+    <div class="quantum-background"></div>
+    <div class="quantum-grid"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Activando Ecosistema Cuántico Multi-Tenant...</div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-title">NADAKKI AI</div>
+                        <div class="logo-subtitle">ENTERPRISE MULTI-TENANT</div>
+                    </div>
+                </div>
+                <button class="collapse-btn" onclick="toggleSidebar()">
+                    <i class="fas fa-chevron-left" id="collapseIcon"></i>
+                </button>
+            </div>
+
+            <div class="nav-menu">
+                <!-- Core Financiero -->
+                <div class="nav-section">
+                    <div class="nav-section-title">🧠 CORE FINANCIERO CUÁNTICO</div>
+                    <div class="nav-item">
+                        <a class="nav-link core-financiero active" onclick="showModule('core-financiero')">
+                            <div class="nav-icon"><i class="fas fa-brain"></i></div>
+                            <div class="nav-text">Evaluación Crediticia IA</div>
+                            <div class="nav-badge">40</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Módulos Enterprise -->
+                <div class="nav-section">
+                    <div class="nav-section-title">⚖️ MÓDULOS ENTERPRISE</div>
+                    <div class="nav-item">
+                        <a class="nav-link legal" onclick="showModule('legal')">
+                            <div class="nav-icon"><i class="fas fa-balance-scale"></i></div>
+                            <div class="nav-text">Legal Intelligence PhD</div>
+                            <div class="nav-badge">16</div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link marketing" onclick="showModule('marketing')">
+                            <div class="nav-icon"><i class="fas fa-rocket"></i></div>
+                            <div class="nav-text">Marketing IA Generativo</div>
+                            <div class="nav-badge">14</div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link contabilidad" onclick="showModule('contabilidad')">
+                            <div class="nav-icon"><i class="fas fa-chart-bar"></i></div>
+                            <div class="nav-text">Contabilidad Inteligente</div>
+                            <div class="nav-badge">10</div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link presupuesto" onclick="showModule('presupuesto')">
+                            <div class="nav-icon"><i class="fas fa-chart-pie"></i></div>
+                            <div class="nav-text">Presupuesto Predictivo</div>
+                            <div class="nav-badge">6</div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link rrhh" onclick="showModule('rrhh')">
+                            <div class="nav-icon"><i class="fas fa-users"></i></div>
+                            <div class="nav-text">Recursos Humanos IA</div>
+                            <div class="nav-badge">5</div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link ventascrm" onclick="showModule('ventascrm')">
+                            <div class="nav-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="nav-text">Ventas & CRM Cuántico</div>
+                            <div class="nav-badge">4</div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link logistica" onclick="showModule('logistica')">
+                            <div class="nav-icon"><i class="fas fa-shipping-fast"></i></div>
+                            <div class="nav-text">Logística Inteligente</div>
+                            <div class="nav-badge">13</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Módulos Avanzados -->
+                <div class="nav-section">
+                    <div class="nav-section-title">🚀 MÓDULOS AVANZADOS</div>
+                    <div class="nav-item">
+                        <a class="nav-link investigacion" onclick="showModule('investigacion')">
+                            <div class="nav-icon"><i class="fas fa-atom"></i></div>
+                            <div class="nav-text">Investigación I+D</div>
+                            <div class="nav-badge">4</div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link educacion" onclick="showModule('educacion')">
+                            <div class="nav-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="nav-text">Educación IA Adaptativa</div>
+                            <div class="nav-badge">4</div>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link regtech" onclick="showModule('regtech')">
+                            <div class="nav-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="nav-text">RegTech Compliance</div>
+                            <div class="nav-badge">4</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="main-header">
+                <div class="header-title">
+                    <div class="module-title" id="currentModuleTitle">Core Financiero IA Cuántico</div>
+                    <div class="module-subtitle" id="currentModuleSubtitle">Motor híbrido cuántico • 40 agentes especializados • Precisión 97.8%</div>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="stats-summary">
+                        <div class="stat-item">
+                            <div class="stat-value" id="totalAgents">120</div>
+                            <div class="stat-label">Agentes Totales</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="activeModules">11</div>
+                            <div class="stat-label">Módulos Enterprise</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="uptime">99.97%</div>
+                            <div class="stat-label">Quantum Uptime</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="institutions">247</div>
+                            <div class="stat-label">Instituciones</div>
+                        </div>
+                    </div>
+                    
+                    <a class="action-btn" onclick="showSettings()">
+                        <i class="fas fa-cog"></i>
+                        Configurar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Área de Contenido -->
+            <div class="content-area">
+                
+                <!-- CORE FINANCIERO MODULE -->
+                <div class="module-content active" id="core-financiero">
+                    <div class="module-overview">
+                        <div class="overview-card">
+                            <div class="overview-title">
+                                <div class="overview-icon"><i class="fas fa-atom"></i></div>
+                                Motor Cuántico Financiero con 40 Agentes IA
+                            </div>
+                            <div class="overview-description">
+                                Sistema completo con 40 agentes especializados (36 originales + 4 adicionales) distribuidos en 10 ecosistemas funcionales. 
+                                Motor híbrido de similitud crediticia reutilizable para múltiples instituciones financieras con arquitectura multi-tenant empresarial.
+                            </div>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value">40</div>
+                                    <div class="metric-label">Agentes Cuánticos</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">97.8%</div>
+                                    <div class="metric-label">Precisión IA</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">247</div>
+                                    <div class="metric-label">Instituciones</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">$1.2M</div>
+                                    <div class="metric-label">Revenue/Mes</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overview-card">
+                            <div class="overview-title">
+                                <div class="overview-icon"><i class="fas fa-satellite-dish"></i></div>
+                                Ecosistemas Financieros Activos
+                            </div>
+                            <div class="quick-stats">
+                                <div class="stat-row">
+                                    <div class="stat-info">
+                                        <div class="stat-icon originacion"><i class="fas fa-search"></i></div>
+                                        <div class="stat-details">
+                                            <div class="stat-name">Originación Inteligente</div>
+                                            <div class="stat-desc">4 agentes especializados</div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-value-sm">97%</div>
+                                </div>
+                                <div class="stat-row">
+                                    <div class="stat-info">
+                                        <div class="stat-icon decision"><i class="fas fa-brain"></i></div>
+                                        <div class="stat-details">
+                                            <div class="stat-name">Decisión Cuántica</div>
+                                            <div class="stat-desc">4 agentes híbridos</div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-value-sm">99%</div>
+                                </div>
+                                <div class="stat-row">
+                                    <div class="stat-info">
+                                        <div class="stat-icon vigilancia"><i class="fas fa-eye"></i></div>
+                                        <div class="stat-details">
+                                            <div class="stat-name">Vigilancia Continua</div>
+                                            <div class="stat-desc">4 agentes predictivos</div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-value-sm">96%</div>
+                                </div>
+                                <div class="stat-row">
+                                    <div class="stat-info">
+                                        <div class="stat-icon recuperacion"><i class="fas fa-dollar-sign"></i></div>
+                                        <div class="stat-details">
+                                            <div class="stat-name">Recuperación Máxima</div>
+                                            <div class="stat-desc">4 agentes optimizados</div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-value-sm">94%</div>
+                                </div>
+                                <div class="stat-row">
+                                    <div class="stat-info">
+                                        <div class="stat-icon orchestration"><i class="fas fa-crown"></i></div>
+                                        <div class="stat-details">
+                                            <div class="stat-name">Orchestration Master</div>
+                                            <div class="stat-desc">Coordinador central + 20 agentes</div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-value-sm">99%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agentes Section -->
+                    <div class="agents-section">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <i class="fas fa-atom"></i>
+                                40 Agentes Financieros Cuánticos
+                            </div>
+                            <div class="agents-controls">
+                                <div class="search-box">
+                                    <i class="fas fa-search search-icon"></i>
+                                    <input type="text" class="search-input" placeholder="Buscar agentes..." id="agentSearch">
+                                </div>
+                                <button class="filter-btn" onclick="toggleFilters()">
+                                    <i class="fas fa-filter"></i>
+                                    Filtros
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="agents-grid" id="agentsGrid">
+                            <!-- ORIGINACIÓN INTELIGENTE -->
+                            <div class="agent-card originacion fade-in">
+                                <div class="agent-header">
+                                    <div class="agent-avatar"><i class="fas fa-search"></i></div>
+                                    <div class="agent-info">
+                                        <div class="agent-title">SentinelBot Quantum</div>
+                                        <div class="agent-category">Originación Inteligente</div>
+                                    </div>
+                                </div>
+                                <div class="agent-description">
+                                    Análisis predictivo de riesgo crediticio con machine learning cuántico. Detecta patrones anómalos y evalúa similitud de perfiles con precisión del 97.2%.
+                                </div>
+                                <div class="agent-metrics">
+                                    <div class="status-indicator">
+                                        <div class="status-dot"></div>
+                                        <span>ACTIVO</span>
+                                    </div>
+                                    <div class="efficiency-display">
+                                        <div class="efficiency-bar">
+                                            <div class="efficiency-fill" style="width: 97%;"></div>
+                                        </div>
+                                        <div class="efficiency-value">97%</div>
+                                    </div>
+                                </div>
+                                <div class="agent-actions">
+                                    <button class="btn-agent btn-primary" onclick="executeAgent('SentinelBot')">
+                                        <i class="fas fa-rocket"></i>
+                                        Ejecutar
+                                    </button>
+                                    <button class="btn-agent btn-secondary" onclick="configureAgent('SentinelBot')">
+                                        <i class="fas fa-cog"></i>
+                                        Config
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Continúa con más agentes... -->
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Otros módulos pueden agregarse aquí -->
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuración de módulos
+        const NADAKKI_CONFIG = {
+            modules: {
+                'core-financiero': {
+                    title: 'Core Financiero IA Cuántico',
+                    subtitle: 'Motor híbrido cuántico • 40 agentes especializados • Precisión 97.8%',
+                    agents: 40,
+                    color: 'var(--core-financiero)'
+                },
+                'legal': {
+                    title: 'Legal Intelligence PhD Enterprise',
+                    subtitle: '16 especialistas PhD • Jurisprudencia RD completa • 99.2% precisión legal',
+                    agents: 16,
+                    color: 'var(--legal)'
+                }
+                // Más módulos...
+            }
+        };
+
+        // Estado de la aplicación
+        let currentModule = 'core-financiero';
+        let sidebarCollapsed = false;
+
+        // Funciones principales
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const icon = document.getElementById('collapseIcon');
+            
+            sidebarCollapsed = !sidebarCollapsed;
+            
+            if (sidebarCollapsed) {
+                sidebar.classList.add('collapsed');
+                icon.className = 'fas fa-chevron-right';
+            } else {
+                sidebar.classList.remove('collapsed');
+                icon.className = 'fas fa-chevron-left';
+            }
+        }
+
+        function showModule(moduleId) {
+            // Implementación para cambiar módulos
+        }
+
+        function executeAgent(agentName) {
+            showNotification(`🚀 ${agentName} ejecutado exitosamente`, 'success');
+        }
+
+        function configureAgent(agentName) {
+            showNotification(`⚙️ Configurando ${agentName}`, 'info');
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <i class="fas fa-check-circle" style="color: var(--neon-green); font-size: 1.25rem;"></i>
+                    <span style="font-weight: 600;">${message}</span>
+                </div>
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').classList.remove('active');
+                showNotification('🚀 Nadakki AI Enterprise Suite activado - 120+ agentes operativos', 'success');
+            }, 2000);
+        });
+
+        console.log('🚀 NADAKKI AI ENTERPRISE MULTI-TENANT SYSTEM LOADED');
+        console.log('🌌 Status: 11 Módulos | 120+ Agentes | Arquitectura Multi-Tenant');
+   // =============================================================================
+// CARGAR MOTOR ML ENTERPRISE RECOVERY
+// =============================================================================
+
+// Función para cargar el motor ML externo
+async function cargarMotorMLRecuperacion() {
+    try {
+        console.log('🧠 Cargando Motor ML Enterprise Recovery...');
+        
+        // En un entorno real, cargaríamos desde el archivo externo
+        // Por ahora simulamos que está disponible
+        if (typeof window.NadakkiEnterpriseRecoveryEngine !== 'undefined') {
+            console.log('✅ Motor ML Enterprise Recovery cargado exitosamente');
+            return true;
+        } else {
+            console.log('⚠️ Motor ML no disponible, usando versión local');
+            return false;
+        }
+    } catch (error) {
+        console.error('❌ Error cargando Motor ML:', error);
+        return false;
+    }
+}
+
+// =============================================================================
+// 4 AGENTES ENTERPRISE RECUPERACIÓN MÁXIMA - NUEVOS AGREGADOS
+// =============================================================================
+
+// INSTANCIA GLOBAL DEL MOTOR ENTERPRISE
+let enterpriseRecoveryEngine = null;
+
+// Inicializar motor enterprise
+async function inicializarMotorEnterprise(tenantId = 'banco-popular-rd') {
+    try {
+        console.log('🚀 Inicializando Motor Enterprise para:', tenantId);
+        // Motor enterprise estará disponible cuando se cargue el archivo externo
+        enterpriseRecoveryEngine = { 
+            tenant: tenantId, 
+            initialized: true,
+            version: 'v2.1.0-enterprise'
+        };
+    } catch (error) {
+        console.error('❌ Error inicializando motor enterprise:', error);
+    }
+}
+
+// 💰 COLLECTION MASTER ENTERPRISE
+async function ejecutarCollectionMasterEnterprise() {
+    showLoadingOverlay('Ejecutando CollectionMaster Enterprise...');
+    
+    try {
+        // Simular procesamiento avanzado
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        // Generar cartera morosa para demostración
+        const cartera_demo = generarCarteraMorosaDemo();
+        
+        // Simular microsegmentación ML
+        const resultado = {
+            timestamp: new Date().toISOString(),
+            tenant_id: 'banco-popular-rd',
+            execution_time_ms: 1847,
+            
+            // MICROSEGMENTACIÓN ML
+            microsegmentos: {
+                total_segmentos: 8,
+                distribución: [
+                    { id: 'MS_BP_001', size: 45, valor: 1250000, riesgo: 'BAJO_RIESGO' },
+                    { id: 'MS_BP_002', size: 38, valor: 1580000, riesgo: 'RIESGO_MEDIO' },
+                    { id: 'MS_BP_003', size: 32, valor: 1920000, riesgo: 'ALTO_RIESGO' },
+                    { id: 'MS_BP_004', size: 28, valor: 2150000, riesgo: 'RIESGO_CRÍTICO' },
+                    { id: 'MS_BP_005', size: 22, valor: 980000, riesgo: 'BAJO_RIESGO' },
+                    { id: 'MS_BP_006', size: 19, valor: 1340000, riesgo: 'RIESGO_MEDIO' },
+                    { id: 'MS_BP_007', size: 12, valor: 2800000, riesgo: 'ALTO_RIESGO' },
+                    { id: 'MS_BP_008', size: 8, valor: 3200000, riesgo: 'RIESGO_CRÍTICO' }
+                ]
+            },
+            
+            // ESTRATEGIAS PERSONALIZADAS
+            estrategias_ml: {
+                algoritmos_utilizados: ['Similitud Coseno', 'Distancia Euclidiana', 'Jaccard Index'],
+                precision_modelo: '97.8%',
+                features_analizados: 45,
+                optimizacion_canales: 'Híbrida multicanal'
+            },
+            
+            // KPIs ENTERPRISE
+            kpis_enterprise: {
+                recuperacion_predicha_90d: { monto_predicho: 8750000 },
+                roi_estimado: '340%',
+                efficiency_gain: '67%',
+                contact_optimization: '78%',
+                automation_level: '85%'
+            },
+            
+            // COMPLIANCE
+            compliance_status: {
+                score: 94,
+                regulations_met: ['Ley 358-05', 'Circular SB 002/04'],
+                risk_level: 'BAJO'
+            }
+        };
+        
+        hideLoadingOverlay();
+        
+        // Mostrar resultados
+        mostrarResultadosCollectionMaster(resultado);
+        
+        showNotification(
+            `🏆 CollectionMaster Enterprise: ${resultado.microsegmentos.total_segmentos} microsegmentos identificados, ROI ${resultado.kpis_enterprise.roi_estimado}, Precisión ${resultado.estrategias_ml.precision_modelo}`,
+            'success'
+        );
+        
+        // Actualizar métricas en dashboard
+        document.getElementById('totalAgents').textContent = '44'; // 40 + 4 nuevos
+        
+    } catch (error) {
+        hideLoadingOverlay();
+        console.error('❌ Error en CollectionMaster Enterprise:', error);
+        showNotification('❌ Error ejecutando CollectionMaster Enterprise', 'error');
+    }
+}
+
+// 🤝 NEGOTIATION BOT ML
+async function ejecutarNegotiationBotML() {
+    showLoadingOverlay('Ejecutando NegotiationBot ML...');
+    
+    try {
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        const perfil_cliente = {
+            credit_score: 680,
+            debt_to_income: 0.45,
+            payment_history: 'irregular',
+            balance_pendiente: 125000,
+            dias_mora: 95,
+            sector_empleo: 'privado_formal',
+            antiguedad_cliente: 3.5
+        };
+        
+        // Análisis ML de propensión al pago
+        const propension_score = 72;
+        const perfil_psicologico = 'COLABORATIVO_FINANCIERO';
+        
+        const resultado = {
+            timestamp: new Date().toISOString(),
+            perfil_analizado: perfil_cliente,
+            
+            // ANÁLISIS ML PROPENSIÓN
+            propensity_analysis: {
+                propension_score: propension_score,
+                perfil_psicologico: perfil_psicologico,
+                factores_clave: ['score_crediticio_medio', 'mora_reciente', 'empleado_formal'],
+                urgencia_institucional: 65
+            },
+            
+            // OFERTAS OPTIMIZADAS ML
+            ofertas_recomendadas: [
+                {
+                    tipo: 'PLAN_EXTENDIDO_PREFERENCIAL',
+                    monto: perfil_cliente.balance_pendiente,
+                    plazo: '12 meses',
+                    cuota_mensual: Math.round(perfil_cliente.balance_pendiente / 12),
+                    beneficios: ['Sin penalizaciones', 'Tasa preferencial', 'Flexibilidad de pago'],
+                    probabilidad_aceptacion: 0.82,
+                    ranking: 1
+                },
+                {
+                    tipo: 'PLAN_CORTO_DESCUENTO',
+                    monto: perfil_cliente.balance_pendiente * 0.93,
+                    plazo: '6 meses',
+                    cuota_mensual: Math.round((perfil_cliente.balance_pendiente * 0.93) / 6),
+                    beneficios: ['7% descuento', 'Cierre rápido', 'Mejora historial'],
+                    probabilidad_aceptacion: 0.68,
+                    ranking: 2
+                },
+                {
+                    tipo: 'PAGO_INMEDIATO_PREMIUM',
+                    monto: perfil_cliente.balance_pendiente * 0.82,
+                    plazo: '15 días',
+                    beneficios: ['18% descuento', 'Cierre inmediato', 'Zero impacto'],
+                    probabilidad_aceptacion: 0.34,
+                    ranking: 3
+                }
+            ],
+            
+            // ESTRATEGIA DE COMUNICACIÓN ML
+            estrategia_comunicacion: {
+                tono_recomendado: 'Profesional y consultivo',
+                canal_principal: 'Teléfono + Email follow-up',
+                timing_optimo: 'Martes-Jueves 10:00-16:00',
+                mensaje_clave: 'Enfoque en beneficios mutuos y soluciones colaborativas',
+                script_opening: 'Sr./Sra. Cliente, como cliente valioso queremos ayudarle a encontrar la mejor solución...'
+            },
+            
+            // LÍMITES Y AUTORIZACIONES
+            limites_autorizacion: {
+                descuento_maximo: 0.20,
+                plazo_maximo: 18,
+                quita_autorizada: 0.15,
+                aprobacion_requerida: 'SUPERVISOR',
+                escalacion_gerencial: perfil_cliente.balance_pendiente > 100000 ? 'SÍ' : 'NO'
+            }
+        };
+        
+        hideLoadingOverlay();
+        
+        // Mostrar resultados
+        mostrarResultadosNegotiationBot(resultado);
+        
+        showNotification(
+            `🤝 NegotiationBot ML: ${resultado.ofertas_recomendadas.length} ofertas optimizadas, Propensión ${propension_score}%, Perfil ${perfil_psicologico}`,
+            'success'
+        );
+        
+    } catch (error) {
+        hideLoadingOverlay();
+        console.error('❌ Error en NegotiationBot ML:', error);
+        showNotification('❌ Error ejecutando NegotiationBot ML', 'error');
+    }
+}
+
+// 📊 RECOVERY OPTIMIZER AI
+async function ejecutarRecoveryOptimizerAI() {
+    showLoadingOverlay('Ejecutando RecoveryOptimizer AI...');
+    
+    try {
+        await new Promise(resolve => setTimeout(resolve, 2200));
+        
+        const segmento_analisis = {
+            id: 'SEGMENT_HIGH_VALUE',
+            size: 180,
+            valor_total: 4200000,
+            caracteristicas: {
+                mora_promedio: 135,
+                credit_score_promedio: 615,
+                perfil_riesgo: 'ALTO_RIESGO',
+                sector_predominante: 'privado_formal'
+            }
+        };
+        
+        // Modelo predictivo ML
+        const modelo_ml = {
+            probabilidad_recuperacion: 0.73,
+            confidence_interval: 0.89,
+            factores_predictivos: ['timing_contacto', 'personalizacion_ofertas', 'canal_optimization']
+        };
+        
+        const resultado = {
+            timestamp: new Date().toISOString(),
+            segmento_analizado: segmento_analisis,
+            
+            // MODELO PREDICTIVO ML
+            modelo_prediccion: {
+                probabilidad_recuperacion: modelo_ml.probabilidad_recuperacion,
+                confidence_interval: modelo_ml.confidence_interval,
+                model_accuracy: 0.891,
+                algoritmo_utilizado: 'Ensemble (XGBoost + RandomForest + Neural Network)',
+                features_importance: [
+                    { feature: 'dias_mora', importance: 0.34 },
+                    { feature: 'credit_score', importance: 0.28 },
+                    { feature: 'engagement_historico', importance: 0.22 },
+                    { feature: 'valor_cuenta', importance: 0.16 }
+                ]
+            },
+            
+            // ROI PROYECTADO
+            roi_proyectado: {
+                roi_percentage: 295,
+                inversion_total: 420000,
+                recuperacion_esperada: 1659000,
+                ganancia_neta: 1239000,
+                payback_period_days: 67,
+                irr_anual: 156,
+                npv_90d: 1180000
+            },
+            
+            // TIMELINE OPTIMIZADO
+            timeline_recuperacion: {
+                duracion_total_dias: 88,
+                hitos_criticos: [
+                    { fase: 'Contacto Inicial ML', dias: 12, descripcion: 'Contacto optimizado por algoritmo' },
+                    { fase: 'Negociación IA-Asistida', dias: 38, descripcion: 'Ofertas dinámicas personalizadas' },
+                    { fase: 'Cierre Inteligente', dias: 22, descripcion: 'Formalización automatizada' },
+                    { fase: 'Seguimiento Predictivo', dias: 16, descripcion: 'Monitoreo con alertas ML' }
+                ],
+                puntos_decision_automaticos: [
+                    { dia: 25, decision: 'Escalación automática si no hay respuesta' },
+                    { dia: 50, decision: 'Activación ofertas dinámicas premium' },
+                    { dia: 75, decision: 'Evaluación proceso legal automática' }
+                ]
+            },
+            
+            // OPTIMIZACIONES ML
+            optimizaciones_ml: {
+                resource_allocation: {
+                    agentes_especializados: 8,
+                    horas_semanales_optimas: 320,
+                    especializacion_requerida: ['senior_negotiator', 'ml_analyst', 'behavioral_specialist'],
+                    inversion_optima_semanal: 52500
+                },
+                channel_optimization: {
+                    telefono: '42%',
+                    email_inteligente: '28%',
+                    sms_predictivo: '18%',
+                    presencial_selectivo: '12%'
+                },
+                timing_optimization: {
+                    mejores_dias: ['martes', 'miércoles', 'jueves'],
+                    horarios_optimos: ['09:30-11:30', '14:00-16:30'],
+                    frecuencia_ml: 'adaptive_learning'
+                }
+            },
+            
+            // FACTORES DE RIESGO ML
+            factores_riesgo_ml: [
+                {
+                    factor: 'SATURACIÓN_CONTACTO',
+                    probabilidad: 0.23,
+                    impacto: 'MEDIO',
+                    descripcion: 'Riesgo de saturación por múltiples contactos',
+                    mitigacion_ia: 'Optimización automática de frecuencia'
+                },
+                {
+                    factor: 'DETERIORO_ECONÓMICO',
+                    probabilidad: 0.18,
+                    impacto: 'ALTO',
+                    descripcion: 'Posible deterioro situación económica clientes',
+                    mitigacion_ia: 'Monitoreo predictivo con alertas tempranas'
+                },
+                {
+                    factor: 'COMPETENCIA_OTROS_ACREEDORES',
+                    probabilidad: 0.31,
+                    impacto: 'MEDIO',
+                    descripcion: 'Competencia con otros acreedores por recursos limitados',
+                    mitigacion_ia: 'Priorización inteligente y ofertas competitivas'
+                }
+            ]
+        };
+        
+        hideLoadingOverlay();
+        
+        // Mostrar resultados
+        mostrarResultadosRecoveryOptimizer(resultado);
+        
+        showNotification(
+            `📊 RecoveryOptimizer AI: ROI ${resultado.roi_proyectado.roi_percentage}%, Recuperación ${(resultado.modelo_prediccion.probabilidad_recuperacion * 100).toFixed(1)}%, Timeline ${resultado.timeline_recuperacion.duracion_total_dias} días`,
+            'success'
+        );
+        
+    } catch (error) {
+        hideLoadingOverlay();
+        console.error('❌ Error en RecoveryOptimizer AI:', error);
+        showNotification('❌ Error ejecutando RecoveryOptimizer AI', 'error');
+    }
+}
+
+// ⚖️ LEGAL PATHWAY COMPLIANCE
+async function ejecutarLegalPathwayCompliance() {
+    showLoadingOverlay('Ejecutando LegalPathway Compliance...');
+    
+    try {
+        await new Promise(resolve => setTimeout(resolve, 1800));
+        
+        const caso_legal = {
+            cartera_id: 'LEGAL_PORTFOLIO_001',
+            valor_total: 1850000,
+            casos_individuales: 35,
+            caracteristicas: {
+                mora_promedio: 285,
+                credit_score_promedio: 465,
+                perfil_riesgo: 'RIESGO_CRÍTICO',
+                valor_promedio_caso: 52857
+            }
+        };
+        
+        const resultado = {
+            timestamp: new Date().toISOString(),
+            caso_evaluado: caso_legal,
+            
+            // EVALUACIÓN LEGAL AI
+            evaluacion_legal: {
+                viabilidad_legal: { 
+                    viable: true, 
+                    score: 87, 
+                    justificacion: 'Alto valor y mora extendida justifican proceso legal' 
+                },
+                urgencia_proceso: 82,
+                probabilidad_exito: 74,
+                impacto_financiero: 'ALTO',
+                
+                // TIPO DE PROCESO RECOMENDADO
+                tipo_proceso_recomendado: {
+                    tipo: 'PROCESO_EJECUTIVO_MASIVO',
+                    descripcion: 'Proceso ejecutivo consolidado para múltiples casos',
+                    duracion_estimada: '95-130 días',
+                    costo_estimado: 148000,
+                    casos_aplicables: 28,
+                    eficiencia_vs_individual: '65% más eficiente'
+                }
+            },
+            
+            // COMPLIANCE AI AUTOMÁTICO
+            compliance_ai: {
+                verificaciones_automaticas: {
+                    normativa_cobranza: { status: 'APROBADO', score: 94 },
+                    proteccion_consumidor: { status: 'APROBADO', score: 91 },
+                    documentacion_legal: { status: 'APROBADO', score: 89 },
+                    autorizaciones_internas: { status: 'PENDIENTE', score: 85 }
+                },
+                compliance_score_general: 90,
+                riesgos_identificados: [
+                    {
+                        area: 'DOCUMENTACIÓN',
+                        riesgo: 'Falta certificación notarial en 3 casos',
+                        prioridad: 'MEDIA',
+                        accion_requerida: 'Completar notarización en 48h'
+                    }
+                ],
+                certificacion_status: 'APROBADO_CONDICIONAL'
+            },
+            
+            // TIMELINE LEGAL OPTIMIZADO
+            timeline_legal: {
+                duracion_total: '95-130 días',
+                fases_optimizadas: [
+                    {
+                        fase: 'Preparación Masiva AI',
+                        duracion: '18 días',
+                        actividades: ['Consolidación casos', 'Prep documentos AI', 'Validación automática'],
+                        automatizacion: '78%'
+                    },
+                    {
+                        fase: 'Presentación Judicial',
+                        duracion: '22 días',
+                        actividades: ['Presentación tribunal', 'Admisión proceso', 'Notificaciones masivas'],
+                        automatizacion: '45%'
+                    },
+                    {
+                        fase: 'Instrucción Acelerada',
+                        duracion: '35 días',
+                        actividades: ['Pruebas consolidadas', 'Alegatos', 'Audiencias programadas'],
+                        automatizacion: '30%'
+                    },
+                    {
+                        fase: 'Sentencia y Ejecución',
+                        duracion: '50 días',
+                        actividades: ['Sentencias múltiples', 'Ejecución coordinada', 'Recuperación'],
+                        automatizacion: '60%'
+                    }
+                ],
+                puntos_criticos: [
+                    { dia: 18, evento: 'Admisión consolidada' },
+                    { dia: 40, evento: 'Vencimiento contestaciones' },
+                    { dia: 85, evento: 'Sentencias esperadas' },
+                    { dia: 125, evento: 'Ejecución completada' }
+                ]
+            },
+            
+            // ANÁLISIS FINANCIERO LEGAL
+            analisis_financiero: {
+                costos_detallados: {
+                    honorarios_legales: 88800,
+                    gastos_tribunales: 22200,
+                    costos_notariales: 18500,
+                    gastos_diversos: 14800,
+                    contingencias: 7400
+                },
+                roi_legal: {
+                    costo_total: 148000,
+                    recuperacion_esperada: 1369000,
+                    ganancia_neta: 1221000,
+                    roi_percentage: 825,
+                    break_even_dias: 45
+                },
+                comparacion_extrajudicial: {
+                    costo_extrajudicial: 185000,
+                    recuperacion_extrajudicial: 925000,
+                    ventaja_legal: 'ROI 347% superior'
+                }
+            },
+            
+            // JURISDICCIÓN Y REGULACIÓN
+            jurisdiccion_optimizada: {
+                tribunal_recomendado: 'Tribunal Superior Distrito Nacional',
+                juez_especializado: 'Cámara Civil y Comercial',
+                normativa_aplicable: [
+                    'Código Procesal Civil (Arts. 714-748)',
+                    'Ley Monetaria y Financiera (Ley 183-02)',
+                    'Ley Protección al Consumidor (Ley 358-05)'
+                ],
+                precedentes_favorables: 'Alto (89% casos similares ganados)',
+                tiempo_promedio_tribunal: '4.2 meses'
+            }
+        };
+        
+        hideLoadingOverlay();
+        
+        // Mostrar resultados
+        mostrarResultadosLegalPathway(resultado);
+        
+        showNotification(
+            `⚖️ LegalPathway Compliance: ${resultado.evaluacion_legal.tipo_proceso_recomendado.tipo}, ROI Legal ${resultado.analisis_financiero.roi_legal.roi_percentage}%, Compliance ${resultado.compliance_ai.compliance_score_general}/100`,
+            'success'
+        );
+        
+    } catch (error) {
+        hideLoadingOverlay();
+        console.error('❌ Error en LegalPathway Compliance:', error);
+        showNotification('❌ Error ejecutando LegalPathway Compliance', 'error');
+    }
+}
+
+// =============================================================================
+// FUNCIONES AUXILIARES PARA DEMOSTRACIÓN
+// =============================================================================
+
+function generarCarteraMorosaDemo() {
+    const cartera = [];
+    const sectores = ['publico', 'privado_formal', 'independiente', 'informal'];
+    const regiones = ['distrito_nacional', 'santiago', 'este', 'sur', 'norte'];
+    
+    for (let i = 0; i < 250; i++) {
+        cartera.push({
+            cliente_id: `CLI_ENT_${i.toString().padStart(4, '0')}`,
+            balance_pendiente: Math.random() * 200000 + 15000,
+            dias_mora: Math.floor(Math.random() * 450),
+            credit_score: Math.floor(Math.random() * 400 + 350),
+            debt_to_income: Math.random() * 0.9,
+            sector_empleo: sectores[Math.floor(Math.random() * sectores.length)],
+            region: regiones[Math.floor(Math.random() * regiones.length)],
+            antiguedad: Math.random() * 12,
+            engagement_digital: Math.random() * 100,
+            response_rate_historica: Math.random() * 80 + 20
+        });
+    }
+    return cartera;
+}
+
+// =============================================================================
+// FUNCIONES PARA MOSTRAR RESULTADOS MEJORADAS
+// =============================================================================
+
+function mostrarResultadosCollectionMaster(resultado) {
+    const segmentos = resultado.microsegmentos.distribución.map(s => `
+        <div class="segment-card">
+            <h6>${s.id}</h6>
+            <p><strong>Tamaño:</strong> ${s.size} clientes</p>
+            <p><strong>Valor:</strong> $${s.valor.toLocaleString()}</p>
+            <p><strong>Riesgo:</strong> ${s.riesgo}</p>
+        </div>
+    `).join('');
+    
+    const modal = crearModalResultadosEnhanced('CollectionMaster Enterprise - Microsegmentación ML', `
+        <div class="results-enterprise">
+            <div class="result-header">
+                <div class="metric-highlight">
+                    <span class="metric-value">${resultado.microsegmentos.total_segmentos}</span>
+                    <span class="metric-label">Microsegmentos</span>
+                </div>
+                <div class="metric-highlight">
+                    <span class="metric-value">${resultado.kpis_enterprise.roi_estimado}</span>
+                    <span class="metric-label">ROI Estimado</span>
+                </div>
+                <div class="metric-highlight">
+                    <span class="metric-value">${resultado.estrategias_ml.precision_modelo}</span>
+                    <span class="metric-label">Precisión ML</span>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>🎯 Microsegmentación Realizada</h4>
+                <div class="segments-grid">
+                    ${segmentos}
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>🧠 Estrategias ML Aplicadas</h4>
+                <p><strong>Algoritmos:</strong> ${resultado.estrategias_ml.algoritmos_utilizados.join(', ')}</p>
+                <p><strong>Features analizados:</strong> ${resultado.estrategias_ml.features_analizados}</p>
+                <p><strong>Optimización:</strong> ${resultado.estrategias_ml.optimizacion_canales}</p>
+            </div>
+            
+            <div class="result-section">
+                <h4>📊 KPIs Enterprise</h4>
+                <div class="kpis-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-value">$${resultado.kpis_enterprise.recuperacion_predicha_90d.monto_predicho.toLocaleString()}</span>
+                        <span class="kpi-label">Recuperación 90d</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value">${resultado.kpis_enterprise.efficiency_gain}</span>
+                        <span class="kpi-label">Efficiency Gain</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-value">${resultado.kpis_enterprise.automation_level}</span>
+                        <span class="kpi-label">Automatización</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>✅ Compliance Status</h4>
+                <p><strong>Score:</strong> ${resultado.compliance_status.score}/100</p>
+                <p><strong>Regulaciones:</strong> ${resultado.compliance_status.regulations_met.join(', ')}</p>
+                <p><strong>Nivel de riesgo:</strong> ${resultado.compliance_status.risk_level}</p>
+            </div>
+        </div>
+    `);
+}
+
+function mostrarResultadosNegotiationBot(resultado) {
+    const ofertas = resultado.ofertas_recomendadas.map((oferta, index) => `
+        <div class="offer-card-enhanced ${index === 0 ? 'recommended' : ''}">
+            <div class="offer-header">
+                <h5>${oferta.tipo}</h5>
+                ${index === 0 ? '<span class="badge-recommended">RECOMENDADA</span>' : ''}
+            </div>
+            <div class="offer-details">
+                <p><strong>Monto:</strong> $${oferta.monto.toLocaleString()}</p>
+                <p><strong>Plazo:</strong> ${oferta.plazo}</p>
+                <p><strong>Cuota:</strong> $${oferta.cuota_mensual ? oferta.cuota_mensual.toLocaleString() : 'N/A'}</p>
+                <p><strong>Probabilidad:</strong> ${(oferta.probabilidad_aceptacion * 100).toFixed(1)}%</p>
+            </div>
+            <div class="offer-benefits">
+                ${oferta.beneficios.map(b => `<span class="benefit-tag">${b}</span>`).join('')}
+            </div>
+        </div>
+    `).join('');
+    
+    const modal = crearModalResultadosEnhanced('NegotiationBot ML - Ofertas Personalizadas', `
+        <div class="results-enterprise">
+            <div class="result-header">
+                <div class="metric-highlight">
+                    <span class="metric-value">${resultado.propensity_analysis.propension_score}%</span>
+                    <span class="metric-label">Propensión al Pago</span>
+                </div>
+                <div class="metric-highlight">
+                    <span class="metric-value">${resultado.ofertas_recomendadas.length}</span>
+                    <span class="metric-label">Ofertas Optimizadas</span>
+                </div>
+                <div class="metric-highlight">
+                    <span class="metric-value">${resultado.propensity_analysis.urgencia_institucional}/100</span>
+                    <span class="metric-label">Urgencia</span>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>🧠 Análisis ML de Propensión</h4>
+                <p><strong>Perfil Psicológico:</strong> ${resultado.propensity_analysis.perfil_psicologico}</p>
+                <p><strong>Factores Clave:</strong> ${resultado.propensity_analysis.factores_clave.join(', ')}</p>
+            </div>
+            
+            <div class="result-section">
+                <h4>🤝 Ofertas Recomendadas (Ordenadas por ML)</h4>
+                <div class="offers-container">
+                    ${ofertas}
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>💬 Estrategia de Comunicación IA</h4>
+                <p><strong>Tono:</strong> ${resultado.estrategia_comunicacion.tono_recomendado}</p>
+                <p><strong>Canal Principal:</strong> ${resultado.estrategia_comunicacion.canal_principal}</p>
+                <p><strong>Timing Óptimo:</strong> ${resultado.estrategia_comunicacion.timing_optimo}</p>
+                <p><strong>Script:</strong> "${resultado.estrategia_comunicacion.script_opening}"</p>
+            </div>
+            
+            <div class="result-section">
+                <h4>🔒 Límites de Autorización</h4>
+                <p><strong>Descuento máximo:</strong> ${(resultado.limites_autorizacion.descuento_maximo * 100)}%</p>
+                <p><strong>Plazo máximo:</strong> ${resultado.limites_autorizacion.plazo_maximo} meses</p>
+                <p><strong>Escalación gerencial:</strong> ${resultado.limites_autorizacion.escalacion_gerencial}</p>
+            </div>
+        </div>
+    `);
+}
+
+function mostrarResultadosRecoveryOptimizer(resultado) {
+    const features = resultado.modelo_prediccion.features_importance.map(f => `
+        <div class="feature-importance">
+            <span class="feature-name">${f.feature}</span>
+            <div class="importance-bar">
+                <div class="importance-fill" style="width: ${f.importance * 100}%"></div>
+            </div>
+            <span class="importance-value">${(f.importance * 100).toFixed(1)}%</span>
+        </div>
+    `).join('');
+    
+    const modal = crearModalResultadosEnhanced('RecoveryOptimizer AI - Predicciones Avanzadas', `
+        <div class="results-enterprise">
+            <div class="result-header">
+                <div class="metric-highlight">
+                    <span class="metric-value">${resultado.roi_proyectado.roi_percentage}%</span>
+                    <span class="metric-label">ROI Proyectado</span>
+                </div>
+                <div class="metric-highlight">
+                    <span class="metric-value">${(resultado.modelo_prediccion.probabilidad_recuperacion * 100).toFixed(1)}%</span>
+                    <span class="metric-label">Prob. Recuperación</span>
+                </div>
+                <div class="metric-highlight">
+                    <span class="metric-value">${resultado.timeline_recuperacion.duracion_total_dias}</span>
+                    <span class="metric-label">Días Timeline</span>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>🤖 Modelo Predictivo ML</h4>
+                <p><strong>Algoritmo:</strong> ${resultado.modelo_prediccion.algoritmo_utilizado}</p>
+                <p><strong>Precisión:</strong> ${(resultado.modelo_prediccion.model_accuracy * 100).toFixed(1)}%</p>
+                <p><strong>Confianza:</strong> ${(resultado.modelo_prediccion.confidence_interval * 100).toFixed(1)}%</p>
+                
+                <h5>Feature Importance:</h5>
+                <div class="features-importance">
+                    ${features}
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>📈 Análisis Financiero Detallado</h4>
+                <div class="financial-grid">
+                    <div class="financial-item">
+                        <span class="financial-label">Inversión Total</span>
+                        <span class="financial-value">$${resultado.roi_proyectado.inversion_total.toLocaleString()}</span>
+                    </div>
+                    <div class="financial-item">
+                        <span class="financial-label">Recuperación Esperada</span>
+                        <span class="financial-value">$${resultado.roi_proyectado.recuperacion_esperada.toLocaleString()}</span>
+                    </div>
+                    <div class="financial-item">
+                        <span class="financial-label">Ganancia Neta</span>
+                        <span class="financial-value">$${resultado.roi_proyectado.ganancia_neta.toLocaleString()}</span>
+                    </div>
+                    <div class="financial-item">
+                        <span class="financial-label">IRR Anual</span>
+                        <span class="financial-value">${resultado.roi_proyectado.irr_anual}%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>⏱️ Timeline Optimizado por IA</h4>
+                <div class="timeline-container">
+                    ${resultado.timeline_recuperacion.hitos_criticos.map(hito => `
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h6>${hito.fase}</h6>
+                                <p>${hito.dias} días - ${hito.descripcion}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>🎯 Optimizaciones ML</h4>
+                <div class="optimizations-grid">
+                    <div class="optimization-card">
+                        <h6>Recursos</h6>
+                        <p>${resultado.optimizaciones_ml.resource_allocation.agentes_especializados} agentes especializados</p>
+                        <p>${resultado.optimizaciones_ml.resource_allocation.horas_semanales_optimas}h semanales</p>
+                    </div>
+                    <div class="optimization-card">
+                        <h6>Canales</h6>
+                        <p>Tel: ${resultado.optimizaciones_ml.channel_optimization.telefono}</p>
+                        <p>Email: ${resultado.optimizaciones_ml.channel_optimization.email_inteligente}</p>
+                        <p>SMS: ${resultado.optimizaciones_ml.channel_optimization.sms_predictivo}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>⚠️ Factores de Riesgo ML</h4>
+                ${resultado.factores_riesgo_ml.map(factor => `
+                    <div class="risk-factor">
+                        <div class="risk-header">
+                            <strong>${factor.factor}</strong>
+                            <span class="risk-probability">${(factor.probabilidad * 100).toFixed(1)}%</span>
+                        </div>
+                        <p>${factor.descripcion}</p>
+                        <p><strong>Mitigación IA:</strong> ${factor.mitigacion_ia}</p>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `);
+}
+
+function mostrarResultadosLegalPathway(resultado) {
+    const fases = resultado.timeline_legal.fases_optimizadas.map(fase => `
+        <div class="phase-card">
+            <h6>${fase.fase}</h6>
+            <div class="phase-details">
+                <p><strong>Duración:</strong> ${fase.duracion}</p>
+                <p><strong>Automatización:</strong> ${fase.automatizacion}</p>
+                <p><strong>Actividades:</strong> ${fase.actividades.join(', ')}</p>
+            </div>
+        </div>
+    `).join('');
+    
+    const modal = crearModalResultadosEnhanced('LegalPathway Compliance - Evaluación Jurídica IA', `
+        <div class="results-enterprise">
+            <div class="result-header">
+                <div class="metric-highlight">
+                    <span class="metric-value">${resultado.analisis_financiero.roi_legal.roi_percentage}%</span>
+                    <span class="metric-label">ROI Legal</span>
+                </div>
+                <div class="metric-highlight">
+                    <span class="metric-value">${resultado.evaluacion_legal.probabilidad_exito}%</span>
+                    <span class="metric-label">Prob. Éxito</span>
+                </div>
+                <div class="metric-highlight">
+                    <span class="metric-value">${resultado.compliance_ai.compliance_score_general}/100</span>
+                    <span class="metric-label">Compliance</span>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>⚖️ Evaluación Legal IA</h4>
+                <div class="legal-assessment">
+                    <p><strong>Viabilidad:</strong> ${resultado.evaluacion_legal.viabilidad_legal.viable ? 'VIABLE' : 'NO VIABLE'} (Score: ${resultado.evaluacion_legal.viabilidad_legal.score}/100)</p>
+                    <p><strong>Urgencia:</strong> ${resultado.evaluacion_legal.urgencia_proceso}/100</p>
+                    <p><strong>Impacto:</strong> ${resultado.evaluacion_legal.impacto_financiero}</p>
+                </div>
+                
+                <div class="process-recommendation">
+                    <h5>Proceso Recomendado: ${resultado.evaluacion_legal.tipo_proceso_recomendado.tipo}</h5>
+                    <p>${resultado.evaluacion_legal.tipo_proceso_recomendado.descripcion}</p>
+                    <p><strong>Eficiencia:</strong> ${resultado.evaluacion_legal.tipo_proceso_recomendado.eficiencia_vs_individual}</p>
+                    <p><strong>Casos aplicables:</strong> ${resultado.evaluacion_legal.tipo_proceso_recomendado.casos_aplicables}</p>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>🤖 Compliance AI Automático</h4>
+                <div class="compliance-grid">
+                    ${Object.entries(resultado.compliance_ai.verificaciones_automaticas).map(([key, value]) => `
+                        <div class="compliance-item ${value.status === 'APROBADO' ? 'approved' : 'pending'}">
+                            <span class="compliance-name">${key.replace(/_/g, ' ')}</span>
+                            <span class="compliance-status">${value.status}</span>
+                            <span class="compliance-score">${value.score}/100</span>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="compliance-summary">
+                    <p><strong>Score General:</strong> ${resultado.compliance_ai.compliance_score_general}/100</p>
+                    <p><strong>Certificación:</strong> ${resultado.compliance_ai.certificacion_status}</p>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>📅 Timeline Legal Optimizado</h4>
+                <p><strong>Duración total:</strong> ${resultado.timeline_legal.duracion_total}</p>
+                <div class="phases-container">
+                    ${fases}
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>💰 Análisis Financiero Legal</h4>
+                <div class="financial-comparison">
+                    <div class="legal-option">
+                        <h6>Vía Legal</h6>
+                        <p><strong>Costo:</strong> $${resultado.analisis_financiero.roi_legal.costo_total.toLocaleString()}</p>
+                        <p><strong>Recuperación:</strong> $${resultado.analisis_financiero.roi_legal.recuperacion_esperada.toLocaleString()}</p>
+                        <p><strong>ROI:</strong> ${resultado.analisis_financiero.roi_legal.roi_percentage}%</p>
+                    </div>
+                    <div class="extrajudicial-option">
+                        <h6>Vía Extrajudicial</h6>
+                        <p><strong>Costo:</strong> $${resultado.analisis_financiero.comparacion_extrajudicial.costo_extrajudicial.toLocaleString()}</p>
+                        <p><strong>Recuperación:</strong> $${resultado.analisis_financiero.comparacion_extrajudicial.recuperacion_extrajudicial.toLocaleString()}</p>
+                        <p><strong>Ventaja Legal:</strong> ${resultado.analisis_financiero.comparacion_extrajudicial.ventaja_legal}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h4>🏛️ Jurisdicción Optimizada</h4>
+                <p><strong>Tribunal:</strong> ${resultado.jurisdiccion_optimizada.tribunal_recomendado}</p>
+                <p><strong>Especialización:</strong> ${resultado.jurisdiccion_optimizada.juez_especializado}</p>
+                <p><strong>Precedentes:</strong> ${resultado.jurisdiccion_optimizada.precedentes_favorables}</p>
+                <p><strong>Tiempo promedio:</strong> ${resultado.jurisdiccion_optimizada.tiempo_promedio_tribunal}</p>
+            </div>
+        </div>
+    `);
+}
+
+function crearModalResultadosEnhanced(titulo, contenido) {
+    const modal = document.createElement('div');
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        backdrop-filter: blur(10px);
+    `;
+    
+    modal.innerHTML = `
+        <div style="
+            background: linear-gradient(135deg, #1a1f2e 0%, #2d3748 100%);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 90vw;
+            max-height: 85vh;
+            overflow-y: auto;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+            position: relative;
+        ">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h3 style="color: #60a5fa; margin: 0; font-family: 'Orbitron', monospace; font-size: 1.4rem;">${titulo}</h3>
+                <button onclick="this.closest('[style*=\"position: fixed\"]').remove()" style="
+                    background: rgba(255, 255, 255, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    color: white;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">×</button>
+            </div>
+            ${contenido}
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    return modal;
+}
+
+// CSS mejorado para resultados enterprise
+const styleResultsEnhanced = document.createElement('style');
+styleResultsEnhanced.textContent = `
+    .result-header {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+        border-radius: 16px;
+        border: 1px solid rgba(96, 165, 250, 0.3);
+    }
+    
+    .metric-highlight {
+        text-align: center;
+        flex: 1;
+    }
+    
+    .metric-value {
+        display: block;
+        font-size: 2rem;
+        font-weight: 900;
+        font-family: 'Orbitron', monospace;
+        background: linear-gradient(135deg, #00d4ff, #a855f7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .metric-label {
+        display: block;
+        font-size: 0.8rem;
+        color: #94a3b8;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-top: 0.5rem;
+    }
+    
+    .segments-grid, .offers-container, .kpis-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .segment-card, .offer-card-enhanced, .kpi-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(96, 165, 250, 0.2);
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+    }
+    
+    .segment-card:hover, .offer-card-enhanced:hover, .kpi-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(96, 165, 250, 0.4);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .offer-card-enhanced.recommended {
+        border-color: #00d4ff;
+        background: rgba(0, 212, 255, 0.1);
+    }
+    
+    .badge-recommended {
+        background: linear-gradient(135deg, #00d4ff, #00ff88);
+        color: #000;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .offer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    
+    .benefit-tag {
+        display: inline-block;
+        background: rgba(0, 255, 136, 0.2);
+        color: #00ff88;
+        padding: 0.25rem 0.5rem;
+        border-radius: 6px;
+        font-size: 0.7rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.25rem;
+        border: 1px solid rgba(0, 255, 136, 0.3);
+    }
+    
+    .features-importance {
+        margin-top: 1rem;
+    }
+    
+    .feature-importance {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+        padding: 0.5rem;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+    }
+    
+    .feature-name {
+        min-width: 120px;
+        font-size: 0.85rem;
+        color: #e2e8f0;
+    }
+    
+    .importance-bar {
+        flex: 1;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+    
+    .importance-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #00ff88, #00d4ff);
+        border-radius: 3px;
+        transition: width 1s ease-out;
+    }
+    
+    .importance-value {
+        min-width: 50px;
+        text-align: right;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.8rem;
+        color: #00d4ff;
+    }
+    
+    .financial-grid, .optimizations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .financial-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        border: 1px solid rgba(96, 165, 250, 0.2);
+    }
+    
+    .financial-label {
+        color: #94a3b8;
+        font-size: 0.85rem;
+    }
+    
+    .financial-value {
+        color: #00d4ff;
+        font-weight: 700;
+        font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .timeline-container {
+        margin-top: 1rem;
+    }
+    
+    .timeline-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+    
+    .timeline-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 25px;
+        width: 2px;
+        height: calc(100% + 0.5rem);
+        background: linear-gradient(180deg, #00d4ff, rgba(0, 212, 255, 0.2));
+    }
+    
+    .timeline-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #00d4ff, #a855f7);
+        flex-shrink: 0;
+        margin-top: 2px;
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    }
+    
+    .timeline-content h6 {
+        color: #60a5fa;
+        margin-bottom: 0.5rem;
+        font-family: 'Orbitron', monospace;
+    }
+    
+    .optimization-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(96, 165, 250, 0.2);
+        border-radius: 12px;
+        padding: 1rem;
+    }
+    
+    .optimization-card h6 {
+        color: #00d4ff;
+        margin-bottom: 0.75rem;
+        font-family: 'Orbitron', monospace;
+    }
+    
+    .risk-factor {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background: rgba(255, 107, 157, 0.1);
+        border: 1px solid rgba(255, 107, 157, 0.3);
+        border-radius: 10px;
+    }
+    
+    .risk-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+    
+    .risk-probability {
+        background: rgba(255, 107, 157, 0.2);
+        color: #ff6b9d;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+    
+    .phases-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .phase-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(96, 165, 250, 0.2);
+        border-radius: 12px;
+        padding: 1.5rem;
+    }
+    
+    .phase-card h6 {
+        color: #60a5fa;
+        margin-bottom: 1rem;
+        font-family: 'Orbitron', monospace;
+    }
+    
+    .compliance-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .compliance-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 10px;
+        border: 1px solid;
+    }
+    
+    .compliance-item.approved {
+        background: rgba(0, 255, 136, 0.1);
+        border-color: rgba(0, 255, 136, 0.3);
+    }
+    
+    .compliance-item.pending {
+        background: rgba(255, 159, 67, 0.1);
+        border-color: rgba(255, 159, 67, 0.3);
+    }
+    
+    .compliance-name {
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+    
+    .compliance-status {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-weight: 700;
+    }
+    
+    .compliance-item.approved .compliance-status {
+        background: rgba(0, 255, 136, 0.2);
+        color: #00ff88;
+    }
+    
+    .compliance-item.pending .compliance-status {
+        background: rgba(255, 159, 67, 0.2);
+        color: #ff9f43;
+    }
+    
+    .financial-comparison {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+    
+    .legal-option, .extrajudicial-option {
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid;
+    }
+    
+    .legal-option {
+        background: rgba(0, 255, 136, 0.1);
+        border-color: rgba(0, 255, 136, 0.3);
+    }
+    
+    .extrajudicial-option {
+        background: rgba(255, 159, 67, 0.1);
+        border-color: rgba(255, 159, 67, 0.3);
+    }
+    
+    .legal-option h6 {
+        color: #00ff88;
+        margin-bottom: 1rem;
+    }
+    
+    .extrajudicial-option h6 {
+        color: #ff9f43;
+        margin-bottom: 1rem;
+    }
+`;
+document.head.appendChild(styleResultsEnhanced);
+
+// Inicializar al cargar la página
+document.addEventListener('DOMContentLoaded', async function() {
+    await cargarMotorMLRecuperacion();
+    await inicializarMotorEnterprise();
+    
+    console.log('🚀 Sistema Enterprise con 4 Agentes de Recuperación Máxima inicializado');
+    console.log('💰 CollectionMaster Enterprise • 🤝 NegotiationBot ML • 📊 RecoveryOptimizer AI • ⚖️ LegalPathway Compliance');
+}); </script>
+
+<script>
+// CONFIGURACIÓN BACKEND - API FUNCIONANDO CONFIRMADO
+const BACKEND_CONFIG = {
+    currentAPI: 'https://fdnmgx4rz7.execute-api.us-east-1.amazonaws.com/prod',
+    tenantId: 'banco-popular-rd',
+    isConnected: false
+};
+
+// VERIFICAR CONEXIÓN AL BACKEND
+async function verifyBackendConnection() {
+    try {
+        showLoading('Conectando con Nadakki AI Enterprise...');
+        
+        const response = await fetch(`${BACKEND_CONFIG.currentAPI}/api/v1/health`, {
+            method: 'GET',
+            headers: {
+                'X-Tenant-ID': BACKEND_CONFIG.tenantId,
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            const healthData = await response.json();
+            BACKEND_CONFIG.isConnected = true;
+            
+            hideLoading();
+            showNotification(`🌐 Conectado a Nadakki AI Enterprise v${healthData.version || '2.1.0'}`, 'success');
+            
+            // Actualizar métricas del dashboard
+            if (healthData.metrics) {
+                updateDashboardWithRealData(healthData.metrics);
+            }
+            
+            console.log('✅ Backend Enterprise conectado:', healthData);
+            return true;
+        } else {
+            throw new Error(`HTTP ${response.status}`);
+        }
+    } catch (error) {
+        hideLoading();
+        showNotification(`❌ Error conectando al backend: ${error.message}`, 'error');
+        BACKEND_CONFIG.isConnected = false;
+        return false;
+    }
+}
+
+// EJECUTAR AGENTE REAL CON BACKEND ENTERPRISE
+async function executeAgentReal(agentName) {
+    if (!BACKEND_CONFIG.isConnected) {
+        const connected = await verifyBackendConnection();
+        if (!connected) return;
+    }
+    
+    showLoading(`Ejecutando ${agentName} con motor cuántico...`);
+    
+    try {
+        // Perfil de prueba realista
+        const testProfile = {
+            profile: {
+                income: Math.floor(Math.random() * 80000) + 40000,
+                credit_score: Math.floor(Math.random() * 250) + 600,
+                age: Math.floor(Math.random() * 35) + 25,
+                employment_type: ['full_time', 'part_time', 'self_employed'][Math.floor(Math.random() * 3)],
+                debt_to_income: Math.random() * 0.5 + 0.1
+            }
+        };
+        
+        const response = await fetch(`${BACKEND_CONFIG.currentAPI}/api/v1/evaluate`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Tenant-ID': BACKEND_CONFIG.tenantId
+            },
+            body: JSON.stringify(testProfile)
+        });
+        
+        const result = await response.json();
+        hideLoading();
+        
+        if (response.ok) {
+            const similarityPercent = (result.quantum_similarity_score * 100).toFixed(1);
+            const decision = result.automated_decision?.action || result.risk_level;
+            
+            showNotification(
+                `🧠 ${agentName}: ${decision} | Similitud: ${similarityPercent}% | Riesgo: ${result.risk_level}`, 
+                decision === 'APPROVE' ? 'success' : decision === 'REJECT' ? 'error' : 'warning'
+            );
+            
+            // Mostrar análisis de agentes si está disponible
+            if (result.agents_analysis) {
+                console.log('📊 Análisis de agentes:', result.agents_analysis);
+            }
+            
+            updateDashboardMetrics(result);
+        } else {
+            showNotification(`❌ Error en ${agentName}: ${result.error || 'Error desconocido'}`, 'error');
+        }
+        
+    } catch (error) {
+        hideLoading();
+        showNotification(`❌ Error de red en ${agentName}: ${error.message}`, 'error');
+    }
+}
+
+// ACTUALIZAR DASHBOARD CON DATOS REALES
+function updateDashboardWithRealData(metrics) {
+    if (metrics.total_agents && document.getElementById('totalAgents')) {
+        document.getElementById('totalAgents').textContent = metrics.total_agents;
+    }
+    
+    if (metrics.institutions_served && document.getElementById('institutions')) {
+        document.getElementById('institutions').textContent = metrics.institutions_served;
+    }
+    
+    if (metrics.uptime && document.getElementById('uptime')) {
+        document.getElementById('uptime').textContent = metrics.uptime;
+    }
+    
+    if (metrics.evaluations_today) {
+        console.log(`📈 Evaluaciones hoy: ${metrics.evaluations_today}`);
+    }
+}
+
+function updateDashboardMetrics(evaluationResult) {
+    // Simular actualizaciones en tiempo real
+    const currentEvals = document.getElementById('institutions');
+    if (currentEvals) {
+        const currentValue = parseInt(currentEvals.textContent) || 247;
+        currentEvals.textContent = currentValue + Math.floor(Math.random() * 3);
+    }
+}
+
+// CARGAR STATUS DE AGENTES
+async function loadAgentsStatus() {
+    if (!BACKEND_CONFIG.isConnected) return;
+    
+    try {
+        const response = await fetch(`${BACKEND_CONFIG.currentAPI}/api/v1/agents/status`, {
+            headers: { 'X-Tenant-ID': BACKEND_CONFIG.tenantId }
+        });
+        
+        if (response.ok) {
+            const agentsData = await response.json();
+            console.log('🤖 Status de 120+ agentes:', agentsData);
+            
+            // Actualizar badges de agentes si es necesario
+            if (agentsData.ecosystems) {
+                Object.keys(agentsData.ecosystems).forEach(ecosystem => {
+                    const data = agentsData.ecosystems[ecosystem];
+                    console.log(`📊 ${ecosystem}: ${data.agents} agentes, ${data.efficiency} eficiencia`);
+                });
+            }
+        }
+    } catch (error) {
+        console.log('❌ Error cargando status de agentes:', error);
+    }
+}
+
+// SOBRESCRIBIR FUNCIONES EXISTENTES
+window.executeAgent = executeAgentReal;
+
+// CONFIGURAR TENANT DINÁMICO
+function setTenant(tenantId) {
+    BACKEND_CONFIG.tenantId = tenantId;
+    showNotification(`🏢 Tenant configurado: ${tenantId}`, 'info');
+}
+
+// INICIALIZACIÓN AUTOMÁTICA
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(async () => {
+        console.log('🚀 Inicializando conexión enterprise...');
+        await verifyBackendConnection();
+        await loadAgentsStatus();
+    }, 2000);
+});
+
+// Añadir botones de configuración de tenant
+setTimeout(() => {
+    const header = document.querySelector('.header-actions');
+    if (header) {
+        const tenantSelector = document.createElement('select');
+        tenantSelector.style.cssText = 'background: var(--glass-tertiary); border: 1px solid var(--glass-border); border-radius: var(--radius-xl); color: var(--text-primary); padding: 0.75rem; margin-left: 1rem;';
+        tenantSelector.innerHTML = `
+            <option value="banco-popular-rd">Banco Popular RD</option>
+            <option value="banreservas-rd">Banreservas RD</option>
+            <option value="cofaci-rd">COFACI RD</option>
+        `;
+        tenantSelector.addEventListener('change', (e) => setTenant(e.target.value));
+        header.appendChild(tenantSelector);
+    }
+}, 5000);
+
+console.log('🔌 Nadakki AI Enterprise Backend conectado a:', BACKEND_CONFIG.currentAPI);
+</script>
+<script>
+// CONFIGURACIÓN BACKEND CORREGIDA
+const NADAKKI_BACKEND = {
+    apiUrl: 'https://fdnmgx4rz7.execute-api.us-east-1.amazonaws.com/prod',
+    tenantId: 'banco-popular-rd',
+    isConnected: false,
+    connectionAttempts: 0
+};
+
+console.log('🚀 Inicializando Nadakki AI Enterprise Suite...');
+
+// FUNCIÓN MEJORADA DE CONEXIÓN
+async function connectToBackend() {
+    NADAKKI_BACKEND.connectionAttempts++;
+    console.log(`🔗 Intento de conexión #${NADAKKI_BACKEND.connectionAttempts}`);
+    
+    try {
+        const response = await fetch(`${NADAKKI_BACKEND.apiUrl}/api/v1/health`, {
+            method: 'GET',
+            headers: {
+                'X-Tenant-ID': NADAKKI_BACKEND.tenantId,
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            const data = await response.json();
+            NADAKKI_BACKEND.isConnected = true;
+            console.log('✅ Backend conectado exitosamente:', data);
+            showNotification(`🌐 Conectado a Nadakki AI Enterprise v${data.version || '2.1.0'}`, 'success');
+            return true;
+        } else {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+    } catch (error) {
+        console.error('❌ Error de conexión:', error);
+        NADAKKI_BACKEND.isConnected = false;
+        showNotification(`❌ Error conectando al backend: ${error.message}`, 'error');
+        return false;
+    }
+}
+
+// FUNCIÓN DE EJECUCIÓN DE AGENTES MEJORADA
+async function executeNadakkiAgent(agentName) {
+    console.log(`🤖 Ejecutando agente: ${agentName}`);
+    
+    // Verificar conexión
+    if (!NADAKKI_BACKEND.isConnected) {
+        console.log('🔗 Backend no conectado, intentando conectar...');
+        const connected = await connectToBackend();
+        if (!connected) {
+            alert('❌ No se puede conectar al backend. Verifica la consola para más detalles.');
+            return;
+        }
+    }
+    
+    // Mostrar loading
+    showNotification(`🔄 Ejecutando ${agentName} con motor cuántico...`, 'info');
+    
+    try {
+        // Generar perfil de prueba realista
+        const testProfile = {
+            profile: {
+                income: Math.floor(Math.random() * 60000) + 40000,
+                credit_score: Math.floor(Math.random() * 200) + 650,
+                age: Math.floor(Math.random() * 30) + 25,
+                employment_type: ['full_time', 'part_time', 'self_employed'][Math.floor(Math.random() * 3)],
+                debt_to_income: Math.round((Math.random() * 0.4 + 0.1) * 100) / 100
+            }
+        };
+        
+        console.log('📊 Enviando perfil:', testProfile);
+        
+        const response = await fetch(`${NADAKKI_BACKEND.apiUrl}/api/v1/evaluate`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Tenant-ID': NADAKKI_BACKEND.tenantId
+            },
+            body: JSON.stringify(testProfile)
+        });
+        
+        const result = await response.json();
+        console.log('📈 Resultado de evaluación:', result);
+        
+        if (response.ok) {
+            const similarityPercent = (result.quantum_similarity_score * 100).toFixed(1);
+            const riskLevel = result.risk_level;
+            const decision = result.automated_decision?.action || 'EVALUATED';
+            
+            // Determinar tipo de notificación
+            let notificationType = 'info';
+            if (decision === 'APPROVE' || riskLevel === 'LOW_RISK') {
+                notificationType = 'success';
+            } else if (decision === 'REJECT' || riskLevel === 'REJECT_AUTOMATIC') {
+                notificationType = 'error';
+            } else {
+                notificationType = 'warning';
+            }
+            
+            showNotification(
+                `🧠 ${agentName}: ${decision} | Similitud: ${similarityPercent}% | Riesgo: ${riskLevel}`, 
+                notificationType
+            );
+            
+            // Actualizar métricas del dashboard
+            updateDashboardStats();
+            
+        } else {
+            throw new Error(result.error || 'Error en la evaluación');
+        }
+        
+    } catch (error) {
+        console.error('❌ Error ejecutando agente:', error);
+        showNotification(`❌ Error en ${agentName}: ${error.message}`, 'error');
+    }
+}
+
+// FUNCIÓN PARA ACTUALIZAR ESTADÍSTICAS
+function updateDashboardStats() {
+    // Simular actualizaciones en tiempo real
+    const institutions = document.getElementById('institutions');
+    if (institutions) {
+        const current = parseInt(institutions.textContent) || 247;
+        institutions.textContent = current + Math.floor(Math.random() * 3);
+    }
+}
+
+// SOBRESCRIBIR FUNCIÓN GLOBAL executeAgent
+window.executeAgent = executeNadakkiAgent;
+
+// CONFIGURAR TODOS LOS BOTONES AL CARGAR
+function setupAgentButtons() {
+    console.log('🔧 Configurando botones de agentes...');
+    
+    // Buscar todos los botones de agentes
+    const agentButtons = document.querySelectorAll('.btn-agent.btn-primary');
+    console.log(`📱 Encontrados ${agentButtons.length} botones de agentes`);
+    
+    agentButtons.forEach((button, index) => {
+        // Obtener el nombre del agente desde el card
+        const agentCard = button.closest('.agent-card');
+        const agentTitle = agentCard?.querySelector('.agent-title')?.textContent || `Agente-${index + 1}`;
+        
+        // Remover listeners existentes y agregar nuevo
+        button.onclick = null;
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log(`🔥 Botón clickeado: ${agentTitle}`);
+            executeNadakkiAgent(agentTitle);
+        });
+        
+        console.log(`✅ Botón configurado: ${agentTitle}`);
+    });
+    
+    // También configurar botones de configuración
+    const configButtons = document.querySelectorAll('.btn-agent.btn-secondary');
+    configButtons.forEach((button, index) => {
+        const agentCard = button.closest('.agent-card');
+        const agentTitle = agentCard?.querySelector('.agent-title')?.textContent || `Agente-${index + 1}`;
+        
+        button.onclick = null;
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log(`⚙️ Configurando: ${agentTitle}`);
+            showNotification(`⚙️ Configuración de ${agentTitle} disponible en próxima versión`, 'info');
+        });
+    });
+    
+    console.log('✅ Todos los botones configurados correctamente');
+}
+
+// FUNCIÓN DE TESTING RÁPIDO
+function testBackendConnection() {
+    console.log('🧪 Iniciando test de conexión...');
+    connectToBackend();
+}
+
+// INICIALIZACIÓN MEJORADA
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('📄 DOM cargado, inicializando sistema...');
+    
+    // Esperar a que todo esté listo
+    setTimeout(() => {
+        console.log('🚀 Iniciando configuración de sistema...');
+        setupAgentButtons();
+        connectToBackend();
+        
+        // Añadir botón de test en la consola
+        window.testConnection = testBackendConnection;
+        console.log('🔧 Función de test disponible: testConnection()');
+        
+    }, 3000);
+});
+
+// AGREGAR FUNCIONES GLOBALES PARA DEBUGGING
+window.NADAKKI_DEBUG = {
+    backend: NADAKKI_BACKEND,
+    testAgent: (name) => executeNadakkiAgent(name || 'TestBot'),
+    reconnect: connectToBackend,
+    setupButtons: setupAgentButtons
+};
+
+console.log('🎯 Nadakki AI Enterprise Suite JavaScript cargado');
+console.log('🔧 Debug disponible en: window.NADAKKI_DEBUG');
+</script>
+<script>
+console.log('🔥 INICIANDO NADAKKI AI ENTERPRISE - VERSIÓN DIRECTA');
+
+// CONFIGURACIÓN SIMPLE
+const API_URL = 'https://fdnmgx4rz7.execute-api.us-east-1.amazonaws.com/prod';
+const TENANT_ID = 'banco-popular-rd';
+let isConnected = false;
+
+// FUNCIÓN SIMPLE DE CONEXIÓN
+async function testConnection() {
+    try {
+        const response = await fetch(`${API_URL}/api/v1/health`);
+        const data = await response.json();
+        isConnected = true;
+        console.log('✅ CONECTADO:', data);
+        showNotification('🌐 Conectado a Nadakki AI Enterprise', 'success');
+        return true;
+    } catch (error) {
+        console.error('❌ Error conexión:', error);
+        showNotification('❌ Error de conexión', 'error');
+        return false;
+    }
+}
+
+// FUNCIÓN SIMPLE DE EVALUACIÓN
+async function runEvaluation(agentName) {
+    console.log(`🚀 EJECUTANDO: ${agentName}`);
+    
+    if (!isConnected) {
+        await testConnection();
+    }
+    
+    try {
+        const testProfile = {
+            profile: {
+                income: 55000,
+                credit_score: 720,
+                age: 30,
+                employment_type: "full_time",
+                debt_to_income: 0.3
+            }
+        };
+        
+        showNotification(`🔄 Ejecutando ${agentName}...`, 'info');
+        
+        const response = await fetch(`${API_URL}/api/v1/evaluate`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Tenant-ID': TENANT_ID
+            },
+            body: JSON.stringify(testProfile)
+        });
+        
+        const result = await response.json();
+        console.log('📊 RESULTADO:', result);
+        
+        const similarity = (result.quantum_similarity_score * 100).toFixed(1);
+        const riskLevel = result.risk_level;
+        const decision = result.automated_decision?.action || 'EVALUATED';
+        
+        let notifType = 'info';
+        if (decision === 'APPROVE') notifType = 'success';
+        if (decision === 'REJECT') notifType = 'error';
+        
+        showNotification(
+            `🧠 ${agentName}: ${decision} | ${similarity}% similitud | Riesgo: ${riskLevel}`, 
+            notifType
+        );
+        
+    } catch (error) {
+        console.error('❌ Error evaluación:', error);
+        showNotification(`❌ Error en ${agentName}: ${error.message}`, 'error');
+    }
+}
+
+// CONFIGURAR BOTONES DE MANERA DIRECTA
+function setupButtons() {
+    console.log('🔧 CONFIGURANDO BOTONES...');
+    
+    // Método 1: Por clase
+    const buttons = document.querySelectorAll('.btn-agent.btn-primary');
+    console.log(`📱 Encontrados ${buttons.length} botones primarios`);
+    
+    buttons.forEach((button, index) => {
+        const card = button.closest('.agent-card');
+        const title = card?.querySelector('.agent-title')?.textContent || `Agente ${index + 1}`;
+        
+        // REMOVER CUALQUIER EVENTO EXISTENTE
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+        
+        // AGREGAR EVENTO DIRECTO
+        newButton.onclick = function(e) {
+            e.preventDefault();
+            console.log(`🔥 CLICK DETECTADO: ${title}`);
+            runEvaluation(title);
+        };
+        
+        console.log(`✅ Configurado: ${title}`);
+    });
+    
+    // Método 2: También configurar botones secundarios
+    const configButtons = document.querySelectorAll('.btn-agent.btn-secondary');
+    configButtons.forEach((button, index) => {
+        const card = button.closest('.agent-card');
+        const title = card?.querySelector('.agent-title')?.textContent || `Config ${index + 1}`;
+        
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+        
+        newButton.onclick = function(e) {
+            e.preventDefault();
+            showNotification(`⚙️ Configuración de ${title} - Próximamente`, 'info');
+        };
+    });
+    
+    console.log('✅ TODOS LOS BOTONES CONFIGURADOS');
+}
+
+// INICIALIZACIÓN GARANTIZADA
+let setupAttempts = 0;
+function ensureSetup() {
+    setupAttempts++;
+    console.log(`🔄 Intento de setup #${setupAttempts}`);
+    
+    const buttons = document.querySelectorAll('.btn-agent.btn-primary');
+    if (buttons.length > 0) {
+        console.log('✅ Botones encontrados, configurando...');
+        setupButtons();
+        testConnection();
+    } else {
+        console.log('⏳ Botones no encontrados, reintentando...');
+        if (setupAttempts < 10) {
+            setTimeout(ensureSetup, 1000);
+        }
+    }
+}
+
+// FUNCIONES GLOBALES PARA TESTING
+window.testNadakki = function() {
+    console.log('🧪 TEST MANUAL');
+    runEvaluation('TestManual');
+};
+
+window.reconnectNadakki = function() {
+    console.log('🔗 RECONECTANDO');
+    testConnection();
+};
+
+window.reconfigureButtons = function() {
+    console.log('🔧 RECONFIGURANDO BOTONES');
+    setupButtons();
+};
+
+// INICIALIZACIÓN MÚLTIPLE PARA GARANTIZAR FUNCIONAMIENTO
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('📄 DOM CARGADO');
+    setTimeout(ensureSetup, 1000);
+});
+
+// Backup en caso de que DOMContentLoaded ya haya pasado
+if (document.readyState === 'loading') {
+    console.log('⏳ Documento cargando...');
+} else {
+    console.log('📄 Documento ya cargado, iniciando setup...');
+    setTimeout(ensureSetup, 500);
+}
+
+// Triple backup
+setTimeout(ensureSetup, 2000);
+setTimeout(ensureSetup, 5000);
+
+console.log('🎯 NADAKKI AI ENTERPRISE - VERSIÓN SIMPLE CARGADA');
+console.log('🔧 Funciones de test: testNadakki(), reconnectNadakki(), reconfigureButtons()');
+</script>
+<script>
+console.log('🔥 ULTRA SIMPLE NADAKKI VERSION');
+
+const API = 'https://fdnmgx4rz7.execute-api.us-east-1.amazonaws.com/prod';
+
+// FUNCIÓN ULTRA SIMPLE
+async function ejecutarAgente(nombre) {
+    console.log('🚀 EJECUTANDO:', nombre);
+    
+    const perfil = {
+        profile: {
+            income: 60000,
+            credit_score: 720,
+            age: 30,
+            employment_type: "full_time",
+            debt_to_income: 0.3
+        }
+    };
+    
+    try {
+        showNotification(`🔄 Ejecutando ${nombre}...`, 'info');
+        
+        const response = await fetch(`${API}/api/v1/evaluate`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Tenant-ID': 'banco-popular-rd' },
+            body: JSON.stringify(perfil)
+        });
+        
+        const resultado = await response.json();
+        const similitud = (resultado.quantum_similarity_score * 100).toFixed(1);
+        
+        showNotification(
+            `🧠 ${nombre}: ${resultado.automated_decision.action} | ${similitud}% similitud`, 
+            'success'
+        );
+        
+        console.log('✅ RESULTADO:', resultado);
+        
+    } catch (error) {
+        showNotification(`❌ Error: ${error.message}`, 'error');
+        console.error('❌ ERROR:', error);
+    }
+}
+
+// CONFIGURAR TODOS LOS BOTONES INMEDIATAMENTE
+function configurarBotones() {
+    const botones = document.querySelectorAll('.btn-agent.btn-primary');
+    console.log(`📱 Configurando ${botones.length} botones`);
+    
+    botones.forEach((boton, i) => {
+        const tarjeta = boton.closest('.agent-card');
+        const titulo = tarjeta?.querySelector('.agent-title')?.textContent || `Agente${i+1}`;
+        
+        // MÉTODO DIRECTO - onclick
+        boton.onclick = function(e) {
+            e.preventDefault();
+            console.log(`🔥 CLICK: ${titulo}`);
+            ejecutarAgente(titulo);
+        };
+        
+        console.log(`✅ ${titulo} configurado`);
+    });
+    
+    console.log('✅ TODOS CONFIGURADOS');
+}
+
+// EJECUTAR INMEDIATAMENTE
+setTimeout(configurarBotones, 1000);
+setTimeout(configurarBotones, 3000);
+setTimeout(configurarBotones, 5000);
+
+// FUNCIÓN GLOBAL DE EMERGENCIA
+window.testearBoton = function() {
+    ejecutarAgente('TestManual');
+};
+
+console.log('🎯 ULTRA SIMPLE VERSION CARGADA - testearBoton() disponible');
+</script></body>
+</html>
+
+
+
+

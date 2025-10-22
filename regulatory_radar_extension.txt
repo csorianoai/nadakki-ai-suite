@@ -1,0 +1,144 @@
+﻿# ===============================================
+# EXTENSIÓN BUREAU INTEGRATION - NADAKKI AI SUITE
+# Agregar estas líneas al regulatory_radar.py existente
+# ===============================================
+
+# 1. AGREGAR IMPORTS AL INICIO (después de las líneas de import existentes)
+import yaml
+import os
+from pathlib import Path
+
+# 2. IMPORT CONDICIONAL DEL ROUTER (después de otros imports)
+try:
+    from integrations.bureaus.router import RouterBureauInteligente
+    BUREAU_INTEGRATION_AVAILABLE = True
+except ImportError:
+    BUREAU_INTEGRATION_AVAILABLE = False
+    print("⚠️ Integración bureau no disponible - funcionando en modo básico")
+
+# 3. AGREGAR AL MÉTODO __init__ (al final del método, antes del cierre)
+        # NUEVA FUNCIONALIDAD: Integración Bureau
+        self.bureau_router = None
+        self.feature_flags = self._cargar_feature_flags()
+        
+        if (self.feature_flags.get('integracion_bureau', {}).get('habilitado', False) and 
+            BUREAU_INTEGRATION_AVAILABLE and
+            self._es_inquilino_habilitado_para_bureau()):
+            
+            try:
+                self.bureau_router = RouterBureauInteligente(tenant_id)
+                logger.info(f"Integración bureau habilitada para inquilino {tenant_id}")
+            except Exception as e:
+                logger.error(f"Error inicializando bureau router: {e}")
+                self.bureau_router = None
+
+# 4. AGREGAR NUEVOS MÉTODOS (al final de la clase, antes del último })
+
+    def _cargar_feature_flags(self) -> Dict:
+        """Cargar configuración de feature flags"""
+        try:
+            flag_path = Path("config/feature_flags.yml")
+            if flag_path.exists():
+                with open(flag_path, 'r', encoding='utf-8') as f:
+                    return yaml.safe_load(f)
+        except Exception as e:
+            logger.warning(f"No se pudieron cargar feature flags: {e}")
+        return {}
+
+    def _es_inquilino_habilitado_para_bureau(self) -> bool:
+        """Verificar si el inquilino está habilitado para integración bureau"""
+        flags_bureau = self.feature_flags.get('integracion_bureau', {})
+        
+        # Verificar anillo 0 (interno)
+        anillo_0 = flags_bureau.get('anillo_0', {})
+        if (anillo_0.get('habilitado', False) and 
+            self.tenant_id in anillo_0.get('inquilinos', [])):
+            return True
+            
+        # Verificar anillo 1 (piloto)
+        anillo_1 = flags_bureau.get('anillo_1', {})
+        if (anillo_1.get('habilitado', False) and 
+            self.tenant_id in anillo_1.get('inquilinos', [])):
+            return True
+            
+        # Verificar anillo 2 (producción)
+        anillo_2 = flags_bureau.get('anillo_2', {})
+        if (anillo_2.get('habilitado', False) and 
+            self.tenant_id in anillo_2.get('inquilinos', [])):
+            return True
+            
+        return False
+
+    def enhance_with_bureau_data(self, profile: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        NUEVO MÉTODO: Enriquecer perfil con datos de bureau si está habilitado
+        
+        Args:
+            profile: Perfil del solicitante
+            
+        Returns:
+            Perfil enriquecido con datos de bureau o perfil original si no disponible
+        """
+        if not self.bureau_router:
+            logger.debug("Bureau router no disponible, usando solo datos internos")
+            return profile
+            
+        try:
+            score_interno = profile.get('score_riesgo_interno', 0.5)
+            
+            # Usar gating inteligente del router
+            decision_gating = self.bureau_router.debe_consultar_bureau(score_interno)
+            
+            if decision_gating.get('debe_consultar', False):
+                import asyncio
+                
+                # Ejecutar consulta bureau
+                datos_bureau = asyncio.run(
+                    self.bureau_router.obtener_datos_bureau(
+                        cedula=profile.get('cedula', ''),
+                        contexto_perfil=profile
+                    )
+                )
+                
+                if datos_bureau.get('exito', False):
+                    # Enriquecer perfil con datos bureau
+                    perfil_enriquecido = {
+                        **profile,
+                        'datos_bureau': datos_bureau,
+                        'fuente_enriquecimiento': 'bureau_integration',
+                        'timestamp_enriquecimiento': self._obtener_timestamp(),
+                        'costo_consulta': datos_bureau.get('costo_consulta', 0.0)
+                    }
+                    
+                    logger.info(f"Perfil enriquecido con datos bureau para inquilino {self.tenant_id}")
+                    return perfil_enriquecido
+                else:
+                    logger.warning(f"Consulta bureau falló: {datos_bureau.get('mensaje', 'Error desconocido')}")
+                    
+            else:
+                logger.info(f"Consulta bureau omitida: {decision_gating.get('motivo', 'Sin motivo')}")
+                
+        except Exception as e:
+            logger.error(f"Error en enriquecimiento bureau: {e}")
+            
+        # Retornar perfil original si bureau no está disponible o falló
+        return profile
+
+    def _obtener_timestamp(self) -> str:
+        """Generar timestamp para auditoría"""
+        from datetime import datetime
+        return datetime.utcnow().isoformat() + 'Z'
+
+# 5. MODIFICAR MÉTODO PRINCIPAL DE ANÁLISIS
+# Buscar el método que haga análisis principal (como analyze_regulatory_compliance)
+# y agregar al inicio:
+#
+#        # ENRIQUECER CON DATOS BUREAU SI DISPONIBLE
+#        perfil_enriquecido = self.enhance_with_bureau_data(profile)
+#        
+#        # Usar perfil enriquecido para el análisis
+#        # (reemplazar 'profile' por 'perfil_enriquecido' en el resto del método)
+
+# ===============================================
+# FIN DE EXTENSIÓN
+# ===============================================

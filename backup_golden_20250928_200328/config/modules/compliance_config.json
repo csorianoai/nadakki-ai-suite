@@ -1,0 +1,72 @@
+{
+  "module_name": "compliance",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #a55eea 0%, #8b4cf7 100%)",
+  "agents": {
+    "ComplianceWatchdog": {
+      "class_name": "ComplianceWatchdogMonitor",
+      "description": "Monitoreo regulatorio continuo con alertas automáticas de cambios normativos",
+      "algorithms": [
+        "regulatory_monitoring",
+        "compliance_checking",
+        "rule_updates"
+      ],
+      "features": [
+        "regulatory_monitoring",
+        "compliance_alerts",
+        "rule_validation"
+      ],
+      "performance_target": 99.5
+    },
+    "AuditMaster": {
+      "class_name": "AuditMasterPreparer",
+      "description": "Preparación automática de auditorías con documentación completa y trazabilidad",
+      "algorithms": [
+        "audit_preparation",
+        "documentation_generation",
+        "trail_analysis"
+      ],
+      "features": [
+        "audit_preparation",
+        "documentation_automation",
+        "compliance_reporting"
+      ],
+      "performance_target": 98.9
+    },
+    "DocGuardian": {
+      "class_name": "DocumentGuardianValidator",
+      "description": "Validación de documentos con OCR + IA y detección de fraude documental",
+      "algorithms": [
+        "ocr_processing",
+        "document_validation",
+        "fraud_detection"
+      ],
+      "features": [
+        "document_validation",
+        "ocr_analysis",
+        "fraud_detection"
+      ],
+      "performance_target": 97.3
+    },
+    "RegulatoryRadar": {
+      "class_name": "RegulatoryRadarScanner",
+      "description": "Seguimiento de cambios regulatorios con análisis de impacto automático",
+      "algorithms": [
+        "regulatory_scanning",
+        "impact_analysis",
+        "change_detection"
+      ],
+      "features": [
+        "regulatory_scanning",
+        "impact_assessment",
+        "change_alerts"
+      ],
+      "performance_target": 96.1
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.207411",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

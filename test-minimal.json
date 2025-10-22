@@ -1,0 +1,14 @@
+﻿{
+    "path":  "/",
+    "body":  null,
+    "headers":  {
+                    "Accept":  "application/json"
+                },
+    "requestContext":  {
+                           "path":  "/",
+                           "requestId":  "minimal-test",
+                           "stage":  "prod",
+                           "httpMethod":  "GET"
+                       },
+    "httpMethod":  "GET"
+}

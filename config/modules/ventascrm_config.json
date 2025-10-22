@@ -1,0 +1,72 @@
+{
+  "module_name": "ventascrm",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #74b9ff 0%, #0984e3 100%)",
+  "agents": {
+    "PipelinePredictivoIA": {
+      "class_name": "PredictivePipelineEngine",
+      "description": "Pipeline de ventas predictivo con análisis de conversión",
+      "algorithms": [
+        "pipeline_prediction",
+        "conversion_analysis",
+        "sales_forecasting"
+      ],
+      "features": [
+        "sales_pipeline",
+        "conversion_prediction",
+        "revenue_forecasting"
+      ],
+      "performance_target": 92.8
+    },
+    "CierrePredictivoIA": {
+      "class_name": "ClosingPredictionEngine",
+      "description": "Predicción de cierre de ventas con scoring de oportunidades",
+      "algorithms": [
+        "closing_prediction",
+        "opportunity_scoring",
+        "deal_analysis"
+      ],
+      "features": [
+        "closing_prediction",
+        "deal_scoring",
+        "opportunity_analysis"
+      ],
+      "performance_target": 88.5
+    },
+    "CommunicationBot": {
+      "class_name": "CommunicationBotEngine",
+      "description": "Bot de comunicación inteligente para seguimiento de leads",
+      "algorithms": [
+        "nlp_communication",
+        "lead_nurturing",
+        "automated_follow_up"
+      ],
+      "features": [
+        "intelligent_communication",
+        "lead_nurturing",
+        "automated_outreach"
+      ],
+      "performance_target": 86.2
+    },
+    "ClienteLifecycleIA": {
+      "class_name": "CustomerLifecycleEngine",
+      "description": "Gestión del ciclo de vida del cliente con IA",
+      "algorithms": [
+        "lifecycle_analysis",
+        "customer_journey",
+        "retention_optimization"
+      ],
+      "features": [
+        "lifecycle_management",
+        "journey_optimization",
+        "retention_strategy"
+      ],
+      "performance_target": 90.7
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.295734",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

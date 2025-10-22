@@ -1,0 +1,2611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Nadakki AI Enterprise Suite - 40 Agentes Financieros Multi-Tenant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* COLORES POR ECOSISTEMA */
+            --originacion: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            --decision: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+            --vigilancia: linear-gradient(135deg, #ff6b9d 0%, #ff4757 100%);
+            --recuperacion: linear-gradient(135deg, #ff9f43 0%, #ff6348 100%);
+            --compliance: linear-gradient(135deg, #a55eea 0%, #8b4cf7 100%);
+            --operacional: linear-gradient(135deg, #26de81 0%, #20bf6b 100%);
+            --experiencia: linear-gradient(135deg, #5b86e5 0%, #36d1dc 100%);
+            --inteligencia: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --fortaleza: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --orchestration: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            
+            /* SISTEMA DE COLORES FUTURISTA */
+            --bg-primary: #0a0f1c;
+            --bg-secondary: #1a1f2e;
+            --bg-tertiary: #252b3f;
+            
+            --glass-primary: rgba(26, 31, 46, 0.95);
+            --glass-secondary: rgba(37, 43, 63, 0.9);
+            --glass-tertiary: rgba(51, 65, 85, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-hover: rgba(255, 255, 255, 0.08);
+            
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #94a3b8;
+            --text-accent: #60a5fa;
+            
+            --neon-blue: #00d4ff;
+            --neon-purple: #a855f7;
+            --neon-green: #00ff88;
+            --neon-pink: #ff6b9d;
+            --neon-orange: #ff9f43;
+            
+            /* EFECTOS Y DIMENSIONES */
+            --shadow-glow: 0 0 20px rgba(96, 165, 250, 0.3);
+            --shadow-neon: 0 0 30px rgba(0, 212, 255, 0.4);
+            --shadow-quantum: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(96, 165, 250, 0.2);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(96, 165, 250, 0.3);
+            
+            --sidebar-width: 320px;
+            --header-height: 80px;
+            --radius-xl: 16px;
+            --radius-2xl: 24px;
+            
+            --transition-smooth: 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-bounce: 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Orbitron', 'Inter', monospace;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* BACKGROUND FUTURISTA */
+        .quantum-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -10;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 40% 70%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
+                var(--bg-primary);
+            animation: quantumPulse 20s ease-in-out infinite;
+        }
+
+        @keyframes quantumPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 1.2; }
+        }
+
+        .quantum-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(96, 165, 250, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(96, 165, 250, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -8;
+            animation: gridMove 30s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* HEADER */
+        .main-header {
+            height: var(--header-height);
+            background: var(--glass-secondary);
+            backdrop-filter: blur(30px);
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2.5rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-quantum);
+        }
+
+        .header-title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .module-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            letter-spacing: 0.5px;
+        }
+
+        .module-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            opacity: 0.8;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .stats-summary {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 900;
+            font-family: var(--font-mono);
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: statGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes statGlow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: var(--font-display);
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        .main-content {
+            padding-top: var(--header-height);
+            min-height: 100vh;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+
+        /* OVERVIEW CARDS */
+        .module-overview {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2.5rem;
+            margin: 2.5rem 0 3rem 0;
+        }
+
+        .overview-card {
+            background: var(--glass-secondary);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-2xl);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-quantum);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+        }
+
+        .overview-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                var(--neon-blue) 0%, 
+                var(--neon-purple) 33%, 
+                var(--neon-green) 66%, 
+                var(--neon-pink) 100%
+            );
+            animation: cardGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes cardGlow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .overview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .overview-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--font-display);
+        }
+
+        .overview-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--neon-blue);
+        }
+
+        .overview-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .metric-card {
+            background: var(--glass-tertiary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            text-align: center;
+            transition: all var(--transition-smooth);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 900;
+            font-family: var(--font-mono);
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            animation: metricPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes metricPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: var(--font-display);
+        }
+
+        /* SECCIÓN DE AGENTES */
+        .agents-section {
+            margin-top: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--font-display);
+        }
+
+        .ecosystem-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-align: center;
+            margin: 3rem 0 2rem 0;
+            font-family: var(--font-display);
+            position: relative;
+            padding: 1rem 0;
+        }
+
+        .ecosystem-title::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--ecosystem-gradient);
+            border-radius: 2px;
+        }
+
+        .ecosystem-title.originacion::before { background: var(--originacion); }
+        .ecosystem-title.decision::before { background: var(--decision); }
+        .ecosystem-title.vigilancia::before { background: var(--vigilancia); }
+        .ecosystem-title.recuperacion::before { background: var(--recuperacion); }
+        .ecosystem-title.compliance::before { background: var(--compliance); }
+        .ecosystem-title.operacional::before { background: var(--operacional); }
+        .ecosystem-title.experiencia::before { background: var(--experiencia); }
+        .ecosystem-title.inteligencia::before { background: var(--inteligencia); }
+        .ecosystem-title.fortaleza::before { background: var(--fortaleza); }
+        .ecosystem-title.orchestration::before { background: var(--orchestration); }
+
+        .agents-controls {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-input {
+            background: var(--glass-tertiary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 0.75rem 1.25rem 0.75rem 3rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            width: 300px;
+            transition: all var(--transition-smooth);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.25rem;
+            background: var(--glass-tertiary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover {
+            background: var(--glass-hover);
+            color: var(--text-primary);
+            border-color: var(--neon-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* GRID DE AGENTES */
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .agent-card {
+            background: var(--glass-secondary);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-2xl);
+            padding: 2rem;
+            transition: all var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: var(--shadow-quantum);
+        }
+
+        .agent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--agent-gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-smooth);
+        }
+
+        .agent-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .agent-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .agent-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .agent-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-2xl);
+            background: var(--agent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-neon);
+            animation: avatarGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes avatarGlow {
+            0%, 100% { box-shadow: var(--shadow-neon); }
+            50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.6); }
+        }
+
+        .agent-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .agent-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-display);
+        }
+
+        .agent-category {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: var(--font-mono);
+        }
+
+        .agent-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .agent-metrics {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--glass-tertiary);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--glass-border);
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: var(--font-mono);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--neon-green);
+            animation: statusPulse 2s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { 
+                opacity: 1; 
+                transform: scale(1);
+                box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            }
+            50% { 
+                opacity: 0.7; 
+                transform: scale(1.2);
+                box-shadow: 0 0 20px rgba(0, 255, 136, 0.8);
+            }
+        }
+
+        .efficiency-display {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+        }
+
+        .efficiency-bar {
+            flex: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .efficiency-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-green), var(--neon-blue));
+            border-radius: 3px;
+            transition: width 2s ease-out;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+        }
+
+        .efficiency-value {
+            font-family: var(--font-mono);
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        /* BOTONES DE AGENTES */
+        .agent-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-agent {
+            flex: 1;
+            padding: 1rem 1.25rem;
+            border: none;
+            border-radius: var(--radius-xl);
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all var(--transition-bounce);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            position: relative;
+            overflow: hidden;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--agent-gradient);
+            color: white;
+            border: 1px solid transparent;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: var(--glass-tertiary);
+            color: var(--text-secondary);
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--glass-hover);
+            color: var(--text-primary);
+            border-color: var(--neon-blue);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* COLORES POR ECOSISTEMA */
+        .agent-card.originacion { --agent-gradient: var(--originacion); }
+        .agent-card.decision { --agent-gradient: var(--decision); }
+        .agent-card.vigilancia { --agent-gradient: var(--vigilancia); }
+        .agent-card.recuperacion { --agent-gradient: var(--recuperacion); }
+        .agent-card.compliance { --agent-gradient: var(--compliance); }
+        .agent-card.operacional { --agent-gradient: var(--operacional); }
+        .agent-card.experiencia { --agent-gradient: var(--experiencia); }
+        .agent-card.inteligencia { --agent-gradient: var(--inteligencia); }
+        .agent-card.fortaleza { --agent-gradient: var(--fortaleza); }
+        .agent-card.orchestration { --agent-gradient: var(--orchestration); }
+
+        /* ANIMACIONES DE ENTRADA */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            animation: fadeInUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* NOTIFICACIONES */
+        .notification {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem 2rem;
+            color: var(--text-primary);
+            backdrop-filter: blur(30px);
+            box-shadow: var(--shadow-hover);
+            z-index: 10000;
+            animation: slideIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+            font-weight: 600;
+        }
+
+        @keyframes slideIn {
+            from { 
+                transform: translateX(100%) translateY(-20px); 
+                opacity: 0; 
+            }
+            to { 
+                transform: translateX(0) translateY(0); 
+                opacity: 1; 
+            }
+        }
+
+        .notification.success {
+            border-left: 4px solid var(--neon-green);
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .notification.error {
+            border-left: 4px solid var(--neon-pink);
+            background: rgba(255, 107, 157, 0.1);
+        }
+
+        .notification.info {
+            border-left: 4px solid var(--neon-blue);
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .notification.warning {
+            border-left: 4px solid var(--neon-orange);
+            background: rgba(255, 159, 67, 0.1);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1400px) {
+            .agents-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+            
+            .module-overview {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-summary {
+                display: none;
+            }
+
+            .main-content {
+                padding: var(--header-height) 1.5rem 1.5rem 1.5rem;
+            }
+
+            .agents-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--glass-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Futurista -->
+    <div class="quantum-background"></div>
+    <div class="quantum-grid"></div>
+
+    <!-- Header -->
+    <div class="main-header">
+        <div class="header-title">
+            <div class="module-title">🚀 Nadakki AI Enterprise - 40 Agentes Financieros</div>
+            <div class="module-subtitle">Motor híbrido cuántico • Arquitectura multi-tenant • Precisión 97.8%</div>
+        </div>
+        
+        <div class="header-actions">
+            <div class="stats-summary">
+                <div class="stat-item">
+                    <div class="stat-value" id="totalAgents">40</div>
+                    <div class="stat-label">Agentes Activos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="activeModules">10</div>
+                    <div class="stat-label">Ecosistemas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="uptime">99.97%</div>
+                    <div class="stat-label">Quantum Uptime</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="institutions">3</div>
+                    <div class="stat-label">Instituciones</div>
+                </div>
+            </div>
+            
+            <button onclick="showMultiTenantPanel()" style="
+                padding: 0.75rem 1.5rem;
+                background: var(--glass-tertiary);
+                border: 1px solid var(--glass-border);
+                border-radius: var(--radius-xl);
+                color: var(--text-primary);
+                cursor: pointer;
+                transition: all var(--transition-smooth);
+                font-weight: 600;
+            ">
+                <i class="fas fa-building"></i> Multi-Tenant
+            </button>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <!-- OVERVIEW CARDS -->
+        <div class="module-overview">
+            <div class="overview-card">
+                <div class="overview-title">
+                    <div class="overview-icon"><i class="fas fa-atom"></i></div>
+                    Sistema Multi-Tenant con 40 Agentes Especializados
+                </div>
+                <div class="overview-description">
+                    Plataforma reutilizable de evaluación crediticia con IA para múltiples instituciones financieras. 
+                    40 agentes distribuidos en 10 ecosistemas funcionales con motor híbrido de similitud cuántica.
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">40</div>
+                        <div class="metric-label">Agentes IA</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">97.8%</div>
+                        <div class="metric-label">Precisión</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">3</div>
+                        <div class="metric-label">Instituciones</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$58K</div>
+                        <div class="metric-label">Revenue MRR</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-card">
+                <div class="overview-title">
+                    <div class="overview-icon"><i class="fas fa-satellite-dish"></i></div>
+                    Ecosistemas Multi-Tenant
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--glass-tertiary); border-radius: 12px;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div style="width: 8px; height: 8px; background: var(--originacion); border-radius: 50%;"></div>
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">Originación Inteligente</span>
+                        </div>
+                        <span style="color: var(--text-primary); font-weight: 700; font-family: var(--font-mono);">4/4</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--glass-tertiary); border-radius: 12px;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div style="width: 8px; height: 8px; background: var(--decision); border-radius: 50%;"></div>
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">Decisión Cuántica</span>
+                        </div>
+                        <span style="color: var(--text-primary); font-weight: 700; font-family: var(--font-mono);">4/4</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--glass-tertiary); border-radius: 12px;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div style="width: 8px; height: 8px; background: var(--vigilancia); border-radius: 50%;"></div>
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">Vigilancia Continua</span>
+                        </div>
+                        <span style="color: var(--text-primary); font-weight: 700; font-family: var(--font-mono);">4/4</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: var(--glass-tertiary); border-radius: 12px;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div style="width: 8px; height: 8px; background: var(--orchestration); border-radius: 50%;"></div>
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">+ 6 Ecosistemas Más</span>
+                        </div>
+                        <span style="color: var(--text-primary); font-weight: 700; font-family: var(--font-mono);">24/24</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AGENTES SECTION -->
+        <div class="agents-section">
+            <div class="section-header">
+                <div class="section-title">
+                    <i class="fas fa-atom"></i>
+                    40 Agentes Financieros Multi-Tenant
+                </div>
+                <div class="agents-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Buscar agentes..." id="agentSearch">
+                    </div>
+                    <button class="filter-btn" onclick="toggleFilters()">
+                        <i class="fas fa-filter"></i>
+                        Filtros
+                    </button>
+                </div>
+            </div>
+
+            <!-- =========================================== -->
+            <!-- ORIGINACIÓN INTELIGENTE (4 AGENTES) -->
+            <!-- =========================================== -->
+            <h2 class="ecosystem-title originacion">🔍 ORIGINACIÓN INTELIGENTE</h2>
+            <div class="agents-grid">
+                <div class="agent-card originacion fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-search"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">SentinelBot Quantum</div>
+                            <div class="agent-category">Agent_01 • Originación Inteligente</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Análisis predictivo de riesgo crediticio con machine learning cuántico. Detecta patrones anómalos y evalúa similitud de perfiles con precisión del 97.2%.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 97%;"></div>
+                            </div>
+                            <div class="efficiency-value">97%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('SentinelBot')">
+                            <i class="fas fa-rocket"></i>
+                            Ejecutar
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('SentinelBot')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card originacion fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-dna"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">DNAProfiler Quantum</div>
+                            <div class="agent-category">Agent_02 • Originación Inteligente</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Perfilado genómico crediticio que crea firmas únicas usando algoritmos cuánticos híbridos de similitud multidimensional.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 98%;"></div>
+                            </div>
+                            <div class="efficiency-value">98%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('DNAProfiler')">
+                            <i class="fas fa-dna"></i>
+                            Profile DNA
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('DNAProfiler')">
+                            <i class="fas fa-microscope"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card originacion fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">IncomeOracle</div>
+                            <div class="agent-category">Agent_03 • Originación Inteligente</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Verificación y validación de ingresos usando APIs de nómina, TSS y machine learning para detectar inconsistencias financieras.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 95%;"></div>
+                            </div>
+                            <div class="efficiency-value">95%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('IncomeOracle')">
+                            <i class="fas fa-calculator"></i>
+                            Verificar
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('IncomeOracle')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card originacion fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-chart-line"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">BehaviorMiner</div>
+                            <div class="agent-category">Agent_04 • Originación Inteligente</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Análisis de patrones transaccionales con machine learning para identificar comportamientos crediticios y predictores de riesgo.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 96%;"></div>
+                            </div>
+                            <div class="efficiency-value">96%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('BehaviorMiner')">
+                            <i class="fas fa-chart-line"></i>
+                            Analizar
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('BehaviorMiner')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================== -->
+            <!-- DECISIÓN CUÁNTICA (4 AGENTES) -->
+            <!-- =========================================== -->
+            <h2 class="ecosystem-title decision">🧠 DECISIÓN CUÁNTICA</h2>
+            <div class="agents-grid">
+                <div class="agent-card decision fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-brain"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">QuantumDecision Core</div>
+                            <div class="agent-category">Agent_05 • Decisión Cuántica</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Motor cuántico híbrido principal con algoritmos Coseno + Euclidiana + Jaccard. 5 niveles de riesgo automatizados en 2.1 segundos.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>CORE QUANTUM</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 99%;"></div>
+                            </div>
+                            <div class="efficiency-value">99%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('QuantumDecision')">
+                            <i class="fas fa-atom"></i>
+                            Quantum Execute
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('QuantumDecision')">
+                            <i class="fas fa-cogs"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card decision fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-eye"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">RiskOracle</div>
+                            <div class="agent-category">Agent_06 • Decisión Cuántica</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Scoring multidimensional avanzado que evalúa 50+ variables financieras con pesos adaptativos por sector e institución.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 98%;"></div>
+                            </div>
+                            <div class="efficiency-value">98%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('RiskOracle')">
+                            <i class="fas fa-eye"></i>
+                            Score Risk
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('RiskOracle')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card decision fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-shield-alt"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">PolicyGuardian</div>
+                            <div class="agent-category">Agent_07 • Decisión Cuántica</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Validación automática contra políticas crediticias internas y regulaciones financieras con compliance en tiempo real.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 99%;"></div>
+                            </div>
+                            <div class="efficiency-value">99%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('PolicyGuardian')">
+                            <i class="fas fa-shield-alt"></i>
+                            Validate
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('PolicyGuardian')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card decision fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-rocket"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">TurboApprover</div>
+                            <div class="agent-category">Agent_08 • Decisión Cuántica</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Aprobación instantánea para casos de bajo riesgo (<50% similitud) con integración directa al core bancario.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 97%;"></div>
+                            </div>
+                            <div class="efficiency-value">97%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('TurboApprover')">
+                            <i class="fas fa-rocket"></i>
+                            Turbo Approve
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('TurboApprover')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================== -->
+            <!-- VIGILANCIA CONTINUA (4 AGENTES) -->
+            <!-- =========================================== -->
+            <h2 class="ecosystem-title vigilancia">👁️ VIGILANCIA CONTINUA</h2>
+            <div class="agents-grid">
+                <div class="agent-card vigilancia fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-satellite-dish"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">EarlyWarning Predictive</div>
+                            <div class="agent-category">Agent_09 • Vigilancia Continua</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Sistema predictivo que detecta deterioro crediticio 90 días antes del default usando redes neuronales avanzadas.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>PREDICTIVE AI</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 96%;"></div>
+                            </div>
+                            <div class="efficiency-value">96%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('EarlyWarning')">
+                            <i class="fas fa-satellite-dish"></i>
+                            Scan & Alert
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('EarlyWarning')">
+                            <i class="fas fa-satellite"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card vigilancia fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-shield-alt"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">PortfolioSentinel</div>
+                            <div class="agent-category">Agent_10 • Vigilancia Continua</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Monitoreo en tiempo real de toda la cartera crediticia con alertas automáticas y análisis de concentración de riesgos.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 95%;"></div>
+                            </div>
+                            <div class="efficiency-value">95%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('PortfolioSentinel')">
+                            <i class="fas fa-shield-alt"></i>
+                            Monitor
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('PortfolioSentinel')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card vigilancia fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-chart-area"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">StressTester</div>
+                            <div class="agent-category">Agent_11 • Vigilancia Continua</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Simulación de escenarios de estrés económico para evaluar la resistencia de la cartera bajo condiciones adversas.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 93%;"></div>
+                            </div>
+                            <div class="efficiency-value">93%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('StressTester')">
+                            <i class="fas fa-chart-area"></i>
+                            Test Stress
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('StressTester')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card vigilancia fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-globe"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">MarketRadar</div>
+                            <div class="agent-category">Agent_12 • Vigilancia Continua</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Análisis continuo de condiciones macroeconómicas y su impacto en el riesgo crediticio de la cartera.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 94%;"></div>
+                            </div>
+                            <div class="efficiency-value">94%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('MarketRadar')">
+                            <i class="fas fa-globe"></i>
+                            Scan Market
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('MarketRadar')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================== -->
+            <!-- RECUPERACIÓN MÁXIMA (4 AGENTES) -->
+            <!-- =========================================== -->
+            <h2 class="ecosystem-title recuperacion">💰 RECUPERACIÓN MÁXIMA</h2>
+            <div class="agents-grid">
+                <div class="agent-card recuperacion fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-bullseye"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">CollectionMaster</div>
+                            <div class="agent-category">Agent_13 • Recuperación Máxima</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Estrategias de cobranza optimizadas con ML para maximizar recuperación usando perfiles psicográficos y preferencias de pago.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 92%;"></div>
+                            </div>
+                            <div class="efficiency-value">92%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('CollectionMaster')">
+                            <i class="fas fa-bullseye"></i>
+                            Collect
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('CollectionMaster')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card recuperacion fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-handshake"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">NegotiationBot</div>
+                            <div class="agent-category">Agent_14 • Recuperación Máxima</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Automatización de renegociaciones inteligentes con capacidad de generar planes de pago personalizados y acuerdos flexibles.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 90%;"></div>
+                            </div>
+                            <div class="efficiency-value">90%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('NegotiationBot')">
+                            <i class="fas fa-handshake"></i>
+                            Negotiate
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('NegotiationBot')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card recuperacion fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-chart-line"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">RecoveryOptimizer</div>
+                            <div class="agent-category">Agent_15 • Recuperación Máxima</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        ML avanzado para maximizar tasas de recuperación mediante análisis predictivo de capacidad de pago y timing óptimo.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 94%;"></div>
+                            </div>
+                            <div class="efficiency-value">94%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('RecoveryOptimizer')">
+                            <i class="fas fa-chart-line"></i>
+                            Optimize
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('RecoveryOptimizer')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card recuperacion fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-gavel"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">LegalPathway</div>
+                            <div class="agent-category">Agent_16 • Recuperación Máxima</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Gestión automática de procesos legales con IA para determinar viabilidad jurídica y optimizar estrategias de recuperación legal.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 88%;"></div>
+                            </div>
+                            <div class="efficiency-value">88%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('LegalPathway')">
+                            <i class="fas fa-gavel"></i>
+                            Legal Process
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('LegalPathway')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================== -->
+            <!-- COMPLIANCE SUPREMO (4 AGENTES) -->
+            <!-- =========================================== -->
+            <h2 class="ecosystem-title compliance">🛡️ COMPLIANCE SUPREMO</h2>
+            <div class="agents-grid">
+                <div class="agent-card compliance fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-shield-check"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">ComplianceWatchdog</div>
+                            <div class="agent-category">Agent_17 • Compliance Supremo</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Monitoreo regulatorio continuo con IA que garantiza cumplimiento 24/7 de todas las normativas bancarias y financieras.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 99%;"></div>
+                            </div>
+                            <div class="efficiency-value">99%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('ComplianceWatchdog')">
+                            <i class="fas fa-shield-check"></i>
+                            Monitor
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('ComplianceWatchdog')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card compliance fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-clipboard-list"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">AuditMaster</div>
+                            <div class="agent-category">Agent_18 • Compliance Supremo</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Preparación automática de auditorías con IA que organiza documentación, genera reportes y asegura compliance perfecto.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 97%;"></div>
+                            </div>
+                            <div class="efficiency-value">97%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('AuditMaster')">
+                            <i class="fas fa-clipboard-list"></i>
+                            Audit Prep
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('AuditMaster')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card compliance fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-file-shield"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">DocGuardian</div>
+                            <div class="agent-category">Agent_19 • Compliance Supremo</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Validación automática de documentos con OCR+IA para detectar falsificaciones y garantizar autenticidad documental.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 95%;"></div>
+                            </div>
+                            <div class="efficiency-value">95%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('DocGuardian')">
+                            <i class="fas fa-file-shield"></i>
+                            Validate Doc
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('DocGuardian')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card compliance fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-satellite-dish"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">RegulatoryRadar</div>
+                            <div class="agent-category">Agent_20 • Compliance Supremo</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Monitoreo continuo de fuentes regulatorias (SIB, BCRD, DGII). Alertas automáticas de cambios críticos con análisis de impacto por institución.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>SCANNING</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 94%;"></div>
+                            </div>
+                            <div class="efficiency-value">94%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('RegulatoryRadar')">
+                            <i class="fas fa-satellite-dish"></i>
+                            Scan Regulatorio
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('RegulatoryRadar')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================== -->
+            <!-- EXCELENCIA OPERACIONAL (4 AGENTES) -->
+            <!-- =========================================== -->
+            <h2 class="ecosystem-title operacional">⚙️ EXCELENCIA OPERACIONAL</h2>
+            <div class="agents-grid">
+                <div class="agent-card operacional fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-cogs"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">ProcessGenius</div>
+                            <div class="agent-category">Agent_21 • Excelencia Operacional</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Optimización automática de procesos con IA que identifica cuellos de botella y propone mejoras de eficiencia operativa.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 91%;"></div>
+                            </div>
+                            <div class="efficiency-value">91%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('ProcessGenius')">
+                            <i class="fas fa-cogs"></i>
+                            Optimize
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('ProcessGenius')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card operacional fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">CostOptimizer</div>
+                            <div class="agent-category">Agent_22 • Excelencia Operacional</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Reducción inteligente de costos operativos con IA que identifica ineficiencias y propone estrategias de ahorro automáticas.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 89%;"></div>
+                            </div>
+                            <div class="efficiency-value">89%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('CostOptimizer')">
+                            <i class="fas fa-dollar-sign"></i>
+                            Reduce Costs
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('CostOptimizer')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card operacional fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-check-double"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">QualityController</div>
+                            <div class="agent-category">Agent_23 • Excelencia Operacional</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Control de calidad automatizado con IA que monitorea estándares de servicio y garantiza excelencia operativa constante.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 93%;"></div>
+                            </div>
+                            <div class="efficiency-value">93%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('QualityController')">
+                            <i class="fas fa-check-double"></i>
+                            Quality Check
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('QualityController')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card operacional fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-stream"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">WorkflowMaster</div>
+                            <div class="agent-category">Agent_24 • Excelencia Operacional</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Maestro de flujos de trabajo que diseña y optimiza procesos automáticos para maximizar eficiencia y reducir tiempos.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 92%;"></div>
+                            </div>
+                            <div class="efficiency-value">92%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('WorkflowMaster')">
+                            <i class="fas fa-stream"></i>
+                            Optimize Flow
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('WorkflowMaster')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================== -->
+            <!-- EXPERIENCIA SUPREMA (4 AGENTES) -->
+            <!-- =========================================== -->
+            <h2 class="ecosystem-title experiencia">🎭 EXPERIENCIA SUPREMA</h2>
+            <div class="agents-grid">
+                <div class="agent-card experiencia fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-star"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">CustomerGenius</div>
+                            <div class="agent-category">Agent_25 • Experiencia Suprema</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Experiencia de cliente personalizada con IA que adapta servicios según preferencias y comportamientos individuales.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 94%;"></div>
+                            </div>
+                            <div class="efficiency-value">94%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('CustomerGenius')">
+                            <i class="fas fa-star"></i>
+                            Personalize
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('CustomerGenius')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card experiencia fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-magic"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">PersonalizationEngine</div>
+                            <div class="agent-category">Agent_26 • Experiencia Suprema</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Motor de personalización avanzado que crea experiencias únicas usando machine learning y análisis comportamental.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 96%;"></div>
+                            </div>
+                            <div class="efficiency-value">96%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('PersonalizationEngine')">
+                            <i class="fas fa-magic"></i>
+                            Personalize
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('PersonalizationEngine')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card experiencia fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-comments"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">ChatbotSupreme</div>
+                            <div class="agent-category">Agent_27 • Experiencia Suprema</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Chatbot conversacional avanzado con IA que maneja consultas complejas y ofrece soporte 24/7 con comprensión natural.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 92%;"></div>
+                            </div>
+                            <div class="efficiency-value">92%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('ChatbotSupreme')">
+                            <i class="fas fa-comments"></i>
+                            Chat
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('ChatbotSupreme')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card experiencia fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-magic-wand-sparkles"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">OnboardingWizard</div>
+                            <div class="agent-category">Agent_28 • Experiencia Suprema</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Onboarding automático inteligente que guía nuevos clientes con IA adaptativa y experiencias personalizadas desde el primer día.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 90%;"></div>
+                            </div>
+                            <div class="efficiency-value">90%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('OnboardingWizard')">
+                            <i class="fas fa-magic-wand-sparkles"></i>
+                            Onboard
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('OnboardingWizard')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================== -->
+            <!-- INTELIGENCIA FINANCIERA (4 AGENTES) -->
+            <!-- =========================================== -->
+            <h2 class="ecosystem-title inteligencia">💎 INTELIGENCIA FINANCIERA</h2>
+            <div class="agents-grid">
+                <div class="agent-card inteligencia fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-chart-bar"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">ProfitMaximizer</div>
+                            <div class="agent-category">Agent_29 • Inteligencia Financiera</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Maximización de rentabilidad con IA que identifica oportunidades de negocio y optimiza pricing para aumentar márgenes.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 93%;"></div>
+                            </div>
+                            <div class="efficiency-value">93%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('ProfitMaximizer')">
+                            <i class="fas fa-chart-bar"></i>
+                            Maximize
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('ProfitMaximizer')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card inteligencia fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-wave-square"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">CashFlowOracle</div>
+                            <div class="agent-category">Agent_30 • Inteligencia Financiera</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Predicción avanzada de flujos de efectivo con IA que anticipa necesidades de liquidez y optimiza gestión financiera.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 95%;"></div>
+                            </div>
+                            <div class="efficiency-value">95%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('CashFlowOracle')">
+                            <i class="fas fa-wave-square"></i>
+                            Predict Flow
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('CashFlowOracle')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card inteligencia fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-tags"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">PricingGenius</div>
+                            <div class="agent-category">Agent_31 • Inteligencia Financiera</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Pricing inteligente con IA que optimiza tasas y tarifas en tiempo real según riesgo, competencia y demanda del mercado.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 91%;"></div>
+                            </div>
+                            <div class="efficiency-value">91%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('PricingGenius')">
+                            <i class="fas fa-tags"></i>
+                            Optimize Price
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('PricingGenius')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card inteligencia fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-percent"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">ROIMaster</div>
+                            <div class="agent-category">Agent_32 • Inteligencia Financiera</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Maestro del ROI que analiza y optimiza retorno de inversión con IA para maximizar valor en cada decisión financiera.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 94%;"></div>
+                            </div>
+                            <div class="efficiency-value">94%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('ROIMaster')">
+                            <i class="fas fa-percent"></i>
+                            Optimize ROI
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('ROIMaster')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================== -->
+            <!-- FORTALEZA DIGITAL (4 AGENTES) -->
+            <!-- =========================================== -->
+            <h2 class="ecosystem-title fortaleza">🔐 FORTALEZA DIGITAL</h2>
+            <div class="agents-grid">
+                <div class="agent-card fortaleza fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-shield-virus"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">CyberSentinel</div>
+                            <div class="agent-category">Agent_33 • Fortaleza Digital</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Centinela cibernético con IA que protege sistemas financieros 24/7 contra amenazas avanzadas y ataques sofisticados.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 98%;"></div>
+                            </div>
+                            <div class="efficiency-value">98%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('CyberSentinel')">
+                            <i class="fas fa-shield-virus"></i>
+                            Protect
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('CyberSentinel')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card fortaleza fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-vault"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">DataVault</div>
+                            <div class="agent-category">Agent_34 • Fortaleza Digital</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Bóveda de datos inteligente que protege información sensible con encriptación cuántica y acceso controlado por IA.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 99%;"></div>
+                            </div>
+                            <div class="efficiency-value">99%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('DataVault')">
+                            <i class="fas fa-vault"></i>
+                            Secure Data
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('DataVault')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card fortaleza fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-heartbeat"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">SystemHealthMonitor</div>
+                            <div class="agent-category">Agent_35 • Fortaleza Digital</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Monitor de salud sistémica que supervisa infraestructura con IA predictiva para prevenir fallos antes que ocurran.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 97%;"></div>
+                            </div>
+                            <div class="efficiency-value">97%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('SystemHealthMonitor')">
+                            <i class="fas fa-heartbeat"></i>
+                            Monitor Health
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('SystemHealthMonitor')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card fortaleza fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-cloud-download-alt"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">BackupGuardian</div>
+                            <div class="agent-category">Agent_36 • Fortaleza Digital</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Guardián de backups que asegura continuidad del negocio con respaldos inteligentes y recuperación automática ante desastres.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 96%;"></div>
+                            </div>
+                            <div class="efficiency-value">96%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('BackupGuardian')">
+                            <i class="fas fa-cloud-download-alt"></i>
+                            Backup Data
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('BackupGuardian')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================== -->
+            <!-- ORCHESTRATION MASTER (4 AGENTES) -->
+            <!-- =========================================== -->
+            <h2 class="ecosystem-title orchestration">👑 ORCHESTRATION MASTER</h2>
+            <div class="agents-grid">
+                <div class="agent-card orchestration fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-crown"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">OrchestrationMaster</div>
+                            <div class="agent-category">Agent_37 • Coordinador Central</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Coordinador maestro de los 40 agentes financieros. Optimiza flujos, balancea cargas y garantiza coherencia enterprise multi-tenant.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>MASTER CORE</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 99%;"></div>
+                            </div>
+                            <div class="efficiency-value">99%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('OrchestrationMaster')">
+                            <i class="fas fa-crown"></i>
+                            Master Control
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('OrchestrationMaster')">
+                            <i class="fas fa-crown"></i>
+                            Master Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card orchestration fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-network-wired"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">LoadBalancer Pro</div>
+                            <div class="agent-category">Agent_38 • Load Balancing</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Distribuidor inteligente de cargas que optimiza recursos computacionales y garantiza performance óptimo de los 40 agentes.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>BALANCING</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 96%;"></div>
+                            </div>
+                            <div class="efficiency-value">96%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('LoadBalancer')">
+                            <i class="fas fa-network-wired"></i>
+                            Balance Load
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('LoadBalancer')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card orchestration fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-sitemap"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">WorkflowCoordinator</div>
+                            <div class="agent-category">Agent_39 • Workflow Management</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Coordinador de flujos que sincroniza la ejecución de todos los agentes para crear experiencias seamless multi-tenant.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>COORDINATING</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 94%;"></div>
+                            </div>
+                            <div class="efficiency-value">94%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('WorkflowCoordinator')">
+                            <i class="fas fa-sitemap"></i>
+                            Coordinate
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('WorkflowCoordinator')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+
+                <div class="agent-card orchestration fade-in">
+                    <div class="agent-header">
+                        <div class="agent-avatar"><i class="fas fa-tachometer-alt"></i></div>
+                        <div class="agent-info">
+                            <div class="agent-title">PerformanceOptimizer</div>
+                            <div class="agent-category">Agent_40 • Performance Tuning</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        Optimizador supremo que monitora y ajusta el rendimiento de todo el ecosistema de 40 agentes en tiempo real.
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>OPTIMIZING</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: 98%;"></div>
+                            </div>
+                            <div class="efficiency-value">98%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('PerformanceOptimizer')">
+                            <i class="fas fa-tachometer-alt"></i>
+                            Optimize All
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('PerformanceOptimizer')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // 🔧 CONFIGURACIÓN BACKEND
+        // ==========================================
+        
+        const BACKEND_CONFIG = {
+            base_url: 'https://fdnmgx4rz7.execute-api.us-east-1.amazonaws.com/prod/',
+            endpoints: {
+                health: 'api/v1/health',
+                evaluate: 'api/v1/evaluate',
+                similarity: 'api/v1/similarity/compare',
+                batch: 'api/v1/batch'
+            }
+        };
+
+        // ==========================================
+        // 🏢 CONFIGURACIÓN MULTI-TENANT
+        // ==========================================
+        
+        const MULTI_TENANT_CONFIG = {
+            current_tenant: 'banco-popular-rd',
+            tenants: {
+                'banco-popular-rd': {
+                    name: 'Banco Popular Dominicano',
+                    plan: 'enterprise',
+                    agents_limit: 40,
+                    evaluations_limit: -1,
+                    branding: { primary_color: '#1e40af' }
+                },
+                'cofaci-cooperativa': {
+                    name: 'COFACI Cooperativa',
+                    plan: 'professional', 
+                    agents_limit: 28,
+                    evaluations_limit: 10000,
+                    branding: { primary_color: '#059669' }
+                },
+                'banreservas-rd': {
+                    name: 'Banco de Reservas',
+                    plan: 'starter',
+                    agents_limit: 12,
+                    evaluations_limit: 1000,
+                    branding: { primary_color: '#dc2626' }
+                }
+            }
+        };
+
+        // ==========================================
+        // 🤖 FUNCIONES DE AGENTES
+        // ==========================================
+
+        function executeAgent(agentName) {
+            const tenant = getCurrentTenant();
+            
+            // Mostrar notificación de inicio
+            showNotification(`🚀 Ejecutando ${agentName} para ${tenant.name}...`, 'info');
+            
+            // Simular llamada al backend con datos realistas
+            const mockProfile = {
+                profile: {
+                    income: 65000,
+                    credit_score: 740,
+                    age: 32,
+                    employment_type: "full_time",
+                    debt_to_income: 0.28
+                }
+            };
+            
+            // Simular procesamiento
+            setTimeout(() => {
+                const mockResponse = {
+                    quantum_similarity_score: Math.random() * 0.5 + 0.25,
+                    risk_level: ['LOW_RISK', 'MEDIUM_RISK', 'HIGH_RISK'][Math.floor(Math.random() * 3)],
+                    automated_decision: {
+                        action: ['APPROVE', 'REVIEW', 'REJECT'][Math.floor(Math.random() * 3)]
+                    },
+                    processing_time_ms: Math.floor(Math.random() * 1000) + 1500,
+                    agent_used: agentName,
+                    tenant_id: MULTI_TENANT_CONFIG.current_tenant
+                };
+                
+                // Determinar tipo de notificación según resultado
+                let notifyType = 'success';
+                if (mockResponse.automated_decision.action === 'REJECT') notifyType = 'error';
+                else if (mockResponse.automated_decision.action === 'REVIEW') notifyType = 'warning';
+                
+                showNotification(
+                    `✅ ${agentName}: ${mockResponse.automated_decision.action} (${(mockResponse.quantum_similarity_score * 100).toFixed(1)}% similitud)`, 
+                    notifyType
+                );
+                
+                // Actualizar estadísticas
+                updateStats();
+            }, Math.random() * 2000 + 1000);
+        }
+
+        function configureAgent(agentName) {
+            showNotification(`⚙️ Abriendo configuración de ${agentName}`, 'info');
+            
+            // Aquí podrías abrir un modal de configuración
+            setTimeout(() => {
+                showNotification(`✅ Configuración de ${agentName} actualizada`, 'success');
+            }, 1500);
+        }
+
+        // ==========================================
+        // 🔧 FUNCIONES AUXILIARES
+        // ==========================================
+
+        function getCurrentTenant() {
+            return MULTI_TENANT_CONFIG.tenants[MULTI_TENANT_CONFIG.current_tenant];
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <i class="fas fa-${getNotificationIcon(type)}" style="font-size: 1.25rem;"></i>
+                    <span style="font-weight: 600;">${message}</span>
+                </div>
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        function getNotificationIcon(type) {
+            const icons = {
+                success: 'check-circle',
+                error: 'exclamation-circle', 
+                warning: 'exclamation-triangle',
+                info: 'info-circle'
+            };
+            return icons[type] || icons.info;
+        }
+
+        function updateStats() {
+            const stats = {
+                agents: 40,
+                uptime: (Math.random() * 0.1 + 99.9).toFixed(2),
+                institutions: 3
+            };
+
+            document.getElementById('totalAgents').textContent = stats.agents;
+            document.getElementById('uptime').textContent = stats.uptime + '%';
+            document.getElementById('institutions').textContent = stats.institutions;
+        }
+
+        function toggleFilters() {
+            showNotification('🔍 Sistema de filtros activado', 'info');
+        }
+
+        function showMultiTenantPanel() {
+            showNotification('🏢 Panel Multi-Tenant disponible', 'info');
+        }
+
+        // ==========================================
+        // 🔍 BÚSQUEDA DE AGENTES
+        // ==========================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('agentSearch');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const agentCards = document.querySelectorAll('.agent-card');
+                    
+                    agentCards.forEach(card => {
+                        const title = card.querySelector('.agent-title').textContent.toLowerCase();
+                        const category = card.querySelector('.agent-category').textContent.toLowerCase();
+                        const description = card.querySelector('.agent-description').textContent.toLowerCase();
+                        
+                        if (title.includes(searchTerm) || category.includes(searchTerm) || description.includes(searchTerm)) {
+                            card.style.display = 'block';
+                            card.style.opacity = '1';
+                        } else {
+                            card.style.opacity = '0.3';
+                        }
+                    });
+                });
+            }
+
+            // Notificación de bienvenida
+            setTimeout(() => {
+                showNotification('🚀 Nadakki AI Enterprise Suite - 40 Agentes Activos y Listos', 'success');
+            }, 1000);
+
+            // Actualizar estadísticas periódicamente
+            setInterval(updateStats, 30000);
+        });
+
+        // ==========================================
+        // 📱 RESPONSIVE HANDLING
+        // ==========================================
+
+        function handleResize() {
+            if (window.innerWidth <= 768) {
+                // Ajustes móviles si es necesario
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        // ==========================================
+        // 🎯 LOG DE SISTEMA
+        // ==========================================
+
+        console.log('🚀 NADAKKI AI ENTERPRISE SUITE - 40 AGENTES MULTI-TENANT LOADED');
+        console.log('📊 STATUS: 40 Agentes Activos | 10 Ecosistemas | Multi-Tenant Enterprise');
+        console.log('⚡ ARQUITECTURA: Reutilizable para múltiples instituciones financieras');
+        console.log('🎯 BACKEND: AWS Lambda + Motor Híbrido Cuántico');
+    </script>
+</body>
+</html>

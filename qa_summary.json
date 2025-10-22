@@ -1,0 +1,722 @@
+﻿[
+    {
+        "Ecosistema":  "compliance",
+        "Archivo":  "auditmaster.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "compliance",
+        "Archivo":  "compliancewatchdog.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "compliance",
+        "Archivo":  "docguardian.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "compliance",
+        "Archivo":  "regulatoryradar.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "compliance",
+        "Archivo":  "regulatory_radar.py",
+        "TamanoKb":  22.7,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "contabilidad",
+        "Archivo":  "analisisfinanciero.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "contabilidad",
+        "Archivo":  "auditoriainterna.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "contabilidad",
+        "Archivo":  "conciliacionbancaria.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "contabilidad",
+        "Archivo":  "contabilidadinteligente.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "contabilidad",
+        "Archivo":  "controlgastos.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "contabilidad",
+        "Archivo":  "facturacionia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "contabilidad",
+        "Archivo":  "flujocajaprediccion.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "contabilidad",
+        "Archivo":  "inventariovaloracion.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "contabilidad",
+        "Archivo":  "reportesejecutivos.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "contabilidad",
+        "Archivo":  "tributarioia.py",
+        "TamanoKb":  4,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "decision",
+        "Archivo":  "policyguardian.py",
+        "TamanoKb":  6,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "decision",
+        "Archivo":  "quantumdecision.py",
+        "TamanoKb":  9.3,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "decision",
+        "Archivo":  "riskoracle.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "decision",
+        "Archivo":  "turboapprover.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "educacion",
+        "Archivo":  "competenciasia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "educacion",
+        "Archivo":  "cursosautomaticos.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "educacion",
+        "Archivo":  "evaluacionadaptativa.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "educacion",
+        "Archivo":  "tutorvirtualia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "experiencia",
+        "Archivo":  "chatbotsupreme.py",
+        "TamanoKb":  5.4,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "experiencia",
+        "Archivo":  "customergenius.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "experiencia",
+        "Archivo":  "onboardingwizard.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "experiencia",
+        "Archivo":  "personalizationengine.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "fortaleza",
+        "Archivo":  "backupguardian.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "fortaleza",
+        "Archivo":  "cybersentinel.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "fortaleza",
+        "Archivo":  "datavault.py",
+        "TamanoKb":  4,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "fortaleza",
+        "Archivo":  "systemhealthmonitor.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "inteligencia",
+        "Archivo":  "cashfloworacle.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "inteligencia",
+        "Archivo":  "pricinggenius.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "inteligencia",
+        "Archivo":  "profitmaximizer.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "inteligencia",
+        "Archivo":  "roimaster.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "investigacion",
+        "Archivo":  "analisistendencias.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "investigacion",
+        "Archivo":  "innovacionia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "investigacion",
+        "Archivo":  "patentesautomaticos.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "investigacion",
+        "Archivo":  "prototiposgenerativos.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechoadministrativo.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechoambiental.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechobancario.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechocomercial.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechoconstitucional.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechofamiliar.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechoinmobiliario.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechointelectual.py",
+        "TamanoKb":  4,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechointernacional.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derecholaboral.py",
+        "TamanoKb":  4,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechomaritimo.py",
+        "TamanoKb":  4,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechominero.py",
+        "TamanoKb":  4,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechopenal.py",
+        "TamanoKb":  4,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechoprocesalpenal.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechoseguros.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "legal",
+        "Archivo":  "derechotributario.py",
+        "TamanoKb":  4,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "almaceninteligente.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "analisisrendimiento.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "controlcalidadia.py",
+        "TamanoKb":  5.3,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "controlpedidosia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "evaluadorproveedoresia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "gestionriesgos.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "optimizacioncostos.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "optimizadorrutasia.py",
+        "TamanoKb":  5.6,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "planificaciondemanda.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "previsioninventarioia.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "sostenibilidadia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "transporteoptimizado.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "logistica",
+        "Archivo":  "trazabilidadtotal.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "campaignoptimizeria.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "cashofferfilteria.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "contactqualityia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "conversioncohortia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "emailautomationia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "fidelizedprofileia.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "geosegmentationia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "influencermatcheria.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "leadscoringia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "minimalformia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "productaffinityia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "socialpostgeneratoria.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "marketing",
+        "Archivo":  "videoreelautogenia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "operacional",
+        "Archivo":  "costoptimizer.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "operacional",
+        "Archivo":  "processgenius.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "operacional",
+        "Archivo":  "qualitycontroller.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "operacional",
+        "Archivo":  "workflowmaster.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "originacion",
+        "Archivo":  "base_components_v2.py",
+        "TamanoKb":  24.3,
+        "Estado":  "Funcional"
+    },
+    {
+        "Ecosistema":  "originacion",
+        "Archivo":  "behaviorminer.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "originacion",
+        "Archivo":  "behavior_miner_v2.py",
+        "TamanoKb":  9.4,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "originacion",
+        "Archivo":  "dnaprofiler.py",
+        "TamanoKb":  7.4,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "originacion",
+        "Archivo":  "dna_profiler_v2.py",
+        "TamanoKb":  4.8,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "originacion",
+        "Archivo":  "incomeoracle.py",
+        "TamanoKb":  6.8,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "originacion",
+        "Archivo":  "income_oracle_v2.py",
+        "TamanoKb":  7.6,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "originacion",
+        "Archivo":  "sentinelbot.py",
+        "TamanoKb":  8,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "originacion",
+        "Archivo":  "sentinel_bot_v2.py",
+        "TamanoKb":  2.3,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "presupuesto",
+        "Archivo":  "analisisvarianza.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "presupuesto",
+        "Archivo":  "controlpresupuestario.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "presupuesto",
+        "Archivo":  "forecastingavanzado.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "presupuesto",
+        "Archivo":  "optimizacionrecursos.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "presupuesto",
+        "Archivo":  "planificacionestrategica.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "presupuesto",
+        "Archivo":  "presupuestopredictivoia.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "recuperacion",
+        "Archivo":  "collectionmaster.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "recuperacion",
+        "Archivo":  "legalpathway.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "recuperacion",
+        "Archivo":  "negotiationbot.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "recuperacion",
+        "Archivo":  "recoveryoptimizer.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "regtech",
+        "Archivo":  "amltiemporeal.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "regtech",
+        "Archivo":  "kycautomatico.py",
+        "TamanoKb":  4,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "regtech",
+        "Archivo":  "monitoreotransacciones.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "regtech",
+        "Archivo":  "reportesregulatorios.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "rrhh",
+        "Archivo":  "capacitacionia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "rrhh",
+        "Archivo":  "nominainteligente.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "rrhh",
+        "Archivo":  "performanceanalyzer.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "rrhh",
+        "Archivo":  "selectioncvia.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "rrhh",
+        "Archivo":  "talentoprediccion.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "ventascrm",
+        "Archivo":  "cierrepredictivoia.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "ventascrm",
+        "Archivo":  "clientelifecycleia.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "ventascrm",
+        "Archivo":  "communicationbot.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "ventascrm",
+        "Archivo":  "pipelinepredictivoia.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "vigilancia",
+        "Archivo":  "earlywarning.py",
+        "TamanoKb":  5.5,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "vigilancia",
+        "Archivo":  "marketradar.py",
+        "TamanoKb":  4.1,
+        "Estado":  "Incompleto"
+    },
+    {
+        "Ecosistema":  "vigilancia",
+        "Archivo":  "portfoliosentinel.py",
+        "TamanoKb":  4.2,
+        "Estado":  "Incompleto"
+    }
+]

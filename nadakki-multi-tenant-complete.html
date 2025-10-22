@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏦 Nadakki AI Suite - Multi-Tenant Enterprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* COLORES DINÁMICOS - SE ACTUALIZAN POR INSTITUCIÓN */
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #60a5fa;
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #94a3b8;
+            
+            /* BACKGROUNDS */
+            --bg-primary: #0a0f1c;
+            --bg-secondary: #1a1f2e;
+            --bg-tertiary: #252b3f;
+            
+            /* EFFECTS */
+            --glass-primary: rgba(26, 31, 46, 0.95);
+            --glass-secondary: rgba(37, 43, 63, 0.9);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-hover: rgba(255, 255, 255, 0.08);
+            
+            --shadow-neon: 0 0 30px var(--primary-color);
+            --shadow-glow: 0 0 20px var(--accent-color);
+            --shadow-quantum: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 20px var(--accent-color);
+            
+            /* TRANSITIONS */
+            --transition-smooth: 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-bounce: 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            /* FONTS */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Orbitron', 'Inter', monospace;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* BACKGROUND EFFECTS */
+        .quantum-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -10;
+            background: 
+                radial-gradient(circle at 20% 30%, var(--primary-color)08 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, var(--secondary-color)06 0%, transparent 50%),
+                radial-gradient(circle at 40% 70%, var(--accent-color)05 0%, transparent 50%),
+                var(--bg-primary);
+            animation: quantumPulse 20s ease-in-out infinite;
+        }
+
+        @keyframes quantumPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 1.2; }
+        }
+
+        .quantum-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--accent-color)03 1px, transparent 1px),
+                linear-gradient(90deg, var(--accent-color)03 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -8;
+            animation: gridMove 30s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* HEADER PRINCIPAL */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: var(--glass-primary);
+            backdrop-filter: blur(30px);
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+            box-shadow: var(--shadow-quantum);
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .brand-logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: var(--shadow-neon);
+            animation: logoGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { box-shadow: var(--shadow-neon); }
+            50% { box-shadow: 0 0 40px var(--primary-color); }
+        }
+
+        .brand-info h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            font-family: var(--font-display);
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .brand-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .institution-selector {
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .institution-selector:hover {
+            background: var(--glass-hover);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .health-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            font-family: var(--font-mono);
+        }
+
+        .health-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00ff88;
+            animation: healthPulse 2s ease-in-out infinite;
+            box-shadow: 0 0 10px #00ff88;
+        }
+
+        @keyframes healthPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        .main-content {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+
+        .hero-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            font-family: var(--font-display);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(30px);
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            animation: cardGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes cardGlow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-quantum);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            font-family: var(--font-mono);
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* FORMULARIO DE EVALUACIÓN */
+        .evaluation-section {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: var(--font-display);
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .evaluation-form {
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            backdrop-filter: blur(30px);
+            box-shadow: var(--shadow-quantum);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input, .form-select {
+            background: var(--glass-primary);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all var(--transition-smooth);
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px var(--primary-color)30;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 16px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-quantum);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* SECCIÓN DE AGENTES */
+        .agents-section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .agents-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            gap: 2rem;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .search-input {
+            width: 100%;
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1rem 1.25rem 1rem 3.5rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            transition: all var(--transition-smooth);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px var(--primary-color)30;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+
+        .agent-card {
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(30px);
+            transition: all var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .agent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transition: transform var(--transition-smooth);
+        }
+
+        .agent-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .agent-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-quantum);
+            border-color: var(--primary-color)50;
+        }
+
+        .agent-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .agent-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-neon);
+        }
+
+        .agent-info {
+            flex: 1;
+        }
+
+        .agent-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-display);
+        }
+
+        .agent-category {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: var(--font-mono);
+        }
+
+        .agent-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .agent-metrics {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--glass-primary);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: var(--font-mono);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #00ff88;
+            animation: statusPulse 2s ease-in-out infinite;
+            box-shadow: 0 0 10px #00ff88;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+
+        .efficiency-display {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+        }
+
+        .efficiency-bar {
+            flex: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .efficiency-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff88, var(--primary-color));
+            border-radius: 3px;
+            transition: width 2s ease-out;
+            box-shadow: 0 0 10px #00ff88;
+        }
+
+        .efficiency-value {
+            font-family: var(--font-mono);
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        .agent-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-agent {
+            flex: 1;
+            padding: 1rem 1.25rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all var(--transition-bounce);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-quantum);
+        }
+
+        .btn-secondary {
+            background: var(--glass-primary);
+            color: var(--text-secondary);
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--glass-hover);
+            color: var(--text-primary);
+            border-color: var(--primary-color);
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* RESULTADOS */
+        .results-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(10, 15, 28, 0.95);
+            backdrop-filter: blur(20px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .results-modal {
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 90%;
+            backdrop-filter: blur(30px);
+            box-shadow: var(--shadow-quantum);
+            text-align: center;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px) scale(0.9); }
+            to { transform: translateY(0) scale(1); }
+        }
+
+        .results-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color var(--transition-smooth);
+        }
+
+        .results-close:hover {
+            color: var(--text-primary);
+        }
+
+        /* NOTIFICACIONES */
+        .notification {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--glass-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            color: var(--text-primary);
+            backdrop-filter: blur(30px);
+            box-shadow: var(--shadow-quantum);
+            z-index: 10001;
+            animation: slideInRight 0.5s ease-out;
+            max-width: 400px;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .form-grid { grid-template-columns: 1fr; }
+            .agents-grid { grid-template-columns: 1fr; }
+            .agents-controls { flex-direction: column; align-items: stretch; }
+            .filter-buttons { justify-content: center; }
+            .header-controls { gap: 1rem; }
+            .brand-info h1 { font-size: 1.2rem; }
+        }
+
+        /* LOADING */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(10, 15, 28, 0.95);
+            backdrop-filter: blur(20px);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: loadingSpin 1s linear infinite;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 30px var(--primary-color);
+        }
+
+        @keyframes loadingSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: textGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="quantum-background"></div>
+    <div class="quantum-grid"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Activando Sistema Multi-Tenant...</div>
+    </div>
+
+    <!-- Header Principal -->
+    <header class="main-header">
+        <div class="header-brand">
+            <div class="brand-logo">
+                <i class="fas fa-atom"></i>
+            </div>
+            <div class="brand-info">
+                <h1 id="institutionName">CredICEFI</h1>
+                <p id="institutionSubtitle">Sistema Multi-Tenant Enterprise</p>
+            </div>
+        </div>
+        
+        <div class="header-controls">
+            <div class="institution-selector" onclick="showInstitutionSelector()">
+                <i class="fas fa-building"></i>
+                <span id="currentInstitution">CredICEFI</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            
+            <div class="health-indicator">
+                <div class="health-dot"></div>
+                <span id="systemStatus">Sistema Operativo</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">NADAKKI AI SUITE</h1>
+            <p class="hero-subtitle">
+                Motor de Evaluación Crediticia con IA Multi-Tenant. 
+                <strong>40 Agentes Especializados</strong> para Instituciones Financieras LATAM.
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number" id="agentsCount">40</span>
+                    <span class="stat-label">Agentes IA</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="accuracyRate">97.8%</span>
+                    <span class="stat-label">Precisión</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="responseTime">2.1s</span>
+                    <span class="stat-label">Respuesta</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="institutionsCount">12</span>
+                    <span class="stat-label">Instituciones</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario de Evaluación -->
+        <section class="evaluation-section">
+            <h2 class="section-title">EVALUACIÓN CREDITICIA CUÁNTICA</h2>
+            <p class="section-subtitle">
+                Evalúa perfiles crediticios usando nuestro motor híbrido con 
+                <span id="activeAgentsCount">40</span> agentes especializados
+            </p>
+
+            <div class="evaluation-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Ingresos Mensuales (RD$)</label>
+                        <input type="number" class="form-input" id="income" placeholder="Ej: 65000" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Score Crediticio</label>
+                        <input type="number" class="form-input" id="creditScore" placeholder="Ej: 740" min="300" max="850" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Edad</label>
+                        <input type="number" class="form-input" id="age" placeholder="Ej: 32" min="18" max="80" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tipo de Empleo</label>
+                        <select class="form-select" id="employmentType" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="full_time">Tiempo Completo</option>
+                            <option value="part_time">Medio Tiempo</option>
+                            <option value="self_employed">Independiente</option>
+                            <option value="retired">Retirado</option>
+                            <option value="student">Estudiante</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ratio Deuda/Ingreso</label>
+                        <input type="number" class="form-input" id="debtToIncome" placeholder="Ej: 0.28" step="0.01" min="0" max="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Historial de Pagos</label>
+                        <select class="form-select" id="paymentHistory" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="excellent">Excelente</option>
+                            <option value="good">Bueno</option>
+                            <option value="fair">Regular</option>
+                            <option value="poor">Pobre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="button" class="form-submit" id="evaluateBtn" onclick="evaluateProfile()">
+                    <i class="fas fa-atom"></i>
+                    EVALUAR CON <span id="submitAgentsCount">40</span> AGENTES CUÁNTICOS
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección de Agentes -->
+        <section class="agents-section">
+            <h2 class="section-title">AGENTES ESPECIALIZADOS</h2>
+            <p class="section-subtitle">
+                Explora los <span id="totalAgentsDisplay">40</span> agentes de IA que potencian 
+                nuestro motor de evaluación crediticia
+            </p>
+
+            <div class="agents-controls">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="agentSearch" placeholder="Buscar agentes...">
+                </div>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterAgents('all')">Todos</button>
+                    <button class="filter-btn" onclick="filterAgents('originacion')">Originación</button>
+                    <button class="filter-btn" onclick="filterAgents('decision')">Decisión</button>
+                    <button class="filter-btn" onclick="filterAgents('vigilancia')">Vigilancia</button>
+                    <button class="filter-btn" onclick="filterAgents('recuperacion')">Recuperación</button>
+                </div>
+            </div>
+
+            <div class="agents-grid" id="agentsGrid">
+                <!-- Los agentes se cargarán dinámicamente aquí -->
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Modal de Resultados -->
+    <div class="results-section" id="resultsModal">
+        <div class="results-modal">
+            <button class="results-close" onclick="closeResults()">&times;</button>
+            <div id="resultsContent">
+                <!-- Contenido de resultados se carga aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // CONFIGURACIÓN MULTI-TENANT
+        const INSTITUTIONS_CONFIG = {
+            'credicefi-rd': {
+                name: 'CredICEFI',
+                logo_text: 'CI',
+                country: 'República Dominicana',
+                primary_color: '#1e40af',
+                secondary_color: '#3b82f6',
+                accent_color: '#60a5fa',
+                plan: 'enterprise',
+                agents_limit: 40,
+                description: 'Institución Crediticia Financiera Especializada'
+            },
+            'banco-popular-rd': {
+                name: 'Banco Popular Dominicano',
+                logo_text: 'BP',
+                country: 'República Dominicana',
+                primary_color: '#0066cc',
+                secondary_color: '#4d9aff',
+                accent_color: '#80b3ff',
+                plan: 'enterprise',
+                agents_limit: 40,
+                description: 'Banco Líder en República Dominicana'
+            },
+            'banreservas-rd': {
+                name: 'Banco de Reservas',
+                logo_text: 'BR',
+                country: 'República Dominicana', 
+                primary_color: '#1e40af',
+                secondary_color: '#3b82f6',
+                accent_color: '#60a5fa',
+                plan: 'professional',
+                agents_limit: 24,
+                description: 'Banco del Estado Dominicano'
+            },
+            'cofaci-rd': {
+                name: 'COFACI',
+                logo_text: 'CF',
+                country: 'República Dominicana',
+                primary_color: '#dc2626', 
+                secondary_color: '#ef4444',
+                accent_color: '#f87171',
+                plan: 'starter',
+                agents_limit: 12,
+                description: 'Cooperativa Financiera Especializada'
+            },
+            'bancolombia-co': {
+                name: 'Bancolombia',
+                logo_text: 'BC',
+                country: 'Colombia',
+                primary_color: '#ffcc00',
+                secondary_color: '#ffd633',
+                accent_color: '#ffe066',
+                plan: 'enterprise',
+                agents_limit: 40,
+                description: 'Banco Líder en Colombia'
+            },
+            'banco-atlantida-hn': {
+                name: 'Banco Atlántida Honduras',
+                logo_text: 'BA',
+                country: 'Honduras',
+                primary_color: '#e11d48',
+                secondary_color: '#f43f5e',
+                accent_color: '#fb7185',
+                plan: 'professional',
+                agents_limit: 24,
+                description: 'Banco Líder en Honduras'
+            }
+        };
+
+        // CONFIGURACIÓN DEL BACKEND
+        const BACKEND_CONFIG = {
+            base_url: 'https://fdnmgx4rz7.execute-api.us-east-1.amazonaws.com/prod',
+            endpoints: {
+                evaluate: '/api/v1/evaluate',
+                health: '/api/v1/health',
+                similarity: '/api/v1/similarity/compare'
+            }
+        };
+
+        // ESTADO GLOBAL
+        let currentInstitution = 'credicefi-rd';
+        let currentFilter = 'all';
+
+        // DEFINICIÓN DE AGENTES (40 total)
+        const AGENTS_DATA = [
+            // ORIGINACIÓN INTELIGENTE (4 agentes)
+            {
+                id: 1,
+                name: 'SentinelBot Quantum',
+                category: 'originacion',
+                icon: 'fa-search',
+                description: 'Análisis predictivo de riesgo crediticio con machine learning cuántico. Detecta patrones anómalos y evalúa similitud de perfiles con precisión del 97.2%.',
+                efficiency: 97,
+                status: 'active'
+            },
+            {
+                id: 2,
+                name: 'DNAProfiler Quantum',
+                category: 'originacion',
+                icon: 'fa-dna',
+                description: 'Perfilado genómico crediticio que crea firmas únicas usando algoritmos cuánticos híbridos de similitud multidimensional.',
+                efficiency: 98,
+                status: 'active'
+            },
+            {
+                id: 3,
+                name: 'IncomeOracle',
+                category: 'originacion',
+                icon: 'fa-dollar-sign',
+                description: 'Verificación y validación de ingresos usando APIs de nómina, TSS y machine learning para detectar inconsistencias financieras.',
+                efficiency: 95,
+                status: 'active'
+            },
+            {
+                id: 4,
+                name: 'BehaviorMiner',
+                category: 'originacion',
+                icon: 'fa-chart-line',
+                description: 'Análisis de patrones transaccionales con machine learning para identificar comportamientos crediticios y predictores de riesgo.',
+                efficiency: 96,
+                status: 'active'
+            },
+            
+            // DECISIÓN CUÁNTICA (4 agentes)
+            {
+                id: 5,
+                name: 'QuantumDecision Core',
+                category: 'decision',
+                icon: 'fa-brain',
+                description: 'Motor cuántico híbrido principal con algoritmos Coseno + Euclidiana + Jaccard. 5 niveles de riesgo automatizados en 2.1 segundos.',
+                efficiency: 99,
+                status: 'active'
+            },
+            {
+                id: 6,
+                name: 'RiskOracle',
+                category: 'decision',
+                icon: 'fa-eye',
+                description: 'Scoring multidimensional avanzado que evalúa 50+ variables financieras con pesos adaptativos por sector e institución.',
+                efficiency: 98,
+                status: 'active'
+            },
+            {
+                id: 7,
+                name: 'PolicyGuardian',
+                category: 'decision',
+                icon: 'fa-shield-alt',
+                description: 'Validación automática contra políticas crediticias internas y regulaciones financieras con compliance en tiempo real.',
+                efficiency: 99,
+                status: 'active'
+            },
+            {
+                id: 8,
+                name: 'TurboApprover',
+                category: 'decision',
+                icon: 'fa-rocket',
+                description: 'Aprobación instantánea para casos de bajo riesgo (<50% similitud) con integración directa al core bancario.',
+                efficiency: 97,
+                status: 'active'
+            },
+            
+            // VIGILANCIA CONTINUA (4 agentes)
+            {
+                id: 9,
+                name: 'EarlyWarning Predictive',
+                category: 'vigilancia',
+                icon: 'fa-satellite-dish',
+                description: 'Sistema predictivo que detecta deterioro crediticio 90 días antes del default usando redes neuronales avanzadas.',
+                efficiency: 96,
+                status: 'active'
+            },
+            {
+                id: 10,
+                name: 'PortfolioSentinel',
+                category: 'vigilancia',
+                icon: 'fa-chart-pie',
+                description: 'Monitoreo continuo de cartera crediticia con alertas automáticas y análisis de concentración de riesgo en tiempo real.',
+                efficiency: 94,
+                status: 'active'
+            },
+            {
+                id: 11,
+                name: 'StressTester',
+                category: 'vigilancia',
+                icon: 'fa-vial',
+                description: 'Simulación avanzada de escenarios de estrés económico y evaluación de impacto en cartera crediticia.',
+                efficiency: 93,
+                status: 'active'
+            },
+            {
+                id: 12,
+                name: 'MarketRadar',
+                category: 'vigilancia',
+                icon: 'fa-satellite',
+                description: 'Análisis de condiciones macroeconómicas y su impacto predictivo en riesgo crediticio sectorial.',
+                efficiency: 95,
+                status: 'active'
+            },
+            
+            // RECUPERACIÓN MÁXIMA (4 agentes)
+            {
+                id: 13,
+                name: 'CollectionMaster',
+                category: 'recuperacion',
+                icon: 'fa-phone',
+                description: 'Estrategias de cobranza optimizadas con ML que determina el mejor momento, canal y enfoque para cada cliente moroso.',
+                efficiency: 89,
+                status: 'active'
+            },
+            {
+                id: 14,
+                name: 'NegotiationBot',
+                category: 'recuperacion',
+                icon: 'fa-handshake',
+                description: 'Automatización de renegociaciones inteligentes con algoritmos que maximizan probabilidad de acuerdo y recuperación.',
+                efficiency: 91,
+                status: 'active'
+            },
+            {
+                id: 15,
+                name: 'RecoveryOptimizer',
+                category: 'recuperacion',
+                icon: 'fa-chart-bar',
+                description: 'Machine learning para maximizar recuperación analizando patrones históricos y optimizando estrategias por perfil.',
+                efficiency: 88,
+                status: 'active'
+            },
+            {
+                id: 16,
+                name: 'LegalPathway',
+                category: 'recuperacion',
+                icon: 'fa-gavel',
+                description: 'Gestión automática de procesos legales con evaluación de viabilidad y seguimiento de casos en el sistema judicial.',
+                efficiency: 87,
+                status: 'active'
+            },
+            
+            // COMPLIANCE SUPREMO (4 agentes)
+            {
+                id: 17,
+                name: 'ComplianceWatchdog',
+                category: 'compliance',
+                icon: 'fa-shield-virus',
+                description: 'Monitoreo regulatorio continuo que asegura cumplimiento con normativas financieras locales e internacionales.',
+                efficiency: 99,
+                status: 'active'
+            },
+            {
+                id: 18,
+                name: 'AuditMaster',
+                category: 'compliance',
+                icon: 'fa-clipboard-check',
+                description: 'Preparación automática de auditorías con generación de reportes y documentación requerida por reguladores.',
+                efficiency: 97,
+                status: 'active'
+            },
+            {
+                id: 19,
+                name: 'DocGuardian',
+                category: 'compliance',
+                icon: 'fa-file-shield',
+                description: 'Validación de documentos con OCR+IA que detecta falsificaciones y verifica autenticidad de documentos crediticios.',
+                efficiency: 96,
+                status: 'active'
+            },
+            {
+                id: 20,
+                name: 'RegulatoryRadar',
+                category: 'compliance',
+                icon: 'fa-balance-scale',
+                description: 'Seguimiento automático de cambios regulatorios y adaptación de políticas internas para mantener compliance.',
+                efficiency: 98,
+                status: 'active'
+            },
+            
+            // EXCELENCIA OPERACIONAL (4 agentes)
+            {
+                id: 21,
+                name: 'ProcessGenius',
+                category: 'operacional',
+                icon: 'fa-cogs',
+                description: 'Optimización automática de procesos internos con análisis de eficiencia y recomendaciones de mejora continua.',
+                efficiency: 94,
+                status: 'active'
+            },
+            {
+                id: 22,
+                name: 'CostOptimizer',
+                category: 'operacional',
+                icon: 'fa-cut',
+                description: 'Reducción inteligente de costos operativos con IA que identifica ineficiencias y sugiere optimizaciones.',
+                efficiency: 92,
+                status: 'active'
+            },
+            {
+                id: 23,
+                name: 'QualityController',
+                category: 'operacional',
+                icon: 'fa-medal',
+                description: 'Control de calidad automatizado que monitorea procesos y mantiene estándares de excelencia operacional.',
+                efficiency: 95,
+                status: 'active'
+            },
+            {
+                id: 24,
+                name: 'WorkflowMaster',
+                category: 'operacional',
+                icon: 'fa-sitemap',
+                description: 'Maestro de flujos de trabajo que coordina y optimiza procesos complejos entre diferentes departamentos.',
+                efficiency: 93,
+                status: 'active'
+            },
+            
+            // EXPERIENCIA SUPREMA (4 agentes)
+            {
+                id: 25,
+                name: 'CustomerGenius',
+                category: 'experiencia',
+                icon: 'fa-user-tie',
+                description: 'Experiencia de cliente personalizada con IA que adapta interfaces y servicios según perfil y preferencias.',
+                efficiency: 96,
+                status: 'active'
+            },
+            {
+                id: 26,
+                name: 'PersonalizationEngine',
+                category: 'experiencia',
+                icon: 'fa-palette',
+                description: 'Motor de personalización que customiza ofertas, comunicaciones y experiencias para cada cliente individual.',
+                efficiency: 94,
+                status: 'active'
+            },
+            {
+                id: 27,
+                name: 'ChatbotSupreme',
+                category: 'experiencia',
+                icon: 'fa-robot',
+                description: 'Chatbot conversacional avanzado con NLP que resuelve consultas complejas y escala a agentes humanos cuando necesario.',
+                efficiency: 91,
+                status: 'active'
+            },
+            {
+                id: 28,
+                name: 'OnboardingWizard',
+                category: 'experiencia',
+                icon: 'fa-magic',
+                description: 'Onboarding automático inteligente que guía nuevos clientes a través de procesos optimizados y personalizados.',
+                efficiency: 89,
+                status: 'active'
+            },
+            
+            // INTELIGENCIA FINANCIERA (4 agentes)
+            {
+                id: 29,
+                name: 'ProfitMaximizer',
+                category: 'inteligencia',
+                icon: 'fa-chart-line-up',
+                description: 'Maximización de rentabilidad con IA que identifica oportunidades de ingresos y optimiza pricing dinámico.',
+                efficiency: 97,
+                status: 'active'
+            },
+            {
+                id: 30,
+                name: 'CashFlowOracle',
+                category: 'inteligencia',
+                icon: 'fa-water',
+                description: 'Predicción avanzada de flujo de caja con análisis de liquidez y optimización de capital de trabajo.',
+                efficiency: 95,
+                status: 'active'
+            },
+            {
+                id: 31,
+                name: 'PricingGenius',
+                category: 'inteligencia',
+                icon: 'fa-tags',
+                description: 'Optimización inteligente de precios y tasas con algoritmos que balancean competitividad y rentabilidad.',
+                efficiency: 93,
+                status: 'active'
+            },
+            {
+                id: 32,
+                name: 'ROIMaster',
+                category: 'inteligencia',
+                icon: 'fa-trophy',
+                description: 'Análisis avanzado de ROI que mide y optimiza retorno de inversión en todas las líneas de negocio.',
+                efficiency: 96,
+                status: 'active'
+            },
+            
+            // FORTALEZA DIGITAL (4 agentes)
+            {
+                id: 33,
+                name: 'CyberSentinel',
+                category: 'fortaleza',
+                icon: 'fa-user-shield',
+                description: 'Protección cibernética avanzada que detecta amenazas en tiempo real y protege infraestructura crítica.',
+                efficiency: 98,
+                status: 'active'
+            },
+            {
+                id: 34,
+                name: 'DataVault',
+                category: 'fortaleza',
+                icon: 'fa-lock',
+                description: 'Protección de datos con encriptación avanzada y gestión segura de información sensible de clientes.',
+                efficiency: 99,
+                status: 'active'
+            },
+            {
+                id: 35,
+                name: 'SystemHealthMonitor',
+                category: 'fortaleza',
+                icon: 'fa-heartbeat',
+                description: 'Monitoreo continuo de salud del sistema con diagnósticos automáticos y mantenimiento predictivo.',
+                efficiency: 97,
+                status: 'active'
+            },
+            {
+                id: 36,
+                name: 'BackupGuardian',
+                category: 'fortaleza',
+                icon: 'fa-save',
+                description: 'Gestión inteligente de respaldos con recuperación automática y protección contra pérdida de datos.',
+                efficiency: 95,
+                status: 'active'
+            },
+            
+            // ORCHESTRATION (4 agentes coordinadores)
+            {
+                id: 37,
+                name: 'OrchestrationMaster',
+                category: 'orchestration',
+                icon: 'fa-crown',
+                description: 'Coordinador maestro de los 40 agentes financieros. Optimiza flujos, balancea cargas y garantiza coherencia enterprise.',
+                efficiency: 99,
+                status: 'active'
+            },
+            {
+                id: 38,
+                name: 'LoadBalancer',
+                category: 'orchestration',
+                icon: 'fa-balance-scale-right',
+                description: 'Balanceador inteligente de carga que distribuye tareas entre agentes para optimizar performance del sistema.',
+                efficiency: 96,
+                status: 'active'
+            },
+            {
+                id: 39,
+                name: 'ResourceOptimizer',
+                category: 'orchestration',
+                icon: 'fa-microchip',
+                description: 'Optimizador de recursos computacionales que gestiona memoria, CPU y bandwidth para máxima eficiencia.',
+                efficiency: 94,
+                status: 'active'
+            },
+            {
+                id: 40,
+                name: 'SystemCoordinator',
+                category: 'orchestration',
+                icon: 'fa-network-wired',
+                description: 'Coordinador de sistema que sincroniza operaciones entre todos los agentes y mantiene coherencia de datos.',
+                efficiency: 97,
+                status: 'active'
+            }
+        ];
+
+        // INICIALIZACIÓN
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeSystem();
+            loadAgents();
+            setupEventListeners();
+            
+            // Simular carga
+            setTimeout(() => {
+                hideLoading();
+                showNotification('🚀 Sistema Multi-Tenant activado correctamente', 'success');
+            }, 2000);
+        });
+
+        function initializeSystem() {
+            // Aplicar tema de la institución actual
+            applyInstitutionTheme(currentInstitution);
+            
+            // Actualizar contadores
+            updateInstitutionLimits();
+        }
+
+        function applyInstitutionTheme(institutionId) {
+            const institution = INSTITUTIONS_CONFIG[institutionId];
+            if (!institution) return;
+
+            // Actualizar variables CSS
+            document.documentElement.style.setProperty('--primary-color', institution.primary_color);
+            document.documentElement.style.setProperty('--secondary-color', institution.secondary_color);
+            document.documentElement.style.setProperty('--accent-color', institution.accent_color);
+
+            // Actualizar textos
+            document.getElementById('institutionName').textContent = institution.name;
+            document.getElementById('currentInstitution').textContent = institution.name;
+            document.getElementById('institutionSubtitle').textContent = institution.description;
+
+            // Actualizar límites de agentes
+            const agentsLimit = institution.agents_limit;
+            document.getElementById('agentsCount').textContent = agentsLimit;
+            document.getElementById('activeAgentsCount').textContent = agentsLimit;
+            document.getElementById('submitAgentsCount').textContent = agentsLimit;
+            document.getElementById('totalAgentsDisplay').textContent = agentsLimit;
+
+            // Actualizar logo
+            const logoElement = document.querySelector('.brand-logo i');
+            logoElement.className = institution.logo_text ? '' : 'fas fa-atom';
+            if (institution.logo_text) {
+                logoElement.textContent = institution.logo_text;
+            }
+
+            currentInstitution = institutionId;
+        }
+
+        function updateInstitutionLimits() {
+            const institution = INSTITUTIONS_CONFIG[currentInstitution];
+            const agentsLimit = institution.agents_limit;
+            
+            // Filtrar agentes según límite
+            const visibleAgents = AGENTS_DATA.slice(0, agentsLimit);
+            loadAgents(visibleAgents);
+        }
+
+        function loadAgents(agentsToShow = null) {
+            const agentsGrid = document.getElementById('agentsGrid');
+            const institution = INSTITUTIONS_CONFIG[currentInstitution];
+            const agentsLimit = institution.agents_limit;
+            
+            const agentsData = agentsToShow || AGENTS_DATA.slice(0, agentsLimit);
+            
+            agentsGrid.innerHTML = agentsData.map(agent => `
+                <div class="agent-card ${agent.category}" data-category="${agent.category}">
+                    <div class="agent-header">
+                        <div class="agent-avatar">
+                            <i class="fas ${agent.icon}"></i>
+                        </div>
+                        <div class="agent-info">
+                            <div class="agent-title">${agent.name}</div>
+                            <div class="agent-category">Agent_${agent.id.toString().padStart(2, '0')} • ${getCategoryName(agent.category)}</div>
+                        </div>
+                    </div>
+                    <div class="agent-description">${agent.description}</div>
+                    <div class="agent-metrics">
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVO</span>
+                        </div>
+                        <div class="efficiency-display">
+                            <div class="efficiency-bar">
+                                <div class="efficiency-fill" style="width: ${agent.efficiency}%;"></div>
+                            </div>
+                            <div class="efficiency-value">${agent.efficiency}%</div>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-agent btn-primary" onclick="executeAgent('${agent.name}')">
+                            <i class="fas fa-rocket"></i>
+                            Ejecutar
+                        </button>
+                        <button class="btn-agent btn-secondary" onclick="configureAgent('${agent.name}')">
+                            <i class="fas fa-cog"></i>
+                            Config
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getCategoryName(category) {
+            const names = {
+                'originacion': 'Originación Inteligente',
+                'decision': 'Decisión Cuántica',
+                'vigilancia': 'Vigilancia Continua',
+                'recuperacion': 'Recuperación Máxima',
+                'compliance': 'Compliance Supremo',
+                'operacional': 'Excelencia Operacional',
+                'experiencia': 'Experiencia Suprema',
+                'inteligencia': 'Inteligencia Financiera',
+                'fortaleza': 'Fortaleza Digital',
+                'orchestration': 'Orchestration Master'
+            };
+            return names[category] || category;
+        }
+
+        function setupEventListeners() {
+            // Búsqueda de agentes
+            document.getElementById('agentSearch').addEventListener('input', function() {
+                filterAgentsBySearch(this.value);
+            });
+        }
+
+        function filterAgents(category) {
+            // Actualizar botones
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            currentFilter = category;
+            
+            const institution = INSTITUTIONS_CONFIG[currentInstitution];
+            const agentsLimit = institution.agents_limit;
+            let agentsToShow;
+
+            if (category === 'all') {
+                agentsToShow = AGENTS_DATA.slice(0, agentsLimit);
+            } else {
+                agentsToShow = AGENTS_DATA.filter(agent => agent.category === category).slice(0, agentsLimit);
+            }
+
+            loadAgents(agentsToShow);
+        }
+
+        function filterAgentsBySearch(searchTerm) {
+            const agentCards = document.querySelectorAll('.agent-card');
+            
+            agentCards.forEach(card => {
+                const title = card.querySelector('.agent-title').textContent.toLowerCase();
+                const description = card.querySelector('.agent-description').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm.toLowerCase()) || description.includes(searchTerm.toLowerCase())) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.opacity = '0.3';
+                }
+            });
+        }
+
+        function showInstitutionSelector() {
+            const institutions = Object.entries(INSTITUTIONS_CONFIG);
+            const options = institutions.map(([id, inst]) => 
+                `<div onclick="selectInstitution('${id}')" style="padding: 1rem; cursor: pointer; border-bottom: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 40px; height: 40px; background: ${inst.primary_color}; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">${inst.logo_text}</div>
+                    <div>
+                        <div style="font-weight: 600;">${inst.name}</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">${inst.agents_limit} agentes • ${inst.plan}</div>
+                    </div>
+                </div>`
+            ).join('');
+
+            showModal('Seleccionar Institución', `<div style="max-height: 400px; overflow-y: auto;">${options}</div>`);
+        }
+
+        function selectInstitution(institutionId) {
+            applyInstitutionTheme(institutionId);
+            updateInstitutionLimits();
+            closeModal();
+            showNotification(`🏦 Cambiado a ${INSTITUTIONS_CONFIG[institutionId].name}`, 'success');
+        }
+
+        async function evaluateProfile() {
+            const formData = {
+                income: document.getElementById('income').value,
+                credit_score: document.getElementById('creditScore').value,
+                age: document.getElementById('age').value,
+                employment_type: document.getElementById('employmentType').value,
+                debt_to_income: document.getElementById('debtToIncome').value,
+                payment_history: document.getElementById('paymentHistory').value
+            };
+
+            // Validar campos
+            if (!formData.income || !formData.credit_score || !formData.age || !formData.employment_type || !formData.debt_to_income || !formData.payment_history) {
+                showNotification('⚠️ Por favor completa todos los campos', 'warning');
+                return;
+            }
+
+            showLoading('Ejecutando evaluación con ' + INSTITUTIONS_CONFIG[currentInstitution].agents_limit + ' agentes...');
+
+            try {
+                const response = await fetch(BACKEND_CONFIG.base_url + BACKEND_CONFIG.endpoints.evaluate, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Tenant-ID': currentInstitution
+                    },
+                    body: JSON.stringify({
+                        profile: {
+                            income: parseFloat(formData.income),
+                            credit_score: parseInt(formData.credit_score),
+                            age: parseInt(formData.age),
+                            employment_type: formData.employment_type,
+                            debt_to_income: parseFloat(formData.debt_to_income),
+                            payment_history: formData.payment_history
+                        }
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error ${response.status}: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                hideLoading();
+                showResults(result);
+
+            } catch (error) {
+                hideLoading();
+                console.error('Error:', error);
+                showNotification('❌ Error en la evaluación: ' + error.message, 'error');
+            }
+        }
+
+        function showResults(result) {
+            const riskLevels = {
+                'LOW_RISK': { name: 'RIESGO BAJO', color: '#00ff88', description: 'Aprobación recomendada' },
+                'MEDIUM_RISK': { name: 'RIESGO MEDIO', color: '#ffcc00', description: 'Evaluación adicional requerida' },
+                'HIGH_RISK': { name: 'RIESGO ALTO', color: '#ff6b9d', description: 'Análisis detallado necesario' },
+                'REJECT': { name: 'RECHAZO AUTOMÁTICO', color: '#ff4757', description: 'No aprobado por similitud alta' }
+            };
+
+            const riskInfo = riskLevels[result.risk_level] || riskLevels['MEDIUM_RISK'];
+            const similarity = (result.quantum_similarity_score * 100).toFixed(1);
+
+            const resultsContent = `
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: ${riskInfo.color}; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2rem;">
+                        <i class="fas fa-${result.risk_level === 'LOW_RISK' ? 'check' : result.risk_level === 'REJECT' ? 'times' : 'exclamation'}"></i>
+                    </div>
+                    
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: ${riskInfo.color};">${riskInfo.name}</h3>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">${riskInfo.description}</p>
+                    
+                    <div style="background: var(--glass-primary); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; text-align: center;">
+                            <div>
+                                <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">${similarity}%</div>
+                                <div style="font-size: 0.9rem; color: var(--text-muted);">Similitud Detectada</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">${INSTITUTIONS_CONFIG[currentInstitution].agents_limit}</div>
+                                <div style="font-size: 0.9rem; color: var(--text-muted);">Agentes Ejecutados</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 0.9rem; color: var(--text-muted);">
+                        Evaluación realizada por ${INSTITUTIONS_CONFIG[currentInstitution].name}<br>
+                        Powered by Nadakki AI Suite Multi-Tenant
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('resultsContent').innerHTML = resultsContent;
+            document.getElementById('resultsModal').style.display = 'flex';
+        }
+
+        function executeAgent(agentName) {
+            showNotification(`🚀 Ejecutando ${agentName}...`, 'info');
+            
+            setTimeout(() => {
+                showNotification(`✅ ${agentName} ejecutado exitosamente`, 'success');
+            }, 2000);
+        }
+
+        function configureAgent(agentName) {
+            showNotification(`⚙️ Abriendo configuración de ${agentName}`, 'info');
+        }
+
+        function closeResults() {
+            document.getElementById('resultsModal').style.display = 'none';
+        }
+
+        function showLoading(message = 'Procesando...') {
+            const overlay = document.getElementById('loadingOverlay');
+            const text = overlay.querySelector('.loading-text');
+            text.textContent = message;
+            overlay.style.display = 'flex';
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        }
+
+        function showNotification(message, type = 'info') {
+            const colors = {
+                success: '#00ff88',
+                error: '#ff4757',
+                warning: '#ffcc00',
+                info: '#60a5fa'
+            };
+
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.style.borderLeft = `4px solid ${colors[type]}`;
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'times-circle' : type === 'warning' ? 'exclamation-triangle' : 'info-circle'}" style="color: ${colors[type]}; font-size: 1.25rem;"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        function showModal(title, content) {
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+                background: rgba(10, 15, 28, 0.95); backdrop-filter: blur(20px);
+                display: flex; align-items: center; justify-content: center; z-index: 10000;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: var(--glass-secondary); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2rem; max-width: 500px; width: 90%; backdrop-filter: blur(30px);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.5rem; font-weight: 700;">${title}</h3>
+                        <button onclick="closeModal()" style="background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer;">&times;</button>
+                    </div>
+                    ${content}
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+            modal.id = 'currentModal';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('currentModal');
+            if (modal) modal.remove();
+        }
+
+        console.log('🏦 Nadakki AI Suite Multi-Tenant System Loaded');
+        console.log('🚀 40 Agentes Especializados | 6 Instituciones Configuradas');
+        console.log('⚡ Sistema Multi-Tenant Enterprise Ready');
+    </script>
+</body>
+</html>

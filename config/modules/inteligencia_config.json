@@ -1,0 +1,72 @@
+{
+  "module_name": "inteligencia",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+  "agents": {
+    "ProfitMaximizer": {
+      "class_name": "ProfitMaximizerOptimizer",
+      "description": "Maximización de ganancias con análisis predictivo y optimización de precios",
+      "algorithms": [
+        "profit_optimization",
+        "price_modeling",
+        "revenue_prediction"
+      ],
+      "features": [
+        "profit_maximization",
+        "price_optimization",
+        "revenue_analysis"
+      ],
+      "performance_target": 96.2
+    },
+    "CashFlowOracle": {
+      "class_name": "CashFlowOraclePredictor",
+      "description": "Predicción de flujo de caja con modelos avanzados y análisis temporal",
+      "algorithms": [
+        "cashflow_prediction",
+        "temporal_analysis",
+        "liquidity_modeling"
+      ],
+      "features": [
+        "cashflow_forecasting",
+        "liquidity_analysis",
+        "temporal_modeling"
+      ],
+      "performance_target": 94.7
+    },
+    "PricingGenius": {
+      "class_name": "PricingGeniusStrategy",
+      "description": "Optimización de precios con análisis de mercado y competencia en tiempo real",
+      "algorithms": [
+        "pricing_optimization",
+        "market_analysis",
+        "competitive_intelligence"
+      ],
+      "features": [
+        "pricing_strategy",
+        "market_intelligence",
+        "competitive_analysis"
+      ],
+      "performance_target": 93.1
+    },
+    "ROIMaster": {
+      "class_name": "ROIMasterCalculator",
+      "description": "Análisis de rentabilidad y ROI con métricas avanzadas y benchmarking",
+      "algorithms": [
+        "roi_calculation",
+        "profitability_analysis",
+        "benchmarking"
+      ],
+      "features": [
+        "roi_analysis",
+        "profitability_metrics",
+        "benchmark_comparison"
+      ],
+      "performance_target": 91.9
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.226659",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

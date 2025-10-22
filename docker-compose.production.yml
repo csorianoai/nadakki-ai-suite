@@ -1,0 +1,239 @@
+﻿# ===================================================================
+# 🚀 NADAKKI AI SUITE - CREDICEFI PRODUCTION STACK
+# Docker Compose para despliegue completo con alta disponibilidad
+# Cliente: Credicefi Dominicana S.A.
+# ===================================================================
+
+version: '3.8'
+
+services:
+  # === NADAKKI AI API PRINCIPAL ===
+  nadakki-api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: nadakki-ai-suite:credicefi-prod
+    container_name: nadakki-credicefi-api
+    restart: unless-stopped
+    
+    environment:
+      - ENVIRONMENT=production
+      - TENANT_ID=credicefi
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=${REDIS_URL}
+      - POWERBI_CLIENT_ID=${POWERBI_CLIENT_ID}
+      - POWERBI_CLIENT_SECRET=${POWERBI_CLIENT_SECRET}
+    
+    ports:
+      - "5000:5000"
+    
+    volumes:
+      - ./config:/app/config:ro
+      - ./logs:/app/logs
+      - credicefi_uploads:/app/uploads
+    
+    depends_on:
+      - redis
+      - postgres
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.5'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+    
+    networks:
+      - credicefi-network
+    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  # === REDIS CACHE ===
+  redis:
+    image: redis:7-alpine
+    container_name: nadakki-credicefi-redis
+    restart: unless-stopped
+    
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-defaultpassword}
+    
+    ports:
+      - "6379:6379"
+    
+    volumes:
+      - redis_data:/data
+    
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    
+    networks:
+      - credicefi-network
+    
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+
+  # === POSTGRESQL DATABASE ===
+  postgres:
+    image: postgres:15-alpine
+    container_name: nadakki-credicefi-db
+    restart: unless-stopped
+    
+    environment:
+      POSTGRES_DB: nadakki_credicefi_prod
+      POSTGRES_USER: ${DB_USER:-nadakki_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-secure_password}
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+    
+    ports:
+      - "5432:5432"
+    
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-nadakki_user}"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    
+    networks:
+      - credicefi-network
+    
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+
+  # === NGINX LOAD BALANCER ===
+  nginx:
+    image: nginx:alpine
+    container_name: nadakki-credicefi-nginx
+    restart: unless-stopped
+    
+    ports:
+      - "80:80"
+      - "443:443"
+    
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/credicefi.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./ssl:/etc/ssl/certs:ro
+    
+    depends_on:
+      - nadakki-api
+    
+    networks:
+      - credicefi-network
+    
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # === PROMETHEUS MONITORING ===
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: nadakki-credicefi-prometheus
+    restart: unless-stopped
+    
+    ports:
+      - "9090:9090"
+    
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=15d'
+      - '--web.enable-lifecycle'
+    
+    networks:
+      - credicefi-network
+
+  # === GRAFANA DASHBOARD ===
+  grafana:
+    image: grafana/grafana:latest
+    container_name: nadakki-credicefi-grafana
+    restart: unless-stopped
+    
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-credicefi2025}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    
+    ports:
+      - "3000:3000"
+    
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    
+    depends_on:
+      - prometheus
+    
+    networks:
+      - credicefi-network
+
+  # === LOG AGGREGATION ===
+  loki:
+    image: grafana/loki:latest
+    container_name: nadakki-credicefi-loki
+    restart: unless-stopped
+    
+    ports:
+      - "3100:3100"
+    
+    volumes:
+      - ./monitoring/loki-config.yml:/etc/loki/local-config.yaml:ro
+      - loki_data:/tmp/loki
+    
+    command: -config.file=/etc/loki/local-config.yaml
+    
+    networks:
+      - credicefi-network
+
+# === VOLUMES ===
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  credicefi_uploads:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+  loki_data:
+    driver: local
+
+# === NETWORKS ===
+networks:
+  credicefi-network:
+    driver: bridge
+    name: credicefi-production

@@ -1,0 +1,2830 @@
+{
+  "premium_agents": [
+    {
+      "agent": "agentes_contabilidad_completos",
+      "file_path": "backup_golden_20250928_200328\\agentes_contabilidad_completos.py",
+      "revenue_score": 4,
+      "size_kb": 0.79,
+      "has_class": true,
+      "has_evaluate_method": true,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "audit_all_updated",
+      "file_path": "audit_all_updated.py",
+      "revenue_score": 4,
+      "size_kb": 12.06,
+      "has_class": true,
+      "has_evaluate_method": true,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "audit_final_11_agents",
+      "file_path": "audit_final_11_agents.py",
+      "revenue_score": 5,
+      "size_kb": 12.44,
+      "has_class": true,
+      "has_evaluate_method": true,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "enhanced_app",
+      "file_path": "backup_golden_20250928_200328\\enhanced_app.py",
+      "revenue_score": 4,
+      "size_kb": 19.23,
+      "has_class": true,
+      "has_evaluate_method": true,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "evaluate_agent",
+      "file_path": "evaluate_agent.py",
+      "revenue_score": 7,
+      "size_kb": 14.5,
+      "has_class": true,
+      "has_evaluate_method": true,
+      "has_tests": false,
+      "pricing_tier": "professional",
+      "estimated_mrr": 200,
+      "priority": "HIGH"
+    },
+    {
+      "agent": "generate_legal_module",
+      "file_path": "backup_golden_20250928_200328\\generate_legal_module.py",
+      "revenue_score": 4,
+      "size_kb": 98.14,
+      "has_class": true,
+      "has_evaluate_method": true,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "install_originacion_ecosystem_v2",
+      "file_path": "backup_golden_20250928_200328\\install_originacion_ecosystem_v2.py",
+      "revenue_score": 4,
+      "size_kb": 63.8,
+      "has_class": true,
+      "has_evaluate_method": true,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "nadakki_enterprise_v3_clean",
+      "file_path": "backup_golden_20250928_200328\\nadakki_enterprise_v3_clean.py",
+      "revenue_score": 4,
+      "size_kb": 37.28,
+      "has_class": true,
+      "has_evaluate_method": true,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "test_all_agents",
+      "file_path": "test_all_agents.py",
+      "revenue_score": 5,
+      "size_kb": 3.81,
+      "has_class": false,
+      "has_evaluate_method": true,
+      "has_tests": true,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "test_v22_final",
+      "file_path": "test_v22_final.py",
+      "revenue_score": 4,
+      "size_kb": 7.53,
+      "has_class": false,
+      "has_evaluate_method": true,
+      "has_tests": true,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "test_v22_real",
+      "file_path": "test_v22_real.py",
+      "revenue_score": 4,
+      "size_kb": 5.31,
+      "has_class": false,
+      "has_evaluate_method": true,
+      "has_tests": true,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "compliancewatchdog",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\compliance_normativo\\compliancewatchdog.py",
+      "revenue_score": 4,
+      "size_kb": 7.05,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "compliance_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\compliance\\compliance_coordinator.py",
+      "revenue_score": 4,
+      "size_kb": 3.85,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "riskoracle",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\decision_inteligente\\riskoracle.py",
+      "revenue_score": 4,
+      "size_kb": 6.94,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "cybersentinel",
+      "file_path": "backup_golden_20250928_200328\\agents\\fortaleza\\cybersentinel.py",
+      "revenue_score": 4,
+      "size_kb": 6.97,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "patentesanalyzer",
+      "file_path": "backup_golden_20250928_200328\\agents\\investigacion\\patentesanalyzer.py",
+      "revenue_score": 4,
+      "size_kb": 7.01,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "leadscoringia",
+      "file_path": "backup_golden_20250928_200328\\agents\\ventascrm\\leadscoringia.py",
+      "revenue_score": 4,
+      "size_kb": 6.95,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "leadscoringia_backup_20251012_120320",
+      "file_path": "agents\\marketing\\leadscoringia_backup_20251012_120320.py",
+      "revenue_score": 5,
+      "size_kb": 14.61,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "sentinelbot",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\originacion_segmentacion\\sentinelbot.py",
+      "revenue_score": 4,
+      "size_kb": 6.97,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "sentinel_bot_v2",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\originacion_segmentacion\\sentinel_bot_v2.py",
+      "revenue_score": 4,
+      "size_kb": 2.29,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "cvanalyzeria",
+      "file_path": "backup_golden_20250928_200328\\agents\\rrhh\\cvanalyzeria.py",
+      "revenue_score": 4,
+      "size_kb": 6.92,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "portfoliosentinel",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\vigilancia_monitoreo\\portfoliosentinel.py",
+      "revenue_score": 4,
+      "size_kb": 7.0,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "audit_master_analyzer",
+      "file_path": "apps\\agents\\compliance_normativo\\audit_master_analyzer.py",
+      "revenue_score": 4,
+      "size_kb": 2.72,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "compliance_watchdog_engine",
+      "file_path": "apps\\agents\\compliance_normativo\\compliance_watchdog_engine.py",
+      "revenue_score": 4,
+      "size_kb": 2.74,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "risk_oracle_analyzer",
+      "file_path": "apps\\agents\\decision_inteligente\\risk_oracle_analyzer.py",
+      "revenue_score": 4,
+      "size_kb": 2.72,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "cost_optimizer_analyzer",
+      "file_path": "apps\\agents\\excelencia_operacional\\cost_optimizer_analyzer.py",
+      "revenue_score": 4,
+      "size_kb": 2.73,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "satisfaction_analyzer",
+      "file_path": "apps\\agents\\experiencia_deudor\\satisfaction_analyzer.py",
+      "revenue_score": 4,
+      "size_kb": 2.73,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "threat_analyzer",
+      "file_path": "apps\\agents\\fortaleza_digital\\threat_analyzer.py",
+      "revenue_score": 4,
+      "size_kb": 2.71,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "pattern_detector_analyzer",
+      "file_path": "apps\\agents\\inteligencia_financiera\\pattern_detector_analyzer.py",
+      "revenue_score": 4,
+      "size_kb": 2.74,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "profiling_analyzer",
+      "file_path": "apps\\agents\\originacion_segmentacion\\profiling_analyzer.py",
+      "revenue_score": 5,
+      "size_kb": 28.95,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "risk_evaluator",
+      "file_path": "apps\\agents\\originacion_segmentacion\\risk_evaluator.py",
+      "revenue_score": 5,
+      "size_kb": 28.97,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "negotiation_bot_analyzer",
+      "file_path": "apps\\agents\\recuperacion_avanzada\\negotiation_bot_analyzer.py",
+      "revenue_score": 4,
+      "size_kb": 2.74,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "portfolio_sentinel_analyzer",
+      "file_path": "apps\\agents\\vigilancia_monitoreo\\portfolio_sentinel_analyzer.py",
+      "revenue_score": 4,
+      "size_kb": 2.75,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "compliance_watchdog",
+      "file_path": "agents_consolidated\\compliance\\compliance_watchdog.py",
+      "revenue_score": 5,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "risk_oracle",
+      "file_path": "agents_consolidated\\decision\\risk_oracle.py",
+      "revenue_score": 5,
+      "size_kb": 112.8,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "sentinel_bot",
+      "file_path": "agents_consolidated\\originacion\\sentinel_bot.py",
+      "revenue_score": 5,
+      "size_kb": 112.8,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    },
+    {
+      "agent": "portfolio_sentinel",
+      "file_path": "agents_consolidated\\vigilancia\\portfolio_sentinel.py",
+      "revenue_score": 5,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false,
+      "pricing_tier": "starter",
+      "estimated_mrr": 50,
+      "priority": "MEDIUM"
+    }
+  ],
+  "free_agents": [
+    {
+      "agent": "add_shims",
+      "file_path": "add_shims.py",
+      "revenue_score": 1,
+      "size_kb": 4.55,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "agent-fixer",
+      "file_path": "backup_golden_20250928_200328\\agent-fixer.py",
+      "revenue_score": 3,
+      "size_kb": 27.83,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "app_backup",
+      "file_path": "backup_golden_20250928_200328\\app_backup.py",
+      "revenue_score": 2,
+      "size_kb": 9.79,
+      "has_class": false,
+      "has_evaluate_method": true,
+      "has_tests": false
+    },
+    {
+      "agent": "app_clean",
+      "file_path": "backup_golden_20250928_200328\\app_clean.py",
+      "revenue_score": 2,
+      "size_kb": 7.4,
+      "has_class": false,
+      "has_evaluate_method": true,
+      "has_tests": false
+    },
+    {
+      "agent": "audit_agents",
+      "file_path": "audit_agents.py",
+      "revenue_score": 2,
+      "size_kb": 7.22,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "audit_all_agents",
+      "file_path": "audit_all_agents.py",
+      "revenue_score": 1,
+      "size_kb": 6.22,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "audit_nadakki_agents",
+      "file_path": "backup_golden_20250928_200328\\audit_nadakki_agents.py",
+      "revenue_score": 1,
+      "size_kb": 0.0,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "audit_real",
+      "file_path": "audit_real.py",
+      "revenue_score": 0,
+      "size_kb": 7.45,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "audit_updated_agents",
+      "file_path": "audit_updated_agents.py",
+      "revenue_score": 1,
+      "size_kb": 4.32,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "canonical",
+      "file_path": "agents\\marketing_backup_20251011_082012\\canonical.py",
+      "revenue_score": 3,
+      "size_kb": 12.08,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "fix_agents_bulk",
+      "file_path": "fix_agents_bulk.py",
+      "revenue_score": 1,
+      "size_kb": 3.37,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "generate_agents",
+      "file_path": "backup_golden_20250928_200328\\generate_agents.py",
+      "revenue_score": 2,
+      "size_kb": 4.94,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "generate_contabilidad_enterprise",
+      "file_path": "backup_golden_20250928_200328\\generate_contabilidad_enterprise.py",
+      "revenue_score": 2,
+      "size_kb": 61.54,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "main",
+      "file_path": "main.py",
+      "revenue_score": 2,
+      "size_kb": 13.38,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "main_backup_20251011_090956",
+      "file_path": "main_backup_20251011_090956.py",
+      "revenue_score": 1,
+      "size_kb": 9.29,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "main_backup_20251011_122512",
+      "file_path": "main_backup_20251011_122512.py",
+      "revenue_score": 2,
+      "size_kb": 11.95,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "main_backup_adapter_20251012_084802",
+      "file_path": "main_backup_adapter_20251012_084802.py",
+      "revenue_score": 2,
+      "size_kb": 11.96,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "main_backup_v330_20251011_112412",
+      "file_path": "main_backup_v330_20251011_112412.py",
+      "revenue_score": 2,
+      "size_kb": 18.65,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "main_enterprise",
+      "file_path": "backup_golden_20250928_200328\\main_enterprise.py",
+      "revenue_score": 1,
+      "size_kb": 7.72,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "maximize_all_agents",
+      "file_path": "maximize_all_agents.py",
+      "revenue_score": 2,
+      "size_kb": 7.09,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "prompt-generator",
+      "file_path": "backup_golden_20250928_200328\\prompt-generator.py",
+      "revenue_score": 2,
+      "size_kb": 76.13,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "test_abtest_agent",
+      "file_path": "test_abtest_agent.py",
+      "revenue_score": 3,
+      "size_kb": 3.76,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_accounting_status",
+      "file_path": "backup_golden_20250928_200328\\test_accounting_status.py",
+      "revenue_score": 2,
+      "size_kb": 0.45,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_attribution_agent",
+      "file_path": "test_attribution_agent.py",
+      "revenue_score": 3,
+      "size_kb": 4.27,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_budget_agent",
+      "file_path": "test_budget_agent.py",
+      "revenue_score": 3,
+      "size_kb": 4.85,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_campaign_agent",
+      "file_path": "test_campaign_agent.py",
+      "revenue_score": 3,
+      "size_kb": 1.29,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_competitor_agent",
+      "file_path": "test_competitor_agent.py",
+      "revenue_score": 3,
+      "size_kb": 5.98,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_content_agent",
+      "file_path": "test_content_agent.py",
+      "revenue_score": 3,
+      "size_kb": 3.21,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_creative_agent",
+      "file_path": "test_creative_agent.py",
+      "revenue_score": 3,
+      "size_kb": 4.99,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_email_agent",
+      "file_path": "test_email_agent.py",
+      "revenue_score": 3,
+      "size_kb": 1.03,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_influencer_agent",
+      "file_path": "test_influencer_agent.py",
+      "revenue_score": 3,
+      "size_kb": 1.7,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_journey_agent",
+      "file_path": "test_journey_agent.py",
+      "revenue_score": 3,
+      "size_kb": 4.72,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_lead_agent",
+      "file_path": "test_lead_agent.py",
+      "revenue_score": 3,
+      "size_kb": 1.64,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_mmm_agent",
+      "file_path": "test_mmm_agent.py",
+      "revenue_score": 3,
+      "size_kb": 5.31,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_orchestrator",
+      "file_path": "backup_golden_20250928_200328\\test_orchestrator.py",
+      "revenue_score": 3,
+      "size_kb": 0.96,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_orchestrator_agent",
+      "file_path": "test_orchestrator_agent.py",
+      "revenue_score": 3,
+      "size_kb": 2.58,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_personalization_agent",
+      "file_path": "test_personalization_agent.py",
+      "revenue_score": 3,
+      "size_kb": 4.4,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_retention_agent",
+      "file_path": "test_retention_agent.py",
+      "revenue_score": 3,
+      "size_kb": 2.75,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_segmentation_agent",
+      "file_path": "test_segmentation_agent.py",
+      "revenue_score": 3,
+      "size_kb": 1.15,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_simple",
+      "file_path": "test_simple.py",
+      "revenue_score": 2,
+      "size_kb": 1.32,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_social_agent",
+      "file_path": "test_social_agent.py",
+      "revenue_score": 3,
+      "size_kb": 1.46,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_super_agentes_contabilidad",
+      "file_path": "backup_golden_20250928_200328\\test_super_agentes_contabilidad.py",
+      "revenue_score": 3,
+      "size_kb": 6.69,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "upgrade_remaining_agents",
+      "file_path": "upgrade_remaining_agents.py",
+      "revenue_score": 2,
+      "size_kb": 8.21,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "agent_compat",
+      "file_path": "agents\\agent_compat.py",
+      "revenue_score": 1,
+      "size_kb": 2.22,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "registry",
+      "file_path": "backup_golden_20250928_200328\\agents\\registry.py",
+      "revenue_score": 2,
+      "size_kb": 6.96,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "registry_backup",
+      "file_path": "backup_golden_20250928_200328\\agents\\registry_backup.py",
+      "revenue_score": 2,
+      "size_kb": 1.46,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "integrated_registry",
+      "file_path": "agents_consolidated\\integrated_registry.py",
+      "revenue_score": 1,
+      "size_kb": 1.97,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "__init__",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\urllib3\\__init__.py",
+      "revenue_score": 0,
+      "size_kb": 6.82,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "activosfijos",
+      "file_path": "backup_golden_20250928_200328\\agents\\contabilidad\\activosfijos.py",
+      "revenue_score": 2,
+      "size_kb": 5.86,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "auditoriainterna",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\inteligencia_financiera\\auditoriainterna.py",
+      "revenue_score": 2,
+      "size_kb": 5.91,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "cierrecontable",
+      "file_path": "backup_golden_20250928_200328\\agents\\contabilidad\\cierrecontable.py",
+      "revenue_score": 2,
+      "size_kb": 5.89,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "conciliacionbancaria",
+      "file_path": "backup_golden_20250928_200328\\agents\\contabilidad\\conciliacionbancaria.py",
+      "revenue_score": 2,
+      "size_kb": 6.0,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "controlgastos",
+      "file_path": "backup_golden_20250928_200328\\agents\\contabilidad\\controlgastos.py",
+      "revenue_score": 2,
+      "size_kb": 5.88,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "dgiiautoreporter",
+      "file_path": "backup_golden_20250928_200328\\agents\\contabilidad\\dgiiautoreporter.py",
+      "revenue_score": 2,
+      "size_kb": 7.01,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "facturacionelectronica",
+      "file_path": "backup_golden_20250928_200328\\agents\\contabilidad\\facturacionelectronica.py",
+      "revenue_score": 2,
+      "size_kb": 6.01,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "flujocajaia",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\inteligencia_financiera\\flujocajaia.py",
+      "revenue_score": 2,
+      "size_kb": 6.92,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "previsionfiscal",
+      "file_path": "backup_golden_20250928_200328\\agents\\contabilidad\\previsionfiscal.py",
+      "revenue_score": 2,
+      "size_kb": 7.0,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "reportingfinanciero",
+      "file_path": "backup_golden_20250928_200328\\agents\\contabilidad\\reportingfinanciero.py",
+      "revenue_score": 2,
+      "size_kb": 5.98,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "app",
+      "file_path": "agents_backup\\lambda-deployment\\app.py",
+      "revenue_score": 3,
+      "size_kb": 5.08,
+      "has_class": false,
+      "has_evaluate_method": true,
+      "has_tests": false
+    },
+    {
+      "agent": "analyze_revenue_agents",
+      "file_path": "scripts\\analyze_revenue_agents.py",
+      "revenue_score": 2,
+      "size_kb": 7.87,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "generate_inventory",
+      "file_path": "scripts\\generate_inventory.py",
+      "revenue_score": 3,
+      "size_kb": 7.45,
+      "has_class": true,
+      "has_evaluate_method": true,
+      "has_tests": false
+    },
+    {
+      "agent": "user_agent",
+      "file_path": "venv\\Lib\\site-packages\\werkzeug\\user_agent.py",
+      "revenue_score": 2,
+      "size_kb": 1.38,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "test_apply",
+      "file_path": "venv\\Lib\\site-packages\\pandas\\tests\\groupby\\test_apply.py",
+      "revenue_score": 3,
+      "size_kb": 53.24,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "test_http_headers",
+      "file_path": "venv\\Lib\\site-packages\\pandas\\tests\\io\\test_http_headers.py",
+      "revenue_score": 2,
+      "size_kb": 4.77,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "session",
+      "file_path": "venv\\Lib\\site-packages\\pip\\_internal\\network\\session.py",
+      "revenue_score": 2,
+      "size_kb": 18.26,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "utils",
+      "file_path": "venv\\Lib\\site-packages\\pip\\_vendor\\requests\\utils.py",
+      "revenue_score": 1,
+      "size_kb": 32.68,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "connection",
+      "file_path": "venv\\Lib\\site-packages\\pip\\_vendor\\urllib3\\connection.py",
+      "revenue_score": 2,
+      "size_kb": 19.82,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "connectionpool",
+      "file_path": "venv\\Lib\\site-packages\\pip\\_vendor\\urllib3\\connectionpool.py",
+      "revenue_score": 2,
+      "size_kb": 39.05,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "request",
+      "file_path": "venv\\Lib\\site-packages\\werkzeug\\sansio\\request.py",
+      "revenue_score": 2,
+      "size_kb": 19.37,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "_download_all",
+      "file_path": "venv\\Lib\\site-packages\\scipy\\datasets\\_download_all.py",
+      "revenue_score": 0,
+      "size_kb": 2.12,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "_fetchers",
+      "file_path": "venv\\Lib\\site-packages\\scipy\\datasets\\_fetchers.py",
+      "revenue_score": 0,
+      "size_kb": 7.0,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "auditmaster",
+      "file_path": "backup_golden_20250928_200328\\agents\\compliance\\auditmaster.py",
+      "revenue_score": 2,
+      "size_kb": 5.87,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "docguardian",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\compliance_normativo\\docguardian.py",
+      "revenue_score": 2,
+      "size_kb": 5.85,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "regulatoryradar",
+      "file_path": "backup_golden_20250928_200328\\agents\\compliance\\regulatoryradar.py",
+      "revenue_score": 2,
+      "size_kb": 5.92,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "regulatory_radar",
+      "file_path": "backup_golden_20250928_200328\\agents\\compliance\\regulatory_radar.py",
+      "revenue_score": 2,
+      "size_kb": 9.43,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "contabilidad_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\contabilidad\\contabilidad_coordinator.py",
+      "revenue_score": 3,
+      "size_kb": 15.86,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "reconcilia_auto",
+      "file_path": "backup_golden_20250928_200328\\agents\\contabilidad\\reconcilia_auto.py",
+      "revenue_score": 3,
+      "size_kb": 13.64,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "reportes_fiscales",
+      "file_path": "backup_golden_20250928_200328\\agents\\contabilidad\\reportes_fiscales.py",
+      "revenue_score": 3,
+      "size_kb": 28.25,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "decision_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\decision\\decision_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 3.7,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "policyguardian",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\decision_inteligente\\policyguardian.py",
+      "revenue_score": 2,
+      "size_kb": 5.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "quantumdecision",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\decision_inteligente\\quantumdecision.py",
+      "revenue_score": 3,
+      "size_kb": 10.49,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "turboapprover",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\decision_inteligente\\turboapprover.py",
+      "revenue_score": 2,
+      "size_kb": 5.88,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "contenidopersonalizado",
+      "file_path": "backup_golden_20250928_200328\\agents\\educacion\\contenidopersonalizado.py",
+      "revenue_score": 2,
+      "size_kb": 7.07,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "curriculumadaptativo",
+      "file_path": "backup_golden_20250928_200328\\agents\\educacion\\curriculumadaptativo.py",
+      "revenue_score": 2,
+      "size_kb": 7.05,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "educacion_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\educacion\\educacion_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 4.38,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "evaluacionia",
+      "file_path": "backup_golden_20250928_200328\\agents\\educacion\\evaluacionia.py",
+      "revenue_score": 2,
+      "size_kb": 5.86,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "progresionestudiante",
+      "file_path": "backup_golden_20250928_200328\\agents\\educacion\\progresionestudiante.py",
+      "revenue_score": 2,
+      "size_kb": 5.97,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "chatbotsupreme",
+      "file_path": "backup_golden_20250928_200328\\agents\\experiencia\\chatbotsupreme.py",
+      "revenue_score": 2,
+      "size_kb": 6.97,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "customergenius",
+      "file_path": "backup_golden_20250928_200328\\agents\\experiencia\\customergenius.py",
+      "revenue_score": 2,
+      "size_kb": 6.99,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "experiencia_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\experiencia\\experiencia_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 4.17,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "onboardingwizard",
+      "file_path": "backup_golden_20250928_200328\\agents\\experiencia\\onboardingwizard.py",
+      "revenue_score": 2,
+      "size_kb": 5.94,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "personalizationengine",
+      "file_path": "backup_golden_20250928_200328\\agents\\experiencia\\personalizationengine.py",
+      "revenue_score": 2,
+      "size_kb": 7.09,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "backupguardian",
+      "file_path": "backup_golden_20250928_200328\\agents\\fortaleza\\backupguardian.py",
+      "revenue_score": 2,
+      "size_kb": 5.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "datavault",
+      "file_path": "backup_golden_20250928_200328\\agents\\fortaleza\\datavault.py",
+      "revenue_score": 2,
+      "size_kb": 6.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "fortaleza_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\fortaleza\\fortaleza_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 4.13,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "systemhealthmonitor",
+      "file_path": "backup_golden_20250928_200328\\agents\\fortaleza\\systemhealthmonitor.py",
+      "revenue_score": 2,
+      "size_kb": 5.96,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "cashfloworacle",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\inteligencia_financiera\\cashfloworacle.py",
+      "revenue_score": 2,
+      "size_kb": 7.0,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "inteligencia_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\inteligencia\\inteligencia_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 4.14,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "pricinggenius",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\inteligencia_financiera\\pricinggenius.py",
+      "revenue_score": 2,
+      "size_kb": 5.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "profitmaximizer",
+      "file_path": "backup_golden_20250928_200328\\agents\\inteligencia\\profitmaximizer.py",
+      "revenue_score": 2,
+      "size_kb": 7.0,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "roimaster",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\inteligencia_financiera\\roimaster.py",
+      "revenue_score": 2,
+      "size_kb": 5.84,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "innovaciontracker",
+      "file_path": "backup_golden_20250928_200328\\agents\\investigacion\\innovaciontracker.py",
+      "revenue_score": 2,
+      "size_kb": 5.94,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "investigacion_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\investigacion\\investigacion_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 4.4,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "prototipogenerator",
+      "file_path": "backup_golden_20250928_200328\\agents\\investigacion\\prototipogenerator.py",
+      "revenue_score": 2,
+      "size_kb": 7.03,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "tendenciasia",
+      "file_path": "backup_golden_20250928_200328\\agents\\investigacion\\tendenciasia.py",
+      "revenue_score": 2,
+      "size_kb": 5.88,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechoadministrativophd",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechoadministrativophd.py",
+      "revenue_score": 2,
+      "size_kb": 7.11,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechoambiental",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechoambiental.py",
+      "revenue_score": 2,
+      "size_kb": 5.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechocivilphd",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechocivilphd.py",
+      "revenue_score": 2,
+      "size_kb": 6.97,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechocomercialephd",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechocomercialephd.py",
+      "revenue_score": 2,
+      "size_kb": 7.05,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechoconstitucionalphd",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechoconstitucionalphd.py",
+      "revenue_score": 3,
+      "size_kb": 10.59,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechocontratacion",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechocontratacion.py",
+      "revenue_score": 2,
+      "size_kb": 5.97,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechofamiliaphd",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechofamiliaphd.py",
+      "revenue_score": 2,
+      "size_kb": 5.92,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechofinanciero",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechofinanciero.py",
+      "revenue_score": 2,
+      "size_kb": 7.01,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechoinmobiliariophd",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechoinmobiliariophd.py",
+      "revenue_score": 2,
+      "size_kb": 7.08,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derecholaboralphd",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derecholaboralphd.py",
+      "revenue_score": 2,
+      "size_kb": 7.0,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechomarcario",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechomarcario.py",
+      "revenue_score": 2,
+      "size_kb": 5.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechomigratorio",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechomigratorio.py",
+      "revenue_score": 2,
+      "size_kb": 5.91,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechonotarial",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechonotarial.py",
+      "revenue_score": 2,
+      "size_kb": 5.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechopenalphd",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechopenalphd.py",
+      "revenue_score": 3,
+      "size_kb": 10.48,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechoprocesalpenalphd",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechoprocesalpenalphd.py",
+      "revenue_score": 3,
+      "size_kb": 10.56,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "derechotributariophd",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\derechotributariophd.py",
+      "revenue_score": 2,
+      "size_kb": 7.04,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "legal_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\legal\\legal_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 6.72,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "alertasinventario",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\alertasinventario.py",
+      "revenue_score": 2,
+      "size_kb": 5.92,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "controlcalidad",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\controlcalidad.py",
+      "revenue_score": 2,
+      "size_kb": 5.87,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "controlpedidosia",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\controlpedidosia.py",
+      "revenue_score": 2,
+      "size_kb": 5.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "costoslogisticos",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\costoslogisticos.py",
+      "revenue_score": 2,
+      "size_kb": 5.91,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "evaluadorproveedoresia",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\evaluadorproveedoresia.py",
+      "revenue_score": 2,
+      "size_kb": 6.0,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "logisticareversa",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\logisticareversa.py",
+      "revenue_score": 2,
+      "size_kb": 5.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "logistica_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\logistica_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 5.97,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "optimizacionalmacen",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\optimizacionalmacen.py",
+      "revenue_score": 2,
+      "size_kb": 5.94,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "optimizadorrutasia",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\optimizadorrutasia.py",
+      "revenue_score": 2,
+      "size_kb": 7.04,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "predicciondemanda",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\predicciondemanda.py",
+      "revenue_score": 2,
+      "size_kb": 6.99,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "previsioninventarioia",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\previsioninventarioia.py",
+      "revenue_score": 2,
+      "size_kb": 7.05,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "seguridadcarga",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\seguridadcarga.py",
+      "revenue_score": 2,
+      "size_kb": 6.95,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "transportepredictivo",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\transportepredictivo.py",
+      "revenue_score": 2,
+      "size_kb": 5.97,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "trazabilidadia",
+      "file_path": "backup_golden_20250928_200328\\agents\\logistica\\trazabilidadia.py",
+      "revenue_score": 2,
+      "size_kb": 5.88,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "campaignoptimizeria",
+      "file_path": "agents\\marketing\\campaignoptimizeria.py",
+      "revenue_score": 2,
+      "size_kb": 5.11,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "canonical_backup_20251011_084547",
+      "file_path": "agents\\marketing\\canonical_backup_20251011_084547.py",
+      "revenue_score": 3,
+      "size_kb": 12.08,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "canonical_backup_20251012_091337",
+      "file_path": "agents\\marketing\\canonical_backup_20251012_091337.py",
+      "revenue_score": 3,
+      "size_kb": 14.97,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "contactqualityia",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\contactqualityia.py",
+      "revenue_score": 2,
+      "size_kb": 7.01,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "contentperformanceia",
+      "file_path": "agents\\marketing_backup_20251011_082012\\contentperformanceia.py",
+      "revenue_score": 3,
+      "size_kb": 35.65,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "content_generator_v3",
+      "file_path": "agents\\marketing_backup_20251011_082012\\content_generator_v3.py",
+      "revenue_score": 3,
+      "size_kb": 43.84,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "conversioncohortia",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\conversioncohortia.py",
+      "revenue_score": 2,
+      "size_kb": 5.94,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "emailautomationia",
+      "file_path": "agents\\marketing_backup_20251011_082012\\emailautomationia.py",
+      "revenue_score": 3,
+      "size_kb": 30.73,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "influencermatcheria",
+      "file_path": "agents\\marketing_backup_20251011_082012\\influencermatcheria.py",
+      "revenue_score": 3,
+      "size_kb": 26.91,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "marketingorchestratorea",
+      "file_path": "agents\\marketing_backup_20251011_082012\\marketingorchestratorea.py",
+      "revenue_score": 3,
+      "size_kb": 33.24,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "marketing_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\marketing_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 5.79,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "minimalformia",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\minimalformia.py",
+      "revenue_score": 2,
+      "size_kb": 5.89,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "retentionpredictorea",
+      "file_path": "agents\\marketing_backup_20251011_082012\\retentionpredictorea.py",
+      "revenue_score": 3,
+      "size_kb": 33.58,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "socialpostgeneratoria",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\socialpostgeneratoria.py",
+      "revenue_score": 2,
+      "size_kb": 7.08,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "validate_agents",
+      "file_path": "agents\\marketing\\validate_agents.py",
+      "revenue_score": 1,
+      "size_kb": 1.58,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "brandsentimentia",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\brandsentimentia.py",
+      "revenue_score": 2,
+      "size_kb": 5.93,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "cashofferfilteria",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\cashofferfilteria.py",
+      "revenue_score": 2,
+      "size_kb": 7.03,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "contentviralityia",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\contentviralityia.py",
+      "revenue_score": 2,
+      "size_kb": 7.0,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "fidelizedprofileia",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\fidelizedprofileia.py",
+      "revenue_score": 2,
+      "size_kb": 7.05,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "geosegmentationia",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\geosegmentationia.py",
+      "revenue_score": 2,
+      "size_kb": 5.93,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "influencermatchia",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\influencermatchia.py",
+      "revenue_score": 2,
+      "size_kb": 5.92,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "productaffinityia",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\productaffinityia.py",
+      "revenue_score": 2,
+      "size_kb": 7.02,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "videoreelautogenia",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\videoreelautogenia.py",
+      "revenue_score": 2,
+      "size_kb": 7.02,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "costoptimizer",
+      "file_path": "backup_golden_20250928_200328\\agents\\operacional\\costoptimizer.py",
+      "revenue_score": 2,
+      "size_kb": 5.88,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "operacional_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\operacional\\operacional_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 4.15,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "processgenius",
+      "file_path": "backup_golden_20250928_200328\\agents\\operacional\\processgenius.py",
+      "revenue_score": 2,
+      "size_kb": 5.89,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "qualitycontroller",
+      "file_path": "backup_golden_20250928_200328\\agents\\operacional\\qualitycontroller.py",
+      "revenue_score": 2,
+      "size_kb": 5.94,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "workflowmaster",
+      "file_path": "backup_golden_20250928_200328\\agents\\operacional\\workflowmaster.py",
+      "revenue_score": 2,
+      "size_kb": 5.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "coordinator",
+      "file_path": "lambda-deployment\\agents\\orchestration\\coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 1.59,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "healthchecker",
+      "file_path": "backup_golden_20250928_200328\\agents\\orchestration\\healthchecker.py",
+      "revenue_score": 2,
+      "size_kb": 5.89,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "loadbalancer",
+      "file_path": "backup_golden_20250928_200328\\agents\\orchestration\\loadbalancer.py",
+      "revenue_score": 2,
+      "size_kb": 6.94,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "orchestrationmaster",
+      "file_path": "backup_golden_20250928_200328\\agents\\orchestration\\orchestrationmaster.py",
+      "revenue_score": 3,
+      "size_kb": 10.54,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "resourcemanager",
+      "file_path": "backup_golden_20250928_200328\\agents\\orchestration\\resourcemanager.py",
+      "revenue_score": 2,
+      "size_kb": 6.98,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "base_components_v2",
+      "file_path": "backup_golden_20250928_200328\\agents\\originacion\\base_components_v2.py",
+      "revenue_score": 3,
+      "size_kb": 24.26,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "behaviorminer",
+      "file_path": "backup_golden_20250928_200328\\agents\\originacion\\behaviorminer.py",
+      "revenue_score": 2,
+      "size_kb": 5.89,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "behavior_miner_v2",
+      "file_path": "backup_golden_20250928_200328\\agents\\originacion\\behavior_miner_v2.py",
+      "revenue_score": 2,
+      "size_kb": 9.37,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "dnaprofiler",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\originacion_segmentacion\\dnaprofiler.py",
+      "revenue_score": 2,
+      "size_kb": 6.96,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "dna_profiler_v2",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\originacion_segmentacion\\dna_profiler_v2.py",
+      "revenue_score": 2,
+      "size_kb": 4.82,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "incomeoracle",
+      "file_path": "backup_golden_20250928_200328\\agents\\originacion\\incomeoracle.py",
+      "revenue_score": 2,
+      "size_kb": 5.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "income_oracle_v2",
+      "file_path": "backup_golden_20250928_200328\\agents\\originacion\\income_oracle_v2.py",
+      "revenue_score": 2,
+      "size_kb": 7.59,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "originacion_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\originacion\\originacion_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 3.7,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "budgetoptimizer",
+      "file_path": "backup_golden_20250928_200328\\agents\\presupuesto\\budgetoptimizer.py",
+      "revenue_score": 2,
+      "size_kb": 7.0,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "costocentros",
+      "file_path": "backup_golden_20250928_200328\\agents\\presupuesto\\costocentros.py",
+      "revenue_score": 2,
+      "size_kb": 5.85,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "forecastingia",
+      "file_path": "backup_golden_20250928_200328\\agents\\presupuesto\\forecastingia.py",
+      "revenue_score": 2,
+      "size_kb": 6.97,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "presupuestomaestro",
+      "file_path": "backup_golden_20250928_200328\\agents\\presupuesto\\presupuestomaestro.py",
+      "revenue_score": 2,
+      "size_kb": 7.03,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "presupuesto_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\presupuesto\\presupuesto_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 4.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "roipredictor",
+      "file_path": "backup_golden_20250928_200328\\agents\\presupuesto\\roipredictor.py",
+      "revenue_score": 2,
+      "size_kb": 5.85,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "varianzaanalisis",
+      "file_path": "backup_golden_20250928_200328\\agents\\presupuesto\\varianzaanalisis.py",
+      "revenue_score": 2,
+      "size_kb": 5.91,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "collectionmaster",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\recuperacion_avanzada\\collectionmaster.py",
+      "revenue_score": 2,
+      "size_kb": 7.01,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "legalpathway",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\recuperacion_avanzada\\legalpathway.py",
+      "revenue_score": 2,
+      "size_kb": 5.87,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "negotiationbot",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\recuperacion_avanzada\\negotiationbot.py",
+      "revenue_score": 2,
+      "size_kb": 6.99,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "recoveryoptimizer",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\recuperacion_avanzada\\recoveryoptimizer.py",
+      "revenue_score": 2,
+      "size_kb": 7.03,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "recuperacion_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\recuperacion\\recuperacion_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 3.74,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "amldetector",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\compliance_normativo\\amldetector.py",
+      "revenue_score": 3,
+      "size_kb": 10.42,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "kycautomatico",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\compliance_normativo\\kycautomatico.py",
+      "revenue_score": 3,
+      "size_kb": 10.42,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "regtech_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\regtech\\regtech_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 4.31,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "reportingregulatorio",
+      "file_path": "backup_golden_20250928_200328\\agents\\regtech\\reportingregulatorio.py",
+      "revenue_score": 2,
+      "size_kb": 5.96,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "sancioneschecker",
+      "file_path": "backup_golden_20250928_200328\\agents\\regtech\\sancioneschecker.py",
+      "revenue_score": 2,
+      "size_kb": 7.01,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "capacitacionia",
+      "file_path": "backup_golden_20250928_200328\\agents\\rrhh\\capacitacionia.py",
+      "revenue_score": 2,
+      "size_kb": 5.87,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "nominaautomatica",
+      "file_path": "backup_golden_20250928_200328\\agents\\rrhh\\nominaautomatica.py",
+      "revenue_score": 2,
+      "size_kb": 5.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "performancetracker",
+      "file_path": "backup_golden_20250928_200328\\agents\\rrhh\\performancetracker.py",
+      "revenue_score": 2,
+      "size_kb": 5.93,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "rrhh_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\rrhh\\rrhh_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 4.46,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "talentopredictor",
+      "file_path": "backup_golden_20250928_200328\\agents\\rrhh\\talentopredictor.py",
+      "revenue_score": 2,
+      "size_kb": 6.97,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "churnpredictor",
+      "file_path": "backup_golden_20250928_200328\\agents\\ventascrm\\churnpredictor.py",
+      "revenue_score": 2,
+      "size_kb": 6.95,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "pipelineoptimizer",
+      "file_path": "backup_golden_20250928_200328\\agents\\ventascrm\\pipelineoptimizer.py",
+      "revenue_score": 2,
+      "size_kb": 5.92,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "upsellengine",
+      "file_path": "backup_golden_20250928_200328\\agents\\ventascrm\\upsellengine.py",
+      "revenue_score": 2,
+      "size_kb": 5.84,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "ventascrm_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\ventascrm\\ventascrm_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 4.38,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "earlywarning",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\vigilancia_monitoreo\\earlywarning.py",
+      "revenue_score": 2,
+      "size_kb": 6.96,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "marketradar",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\vigilancia_monitoreo\\marketradar.py",
+      "revenue_score": 2,
+      "size_kb": 5.84,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "stresstester",
+      "file_path": "backup_golden_20250928_200328\\agents\\financial_core\\vigilancia_monitoreo\\stresstester.py",
+      "revenue_score": 2,
+      "size_kb": 6.95,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "vigilancia_coordinator",
+      "file_path": "backup_golden_20250928_200328\\agents\\vigilancia\\vigilancia_coordinator.py",
+      "revenue_score": 2,
+      "size_kb": 3.71,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "abtestingimpactia",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\abtestingimpactia.py",
+      "revenue_score": 2,
+      "size_kb": 5.92,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "competitorintelligenceia",
+      "file_path": "backup_golden_20250928_200328\\agents\\marketing\\competitorintelligenceia.py",
+      "revenue_score": 2,
+      "size_kb": 6.03,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "doc_guardian_manager",
+      "file_path": "apps\\agents\\compliance_normativo\\doc_guardian_manager.py",
+      "revenue_score": 2,
+      "size_kb": 2.72,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "policy_guardian_manager",
+      "file_path": "apps\\agents\\decision_inteligente\\policy_guardian_manager.py",
+      "revenue_score": 2,
+      "size_kb": 2.73,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "turbo_approver",
+      "file_path": "apps\\agents\\decision_inteligente\\turbo_approver.py",
+      "revenue_score": 2,
+      "size_kb": 2.7,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "process_genius_engine",
+      "file_path": "apps\\agents\\excelencia_operacional\\process_genius_engine.py",
+      "revenue_score": 2,
+      "size_kb": 2.72,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "quality_controller_manager",
+      "file_path": "apps\\agents\\excelencia_operacional\\quality_controller_manager.py",
+      "revenue_score": 2,
+      "size_kb": 2.74,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "workflow_master",
+      "file_path": "apps\\agents\\excelencia_operacional\\workflow_master.py",
+      "revenue_score": 2,
+      "size_kb": 2.71,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "experience_orchestrator_engine",
+      "file_path": "apps\\agents\\experiencia_deudor\\experience_orchestrator_engine.py",
+      "revenue_score": 2,
+      "size_kb": 2.76,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "feedback_processor",
+      "file_path": "apps\\agents\\experiencia_deudor\\feedback_processor.py",
+      "revenue_score": 2,
+      "size_kb": 2.72,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "journey_optimizer_manager",
+      "file_path": "apps\\agents\\experiencia_deudor\\journey_optimizer_manager.py",
+      "revenue_score": 2,
+      "size_kb": 2.74,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "innovation_catalyst",
+      "file_path": "apps\\agents\\fortaleza_digital\\innovation_catalyst.py",
+      "revenue_score": 2,
+      "size_kb": 2.72,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "resilience_manager",
+      "file_path": "apps\\agents\\fortaleza_digital\\resilience_manager.py",
+      "revenue_score": 2,
+      "size_kb": 2.72,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "security_fortress_engine",
+      "file_path": "apps\\agents\\fortaleza_digital\\security_fortress_engine.py",
+      "revenue_score": 2,
+      "size_kb": 2.74,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "financial_brain_engine",
+      "file_path": "apps\\agents\\inteligencia_financiera\\financial_brain_engine.py",
+      "revenue_score": 2,
+      "size_kb": 2.73,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "forecast_manager",
+      "file_path": "apps\\agents\\inteligencia_financiera\\forecast_manager.py",
+      "revenue_score": 2,
+      "size_kb": 2.71,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "insights_generator",
+      "file_path": "apps\\agents\\inteligencia_financiera\\insights_generator.py",
+      "revenue_score": 2,
+      "size_kb": 2.72,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "contact_manager",
+      "file_path": "apps\\agents\\originacion_segmentacion\\contact_manager.py",
+      "revenue_score": 3,
+      "size_kb": 23.14,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "segmentation_engine",
+      "file_path": "apps\\agents\\originacion_segmentacion\\segmentation_engine.py",
+      "revenue_score": 3,
+      "size_kb": 19.35,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "collection_master_engine",
+      "file_path": "apps\\agents\\recuperacion_avanzada\\collection_master_engine.py",
+      "revenue_score": 2,
+      "size_kb": 2.74,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "legal_pathway",
+      "file_path": "apps\\agents\\recuperacion_avanzada\\legal_pathway.py",
+      "revenue_score": 2,
+      "size_kb": 2.7,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "recovery_optimizer_manager",
+      "file_path": "apps\\agents\\recuperacion_avanzada\\recovery_optimizer_manager.py",
+      "revenue_score": 2,
+      "size_kb": 2.74,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "early_warning_engine",
+      "file_path": "apps\\agents\\vigilancia_monitoreo\\early_warning_engine.py",
+      "revenue_score": 2,
+      "size_kb": 2.72,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "market_radar",
+      "file_path": "apps\\agents\\vigilancia_monitoreo\\market_radar.py",
+      "revenue_score": 2,
+      "size_kb": 2.69,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "stress_tester_manager",
+      "file_path": "apps\\agents\\vigilancia_monitoreo\\stress_tester_manager.py",
+      "revenue_score": 2,
+      "size_kb": 2.72,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "datacredito_rd",
+      "file_path": "integrations\\bureaus\\datacredito_rd.py",
+      "revenue_score": 3,
+      "size_kb": 4.68,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "credicefi_connector",
+      "file_path": "integrations\\powerbi\\credicefi_connector.py",
+      "revenue_score": 2,
+      "size_kb": 26.27,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "args",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\botocore\\args.py",
+      "revenue_score": 3,
+      "size_kb": 37.56,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "awsrequest",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\botocore\\awsrequest.py",
+      "revenue_score": 3,
+      "size_kb": 22.61,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "client",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\botocore\\client.py",
+      "revenue_score": 3,
+      "size_kb": 52.88,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "config",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\botocore\\config.py",
+      "revenue_score": 3,
+      "size_kb": 19.62,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "monitoring",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\botocore\\monitoring.py",
+      "revenue_score": 3,
+      "size_kb": 20.11,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "useragent",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\botocore\\useragent.py",
+      "revenue_score": 3,
+      "size_kb": 22.51,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "_animation_data",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\matplotlib\\_animation_data.py",
+      "revenue_score": 1,
+      "size_kb": 7.8,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "_request_methods",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\urllib3\\_request_methods.py",
+      "revenue_score": 1,
+      "size_kb": 9.7,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "backend_svg",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\matplotlib\\backends\\backend_svg.py",
+      "revenue_score": 2,
+      "size_kb": 49.8,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "test_backend_svg",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\matplotlib\\tests\\test_backend_svg.py",
+      "revenue_score": 3,
+      "size_kb": 22.39,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": true
+    },
+    {
+      "agent": "scripting",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\pygments\\lexers\\scripting.py",
+      "revenue_score": 2,
+      "size_kb": 79.9,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "_cocoa_builtins",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\pygments\\lexers\\_cocoa_builtins.py",
+      "revenue_score": 1,
+      "size_kb": 102.71,
+      "has_class": false,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "discord",
+      "file_path": "nadakki_env_clean\\Lib\\site-packages\\tqdm\\contrib\\discord.py",
+      "revenue_score": 1,
+      "size_kb": 5.12,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "audit_master",
+      "file_path": "agents_consolidated\\compliance\\audit_master.py",
+      "revenue_score": 3,
+      "size_kb": 112.8,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "doc_guardian",
+      "file_path": "agents_consolidated\\compliance\\doc_guardian.py",
+      "revenue_score": 3,
+      "size_kb": 112.8,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "policy_guardian",
+      "file_path": "agents_consolidated\\decision\\policy_guardian.py",
+      "revenue_score": 3,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "quantum_decision",
+      "file_path": "agents_consolidated\\decision\\quantum_decision.py",
+      "revenue_score": 3,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "cost_optimizer",
+      "file_path": "agents_consolidated\\operacional\\cost_optimizer.py",
+      "revenue_score": 3,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "process_genius",
+      "file_path": "agents_consolidated\\operacional\\process_genius.py",
+      "revenue_score": 3,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "quality_controller",
+      "file_path": "agents_consolidated\\operacional\\quality_controller.py",
+      "revenue_score": 3,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "behavior_miner",
+      "file_path": "agents_consolidated\\originacion\\behavior_miner.py",
+      "revenue_score": 3,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "dna_profiler",
+      "file_path": "agents_consolidated\\originacion\\dna_profiler.py",
+      "revenue_score": 3,
+      "size_kb": 112.8,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "income_oracle",
+      "file_path": "agents_consolidated\\originacion\\income_oracle.py",
+      "revenue_score": 3,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "collection_master",
+      "file_path": "agents_consolidated\\recuperacion\\collection_master.py",
+      "revenue_score": 3,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "negotiation_bot",
+      "file_path": "agents_consolidated\\recuperacion\\negotiation_bot.py",
+      "revenue_score": 3,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "recovery_optimizer",
+      "file_path": "agents_consolidated\\recuperacion\\recovery_optimizer.py",
+      "revenue_score": 3,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "early_warning",
+      "file_path": "agents_consolidated\\vigilancia\\early_warning.py",
+      "revenue_score": 3,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "stress_tester",
+      "file_path": "agents_consolidated\\vigilancia\\stress_tester.py",
+      "revenue_score": 3,
+      "size_kb": 112.81,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    },
+    {
+      "agent": "agent_registry",
+      "file_path": "OutputPath\\registry\\agent_registry.py",
+      "revenue_score": 2,
+      "size_kb": 4.59,
+      "has_class": true,
+      "has_evaluate_method": false,
+      "has_tests": false
+    }
+  ],
+  "revenue_critical_routes": [],
+  "monetization_opportunities": [],
+  "summary": {
+    "total_premium_agents": 37,
+    "total_free_agents": 263,
+    "estimated_total_mrr": 2000,
+    "monetization_coverage": "12.3%",
+    "premium_agents_by_tier": {
+      "enterprise": 0,
+      "professional": 1,
+      "starter": 36
+    }
+  }
+}

@@ -1,0 +1,523 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrediFace AI - Dashboard Ejecutivo Credicefi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Colores Credicefi */
+            --primary: #1E40AF;
+            --secondary: #3B82F6;  
+            --accent: #EF4444;
+            --bg-primary: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --border: #E5E7EB;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .dashboard-container {
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas: 
+                "header header"
+                "sidebar content";
+            grid-template-rows: 70px 1fr;
+            grid-template-columns: 280px 1fr;
+        }
+        
+        /* Header */
+        .dashboard-header {
+            grid-area: header;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .company-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .notification-badge {
+            position: relative;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+        
+        .notification-badge::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 8px;
+            height: 8px;
+            background: var(--danger);
+            border-radius: 50%;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            grid-area: sidebar;
+            background: var(--bg-card);
+            border-right: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+        
+        .nav-item {
+            padding: 0.75rem 1.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.2s;
+        }
+        
+        .nav-item:hover,
+        .nav-item.active {
+            background: rgba(30, 64, 175, 0.1);
+            color: var(--primary);
+            border-right: 3px solid var(--primary);
+        }
+        
+        /* Content Area */
+        .content-area {
+            grid-area: content;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .metric-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .metric-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .metric-icon.primary { background: var(--primary); }
+        .metric-icon.success { background: var(--success); }
+        .metric-icon.warning { background: var(--warning); }
+        .metric-icon.danger { background: var(--danger); }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        
+        .metric-change {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .metric-change.positive { color: var(--success); }
+        .metric-change.negative { color: var(--danger); }
+        
+        /* Charts Section */
+        .charts-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .chart-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .chart-header {
+            display: flex;
+            align-items: center;
+            justify-content: between;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chart-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        /* Recent Activity */
+        .activity-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+        }
+        
+        .activity-content {
+            flex: 1;
+        }
+        
+        .activity-description {
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .activity-time {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "content";
+            }
+            
+            .sidebar {
+                display: none;
+            }
+            
+            .charts-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="logo-section">
+                <div class="logo">CF</div>
+                <div class="company-name">Credicefi Dominicana</div>
+            </div>
+            
+            <div class="header-actions">
+                <div class="notification-badge">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div style="color: var(--text-secondary);">Admin • Conectado</div>
+            </div>
+        </header>
+        
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <a href="#dashboard" class="nav-item active">
+                <i class="fas fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#evaluaciones" class="nav-item">
+                <i class="fas fa-brain"></i>
+                <span>Evaluaciones IA</span>
+            </a>
+            <a href="#cartera" class="nav-item">
+                <i class="fas fa-wallet"></i>
+                <span>Cartera</span>
+            </a>
+            <a href="#analytics" class="nav-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="#powerbi" class="nav-item">
+                <i class="fas fa-chart-bar"></i>
+                <span>PowerBI</span>
+            </a>
+            <a href="#settings" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Configuración</span>
+            </a>
+        </nav>
+        
+        <!-- Content -->
+        <main class="content-area">
+            <!-- Metrics Cards -->
+            <div class="cards-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon primary">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                    </div>
+                    <div class="metric-value">47,382</div>
+                    <div class="metric-label">Evaluaciones Este Mes</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+23.5% vs mes anterior</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon success">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="metric-value">89.7%</div>
+                    <div class="metric-label">Precisión IA</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+2.1% precisión mejorada</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon warning">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="metric-value">1.8s</div>
+                    <div class="metric-label">Tiempo Promedio</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>-0.3s más rápido</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon danger">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                    <div class="metric-value">,847</div>
+                    <div class="metric-label">Costo Este Mes</div>
+                    <div class="metric-change negative">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+12% por volumen</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Evaluaciones por Día</h3>
+                    </div>
+                    <div style="height: 300px; display: flex; align-items: center; justify-content: center; background: #F9FAFB; border-radius: 8px;">
+                        <canvas id="evaluationsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Distribución de Riesgo</h3>
+                    </div>
+                    <div style="height: 300px; display: flex; align-items: center; justify-content: center; background: #F9FAFB; border-radius: 8px;">
+                        <canvas id="riskChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="activity-section">
+                <h3 style="margin-bottom: 1rem;">Actividad Reciente</h3>
+                
+                <div class="activity-item">
+                    <div class="activity-icon success">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-description">Evaluación automática aprobada - Cliente #47382</div>
+                        <div class="activity-time">Hace 2 minutos</div>
+                    </div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon warning">
+                        <i class="fas fa-exclamation"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-description">Alto riesgo detectado - Requiere revisión manual</div>
+                        <div class="activity-time">Hace 5 minutos</div>
+                    </div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon primary">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-description">Sincronización PowerBI completada</div>
+                        <div class="activity-time">Hace 15 minutos</div>
+                    </div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon success">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-description">Backup automático realizado exitosamente</div>
+                        <div class="activity-time">Hace 1 hora</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Gráfico de evaluaciones por día
+        const ctx1 = document.getElementById('evaluationsChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
+                datasets: [{
+                    label: 'Evaluaciones',
+                    data: [1200, 1900, 2300, 2100, 2800, 1800, 900],
+                    borderColor: '#1E40AF',
+                    backgroundColor: 'rgba(30, 64, 175, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        // Gráfico de distribución de riesgo
+        const ctx2 = document.getElementById('riskChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: ['Bajo', 'Medio', 'Alto', 'Rechazado'],
+                datasets: [{
+                    data: [45, 30, 15, 10],
+                    backgroundColor: ['#10B981', '#F59E0B', '#EF4444', '#6B7280']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

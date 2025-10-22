@@ -1,0 +1,222 @@
+{
+  "module_name": "marketing",
+  "total_agents": 14,
+  "color": "linear-gradient(135deg, #fd79a8 0%, #e84393 100%)",
+  "agents": {
+    "MinimalFormIA": {
+      "class_name": "MinimalFormOptimizer",
+      "description": "Optimiza formularios de precalificación usando IA",
+      "algorithms": [
+        "form_optimization",
+        "conversion_analysis",
+        "ab_testing"
+      ],
+      "features": [
+        "form_reduction",
+        "conversion_improvement",
+        "user_experience"
+      ],
+      "performance_target": 89.3
+    },
+    "FidelizedProfileIA": {
+      "class_name": "FidelizationProfiler",
+      "description": "Identifica clientes con mayor potencial de fidelización",
+      "algorithms": [
+        "customer_segmentation",
+        "loyalty_prediction",
+        "retention_modeling"
+      ],
+      "features": [
+        "customer_fidelization",
+        "loyalty_analysis",
+        "retention_strategy"
+      ],
+      "performance_target": 91.7
+    },
+    "CashOfferFilterIA": {
+      "class_name": "CashOfferOptimizer",
+      "description": "Determina monto y momento óptimo para ofertas de efectivo",
+      "algorithms": [
+        "offer_optimization",
+        "timing_analysis",
+        "risk_assessment"
+      ],
+      "features": [
+        "cash_offers",
+        "timing_optimization",
+        "offer_personalization"
+      ],
+      "performance_target": 87.2
+    },
+    "ContactQualityIA": {
+      "class_name": "ContactQualityAnalyzer",
+      "description": "Optimiza llamadas de bienvenida con análisis de sentimiento",
+      "algorithms": [
+        "sentiment_analysis",
+        "call_optimization",
+        "quality_scoring"
+      ],
+      "features": [
+        "call_quality",
+        "sentiment_monitoring",
+        "contact_optimization"
+      ],
+      "performance_target": 94.1
+    },
+    "GeoSegmentationIA": {
+      "class_name": "GeoSegmentationEngine",
+      "description": "Segmentación geográfica inteligente con microzonas",
+      "algorithms": [
+        "geo_analysis",
+        "location_intelligence",
+        "market_segmentation"
+      ],
+      "features": [
+        "geo_targeting",
+        "location_analysis",
+        "market_intelligence"
+      ],
+      "performance_target": 92.8
+    },
+    "ProductAffinityIA": {
+      "class_name": "ProductAffinityPredictor",
+      "description": "Predice afinidad de productos financieros por cliente",
+      "algorithms": [
+        "affinity_modeling",
+        "product_recommendation",
+        "cross_selling"
+      ],
+      "features": [
+        "product_affinity",
+        "recommendation_engine",
+        "cross_sell_optimization"
+      ],
+      "performance_target": 88.6
+    },
+    "ConversionCohortIA": {
+      "class_name": "ConversionCohortAnalyzer",
+      "description": "Análisis de cohortes de conversión para LTV",
+      "algorithms": [
+        "cohort_analysis",
+        "ltv_modeling",
+        "conversion_optimization"
+      ],
+      "features": [
+        "cohort_tracking",
+        "ltv_prediction",
+        "conversion_analysis"
+      ],
+      "performance_target": 90.4
+    },
+    "ABTestingImpactIA": {
+      "class_name": "ABTestingEngine",
+      "description": "Motor automatizado de A/B testing con significancia estadística",
+      "algorithms": [
+        "ab_testing",
+        "statistical_analysis",
+        "experiment_design"
+      ],
+      "features": [
+        "automated_testing",
+        "statistical_significance",
+        "experiment_optimization"
+      ],
+      "performance_target": 93.7
+    },
+    "SocialPostGeneratorIA": {
+      "class_name": "SocialContentGenerator",
+      "description": "Genera contenido visual y copy para redes sociales",
+      "algorithms": [
+        "content_generation",
+        "social_optimization",
+        "trend_analysis"
+      ],
+      "features": [
+        "social_content",
+        "viral_optimization",
+        "trend_following"
+      ],
+      "performance_target": 85.9
+    },
+    "VideoReelAutogenIA": {
+      "class_name": "VideoContentGenerator",
+      "description": "Crea automáticamente videos cortos y reels financieros",
+      "algorithms": [
+        "video_generation",
+        "template_optimization",
+        "viral_prediction"
+      ],
+      "features": [
+        "video_creation",
+        "viral_content",
+        "automated_editing"
+      ],
+      "performance_target": 82.3
+    },
+    "InfluencerMatcherIA": {
+      "class_name": "InfluencerMatcher",
+      "description": "Identifica y evalúa influencers para campañas financieras",
+      "algorithms": [
+        "influencer_analysis",
+        "audience_matching",
+        "roi_prediction"
+      ],
+      "features": [
+        "influencer_identification",
+        "audience_analysis",
+        "campaign_optimization"
+      ],
+      "performance_target": 86.7
+    },
+    "CampaignOptimizerIA": {
+      "class_name": "CampaignOptimizer",
+      "description": "Optimización automática de campañas publicitarias multi-canal",
+      "algorithms": [
+        "campaign_optimization",
+        "budget_allocation",
+        "performance_prediction"
+      ],
+      "features": [
+        "campaign_management",
+        "budget_optimization",
+        "multi_channel"
+      ],
+      "performance_target": 91.2
+    },
+    "LeadScoringIA": {
+      "class_name": "LeadScoringEngine",
+      "description": "Scoring inteligente de leads con predicción de conversión",
+      "algorithms": [
+        "lead_scoring",
+        "conversion_prediction",
+        "qualification_automation"
+      ],
+      "features": [
+        "lead_qualification",
+        "score_optimization",
+        "conversion_prediction"
+      ],
+      "performance_target": 89.8
+    },
+    "EmailAutomationIA": {
+      "class_name": "EmailAutomationEngine",
+      "description": "Automatización de email marketing con personalización IA",
+      "algorithms": [
+        "email_optimization",
+        "personalization",
+        "send_time_optimization"
+      ],
+      "features": [
+        "email_automation",
+        "personalized_content",
+        "timing_optimization"
+      ],
+      "performance_target": 87.4
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.630057",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

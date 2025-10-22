@@ -1,0 +1,72 @@
+{
+  "module_name": "educacion",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #fdcb6e 0%, #e17055 100%)",
+  "agents": {
+    "CursosAutomaticos": {
+      "class_name": "AutomaticCourseEngine",
+      "description": "Generación automática de cursos personalizados",
+      "algorithms": [
+        "course_generation",
+        "content_curation",
+        "learning_personalization"
+      ],
+      "features": [
+        "automated_courses",
+        "personalized_learning",
+        "content_creation"
+      ],
+      "performance_target": 88.4
+    },
+    "CompetenciasIA": {
+      "class_name": "CompetencyAIEngine",
+      "description": "Evaluación y desarrollo de competencias con IA",
+      "algorithms": [
+        "competency_assessment",
+        "skill_gap_analysis",
+        "development_planning"
+      ],
+      "features": [
+        "competency_evaluation",
+        "skill_development",
+        "learning_paths"
+      ],
+      "performance_target": 90.7
+    },
+    "TutorVirtualIA": {
+      "class_name": "VirtualTutorAIEngine",
+      "description": "Tutor virtual inteligente con adaptación al estudiante",
+      "algorithms": [
+        "adaptive_learning",
+        "personalized_tutoring",
+        "progress_tracking"
+      ],
+      "features": [
+        "virtual_tutoring",
+        "adaptive_teaching",
+        "progress_monitoring"
+      ],
+      "performance_target": 86.9
+    },
+    "EvaluacionAdaptativa": {
+      "class_name": "AdaptiveEvaluationEngine",
+      "description": "Sistema de evaluación adaptativa con IA",
+      "algorithms": [
+        "adaptive_assessment",
+        "difficulty_adjustment",
+        "learning_analytics"
+      ],
+      "features": [
+        "adaptive_testing",
+        "performance_evaluation",
+        "learning_analytics"
+      ],
+      "performance_target": 92.1
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.317840",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

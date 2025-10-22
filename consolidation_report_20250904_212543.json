@@ -1,0 +1,325 @@
+﻿{
+    "statistics":  {
+                       "duplicates_eliminated":  241,
+                       "failed_consolidations":  4,
+                       "total_source_files":  13297,
+                       "total_ecosystems":  6,
+                       "total_agents_processed":  28,
+                       "successful_consolidations":  24
+                   },
+    "consolidated_agents":  {
+                                "recuperacion":  [
+                                                     {
+                                                         "duplicate_files":  {
+
+                                                                             },
+                                                         "exact_duplicates":  1,
+                                                         "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                         "alternatives":  9,
+                                                         "complexity":  4358,
+                                                         "unique_implementations":  9,
+                                                         "target":  ".\\agents_consolidated\\recuperacion\\collection_master.py",
+                                                         "score":  1818.8
+                                                     },
+                                                     {
+                                                         "duplicate_files":  {
+
+                                                                             },
+                                                         "exact_duplicates":  1,
+                                                         "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                         "alternatives":  9,
+                                                         "complexity":  4358,
+                                                         "unique_implementations":  9,
+                                                         "target":  ".\\agents_consolidated\\recuperacion\\recovery_optimizer.py",
+                                                         "score":  1818.8
+                                                     },
+                                                     {
+                                                         "duplicate_files":  {
+
+                                                                             },
+                                                         "exact_duplicates":  1,
+                                                         "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                         "alternatives":  9,
+                                                         "complexity":  4358,
+                                                         "unique_implementations":  9,
+                                                         "target":  ".\\agents_consolidated\\recuperacion\\negotiation_bot.py",
+                                                         "score":  1818.8
+                                                     },
+                                                     {
+                                                         "duplicate_files":  {
+
+                                                                             },
+                                                         "exact_duplicates":  1,
+                                                         "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                         "alternatives":  9,
+                                                         "complexity":  4358,
+                                                         "unique_implementations":  9,
+                                                         "target":  ".\\agents_consolidated\\recuperacion\\legal_pathway.py",
+                                                         "score":  1818.8
+                                                     }
+                                                 ],
+                                "compliance":  [
+                                                   {
+                                                       "duplicate_files":  {
+
+                                                                           },
+                                                       "exact_duplicates":  1,
+                                                       "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                       "alternatives":  9,
+                                                       "complexity":  4358,
+                                                       "unique_implementations":  9,
+                                                       "target":  ".\\agents_consolidated\\compliance\\compliance_watchdog.py",
+                                                       "score":  1818.8
+                                                   },
+                                                   {
+                                                       "duplicate_files":  {
+
+                                                                           },
+                                                       "exact_duplicates":  1,
+                                                       "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                       "alternatives":  9,
+                                                       "complexity":  4358,
+                                                       "unique_implementations":  9,
+                                                       "target":  ".\\agents_consolidated\\compliance\\audit_master.py",
+                                                       "score":  1818.8
+                                                   },
+                                                   {
+                                                       "duplicate_files":  {
+
+                                                                           },
+                                                       "exact_duplicates":  1,
+                                                       "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                       "alternatives":  9,
+                                                       "complexity":  4358,
+                                                       "unique_implementations":  9,
+                                                       "target":  ".\\agents_consolidated\\compliance\\doc_guardian.py",
+                                                       "score":  1818.8
+                                                   },
+                                                   {
+                                                       "duplicate_files":  {
+
+                                                                           },
+                                                       "exact_duplicates":  1,
+                                                       "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                       "alternatives":  10,
+                                                       "complexity":  4358,
+                                                       "unique_implementations":  10,
+                                                       "target":  ".\\agents_consolidated\\compliance\\regulatory_radar.py",
+                                                       "score":  1818.8
+                                                   }
+                                               ],
+                                "decision":  [
+                                                 {
+                                                     "duplicate_files":  {
+
+                                                                         },
+                                                     "exact_duplicates":  1,
+                                                     "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                     "alternatives":  11,
+                                                     "complexity":  4358,
+                                                     "unique_implementations":  11,
+                                                     "target":  ".\\agents_consolidated\\decision\\quantum_decision.py",
+                                                     "score":  1818.8
+                                                 },
+                                                 {
+                                                     "duplicate_files":  {
+
+                                                                         },
+                                                     "exact_duplicates":  1,
+                                                     "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                     "alternatives":  10,
+                                                     "complexity":  4358,
+                                                     "unique_implementations":  10,
+                                                     "target":  ".\\agents_consolidated\\decision\\risk_oracle.py",
+                                                     "score":  1818.8
+                                                 },
+                                                 {
+                                                     "duplicate_files":  {
+
+                                                                         },
+                                                     "exact_duplicates":  1,
+                                                     "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                     "alternatives":  10,
+                                                     "complexity":  4358,
+                                                     "unique_implementations":  10,
+                                                     "target":  ".\\agents_consolidated\\decision\\policy_guardian.py",
+                                                     "score":  1818.8
+                                                 },
+                                                 {
+                                                     "duplicate_files":  {
+
+                                                                         },
+                                                     "exact_duplicates":  1,
+                                                     "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                     "alternatives":  10,
+                                                     "complexity":  4358,
+                                                     "unique_implementations":  10,
+                                                     "target":  ".\\agents_consolidated\\decision\\turbo_approver.py",
+                                                     "score":  1818.8
+                                                 }
+                                             ],
+                                "originacion":  [
+                                                    {
+                                                        "duplicate_files":  {
+
+                                                                            },
+                                                        "exact_duplicates":  1,
+                                                        "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                        "alternatives":  14,
+                                                        "complexity":  4358,
+                                                        "unique_implementations":  14,
+                                                        "target":  ".\\agents_consolidated\\originacion\\sentinel_bot.py",
+                                                        "score":  1818.8
+                                                    },
+                                                    {
+                                                        "duplicate_files":  {
+
+                                                                            },
+                                                        "exact_duplicates":  1,
+                                                        "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                        "alternatives":  12,
+                                                        "complexity":  4358,
+                                                        "unique_implementations":  12,
+                                                        "target":  ".\\agents_consolidated\\originacion\\dna_profiler.py",
+                                                        "score":  1818.8
+                                                    },
+                                                    {
+                                                        "duplicate_files":  {
+
+                                                                            },
+                                                        "exact_duplicates":  1,
+                                                        "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                        "alternatives":  12,
+                                                        "complexity":  4358,
+                                                        "unique_implementations":  12,
+                                                        "target":  ".\\agents_consolidated\\originacion\\income_oracle.py",
+                                                        "score":  1818.8
+                                                    },
+                                                    {
+                                                        "duplicate_files":  {
+
+                                                                            },
+                                                        "exact_duplicates":  1,
+                                                        "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                        "alternatives":  12,
+                                                        "complexity":  4358,
+                                                        "unique_implementations":  12,
+                                                        "target":  ".\\agents_consolidated\\originacion\\behavior_miner.py",
+                                                        "score":  1818.8
+                                                    }
+                                                ],
+                                "vigilancia":  [
+                                                   {
+                                                       "duplicate_files":  {
+
+                                                                           },
+                                                       "exact_duplicates":  1,
+                                                       "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                       "alternatives":  11,
+                                                       "complexity":  4358,
+                                                       "unique_implementations":  11,
+                                                       "target":  ".\\agents_consolidated\\vigilancia\\early_warning.py",
+                                                       "score":  1818.8
+                                                   },
+                                                   {
+                                                       "duplicate_files":  {
+
+                                                                           },
+                                                       "exact_duplicates":  1,
+                                                       "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                       "alternatives":  10,
+                                                       "complexity":  4358,
+                                                       "unique_implementations":  10,
+                                                       "target":  ".\\agents_consolidated\\vigilancia\\portfolio_sentinel.py",
+                                                       "score":  1818.8
+                                                   },
+                                                   {
+                                                       "duplicate_files":  {
+
+                                                                           },
+                                                       "exact_duplicates":  1,
+                                                       "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                       "alternatives":  10,
+                                                       "complexity":  4358,
+                                                       "unique_implementations":  10,
+                                                       "target":  ".\\agents_consolidated\\vigilancia\\market_radar.py",
+                                                       "score":  1818.8
+                                                   },
+                                                   {
+                                                       "duplicate_files":  {
+
+                                                                           },
+                                                       "exact_duplicates":  1,
+                                                       "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                       "alternatives":  10,
+                                                       "complexity":  4358,
+                                                       "unique_implementations":  10,
+                                                       "target":  ".\\agents_consolidated\\vigilancia\\stress_tester.py",
+                                                       "score":  1818.8
+                                                   }
+                                               ],
+                                "operacional":  [
+                                                    {
+                                                        "duplicate_files":  {
+
+                                                                            },
+                                                        "exact_duplicates":  1,
+                                                        "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                        "alternatives":  9,
+                                                        "complexity":  4358,
+                                                        "unique_implementations":  9,
+                                                        "target":  ".\\agents_consolidated\\operacional\\process_genius.py",
+                                                        "score":  1818.8
+                                                    },
+                                                    {
+                                                        "duplicate_files":  {
+
+                                                                            },
+                                                        "exact_duplicates":  1,
+                                                        "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                        "alternatives":  9,
+                                                        "complexity":  4358,
+                                                        "unique_implementations":  9,
+                                                        "target":  ".\\agents_consolidated\\operacional\\cost_optimizer.py",
+                                                        "score":  1818.8
+                                                    },
+                                                    {
+                                                        "duplicate_files":  {
+
+                                                                            },
+                                                        "exact_duplicates":  1,
+                                                        "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                        "alternatives":  9,
+                                                        "complexity":  4358,
+                                                        "unique_implementations":  9,
+                                                        "target":  ".\\agents_consolidated\\operacional\\quality_controller.py",
+                                                        "score":  1818.8
+                                                    },
+                                                    {
+                                                        "duplicate_files":  {
+
+                                                                            },
+                                                        "exact_duplicates":  1,
+                                                        "source":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\nadakki-suite-deployment-v1.0\\nadakki-lambda-multitenant.py",
+                                                        "alternatives":  9,
+                                                        "complexity":  4358,
+                                                        "unique_implementations":  9,
+                                                        "target":  ".\\agents_consolidated\\operacional\\workflow_master.py",
+                                                        "score":  1818.8
+                                                    }
+                                                ]
+                            },
+    "registry_path":  null,
+    "metadata":  {
+                     "source_path":  "C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite",
+                     "target_path":  ".\\agents_consolidated",
+                     "dry_run":  {
+                                     "IsPresent":  true
+                                 },
+                     "start_time":  {
+                                        "value":  "\/Date(1757035190147)\/",
+                                        "DisplayHint":  2,
+                                        "DateTime":  "Thursday, September 4, 2025 9:19:50 PM"
+                                    }
+                 }
+}

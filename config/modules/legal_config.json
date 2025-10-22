@@ -1,0 +1,252 @@
+{
+  "module_name": "legal",
+  "total_agents": 16,
+  "color": "linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%)",
+  "agents": {
+    "DerechoPenal": {
+      "class_name": "DerechoPenalExpert",
+      "description": "Doctor especializado en derecho penal dominicano",
+      "algorithms": [
+        "legal_analysis",
+        "case_research",
+        "jurisprudence_mining"
+      ],
+      "features": [
+        "penal_law",
+        "criminal_defense",
+        "legal_consultation"
+      ],
+      "performance_target": 99.1
+    },
+    "DerechoProcesalPenal": {
+      "class_name": "DerechoProcesalPenalExpert",
+      "description": "Doctor en procedimientos penales dominicanos",
+      "algorithms": [
+        "procedural_analysis",
+        "case_management",
+        "legal_workflow"
+      ],
+      "features": [
+        "criminal_procedure",
+        "case_processing",
+        "legal_workflow"
+      ],
+      "performance_target": 98.7
+    },
+    "DerechoConstitucional": {
+      "class_name": "DerechoConstitucionalExpert",
+      "description": "Doctor constitucionalista con precedentes del TC",
+      "algorithms": [
+        "constitutional_analysis",
+        "precedent_research",
+        "constitutional_review"
+      ],
+      "features": [
+        "constitutional_law",
+        "judicial_review",
+        "precedent_analysis"
+      ],
+      "performance_target": 99.3
+    },
+    "DerechoInmobiliario": {
+      "class_name": "DerechoInmobiliarioExpert",
+      "description": "Doctor especialista en derecho inmobiliario",
+      "algorithms": [
+        "property_analysis",
+        "title_research",
+        "real_estate_law"
+      ],
+      "features": [
+        "real_estate_law",
+        "property_rights",
+        "title_verification"
+      ],
+      "performance_target": 97.8
+    },
+    "DerechoComercial": {
+      "class_name": "DerechoComercialExpert",
+      "description": "Doctor en derecho mercantil y empresarial",
+      "algorithms": [
+        "commercial_analysis",
+        "business_law",
+        "contract_review"
+      ],
+      "features": [
+        "commercial_law",
+        "business_contracts",
+        "corporate_law"
+      ],
+      "performance_target": 98.2
+    },
+    "DerechoLaboral": {
+      "class_name": "DerechoLaboralExpert",
+      "description": "Doctor especialista en derecho del trabajo",
+      "algorithms": [
+        "labor_analysis",
+        "employment_law",
+        "workplace_regulations"
+      ],
+      "features": [
+        "employment_law",
+        "labor_relations",
+        "workplace_compliance"
+      ],
+      "performance_target": 96.9
+    },
+    "DerechoTributario": {
+      "class_name": "DerechoTributarioExpert",
+      "description": "Doctor en derecho fiscal y tributario",
+      "algorithms": [
+        "tax_analysis",
+        "fiscal_law",
+        "tax_compliance"
+      ],
+      "features": [
+        "tax_law",
+        "fiscal_compliance",
+        "tax_planning"
+      ],
+      "performance_target": 98.5
+    },
+    "DerechoAmbiental": {
+      "class_name": "DerechoAmbientalExpert",
+      "description": "Doctor especialista en derecho ambiental",
+      "algorithms": [
+        "environmental_analysis",
+        "sustainability_law",
+        "environmental_compliance"
+      ],
+      "features": [
+        "environmental_law",
+        "sustainability_compliance",
+        "environmental_impact"
+      ],
+      "performance_target": 95.4
+    },
+    "DerechoFamiliar": {
+      "class_name": "DerechoFamiliarExpert",
+      "description": "Doctor en derecho de familia y civil",
+      "algorithms": [
+        "family_law_analysis",
+        "civil_procedures",
+        "family_mediation"
+      ],
+      "features": [
+        "family_law",
+        "civil_procedures",
+        "mediation_services"
+      ],
+      "performance_target": 97.1
+    },
+    "DerechoAdministrativo": {
+      "class_name": "DerechoAdministrativoExpert",
+      "description": "Doctor en derecho administrativo",
+      "algorithms": [
+        "administrative_analysis",
+        "public_law",
+        "government_procedures"
+      ],
+      "features": [
+        "administrative_law",
+        "public_administration",
+        "government_compliance"
+      ],
+      "performance_target": 96.7
+    },
+    "DerechoIntelectual": {
+      "class_name": "DerechoIntelectualExpert",
+      "description": "Doctor en propiedad intelectual",
+      "algorithms": [
+        "ip_analysis",
+        "patent_research",
+        "trademark_law"
+      ],
+      "features": [
+        "intellectual_property",
+        "patent_law",
+        "trademark_protection"
+      ],
+      "performance_target": 98.8
+    },
+    "DerechoInternacional": {
+      "class_name": "DerechoInternacionalExpert",
+      "description": "Doctor en derecho internacional",
+      "algorithms": [
+        "international_law_analysis",
+        "treaty_research",
+        "diplomatic_law"
+      ],
+      "features": [
+        "international_law",
+        "treaty_analysis",
+        "diplomatic_relations"
+      ],
+      "performance_target": 94.3
+    },
+    "DerechoMinero": {
+      "class_name": "DerechoMineroExpert",
+      "description": "Doctor especialista en derecho minero",
+      "algorithms": [
+        "mining_law_analysis",
+        "resource_rights",
+        "environmental_mining"
+      ],
+      "features": [
+        "mining_law",
+        "resource_extraction",
+        "mining_compliance"
+      ],
+      "performance_target": 93.8
+    },
+    "DerechoMaritimo": {
+      "class_name": "DerechoMaritimoExpert",
+      "description": "Doctor en derecho marítimo y portuario",
+      "algorithms": [
+        "maritime_analysis",
+        "shipping_law",
+        "port_regulations"
+      ],
+      "features": [
+        "maritime_law",
+        "shipping_regulations",
+        "port_compliance"
+      ],
+      "performance_target": 92.6
+    },
+    "DerechoBancario": {
+      "class_name": "DerechoBancarioExpert",
+      "description": "Doctor especialista en derecho bancario",
+      "algorithms": [
+        "banking_law_analysis",
+        "financial_regulations",
+        "banking_compliance"
+      ],
+      "features": [
+        "banking_law",
+        "financial_compliance",
+        "banking_regulations"
+      ],
+      "performance_target": 99.7
+    },
+    "DerechoSeguros": {
+      "class_name": "DerechoSegurosExpert",
+      "description": "Doctor en derecho de seguros",
+      "algorithms": [
+        "insurance_law_analysis",
+        "claims_processing",
+        "insurance_compliance"
+      ],
+      "features": [
+        "insurance_law",
+        "claims_analysis",
+        "insurance_compliance"
+      ],
+      "performance_target": 96.4
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.528693",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

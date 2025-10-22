@@ -1,0 +1,87 @@
+{
+  "module_name": "rrhh",
+  "total_agents": 5,
+  "color": "linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%)",
+  "agents": {
+    "SelectionCVIA": {
+      "class_name": "CVSelectionEngine",
+      "description": "Selección automática de CV con análisis de compatibilidad",
+      "algorithms": [
+        "cv_analysis",
+        "skill_matching",
+        "compatibility_scoring"
+      ],
+      "features": [
+        "cv_screening",
+        "candidate_matching",
+        "skill_analysis"
+      ],
+      "performance_target": 91.3
+    },
+    "NominaInteligente": {
+      "class_name": "IntelligentPayrollEngine",
+      "description": "Gestión de nómina inteligente con cálculos automáticos",
+      "algorithms": [
+        "payroll_calculation",
+        "tax_computation",
+        "benefit_management"
+      ],
+      "features": [
+        "automated_payroll",
+        "tax_calculation",
+        "benefit_tracking"
+      ],
+      "performance_target": 98.7
+    },
+    "PerformanceAnalyzer": {
+      "class_name": "PerformanceAnalysisEngine",
+      "description": "Análisis de rendimiento con métricas predictivas",
+      "algorithms": [
+        "performance_analysis",
+        "predictive_metrics",
+        "goal_tracking"
+      ],
+      "features": [
+        "performance_monitoring",
+        "predictive_analysis",
+        "goal_management"
+      ],
+      "performance_target": 89.4
+    },
+    "TalentoPrediccion": {
+      "class_name": "TalentPredictionEngine",
+      "description": "Predicción de talento y retención de empleados",
+      "algorithms": [
+        "talent_prediction",
+        "retention_modeling",
+        "succession_planning"
+      ],
+      "features": [
+        "talent_identification",
+        "retention_prediction",
+        "succession_planning"
+      ],
+      "performance_target": 87.6
+    },
+    "CapacitacionIA": {
+      "class_name": "TrainingAIEngine",
+      "description": "Capacitación personalizada con rutas de aprendizaje IA",
+      "algorithms": [
+        "learning_personalization",
+        "skill_gap_analysis",
+        "training_optimization"
+      ],
+      "features": [
+        "personalized_training",
+        "skill_development",
+        "learning_paths"
+      ],
+      "performance_target": 85.9
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.287556",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

@@ -1,0 +1,30 @@
+﻿# LISTA MAESTRA - 24 AGENTES MARKETING
+# Status: ✅ OK | ⏳ Pendiente | ❌ Falla
+
+1.  ✅ abtest_optimizer         - abtestingia.py
+2.  ⏳ abtest_impact             - abtestingimpactia.py
+3.  ⏳ attribution_model         - attributionmodelia.py
+4.  ⏳ budget_forecast           - budgetforecastia.py
+5.  ⏳ campaign_optimizer        - campaignoptimizeria.py
+6.  ✅ cash_offer_filter         - cashofferfilteria.py
+7.  ⏳ competitor_analyzer       - competitoranalyzeria.py
+8.  ⏳ competitor_intelligence   - competitorintelligenceia.py
+9.  ⏳ contact_quality           - contactqualityia.py
+10. ⏳ content_performance       - contentperformanceia.py
+11. ⏳ conversion_cohort         - conversioncohortia.py
+12. ⏳ creative_analyzer         - creativeanalyzeria.py
+13. ✅ customer_segmentation     - customersegmentatonia.py
+14. ✅ email_automation          - emailautomationia.py
+15. ✅ geo_segmentation          - geosegmentationia.py
+16. ⏳ influencer_matcher        - influencermatcheria.py
+17. ⏳ influencer_matching       - influencermatchingia.py
+18. ⏳ journey_optimizer         - journeyoptimizeria.py
+19. ⏳ lead_scoring              - leadscoringia.py
+20. ⏳ marketing_mix_model       - marketingmixmodelia.py
+21. ✅ minimal_form              - minimalformia.py
+22. ⏳ personalization_engine    - personalizationengineia.py
+23. ✅ product_affinity          - productaffinityia.py
+24. ⏳ social_post_generator     - socialpostgeneratoria.py
+
+PROGRESO: 7/24 (29%) ✅
+OBJETIVO: 10/24 (42%) en Primera Fase

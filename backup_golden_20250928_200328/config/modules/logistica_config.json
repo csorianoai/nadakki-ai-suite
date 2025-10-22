@@ -1,0 +1,207 @@
+{
+  "module_name": "logistica",
+  "total_agents": 13,
+  "color": "linear-gradient(135deg, #55a3ff 0%, #003d82 100%)",
+  "agents": {
+    "OptimizadorRutasIA": {
+      "class_name": "RouteOptimizationEngine",
+      "description": "Optimización inteligente de rutas de distribución",
+      "algorithms": [
+        "route_optimization",
+        "genetic_algorithm",
+        "traffic_analysis"
+      ],
+      "features": [
+        "route_planning",
+        "delivery_optimization",
+        "traffic_intelligence"
+      ],
+      "performance_target": 95.3
+    },
+    "PrevisionInventarioIA": {
+      "class_name": "InventoryForecastingEngine",
+      "description": "Predicción inteligente de necesidades de inventario",
+      "algorithms": [
+        "demand_forecasting",
+        "inventory_optimization",
+        "supply_chain_analysis"
+      ],
+      "features": [
+        "inventory_forecasting",
+        "demand_prediction",
+        "stock_optimization"
+      ],
+      "performance_target": 92.7
+    },
+    "ControlPedidosIA": {
+      "class_name": "OrderControlEngine",
+      "description": "Gestión automatizada de pedidos con seguimiento",
+      "algorithms": [
+        "order_management",
+        "tracking_automation",
+        "delivery_prediction"
+      ],
+      "features": [
+        "order_processing",
+        "automated_tracking",
+        "delivery_management"
+      ],
+      "performance_target": 94.1
+    },
+    "EvaluadorProveedoresIA": {
+      "class_name": "SupplierEvaluationEngine",
+      "description": "Evaluación automatizada de proveedores",
+      "algorithms": [
+        "supplier_scoring",
+        "performance_analysis",
+        "risk_assessment"
+      ],
+      "features": [
+        "supplier_evaluation",
+        "performance_monitoring",
+        "risk_analysis"
+      ],
+      "performance_target": 89.6
+    },
+    "AlmacenInteligente": {
+      "class_name": "IntelligentWarehouseEngine",
+      "description": "Gestión inteligente de almacén con optimización espacial",
+      "algorithms": [
+        "warehouse_optimization",
+        "space_allocation",
+        "picking_optimization"
+      ],
+      "features": [
+        "warehouse_management",
+        "space_optimization",
+        "efficient_picking"
+      ],
+      "performance_target": 91.8
+    },
+    "TransporteOptimizado": {
+      "class_name": "TransportOptimizationEngine",
+      "description": "Optimización de transporte y logística",
+      "algorithms": [
+        "transport_optimization",
+        "load_balancing",
+        "fuel_efficiency"
+      ],
+      "features": [
+        "transport_planning",
+        "load_optimization",
+        "fuel_management"
+      ],
+      "performance_target": 93.4
+    },
+    "TrazabilidadTotal": {
+      "class_name": "TraceabilityEngine",
+      "description": "Trazabilidad completa de productos y envíos",
+      "algorithms": [
+        "traceability_tracking",
+        "blockchain_integration",
+        "quality_assurance"
+      ],
+      "features": [
+        "product_tracing",
+        "shipment_tracking",
+        "quality_control"
+      ],
+      "performance_target": 96.7
+    },
+    "PlanificacionDemanda": {
+      "class_name": "DemandPlanningEngine",
+      "description": "Planificación de demanda con machine learning",
+      "algorithms": [
+        "demand_planning",
+        "ml_forecasting",
+        "seasonal_analysis"
+      ],
+      "features": [
+        "demand_forecasting",
+        "seasonal_planning",
+        "market_analysis"
+      ],
+      "performance_target": 88.9
+    },
+    "ControlCalidadIA": {
+      "class_name": "QualityControlAIEngine",
+      "description": "Control de calidad automatizado con visión artificial",
+      "algorithms": [
+        "computer_vision",
+        "quality_detection",
+        "defect_analysis"
+      ],
+      "features": [
+        "automated_inspection",
+        "quality_assurance",
+        "defect_detection"
+      ],
+      "performance_target": 94.8
+    },
+    "OptimizacionCostos": {
+      "class_name": "CostOptimizationEngine",
+      "description": "Optimización de costos logísticos con IA",
+      "algorithms": [
+        "cost_optimization",
+        "expense_analysis",
+        "efficiency_improvement"
+      ],
+      "features": [
+        "cost_reduction",
+        "expense_optimization",
+        "efficiency_analysis"
+      ],
+      "performance_target": 90.2
+    },
+    "GestionRiesgos": {
+      "class_name": "RiskManagementEngine",
+      "description": "Gestión de riesgos en cadena de suministro",
+      "algorithms": [
+        "risk_assessment",
+        "contingency_planning",
+        "disruption_prediction"
+      ],
+      "features": [
+        "supply_chain_risk",
+        "contingency_management",
+        "disruption_mitigation"
+      ],
+      "performance_target": 87.5
+    },
+    "AnalisisRendimiento": {
+      "class_name": "PerformanceAnalysisEngine",
+      "description": "Análisis de rendimiento logístico con KPIs",
+      "algorithms": [
+        "performance_metrics",
+        "kpi_analysis",
+        "benchmark_comparison"
+      ],
+      "features": [
+        "performance_monitoring",
+        "kpi_tracking",
+        "benchmark_analysis"
+      ],
+      "performance_target": 92.1
+    },
+    "SostenibilidadIA": {
+      "class_name": "SustainabilityAIEngine",
+      "description": "Optimización de sostenibilidad en logística",
+      "algorithms": [
+        "sustainability_optimization",
+        "carbon_footprint",
+        "green_logistics"
+      ],
+      "features": [
+        "sustainable_operations",
+        "carbon_reduction",
+        "eco_optimization"
+      ],
+      "performance_target": 85.7
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.731023",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

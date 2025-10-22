@@ -1,0 +1,248 @@
+{
+  "timestamp": "2025-10-12T08:53:11.956467",
+  "total": 24,
+  "successful": 7,
+  "failed": 17,
+  "results": [
+    {
+      "agent_id": "abtest_optimizer",
+      "success": true,
+      "error": null,
+      "execution_time_ms": 0.03910018131136894,
+      "result_type": "dict",
+      "has_execute": true,
+      "is_async": true,
+      "sample_result": "{'tenant_id': 'audit-test-tenant', 'test_status': 'error', 'error_message': 'Need at least 2 variants', 'version': 'v2.2.0', 'latency_ms': 0}"
+    },
+    {
+      "agent_id": "abtest_impact",
+      "success": false,
+      "error": "'dict' object has no attribute 'tenant_id'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\abtestingimpactia.py\", line 254, in execute\n    key = self._cache_key(inp)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\abtestingimpactia.py\", line 168, in _cache_key\n    s = json.dumps({\"tenant\": inp.tenant_id, \"test\": inp.test_name,\n                             ^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'tenant_id'\n"
+    },
+    {
+      "agent_id": "attribution_model",
+      "success": false,
+      "error": "'dict' object has no attribute 'touchpoints'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\attributionmodelia.py\", line 610, in execute\n    key = self._cache_key(inp)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\attributionmodelia.py\", line 423, in _cache_key\n    tp_ids = sorted([tp.touchpoint_id for tp in inp.touchpoints[:20]])\n                                                ^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'touchpoints'\n"
+    },
+    {
+      "agent_id": "content_performance",
+      "success": false,
+      "error": "'dict' object has no attribute 'tenant_id'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\contentperformanceia.py\", line 622, in execute\n    if not inp.tenant_id or not inp.tenant_id.startswith(\"tn_\"):\n           ^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'tenant_id'\n"
+    },
+    {
+      "agent_id": "creative_analyzer",
+      "success": false,
+      "error": "'dict' object has no attribute 'creative_assets'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\creativeanalyzeria.py\", line 541, in execute\n    key = self._cache_key(inp)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\creativeanalyzeria.py\", line 353, in _cache_key\n    asset_ids = \"_\".join([a.asset_id for a in inp.creative_assets[:5]])\n                                              ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'creative_assets'\n"
+    },
+    {
+      "agent_id": "marketing_mix_model",
+      "success": false,
+      "error": "'dict' object has no attribute 'channel_data'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\marketingmixmodelia.py\", line 566, in execute\n    key = self._cache_key(inp)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\marketingmixmodelia.py\", line 366, in _cache_key\n    channels = \"_\".join([cd.channel for cd in inp.channel_data])\n                                              ^^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'channel_data'\n"
+    },
+    {
+      "agent_id": "budget_forecast",
+      "success": false,
+      "error": "'dict' object has no attribute 'historical_data'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\budgetforecastia.py\", line 590, in execute\n    key = self._cache_key(inp)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\budgetforecastia.py\", line 381, in _cache_key\n    periods = \"_\".join([h.period for h in inp.historical_data[-3:]])\n                                          ^^^^^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'historical_data'\n"
+    },
+    {
+      "agent_id": "campaign_optimizer",
+      "success": false,
+      "error": "'dict' object has no attribute 'tenant_id'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\campaignoptimizeria.py\", line 107, in execute\n    if input_data.tenant_id != self.tenant_id:\n       ^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'tenant_id'\n"
+    },
+    {
+      "agent_id": "cash_offer_filter",
+      "success": true,
+      "error": null,
+      "execution_time_ms": 0.008600065484642982,
+      "result_type": "dict",
+      "has_execute": true,
+      "is_async": true,
+      "sample_result": "{'tenant_id': 'audit-test-tenant', 'status': 'error', 'error': 'invalid_input: customer_id required', 'latency_ms': 0, 'version': 'v2.1.0'}"
+    },
+    {
+      "agent_id": "competitor_analyzer",
+      "success": false,
+      "error": "'dict' object has no attribute 'competitors'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\competitoranalyzeria.py\", line 531, in execute\n    key = self._cache_key(inp)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\competitoranalyzeria.py\", line 329, in _cache_key\n    comp_ids = \"_\".join([c.competitor_id for c in inp.competitors[:5]])\n                                                  ^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'competitors'\n"
+    },
+    {
+      "agent_id": "competitor_intelligence",
+      "success": false,
+      "error": "'dict' object has no attribute 'competitors'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\competitorintelligenceia.py\", line 490, in execute\n    key = self._cache_key(inp)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\competitorintelligenceia.py\", line 376, in _cache_key\n    ids = sorted([c.competitor_id for c in inp.competitors])\n                                           ^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'competitors'\n"
+    },
+    {
+      "agent_id": "contact_quality",
+      "success": false,
+      "error": "'dict' object has no attribute 'lead'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\contactqualityia.py\", line 123, in execute\n    if input_data.lead.tenant_id != self.tenant_id:\n       ^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'lead'\n"
+    },
+    {
+      "agent_id": "conversion_cohort",
+      "success": false,
+      "error": "'dict' object has no attribute 'tenant_id'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\conversioncohortia.py\", line 91, in execute\n    if input_data.tenant_id != self.tenant_id:\n       ^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'tenant_id'\n"
+    },
+    {
+      "agent_id": "customer_segmentation",
+      "success": true,
+      "error": null,
+      "execution_time_ms": 0.019700033590197563,
+      "result_type": "dict",
+      "has_execute": true,
+      "is_async": true,
+      "sample_result": "{'tenant_id': 'audit-test-tenant', 'status': 'error', 'error': 'invalid_input: audience_id required', 'segments': [], 'latency_ms': 0, 'version': 'v2.1.0'}"
+    },
+    {
+      "agent_id": "journey_optimizer",
+      "success": false,
+      "error": "'dict' object has no attribute 'journey_stages'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\journeyoptimizeria.py\", line 572, in execute\n    key = self._cache_key(inp)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\journeyoptimizeria.py\", line 390, in _cache_key\n    stage_summary = \"_\".join([s.stage_name for s in inp.journey_stages])\n                                                    ^^^^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'journey_stages'\n"
+    },
+    {
+      "agent_id": "lead_scoring",
+      "success": false,
+      "error": "'dict' object has no attribute 'tenant_id'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\leadscoringia.py\", line 73, in execute\n    if lead.tenant_id != self.tenant_id:\n       ^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'tenant_id'\n"
+    },
+    {
+      "agent_id": "email_automation",
+      "success": true,
+      "error": null,
+      "execution_time_ms": 0.015999889001250267,
+      "result_type": "dict",
+      "has_execute": true,
+      "is_async": true,
+      "sample_result": "{'tenant_id': 'audit-test-tenant', 'status': 'error', 'error': 'invalid_input: lead_id_required', 'latency_ms': 0, 'version': 'v2.1.0'}"
+    },
+    {
+      "agent_id": "personalization_engine",
+      "success": false,
+      "error": "'dict' object has no attribute 'tenant_id'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\personalizationengineia.py\", line 605, in execute\n    key = self._cache_key(inp)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\personalizationengineia.py\", line 408, in _cache_key\n    \"tenant\": inp.tenant_id,\n              ^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'tenant_id'\n"
+    },
+    {
+      "agent_id": "social_post_generator",
+      "success": false,
+      "error": "'dict' object has no attribute 'tenant_id'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\socialpostgeneratoria.py\", line 415, in execute\n    key = self._cache_key(inp)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\socialpostgeneratoria.py\", line 281, in _cache_key\n    {\"tenant\": inp.tenant_id, \"platform\": inp.platform, \"tone\": inp.post_tone, \"message\": inp.key_message[:50]},\n               ^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'tenant_id'\n"
+    },
+    {
+      "agent_id": "influencer_matcher",
+      "success": false,
+      "error": "'dict' object has no attribute 'tenant_id'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\influencermatcheria.py\", line 451, in execute\n    if inp.tenant_id != self.tenant_id:\n       ^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'tenant_id'\n"
+    },
+    {
+      "agent_id": "influencer_matching",
+      "success": false,
+      "error": "'dict' object has no attribute 'tenant_id'",
+      "execution_time_ms": 0,
+      "result_type": null,
+      "has_execute": true,
+      "is_async": true,
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\audit_agents.py\", line 108, in test_agent\n    agent_result = await agent.execute(test_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\influencermatchingia.py\", line 440, in execute\n    key = self._cache_key(inp)\n          ^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\cesar\\Projects\\nadakki-ai-suite\\nadakki-ai-suite\\agents\\marketing\\influencermatchingia.py\", line 307, in _cache_key\n    s = json.dumps({\"tenant\": inp.tenant_id, \"goal\": inp.campaign_goal,\n                             ^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'tenant_id'\n"
+    },
+    {
+      "agent_id": "geo_segmentation",
+      "success": true,
+      "error": null,
+      "execution_time_ms": 0.012299977242946625,
+      "result_type": "dict",
+      "has_execute": true,
+      "is_async": true,
+      "sample_result": "{'tenant_id': 'audit-test-tenant', 'status': 'error', 'error': 'invalid_input: segmentation_id required', 'latency_ms': 0, 'version': 'v2.1.1'}"
+    },
+    {
+      "agent_id": "minimal_form",
+      "success": true,
+      "error": null,
+      "execution_time_ms": 0.0100000761449337,
+      "result_type": "dict",
+      "has_execute": true,
+      "is_async": true,
+      "sample_result": "{'tenant_id': 'audit-test-tenant', 'status': 'error', 'error': 'invalid_input: form_id required', 'latency_ms': 0, 'version': 'v2.3.0'}"
+    },
+    {
+      "agent_id": "product_affinity",
+      "success": true,
+      "error": null,
+      "execution_time_ms": 0.018999911844730377,
+      "result_type": "dict",
+      "has_execute": true,
+      "is_async": true,
+      "sample_result": "{'tenant_id': 'audit-test-tenant', 'status': 'error', 'error': 'invalid_input: customer_id required', 'latency_ms': 0, 'version': 'v2.1.0'}"
+    }
+  ]
+}

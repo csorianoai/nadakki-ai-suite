@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 Nadakki AI Debug System</title>
+    <style>
+        body {
+            font-family: 'Consolas', 'Monaco', monospace;
+            background: #0a0f1c;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .debug-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .debug-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .debug-section {
+            background: rgba(26, 31, 46, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .debug-title {
+            color: #00d4ff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #00d4ff;
+            padding-bottom: 10px;
+        }
+        .debug-button {
+            background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        .debug-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+        .debug-button.secondary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .debug-button.danger {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff4757 100%);
+        }
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .status-card {
+            background: rgba(37, 43, 63, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        .status-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .debug-log {
+            background: #000;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            height: 200px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .log-success { color: #00ff88; }
+        .log-error { color: #ff6b9d; }
+        .log-warning { color: #ff9f43; }
+        .log-info { color: #00d4ff; }
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(26, 31, 46, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 15px 20px;
+            color: white;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            animation: slideIn 0.5s ease;
+            max-width: 400px;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-container">
+        <div class="debug-header">
+            <h1>🔧 NADAKKI AI ENTERPRISE DEBUG SYSTEM</h1>
+            <p>Senior Developer Diagnostic & Repair Tool</p>
+        </div>
+
+        <div class="status-grid">
+            <div class="status-card">
+                <div class="status-value" id="backendStatus">CHECKING...</div>
+                <div class="status-label">Backend Status</div>
+            </div>
+            <div class="status-card">
+                <div class="status-value" id="buttonsStatus">CHECKING...</div>
+                <div class="status-label">Buttons Status</div>
+            </div>
+        </div>
+
+        <div class="debug-section">
+            <div class="debug-title">🚨 EMERGENCY ACTIONS</div>
+            <button class="debug-button" onclick="emergencyTest()">🚨 EMERGENCY TEST</button>
+            <button class="debug-button secondary" onclick="testBackend()">🔍 TEST BACKEND</button>
+            <button class="debug-button secondary" onclick="openMainSystem()">🌐 OPEN MAIN SYSTEM</button>
+            <button class="debug-button danger" onclick="fixMainSystemButtons()">🔧 FIX MAIN BUTTONS</button>
+        </div>
+
+        <div class="debug-section">
+            <div class="debug-title">📊 SYSTEM LOG</div>
+            <div class="debug-log" id="debugLog"></div>
+        </div>
+
+        <div class="debug-section">
+            <div class="debug-title">🧪 DIRECT AGENT TESTING</div>
+            <button class="debug-button" onclick="testAgent('SentinelBot Quantum')">🤖 Test SentinelBot</button>
+            <button class="debug-button" onclick="testAgent('QuantumDecision Core')">🧠 Test QuantumDecision</button>
+            <button class="debug-button" onclick="testAgent('DNAProfiler Quantum')">🔬 Test DNAProfiler</button>
+            <button class="debug-button" onclick="testAgent('RiskOracle')">⚡ Test RiskOracle</button>
+        </div>
+    </div>
+
+    <script>
+        console.log('🎯 SENIOR DEVELOPER DEBUG SYSTEM ACTIVE');
+        
+        const API_URL = 'https://fdnmgx4rz7.execute-api.us-east-1.amazonaws.com/prod';
+        const TENANT_ID = 'banco-popular-rd';
+        
+        // LOGGING SYSTEM
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = `[${timestamp}] ${message}`;
+            
+            const logElement = document.getElementById('debugLog');
+            if (logElement) {
+                logElement.innerHTML += `<div class="log-${type}">${logEntry}</div>`;
+                logElement.scrollTop = logElement.scrollHeight;
+            }
+            
+            console.log(`%c${logEntry}`, `color: ${type === 'error' ? '#ff6b9d' : type === 'success' ? '#00ff88' : type === 'warning' ? '#ff9f43' : '#00d4ff'}`);
+        }
+
+        // NOTIFICATION SYSTEM
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            
+            const colors = {
+                success: '#00ff88',
+                error: '#ff6b9d',
+                warning: '#ff9f43',
+                info: '#00d4ff'
+            };
+            
+            notification.style.borderColor = colors[type];
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="font-size: 1.2rem;">${type === 'success' ? '✅' : type === 'error' ? '❌' : type === 'warning' ? '⚠️' : 'ℹ️'}</div>
+                    <div>${message}</div>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 5000);
+        }
+
+        // BACKEND TESTING
+        async function testBackend() {
+            log('Testing backend connection...', 'info');
+            
+            try {
+                const response = await fetch(`${API_URL}/api/v1/health`, {
+                    method: 'GET',
+                    headers: { 'X-Tenant-ID': TENANT_ID }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('backendStatus').textContent = '✅ ONLINE';
+                    document.getElementById('backendStatus').style.color = '#00ff88';
+                    log(`Backend connected: ${data.metrics?.total_agents || 'Unknown'} agents`, 'success');
+                    showNotification('✅ Backend funcionando correctamente', 'success');
+                    return true;
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                document.getElementById('backendStatus').textContent = '❌ OFFLINE';
+                document.getElementById('backendStatus').style.color = '#ff6b9d';
+                log(`Backend error: ${error.message}`, 'error');
+                showNotification('❌ Error en backend', 'error');
+                return false;
+            }
+        }
+
+        // AGENT TESTING
+        async function testAgent(agentName) {
+            log(`Testing agent: ${agentName}`, 'info');
+            
+            try {
+                const testProfile = {
+                    profile: {
+                        income: 65000,
+                        credit_score: 740,
+                        age: 32,
+                        employment_type: 'full_time',
+                        debt_to_income: 0.28
+                    }
+                };
+                
+                showNotification(`🔄 Testing ${agentName}...`, 'info');
+                
+                const response = await fetch(`${API_URL}/api/v1/evaluate`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Tenant-ID': TENANT_ID
+                    },
+                    body: JSON.stringify(testProfile)
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    const similarity = (result.quantum_similarity_score * 100).toFixed(1);
+                    const riskLevel = result.risk_level;
+                    const decision = result.automated_decision?.action || 'EVALUATED';
+                    
+                    log(`${agentName} SUCCESS: ${decision} | ${similarity}% similarity | Risk: ${riskLevel}`, 'success');
+                    showNotification(`🧠 ${agentName}: ${decision} | ${similarity}% similitud | ${riskLevel}`, 'success');
+                    
+                    return result;
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                log(`${agentName} FAILED: ${error.message}`, 'error');
+                showNotification(`❌ ${agentName} failed: ${error.message}`, 'error');
+            }
+        }
+
+        // EMERGENCY TEST
+        async function emergencyTest() {
+            log('🚨 EMERGENCY TEST INITIATED', 'warning');
+            showNotification('🚨 Emergency test running...', 'warning');
+            
+            const backendOK = await testBackend();
+            if (backendOK) {
+                await testAgent('Emergency Test Agent');
+                log('🚨 EMERGENCY TEST COMPLETED - BACKEND WORKING', 'success');
+                showNotification('✅ Emergency test passed - Backend is working!', 'success');
+            }
+        }
+
+        // OPEN MAIN SYSTEM
+        function openMainSystem() {
+            log('Opening main Nadakki system...', 'info');
+            window.open('nadakki-enterprise-complete.html', '_blank');
+            showNotification('🌐 Opening main system...', 'info');
+        }
+
+        // FIX MAIN SYSTEM BUTTONS
+        function fixMainSystemButtons() {
+            log('Preparing button fix for main system...', 'info');
+            
+            const fixCode = `
+// SENIOR DEVELOPER ENTERPRISE FIX
+console.log('🔧 APPLYING ENTERPRISE BUTTON FIX');
+
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('btn-agent') && e.target.classList.contains('btn-primary')) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        console.log('🔥 ENTERPRISE CLICK DETECTED');
+        
+        const card = e.target.closest('.agent-card');
+        const agentName = card?.querySelector('.agent-title')?.textContent || 'Unknown Agent';
+        
+        executeAgentFixed(agentName);
+    }
+});
+
+async function executeAgentFixed(agentName) {
+    console.log('🚀 EXECUTING:', agentName);
+    
+    try {
+        if (window.showNotification) {
+            showNotification('🔄 Ejecutando ' + agentName + '...', 'info');
+        } else {
+            alert('🔄 Ejecutando ' + agentName + '...');
+        }
+        
+        const profile = {
+            profile: {
+                income: 65000,
+                credit_score: 740,
+                age: 32,
+                employment_type: "full_time",
+                debt_to_income: 0.28
+            }
+        };
+        
+        const response = await fetch('${API_URL}/api/v1/evaluate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Tenant-ID': '${TENANT_ID}'
+            },
+            body: JSON.stringify(profile)
+        });
+        
+        const result = await response.json();
+        const similarity = (result.quantum_similarity_score * 100).toFixed(1);
+        const decision = result.automated_decision?.action || 'EVALUATED';
+        
+        const message = '🧠 ' + agentName + ': ' + decision + ' | ' + similarity + '% similitud | ' + result.risk_level;
+        
+        if (window.showNotification) {
+            showNotification(message, 'success');
+        } else {
+            alert(message);
+        }
+        
+        console.log('✅ RESULT:', result);
+        
+    } catch (error) {
+        console.error('❌ ERROR:', error);
+        const errorMsg = '❌ Error en ' + agentName + ': ' + error.message;
+        if (window.showNotification) {
+            showNotification(errorMsg, 'error');
+        } else {
+            alert(errorMsg);
+        }
+    }
+}
+
+console.log('🎯 ENTERPRISE FIX APPLIED - Buttons should work now!');
+            `;
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(fixCode).then(() => {
+                log('Button fix code copied to clipboard', 'success');
+                showNotification('📋 Fix code copied! Open main system and paste in console (F12)', 'success');
+            }).catch(() => {
+                log('Could not copy to clipboard. Showing fix code...', 'warning');
+                alert('Copy this code and paste in main system console:\\n\\n' + fixCode);
+            });
+        }
+
+        // INITIALIZATION
+        document.addEventListener('DOMContentLoaded', function() {
+            log('🚀 Senior Developer Debug System Initialized', 'success');
+            setTimeout(testBackend, 1000);
+        });
+
+        console.log('🎯 SENIOR DEVELOPER DEBUG SYSTEM READY');
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{
+  "module_name": "decision",
+  "total_agents": 4,
+  "color": "linear-gradient(135deg, #00ff88 0%, #00cc6a 100%)",
+  "agents": {
+    "QuantumDecision": {
+      "class_name": "QuantumDecisionCore",
+      "description": "Motor cuántico híbrido principal con algoritmos Coseno + Euclidiana + Jaccard",
+      "algorithms": [
+        "cosine_similarity",
+        "euclidean_distance",
+        "jaccard_index",
+        "ensemble_learning"
+      ],
+      "features": [
+        "quantum_decision",
+        "hybrid_scoring",
+        "risk_levels",
+        "automated_approval"
+      ],
+      "performance_target": 99.1
+    },
+    "RiskOracle": {
+      "class_name": "RiskOracleEngine",
+      "description": "Scoring multidimensional avanzado que evalúa 50+ variables financieras",
+      "algorithms": [
+        "multivariate_analysis",
+        "pca",
+        "factor_analysis",
+        "weighted_scoring"
+      ],
+      "features": [
+        "multidimensional_scoring",
+        "variable_weighting",
+        "sector_adaptation"
+      ],
+      "performance_target": 98.4
+    },
+    "PolicyGuardian": {
+      "class_name": "PolicyGuardianValidator",
+      "description": "Validación automática contra políticas crediticias internas y regulaciones",
+      "algorithms": [
+        "rule_engine",
+        "policy_matching",
+        "compliance_validation"
+      ],
+      "features": [
+        "policy_validation",
+        "regulatory_compliance",
+        "real_time_checking"
+      ],
+      "performance_target": 99.8
+    },
+    "TurboApprover": {
+      "class_name": "TurboApprovalEngine",
+      "description": "Aprobación instantánea para casos de bajo riesgo con integración core bancario",
+      "algorithms": [
+        "fast_scoring",
+        "threshold_optimization",
+        "instant_decision"
+      ],
+      "features": [
+        "instant_approval",
+        "low_risk_processing",
+        "core_integration"
+      ],
+      "performance_target": 97.6
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.188266",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

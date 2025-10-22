@@ -1,0 +1,162 @@
+{
+  "module_name": "contabilidad",
+  "total_agents": 10,
+  "color": "linear-gradient(135deg, #00cec9 0%, #00b894 100%)",
+  "agents": {
+    "ContabilidadInteligente": {
+      "class_name": "IntelligentAccountingEngine",
+      "description": "Automatización contable completa con IA",
+      "algorithms": [
+        "accounting_automation",
+        "transaction_classification",
+        "financial_analysis"
+      ],
+      "features": [
+        "automated_bookkeeping",
+        "transaction_processing",
+        "financial_reporting"
+      ],
+      "performance_target": 97.2
+    },
+    "ConciliacionBancaria": {
+      "class_name": "BankReconciliationEngine",
+      "description": "Conciliación bancaria automática 24/7",
+      "algorithms": [
+        "reconciliation_matching",
+        "discrepancy_detection",
+        "automated_posting"
+      ],
+      "features": [
+        "bank_reconciliation",
+        "automated_matching",
+        "discrepancy_resolution"
+      ],
+      "performance_target": 98.5
+    },
+    "FacturacionIA": {
+      "class_name": "InvoicingAIEngine",
+      "description": "Facturación inteligente con validación DGII",
+      "algorithms": [
+        "invoice_generation",
+        "tax_validation",
+        "compliance_checking"
+      ],
+      "features": [
+        "automated_invoicing",
+        "tax_compliance",
+        "dgii_integration"
+      ],
+      "performance_target": 96.8
+    },
+    "AnalisisFinanciero": {
+      "class_name": "FinancialAnalysisEngine",
+      "description": "Análisis financiero predictivo y reportes automáticos",
+      "algorithms": [
+        "financial_modeling",
+        "predictive_analysis",
+        "ratio_analysis"
+      ],
+      "features": [
+        "financial_analysis",
+        "predictive_modeling",
+        "automated_reporting"
+      ],
+      "performance_target": 94.3
+    },
+    "ControlGastos": {
+      "class_name": "ExpenseControlEngine",
+      "description": "Control de gastos con categorización automática",
+      "algorithms": [
+        "expense_categorization",
+        "budget_monitoring",
+        "anomaly_detection"
+      ],
+      "features": [
+        "expense_control",
+        "budget_tracking",
+        "spend_analysis"
+      ],
+      "performance_target": 92.7
+    },
+    "TributarioIA": {
+      "class_name": "TaxComplianceEngine",
+      "description": "Gestión tributaria automática con DGII",
+      "algorithms": [
+        "tax_calculation",
+        "compliance_monitoring",
+        "filing_automation"
+      ],
+      "features": [
+        "tax_management",
+        "compliance_automation",
+        "filing_assistance"
+      ],
+      "performance_target": 98.1
+    },
+    "AuditoriaInterna": {
+      "class_name": "InternalAuditEngine",
+      "description": "Auditoría interna automatizada con detección de irregularidades",
+      "algorithms": [
+        "audit_automation",
+        "fraud_detection",
+        "compliance_verification"
+      ],
+      "features": [
+        "internal_audit",
+        "fraud_detection",
+        "compliance_monitoring"
+      ],
+      "performance_target": 95.6
+    },
+    "FlujoCajaPrediccion": {
+      "class_name": "CashFlowPredictionEngine",
+      "description": "Predicción de flujo de caja con modelos avanzados",
+      "algorithms": [
+        "cashflow_forecasting",
+        "liquidity_analysis",
+        "payment_prediction"
+      ],
+      "features": [
+        "cashflow_prediction",
+        "liquidity_management",
+        "payment_scheduling"
+      ],
+      "performance_target": 93.9
+    },
+    "InventarioValoracion": {
+      "class_name": "InventoryValuationEngine",
+      "description": "Valoración de inventario con métodos contables IA",
+      "algorithms": [
+        "inventory_valuation",
+        "cost_allocation",
+        "depreciation_calculation"
+      ],
+      "features": [
+        "inventory_management",
+        "asset_valuation",
+        "depreciation_tracking"
+      ],
+      "performance_target": 91.4
+    },
+    "ReportesEjecutivos": {
+      "class_name": "ExecutiveReportingEngine",
+      "description": "Generación automática de reportes ejecutivos",
+      "algorithms": [
+        "report_generation",
+        "data_visualization",
+        "executive_summary"
+      ],
+      "features": [
+        "executive_reporting",
+        "dashboard_automation",
+        "kpi_monitoring"
+      ],
+      "performance_target": 89.8
+    }
+  },
+  "metadata": {
+    "generated_date": "2025-08-05T09:14:53.273560",
+    "version": "2.0",
+    "generator": "NadakkiPromptGenerator"
+  }
+}

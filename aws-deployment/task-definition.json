@@ -1,0 +1,45 @@
+﻿{
+  "family": "nadakki-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
+  "executionRoleArn": "arn:aws:iam::your-account-id:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::your-account-id:role/ecsTaskRole",
+  "containerDefinitions": [
+    {
+      "name": "nadakki-api",
+      "image": "your-account-id.dkr.ecr.us-east-1.amazonaws.com/nadakki:latest",
+      "portMappings": [
+        {
+          "containerPort": 5000,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "DATABASE_URL",
+          "value": "postgresql://nadakki:password@your-rds-endpoint:5432/nadakki_prod"
+        },
+        {
+          "name": "ENVIRONMENT",
+          "value": "production"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/nadakki-task",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "healthCheck": {
+        "command": ["CMD-SHELL", "curl -f http://localhost:5000/api/health || exit 1"],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3
+      }
+    }
+  ]
+}

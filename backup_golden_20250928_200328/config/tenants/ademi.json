@@ -1,0 +1,20 @@
+﻿{
+    "risk_thresholds":  {
+                            "reject_auto":  0.90,
+                            "high_risk":  0.80,
+                            "risky":  0.70,
+                            "medium_risk":  0.50,
+                            "low_risk":  0.00
+                        },
+    "enabled_agents":  {
+                           "inteligencia":  [
+                                                "ROIMaster",
+                                                "ProfitMaximizer"
+                                            ],
+                           "decision":  [
+                                            "RiskOracle",
+                                            "PolicyGuardian"
+                                        ]
+                       },
+    "plan":  "starter"
+}
