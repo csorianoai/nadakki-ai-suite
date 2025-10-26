@@ -1,68 +1,214 @@
 ﻿"""
-NADAKKI AI SUITE v3.8.0 – CREDICEFI BILLING & SaaS SUBDOMAIN MANAGER
----------------------------------------------------------------------
-Quantum Sentinel Cloud + Financial Billing System + Multi-Tenant Subdomain Control
+NADAKKI AI SUITE v3.4.1 – CORRECCIÓN INMEDIATA
+Fixed: tenant_manager.list_tenants() -> tenant_manager.list_all_tenants()
 """
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-import logging, os, json
 from datetime import datetime
-from typing import Dict, Any
+import logging, time, asyncio
 
-# Base Setup
-os.makedirs("logs", exist_ok=True)
-os.makedirs("exports", exist_ok=True)
+# ==============================================================
+# CONFIGURACIÓN BASE
+# ==============================================================
 logging.basicConfig(
-  level=logging.INFO,
-  format="%(asctime)s [%(levelname)s] %(message)s",
-  handlers=[logging.FileHandler("logs/credicefi_billing.log", encoding="utf-8"), logging.StreamHandler()],
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    handlers=[logging.FileHandler("logs/nadakki_server.log", encoding="utf-8"), logging.StreamHandler()]
 )
-logger = logging.getLogger("CrediCefiBilling")
+logger = logging.getLogger("NadakkiAISuite")
 
 app = FastAPI(
-  title="CrediCefi Billing Manager",
-  description="AI-powered financial billing and tenant control",
-  version="3.8.0",
-  docs_url="/docs",
-  redoc_url="/redoc"
+    title="Nadakki AI Suite",
+    description="Multi-Tenant Enterprise AI Platform (TenantManager + UsageTracker + BrandingEngine)",
+    version="3.4.1",  # Version updated
+    docs_url="/docs",
+    redoc_url="/redoc"
 )
+
+# ==============================================================
+# CORS (Acceso desde WordPress u otras apps)
+# ==============================================================
 app.add_middleware(
-  CORSMiddleware,
-  allow_origins=["*"],
-  allow_methods=["*"],
-  allow_headers=["*"]
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-# Routers
-from billing_routes_v7 import router as billing_router
-from governance_routes_v6 import router as governance_router
-app.include_router(billing_router)
-app.include_router(governance_router)
+# ==============================================================
+# IMPORTAR SERVICIOS INTERNOS
+# ==============================================================
+from services.integrated_usage_tracker import IntegratedUsageTracker
+from services.branding_engine import BrandingEngine
+from services.tenant_manager import TenantManager
 
-# Simulación tenants
-TENANTS = {
-  "credicefi": {"plan": "enterprise", "subdomain": "credicefi.nadakki.com", "balance": 0.0, "usage": 0},
-  "banco_ahorro": {"plan": "professional", "subdomain": "ahorro.nadakki.com", "balance": 0.0, "usage": 0},
-}
+tracker = IntegratedUsageTracker()
+branding = BrandingEngine()
+tenant_manager = TenantManager()
+
+# ==============================================================
+# ENDPOINTS PRINCIPALES
+# ==============================================================
 
 @app.get("/")
-async def root():
-  return {
-    "service": "CrediCefi Billing API",
-    "version": "3.8.0",
-    "phase": "7 – Billing & Subdomains",
-    "modules": ["/billing/summary", "/billing/payments", "/governance/summary"]
-  }
+def root():
+    return {
+        "service": "Nadakki AI Suite",
+        "version": "3.4.1",  # Updated
+        "modules": ["TenantManager", "IntegratedUsageTracker", "BrandingEngine"],
+        "status": "operational",
+        "timestamp": datetime.now().isoformat()
+    }
 
-@app.get("/health")
-async def health():
-  return {"status": "healthy", "tenants": len(TENANTS), "timestamp": datetime.now().isoformat()}
+# ==============================================================
+# TENANT MANAGER - ENDPOINTS CORREGIDOS
+# ==============================================================
+
+@app.get("/api/tenant/list")
+def list_tenants():
+    """Lista todos los tenants activos desde tenants.db - CORREGIDO"""
+    tenants = tenant_manager.list_all_tenants()  # ✅ CORRECCIÓN: list_all_tenants
+    return {"total": len(tenants), "tenants": tenants}
+
+@app.get("/api/tenant/{tenant_id}")
+def get_tenant_info(tenant_id: str):
+    """Obtiene información específica de un tenant"""
+    # Necesitamos implementar get_tenant o usar get_tenant_by_api_key
+    # Por ahora, vamos a crear un método simple
+    try:
+        # Usar el método existente que tenemos
+        conn = tenant_manager._get_connection()
+        cursor = conn.cursor()
+        
+        cursor.execute("""
+            SELECT t.tenant_id, t.institution_name, t.institution_type, t.plan, t.status, t.created_at,
+                   b.primary_color, b.secondary_color, b.logo_url,
+                   l.max_monthly_requests, l.current_monthly_requests
+            FROM tenants t
+            LEFT JOIN tenant_branding b ON t.tenant_id = b.tenant_id
+            LEFT JOIN tenant_limits l ON t.tenant_id = l.tenant_id
+            WHERE t.tenant_id = ?
+        """, (tenant_id,))
+        
+        row = cursor.fetchone()
+        conn.close()
+        
+        if not row:
+            raise HTTPException(status_code=404, detail="Tenant no encontrado")
+            
+        return {
+            "tenant_id": row[0],
+            "institution_name": row[1],
+            "institution_type": row[2],
+            "plan": row[3],
+            "status": row[4],
+            "created_at": row[5],
+            "branding": {
+                "primary_color": row[6],
+                "secondary_color": row[7],
+                "logo_url": row[8]
+            },
+            "limits": {
+                "max_monthly_requests": row[9],
+                "current_monthly_requests": row[10]
+            }
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error interno: {str(e)}")
+
+# ==============================================================
+# USAGE TRACKER (INTEGRADO CON tenants.db)
+# ==============================================================
+
+@app.get("/api/usage/report/{tenant_id}")
+def usage_report(tenant_id: str):
+    """Devuelve resumen detallado de uso"""
+    report = tracker.get_tenant_usage_report(tenant_id)
+    if "error" in report:
+        raise HTTPException(status_code=404, detail=report["error"])
+    return report
+
+@app.post("/api/usage/log")
+async def log_usage(request: Request):
+    """Registra evento de uso para un tenant"""
+    try:
+        data = await request.json()
+        tenant_id = data.get("tenant_id")
+        endpoint = data.get("endpoint", "/api/v1/evaluate")
+        tokens_used = data.get("tokens_used", 0)
+        agent_used = data.get("agent_used", "generic_agent")
+        response_time_ms = data.get("response_time_ms", 0)
+
+        if not tenant_id:
+            raise HTTPException(status_code=400, detail="tenant_id es requerido")
+
+        tracker.log_usage(
+            tenant_id=tenant_id,
+            endpoint=endpoint,
+            tokens_used=tokens_used,
+            agent_used=agent_used,
+            response_time_ms=response_time_ms
+        )
+        return {"status": "logged", "tenant_id": tenant_id, "timestamp": datetime.now().isoformat()}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error procesando request: {str(e)}")
+
+# ==============================================================
+# BRANDING ENGINE (WHITE-LABEL DASHBOARDS)
+# ==============================================================
+
+@app.get("/api/branding/dashboard/{tenant_id}")
+def generate_dashboard(tenant_id: str):
+    """Genera dashboard HTML personalizado para el tenant"""
+    try:
+        path = branding.save_dashboard(tenant_id)
+        return {
+            "tenant_id": tenant_id,
+            "dashboard_path": path,
+            "generated_at": datetime.now().isoformat()
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error generando dashboard: {str(e)}")
+
+@app.get("/api/branding/preview/{tenant_id}")
+def preview_branding(tenant_id: str):
+    """Devuelve la configuración de branding sin generar archivo"""
+    branding_data = branding.get_tenant_branding(tenant_id)
+    if not branding_data:
+        raise HTTPException(status_code=404, detail="Tenant no encontrado")
+    return branding_data
+
+# ==============================================================
+# MANEJO DE ERRORES
+# ==============================================================
+
+@app.exception_handler(Exception)
+async def handle_exception(request: Request, exc: Exception):
+    logger.error(f"Unhandled error: {exc}")
+    return JSONResponse(status_code=500, content={"success": False, "error": str(exc)})
+
+# ==============================================================
+# EVENTOS DE INICIO
+# ==============================================================
 
 @app.on_event("startup")
 async def on_start():
-  logger.info("🚀 CREDICEFI BILLING SYSTEM v3.8.0 INICIADO")
-  logger.info("✓ Billing API en / billing  |  Governance en / governance")
-  logger.info("✓ Multi-tenant subdomains operativos")
-  logger.info("✓ Panel Streamlit activo en http://127.0.0.1:8501")
+    logger.info("=" * 60)
+    logger.info("🚀 NADAKKI AI SUITE v3.4.1 - STARTING")
+    logger.info("=" * 60)
+    logger.info("✓ TenantManager activo")
+    logger.info("✓ UsageTracker activo (SQLite integrado)")
+    logger.info("✓ BrandingEngine operativo (dashboards white-label)")
+    logger.info("=" * 60)
+    logger.info("Server ready at http://127.0.0.1:8000")
+
+# ==============================================================
+# EJECUCIÓN LOCAL
+# ==============================================================
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

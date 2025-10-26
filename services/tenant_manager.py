@@ -1,6 +1,6 @@
-"""
-Tenant Onboarding Service - Automatiza creación de nuevos clientes
-De 48 horas manual → 5 minutos automatizado
+﻿"""
+Tenant Onboarding Service - Automatiza creaciÃ³n de nuevos clientes
+De 48 horas manual â†’ 5 minutos automatizado
 """
 
 import uuid
@@ -14,7 +14,7 @@ from dataclasses import dataclass, asdict
 
 @dataclass
 class TenantConfig:
-    """Configuración de un tenant"""
+    """ConfiguraciÃ³n de un tenant"""
     tenant_id: str
     institution_name: str
     institution_type: str
@@ -31,7 +31,7 @@ class TenantConfig:
     status: str
 
 class TenantManager:
-    """Gestor de tenants multi-institución"""
+    """Gestor de tenants multi-instituciÃ³n"""
     
     def __init__(self, config_dir: str = "config/tenants", db_path: str = "tenants.db"):
         self.config_dir = Path(config_dir)
@@ -79,7 +79,7 @@ class TenantManager:
         
         conn.commit()
         conn.close()
-        print("✅ Base de datos inicializada correctamente")
+        print("âœ… Base de datos inicializada correctamente")
     
     def create_tenant(
         self,
@@ -95,7 +95,7 @@ class TenantManager:
     ) -> Dict:
         """Crea un nuevo tenant en 5 minutos"""
         
-        print(f"\n🔧 Creando tenant para {institution_name}...")
+        print(f"\nðŸ”§ Creando tenant para {institution_name}...")
         
         tenant_id = self._generate_tenant_id(institution_name)
         api_key = self._generate_api_key()
@@ -132,9 +132,9 @@ class TenantManager:
         self._save_tenant_to_db(tenant_config, api_key)
         self._save_tenant_config_file(tenant_config)
         
-        print(f"✅ Tenant ID generado: {tenant_id}")
-        print(f"✅ API Key generada: {api_key[:20]}...")
-        print(f"✅ Plan: {plan} ({plan_config['max_requests']} requests/mes)")
+        print(f"âœ… Tenant ID generado: {tenant_id}")
+        print(f"âœ… API Key generada: {api_key[:20]}...")
+        print(f"âœ… Plan: {plan} ({plan_config['max_requests']} requests/mes)")
         
         return {
             "success": True,
@@ -150,7 +150,7 @@ class TenantManager:
         }
     
     def _generate_tenant_id(self, institution_name: str) -> str:
-        """Genera ID único para tenant"""
+        """Genera ID Ãºnico para tenant"""
         base = institution_name.lower().replace(" ", "_")
         unique_suffix = str(uuid.uuid4())[:8]
         return f"{base}_{unique_suffix}"
@@ -160,7 +160,7 @@ class TenantManager:
         return f"nadakki_{secrets.token_urlsafe(32)}"
     
     def _get_plan_config(self, plan: str) -> Dict:
-        """Retorna configuración según el plan"""
+        """Retorna configuraciÃ³n segÃºn el plan"""
         plans = {
             "starter": {
                 "max_requests": 5000,
@@ -255,16 +255,16 @@ class TenantManager:
         
         conn.commit()
         conn.close()
-        print(f"✅ Datos guardados en base de datos: {self.db_path}")
+        print(f"âœ… Datos guardados en base de datos: {self.db_path}")
     
     def _save_tenant_config_file(self, config: TenantConfig):
-        """Guarda archivo JSON de configuración"""
+        """Guarda archivo JSON de configuraciÃ³n"""
         config_file = self.config_dir / f"{config.tenant_id}.json"
         
         with open(config_file, 'w', encoding='utf-8') as f:
             json.dump(asdict(config), f, indent=2, ensure_ascii=False)
         
-        print(f"✅ Archivo de configuración guardado: {config_file}")
+        print(f"âœ… Archivo de configuraciÃ³n guardado: {config_file}")
     
     def get_tenant_by_api_key(self, api_key: str) -> Optional[Dict]:
         """Obtiene tenant por API key"""
@@ -352,13 +352,13 @@ if __name__ == "__main__":
     )
     
     print("\n" + "=" * 70)
-    print("✅ TENANT CREADO EXITOSAMENTE")
+    print("âœ… TENANT CREADO EXITOSAMENTE")
     print("=" * 70)
     print(json.dumps(result, indent=2))
     
     # Listar todos los tenants
     print("\n" + "=" * 70)
-    print("📋 TENANTS ACTUALES EN EL SISTEMA")
+    print("ðŸ“‹ TENANTS ACTUALES EN EL SISTEMA")
     print("=" * 70)
     all_tenants = manager.list_all_tenants()
     
@@ -370,8 +370,9 @@ if __name__ == "__main__":
             print(f"   - Status: {tenant['status']}")
             print(f"   - Creado: {tenant['created_at']}")
     else:
-        print("\n⚠️ No hay tenants registrados aún")
+        print("\nâš ï¸ No hay tenants registrados aÃºn")
     
     print("\n" + "=" * 70)
-    print("✅ PROCESO COMPLETADO")
+    print("âœ… PROCESO COMPLETADO")
     print("=" * 70)
+
