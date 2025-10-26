@@ -1,11 +1,5 @@
 {
   "frameworks_found": {
-    "app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 1878
-    },
     "app_backup.py": {
       "frameworks": [
         "Flask"
@@ -29,12 +23,6 @@
         "Flask"
       ],
       "size": 27967
-    },
-    "enhanced_app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 19696
     },
     "main.py": {
       "frameworks": [
@@ -72,12 +60,6 @@
       ],
       "size": 3850
     },
-    "agents_backup\\app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 811
-    },
     "agents_backup\\app_backup.py": {
       "frameworks": [
         "Flask"
@@ -108,60 +90,6 @@
       ],
       "size": 17875
     },
-    "backup_golden\\app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 1878
-    },
-    "backup_golden_20250928_200328\\app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 1878
-    },
-    "backup_golden_20250928_200328\\app_backup.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 10022
-    },
-    "backup_golden_20250928_200328\\app_cors.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 995
-    },
-    "backup_golden_20250928_200328\\app_cors_fixed.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 3073
-    },
-    "backup_golden_20250928_200328\\credicefi_api.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 27967
-    },
-    "backup_golden_20250928_200328\\enhanced_app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 19696
-    },
-    "backup_golden_20250928_200328\\main_enterprise.py": {
-      "frameworks": [
-        "FastAPI"
-      ],
-      "size": 7904
-    },
-    "backup_golden_20250928_200328\\main_enterprise_working.py": {
-      "frameworks": [
-        "FastAPI"
-      ],
-      "size": 3850
-    },
     "core\\cors_config.py": {
       "frameworks": [
         "FastAPI"
@@ -174,17 +102,23 @@
       ],
       "size": 2133
     },
-    "lambda-deployment\\app.py": {
+    "legacy_flask\\app.py": {
       "frameworks": [
         "Flask"
       ],
-      "size": 5197
+      "size": 38116
     },
-    "lambda-deployment\\credicefi_api.py": {
+    "legacy_flask\\enhanced_app.py": {
       "frameworks": [
         "Flask"
       ],
-      "size": 24445
+      "size": 19696
+    },
+    "legacy_flask\\flask_blueprints.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 7984
     },
     "scripts\\advanced_web_audit.py": {
       "frameworks": [
@@ -219,12 +153,6 @@
       ],
       "size": 17875
     },
-    "agents_backup\\lambda-deployment\\app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 5197
-    },
     "agents_backup\\lambda-deployment\\credicefi_api.py": {
       "frameworks": [
         "Flask"
@@ -236,18 +164,6 @@
         "Flask"
       ],
       "size": 4325
-    },
-    "agents_backup\\extensions\\integration\\flask_blueprints.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 7984
-    },
-    "agents_backup\\lambda-deployment\\flask\\app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 61744
     },
     "agents_backup\\lambda-deployment\\flask\\cli.py": {
       "frameworks": [
@@ -338,12 +254,6 @@
         "Flask"
       ],
       "size": 9281
-    },
-    "agents_backup\\lambda-deployment\\flask\\sansio\\app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 38116
     },
     "agents_backup\\lambda-deployment\\scipy\\_lib\\_util.py": {
       "frameworks": [
@@ -597,12 +507,6 @@
       ],
       "size": 37
     },
-    "agents_backup\\nadakki_env_clean\\Lib\\site-packages\\flask\\app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 61744
-    },
     "agents_backup\\nadakki_env_clean\\Lib\\site-packages\\flask\\cli.py": {
       "frameworks": [
         "Flask"
@@ -759,12 +663,6 @@
       ],
       "size": 9281
     },
-    "agents_backup\\nadakki_env_clean\\Lib\\site-packages\\flask\\sansio\\app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 38116
-    },
     "agents_backup\\nadakki_env_clean\\Lib\\site-packages\\pydantic\\v1\\utils.py": {
       "frameworks": [
         "Django"
@@ -789,295 +687,397 @@
       ],
       "size": 4325
     },
-    "backup_golden_20250928_200328\\core\\cors_config.py": {
-      "frameworks": [
-        "FastAPI"
-      ],
-      "size": 1981
-    },
-    "backup_golden_20250928_200328\\core\\authentication\\jwt_auth.py": {
-      "frameworks": [
-        "FastAPI"
-      ],
-      "size": 5588
-    },
     "core\\authentication\\jwt_auth.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 5588
     },
-    "extensions\\integration\\flask_blueprints.py": {
+    "legacy_flask\\backup_golden_20250928_200328\\app_backup.py": {
       "frameworks": [
         "Flask"
       ],
-      "size": 7984
+      "size": 10022
     },
-    "lambda-deployment\\flask\\app.py": {
+    "legacy_flask\\backup_golden_20250928_200328\\app_cors.py": {
       "frameworks": [
         "Flask"
       ],
-      "size": 61744
+      "size": 995
     },
-    "lambda-deployment\\flask\\cli.py": {
+    "legacy_flask\\backup_golden_20250928_200328\\app_cors_fixed.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 3073
+    },
+    "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 27967
+    },
+    "legacy_flask\\backup_golden_20250928_200328\\main_enterprise.py": {
+      "frameworks": [
+        "FastAPI"
+      ],
+      "size": 7904
+    },
+    "legacy_flask\\backup_golden_20250928_200328\\main_enterprise_working.py": {
+      "frameworks": [
+        "FastAPI"
+      ],
+      "size": 3850
+    },
+    "legacy_flask\\flask\\cli.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 37184
     },
-    "lambda-deployment\\flask\\ctx.py": {
+    "legacy_flask\\flask\\ctx.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 15120
     },
-    "lambda-deployment\\flask\\globals.py": {
+    "legacy_flask\\flask\\globals.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 1713
     },
-    "lambda-deployment\\flask\\helpers.py": {
+    "legacy_flask\\flask\\helpers.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 23521
     },
-    "lambda-deployment\\flask\\sessions.py": {
+    "legacy_flask\\flask\\sessions.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 15495
     },
-    "lambda-deployment\\flask\\templating.py": {
+    "legacy_flask\\flask\\templating.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 7537
     },
-    "lambda-deployment\\flask\\testing.py": {
+    "legacy_flask\\flask\\testing.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 10136
     },
-    "lambda-deployment\\flask\\typing.py": {
+    "legacy_flask\\flask\\typing.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 3293
     },
-    "lambda-deployment\\flask\\__init__.py": {
+    "legacy_flask\\flask\\__init__.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 2701
     },
-    "lambda-deployment\\flask_cors\\core.py": {
+    "legacy_flask\\flask_cors\\core.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 14416
     },
-    "lambda-deployment\\flask_cors\\decorator.py": {
+    "legacy_flask\\flask_cors\\decorator.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 4706
     },
-    "lambda-deployment\\flask_cors\\extension.py": {
+    "legacy_flask\\flask_cors\\extension.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 8268
     },
-    "lambda-deployment\\jinja2\\parser.py": {
-      "frameworks": [
-        "Django"
-      ],
-      "size": 40383
-    },
-    "lambda-deployment\\werkzeug\\utils.py": {
+    "legacy_flask\\lambda-deployment\\credicefi_api.py": {
       "frameworks": [
         "Flask"
       ],
-      "size": 24725
+      "size": 24445
     },
-    "lambda-deployment\\flask\\json\\tag.py": {
+    "legacy_flask\\backup_golden_20250928_200328\\core\\cors_config.py": {
+      "frameworks": [
+        "FastAPI"
+      ],
+      "size": 1981
+    },
+    "legacy_flask\\backup_golden_20250928_200328\\core\\authentication\\jwt_auth.py": {
+      "frameworks": [
+        "FastAPI"
+      ],
+      "size": 5588
+    },
+    "legacy_flask\\flask\\json\\tag.py": {
       "frameworks": [
         "Flask"
       ],
       "size": 9281
     },
-    "lambda-deployment\\flask\\sansio\\app.py": {
+    "legacy_flask\\lambda-deployment\\flask\\cli.py": {
       "frameworks": [
         "Flask"
       ],
-      "size": 38116
+      "size": 37184
     },
-    "lambda-deployment\\scipy\\_lib\\_util.py": {
+    "legacy_flask\\lambda-deployment\\flask\\ctx.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 15120
+    },
+    "legacy_flask\\lambda-deployment\\flask\\globals.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 1713
+    },
+    "legacy_flask\\lambda-deployment\\flask\\helpers.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 23521
+    },
+    "legacy_flask\\lambda-deployment\\flask\\sessions.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 15495
+    },
+    "legacy_flask\\lambda-deployment\\flask\\templating.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 7537
+    },
+    "legacy_flask\\lambda-deployment\\flask\\testing.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 10136
+    },
+    "legacy_flask\\lambda-deployment\\flask\\typing.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 3293
+    },
+    "legacy_flask\\lambda-deployment\\flask\\__init__.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 2701
+    },
+    "legacy_flask\\lambda-deployment\\flask_cors\\core.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 14416
+    },
+    "legacy_flask\\lambda-deployment\\flask_cors\\decorator.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 4706
+    },
+    "legacy_flask\\lambda-deployment\\flask_cors\\extension.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 8268
+    },
+    "legacy_flask\\lambda-deployment\\jinja2\\parser.py": {
+      "frameworks": [
+        "Django"
+      ],
+      "size": 40383
+    },
+    "legacy_flask\\lambda-deployment\\werkzeug\\utils.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 24725
+    },
+    "legacy_flask\\lambda-deployment\\flask\\json\\tag.py": {
+      "frameworks": [
+        "Flask"
+      ],
+      "size": 9281
+    },
+    "legacy_flask\\lambda-deployment\\scipy\\_lib\\_util.py": {
       "frameworks": [
         "Django"
       ],
       "size": 49948
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\main.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\main.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 665
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 176550
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\background.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\background.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 1768
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\cli.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\cli.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 418
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\datastructures.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\datastructures.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 5766
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\encoders.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\encoders.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 11068
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\exceptions.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\exceptions.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 4969
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\exception_handlers.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\exception_handlers.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 1332
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\params.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\params.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 28237
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\param_functions.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\param_functions.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 64019
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 176337
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\utils.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\utils.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 7948
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\_compat.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\_compat.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 24228
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\__init__.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\__init__.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 1081
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\__main__.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\__main__.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 37
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\starlette\\requests.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\starlette\\requests.py": {
       "frameworks": [
         "Django"
       ],
       "size": 11683
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\dependencies\\models.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\dependencies\\models.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 1507
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\dependencies\\utils.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\dependencies\\utils.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 36619
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\openapi\\docs.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\openapi\\docs.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 10345
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\openapi\\models.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\openapi\\models.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 15397
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\openapi\\utils.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\openapi\\utils.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 23964
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\api_key.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\api_key.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 9094
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\base.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\base.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 141
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\http.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\http.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 13606
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\oauth2.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\oauth2.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 22036
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\open_id_connect_url.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\open_id_connect_url.py": {
       "frameworks": [
         "FastAPI"
       ],
       "size": 2722
     },
-    "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\pydantic\\v1\\utils.py": {
+    "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\pydantic\\v1\\utils.py": {
       "frameworks": [
         "Django"
       ],
@@ -1166,12 +1166,6 @@
         "FastAPI"
       ],
       "size": 37
-    },
-    "nadakki_env_clean\\Lib\\site-packages\\flask\\app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 61744
     },
     "nadakki_env_clean\\Lib\\site-packages\\flask\\cli.py": {
       "frameworks": [
@@ -1329,12 +1323,6 @@
       ],
       "size": 9281
     },
-    "nadakki_env_clean\\Lib\\site-packages\\flask\\sansio\\app.py": {
-      "frameworks": [
-        "Flask"
-      ],
-      "size": 38116
-    },
     "nadakki_env_clean\\Lib\\site-packages\\pydantic\\v1\\utils.py": {
       "frameworks": [
         "Django"
@@ -1358,96 +1346,6 @@
     {
       "route": "/",
       "function": "home",
-      "file": "app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health",
-      "file": "app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health",
-      "file": "app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate",
-      "file": "app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate",
-      "file": "app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/login",
-      "function": "login",
-      "file": "app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/login",
-      "function": "login",
-      "file": "app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/similarity/compare",
-      "function": "similarity",
-      "file": "app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/similarity/compare",
-      "function": "similarity",
-      "file": "app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
       "file": "app_backup.py",
       "framework": "Flask",
       "methods": [
@@ -1836,114 +1734,6 @@
       "route": "/api/v1/evaluate",
       "function": "evaluate_profile",
       "file": "credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health",
-      "file": "enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health",
-      "file": "enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_credit",
-      "file": "enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_credit",
-      "file": "enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/institution/<institution_id>/dashboard",
-      "function": "institution_dashboard",
-      "file": "enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/institution/<institution_id>/dashboard",
-      "function": "institution_dashboard",
-      "file": "enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/agent/<agent_id>/test",
-      "function": "test_agent",
-      "file": "enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/agent/<agent_id>/test",
-      "function": "test_agent",
-      "file": "enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/agents/status",
-      "function": "agents_status",
-      "file": "enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/agents/status",
-      "function": "agents_status",
-      "file": "enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -2726,42 +2516,6 @@
     {
       "route": "/",
       "function": "home",
-      "file": "agents_backup\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "agents_backup\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/health",
-      "function": "health",
-      "file": "agents_backup\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/health",
-      "function": "health",
-      "file": "agents_backup\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
       "file": "agents_backup\\app_backup.py",
       "framework": "Flask",
       "methods": [
@@ -3300,18 +3054,9 @@
       ]
     },
     {
-      "route": "/",
-      "function": "home",
-      "file": "backup_golden\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "backup_golden\\app.py",
+      "route": "/api/v1/health",
+      "function": "health",
+      "file": "emergency_backend\\backend_connector.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3320,16 +3065,7 @@
     {
       "route": "/api/v1/health",
       "function": "health",
-      "file": "backup_golden\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health",
-      "file": "backup_golden\\app.py",
+      "file": "emergency_backend\\backend_connector.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3338,7 +3074,7 @@
     {
       "route": "/api/v1/evaluate",
       "function": "evaluate",
-      "file": "backup_golden\\app.py",
+      "file": "emergency_backend\\backend_connector.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3347,43 +3083,25 @@
     {
       "route": "/api/v1/evaluate",
       "function": "evaluate",
-      "file": "backup_golden\\app.py",
+      "file": "emergency_backend\\backend_connector.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/api/v1/login",
-      "function": "login",
-      "file": "backup_golden\\app.py",
+      "route": "/path",
+      "function": "unknown",
+      "file": "legacy_flask\\audit_flask_routes_real.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/api/v1/login",
-      "function": "login",
-      "file": "backup_golden\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/similarity/compare",
-      "function": "similarity",
-      "file": "backup_golden\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/similarity/compare",
-      "function": "similarity",
-      "file": "backup_golden\\app.py",
+      "route": "/path",
+      "function": "unknown",
+      "file": "legacy_flask\\audit_flask_routes_real.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3392,7 +3110,7 @@
     {
       "route": "/",
       "function": "home",
-      "file": "backup_golden_20250928_200328\\app.py",
+      "file": "legacy_flask\\enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3401,7 +3119,7 @@
     {
       "route": "/",
       "function": "home",
-      "file": "backup_golden_20250928_200328\\app.py",
+      "file": "legacy_flask\\enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3410,7 +3128,7 @@
     {
       "route": "/api/v1/health",
       "function": "health",
-      "file": "backup_golden_20250928_200328\\app.py",
+      "file": "legacy_flask\\enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3419,493 +3137,7 @@
     {
       "route": "/api/v1/health",
       "function": "health",
-      "file": "backup_golden_20250928_200328\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate",
-      "file": "backup_golden_20250928_200328\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate",
-      "file": "backup_golden_20250928_200328\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/login",
-      "function": "login",
-      "file": "backup_golden_20250928_200328\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/login",
-      "function": "login",
-      "file": "backup_golden_20250928_200328\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/similarity/compare",
-      "function": "similarity",
-      "file": "backup_golden_20250928_200328\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/similarity/compare",
-      "function": "similarity",
-      "file": "backup_golden_20250928_200328\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health_check",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health_check",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_profile_basic",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_profile_basic",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate/full",
-      "function": "evaluate_profile_full",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate/full",
-      "function": "evaluate_profile_full",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/agents/status",
-      "function": "agent_status",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/agents/status",
-      "function": "agent_status",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/collections-info",
-      "function": "collections_info",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/collections-info",
-      "function": "collections_info",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/collections-info",
-      "function": "collections_info",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/collections-info",
-      "function": "collections_info",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/collections-info",
-      "function": "collections_info",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/collections-info",
-      "function": "collections_info",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/collections-status",
-      "function": "collections_status",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/collections-status",
-      "function": "collections_status",
-      "file": "backup_golden_20250928_200328\\app_backup.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/health",
-      "function": "health_check",
-      "file": "backup_golden_20250928_200328\\app_cors.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/health",
-      "function": "health_check",
-      "file": "backup_golden_20250928_200328\\app_cors.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/evaluate-credit",
-      "function": "evaluate_credit",
-      "file": "backup_golden_20250928_200328\\app_cors.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/evaluate-credit",
-      "function": "evaluate_credit",
-      "file": "backup_golden_20250928_200328\\app_cors.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/health",
-      "function": "health_check",
-      "file": "backup_golden_20250928_200328\\app_cors_fixed.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/health",
-      "function": "health_check",
-      "file": "backup_golden_20250928_200328\\app_cors_fixed.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/evaluate-credit",
-      "function": "evaluate_credit",
-      "file": "backup_golden_20250928_200328\\app_cors_fixed.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/evaluate-credit",
-      "function": "evaluate_credit",
-      "file": "backup_golden_20250928_200328\\app_cors_fixed.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/collections-info",
-      "function": "collections_info",
-      "file": "backup_golden_20250928_200328\\collections_integration.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/collections-info",
-      "function": "collections_info",
-      "file": "backup_golden_20250928_200328\\collections_integration.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health_check",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health_check",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_profile",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_profile",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/agents/status",
-      "function": "agents_status",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/agents/status",
-      "function": "agents_status",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/tenant/<tenant_id>",
-      "function": "get_tenant_info",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/tenant/<tenant_id>",
-      "function": "get_tenant_info",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/demo/evaluate",
-      "function": "demo_evaluation",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/demo/evaluate",
-      "function": "demo_evaluation",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/tenants",
-      "function": "list_tenants",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/tenants",
-      "function": "list_tenants",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_profile",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_profile",
-      "file": "backup_golden_20250928_200328\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "backup_golden_20250928_200328\\enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "backup_golden_20250928_200328\\enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health",
-      "file": "backup_golden_20250928_200328\\enhanced_app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health",
-      "file": "backup_golden_20250928_200328\\enhanced_app.py",
+      "file": "legacy_flask\\enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3914,7 +3146,7 @@
     {
       "route": "/api/v1/evaluate",
       "function": "evaluate_credit",
-      "file": "backup_golden_20250928_200328\\enhanced_app.py",
+      "file": "legacy_flask\\enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3923,7 +3155,7 @@
     {
       "route": "/api/v1/evaluate",
       "function": "evaluate_credit",
-      "file": "backup_golden_20250928_200328\\enhanced_app.py",
+      "file": "legacy_flask\\enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3932,7 +3164,7 @@
     {
       "route": "/api/v1/institution/<institution_id>/dashboard",
       "function": "institution_dashboard",
-      "file": "backup_golden_20250928_200328\\enhanced_app.py",
+      "file": "legacy_flask\\enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3941,7 +3173,7 @@
     {
       "route": "/api/v1/institution/<institution_id>/dashboard",
       "function": "institution_dashboard",
-      "file": "backup_golden_20250928_200328\\enhanced_app.py",
+      "file": "legacy_flask\\enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3950,7 +3182,7 @@
     {
       "route": "/api/v1/agent/<agent_id>/test",
       "function": "test_agent",
-      "file": "backup_golden_20250928_200328\\enhanced_app.py",
+      "file": "legacy_flask\\enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3959,7 +3191,7 @@
     {
       "route": "/api/v1/agent/<agent_id>/test",
       "function": "test_agent",
-      "file": "backup_golden_20250928_200328\\enhanced_app.py",
+      "file": "legacy_flask\\enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3968,7 +3200,7 @@
     {
       "route": "/api/v1/agents/status",
       "function": "agents_status",
-      "file": "backup_golden_20250928_200328\\enhanced_app.py",
+      "file": "legacy_flask\\enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -3977,331 +3209,88 @@
     {
       "route": "/api/v1/agents/status",
       "function": "agents_status",
-      "file": "backup_golden_20250928_200328\\enhanced_app.py",
+      "file": "legacy_flask\\enhanced_app.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/api/v1/health",
-      "function": "unknown",
-      "file": "backup_golden_20250928_200328\\main_enterprise.py",
-      "framework": "FastAPI",
-      "methods": [
-        "GET(\"/"
-      ]
-    },
-    {
-      "route": "/api/v1/auth/login",
-      "function": "unknown",
-      "file": "backup_golden_20250928_200328\\main_enterprise.py",
-      "framework": "FastAPI",
-      "methods": [
-        "POST(\"/"
-      ]
-    },
-    {
-      "route": "/api/v1/auth/refresh",
-      "function": "unknown",
-      "file": "backup_golden_20250928_200328\\main_enterprise.py",
-      "framework": "FastAPI",
-      "methods": [
-        "POST(\"/"
-      ]
-    },
-    {
-      "route": "/api/v1/info",
-      "function": "unknown",
-      "file": "backup_golden_20250928_200328\\main_enterprise.py",
-      "framework": "FastAPI",
-      "methods": [
-        "GET(\"/"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "unknown",
-      "file": "backup_golden_20250928_200328\\main_enterprise_working.py",
-      "framework": "FastAPI",
-      "methods": [
-        "GET(\"/"
-      ]
-    },
-    {
-      "route": "/api/v1/info",
-      "function": "unknown",
-      "file": "backup_golden_20250928_200328\\main_enterprise_working.py",
-      "framework": "FastAPI",
-      "methods": [
-        "GET(\"/"
-      ]
-    },
-    {
-      "route": "/api/v1/wp/evaluate",
-      "function": "unknown",
-      "file": "backup_golden_20250928_200328\\main_enterprise_working.py",
-      "framework": "FastAPI",
-      "methods": [
-        "POST(\"/"
-      ]
-    },
-    {
-      "route": "/api/v1/wp/agents",
-      "function": "unknown",
-      "file": "backup_golden_20250928_200328\\main_enterprise_working.py",
-      "framework": "FastAPI",
-      "methods": [
-        "GET(\"/"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health",
-      "file": "emergency_backend\\backend_connector.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health",
-      "file": "emergency_backend\\backend_connector.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate",
-      "file": "emergency_backend\\backend_connector.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate",
-      "file": "emergency_backend\\backend_connector.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "lambda-deployment\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "lambda-deployment\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
+      "route": "/health",
       "function": "health_check",
-      "file": "lambda-deployment\\app.py",
+      "file": "legacy_flask\\flask_blueprints.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/api/v1/health",
-      "function": "health_check",
-      "file": "lambda-deployment\\app.py",
+      "route": "/cases",
+      "function": "create_case",
+      "file": "legacy_flask\\flask_blueprints.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_profile_basic",
-      "file": "lambda-deployment\\app.py",
+      "route": "/cases/<int:case_id>",
+      "function": "get_case",
+      "file": "legacy_flask\\flask_blueprints.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_profile_basic",
-      "file": "lambda-deployment\\app.py",
+      "route": "/calls/queue",
+      "function": "enqueue_call",
+      "file": "legacy_flask\\flask_blueprints.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/api/v1/evaluate/full",
-      "function": "evaluate_profile_full",
-      "file": "lambda-deployment\\app.py",
+      "route": "/calls/metrics",
+      "function": "get_call_metrics",
+      "file": "legacy_flask\\flask_blueprints.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/api/v1/evaluate/full",
-      "function": "evaluate_profile_full",
-      "file": "lambda-deployment\\app.py",
+      "route": "/compliance/validate",
+      "function": "validate_compliance",
+      "file": "legacy_flask\\flask_blueprints.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/api/v1/agents/status",
-      "function": "agent_status",
-      "file": "lambda-deployment\\app.py",
+      "route": "/compliance/report",
+      "function": "get_compliance_report",
+      "file": "legacy_flask\\flask_blueprints.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/api/v1/agents/status",
-      "function": "agent_status",
-      "file": "lambda-deployment\\app.py",
+      "route": "/costs/status",
+      "function": "get_cost_status",
+      "file": "legacy_flask\\flask_blueprints.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/",
-      "function": "home",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health_check",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health_check",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_profile",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_profile",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/agents/status",
-      "function": "agents_status",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/agents/status",
-      "function": "agents_status",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/tenant/<tenant_id>",
-      "function": "get_tenant_info",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/tenant/<tenant_id>",
-      "function": "get_tenant_info",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/demo/evaluate",
-      "function": "demo_evaluation",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/demo/evaluate",
-      "function": "demo_evaluation",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/tenants",
-      "function": "list_tenants",
-      "file": "lambda-deployment\\credicefi_api.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/tenants",
-      "function": "list_tenants",
-      "file": "lambda-deployment\\credicefi_api.py",
+      "route": "/costs/recommendations",
+      "function": "get_cost_recommendations",
+      "file": "legacy_flask\\flask_blueprints.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -4467,24 +3456,6 @@
       "framework": "FastAPI",
       "methods": [
         "DELETE(\"/"
-      ]
-    },
-    {
-      "route": "/path",
-      "function": "unknown",
-      "file": "scripts\\audit_flask_routes_real.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/path",
-      "function": "unknown",
-      "file": "scripts\\audit_flask_routes_real.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
       ]
     },
     {
@@ -4688,96 +3659,6 @@
     {
       "route": "/",
       "function": "home",
-      "file": "agents_backup\\lambda-deployment\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
-      "file": "agents_backup\\lambda-deployment\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health_check",
-      "file": "agents_backup\\lambda-deployment\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/health",
-      "function": "health_check",
-      "file": "agents_backup\\lambda-deployment\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_profile_basic",
-      "file": "agents_backup\\lambda-deployment\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate",
-      "function": "evaluate_profile_basic",
-      "file": "agents_backup\\lambda-deployment\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate/full",
-      "function": "evaluate_profile_full",
-      "file": "agents_backup\\lambda-deployment\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/evaluate/full",
-      "function": "evaluate_profile_full",
-      "file": "agents_backup\\lambda-deployment\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/agents/status",
-      "function": "agent_status",
-      "file": "agents_backup\\lambda-deployment\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/api/v1/agents/status",
-      "function": "agent_status",
-      "file": "agents_backup\\lambda-deployment\\app.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/",
-      "function": "home",
       "file": "agents_backup\\lambda-deployment\\credicefi_api.py",
       "framework": "Flask",
       "methods": [
@@ -4926,96 +3807,6 @@
       "framework": "Flask",
       "methods": [
         "GET"
-      ]
-    },
-    {
-      "route": "/health",
-      "function": "health_check",
-      "file": "agents_backup\\extensions\\integration\\flask_blueprints.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/cases",
-      "function": "create_case",
-      "file": "agents_backup\\extensions\\integration\\flask_blueprints.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/cases/<int:case_id>",
-      "function": "get_case",
-      "file": "agents_backup\\extensions\\integration\\flask_blueprints.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/calls/queue",
-      "function": "enqueue_call",
-      "file": "agents_backup\\extensions\\integration\\flask_blueprints.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/calls/metrics",
-      "function": "get_call_metrics",
-      "file": "agents_backup\\extensions\\integration\\flask_blueprints.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/compliance/validate",
-      "function": "validate_compliance",
-      "file": "agents_backup\\extensions\\integration\\flask_blueprints.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/compliance/report",
-      "function": "get_compliance_report",
-      "file": "agents_backup\\extensions\\integration\\flask_blueprints.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/costs/status",
-      "function": "get_cost_status",
-      "file": "agents_backup\\extensions\\integration\\flask_blueprints.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/costs/recommendations",
-      "function": "get_cost_recommendations",
-      "file": "agents_backup\\extensions\\integration\\flask_blueprints.py",
-      "framework": "Flask",
-      "methods": [
-        "GET"
-      ]
-    },
-    {
-      "route": "/?vodka=42",
-      "function": "unknown",
-      "file": "agents_backup\\lambda-deployment\\flask\\app.py",
-      "framework": "FastAPI",
-      "methods": [
-        "GET('/"
       ]
     },
     {
@@ -5649,15 +4440,6 @@
       ]
     },
     {
-      "route": "/?vodka=42",
-      "function": "unknown",
-      "file": "agents_backup\\nadakki_env_clean\\Lib\\site-packages\\flask\\app.py",
-      "framework": "FastAPI",
-      "methods": [
-        "GET('/"
-      ]
-    },
-    {
       "route": "/",
       "function": "index",
       "file": "agents_backup\\nadakki_env_clean\\Lib\\site-packages\\flask\\ctx.py",
@@ -5937,99 +4719,477 @@
       ]
     },
     {
-      "route": "/health",
+      "route": "/",
+      "function": "home",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "home",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/health",
       "function": "health_check",
-      "file": "extensions\\integration\\flask_blueprints.py",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/cases",
-      "function": "create_case",
-      "file": "extensions\\integration\\flask_blueprints.py",
+      "route": "/api/v1/health",
+      "function": "health_check",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/cases/<int:case_id>",
-      "function": "get_case",
-      "file": "extensions\\integration\\flask_blueprints.py",
+      "route": "/api/v1/evaluate",
+      "function": "evaluate_profile_basic",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/calls/queue",
-      "function": "enqueue_call",
-      "file": "extensions\\integration\\flask_blueprints.py",
+      "route": "/api/v1/evaluate",
+      "function": "evaluate_profile_basic",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/calls/metrics",
-      "function": "get_call_metrics",
-      "file": "extensions\\integration\\flask_blueprints.py",
+      "route": "/api/v1/evaluate/full",
+      "function": "evaluate_profile_full",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/compliance/validate",
-      "function": "validate_compliance",
-      "file": "extensions\\integration\\flask_blueprints.py",
+      "route": "/api/v1/evaluate/full",
+      "function": "evaluate_profile_full",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/compliance/report",
-      "function": "get_compliance_report",
-      "file": "extensions\\integration\\flask_blueprints.py",
+      "route": "/api/v1/agents/status",
+      "function": "agent_status",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/costs/status",
-      "function": "get_cost_status",
-      "file": "extensions\\integration\\flask_blueprints.py",
+      "route": "/api/v1/agents/status",
+      "function": "agent_status",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/costs/recommendations",
-      "function": "get_cost_recommendations",
-      "file": "extensions\\integration\\flask_blueprints.py",
+      "route": "/api/v1/collections-info",
+      "function": "collections_info",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
       "framework": "Flask",
       "methods": [
         "GET"
       ]
     },
     {
-      "route": "/?vodka=42",
+      "route": "/api/v1/collections-info",
+      "function": "collections_info",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/collections-info",
+      "function": "collections_info",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/collections-info",
+      "function": "collections_info",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/collections-info",
+      "function": "collections_info",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/collections-info",
+      "function": "collections_info",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/collections-status",
+      "function": "collections_status",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/collections-status",
+      "function": "collections_status",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_backup.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/health",
+      "function": "health_check",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_cors.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/health",
+      "function": "health_check",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_cors.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/evaluate-credit",
+      "function": "evaluate_credit",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_cors.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/evaluate-credit",
+      "function": "evaluate_credit",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_cors.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/health",
+      "function": "health_check",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_cors_fixed.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/health",
+      "function": "health_check",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_cors_fixed.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/evaluate-credit",
+      "function": "evaluate_credit",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_cors_fixed.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/evaluate-credit",
+      "function": "evaluate_credit",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\app_cors_fixed.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/collections-info",
+      "function": "collections_info",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\collections_integration.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/collections-info",
+      "function": "collections_info",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\collections_integration.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "home",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "home",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/health",
+      "function": "health_check",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/health",
+      "function": "health_check",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/evaluate",
+      "function": "evaluate_profile",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/evaluate",
+      "function": "evaluate_profile",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/agents/status",
+      "function": "agents_status",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/agents/status",
+      "function": "agents_status",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/tenant/<tenant_id>",
+      "function": "get_tenant_info",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/tenant/<tenant_id>",
+      "function": "get_tenant_info",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/demo/evaluate",
+      "function": "demo_evaluation",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/demo/evaluate",
+      "function": "demo_evaluation",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/tenants",
+      "function": "list_tenants",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/tenants",
+      "function": "list_tenants",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/evaluate",
+      "function": "evaluate_profile",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/evaluate",
+      "function": "evaluate_profile",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/health",
       "function": "unknown",
-      "file": "lambda-deployment\\flask\\app.py",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\main_enterprise.py",
       "framework": "FastAPI",
       "methods": [
-        "GET('/"
+        "GET(\"/"
+      ]
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "function": "unknown",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\main_enterprise.py",
+      "framework": "FastAPI",
+      "methods": [
+        "POST(\"/"
+      ]
+    },
+    {
+      "route": "/api/v1/auth/refresh",
+      "function": "unknown",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\main_enterprise.py",
+      "framework": "FastAPI",
+      "methods": [
+        "POST(\"/"
+      ]
+    },
+    {
+      "route": "/api/v1/info",
+      "function": "unknown",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\main_enterprise.py",
+      "framework": "FastAPI",
+      "methods": [
+        "GET(\"/"
+      ]
+    },
+    {
+      "route": "/api/v1/health",
+      "function": "unknown",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\main_enterprise_working.py",
+      "framework": "FastAPI",
+      "methods": [
+        "GET(\"/"
+      ]
+    },
+    {
+      "route": "/api/v1/info",
+      "function": "unknown",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\main_enterprise_working.py",
+      "framework": "FastAPI",
+      "methods": [
+        "GET(\"/"
+      ]
+    },
+    {
+      "route": "/api/v1/wp/evaluate",
+      "function": "unknown",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\main_enterprise_working.py",
+      "framework": "FastAPI",
+      "methods": [
+        "POST(\"/"
+      ]
+    },
+    {
+      "route": "/api/v1/wp/agents",
+      "function": "unknown",
+      "file": "legacy_flask\\backup_golden_20250928_200328\\main_enterprise_working.py",
+      "framework": "FastAPI",
+      "methods": [
+        "GET(\"/"
       ]
     },
     {
       "route": "/",
       "function": "index",
-      "file": "lambda-deployment\\flask\\ctx.py",
+      "file": "legacy_flask\\flask\\ctx.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6038,7 +5198,7 @@
     {
       "route": "/",
       "function": "index",
-      "file": "lambda-deployment\\flask\\ctx.py",
+      "file": "legacy_flask\\flask\\ctx.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6047,7 +5207,7 @@
     {
       "route": "/",
       "function": "index",
-      "file": "lambda-deployment\\flask\\ctx.py",
+      "file": "legacy_flask\\flask\\ctx.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6056,7 +5216,7 @@
     {
       "route": "/",
       "function": "index",
-      "file": "lambda-deployment\\flask\\ctx.py",
+      "file": "legacy_flask\\flask\\ctx.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6065,7 +5225,7 @@
     {
       "route": "/stream",
       "function": "streamed_response",
-      "file": "lambda-deployment\\flask\\helpers.py",
+      "file": "legacy_flask\\flask\\helpers.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6074,7 +5234,7 @@
     {
       "route": "/stream",
       "function": "streamed_response",
-      "file": "lambda-deployment\\flask\\helpers.py",
+      "file": "legacy_flask\\flask\\helpers.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6083,7 +5243,7 @@
     {
       "route": "/stream",
       "function": "streamed_response",
-      "file": "lambda-deployment\\flask\\helpers.py",
+      "file": "legacy_flask\\flask\\helpers.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6092,7 +5252,7 @@
     {
       "route": "/stream",
       "function": "streamed_response",
-      "file": "lambda-deployment\\flask\\helpers.py",
+      "file": "legacy_flask\\flask\\helpers.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6101,7 +5261,7 @@
     {
       "route": "/uploads/<path:name>",
       "function": "download_file",
-      "file": "lambda-deployment\\flask\\helpers.py",
+      "file": "legacy_flask\\flask\\helpers.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6110,7 +5270,133 @@
     {
       "route": "/uploads/<path:name>",
       "function": "download_file",
-      "file": "lambda-deployment\\flask\\helpers.py",
+      "file": "legacy_flask\\flask\\helpers.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "home",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "home",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/health",
+      "function": "health_check",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/health",
+      "function": "health_check",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/evaluate",
+      "function": "evaluate_profile",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/evaluate",
+      "function": "evaluate_profile",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/agents/status",
+      "function": "agents_status",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/agents/status",
+      "function": "agents_status",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/tenant/<tenant_id>",
+      "function": "get_tenant_info",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/tenant/<tenant_id>",
+      "function": "get_tenant_info",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/demo/evaluate",
+      "function": "demo_evaluation",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/demo/evaluate",
+      "function": "demo_evaluation",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/tenants",
+      "function": "list_tenants",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/api/v1/tenants",
+      "function": "list_tenants",
+      "file": "legacy_flask\\lambda-deployment\\credicefi_api.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6119,7 +5405,7 @@
     {
       "route": "/",
       "function": "index",
-      "file": "lambda-deployment\\flask\\sansio\\scaffold.py",
+      "file": "legacy_flask\\flask\\sansio\\scaffold.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6128,7 +5414,7 @@
     {
       "route": "/",
       "function": "index",
-      "file": "lambda-deployment\\flask\\sansio\\scaffold.py",
+      "file": "legacy_flask\\flask\\sansio\\scaffold.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6137,7 +5423,7 @@
     {
       "route": "/",
       "function": "index",
-      "file": "lambda-deployment\\flask\\sansio\\scaffold.py",
+      "file": "legacy_flask\\flask\\sansio\\scaffold.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6146,7 +5432,133 @@
     {
       "route": "/",
       "function": "index",
-      "file": "lambda-deployment\\flask\\sansio\\scaffold.py",
+      "file": "legacy_flask\\flask\\sansio\\scaffold.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "index",
+      "file": "legacy_flask\\lambda-deployment\\flask\\ctx.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "index",
+      "file": "legacy_flask\\lambda-deployment\\flask\\ctx.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "index",
+      "file": "legacy_flask\\lambda-deployment\\flask\\ctx.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "index",
+      "file": "legacy_flask\\lambda-deployment\\flask\\ctx.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/stream",
+      "function": "streamed_response",
+      "file": "legacy_flask\\lambda-deployment\\flask\\helpers.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/stream",
+      "function": "streamed_response",
+      "file": "legacy_flask\\lambda-deployment\\flask\\helpers.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/stream",
+      "function": "streamed_response",
+      "file": "legacy_flask\\lambda-deployment\\flask\\helpers.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/stream",
+      "function": "streamed_response",
+      "file": "legacy_flask\\lambda-deployment\\flask\\helpers.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/uploads/<path:name>",
+      "function": "download_file",
+      "file": "legacy_flask\\lambda-deployment\\flask\\helpers.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/uploads/<path:name>",
+      "function": "download_file",
+      "file": "legacy_flask\\lambda-deployment\\flask\\helpers.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "index",
+      "file": "legacy_flask\\lambda-deployment\\flask\\sansio\\scaffold.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "index",
+      "file": "legacy_flask\\lambda-deployment\\flask\\sansio\\scaffold.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "index",
+      "file": "legacy_flask\\lambda-deployment\\flask\\sansio\\scaffold.py",
+      "framework": "Flask",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "route": "/",
+      "function": "index",
+      "file": "legacy_flask\\lambda-deployment\\flask\\sansio\\scaffold.py",
       "framework": "Flask",
       "methods": [
         "GET"
@@ -6155,7 +5567,7 @@
     {
       "route": "/a",
       "function": "unknown",
-      "file": "lambda-deployment\\pandas\\tests\\io\\pytables\\test_round_trip.py",
+      "file": "legacy_flask\\lambda-deployment\\pandas\\tests\\io\\pytables\\test_round_trip.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6164,7 +5576,7 @@
     {
       "route": "/first_group/df1",
       "function": "unknown",
-      "file": "lambda-deployment\\pandas\\tests\\io\\pytables\\test_store.py",
+      "file": "legacy_flask\\lambda-deployment\\pandas\\tests\\io\\pytables\\test_store.py",
       "framework": "FastAPI",
       "methods": [
         "PUT(\"/"
@@ -6173,7 +5585,7 @@
     {
       "route": "/first_group/df2",
       "function": "unknown",
-      "file": "lambda-deployment\\pandas\\tests\\io\\pytables\\test_store.py",
+      "file": "legacy_flask\\lambda-deployment\\pandas\\tests\\io\\pytables\\test_store.py",
       "framework": "FastAPI",
       "methods": [
         "PUT(\"/"
@@ -6182,7 +5594,7 @@
     {
       "route": "/second_group/df3",
       "function": "unknown",
-      "file": "lambda-deployment\\pandas\\tests\\io\\pytables\\test_store.py",
+      "file": "legacy_flask\\lambda-deployment\\pandas\\tests\\io\\pytables\\test_store.py",
       "framework": "FastAPI",
       "methods": [
         "PUT(\"/"
@@ -6191,7 +5603,7 @@
     {
       "route": "/second_group/s1",
       "function": "unknown",
-      "file": "lambda-deployment\\pandas\\tests\\io\\pytables\\test_store.py",
+      "file": "legacy_flask\\lambda-deployment\\pandas\\tests\\io\\pytables\\test_store.py",
       "framework": "FastAPI",
       "methods": [
         "PUT(\"/"
@@ -6200,7 +5612,7 @@
     {
       "route": "/second_group/third_group/df4",
       "function": "unknown",
-      "file": "lambda-deployment\\pandas\\tests\\io\\pytables\\test_store.py",
+      "file": "legacy_flask\\lambda-deployment\\pandas\\tests\\io\\pytables\\test_store.py",
       "framework": "FastAPI",
       "methods": [
         "PUT(\"/"
@@ -6209,7 +5621,7 @@
     {
       "route": "/",
       "function": "root",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\main.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\main.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6218,7 +5630,7 @@
     {
       "route": "/api/dispatch",
       "function": "dispatch",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\main.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\main.py",
       "framework": "FastAPI",
       "methods": [
         "POST(\"/"
@@ -6227,7 +5639,7 @@
     {
       "route": "/users/",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6236,7 +5648,7 @@
     {
       "route": "/items/",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6245,7 +5657,7 @@
     {
       "route": "/items/",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6254,7 +5666,7 @@
     {
       "route": "/items/",
       "function": "read_items",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6263,7 +5675,7 @@
     {
       "route": "/items/{item_id}",
       "function": "replace_item",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
       "framework": "FastAPI",
       "methods": [
         "PUT(\"/"
@@ -6272,7 +5684,7 @@
     {
       "route": "/items/",
       "function": "create_item",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
       "framework": "FastAPI",
       "methods": [
         "POST(\"/"
@@ -6281,7 +5693,7 @@
     {
       "route": "/items/{item_id}",
       "function": "delete_item",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\applications.py",
       "framework": "FastAPI",
       "methods": [
         "DELETE(\"/"
@@ -6290,7 +5702,7 @@
     {
       "route": "/send-notification/{email}",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\background.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\background.py",
       "framework": "FastAPI",
       "methods": [
         "POST(\"/"
@@ -6299,7 +5711,7 @@
     {
       "route": "/files/",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\datastructures.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\datastructures.py",
       "framework": "FastAPI",
       "methods": [
         "POST(\"/"
@@ -6308,7 +5720,7 @@
     {
       "route": "/uploadfile/",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\datastructures.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\datastructures.py",
       "framework": "FastAPI",
       "methods": [
         "POST(\"/"
@@ -6317,7 +5729,7 @@
     {
       "route": "/items/{item_id}",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\exceptions.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\exceptions.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6326,7 +5738,7 @@
     {
       "route": "/items/{item_id}",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\param_functions.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\param_functions.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6335,7 +5747,7 @@
     {
       "route": "/items/",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\param_functions.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\param_functions.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6344,7 +5756,7 @@
     {
       "route": "/users/me/items/",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\param_functions.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\param_functions.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6353,7 +5765,7 @@
     {
       "route": "/users/",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6362,7 +5774,7 @@
     {
       "route": "/users/",
       "function": "read_users",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6371,7 +5783,7 @@
     {
       "route": "/items/",
       "function": "read_items",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6380,7 +5792,7 @@
     {
       "route": "/items/{item_id}",
       "function": "replace_item",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py",
       "framework": "FastAPI",
       "methods": [
         "PUT(\"/"
@@ -6389,7 +5801,7 @@
     {
       "route": "/items/",
       "function": "create_item",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py",
       "framework": "FastAPI",
       "methods": [
         "POST(\"/"
@@ -6398,7 +5810,7 @@
     {
       "route": "/items/{item_id}",
       "function": "delete_item",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\routing.py",
       "framework": "FastAPI",
       "methods": [
         "DELETE(\"/"
@@ -6407,7 +5819,7 @@
     {
       "route": "/items/",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\api_key.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\api_key.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6416,7 +5828,7 @@
     {
       "route": "/items/",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\api_key.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\api_key.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6425,7 +5837,7 @@
     {
       "route": "/items/",
       "function": "unknown",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\api_key.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\api_key.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6434,7 +5846,7 @@
     {
       "route": "/users/me",
       "function": "read_current_user",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\http.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\http.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6443,7 +5855,7 @@
     {
       "route": "/users/me",
       "function": "read_current_user",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\http.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\http.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6452,7 +5864,7 @@
     {
       "route": "/users/me",
       "function": "read_current_user",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\http.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\http.py",
       "framework": "FastAPI",
       "methods": [
         "GET(\"/"
@@ -6461,7 +5873,7 @@
     {
       "route": "/login",
       "function": "login",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\oauth2.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\oauth2.py",
       "framework": "FastAPI",
       "methods": [
         "POST(\"/"
@@ -6470,7 +5882,7 @@
     {
       "route": "/login",
       "function": "login",
-      "file": "nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\oauth2.py",
+      "file": "legacy_flask\\nadakki-suite-deployment-v1.0\\runtime\\nadakki_env_clean\\Lib\\site-packages\\fastapi\\security\\oauth2.py",
       "framework": "FastAPI",
       "methods": [
         "POST(\"/"
@@ -6654,15 +6066,6 @@
       "framework": "FastAPI",
       "methods": [
         "DELETE(\"/"
-      ]
-    },
-    {
-      "route": "/?vodka=42",
-      "function": "unknown",
-      "file": "nadakki_env_clean\\Lib\\site-packages\\flask\\app.py",
-      "framework": "FastAPI",
-      "methods": [
-        "GET('/"
       ]
     },
     {
@@ -6919,12 +6322,12 @@
     }
   ],
   "summary": {
-    "total_routes": 618,
-    "framework_files": 225,
+    "total_routes": 553,
+    "framework_files": 223,
     "frameworks": [
+      "Django",
       "FastAPI",
-      "Flask",
-      "Django"
+      "Flask"
     ]
   }
 }
