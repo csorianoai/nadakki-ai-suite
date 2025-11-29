@@ -1,0 +1,14 @@
+{
+  "id": 89,
+  "slug": "reporting",
+  "nombre": "Advanced Reporting",
+  "tipo": "backend",
+  "lenguaje": "python",
+  "descripcion": "Generacion de reportes",
+  "componentes": [
+    "report_generator.py"
+  ],
+  "tecnologias": [
+    "ReportLab"
+  ]
+}

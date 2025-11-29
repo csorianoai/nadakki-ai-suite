@@ -1,0 +1,14 @@
+{
+  "id": 91,
+  "slug": "compliance",
+  "nombre": "Compliance Module",
+  "tipo": "backend",
+  "lenguaje": "python",
+  "descripcion": "AML, KYC, GDPR",
+  "componentes": [
+    "compliance_checker.py"
+  ],
+  "tecnologias": [
+    "FastAPI"
+  ]
+}

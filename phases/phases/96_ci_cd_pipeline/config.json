@@ -1,0 +1,14 @@
+{
+  "id": 96,
+  "slug": "ci_cd_pipeline",
+  "nombre": "CI/CD",
+  "tipo": "infraestructura",
+  "lenguaje": "yaml",
+  "descripcion": "GitHub Actions",
+  "componentes": [
+    "ci-cd.yml"
+  ],
+  "tecnologias": [
+    "GitHub Actions"
+  ]
+}

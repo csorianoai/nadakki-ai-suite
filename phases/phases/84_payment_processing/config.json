@@ -1,0 +1,14 @@
+{
+  "id": 84,
+  "slug": "payment_processing",
+  "nombre": "Payment Processing",
+  "tipo": "backend",
+  "lenguaje": "python",
+  "descripcion": "Integracion Stripe",
+  "componentes": [
+    "stripe_service.py"
+  ],
+  "tecnologias": [
+    "Stripe API"
+  ]
+}
