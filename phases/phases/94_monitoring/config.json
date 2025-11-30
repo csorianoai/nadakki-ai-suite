@@ -1,0 +1,14 @@
+{
+  "id": 94,
+  "slug": "monitoring",
+  "nombre": "Monitoring & Alerts",
+  "tipo": "infraestructura",
+  "lenguaje": "yaml",
+  "descripcion": "Prometheus y Grafana",
+  "componentes": [
+    "prometheus.yml"
+  ],
+  "tecnologias": [
+    "Prometheus"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": 85,
+  "slug": "notifications",
+  "nombre": "Notifications",
+  "tipo": "backend",
+  "lenguaje": "python",
+  "descripcion": "Email y SMS",
+  "componentes": [
+    "email_service.py"
+  ],
+  "tecnologias": [
+    "SendGrid"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": 90,
+  "slug": "admin_panel",
+  "nombre": "Admin Panel",
+  "tipo": "frontend",
+  "lenguaje": "react",
+  "descripcion": "Panel administrativo",
+  "componentes": [
+    "AdminPanel.jsx"
+  ],
+  "tecnologias": [
+    "React"
+  ]
+}

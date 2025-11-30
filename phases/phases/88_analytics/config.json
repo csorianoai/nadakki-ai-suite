@@ -1,0 +1,14 @@
+{
+  "id": 88,
+  "slug": "analytics",
+  "nombre": "Analytics Engine",
+  "tipo": "backend",
+  "lenguaje": "python",
+  "descripcion": "Motor de analisis",
+  "componentes": [
+    "analytics_engine.py"
+  ],
+  "tecnologias": [
+    "Pandas"
+  ]
+}

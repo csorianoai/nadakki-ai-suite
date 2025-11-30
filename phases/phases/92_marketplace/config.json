@@ -1,0 +1,14 @@
+{
+  "id": 92,
+  "slug": "marketplace",
+  "nombre": "Integration Marketplace",
+  "tipo": "backend",
+  "lenguaje": "python",
+  "descripcion": "Marketplace de integraciones",
+  "componentes": [
+    "integration_manager.py"
+  ],
+  "tecnologias": [
+    "FastAPI"
+  ]
+}

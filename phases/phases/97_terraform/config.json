@@ -1,0 +1,14 @@
+{
+  "id": 97,
+  "slug": "terraform",
+  "nombre": "IaC",
+  "tipo": "infraestructura",
+  "lenguaje": "terraform",
+  "descripcion": "Terraform AWS",
+  "componentes": [
+    "main.tf"
+  ],
+  "tecnologias": [
+    "Terraform"
+  ]
+}

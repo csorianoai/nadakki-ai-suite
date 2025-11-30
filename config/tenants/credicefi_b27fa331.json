@@ -1,0 +1,22 @@
+{
+  "tenant_id": "credicefi_b27fa331",
+  "institution_name": "Credicefi",
+  "institution_type": "fintech",
+  "primary_color": "#1e40af",
+  "secondary_color": "#3b82f6",
+  "logo_url": "https://credicefi.com/logo.png",
+  "contact_email": "tech@credicefi.com",
+  "contact_phone": "+1-809-000-0000",
+  "plan": "enterprise",
+  "max_monthly_requests": 999999,
+  "enabled_agents": "all",
+  "custom_risk_thresholds": {
+    "auto_reject": 90,
+    "high_risk": 80,
+    "additional_analysis": 70,
+    "second_evaluation": 50,
+    "low_risk": 0
+  },
+  "created_at": "2025-10-26T11:00:23.420986",
+  "status": "trial"
+}

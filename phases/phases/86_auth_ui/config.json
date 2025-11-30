@@ -1,0 +1,14 @@
+{
+  "id": 86,
+  "slug": "auth_ui",
+  "nombre": "Auth UI",
+  "tipo": "frontend",
+  "lenguaje": "react",
+  "descripcion": "Login con Auth0",
+  "componentes": [
+    "LoginPage.jsx"
+  ],
+  "tecnologias": [
+    "React"
+  ]
+}

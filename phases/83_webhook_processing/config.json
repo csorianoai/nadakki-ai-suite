@@ -1,0 +1,15 @@
+{
+  "id": 83,
+  "slug": "webhook_processing",
+  "nombre": "Webhook Processing",
+  "tipo": "backend",
+  "lenguaje": "python",
+  "descripcion": "Sistema de procesamiento de webhooks",
+  "componentes": [
+    "webhook_manager.py"
+  ],
+  "tecnologias": [
+    "FastAPI",
+    "Redis"
+  ]
+}

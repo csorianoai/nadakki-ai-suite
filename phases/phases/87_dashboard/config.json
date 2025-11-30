@@ -1,0 +1,14 @@
+{
+  "id": 87,
+  "slug": "dashboard",
+  "nombre": "Dashboard",
+  "tipo": "frontend",
+  "lenguaje": "react",
+  "descripcion": "Panel de control",
+  "componentes": [
+    "Dashboard.jsx"
+  ],
+  "tecnologias": [
+    "React"
+  ]
+}

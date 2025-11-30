@@ -1,0 +1,14 @@
+{
+  "id": 93,
+  "slug": "mobile_api",
+  "nombre": "Mobile API",
+  "tipo": "backend",
+  "lenguaje": "python",
+  "descripcion": "API para movil",
+  "componentes": [
+    "mobile_api.py"
+  ],
+  "tecnologias": [
+    "FastAPI"
+  ]
+}
