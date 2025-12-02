@@ -1,0 +1,10 @@
+{
+  "name": "Tenant Name",
+  "status": "active",
+  "id": "TENANT_ID",
+  "database": {
+    "host": "localhost",
+    "name": "TENANT_DB",
+    "port": 5432
+  }
+}

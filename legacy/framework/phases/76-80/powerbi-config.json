@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-11-25T08:15:11.8018787-05:00",
+  "name": "Power BI",
+  "enabled": true,
+  "apiKey": "workspace_1234567890",
+  "environment": "production"
+}

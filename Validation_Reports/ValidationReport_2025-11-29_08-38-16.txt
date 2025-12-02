@@ -1,0 +1,60 @@
+REPORTE DE VALIDACION - NADAKKI AI ENTERPRISE SUITE
+Institucion: NADAKKI
+Fecha: 2025-11-29 08:38:15
+
+RESUMEN GENERAL
+Total de Validaciones: 21
+Validaciones Pasadas: 11
+Validaciones Fallidas: 10
+Tasa de Exito: 52.38%
+
+DETALLES POR FASE
+================================================================================
+
+FASE 76 (Pasadas: 0/2)
+  ✗ StripeConfig
+  ✗ StripeKey
+
+FASE 78 (Pasadas: 0/2)
+  ✗ SendGridKey
+  ✗ SendGridConfig
+
+FASE 80 (Pasadas: 0/3)
+  ✗ Auth0Config
+  ✗ Auth0Domain
+  ✗ Auth0ClientId
+
+FASE 81 (Pasadas: 1/2)
+  ✓ DbDir
+  ✗ DatabaseURL
+
+FASE 82 (Pasadas: 2/2)
+  ✓ BackendDir
+  ✓ BackendRoutes
+
+FASE 83 (Pasadas: 1/2)
+  ✓ WebhooksDir
+  ✗ RedisURL
+
+FASE 84 (Pasadas: 1/1)
+  ✓ PaymentsModule
+
+FASE 85 (Pasadas: 1/1)
+  ✓ NotificationsModule
+
+FASE 86 (Pasadas: 2/2)
+  ✓ FrontendDir
+  ✓ AuthComponents
+
+FASE 87 (Pasadas: 1/1)
+  ✓ DashboardDir
+
+FASE 88 (Pasadas: 1/1)
+  ✓ AdminAuth
+
+FASE 90 (Pasadas: 0/1)
+  ✗ SentryDSN
+
+FASE 96 (Pasadas: 1/1)
+  ✓ InfrastructureDir
+

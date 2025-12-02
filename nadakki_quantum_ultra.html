@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Nadakki Quantum ULTRA - Next-Gen AI Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --quantum-cyan: #00f3ff;
+            --quantum-purple: #9d4edd;
+            --quantum-green: #00ff88;
+            --quantum-orange: #ff6b00;
+            --quantum-pink: #ff006e;
+            --quantum-dark: #050510;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Inter", sans-serif;
+            background: #000000;
+            color: white;
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* ===== EFECTOS DE FONDO ESPECTACULARES ===== */
+        
+        /* Aurora Boreal de Fondo */
+        .aurora-bg {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                rgba(0, 243, 255, 0.1) 0%,
+                rgba(157, 78, 221, 0.1) 25%,
+                rgba(0, 255, 136, 0.1) 50%,
+                rgba(255, 107, 0, 0.1) 75%,
+                rgba(255, 0, 110, 0.1) 100%
+            );
+            background-size: 400% 400%;
+            animation: auroraFlow 20s ease infinite;
+            z-index: 0;
+        }
+        
+        @keyframes auroraFlow {
+            0%, 100% { background-position: 0% 50%; filter: hue-rotate(0deg); }
+            25% { background-position: 50% 0%; filter: hue-rotate(90deg); }
+            50% { background-position: 100% 50%; filter: hue-rotate(180deg); }
+            75% { background-position: 50% 100%; filter: hue-rotate(270deg); }
+        }
+        
+        /* Grid Cuántico Mejorado */
+        .quantum-grid {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(rgba(157, 78, 221, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(157, 78, 221, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px, 200px 200px, 200px 200px;
+            background-position: 0 0, 0 0, 0 0, 0 0;
+            animation: gridFlow 30s linear infinite, gridPulse 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        @keyframes gridFlow {
+            0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+            100% { background-position: 50px 50px, 50px 50px, 200px 200px, 200px 200px; }
+        }
+        
+        @keyframes gridPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Partículas 3D con Profundidad */
+        .quantum-particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+            perspective: 1000px;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: particleFloat3D 25s linear infinite;
+            opacity: 0;
+        }
+        
+        .particle-small {
+            width: 2px;
+            height: 2px;
+            box-shadow: 0 0 4px currentColor;
+        }
+        
+        .particle-medium {
+            width: 4px;
+            height: 4px;
+            box-shadow: 0 0 8px currentColor;
+        }
+        
+        .particle-large {
+            width: 6px;
+            height: 6px;
+            box-shadow: 0 0 12px currentColor;
+        }
+        
+        @keyframes particleFloat3D {
+            0% { 
+                transform: translate3d(0, 100vh, 0) scale(0.5);
+                opacity: 0;
+            }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { 
+                transform: translate3d(var(--tx), -100vh, var(--tz)) scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        /* Rayos de Luz Atravesando */
+        .light-rays {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .light-ray {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                transparent 0%,
+                var(--quantum-cyan) 50%,
+                transparent 100%
+            );
+            opacity: 0;
+            animation: lightRayMove 10s ease-in-out infinite;
+            box-shadow: 0 0 20px var(--quantum-cyan);
+        }
+        
+        @keyframes lightRayMove {
+            0%, 100% { opacity: 0; transform: translateX(-100px) skewX(-20deg); }
+            50% { opacity: 0.3; transform: translateX(100vw) skewX(-20deg); }
+        }
+        
+        /* Línea de Escaneo Mejorada */
+        .scan-line {
+            position: fixed;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent,
+                var(--quantum-cyan) 20%,
+                var(--quantum-purple) 50%,
+                var(--quantum-cyan) 80%,
+                transparent
+            );
+            box-shadow: 0 0 20px var(--quantum-cyan);
+            animation: scan 5s linear infinite;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        @keyframes scan {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        /* Ondas de Energía */
+        .energy-waves {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .energy-wave {
+            position: absolute;
+            border: 2px solid var(--quantum-cyan);
+            border-radius: 50%;
+            opacity: 0;
+            animation: waveExpand 4s ease-out infinite;
+        }
+        
+        @keyframes waveExpand {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0.8;
+            }
+            100% {
+                width: 800px;
+                height: 800px;
+                opacity: 0;
+            }
+        }
+        
+        /* ===== EFECTOS DE VIDRIO Y MATERIALES ===== */
+        
+        .glass-ultra {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(50px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                0 8px 32px 0 rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-sidebar {
+            background: rgba(5, 5, 16, 0.7);
+            backdrop-filter: blur(40px) saturate(180%);
+            border-right: 1px solid rgba(0, 243, 255, 0.15);
+            box-shadow: 
+                5px 0 30px rgba(0, 243, 255, 0.1),
+                inset -1px 0 0 rgba(0, 243, 255, 0.1);
+        }
+        
+        /* ===== TEXTO Y TIPOGRAFÍA ===== */
+        
+        .holo-text {
+            background: linear-gradient(90deg, 
+                var(--quantum-cyan),
+                var(--quantum-purple),
+                var(--quantum-pink),
+                var(--quantum-cyan)
+            );
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: holoShift 8s ease infinite;
+            filter: drop-shadow(0 0 20px rgba(0, 243, 255, 0.5));
+        }
+        
+        @keyframes holoShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Efecto Glitch en Títulos */
+        .glitch-text {
+            position: relative;
+            animation: glitchFlicker 3s infinite;
+        }
+        
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        
+        .glitch-text::before {
+            color: var(--quantum-cyan);
+            animation: glitchBefore 2s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        }
+        
+        .glitch-text::after {
+            color: var(--quantum-pink);
+            animation: glitchAfter 2s infinite;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        }
+        
+        @keyframes glitchFlicker {
+            0%, 96%, 100% { opacity: 1; }
+            97% { opacity: 0.8; }
+            98% { opacity: 1; }
+            99% { opacity: 0.8; }
+        }
+        
+        @keyframes glitchBefore {
+            0%, 90%, 100% { transform: translateX(0); }
+            95% { transform: translateX(-5px); }
+        }
+        
+        @keyframes glitchAfter {
+            0%, 90%, 100% { transform: translateX(0); }
+            95% { transform: translateX(5px); }
+        }
+        
+        /* ===== ANIMACIONES DE ELEMENTOS ===== */
+        
+        .float {
+            animation: floatUpDown 6s ease-in-out infinite;
+        }
+        
+        @keyframes floatUpDown {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .float-delayed {
+            animation: floatUpDown 6s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+        
+        /* ===== TARJETAS CON EFECTOS AVANZADOS ===== */
+        
+        .metric-card {
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            overflow: hidden;
+        }
+        
+        /* Holograma de fondo en la tarjeta */
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                transparent 0%,
+                rgba(0, 243, 255, 0.1) 50%,
+                transparent 100%
+            );
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        
+        .metric-card:hover::before {
+            opacity: 1;
+            animation: hologramSweep 2s ease-in-out infinite;
+        }
+        
+        @keyframes hologramSweep {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(200%) rotate(45deg); }
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-12px) scale(1.03) rotateX(5deg);
+            border-color: rgba(0, 243, 255, 0.5);
+            box-shadow: 
+                0 30px 60px rgba(0, 243, 255, 0.3),
+                0 0 0 1px rgba(0, 243, 255, 0.3),
+                inset 0 0 20px rgba(0, 243, 255, 0.1);
+        }
+        
+        /* Efecto Neón Mejorado */
+        .neon-glow {
+            box-shadow: 
+                0 0 10px var(--quantum-cyan),
+                0 0 20px var(--quantum-cyan),
+                0 0 30px var(--quantum-cyan);
+            animation: neonPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes neonPulse {
+            0%, 100% { 
+                opacity: 0.8;
+                box-shadow: 
+                    0 0 10px var(--quantum-cyan),
+                    0 0 20px var(--quantum-cyan),
+                    0 0 30px var(--quantum-cyan);
+            }
+            50% { 
+                opacity: 1;
+                box-shadow: 
+                    0 0 15px var(--quantum-cyan),
+                    0 0 30px var(--quantum-cyan),
+                    0 0 45px var(--quantum-cyan),
+                    0 0 60px var(--quantum-cyan);
+            }
+        }
+        
+        /* ===== SIDEBAR ESPECTACULAR ===== */
+        
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 300px;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 100;
+            overflow: hidden;
+        }
+        
+        .sidebar.collapsed {
+            transform: translateX(-100%);
+        }
+        
+        .sidebar-content {
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        
+        /* Scrollbar Personalizado Espectacular */
+        .sidebar-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .sidebar-content::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .sidebar-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--quantum-cyan), var(--quantum-purple));
+            border-radius: 3px;
+            box-shadow: 0 0 10px var(--quantum-cyan);
+        }
+        
+        .sidebar-content::-webkit-scrollbar-thumb:hover {
+            background: var(--quantum-cyan);
+            box-shadow: 0 0 20px var(--quantum-cyan);
+        }
+        
+        /* Items del Menú con Efectos Premium */
+        .menu-item {
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 3px solid transparent;
+            overflow: hidden;
+        }
+        
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, 
+                var(--quantum-cyan),
+                transparent
+            );
+            transition: width 0.4s ease;
+            opacity: 0.2;
+        }
+        
+        .menu-item:hover::before {
+            width: 100%;
+        }
+        
+        .menu-item:hover {
+            background: rgba(0, 243, 255, 0.1);
+            border-left-color: var(--quantum-cyan);
+            transform: translateX(8px);
+            box-shadow: inset 0 0 20px rgba(0, 243, 255, 0.1);
+        }
+        
+        .menu-item.active {
+            background: linear-gradient(90deg, 
+                rgba(0, 243, 255, 0.2),
+                rgba(157, 78, 221, 0.1)
+            );
+            border-left-color: var(--quantum-cyan);
+            box-shadow: 
+                inset 0 0 20px rgba(0, 243, 255, 0.2),
+                0 0 20px rgba(0, 243, 255, 0.1);
+        }
+        
+        .menu-item.active .menu-icon {
+            animation: iconPulseGlow 2s ease-in-out infinite;
+            text-shadow: 0 0 10px var(--quantum-cyan);
+        }
+        
+        @keyframes iconPulseGlow {
+            0%, 100% { transform: scale(1); text-shadow: 0 0 10px var(--quantum-cyan); }
+            50% { transform: scale(1.15); text-shadow: 0 0 20px var(--quantum-cyan), 0 0 30px var(--quantum-cyan); }
+        }
+        
+        /* Categorías del Menú */
+        .menu-category {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--quantum-cyan);
+            padding: 20px 20px 10px 20px;
+            position: relative;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+        
+        .menu-category::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent,
+                var(--quantum-cyan),
+                var(--quantum-purple),
+                transparent
+            );
+            box-shadow: 0 0 10px var(--quantum-cyan);
+        }
+        
+        /* ===== CONTENIDO PRINCIPAL ===== */
+        
+        .content-area {
+            margin-left: 300px;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            min-height: 100vh;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .content-area.expanded {
+            margin-left: 0;
+        }
+        
+        /* Header con Efectos */
+        .header-glow {
+            box-shadow: 0 5px 30px rgba(0, 243, 255, 0.2);
+        }
+        
+        /* Botón Toggle Espectacular */
+        .toggle-btn {
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+        }
+        
+        .toggle-btn::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, var(--quantum-cyan), var(--quantum-purple));
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .toggle-btn:hover::before {
+            opacity: 1;
+            animation: rotateGlow 2s linear infinite;
+        }
+        
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .toggle-btn:hover {
+            transform: scale(1.15) rotate(180deg);
+            box-shadow: 0 0 40px rgba(0, 243, 255, 0.8);
+        }
+        
+        .toggle-btn:active {
+            transform: scale(0.9);
+        }
+        
+        /* ===== SELECTOR DE TENANT PREMIUM ===== */
+        
+        .tenant-selector {
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tenant-selector::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                var(--quantum-cyan),
+                var(--quantum-purple),
+                var(--quantum-pink)
+            );
+            background-size: 200% 200%;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            animation: gradientMove 3s ease infinite;
+        }
+        
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .tenant-selector:hover::before {
+            opacity: 0.15;
+        }
+        
+        .tenant-selector:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 
+                0 10px 40px rgba(0, 243, 255, 0.3),
+                0 0 0 1px rgba(0, 243, 255, 0.3);
+        }
+        
+        /* Badge de Notificación Mejorado */
+        .notification-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: linear-gradient(135deg, #ff0080, #ff8c00);
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 3px 7px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px #ff0080;
+            animation: badgePulseGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes badgePulseGlow {
+            0%, 100% { 
+                opacity: 1;
+                transform: scale(1);
+                box-shadow: 0 0 20px #ff0080;
+            }
+            50% { 
+                opacity: 0.8;
+                transform: scale(1.15);
+                box-shadow: 0 0 30px #ff0080, 0 0 40px #ff0080;
+            }
+        }
+        
+        /* ===== TRANSICIONES DE VISTA ===== */
+        
+        .view-container {
+            display: none;
+            animation: viewFadeInUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .view-container.active {
+            display: block;
+        }
+        
+        @keyframes viewFadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 260px;
+            }
+            
+            .content-area {
+                margin-left: 260px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 300px;
+                transform: translateX(-100%);
+                z-index: 1000;
+            }
+            
+            .sidebar.mobile-open {
+                transform: translateX(0);
+            }
+            
+            .content-area {
+                margin-left: 0;
+            }
+            
+            .mobile-overlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.8);
+                backdrop-filter: blur(10px);
+                z-index: 999;
+            }
+            
+            .mobile-overlay.active {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+            
+            /* Reducir efectos en móvil */
+            .particle {
+                display: none;
+            }
+            
+            .light-ray {
+                display: none;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* ===== ESTADO DEL SISTEMA ===== */
+        
+        .system-status {
+            position: relative;
+            padding-left: 24px;
+        }
+        
+        .system-status::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background: var(--quantum-green);
+            border-radius: 50%;
+            box-shadow: 
+                0 0 10px var(--quantum-green),
+                0 0 20px var(--quantum-green),
+                0 0 30px var(--quantum-green);
+            animation: statusPulseGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes statusPulseGlow {
+            0%, 100% { 
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+                box-shadow: 
+                    0 0 10px var(--quantum-green),
+                    0 0 20px var(--quantum-green);
+            }
+            50% { 
+                opacity: 0.7;
+                transform: translateY(-50%) scale(1.4);
+                box-shadow: 
+                    0 0 15px var(--quantum-green),
+                    0 0 30px var(--quantum-green),
+                    0 0 45px var(--quantum-green);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== EFECTOS DE FONDO ===== -->
+    <div class="aurora-bg"></div>
+    <div class="quantum-grid"></div>
+    <div class="scan-line"></div>
+    <div class="quantum-particles" id="particles"></div>
+    <div class="light-rays" id="light-rays"></div>
+    <div class="energy-waves" id="energy-waves"></div>
+
+    <!-- Overlay Móvil -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- ===== SIDEBAR ESPECTACULAR ===== -->
+    <aside class="sidebar glass-sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <!-- Logo y Header -->
+            <div class="p-6 border-b border-cyan-500/30">
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-cyan-500 rounded-xl blur-2xl opacity-70 animate-pulse"></div>
+                        <div class="relative w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 via-purple-600 to-pink-600 flex items-center justify-center neon-glow">
+                            <i class="fas fa-bolt text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="holo-text font-bold text-xl glitch-text" data-text="NADAKKI">NADAKKI</h2>
+                        <p class="text-cyan-400/70 text-xs font-medium">QUANTUM ULTRA</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Selector de Tenant -->
+            <div class="tenant-selector glass-ultra m-4 p-4 rounded-xl border border-cyan-500/30">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-blue-500 via-purple-600 to-pink-600 flex items-center justify-center text-white font-bold text-sm neon-glow" id="tenant-icon">
+                            CF
+                        </div>
+                        <div>
+                            <div class="text-white text-sm font-semibold" id="tenant-name">Credicefi</div>
+                            <div class="text-cyan-400/60 text-xs">Colombia 🇨🇴</div>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-down text-cyan-400"></i>
+                </div>
+            </div>
+
+            <!-- Navegación -->
+            <nav class="pb-24">
+                <!-- Dashboard -->
+                <div class="menu-category">
+                    <i class="fas fa-chart-line mr-2"></i>DASHBOARD
+                </div>
+                <a href="#" class="menu-item active flex items-center px-6 py-3.5" data-view="overview">
+                    <i class="fas fa-home text-xl mr-4 menu-icon text-cyan-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Vista General</span>
+                </a>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="analytics">
+                    <i class="fas fa-chart-bar text-xl mr-4 menu-icon text-purple-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Análisis Avanzado</span>
+                </a>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="realtime">
+                    <i class="fas fa-bolt text-xl mr-4 menu-icon text-yellow-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Tiempo Real</span>
+                </a>
+
+                <!-- Cobranza -->
+                <div class="menu-category">
+                    <i class="fas fa-dollar-sign mr-2"></i>COBRANZA
+                </div>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5 relative" data-view="collections">
+                    <i class="fas fa-credit-card text-xl mr-4 menu-icon text-green-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Gestión de Cobros</span>
+                    <span class="notification-badge">24</span>
+                </a>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="portfolio">
+                    <i class="fas fa-briefcase text-xl mr-4 menu-icon text-blue-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Portafolio</span>
+                </a>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="risk">
+                    <i class="fas fa-exclamation-triangle text-xl mr-4 menu-icon text-orange-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Análisis de Riesgo</span>
+                </a>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="strategies">
+                    <i class="fas fa-chess text-xl mr-4 menu-icon text-pink-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Estrategias</span>
+                </a>
+
+                <!-- IA & Automatización -->
+                <div class="menu-category">
+                    <i class="fas fa-robot mr-2"></i>IA & AUTOMATIZACIÓN
+                </div>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="ai-agents">
+                    <i class="fas fa-brain text-xl mr-4 menu-icon text-cyan-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Agentes IA</span>
+                </a>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="predictions">
+                    <i class="fas fa-crystal-ball text-xl mr-4 menu-icon text-purple-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Predicciones</span>
+                </a>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="automation">
+                    <i class="fas fa-cog text-xl mr-4 menu-icon text-gray-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Automatización</span>
+                </a>
+
+                <!-- Clientes -->
+                <div class="menu-category">
+                    <i class="fas fa-users mr-2"></i>CLIENTES
+                </div>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="segmentation">
+                    <i class="fas fa-layer-group text-xl mr-4 menu-icon text-indigo-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Segmentación</span>
+                </a>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="insights">
+                    <i class="fas fa-lightbulb text-xl mr-4 menu-icon text-yellow-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Insights</span>
+                </a>
+
+                <!-- Reportes -->
+                <div class="menu-category">
+                    <i class="fas fa-file-alt mr-2"></i>REPORTES
+                </div>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="reports">
+                    <i class="fas fa-file-pdf text-xl mr-4 menu-icon text-red-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Informes</span>
+                </a>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="exports">
+                    <i class="fas fa-download text-xl mr-4 menu-icon text-green-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Exportaciones</span>
+                </a>
+
+                <!-- Configuración -->
+                <div class="menu-category">
+                    <i class="fas fa-cog mr-2"></i>CONFIGURACIÓN
+                </div>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="settings">
+                    <i class="fas fa-sliders-h text-xl mr-4 menu-icon text-gray-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Configuración</span>
+                </a>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="integrations">
+                    <i class="fas fa-plug text-xl mr-4 menu-icon text-blue-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Integraciones</span>
+                </a>
+                <a href="#" class="menu-item flex items-center px-6 py-3.5" data-view="users">
+                    <i class="fas fa-user-shield text-xl mr-4 menu-icon text-purple-400"></i>
+                    <span class="text-sm text-white/90 font-medium">Usuarios</span>
+                </a>
+            </nav>
+
+            <!-- Estado del Sistema -->
+            <div class="absolute bottom-0 left-0 right-0 p-5 glass-ultra border-t border-cyan-500/30">
+                <div class="system-status">
+                    <div class="text-green-400 text-xs font-bold uppercase tracking-wide">Sistema Operativo</div>
+                    <div class="text-cyan-400/50 text-xs mt-1">v3.0 ULTRA • Multi-Tenant</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="content-area" id="content-area">
+        <!-- Header -->
+        <header class="glass-ultra border-b border-cyan-500/30 p-6 sticky top-0 z-50 header-glow">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-5">
+                    <!-- Toggle Button -->
+                    <button class="toggle-btn w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/30 to-purple-600/30 border-2 border-cyan-500/50 flex items-center justify-center" id="menu-toggle">
+                        <i class="fas fa-times text-cyan-400 text-lg"></i>
+                    </button>
+                    
+                    <!-- Título -->
+                    <div>
+                        <h1 class="holo-text text-3xl font-bold leading-tight" id="page-title">
+                            QUANTUM CONTROL CENTER
+                        </h1>
+                        <p class="text-cyan-400/70 text-sm" id="page-subtitle">Neural Intelligence Platform</p>
+                    </div>
+                </div>
+                
+                <!-- Estado -->
+                <div class="flex items-center space-x-3">
+                    <div class="glass-ultra px-5 py-2.5 rounded-full border border-green-500/40 flex items-center space-x-2 neon-glow">
+                        <div class="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
+                        <span class="text-green-400 text-sm font-bold uppercase tracking-wide">OPERATIONAL</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Contenido Dinámico -->
+        <main class="max-w-7xl mx-auto p-6">
+            <!-- Vista General -->
+            <div class="view-container active" id="view-overview">
+                <!-- Grid de Métricas -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Métrica 1 -->
+                    <div class="metric-card glass-ultra rounded-2xl p-6 float">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center neon-glow">
+                                <i class="fas fa-brain text-white text-2xl"></i>
+                            </div>
+                            <span class="text-green-400 text-sm font-bold px-3 py-1.5 rounded-full bg-green-500/20">
+                                +12.4%
+                            </span>
+                        </div>
+                        <h3 class="text-cyan-400/80 text-sm font-medium mb-2">Procesamiento Neural</h3>
+                        <div class="text-3xl font-light text-white mb-4">147.2K</div>
+                        <div class="h-2.5 bg-cyan-500/20 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-full" style="width: 85%; box-shadow: 0 0 10px var(--quantum-cyan);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Métrica 2 -->
+                    <div class="metric-card glass-ultra rounded-2xl p-6 float-delayed">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center" style="box-shadow: 0 0 30px #9d4edd;">
+                                <i class="fas fa-bolt text-white text-2xl"></i>
+                            </div>
+                            <span class="text-green-400 text-sm font-bold px-3 py-1.5 rounded-full bg-green-500/20">
+                                99.97%
+                            </span>
+                        </div>
+                        <h3 class="text-purple-400/80 text-sm font-medium mb-2">Precisión IA</h3>
+                        <div class="text-3xl font-light text-white mb-4">Quantum Accuracy</div>
+                        <div class="h-2.5 bg-purple-500/20 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-full" style="width: 99%; box-shadow: 0 0 10px #9d4edd;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Métrica 3 -->
+                    <div class="metric-card glass-ultra rounded-2xl p-6 float">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center" style="box-shadow: 0 0 30px #00ff88;">
+                                <i class="fas fa-rocket text-white text-2xl"></i>
+                            </div>
+                            <span class="text-blue-400 text-sm font-bold px-3 py-1.5 rounded-full bg-blue-500/20">
+                                REAL-TIME
+                            </span>
+                        </div>
+                        <h3 class="text-green-400/80 text-sm font-medium mb-2">Velocidad</h3>
+                        <div class="text-3xl font-light text-white mb-4">8.4M/seg</div>
+                        <div class="h-2.5 bg-green-500/20 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-green-500 via-emerald-500 to-cyan-500 rounded-full" style="width: 78%; box-shadow: 0 0 10px #00ff88;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Métrica 4 -->
+                    <div class="metric-card glass-ultra rounded-2xl p-6 float-delayed">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center" style="box-shadow: 0 0 30px #ff6b00;">
+                                <i class="fas fa-star text-white text-2xl"></i>
+                            </div>
+                            <span class="text-yellow-400 text-sm font-bold px-3 py-1.5 rounded-full bg-yellow-500/20">
+                                GAMMA-7
+                            </span>
+                        </div>
+                        <h3 class="text-orange-400/80 text-sm font-medium mb-2">Nivel IA</h3>
+                        <div class="text-3xl font-light text-white mb-4">Consciousness</div>
+                        <div class="h-2.5 bg-orange-500/20 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 rounded-full" style="width: 92%; box-shadow: 0 0 10px #ff6b00;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secciones de Control -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                    <!-- Centro de Control -->
+                    <div class="glass-ultra rounded-2xl p-7 border border-cyan-500/20">
+                        <h2 class="text-xl font-medium text-cyan-400 mb-4 flex items-center">
+                            <i class="fas fa-brain mr-3 text-2xl neon-glow"></i>
+                            <span>Centro de Control Neural</span>
+                        </h2>
+                        <div class="text-cyan-400/70 mb-5 text-sm leading-relaxed">
+                            Sistema de inteligencia artificial avanzada para análisis predictivo y detección de patrones en tiempo real.
+                        </div>
+                        <div class="grid grid-cols-3 gap-5 text-center">
+                            <div class="glass-ultra p-4 rounded-xl border border-cyan-500/20">
+                                <div class="text-cyan-400 text-2xl font-bold">276</div>
+                                <div class="text-cyan-400/60 text-xs mt-1 uppercase tracking-wide">Redes Neurales</div>
+                            </div>
+                            <div class="glass-ultra p-4 rounded-xl border border-purple-500/20">
+                                <div class="text-purple-400 text-2xl font-bold">98.7</div>
+                                <div class="text-purple-400/60 text-xs mt-1 uppercase tracking-wide">TFLOPS</div>
+                            </div>
+                            <div class="glass-ultra p-4 rounded-xl border border-green-500/20">
+                                <div class="text-green-400 text-2xl font-bold">1,024</div>
+                                <div class="text-green-400/60 text-xs mt-1 uppercase tracking-wide">Qubits</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actividad en Vivo -->
+                    <div class="glass-ultra rounded-2xl p-7 border border-purple-500/20">
+                        <h3 class="text-xl font-medium text-purple-400 mb-4 flex items-center">
+                            <i class="fas fa-bolt mr-3 text-2xl" style="box-shadow: 0 0 20px #9d4edd;"></i>
+                            <span>Actividad en Vivo</span>
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3 p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
+                                <div class="w-3 h-3 bg-cyan-400 rounded-full animate-pulse neon-glow"></div>
+                                <div class="flex-1">
+                                    <div class="text-sm text-white font-medium">Quantum Analyzer</div>
+                                    <div class="text-cyan-400/60 text-xs">Procesando datos...</div>
+                                </div>
+                                <div class="text-cyan-400/50 text-xs font-mono current-time"></div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-4 rounded-xl bg-purple-500/10 border border-purple-500/20">
+                                <div class="w-3 h-3 bg-purple-400 rounded-full animate-pulse" style="box-shadow: 0 0 10px #9d4edd;"></div>
+                                <div class="flex-1">
+                                    <div class="text-sm text-white font-medium">Neural Predictor</div>
+                                    <div class="text-purple-400/60 text-xs">Analizando patrones...</div>
+                                </div>
+                                <div class="text-purple-400/50 text-xs font-mono current-time"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Análisis Predictivo -->
+                <div class="glass-ultra rounded-2xl p-7 border border-cyan-500/20">
+                    <h2 class="text-xl font-medium text-cyan-400 mb-6 flex items-center">
+                        <i class="fas fa-chart-line mr-3 text-2xl neon-glow"></i>
+                        <span>Análisis Predictivo</span>
+                    </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+                        <div class="text-center p-5 rounded-xl bg-cyan-500/10 border border-cyan-500/20 hover:bg-cyan-500/15 hover:scale-105 transition-all cursor-pointer">
+                            <div class="text-3xl font-bold text-green-400">94.2%</div>
+                            <div class="text-cyan-400/70 text-sm mt-2 uppercase tracking-wide">Tasa Aprobación</div>
+                        </div>
+                        <div class="text-center p-5 rounded-xl bg-red-500/10 border border-red-500/20 hover:bg-red-500/15 hover:scale-105 transition-all cursor-pointer">
+                            <div class="text-3xl font-bold text-red-400">5.8%</div>
+                            <div class="text-cyan-400/70 text-sm mt-2 uppercase tracking-wide">Tasa Rechazo</div>
+                        </div>
+                        <div class="text-center p-5 rounded-xl bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/15 hover:scale-105 transition-all cursor-pointer">
+                            <div class="text-3xl font-bold text-blue-400">1.2s</div>
+                            <div class="text-cyan-400/70 text-sm mt-2 uppercase tracking-wide">Procesamiento</div>
+                        </div>
+                        <div class="text-center p-5 rounded-xl bg-orange-500/10 border border-orange-500/20 hover:bg-orange-500/15 hover:scale-105 transition-all cursor-pointer">
+                            <div class="text-3xl font-bold text-orange-400">28.5</div>
+                            <div class="text-cyan-400/70 text-sm mt-2 uppercase tracking-wide">Score Riesgo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Otras Vistas (Placeholders) -->
+            <div class="view-container" id="view-analytics">
+                <div class="glass-ultra rounded-2xl p-16 text-center border border-cyan-500/20">
+                    <i class="fas fa-chart-bar text-7xl mb-6 holo-text"></i>
+                    <h2 class="text-4xl font-light holo-text mb-4">Análisis Avanzado</h2>
+                    <p class="text-cyan-400/70 text-lg">Módulo en desarrollo con métricas detalladas y visualizaciones avanzadas</p>
+                </div>
+            </div>
+
+            <div class="view-container" id="view-collections">
+                <div class="glass-ultra rounded-2xl p-16 text-center border border-green-500/20">
+                    <i class="fas fa-credit-card text-7xl mb-6 text-green-400" style="text-shadow: 0 0 30px #00ff88;"></i>
+                    <h2 class="text-4xl font-light holo-text mb-4">Gestión de Cobros</h2>
+                    <p class="text-cyan-400/70 text-lg">Sistema inteligente de cobranza y seguimiento</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // ===== CONFIGURACIÓN MULTI-TENANT =====
+        const tenantConfig = {
+            'credicefi': {
+                name: 'Credicefi',
+                icon: 'CF',
+                country: 'Colombia',
+                primaryColor: '#00f3ff',
+                secondaryColor: '#9d4edd',
+                accentColor: '#00ff88'
+            },
+            'bancolombia': {
+                name: 'Bancolombia',
+                icon: 'BC',
+                country: 'Colombia',
+                primaryColor: '#FFD700',
+                secondaryColor: '#003DA5',
+                accentColor: '#FFA500'
+            },
+            'davivienda': {
+                name: 'Davivienda',
+                icon: 'DV',
+                country: 'Colombia',
+                primaryColor: '#E60012',
+                secondaryColor: '#000000',
+                accentColor: '#FF4444'
+            }
+        };
+
+        let currentTenant = 'credicefi';
+
+        // ===== CREAR EFECTOS VISUALES ESPECTACULARES =====
+        
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 50;
+            const colors = ['var(--quantum-cyan)', 'var(--quantum-purple)', 'var(--quantum-green)', 'var(--quantum-pink)'];
+            const sizes = ['particle-small', 'particle-medium', 'particle-large'];
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = `particle ${sizes[Math.floor(Math.random() * sizes.length)]}`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.animationDelay = `${Math.random() * 25}s`;
+                particle.style.animationDuration = `${20 + Math.random() * 15}s`;
+                particle.style.setProperty('--tx', `${(Math.random() - 0.5) * 200}px`);
+                particle.style.setProperty('--tz', `${Math.random() * 100}px`);
+                container.appendChild(particle);
+            }
+        }
+        
+        function createLightRays() {
+            const container = document.getElementById('light-rays');
+            const rayCount = 5;
+            
+            for (let i = 0; i < rayCount; i++) {
+                const ray = document.createElement('div');
+                ray.className = 'light-ray';
+                ray.style.left = `${(i / rayCount) * 100}%`;
+                ray.style.animationDelay = `${i * 2}s`;
+                container.appendChild(ray);
+            }
+        }
+        
+        function createEnergyWaves() {
+            const container = document.getElementById('energy-waves');
+            const waveCount = 3;
+            
+            for (let i = 0; i < waveCount; i++) {
+                const wave = document.createElement('div');
+                wave.className = 'energy-wave';
+                wave.style.left = '80px';
+                wave.style.top = '80px';
+                wave.style.animationDelay = `${i * 1.3}s`;
+                container.appendChild(wave);
+            }
+        }
+
+        // ===== ACTUALIZACIÓN DE TIEMPO =====
+        function updateTimes() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString("es-ES", { 
+                hour: "2-digit", 
+                minute: "2-digit",
+                second: "2-digit"
+            });
+            
+            document.querySelectorAll(".current-time").forEach(element => {
+                element.textContent = timeString;
+            });
+        }
+
+        setInterval(updateTimes, 1000);
+        updateTimes();
+
+        // ===== NAVEGACIÓN =====
+        function switchView(viewName) {
+            document.querySelectorAll('.view-container').forEach(view => {
+                view.classList.remove('active');
+            });
+            
+            const targetView = document.getElementById(`view-${viewName}`);
+            if (targetView) {
+                targetView.classList.add('active');
+            }
+            
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            const activeMenuItem = document.querySelector(`[data-view="${viewName}"]`);
+            if (activeMenuItem) {
+                activeMenuItem.classList.add('active');
+            }
+            
+            updatePageTitle(viewName);
+            
+            if (window.innerWidth <= 768) {
+                closeMobileSidebar();
+            }
+        }
+
+        function updatePageTitle(viewName) {
+            const titles = {
+                'overview': 'QUANTUM CONTROL CENTER',
+                'analytics': 'ANÁLISIS AVANZADO',
+                'realtime': 'MONITOREO TIEMPO REAL',
+                'collections': 'GESTIÓN DE COBROS',
+                'portfolio': 'PORTAFOLIO',
+                'risk': 'ANÁLISIS DE RIESGO',
+                'strategies': 'ESTRATEGIAS',
+                'ai-agents': 'AGENTES IA',
+                'predictions': 'PREDICCIONES',
+                'automation': 'AUTOMATIZACIÓN',
+                'segmentation': 'SEGMENTACIÓN',
+                'insights': 'INSIGHTS',
+                'reports': 'INFORMES',
+                'exports': 'EXPORTACIONES',
+                'settings': 'CONFIGURACIÓN',
+                'integrations': 'INTEGRACIONES',
+                'users': 'USUARIOS'
+            };
+            
+            document.getElementById('page-title').textContent = titles[viewName] || 'DASHBOARD';
+        }
+
+        // ===== INICIALIZACIÓN =====
+        document.addEventListener("DOMContentLoaded", function() {
+            // Crear efectos visuales
+            createParticles();
+            createLightRays();
+            createEnergyWaves();
+            
+            // Toggle sidebar
+            const menuToggle = document.getElementById("menu-toggle");
+            const sidebar = document.getElementById("sidebar");
+            const contentArea = document.getElementById("content-area");
+            const mobileOverlay = document.getElementById("mobile-overlay");
+            
+            menuToggle.addEventListener("click", function() {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.toggle("mobile-open");
+                    mobileOverlay.classList.toggle("active");
+                } else {
+                    sidebar.classList.toggle("collapsed");
+                    contentArea.classList.toggle("expanded");
+                }
+                
+                const icon = this.querySelector("i");
+                if (sidebar.classList.contains("collapsed") || !sidebar.classList.contains("mobile-open")) {
+                    icon.className = "fas fa-bars text-cyan-400 text-lg";
+                } else {
+                    icon.className = "fas fa-times text-cyan-400 text-lg";
+                }
+            });
+            
+            mobileOverlay.addEventListener("click", closeMobileSidebar);
+            
+            // Navegación del menú
+            document.querySelectorAll(".menu-item").forEach(item => {
+                item.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const viewName = this.getAttribute('data-view');
+                    if (viewName) {
+                        switchView(viewName);
+                    }
+                });
+            });
+            
+            // Responsive
+            function handleResponsive() {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove("collapsed");
+                    contentArea.classList.remove("expanded");
+                }
+            }
+            
+            window.addEventListener("resize", handleResponsive);
+            handleResponsive();
+        });
+
+        function closeMobileSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const mobileOverlay = document.getElementById("mobile-overlay");
+            sidebar.classList.remove("mobile-open");
+            mobileOverlay.classList.remove("active");
+            
+            const menuToggle = document.getElementById("menu-toggle");
+            const icon = menuToggle.querySelector("i");
+            icon.className = "fas fa-bars text-cyan-400 text-lg";
+        }
+
+        // ===== TENANT MANAGEMENT =====
+        function switchTenant(tenantId) {
+            if (tenantConfig[tenantId]) {
+                currentTenant = tenantId;
+                const config = tenantConfig[tenantId];
+                
+                document.getElementById('tenant-name').textContent = config.name;
+                document.getElementById('tenant-icon').textContent = config.icon;
+                
+                document.documentElement.style.setProperty('--quantum-cyan', config.primaryColor);
+                document.documentElement.style.setProperty('--quantum-purple', config.secondaryColor);
+                document.documentElement.style.setProperty('--quantum-green', config.accentColor);
+                
+                localStorage.setItem('currentTenant', tenantId);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTenant = localStorage.getItem('currentTenant');
+            if (savedTenant && tenantConfig[savedTenant]) {
+                switchTenant(savedTenant);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+{
+  "SuccessRate": 100.0,
+  "ExecutionId": "5cc23e56",
+  "DryRun": {
+    "IsPresent": true
+  },
+  "Environment": "dev",
+  "Results": {
+    "stripe": true,
+    "auth0": true,
+    "sendgrid": true
+  }
+}

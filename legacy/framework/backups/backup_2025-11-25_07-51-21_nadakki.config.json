@@ -1,0 +1,113 @@
+{
+  "framework": {
+    "version": "2.1 ULTRA",
+    "environment": "production",
+    "debugMode": false,
+    "logLevel": "INFO"
+  },
+  "execution": {
+    "enableParallel": true,
+    "maxParallelJobs": 4,
+    "retryAttempts": 3,
+    "timeoutSeconds": 300
+  },
+  "multiTenant": [
+    {
+      "id": "credicefi",
+      "name": "Credicefi",
+      "apiVersion": "v1",
+      "database": "credicefi_db",
+      "status": "active"
+    },
+    {
+      "id": "banreservas",
+      "name": "Banreservas",
+      "apiVersion": "v1",
+      "database": "banreservas_db",
+      "status": "active"
+    },
+    {
+      "id": "popular",
+      "name": "Banco Popular",
+      "apiVersion": "v1",
+      "database": "popular_db",
+      "status": "active"
+    },
+    {
+      "id": "cofaci",
+      "name": "Cofaci",
+      "apiVersion": "v1",
+      "database": "cofaci_db",
+      "status": "active"
+    }
+  ],
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "user": "admin",
+    "password": "your_password_here",
+    "poolSize": 20
+  },
+  "authentication": {
+    "jwtSecret": "your_jwt_secret_here",
+    "algorithm": "HS256",
+    "expirationHours": 24
+  },
+  "stripe": {
+    "apiKey": "your_stripe_key_here",
+    "webhookSecret": "your_webhook_secret",
+    "version": "2023-10-16"
+  },
+  "notifications": {
+    "slack": {
+      "enabled": false,
+      "webhookUrl": "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+    },
+    "teams": {
+      "enabled": false,
+      "webhookUrl": "https://outlook.webhook.office.com/webhookb2/YOUR/URL"
+    },
+    "email": {
+      "enabled": false,
+      "smtpServer": "smtp.gmail.com",
+      "smtpPort": 587
+    }
+  },
+  "businessMetrics": {
+    "costPerHourDeveloper": 75,
+    "averageDeploymentHours": 40,
+    "tenantsPerDeployment": 4,
+    "currency": "USD"
+  },
+  "iac": {
+    "terraform": {
+      "enabled": false,
+      "path": "infrastructure/terraform"
+    },
+    "ansible": {
+      "enabled": false,
+      "path": "infrastructure/ansible"
+    }
+  },
+  "integrations": {
+    "azureDevOps": {
+      "enabled": false,
+      "organization": "your-org",
+      "project": "your-project"
+    }
+  },
+  "security": {
+    "enableAuthenticodeSignature": false,
+    "enableScriptValidation": true,
+    "allowRemoteScripts": false
+  },
+  "reporting": {
+    "formats": ["json", "html", "csv"],
+    "retentionDays": 90
+  },
+  "dashboard": {
+    "enabled": true,
+    "port": 8080,
+    "refreshInterval": 1000
+  }
+}

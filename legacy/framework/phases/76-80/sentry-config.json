@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-11-25T08:15:11.8385280-05:00",
+  "name": "Sentry",
+  "enabled": true,
+  "apiKey": "sentry_1234567890",
+  "environment": "production"
+}

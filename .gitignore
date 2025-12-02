@@ -117,3 +117,4 @@ pip-delete-this-directory.txt
 # Large deployment packages - can be regenerated
 *.zip
 nadakki-lambda-deployment.zip
+Config/.env

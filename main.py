@@ -1,7 +1,7 @@
 ﻿"""
-NADAKKI AI SUITE v3.4.2 – ACTUALIZACIÓN
-New: Endpoint /api/v1/marketing/agents/summary para WordPress
-Fixed: Conteos de agentes en tiempo real
+NADAKKI AI SUITE v3.4.3 – WORDPRESS INTEGRATION
+New: Endpoint /api/v1/marketing/agents/summary DIRECTO en main.py
+Fixed: Router integration
 """
 
 from fastapi import FastAPI, HTTPException, Request
@@ -25,13 +25,13 @@ logger = logging.getLogger("NadakkiAISuite")
 app = FastAPI(
     title="Nadakki AI Suite",
     description="Multi-Tenant Enterprise AI Platform (TenantManager + UsageTracker + BrandingEngine)",
-    version="3.4.2",
+    version="3.4.3",
     docs_url="/docs",
     redoc_url="/redoc"
 )
 
 # ==============================================================
-# CORS (Acceso desde WordPress u otras apps)
+# CORS
 # ==============================================================
 app.add_middleware(
     CORSMiddleware,
@@ -59,9 +59,32 @@ tenant_manager = TenantManager()
 def get_agents_by_ecosystem():
     """
     Obtiene agentes reales del sistema organizados por ecosistema.
-    Busca en la carpeta 'agents' y cuenta archivos .py
+    Escanea carpeta agents/ y categoriza por nombre
     """
-    agents_by_ecosystem = {}
+    agents_by_ecosystem = {
+        "Marketing": [],
+        "Originación": [],
+        "Compliance": [],
+        "Recuperación": [],
+        "Inteligencia": [],
+        "Operacional": [],
+        "Investigación": [],
+        "Legal": [],
+        "Contabilidad": [],
+        "Presupuesto": [],
+        "RRHH": [],
+        "Ventas CRM": [],
+        "Logística": [],
+        "Educación": [],
+        "RegTech": [],
+        "Financial Core": [],
+        "Experiencia": [],
+        "Fortaleza": [],
+        "Orchestration": [],
+        "Decisión": [],
+        "Vigilancia": []
+    }
+    
     agents_dir = "agents"
     
     try:
@@ -69,39 +92,47 @@ def get_agents_by_ecosystem():
             logger.warning(f"Carpeta {agents_dir} no encontrada")
             return agents_by_ecosystem
         
-        for filename in os.listdir(agents_dir):
-            if filename.endswith('.py') and not filename.startswith('_'):
-                # Cada archivo es un agente
-                # Intentamos extraer el ecosistema del nombre del archivo
-                agent_name = filename.replace('.py', '')
+        # Escanear subcarpetas
+        for ecosystem_folder in os.listdir(agents_dir):
+            ecosystem_path = os.path.join(agents_dir, ecosystem_folder)
+            
+            if os.path.isdir(ecosystem_path):
+                # Mapeo de carpeta a ecosistema
+                ecosystem_map = {
+                    "marketing": "Marketing",
+                    "originacion": "Originación",
+                    "compliance": "Compliance",
+                    "recuperacion": "Recuperación",
+                    "inteligencia": "Inteligencia",
+                    "operacional": "Operacional",
+                    "investigacion": "Investigación",
+                    "legal": "Legal",
+                    "contabilidad": "Contabilidad",
+                    "presupuesto": "Presupuesto",
+                    "rrhh": "RRHH",
+                    "ventascrm": "Ventas CRM",
+                    "logistica": "Logística",
+                    "educacion": "Educación",
+                    "regtech": "RegTech",
+                    "core": "Financial Core",
+                    "experiencia": "Experiencia",
+                    "fortaleza": "Fortaleza",
+                    "orchestration": "Orchestration",
+                    "decision": "Decisión",
+                    "vigilancia": "Vigilancia"
+                }
                 
-                # Buscar en qué carpeta está
-                filepath = os.path.join(agents_dir, filename)
+                ecosystem_name = ecosystem_map.get(ecosystem_folder.lower(), ecosystem_folder)
                 
-                # Determinar ecosistema por patrón de nombre
-                if 'marketing' in agent_name.lower() or 'content' in agent_name.lower():
-                    ecosystem = 'Marketing'
-                elif 'credit' in agent_name.lower() or 'originacion' in agent_name.lower():
-                    ecosystem = 'Originación'
-                elif 'compliance' in agent_name.lower() or 'aml' in agent_name.lower():
-                    ecosystem = 'Compliance'
-                elif 'recovery' in agent_name.lower() or 'collection' in agent_name.lower():
-                    ecosystem = 'Recuperación'
-                elif 'analytics' in agent_name.lower() or 'intelligence' in agent_name.lower():
-                    ecosystem = 'Inteligencia'
-                elif 'operational' in agent_name.lower() or 'ops' in agent_name.lower():
-                    ecosystem = 'Operacional'
-                else:
-                    ecosystem = 'General'
-                
-                if ecosystem not in agents_by_ecosystem:
-                    agents_by_ecosystem[ecosystem] = []
-                
-                agents_by_ecosystem[ecosystem].append({
-                    'name': agent_name,
-                    'status': 'active',
-                    'type': 'IA'
-                })
+                try:
+                    py_files = [f for f in os.listdir(ecosystem_path) if f.endswith('.py') and not f.startswith('_')]
+                    if py_files:
+                        agents_by_ecosystem[ecosystem_name] = [
+                            {"name": f.replace('.py', ''), "status": "active"} 
+                            for f in py_files
+                        ]
+                except:
+                    pass
     
     except Exception as e:
         logger.error(f"Error contando agentes: {str(e)}")
@@ -116,19 +147,19 @@ def get_agents_by_ecosystem():
 def root():
     return {
         "service": "Nadakki AI Suite",
-        "version": "3.4.2",
+        "version": "3.4.3",
         "modules": ["TenantManager", "IntegratedUsageTracker", "BrandingEngine"],
         "status": "operational",
         "timestamp": datetime.now().isoformat()
     }
 
 # ==============================================================
-# TENANT MANAGER - ENDPOINTS CORREGIDOS
+# TENANT MANAGER - ENDPOINTS
 # ==============================================================
 
 @app.get("/api/tenant/list")
 def list_tenants():
-    """Lista todos los tenants activos desde tenants.db - CORREGIDO"""
+    """Lista todos los tenants activos"""
     tenants = tenant_manager.list_all_tenants()
     return {"total": len(tenants), "tenants": tenants}
 
@@ -176,7 +207,7 @@ def get_tenant_info(tenant_id: str):
         raise HTTPException(status_code=500, detail=f"Error interno: {str(e)}")
 
 # ==============================================================
-# USAGE TRACKER (INTEGRADO CON tenants.db)
+# USAGE TRACKER
 # ==============================================================
 
 @app.get("/api/usage/report/{tenant_id}")
@@ -213,7 +244,7 @@ async def log_usage(request: Request):
         raise HTTPException(status_code=500, detail=f"Error procesando request: {str(e)}")
 
 # ==============================================================
-# BRANDING ENGINE (WHITE-LABEL DASHBOARDS)
+# BRANDING ENGINE
 # ==============================================================
 
 @app.get("/api/branding/dashboard/{tenant_id}")
@@ -238,7 +269,7 @@ def preview_branding(tenant_id: str):
     return branding_data
 
 # ==============================================================
-# ✨ NUEVO ENDPOINT: RESUMEN DE AGENTES PARA WORDPRESS
+# ⭐ ENDPOINT WORDPRESS - DIRECTO EN MAIN.PY v3.4.3
 # ==============================================================
 
 @app.get("/api/v1/marketing/agents/summary")
@@ -247,8 +278,11 @@ def get_marketing_agents_summary():
     Retorna resumen de agentes de marketing con CONTEOS REALES.
     Usado por WordPress para actualizar el dashboard.
     
+    ✅ ENDPOINT DIRECTO - NO DEPENDE DE ROUTER EXTERNO
+    
     Respuesta:
     {
+        "status": "success",
         "total_agents": 35,
         "validated_agents": 25,
         "by_ecosystem": {
@@ -262,12 +296,9 @@ def get_marketing_agents_summary():
         agents = get_agents_by_ecosystem()
         
         total = sum(len(agents_list) for agents_list in agents.values())
+        validated = int(total * 0.7)  # 70% validados (placeholder)
         
-        # Contar agentes validados (por ahora, aproximado)
-        # En producción, esto vendría de una tabla en BD
-        validated = int(total * 0.7)  # Placeholder: 70% validados
-        
-        logger.info(f"✅ Retornando resumen: {total} agentes totales, {validated} validados")
+        logger.info(f"✅ WORDPRESS SUMMARY: {total} agentes totales, {validated} validados")
         
         return {
             "status": "success",
@@ -282,7 +313,7 @@ def get_marketing_agents_summary():
         }
     
     except Exception as e:
-        logger.error(f"Error en /api/v1/marketing/agents/summary: {str(e)}")
+        logger.error(f"❌ Error en /api/v1/marketing/agents/summary: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
 
 # ==============================================================
@@ -301,12 +332,13 @@ async def handle_exception(request: Request, exc: Exception):
 @app.on_event("startup")
 async def on_start():
     logger.info("=" * 60)
-    logger.info("🚀 NADAKKI AI SUITE v3.4.2 - STARTING")
+    logger.info("🚀 NADAKKI AI SUITE v3.4.3 - STARTING")
     logger.info("=" * 60)
     logger.info("✓ TenantManager activo")
     logger.info("✓ UsageTracker activo (SQLite integrado)")
     logger.info("✓ BrandingEngine operativo (dashboards white-label)")
-    logger.info("✓ Marketing Agents Summary endpoint activo")
+    logger.info("✓ WordPress Integration endpoint ACTIVO")
+    logger.info("  → GET /api/v1/marketing/agents/summary")
     logger.info("=" * 60)
     logger.info("Server ready at http://127.0.0.1:8000")
 
@@ -314,9 +346,12 @@ async def on_start():
 # IMPORTAR ROUTERS ADICIONALES
 # ==============================================================
 
-from routes.marketing_routes import router as marketing_router
-
-app.include_router(marketing_router)
+try:
+    from routes.marketing_routes import router as marketing_router
+    app.include_router(marketing_router)
+    logger.info("✓ Marketing router incluido")
+except Exception as e:
+    logger.warning(f"⚠️ No se pudo cargar marketing_router: {e}")
 
 # ==============================================================
 # EJECUCIÓN LOCAL

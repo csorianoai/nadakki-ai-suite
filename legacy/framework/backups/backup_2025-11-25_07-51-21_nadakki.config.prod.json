@@ -1,0 +1,11 @@
+{
+  "debug": false,
+  "notifications": true,
+  "parallel": true,
+  "environment": "production",
+  "database": {
+    "host": "prod-db.example.com",
+    "type": "postgresql",
+    "port": 5432
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "files": {
+    "deploymentTemplate": "deployment.template.json",
+    "securityCheckScript": "security-check.ps1",
+    "validationTemplate": "validation.template.json",
+    "healthCheckScript": "health-check.ps1",
+    "tenantTemplate": "tenant.template.json",
+    "enterpriseConfig": "nadakki.config.enterprise.json",
+    "stagingConfig": "nadakki.config.staging.json",
+    "performanceTestScript": "performance-test.ps1",
+    "prodConfig": "nadakki.config.prod.json",
+    "devConfig": "nadakki.config.dev.json"
+  },
+  "status": "COMPLETED",
+  "templatesCreated": 3,
+  "timestamp": "2025-11-25T07:51:21.2120669-05:00",
+  "backupsCreated": 5,
+  "validationScriptsCreated": 3,
+  "configsCreated": 4,
+  "reportId": "855b162f-6847-471f-9f16-7b9d9d4b7a5a",
+  "directories": {
+    "configDir": "C:\\nadakki-framework\\config",
+    "validationsDir": "C:\\nadakki-framework\\validations",
+    "backupDir": "C:\\nadakki-framework\\backups",
+    "templatesDir": "C:\\nadakki-framework\\templates",
+    "baseDir": "C:\\nadakki-framework"
+  }
+}

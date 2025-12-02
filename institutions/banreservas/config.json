@@ -1,0 +1,49 @@
+{
+  "institution": {
+    "currency": "DOP",
+    "domain": "banreservas.com.do",
+    "status": "active",
+    "country": "DO",
+    "name": "Banco de Reservas",
+    "id": "org_banreservas",
+    "type": "bank"
+  },
+  "compliance": {
+    "pci_dss_level": 1,
+    "gdpr_compliant": true,
+    "aml_screening": true,
+    "ccpa_compliant": true
+  },
+  "api_keys": {
+    "api_key": "sk_live_banreservas_v6_production",
+    "webhook_secret": "whsec_banreservas_v6_production"
+  },
+  "modules": {
+    "compliance": {
+      "frameworks": [
+        "AML",
+        "KYC",
+        "GDPR",
+        "DRx"
+      ],
+      "enabled": true
+    },
+    "marketing": {
+      "agents_count": 24,
+      "enabled": true
+    },
+    "credit_evaluation": {
+      "risk_levels": {
+        "low": 0.85,
+        "medium": 0.65,
+        "high": 0.45
+      },
+      "enabled": true,
+      "similarity_threshold": 0.85
+    },
+    "payments": {
+      "stripe_enabled": true,
+      "enabled": true
+    }
+  }
+}
