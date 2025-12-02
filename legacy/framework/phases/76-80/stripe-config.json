@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-11-25T08:15:11.7824850-05:00",
+  "name": "Stripe",
+  "enabled": true,
+  "apiKey": "sk_live_1234567890",
+  "environment": "production"
+}

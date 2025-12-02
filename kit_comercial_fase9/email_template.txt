@@ -1,0 +1,11 @@
+ASUNTO: Demo Nadakki AI - Caso Real
+
+Hola [Nombre],
+
+Sistema implementado con instituciones como Credicefi:
+- Evaluaciones: 24 horas -> 3 segundos
+- Deteccion de fraude: +89% accuracy
+
+¿15 minutos para ver demo?
+
+Saludos

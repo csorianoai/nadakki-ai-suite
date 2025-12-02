@@ -1,0 +1,25 @@
+{
+  "institution": {
+    "currency": "DOP",
+    "domain": "credicefi.do",
+    "status": "active",
+    "country": "DO",
+    "name": "Credicefi",
+    "id": "org_credicefi",
+    "type": "fintech"
+  },
+  "api_keys": {
+    "api_key": "sk_live_credicefi_v6_production",
+    "webhook_secret": "whsec_credicefi_v6_production"
+  },
+  "modules": {
+    "credit_evaluation": {
+      "similarity_threshold": 0.8,
+      "enabled": true
+    },
+    "marketing": {
+      "agents_count": 24,
+      "enabled": true
+    }
+  }
+}

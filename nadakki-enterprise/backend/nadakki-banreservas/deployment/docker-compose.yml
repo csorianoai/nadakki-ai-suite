@@ -1,0 +1,65 @@
+﻿version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: deployment/docker/Dockerfile.backend
+    container_name: nadakki-backend-banreservas
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/nadakki
+      - INSTITUTION=banreservas
+    depends_on:
+      - db
+    networks:
+      - nadakki-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: deployment/docker/Dockerfile.frontend
+    container_name: nadakki-frontend-banreservas
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - NEXT_PUBLIC_INSTITUTION=banreservas
+    depends_on:
+      - backend
+    networks:
+      - nadakki-network
+
+  db:
+    image: postgres:15-alpine
+    container_name: nadakki-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=nadakki
+    ports:
+      - "5432:5432"
+    volumes:
+      - nadakki-db-data:/var/lib/postgresql/data
+    networks:
+      - nadakki-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: nadakki-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - nadakki-redis-data:/data
+    networks:
+      - nadakki-network
+
+volumes:
+  nadakki-db-data:
+  nadakki-redis-data:
+
+networks:
+  nadakki-network:
+    driver: bridge

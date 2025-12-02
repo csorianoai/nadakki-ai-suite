@@ -1,0 +1,10 @@
+{
+  "debug": true,
+  "notifications": false,
+  "parallel": false,
+  "environment": "development",
+  "database": {
+    "type": "sqlite",
+    "path": "C:\\nadakki-framework\\db\\development.db"
+  }
+}

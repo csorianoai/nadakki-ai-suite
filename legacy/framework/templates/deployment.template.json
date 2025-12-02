@@ -1,0 +1,8 @@
+{
+  "deployment": {
+    "version": "2.1 ULTRA",
+    "status": "pending",
+    "id": "deployment_id",
+    "environment": "staging"
+  }
+}

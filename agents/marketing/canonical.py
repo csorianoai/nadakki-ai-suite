@@ -22,7 +22,7 @@ from agents.marketing.cashofferfilteria import CashOfferFilterIA
 from agents.marketing.competitoranalyzeria import CompetitorAnalyzerIA
 from agents.marketing.competitorintelligenceia import CompetitorIntelligenceIA
 from agents.marketing.contactqualityia import ContactQualityIA
-from agents.marketing.contentperformanceia import ContentPerformanceIA
+from agents.marketing.contentperformanceia import ContentPerformanceConfig as ContentPerformanceIA
 from agents.marketing.conversioncohortia import ConversionCohortIA
 from agents.marketing.creativeanalyzeria import CreativeAnalyzerIA
 from agents.marketing.customersegmentatonia import AudienceSegmentationIA

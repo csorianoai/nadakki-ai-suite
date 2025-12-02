@@ -14,7 +14,7 @@ router = APIRouter()
 # =============================================================================
 
 @router.get("/api/v1/institutions")
-async def list_institutions(current_user: Dict = Depends(require_roles(["admin", "super_admin"]))):
+async def list_institutions(current_user: Dict = Depends(require_tenant)):
     """List all institutions with their configurations"""
     # Replace with actual database query
     institutions = [
@@ -32,7 +32,7 @@ async def list_institutions(current_user: Dict = Depends(require_roles(["admin",
 @router.post("/api/v1/institutions")
 async def create_institution(
     institution_data: Dict,
-    current_user: Dict = Depends(require_roles(["super_admin"]))
+    current_user: Dict = Depends(require_tenant)
 ):
     """Create new financial institution"""
     # Validate and create institution
@@ -60,7 +60,7 @@ async def create_institution(
 async def update_institution(
     institution_id: str,
     update_data: Dict,
-    current_user: Dict = Depends(require_roles(["admin", "super_admin"]))
+    current_user: Dict = Depends(require_tenant)
 ):
     """Update institution configuration"""
     # Update institution logic here
@@ -78,7 +78,7 @@ async def update_institution(
 async def sync_powerbi(
     sync_config: Dict,
     background_tasks: BackgroundTasks,
-    current_user: Dict = Depends(require_roles(["admin", "powerbi_user"]))
+    current_user: Dict = Depends(require_tenant)
 ):
     """Sync data with Power BI"""
     tenant_id = current_user.get("tenant_id")
@@ -96,7 +96,7 @@ async def sync_powerbi(
 @router.get("/api/v1/powerbi/status/{sync_id}")
 async def get_powerbi_sync_status(
     sync_id: str,
-    current_user: Dict = Depends(get_current_user)
+    current_user: Dict = Depends(require_tenant)
 ):
     """Get Power BI sync status"""
     # Check sync status logic
@@ -110,7 +110,7 @@ async def get_powerbi_sync_status(
 @router.get("/api/v1/powerbi/datasets/{tenant_id}")
 async def get_powerbi_datasets(
     tenant_id: str,
-    current_user: Dict = Depends(require_tenant(tenant_id))
+    current_user: Dict = Depends(require_tenant)
 ):
     """Get Power BI datasets for tenant"""
     # Return available datasets
@@ -129,7 +129,7 @@ async def get_powerbi_datasets(
 async def generate_report(
     report_config: Dict,
     background_tasks: BackgroundTasks,
-    current_user: Dict = Depends(require_roles(["admin", "analyst"]))
+    current_user: Dict = Depends(require_tenant)
 ):
     """Generate custom report"""
     tenant_id = current_user.get("tenant_id")
@@ -150,7 +150,7 @@ async def generate_report(
 @router.get("/api/v1/reports/{report_id}")
 async def get_report(
     report_id: str,
-    current_user: Dict = Depends(get_current_user)
+    current_user: Dict = Depends(require_tenant)
 ):
     """Get generated report"""
     # Return report data or status
@@ -168,7 +168,7 @@ async def get_report(
 @router.get("/api/v1/tenants/{tenant_id}/config")
 async def get_tenant_config(
     tenant_id: str,
-    current_user: Dict = Depends(require_tenant(tenant_id))
+    current_user: Dict = Depends(require_tenant)
 ):
     """Get tenant-specific configuration"""
     # Load tenant config from file or database
@@ -183,7 +183,7 @@ async def get_tenant_config(
 async def update_tenant_config(
     tenant_id: str,
     config_update: Dict,
-    current_user: Dict = Depends(require_roles(["admin"]))
+    current_user: Dict = Depends(require_tenant)
 ):
     """Update tenant-specific configuration"""
     # Update tenant configuration
@@ -207,3 +207,4 @@ async def generate_report_task(report_id: str, tenant_id: str, config: Dict):
     """Background task for report generation"""
     # Implement actual report generation logic
     pass
+

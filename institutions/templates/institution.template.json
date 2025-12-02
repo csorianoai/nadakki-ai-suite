@@ -1,0 +1,62 @@
+{
+  "modules": {
+    "compliance": {
+      "frameworks": [
+        "AML",
+        "KYC",
+        "GDPR",
+        "CCPA"
+      ],
+      "enabled": true
+    },
+    "marketing": {
+      "enabled": true,
+      "custom_agents": [],
+      "agents_count": 24
+    },
+    "credit_evaluation": {
+      "enabled": true,
+      "custom_agents": [],
+      "engine_version": "6.0",
+      "similarity_threshold": 0.85
+    },
+    "payments": {
+      "custom_gateways": [],
+      "enabled": true,
+      "stripe_enabled": true
+    }
+  },
+  "compliance": {
+    "pci_dss_level": 1,
+    "gdpr_compliant": true,
+    "aml_screening": true,
+    "ccpa_compliant": true,
+    "kyc_required": true
+  },
+  "sla": {
+    "uptime_target": "99.99%",
+    "rate_limit_rpm": 60000,
+    "response_time_p99_ms": 100,
+    "max_concurrent_requests": 10000
+  },
+  "institution": {
+    "currency": "USD|DOP|MXN|COP|PEN|CLP|ARS|BRL",
+    "domain": "your-domain.com",
+    "status": "active",
+    "country": "US|DO|MX|CO|PE|CL|AR|BR",
+    "name": "Your Institution Name",
+    "id": "CHANGE_ME_INSTITUTION_ID",
+    "type": "bank|credit_union|fintech|insurance|investment"
+  },
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "schema": "public",
+    "database": "nadakki_YOUR_INSTITUTION",
+    "user": "nadakki_user"
+  },
+  "api_keys": {
+    "api_key": "sk_live_CHANGE_ME",
+    "webhook_secret": "whsec_CHANGE_ME"
+  }
+}

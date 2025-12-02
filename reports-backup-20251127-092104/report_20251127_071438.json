@@ -1,0 +1,13 @@
+{
+  "SuccessRate": 33.33,
+  "ExecutionId": "04dfe3c5",
+  "DryRun": {
+    "IsPresent": false
+  },
+  "Environment": "staging",
+  "Results": {
+    "stripe": false,
+    "auth0": true,
+    "sendgrid": false
+  }
+}

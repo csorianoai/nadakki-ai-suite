@@ -1,0 +1,23 @@
+{
+  "validations": {
+    "security": {
+      "tls": true,
+      "authentication": "JWT",
+      "rateLimit": true
+    },
+    "endpoints": [
+      {
+        "url": "http://localhost:8000/health",
+        "name": "Health",
+        "status": 200,
+        "method": "GET"
+      },
+      {
+        "url": "http://localhost:8000/api/status",
+        "name": "API Status",
+        "status": 200,
+        "method": "GET"
+      }
+    ]
+  }
+}

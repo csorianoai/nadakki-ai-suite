@@ -1,0 +1,5 @@
+{
+  "timeout": 10,
+  "apiVersion": "2023-10-16",
+  "retries": 3
+}

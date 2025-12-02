@@ -1,0 +1,1570 @@
+{
+  "auditmaster": {
+    "ecosystem": "compliance",
+    "file_path": "agents\\compliance\\auditmaster.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "compliancewatchdog": {
+    "ecosystem": "compliance",
+    "file_path": "agents\\compliance\\compliancewatchdog.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "compliance_coordinator": {
+    "ecosystem": "compliance",
+    "file_path": "agents\\compliance\\compliance_coordinator.py",
+    "status": "active",
+    "line_count": 97,
+    "registered": true
+  },
+  "docguardian": {
+    "ecosystem": "compliance",
+    "file_path": "agents\\compliance\\docguardian.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "regulatory_radar": {
+    "ecosystem": "compliance",
+    "file_path": "agents\\compliance\\regulatory_radar.py",
+    "status": "active",
+    "line_count": 246,
+    "registered": true
+  },
+  "activosfijos": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\activosfijos.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "analisis_financiero": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\analisis_financiero.py",
+    "status": "active",
+    "line_count": 1129,
+    "registered": true
+  },
+  "analisis_financiero_super_agent": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\analisis_financiero_super_agent.py",
+    "status": "active",
+    "line_count": 1441,
+    "registered": true
+  },
+  "auditoriainterna": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\auditoriainterna.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "cierrecontable": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\cierrecontable.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "compliance_contable": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\compliance_contable.py",
+    "status": "active",
+    "line_count": 76,
+    "registered": true
+  },
+  "conciliacionbancaria": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\conciliacionbancaria.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "contabilidadinteligente": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\contabilidadinteligente.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "contabilidad_coordinator": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\contabilidad_coordinator.py",
+    "status": "active",
+    "line_count": 343,
+    "registered": true
+  },
+  "controlgastos": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\controlgastos.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "dgiiautoreporter": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\dgiiautoreporter.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "facturacionelectronica": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\facturacionelectronica.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "facturacionia": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\facturacionia.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "flujocajaia": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\flujocajaia.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "flujocajaprediccion": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\flujocajaprediccion.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "inventariovaloracion": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\inventariovaloracion.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "previsionfiscal": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\previsionfiscal.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "reconcilia_auto": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\reconcilia_auto.py",
+    "status": "active",
+    "line_count": 315,
+    "registered": true
+  },
+  "reportesejecutivos": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\reportesejecutivos.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "reportes_fiscales": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\reportes_fiscales.py",
+    "status": "active",
+    "line_count": 671,
+    "registered": true
+  },
+  "reportingfinanciero": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\reportingfinanciero.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "tributarioia": {
+    "ecosystem": "contabilidad",
+    "file_path": "agents\\contabilidad\\tributarioia.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "decision_coordinator": {
+    "ecosystem": "decision",
+    "file_path": "agents\\decision\\decision_coordinator.py",
+    "status": "active",
+    "line_count": 95,
+    "registered": true
+  },
+  "policyguardian": {
+    "ecosystem": "decision",
+    "file_path": "agents\\decision\\policyguardian.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "quantumdecision": {
+    "ecosystem": "decision",
+    "file_path": "agents\\decision\\quantumdecision.py",
+    "status": "active",
+    "line_count": 273,
+    "registered": true
+  },
+  "riskoracle": {
+    "ecosystem": "decision",
+    "file_path": "agents\\decision\\riskoracle.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "turboapprover": {
+    "ecosystem": "decision",
+    "file_path": "agents\\decision\\turboapprover.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "competenciasia": {
+    "ecosystem": "educacion",
+    "file_path": "agents\\educacion\\competenciasia.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "contenidopersonalizado": {
+    "ecosystem": "educacion",
+    "file_path": "agents\\educacion\\contenidopersonalizado.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "curriculumadaptativo": {
+    "ecosystem": "educacion",
+    "file_path": "agents\\educacion\\curriculumadaptativo.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "cursosautomaticos": {
+    "ecosystem": "educacion",
+    "file_path": "agents\\educacion\\cursosautomaticos.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "educacion_coordinator": {
+    "ecosystem": "educacion",
+    "file_path": "agents\\educacion\\educacion_coordinator.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "evaluacionadaptativa": {
+    "ecosystem": "educacion",
+    "file_path": "agents\\educacion\\evaluacionadaptativa.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "evaluacionia": {
+    "ecosystem": "educacion",
+    "file_path": "agents\\educacion\\evaluacionia.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "progresionestudiante": {
+    "ecosystem": "educacion",
+    "file_path": "agents\\educacion\\progresionestudiante.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "tutorvirtualia": {
+    "ecosystem": "educacion",
+    "file_path": "agents\\educacion\\tutorvirtualia.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "chatbotsupreme": {
+    "ecosystem": "experiencia",
+    "file_path": "agents\\experiencia\\chatbotsupreme.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "customergenius": {
+    "ecosystem": "experiencia",
+    "file_path": "agents\\experiencia\\customergenius.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "experiencia_coordinator": {
+    "ecosystem": "experiencia",
+    "file_path": "agents\\experiencia\\experiencia_coordinator.py",
+    "status": "active",
+    "line_count": 110,
+    "registered": true
+  },
+  "onboardingwizard": {
+    "ecosystem": "experiencia",
+    "file_path": "agents\\experiencia\\onboardingwizard.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "personalizationengine": {
+    "ecosystem": "experiencia",
+    "file_path": "agents\\experiencia\\personalizationengine.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "backupguardian": {
+    "ecosystem": "fortaleza",
+    "file_path": "agents\\fortaleza\\backupguardian.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "cybersentinel": {
+    "ecosystem": "fortaleza",
+    "file_path": "agents\\fortaleza\\cybersentinel.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "datavault": {
+    "ecosystem": "fortaleza",
+    "file_path": "agents\\fortaleza\\datavault.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "fortaleza_coordinator": {
+    "ecosystem": "fortaleza",
+    "file_path": "agents\\fortaleza\\fortaleza_coordinator.py",
+    "status": "active",
+    "line_count": 110,
+    "registered": true
+  },
+  "systemhealthmonitor": {
+    "ecosystem": "fortaleza",
+    "file_path": "agents\\fortaleza\\systemhealthmonitor.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "cashfloworacle": {
+    "ecosystem": "inteligencia",
+    "file_path": "agents\\inteligencia\\cashfloworacle.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "inteligencia_coordinator": {
+    "ecosystem": "inteligencia",
+    "file_path": "agents\\inteligencia\\inteligencia_coordinator.py",
+    "status": "active",
+    "line_count": 110,
+    "registered": true
+  },
+  "pricinggenius": {
+    "ecosystem": "inteligencia",
+    "file_path": "agents\\inteligencia\\pricinggenius.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "profitmaximizer": {
+    "ecosystem": "inteligencia",
+    "file_path": "agents\\inteligencia\\profitmaximizer.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "roimaster": {
+    "ecosystem": "inteligencia",
+    "file_path": "agents\\inteligencia\\roimaster.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "analisistendencias": {
+    "ecosystem": "investigacion",
+    "file_path": "agents\\investigacion\\analisistendencias.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "innovacionia": {
+    "ecosystem": "investigacion",
+    "file_path": "agents\\investigacion\\innovacionia.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "innovaciontracker": {
+    "ecosystem": "investigacion",
+    "file_path": "agents\\investigacion\\innovaciontracker.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "investigacion_coordinator": {
+    "ecosystem": "investigacion",
+    "file_path": "agents\\investigacion\\investigacion_coordinator.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "patentesanalyzer": {
+    "ecosystem": "investigacion",
+    "file_path": "agents\\investigacion\\patentesanalyzer.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "patentesautomaticos": {
+    "ecosystem": "investigacion",
+    "file_path": "agents\\investigacion\\patentesautomaticos.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "prototipogenerator": {
+    "ecosystem": "investigacion",
+    "file_path": "agents\\investigacion\\prototipogenerator.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "prototiposgenerativos": {
+    "ecosystem": "investigacion",
+    "file_path": "agents\\investigacion\\prototiposgenerativos.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "tendenciasia": {
+    "ecosystem": "investigacion",
+    "file_path": "agents\\investigacion\\tendenciasia.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "derechoadministrativo": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechoadministrativo.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechoadministrativophd": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechoadministrativophd.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "derechoambiental": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechoambiental.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "derechobancario": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechobancario.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechocivilphd": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechocivilphd.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "derechocomercial": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechocomercial.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechocomercialephd": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechocomercialephd.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "derechoconstitucional": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechoconstitucional.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechoconstitucionalphd": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechoconstitucionalphd.py",
+    "status": "active",
+    "line_count": 273,
+    "registered": true
+  },
+  "derechocontratacion": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechocontratacion.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "derechofamiliaphd": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechofamiliaphd.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "derechofamiliar": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechofamiliar.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechofinanciero": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechofinanciero.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "derechoinmobiliario": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechoinmobiliario.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechoinmobiliariophd": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechoinmobiliariophd.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "derechointelectual": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechointelectual.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechointernacional": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechointernacional.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derecholaboral": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derecholaboral.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derecholaboralphd": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derecholaboralphd.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "derechomarcario": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechomarcario.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "derechomaritimo": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechomaritimo.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechomigratorio": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechomigratorio.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "derechominero": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechominero.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechonotarial": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechonotarial.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "derechopenal": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechopenal.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechopenalphd": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechopenalphd.py",
+    "status": "active",
+    "line_count": 273,
+    "registered": true
+  },
+  "derechoprocesalpenal": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechoprocesalpenal.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechoprocesalpenalphd": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechoprocesalpenalphd.py",
+    "status": "active",
+    "line_count": 273,
+    "registered": true
+  },
+  "derechoseguros": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechoseguros.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechotributario": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechotributario.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "derechotributariophd": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\derechotributariophd.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "legal_coordinator": {
+    "ecosystem": "legal",
+    "file_path": "agents\\legal\\legal_coordinator.py",
+    "status": "active",
+    "line_count": 149,
+    "registered": true
+  },
+  "alertasinventario": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\alertasinventario.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "almaceninteligente": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\almaceninteligente.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "analisisrendimiento": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\analisisrendimiento.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "controlcalidad": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\controlcalidad.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "controlcalidadia": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\controlcalidadia.py",
+    "status": "active",
+    "line_count": 148,
+    "registered": true
+  },
+  "controlpedidosia": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\controlpedidosia.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "costoslogisticos": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\costoslogisticos.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "evaluadorproveedoresia": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\evaluadorproveedoresia.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "gestionriesgos": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\gestionriesgos.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "logisticareversa": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\logisticareversa.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "logistica_coordinator": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\logistica_coordinator.py",
+    "status": "active",
+    "line_count": 137,
+    "registered": true
+  },
+  "optimizacionalmacen": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\optimizacionalmacen.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "optimizacioncostos": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\optimizacioncostos.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "optimizadorrutasia": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\optimizadorrutasia.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "planificaciondemanda": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\planificaciondemanda.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "predicciondemanda": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\predicciondemanda.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "previsioninventarioia": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\previsioninventarioia.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "seguridadcarga": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\seguridadcarga.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "sostenibilidadia": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\sostenibilidadia.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "transporteoptimizado": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\transporteoptimizado.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "transportepredictivo": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\transportepredictivo.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "trazabilidadia": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\trazabilidadia.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "trazabilidadtotal": {
+    "ecosystem": "logistica",
+    "file_path": "agents\\logistica\\trazabilidadtotal.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "abtestingia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\abtestingia.py",
+    "status": "active",
+    "line_count": 441,
+    "registered": true
+  },
+  "abtestingimpactia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\abtestingimpactia.py",
+    "status": "active",
+    "line_count": 289,
+    "registered": true
+  },
+  "attributionmodelia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\attributionmodelia.py",
+    "status": "active",
+    "line_count": 657,
+    "registered": true
+  },
+  "budgetforecastia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\budgetforecastia.py",
+    "status": "active",
+    "line_count": 639,
+    "registered": true
+  },
+  "campaignoptimizeria": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\campaignoptimizeria.py",
+    "status": "active",
+    "line_count": 134,
+    "registered": true
+  },
+  "canonical": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\canonical.py",
+    "status": "active",
+    "line_count": 453,
+    "registered": true
+  },
+  "canonical_backup_20251011_084547": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\canonical_backup_20251011_084547.py",
+    "status": "active",
+    "line_count": 323,
+    "registered": true
+  },
+  "canonical_backup_20251012_091337": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\canonical_backup_20251012_091337.py",
+    "status": "active",
+    "line_count": 452,
+    "registered": true
+  },
+  "cashofferfilteria": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\cashofferfilteria.py",
+    "status": "active",
+    "line_count": 218,
+    "registered": true
+  },
+  "competitoranalyzeria": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\competitoranalyzeria.py",
+    "status": "active",
+    "line_count": 577,
+    "registered": true
+  },
+  "competitorintelligenceia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\competitorintelligenceia.py",
+    "status": "active",
+    "line_count": 529,
+    "registered": true
+  },
+  "contactqualityia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\contactqualityia.py",
+    "status": "active",
+    "line_count": 162,
+    "registered": true
+  },
+  "contentperformanceia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\contentperformanceia.py",
+    "status": "active",
+    "line_count": 1159,
+    "registered": true
+  },
+  "contentperformance_superagent_v5": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\contentperformance_superagent_v5.py",
+    "status": "active",
+    "line_count": 1062,
+    "registered": true
+  },
+  "content_generator_v3": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\content_generator_v3.py",
+    "status": "active",
+    "line_count": 1208,
+    "registered": true
+  },
+  "conversioncohortia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\conversioncohortia.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "creativeanalyzeria": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\creativeanalyzeria.py",
+    "status": "active",
+    "line_count": 585,
+    "registered": true
+  },
+  "customersegmentatonia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\customersegmentatonia.py",
+    "status": "active",
+    "line_count": 552,
+    "registered": true
+  },
+  "emailautomationia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\emailautomationia.py",
+    "status": "active",
+    "line_count": 550,
+    "registered": true
+  },
+  "geosegmentationia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\geosegmentationia.py",
+    "status": "active",
+    "line_count": 265,
+    "registered": true
+  },
+  "influencermatcheria": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\influencermatcheria.py",
+    "status": "active",
+    "line_count": 530,
+    "registered": true
+  },
+  "influencermatchingia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\influencermatchingia.py",
+    "status": "active",
+    "line_count": 479,
+    "registered": true
+  },
+  "journeyoptimizeria": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\journeyoptimizeria.py",
+    "status": "active",
+    "line_count": 619,
+    "registered": true
+  },
+  "leadscoringia": {
+    "ecosystem": "ventascrm",
+    "file_path": "agents\\ventascrm\\leadscoringia.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "leadscoringia_backup_20251012_120320": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\leadscoringia_backup_20251012_120320.py",
+    "status": "active",
+    "line_count": 380,
+    "registered": true
+  },
+  "marketingmixmodelia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\marketingmixmodelia.py",
+    "status": "active",
+    "line_count": 613,
+    "registered": true
+  },
+  "marketingorchestratorea": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\marketingorchestratorea.py",
+    "status": "active",
+    "line_count": 626,
+    "registered": true
+  },
+  "marketing_coordinator": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\marketing_coordinator.py",
+    "status": "active",
+    "line_count": 134,
+    "registered": true
+  },
+  "minimalformia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\minimalformia.py",
+    "status": "active",
+    "line_count": 606,
+    "registered": true
+  },
+  "personalizationengineia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\personalizationengineia.py",
+    "status": "active",
+    "line_count": 650,
+    "registered": true
+  },
+  "productaffinityia": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\productaffinityia.py",
+    "status": "active",
+    "line_count": 276,
+    "registered": true
+  },
+  "retentionpredictorea": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\retentionpredictorea.py",
+    "status": "active",
+    "line_count": 672,
+    "registered": true
+  },
+  "schemas_from_sandbox": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\schemas_from_sandbox.py",
+    "status": "active",
+    "line_count": 458,
+    "registered": true
+  },
+  "socialpostgeneratoria": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\socialpostgeneratoria.py",
+    "status": "active",
+    "line_count": 493,
+    "registered": true
+  },
+  "validate_agents": {
+    "ecosystem": "marketing",
+    "file_path": "agents\\marketing\\validate_agents.py",
+    "status": "active",
+    "line_count": 54,
+    "registered": true
+  },
+  "costoptimizer": {
+    "ecosystem": "operacional",
+    "file_path": "agents\\operacional\\costoptimizer.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "operacional_coordinator": {
+    "ecosystem": "operacional",
+    "file_path": "agents\\operacional\\operacional_coordinator.py",
+    "status": "active",
+    "line_count": 110,
+    "registered": true
+  },
+  "processgenius": {
+    "ecosystem": "operacional",
+    "file_path": "agents\\operacional\\processgenius.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "qualitycontroller": {
+    "ecosystem": "operacional",
+    "file_path": "agents\\operacional\\qualitycontroller.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "workflowmaster": {
+    "ecosystem": "operacional",
+    "file_path": "agents\\operacional\\workflowmaster.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "coordinator": {
+    "ecosystem": "orchestration",
+    "file_path": "agents\\orchestration\\coordinator.py",
+    "status": "active",
+    "line_count": 28,
+    "registered": true
+  },
+  "healthchecker": {
+    "ecosystem": "orchestration",
+    "file_path": "agents\\orchestration\\healthchecker.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "loadbalancer": {
+    "ecosystem": "orchestration",
+    "file_path": "agents\\orchestration\\loadbalancer.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "orchestrationmaster": {
+    "ecosystem": "orchestration",
+    "file_path": "agents\\orchestration\\orchestrationmaster.py",
+    "status": "active",
+    "line_count": 273,
+    "registered": true
+  },
+  "resourcemanager": {
+    "ecosystem": "orchestration",
+    "file_path": "agents\\orchestration\\resourcemanager.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "base_components_v2": {
+    "ecosystem": "originacion",
+    "file_path": "agents\\originacion\\base_components_v2.py",
+    "status": "active",
+    "line_count": 634,
+    "registered": true
+  },
+  "behaviorminer": {
+    "ecosystem": "originacion",
+    "file_path": "agents\\originacion\\behaviorminer.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "behavior_miner_v2": {
+    "ecosystem": "originacion",
+    "file_path": "agents\\originacion\\behavior_miner_v2.py",
+    "status": "active",
+    "line_count": 219,
+    "registered": true
+  },
+  "dnaprofiler": {
+    "ecosystem": "originacion",
+    "file_path": "agents\\originacion\\dnaprofiler.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "dna_profiler_v2": {
+    "ecosystem": "originacion",
+    "file_path": "agents\\originacion\\dna_profiler_v2.py",
+    "status": "active",
+    "line_count": 110,
+    "registered": true
+  },
+  "incomeoracle": {
+    "ecosystem": "originacion",
+    "file_path": "agents\\originacion\\incomeoracle.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "income_oracle_v2": {
+    "ecosystem": "originacion",
+    "file_path": "agents\\originacion\\income_oracle_v2.py",
+    "status": "active",
+    "line_count": 179,
+    "registered": true
+  },
+  "originacion_coordinator": {
+    "ecosystem": "originacion",
+    "file_path": "agents\\originacion\\originacion_coordinator.py",
+    "status": "active",
+    "line_count": 95,
+    "registered": true
+  },
+  "sentinelbot": {
+    "ecosystem": "originacion",
+    "file_path": "agents\\originacion\\sentinelbot.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "sentinel_bot_v2": {
+    "ecosystem": "originacion",
+    "file_path": "agents\\originacion\\sentinel_bot_v2.py",
+    "status": "active",
+    "line_count": 57,
+    "registered": true
+  },
+  "analisisvarianza": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\analisisvarianza.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "budgetoptimizer": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\budgetoptimizer.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "controlpresupuestario": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\controlpresupuestario.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "costocentros": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\costocentros.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "forecastingavanzado": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\forecastingavanzado.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "forecastingia": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\forecastingia.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "optimizacionrecursos": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\optimizacionrecursos.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "planificacionestrategica": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\planificacionestrategica.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "presupuestomaestro": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\presupuestomaestro.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "presupuestopredictivoia": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\presupuestopredictivoia.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "presupuesto_coordinator": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\presupuesto_coordinator.py",
+    "status": "active",
+    "line_count": 120,
+    "registered": true
+  },
+  "roipredictor": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\roipredictor.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "varianzaanalisis": {
+    "ecosystem": "presupuesto",
+    "file_path": "agents\\presupuesto\\varianzaanalisis.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "collectionmaster": {
+    "ecosystem": "recuperacion",
+    "file_path": "agents\\recuperacion\\collectionmaster.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "legalpathway": {
+    "ecosystem": "recuperacion",
+    "file_path": "agents\\recuperacion\\legalpathway.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "negotiationbot": {
+    "ecosystem": "recuperacion",
+    "file_path": "agents\\recuperacion\\negotiationbot.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "recoveryoptimizer": {
+    "ecosystem": "recuperacion",
+    "file_path": "agents\\recuperacion\\recoveryoptimizer.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "recuperacion_coordinator": {
+    "ecosystem": "recuperacion",
+    "file_path": "agents\\recuperacion\\recuperacion_coordinator.py",
+    "status": "active",
+    "line_count": 95,
+    "registered": true
+  },
+  "amldetector": {
+    "ecosystem": "regtech",
+    "file_path": "agents\\regtech\\amldetector.py",
+    "status": "active",
+    "line_count": 273,
+    "registered": true
+  },
+  "amltiemporeal": {
+    "ecosystem": "regtech",
+    "file_path": "agents\\regtech\\amltiemporeal.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "kycautomatico": {
+    "ecosystem": "regtech",
+    "file_path": "agents\\regtech\\kycautomatico.py",
+    "status": "active",
+    "line_count": 273,
+    "registered": true
+  },
+  "monitoreotransacciones": {
+    "ecosystem": "regtech",
+    "file_path": "agents\\regtech\\monitoreotransacciones.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "regtech_coordinator": {
+    "ecosystem": "regtech",
+    "file_path": "agents\\regtech\\regtech_coordinator.py",
+    "status": "active",
+    "line_count": 113,
+    "registered": true
+  },
+  "reportesregulatorios": {
+    "ecosystem": "regtech",
+    "file_path": "agents\\regtech\\reportesregulatorios.py",
+    "status": "active",
+    "line_count": 115,
+    "registered": true
+  },
+  "reportingregulatorio": {
+    "ecosystem": "regtech",
+    "file_path": "agents\\regtech\\reportingregulatorio.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "sancioneschecker": {
+    "ecosystem": "regtech",
+    "file_path": "agents\\regtech\\sancioneschecker.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "capacitacionia": {
+    "ecosystem": "rrhh",
+    "file_path": "agents\\rrhh\\capacitacionia.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "cvanalyzeria": {
+    "ecosystem": "rrhh",
+    "file_path": "agents\\rrhh\\cvanalyzeria.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "nominaautomatica": {
+    "ecosystem": "rrhh",
+    "file_path": "agents\\rrhh\\nominaautomatica.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "nominainteligente": {
+    "ecosystem": "rrhh",
+    "file_path": "agents\\rrhh\\nominainteligente.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "performanceanalyzer": {
+    "ecosystem": "rrhh",
+    "file_path": "agents\\rrhh\\performanceanalyzer.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "performancetracker": {
+    "ecosystem": "rrhh",
+    "file_path": "agents\\rrhh\\performancetracker.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "rrhh_coordinator": {
+    "ecosystem": "rrhh",
+    "file_path": "agents\\rrhh\\rrhh_coordinator.py",
+    "status": "active",
+    "line_count": 116,
+    "registered": true
+  },
+  "selectioncvia": {
+    "ecosystem": "rrhh",
+    "file_path": "agents\\rrhh\\selectioncvia.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "talentoprediccion": {
+    "ecosystem": "rrhh",
+    "file_path": "agents\\rrhh\\talentoprediccion.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "talentopredictor": {
+    "ecosystem": "rrhh",
+    "file_path": "agents\\rrhh\\talentopredictor.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "churnpredictor": {
+    "ecosystem": "ventascrm",
+    "file_path": "agents\\ventascrm\\churnpredictor.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "cierrepredictivoia": {
+    "ecosystem": "ventascrm",
+    "file_path": "agents\\ventascrm\\cierrepredictivoia.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "clientelifecycleia": {
+    "ecosystem": "ventascrm",
+    "file_path": "agents\\ventascrm\\clientelifecycleia.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "communicationbot": {
+    "ecosystem": "ventascrm",
+    "file_path": "agents\\ventascrm\\communicationbot.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "pipelineoptimizer": {
+    "ecosystem": "ventascrm",
+    "file_path": "agents\\ventascrm\\pipelineoptimizer.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "pipelinepredictivoia": {
+    "ecosystem": "ventascrm",
+    "file_path": "agents\\ventascrm\\pipelinepredictivoia.py",
+    "status": "active",
+    "line_count": 121,
+    "registered": true
+  },
+  "upsellengine": {
+    "ecosystem": "ventascrm",
+    "file_path": "agents\\ventascrm\\upsellengine.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "ventascrm_coordinator": {
+    "ecosystem": "ventascrm",
+    "file_path": "agents\\ventascrm\\ventascrm_coordinator.py",
+    "status": "active",
+    "line_count": 114,
+    "registered": true
+  },
+  "earlywarning": {
+    "ecosystem": "vigilancia",
+    "file_path": "agents\\vigilancia\\earlywarning.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "marketradar": {
+    "ecosystem": "vigilancia",
+    "file_path": "agents\\vigilancia\\marketradar.py",
+    "status": "active",
+    "line_count": 173,
+    "registered": true
+  },
+  "portfoliosentinel": {
+    "ecosystem": "vigilancia",
+    "file_path": "agents\\vigilancia\\portfoliosentinel.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "stresstester": {
+    "ecosystem": "vigilancia",
+    "file_path": "agents\\vigilancia\\stresstester.py",
+    "status": "active",
+    "line_count": 200,
+    "registered": true
+  },
+  "vigilancia_coordinator": {
+    "ecosystem": "vigilancia",
+    "file_path": "agents\\vigilancia\\vigilancia_coordinator.py",
+    "status": "active",
+    "line_count": 95,
+    "registered": true
+  }
+}

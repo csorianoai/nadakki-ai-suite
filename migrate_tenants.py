@@ -101,29 +101,4 @@ def migrate_existing_tenants():
 
 # Ejecutar migración
 if __name__ == "__main__":
-    migrated = migrate_existing_tenants()
-    
-    # Probar con todos los tenants
-    from services.integrated_usage_tracker import IntegratedUsageTracker
-    
-    tracker = IntegratedUsageTracker()
-    
-    print("\n🧪 VERIFICANDO TENANTS MIGRADOS...")
-    
-    test_tenants = ["banco-popular-rd", "banreservas-rd", "cofaci-rd", "credicefi-rd"]
-    
-    for tenant in test_tenants:
-        print(f"\n--- Probando {tenant} ---")
-        
-        # Registrar uso de prueba
-        for i in range(2):
-            tracker.log_usage(
-                tenant_id=tenant,
-                endpoint="/api/v1/evaluate",
-                tokens_used=1200,
-                agent_used="credit_evaluator"
-            )
-        
-        # Generar reporte
-        report = tracker.get_tenant_usage_report(tenant)
-        print("📊 Reporte:", json.dumps(report, indent=2))
+    migrate_existing_tenants()

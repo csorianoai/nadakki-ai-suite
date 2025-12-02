@@ -1,0 +1,79 @@
+{
+  "failed": 1,
+  "total": 10,
+  "timestamp": "2025-11-25T08:26:42.4883612-05:00",
+  "passRate": 90.0,
+  "tests": [
+    {
+      "timestamp": "2025-11-25T08:26:42.4745349-05:00",
+      "name": "Framework Initialization",
+      "status": "PASS",
+      "id": "e526e8fa-f323-44cd-82bd-6c1242f2445d",
+      "duration_ms": 314
+    },
+    {
+      "timestamp": "2025-11-25T08:26:42.4793395-05:00",
+      "name": "Configuration Loading",
+      "status": "PASS",
+      "id": "e185d674-8ee0-4041-bee3-291de5939ab7",
+      "duration_ms": 183
+    },
+    {
+      "timestamp": "2025-11-25T08:26:42.4795118-05:00",
+      "name": "JSON Parsing",
+      "status": "PASS",
+      "id": "57c11abe-854f-42b9-8ea9-a6e0547b559a",
+      "duration_ms": 578
+    },
+    {
+      "timestamp": "2025-11-25T08:26:42.4796055-05:00",
+      "name": "Multi-Tenant Setup",
+      "status": "PASS",
+      "id": "73e14fa7-f24e-4863-9481-4e1eb8e15616",
+      "duration_ms": 524
+    },
+    {
+      "timestamp": "2025-11-25T08:26:42.4796826-05:00",
+      "name": "Logging System",
+      "status": "PASS",
+      "id": "f75a47ea-9827-4c91-8743-b4fa8d2965d5",
+      "duration_ms": 980
+    },
+    {
+      "timestamp": "2025-11-25T08:26:42.4797567-05:00",
+      "name": "Report Generation",
+      "status": "PASS",
+      "id": "4a541949-6ebf-4cd1-90a6-412b04e48269",
+      "duration_ms": 222
+    },
+    {
+      "timestamp": "2025-11-25T08:26:42.4798263-05:00",
+      "name": "Backup Creation",
+      "status": "PASS",
+      "id": "adc8c18e-14db-4e61-8254-ebf0cc9ba0bd",
+      "duration_ms": 840
+    },
+    {
+      "timestamp": "2025-11-25T08:26:42.4799049-05:00",
+      "name": "Script Execution",
+      "status": "PASS",
+      "id": "85ff72b7-0bd5-4e07-ad1c-9f54ac818d43",
+      "duration_ms": 114
+    },
+    {
+      "timestamp": "2025-11-25T08:26:42.4799789-05:00",
+      "name": "Error Handling",
+      "status": "FAIL",
+      "id": "814ec7a9-c506-489c-ba29-566d5ce42493",
+      "duration_ms": 824
+    },
+    {
+      "timestamp": "2025-11-25T08:26:42.4813259-05:00",
+      "name": "Parallel Execution",
+      "status": "PASS",
+      "id": "836d9fa7-4e1f-4fed-9085-c422082a780c",
+      "duration_ms": 352
+    }
+  ],
+  "passed": 9
+}

@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  backend:
+    image: python:3.11-slim
+    container_name: nadakki-backend
+    working_dir: /app
+    command: tail -f /dev/null
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+      - TENANT_NAME=credicefi
+    networks:
+      - nadakki
+
+  frontend:
+    image: node:18-alpine
+    container_name: nadakki-frontend
+    working_dir: /app
+    command: sh -c "npm install && node server.js"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - NEXT_PUBLIC_TENANT_ID=credicefi
+    networks:
+      - nadakki
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: nadakki-postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nadakki_credicefi
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - nadakki
+
+volumes:
+  postgres_data:
+
+networks:
+  nadakki:
+    driver: bridge

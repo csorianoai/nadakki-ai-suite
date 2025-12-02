@@ -1,0 +1,13 @@
+{
+  "id": "banreservas",
+  "timestamp": "2025-11-25T08:15:11.9675505-05:00",
+  "name": "Banreservas",
+  "customization": {
+    "branding": {
+      "domain": "banreservas.nadakki.com",
+      "logo": "/assets/banreservas-logo.png"
+    }
+  },
+  "status": "active",
+  "version": "2.1"
+}
