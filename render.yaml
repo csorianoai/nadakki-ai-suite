@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: nadakki-ai-suite
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn credicefi_api:app --bind 0.0.0.0:$PORT
