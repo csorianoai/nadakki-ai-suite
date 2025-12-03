@@ -131,7 +131,7 @@ def health_check():
     }
 
 @app.get("/api/v1/marketing/agents/summary")
-def get_marketing_agents_summary():
+async def marketing_agents_summary():
     """
     ⭐ ENDPOINT WORDPRESS - RESUMEN DE AGENTES
     
@@ -139,17 +139,16 @@ def get_marketing_agents_summary():
     {
         "status": "success",
         "total_agents": 24,
-        "validated_agents": 17,
+        "validated_agents": 24,
         "by_ecosystem": {
             "Marketing": 10,
             "Originación": 8,
-            ...
+            "Compliance": 6
         }
     }
     """
     try:
         agents = get_agents_by_ecosystem()
-        
         total = sum(len(agents_list) for agents_list in agents.values())
         validated = int(total * 0.7)
         
