@@ -1,10 +1,17 @@
 --only-binary=:all:
 
+# Core FastAPI
 fastapi==0.110.0
 uvicorn[standard]==0.29.0
-pydantic==2.5.0
+pydantic==2.7.1
+pydantic-core==2.25.0
 python-multipart==0.0.9
-numpy==1.26.4
+
+# Data science con compatibilidad Python 3.13
+numpy==2.0.0
 pandas==2.2.3
+
+# Utilities
 requests==2.31.0
 python-dotenv==1.0.0
+typing-extensions==4.12.0
