@@ -1,8 +1,4 @@
-# DEPLOY GARANTIZADO RENDER.COM
-# Usa: pip install -c constraints.txt -r requirements.txt
-
---no-binary pydantic-core
-
+# Python 3.11 compatible - Render.com garantizado
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 pydantic==2.5.0
