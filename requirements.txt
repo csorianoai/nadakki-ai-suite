@@ -1,9 +1,15 @@
-# Python 3.11 compatible - Render.com garantizado
+--only-binary=:all:
+
+# Core API
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 pydantic==2.5.0
 python-multipart==0.0.6
-numpy==1.24.3
-pandas==2.0.3
+
+# Data science (Python 3.13 compatible)
+numpy==2.0.0
+pandas==2.2.3
+
+# Utilities
 requests==2.31.0
 python-dotenv==1.0.0
