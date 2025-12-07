@@ -1,0 +1,9 @@
+{
+  "name": "@nadakki/api",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "main": "./src/index.ts",
+  "version": "1.0.0"
+}

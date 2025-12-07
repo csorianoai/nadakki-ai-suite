@@ -1,0 +1,11 @@
+{
+  "name": "@nadakki/ui",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "react": "^18.0.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "latest"
+  },
+  "main": "./src/index.ts",
+  "version": "1.0.0"
+}

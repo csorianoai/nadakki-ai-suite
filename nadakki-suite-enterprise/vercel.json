@@ -1,0 +1,17 @@
+{
+  "builds": [
+    {
+      "use": "@vercel/next",
+      "src": "apps/dashboard/package.json"
+    },
+    {
+      "use": "@vercel/next",
+      "src": "apps/admin/package.json"
+    },
+    {
+      "use": "@vercel/next",
+      "src": "apps/landing/package.json"
+    }
+  ],
+  "version": 2
+}
