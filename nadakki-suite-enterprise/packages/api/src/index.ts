@@ -1,48 +1,77 @@
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_RENDER_API_URL || 'https://nadakki-ai-suite.onrender.com';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://nadakki-ai-suite.onrender.com';
 const TENANT_ID = process.env.NEXT_PUBLIC_TENANT_ID || 'credicefi';
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY || 'sk_live_credicefi_12345678abcdefgh';
+const API_KEY = process.env.API_KEY || 'nadakki_klbJUiJetf-5hH1rpCsLfqRIHPdirm0gUajAUkxov8I';
 
-export const apiClient = axios.create({
-  baseURL: API_BASE_URL,
-  timeout: 10000,
-  headers: {
-    'Content-Type': 'application/json',
-    'X-Tenant-ID': TENANT_ID,
-    'X-API-Key': API_KEY,
+class NadakkiAPI {
+  private client: AxiosInstance;
+
+  constructor() {
+    this.client = axios.create({
+      baseURL: API_BASE_URL,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Tenant-ID': TENANT_ID,
+        'X-API-Key': API_KEY,
+      },
+    });
   }
-});
 
-apiClient.interceptors.request.use(
-  (config) => {
-    const token = typeof window !== 'undefined' ? localStorage.getItem('auth_token') : null;
-    if (token) {
-      config.headers.Authorization = \Bearer \\;
-    }
-    return config;
-  },
-  (error) => Promise.reject(error)
-);
-
-apiClient.interceptors.response.use(
-  (response) => response.data,
-  (error) => {
-    console.error('API Error:', error.response?.data || error.message);
-    return Promise.reject(error);
+  // Health check
+  async health() {
+    const response = await this.client.get('/health');
+    return response.data;
   }
-);
 
-export const api = {
-  getCores: () => apiClient.get('/cores'),
-  getCore: (id: string) => apiClient.get(\/cores/\\),
-  getAgents: () => apiClient.get('/agents'),
-  executeAgent: (id: string, payload: any) => apiClient.post(\/agents/\/execute\, payload),
-  getMetrics: () => apiClient.get('/dashboard/metrics'),
-  getHealth: () => apiClient.get('/health'),
-  getTenants: () => apiClient.get('/tenants'),
-  createTenant: (data: any) => apiClient.post('/tenants', data),
-  getInvoices: () => apiClient.get('/billing/invoices'),
-};
+  // Get all agents
+  async getAgents() {
+    const response = await this.client.get('/agents');
+    return response.data;
+  }
 
-export default apiClient;
+  // Get agent categories
+  async getCategories() {
+    const response = await this.client.get('/agents/categories');
+    return response.data;
+  }
+
+  // Get usage by tenant
+  async getUsage(tenantId: string = TENANT_ID) {
+    const response = await this.client.get(`/usage/${tenantId}`);
+    return response.data;
+  }
+
+  // Execute marketing agent
+  async executeMarketingAgent(agentId: string, data: any) {
+    const response = await this.client.post(`/api/marketing/${agentId}/execute`, data);
+    return response.data;
+  }
+
+  // Lead Scoring
+  async leadScoring(data: any) {
+    const response = await this.client.post('/api/marketing/lead-scoring', data);
+    return response.data;
+  }
+
+  // Campaign Optimizer
+  async campaignOptimizer(data: any) {
+    const response = await this.client.post('/api/marketing/campaign-optimizer', data);
+    return response.data;
+  }
+
+  // Customer Segmentation
+  async customerSegmentation(data: any) {
+    const response = await this.client.post('/api/marketing/customer-segmentation', data);
+    return response.data;
+  }
+
+  // Get service info
+  async getServiceInfo() {
+    const response = await this.client.get('/');
+    return response.data;
+  }
+}
+
+export const nadakkiAPI = new NadakkiAPI();
+export default nadakkiAPI;
