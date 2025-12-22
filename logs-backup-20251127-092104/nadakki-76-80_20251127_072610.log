@@ -1,0 +1,10 @@
+[2025-11-27 07:26:10] [INFO] [STRIPE] Llamando a Stripe: products
+[2025-11-27 07:26:10] [SUCCESS] [STRIPE] Stripe exitoso: products
+[2025-11-27 07:26:10] [INFO] [STRIPE] Llamando a Stripe: prices
+[2025-11-27 07:26:11] [SUCCESS] [STRIPE] Stripe exitoso: prices
+[2025-11-27 07:26:11] [INFO] [STRIPE] Llamando a Stripe: webhook_endpoints
+[2025-11-27 07:26:12] [ERROR] [STRIPE] Error Stripe: Response status code does not indicate success: 400 (Bad Request).
+[2025-11-27 07:26:12] [INFO] [SENDGRID] Llamando a SendGrid: verified_senders
+[2025-11-27 07:26:12] [ERROR] [SENDGRID] Error SendGrid: Response status code does not indicate success: 400 (Bad Request).
+[2025-11-27 07:26:12] [INFO] [AUTH0] Llamando a Auth0: oauth/token
+[2025-11-27 07:26:13] [SUCCESS] [AUTH0] Auth0 exitoso: oauth/token

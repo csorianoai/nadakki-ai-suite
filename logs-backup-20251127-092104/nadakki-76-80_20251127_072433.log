@@ -1,0 +1,6 @@
+[2025-11-27 07:24:33] [INFO] [STRIPE] Llamando a Stripe: products
+[2025-11-27 07:24:33] [ERROR] [STRIPE] Error Stripe: Response status code does not indicate success: 401 (Unauthorized).
+[2025-11-27 07:24:33] [INFO] [SENDGRID] Llamando a SendGrid: verified_senders
+[2025-11-27 07:24:34] [ERROR] [SENDGRID] Error SendGrid: Response status code does not indicate success: 401 (Unauthorized).
+[2025-11-27 07:24:34] [INFO] [AUTH0] Llamando a Auth0: oauth/token
+[2025-11-27 07:24:34] [ERROR] [AUTH0] Error Auth0: Cannot bind parameter 'Uri'. Cannot convert value "https:///oauth/token" to type "System.Uri". Error: "Invalid URI: The hostname could not be parsed."

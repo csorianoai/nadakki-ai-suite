@@ -1,0 +1,18 @@
+[2025-11-27 07:14:21] [INFO] [MASTER] === INICIANDO EJECUCIÓN ===
+[2025-11-27 07:14:21] [INFO] [MASTER] Integration: all | Environment: staging | DryRun: False
+[2025-11-27 07:14:21] [WARNING] [NETWORK] ⚠ Stripe no accesible
+[2025-11-27 07:14:21] [WARNING] [NETWORK] ⚠ SendGrid no accesible
+[2025-11-27 07:14:22] [SUCCESS] [NETWORK] ✓ Auth0 accesible
+[2025-11-27 07:14:22] [WARNING] [STRIPE] Intento 1/3 falló - Response status code does not indicate success: 400 (Bad Request).
+[2025-11-27 07:14:24] [WARNING] [STRIPE] Intento 2/3 falló - Response status code does not indicate success: 400 (Bad Request).
+[2025-11-27 07:14:29] [WARNING] [STRIPE] Intento 3/3 falló - Response status code does not indicate success: 400 (Bad Request).
+[2025-11-27 07:14:29] [ERROR] [STRIPE] ❌ Falló después de 3 intentos
+[2025-11-27 07:14:29] [ERROR] [STRIPE] Error Stripe: No se pudo crear producto
+[2025-11-27 07:14:29] [WARNING] [SENDGRID] Intento 1/3 falló - Response status code does not indicate success: 400 (Bad Request).
+[2025-11-27 07:14:32] [WARNING] [SENDGRID] Intento 2/3 falló - Response status code does not indicate success: 400 (Bad Request).
+[2025-11-27 07:14:36] [WARNING] [SENDGRID] Intento 3/3 falló - Response status code does not indicate success: 400 (Bad Request).
+[2025-11-27 07:14:36] [ERROR] [SENDGRID] ❌ Falló después de 3 intentos
+[2025-11-27 07:14:36] [ERROR] [SENDGRID] Error SendGrid: No se pudo crear sender
+[2025-11-27 07:14:37] [SUCCESS] [AUTH0] ✓ REST POST a https://dev-jw7eqy64wmvy3hor.us.auth0.com/oauth/token exitoso
+[2025-11-27 07:14:37] [SUCCESS] [AUTH0] ✓ REST POST a https://dev-jw7eqy64wmvy3hor.us.auth0.com/api/v2/clients exitoso
+[2025-11-27 07:14:38] [SUCCESS] [AUTH0] ✓ REST POST a https://dev-jw7eqy64wmvy3hor.us.auth0.com/api/v2/resource-servers exitoso

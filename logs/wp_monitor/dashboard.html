@@ -1,0 +1,138 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>📊 Nadakki AI Suite - Monitor Quantum</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            body {
+                background: radial-gradient(circle at 20% 20%, #0a0f1a, #05080d);
+                color: #e6edf3;
+                font-family: 'Segoe UI', sans-serif;
+                margin: 0;
+                padding: 25px;
+                overflow-x: hidden;
+            }
+            h1 {
+                color: #58a6ff;
+                text-align: center;
+                font-weight: 600;
+                font-size: 1.8rem;
+                text-shadow: 0 0 8px rgba(88,166,255,0.6);
+            }
+            .summary {
+                background: linear-gradient(135deg, #111a2b, #0b1220);
+                border: 1px solid #1c2a3b;
+                border-radius: 12px;
+                padding: 20px;
+                margin-bottom: 25px;
+                box-shadow: 0 0 12px rgba(0, 255, 145, 0.15);
+                text-align: center;
+            }
+            .health {
+                color: #00ffa3;
+                font-weight: bold;
+                font-size: 1.3em;
+            }
+            canvas {
+                margin: 20px auto;
+                display: block;
+                max-width: 800px;
+                background-color: #0b0f16;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0,255,145,0.08);
+                padding: 10px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 30px;
+                font-size: 0.9em;
+                box-shadow: 0 0 8px rgba(255,255,255,0.05);
+            }
+            th, td {
+                border: 1px solid #1e2633;
+                padding: 10px;
+                text-align: center;
+            }
+            th {
+                background-color: #111a2b;
+                color: #58a6ff;
+                text-transform: uppercase;
+            }
+            .ok { color: #00ffa3; }
+            .error { color: #ff4b4b; }
+        </style>
+    </head>
+    <body>
+        <h1>📡 Nadakki AI Suite – Dashboard Quantum</h1>
+
+        <div class="summary">
+            <p><b>Promedio de Latencia:</b> 22.33 ms |
+               <b>Uptime Global:</b> 100.0% |
+               <b>Estado del Sistema:</b> <span class="health">ÓPTIMO</span></p>
+            <p>Entradas Analizadas: 3 | Fecha: 2025-10-23 22:59:44</p>
+        </div>
+
+        <canvas id="latencyChart" height="130"></canvas>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Endpoint</th>
+                    <th>Solicitudes</th>
+                    <th>Éxitos</th>
+                    <th>Errores</th>
+                    <th>Latencia Promedio (ms)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>/agents</td><td>1</td><td class='ok'>1</td><td class='error'>0</td><td>3.00</td></tr><tr><td>/auth</td><td>1</td><td class='ok'>1</td><td class='error'>0</td><td>60.00</td></tr><tr><td>/evaluate</td><td>1</td><td class='ok'>1</td><td class='error'>0</td><td>4.00</td></tr>
+            </tbody>
+        </table>
+
+        <script>
+        const ctx = document.getElementById('latencyChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['/agents', '/auth', '/evaluate'],
+                datasets: [{
+                    label: 'Latencia Promedio (ms)',
+                    data: [3.0, 60.0, 4.0],
+                    backgroundColor: [
+                        'rgba(0,255,163,0.8)',
+                        'rgba(88,166,255,0.8)',
+                        'rgba(255,75,75,0.8)',
+                        'rgba(247,211,60,0.8)',
+                        'rgba(0,255,255,0.8)'
+                    ],
+                    borderColor: '#0ff',
+                    borderWidth: 1,
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: { color: '#aaa' }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Latencias Promedio por Endpoint',
+                        color: '#58a6ff',
+                        font: { size: 16, weight: 'bold' }
+                    }
+                },
+                scales: {
+                    x: { ticks: { color: '#ccc' } },
+                    y: { ticks: { color: '#ccc' }, beginAtZero: true }
+                }
+            }
+        });
+        </script>
+    </body>
+    </html>
+    

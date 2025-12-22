@@ -1,0 +1,19 @@
+﻿{
+    "timestamp":  "2025-10-25T23:06:42.583666",
+    "transactions":  0,
+    "total_billed_usd":  0,
+    "plan_distribution":  {
+                              "starter":  {
+                                              "price":  99,
+                                              "agents":  4
+                                          },
+                              "professional":  {
+                                                   "price":  499,
+                                                   "agents":  8
+                                               },
+                              "enterprise":  {
+                                                 "price":  899,
+                                                 "agents":  12
+                                             }
+                          }
+}

@@ -1,0 +1,129 @@
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\enhanced_app.py ? legacy_flask\enhanced_app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\run_app.py ? legacy_flask\run_app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\flask\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\flask\sansio\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\gunicorn\app\pasterapp.py ? legacy_flask\pasterapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\gunicorn\app\wsgiapp.py ? legacy_flask\wsgiapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\PyInstaller\hooks\hook-gi.repository.GstApp.py ? legacy_flask\hook-gi.repository.GstApp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\PyInstaller\hooks\pre_safe_import_module\hook-gi.repository.GstApp.py ? legacy_flask\hook-gi.repository.GstApp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\werkzeug\testapp.py ? legacy_flask\testapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\run_app.py ? legacy_flask\run_app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\lambda-deployment\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\lambda-deployment\flask\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\lambda-deployment\flask\sansio\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\lambda-deployment\gunicorn\app\pasterapp.py ? legacy_flask\pasterapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\lambda-deployment\gunicorn\app\wsgiapp.py ? legacy_flask\wsgiapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\lambda-deployment\werkzeug\testapp.py ? legacy_flask\testapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\nadakki_env_clean\Lib\site-packages\flask\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\nadakki_env_clean\Lib\site-packages\flask\sansio\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\nadakki_env_clean\Lib\site-packages\gunicorn\app\pasterapp.py ? legacy_flask\pasterapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\nadakki_env_clean\Lib\site-packages\gunicorn\app\wsgiapp.py ? legacy_flask\wsgiapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\nadakki_env_clean\Lib\site-packages\werkzeug\testapp.py ? legacy_flask\testapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\backup_golden\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\backup_golden_20250928_200328\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\backup_golden_20250928_200328\enhanced_app.py ? legacy_flask\enhanced_app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\backup_golden_20250928_200328\run_app.py ? legacy_flask\run_app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\lambda-deployment\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\lambda-deployment\flask\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\lambda-deployment\flask\sansio\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\lambda-deployment\gunicorn\app\pasterapp.py ? legacy_flask\pasterapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\lambda-deployment\gunicorn\app\wsgiapp.py ? legacy_flask\wsgiapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\lambda-deployment\werkzeug\testapp.py ? legacy_flask\testapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\enhanced_app.py ? legacy_flask\enhanced_app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\hook-gi.repository.GstApp.py ? legacy_flask\hook-gi.repository.GstApp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\pasterapp.py ? legacy_flask\pasterapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\run_app.py ? legacy_flask\run_app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\testapp.py ? legacy_flask\testapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\wsgiapp.py ? legacy_flask\wsgiapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\nadakki_env_clean\Lib\site-packages\flask\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\nadakki_env_clean\Lib\site-packages\flask\sansio\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\nadakki_env_clean\Lib\site-packages\gunicorn\app\pasterapp.py ? legacy_flask\pasterapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\nadakki_env_clean\Lib\site-packages\gunicorn\app\wsgiapp.py ? legacy_flask\wsgiapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\nadakki_env_clean\Lib\site-packages\werkzeug\testapp.py ? legacy_flask\testapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\venv\Lib\site-packages\flask\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\venv\Lib\site-packages\flask\sansio\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\venv\Lib\site-packages\gunicorn\app\pasterapp.py ? legacy_flask\pasterapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\venv\Lib\site-packages\gunicorn\app\wsgiapp.py ? legacy_flask\wsgiapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\venv\Lib\site-packages\werkzeug\testapp.py ? legacy_flask\testapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\backup_golden ? legacy_flask\backup_golden
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\backup_golden_20250928_200328 ? legacy_flask\backup_golden_20250928_200328
+ERROR:  ? Source and destination path must be different.
+ERROR:  ? Source and destination path must be different.
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\lambda-deployment ? legacy_flask\lambda-deployment
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\lambda-deployment-info.json ? legacy_flask\lambda-deployment-info.json
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Source and destination path must be different.
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\lambda-deployment-info.json ? legacy_flask\lambda-deployment-info.json
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\backup_golden_20250928_200328\lambda-deployment-info.json ? legacy_flask\lambda-deployment-info.json
+ERROR:  ? The process cannot access the file because it is being used by another process.
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\flask ? legacy_flask\flask
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\flask-3.1.1.dist-info ? legacy_flask\flask-3.1.1.dist-info
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\flask_cors ? legacy_flask\flask_cors
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\flask_cors-6.0.1.dist-info ? legacy_flask\flask_cors-6.0.1.dist-info
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\_pyinstaller_hooks_contrib\stdhooks\hook-flask_compress.py ? legacy_flask\hook-flask_compress.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\_pyinstaller_hooks_contrib\stdhooks\hook-flask_restx.py ? legacy_flask\hook-flask_restx.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\_pyinstaller_hooks_contrib\stdhooks\__pycache__\hook-flask_compress.cpython-312.pyc ? legacy_flask\hook-flask_compress.cpython-312.pyc
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Lib\site-packages\_pyinstaller_hooks_contrib\stdhooks\__pycache__\hook-flask_restx.cpython-312.pyc ? legacy_flask\hook-flask_restx.cpython-312.pyc
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\.venv\Scripts\flask.exe ? legacy_flask\flask.exe
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\agents_backup\extensions\integration\flask_blueprints.py ? legacy_flask\flask_blueprints.py
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\extensions\integration\flask_blueprints.py ? legacy_flask\flask_blueprints.py
+ERROR:  ? Source and destination path must be different.
+ERROR:  ? Source and destination path must be different.
+ERROR:  ? Source and destination path must be different.
+ERROR:  ? Source and destination path must be different.
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\flask.exe ? legacy_flask\flask.exe
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\flask_blueprints.py ? legacy_flask\flask_blueprints.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\hook-flask_compress.cpython-312.pyc ? legacy_flask\hook-flask_compress.cpython-312.pyc
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\hook-flask_compress.py ? legacy_flask\hook-flask_compress.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\hook-flask_restx.cpython-312.pyc ? legacy_flask\hook-flask_restx.cpython-312.pyc
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\hook-flask_restx.py ? legacy_flask\hook-flask_restx.py
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\lambda-deployment\bin\flask.exe ? legacy_flask\flask.exe
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\nadakki_env_clean\Scripts\flask.exe ? legacy_flask\flask.exe
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\out\flask_routes_comprehensive.json ? legacy_flask\flask_routes_comprehensive.json
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\scripts\audit_flask_routes_real.py ? legacy_flask\audit_flask_routes_real.py
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\venv\Scripts\flask.exe ? legacy_flask\flask.exe
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\nadakki-suite-deployment-v1.0 ? legacy_flask\nadakki-suite-deployment-v1.0
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\nadakki-suite-deployment-v1.0.zip ? legacy_flask\nadakki-suite-deployment-v1.0.zip
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Source and destination path must be different.
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\nadakki-suite-deployment-v1.0.zip ? legacy_flask\nadakki-suite-deployment-v1.0.zip
+
+--- CONTENIDO DE main.py ---
+""" NADAKKI AI SUITE v3.3.1 - Enterprise Marketing AI Platform FastAPI REST API with 24 Marketing Agents + Admin Endpoints Multi-tenant, Rate-limited, Production-Ready """

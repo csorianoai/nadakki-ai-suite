@@ -1,0 +1,14 @@
+{
+  "id": 95,
+  "slug": "backup_dr",
+  "nombre": "Backup & DR",
+  "tipo": "infraestructura",
+  "lenguaje": "python",
+  "descripcion": "Backup y recuperacion",
+  "componentes": [
+    "backup_manager.py"
+  ],
+  "tecnologias": [
+    "AWS"
+  ]
+}

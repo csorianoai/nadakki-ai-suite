@@ -1,0 +1,66 @@
+Branch creado: phase1-fastapi-consolidation
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\app.py ? legacy_flask\app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\enhanced_app.py ? legacy_flask\enhanced_app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\hook-gi.repository.GstApp.py ? legacy_flask\hook-gi.repository.GstApp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\pasterapp.py ? legacy_flask\pasterapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\run_app.py ? legacy_flask\run_app.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\testapp.py ? legacy_flask\testapp.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\wsgiapp.py ? legacy_flask\wsgiapp.py
+ERROR:  ? Source and destination path must be different.
+ERROR:  ? Source and destination path must be different.
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Source and destination path must be different.
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\lambda-deployment-info.json ? legacy_flask\lambda-deployment-info.json
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Source and destination path must be different.
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\nadakki-suite-deployment-v1.0.zip ? legacy_flask\nadakki-suite-deployment-v1.0.zip
+ERROR:  ? The process cannot access the file because it is being used by another process.
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Source and destination path must be different.
+ERROR:  ? Source and destination path must be different.
+ERROR:  ? Source and destination path must be different.
+ERROR:  ? Source and destination path must be different.
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\audit_flask_routes_real.py ? legacy_flask\audit_flask_routes_real.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\flask.exe ? legacy_flask\flask.exe
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\flask_blueprints.py ? legacy_flask\flask_blueprints.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\flask_routes_comprehensive.json ? legacy_flask\flask_routes_comprehensive.json
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\hook-flask_compress.cpython-312.pyc ? legacy_flask\hook-flask_compress.cpython-312.pyc
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\hook-flask_compress.py ? legacy_flask\hook-flask_compress.py
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\hook-flask_restx.cpython-312.pyc ? legacy_flask\hook-flask_restx.cpython-312.pyc
+MOVIDO: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\legacy_flask\hook-flask_restx.py ? legacy_flask\hook-flask_restx.py
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+ERROR:  ? Cannot create a file when that file already exists.
+
+
+--- CONTENIDO DE main.py ---
+""" NADAKKI AI SUITE v3.3.1 - Enterprise Marketing AI Platform FastAPI REST API with 24 Marketing Agents + Admin Endpoints Multi-tenant, Rate-limited, Production-Ready """

@@ -1,0 +1,20 @@
+[2025-11-27 06:24:39] [INFO] [MASTER] === INICIANDO EJECUCIÓN ===
+[2025-11-27 06:24:39] [INFO] [MASTER] Integration: all | Environment: staging | DryRun: False
+[2025-11-27 06:24:40] [WARNING] [NETWORK] ⚠ Stripe no accesible
+[2025-11-27 06:24:40] [WARNING] [NETWORK] ⚠ SendGrid no accesible
+[2025-11-27 06:24:40] [SUCCESS] [NETWORK] ✓ Auth0 accesible
+[2025-11-27 06:24:41] [WARNING] [STRIPE] Intento 1/3 falló - Response status code does not indicate success: 401 (Unauthorized).
+[2025-11-27 06:24:43] [WARNING] [STRIPE] Intento 2/3 falló - Response status code does not indicate success: 401 (Unauthorized).
+[2025-11-27 06:24:47] [WARNING] [STRIPE] Intento 3/3 falló - Response status code does not indicate success: 401 (Unauthorized).
+[2025-11-27 06:24:47] [ERROR] [STRIPE] ❌ Falló después de 3 intentos
+[2025-11-27 06:24:47] [ERROR] [STRIPE] Error Stripe: No se pudo crear producto
+[2025-11-27 06:24:48] [WARNING] [SENDGRID] Intento 1/3 falló - Response status code does not indicate success: 403 (Forbidden).
+[2025-11-27 06:24:50] [WARNING] [SENDGRID] Intento 2/3 falló - Response status code does not indicate success: 403 (Forbidden).
+[2025-11-27 06:24:54] [WARNING] [SENDGRID] Intento 3/3 falló - Response status code does not indicate success: 403 (Forbidden).
+[2025-11-27 06:24:55] [ERROR] [SENDGRID] ❌ Falló después de 3 intentos
+[2025-11-27 06:24:55] [ERROR] [SENDGRID] Error SendGrid: No se pudo crear sender
+[2025-11-27 06:24:55] [WARNING] [AUTH0] Intento 1/3 falló - Response status code does not indicate success: 404 (Not Found).
+[2025-11-27 06:24:57] [WARNING] [AUTH0] Intento 2/3 falló - Response status code does not indicate success: 404 (Not Found).
+[2025-11-27 06:25:02] [WARNING] [AUTH0] Intento 3/3 falló - Response status code does not indicate success: 404 (Not Found).
+[2025-11-27 06:25:02] [ERROR] [AUTH0] ❌ Falló después de 3 intentos
+[2025-11-27 06:25:02] [ERROR] [AUTH0] Error Auth0: No se pudo obtener token

@@ -1,0 +1,4 @@
+[06:55:16] /health - Status: ERROR - -1 ms
+[06:55:18] /api/admin/tenants - Status: ERROR - -1 ms
+[06:55:20] /api/marketing/lead-scoring - Status: ERROR - -1 ms
+[06:55:22] /api/marketing/customer-segmentation - Status: ERROR - -1 ms

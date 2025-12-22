@@ -1,0 +1,19 @@
+19:01:00 ?? Verificando dependencias básicas...
+19:01:00 ? python detectado: C:\Python312\python.exe
+19:01:00 ? pip detectado: C:\Python312\Scripts\pip.exe
+19:01:00 ?? Verificando servidor FastAPI...
+19:01:00 ? Servidor ya activo
+19:01:00 ? FASE-9 ya ejecutada hace menos de 24h (5.8h)
+19:01:00 
+?? Verificando componentes...
+19:01:00 ? tenants.db OK
+19:01:00 ? dashboards OK
+19:01:00 ? kit_comercial_fase9 OK
+19:01:00 ? logs OK
+19:01:00 ?? Abierto: credicefi_b27fa331_dashboard.html
+19:01:00 ?? Kit comercial abierto
+19:01:00 
+?? ACTIVACIÓN COMPLETA EN 0 min
+19:01:00 ?? Servidor: http://127.0.0.1:8000
+19:01:00 ?? Docs: http://127.0.0.1:8000/docs
+19:01:01 ?? Log: logs/activation_20251026_190100.log

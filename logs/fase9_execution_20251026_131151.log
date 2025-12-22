@@ -1,0 +1,22 @@
+[2025-10-26 13:11:51] VERIFICACION INICIAL DEL SISTEMA
+[2025-10-26 13:11:51] Servidor FastAPI operativo
+[2025-10-26 13:11:51] Base de datos tenants.db encontrada
+[2025-10-26 13:11:51] CREANDO BACKUP DE SEGURIDAD
+[2025-10-26 13:11:51] Directorio backup creado: backup_fase9_20251026_131151
+[2025-10-26 13:11:51] Backup DB completado
+[2025-10-26 13:11:51] MIGRACION DE TENANTS EXISTENTES
+[2025-10-26 13:11:51] Ejecutando migracion de tenants...
+[2025-10-26 13:11:51] Migracion ejecutada
+[2025-10-26 13:11:51] Tenants disponibles: 1
+[2025-10-26 13:11:51] Tenant: credicefi_b27fa331 - Credicefi
+[2025-10-26 13:11:51] GENERACION DE DASHBOARDS WHITE-LABEL
+[2025-10-26 13:11:51] Generando dashboard para: credicefi_b27fa331
+[2025-10-26 13:11:51] Dashboard generado: dashboards\credicefi_b27fa331_dashboard.html
+[2025-10-26 13:11:51] Resumen Dashboards: 1 exitosos, 0 fallidos
+[2025-10-26 13:11:51] PREPARANDO KIT COMERCIAL
+[2025-10-26 13:11:51] Script de demo creado
+[2025-10-26 13:11:52] Template email creado
+[2025-10-26 13:11:52] VERIFICACION FINAL
+[2025-10-26 13:11:52] Endpoint / : OK
+[2025-10-26 13:11:52] Endpoint /api/tenant/list : OK
+[2025-10-26 13:11:52] Endpoint /docs : OK

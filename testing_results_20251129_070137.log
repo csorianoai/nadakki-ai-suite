@@ -1,0 +1,52 @@
+[2025-11-29 07:01:37] [PASS] ✅ Archivo existe: core/multi_tenancy/tenant_manager.py
+[2025-11-29 07:01:37] [PASS] ✅ Archivo existe: api/v1/tenants/main.py
+[2025-11-29 07:01:37] [PASS] ✅ Archivo existe: database/migrations/001_multi_tenant_enterprise_schema.sql
+[2025-11-29 07:01:37] [PASS] ✅ Archivo existe: institutions/banreservas/config.json
+[2025-11-29 07:01:37] [PASS] ✅ Archivo existe: institutions/credicefi/config.json
+[2025-11-29 07:01:37] [PASS] ✅ Archivo existe: institutions/templates/institution.template.json
+[2025-11-29 07:01:37] [PASS] ✅ Archivo existe: docker-compose.yml
+[2025-11-29 07:01:37] [PASS] ✅ Archivo existe: Dockerfile
+[2025-11-29 07:01:37] [PASS] ✅ Archivo existe: requirements.txt
+[2025-11-29 07:01:37] [PASS] ✅ Archivo existe: .env.example
+[2025-11-29 07:01:37] [PASS] ✅ Archivo existe: README_v6.md
+[2025-11-29 07:01:37] [PASS] ✅ Python 3.8+ instalado
+[2025-11-29 07:01:38] [PASS] ✅ Sintaxis TenantManager.py válida
+[2025-11-29 07:01:38] [PASS] ✅ Sintaxis API main.py válida
+[2025-11-29 07:01:38] [PASS] ✅ JSON válido: institutions/banreservas/config.json
+[2025-11-29 07:01:38] [PASS] ✅ JSON válido: institutions/credicefi/config.json
+[2025-11-29 07:01:38] [PASS] ✅ JSON válido: institutions/templates/institution.template.json
+[2025-11-29 07:01:38] [PASS] ✅ Banreservas tiene institution.id
+[2025-11-29 07:01:38] [PASS] ✅ Credicefi tiene institution.id
+[2025-11-29 07:01:38] [PASS] ✅ Ambas instituciones tienen api_keys
+[2025-11-29 07:01:38] [PASS] ✅ Docker Desktop instalado
+[2025-11-29 07:01:38] [PASS] ✅ Docker daemon activo
+[2025-11-29 07:01:38] [PASS] ✅ docker-compose.yml válido
+[2025-11-29 07:01:38] [PASS] ✅ Dockerfile válido
+[2025-11-29 07:01:38] [PASS] ✅ requirements.txt existe y tiene contenido
+[2025-11-29 07:01:38] [PASS] ✅ FastAPI en requirements.txt
+[2025-11-29 07:01:38] [PASS] ✅ SQLAlchemy en requirements.txt
+[2025-11-29 07:01:38] [PASS] ✅ Redis en requirements.txt
+[2025-11-29 07:01:38] [PASS] ✅ .env.example existe
+[2025-11-29 07:01:38] [PASS] ✅ DATABASE_URL en .env.example
+[2025-11-29 07:01:38] [PASS] ✅ REDIS_URL en .env.example
+[2025-11-29 07:01:39] [PASS] ✅ Schema SQL válido
+[2025-11-29 07:01:39] [PASS] ✅ RLS habilitado en schema
+[2025-11-29 07:01:39] [PASS] ✅ Audit logs en schema
+[2025-11-29 07:01:39] [PASS] ✅ README_v6.md existe
+[2025-11-29 07:01:39] [PASS] ✅ README contiene Quick Start
+[2025-11-29 07:01:39] [PASS] ✅ Carpeta existe: core/multi_tenancy
+[2025-11-29 07:01:39] [PASS] ✅ Carpeta existe: api/v1/tenants
+[2025-11-29 07:01:39] [PASS] ✅ Carpeta existe: database/migrations
+[2025-11-29 07:01:39] [PASS] ✅ Carpeta existe: institutions/banreservas
+[2025-11-29 07:01:39] [PASS] ✅ Carpeta existe: institutions/credicefi
+[2025-11-29 07:01:39] [PASS] ✅ Carpeta existe: institutions/templates
+[2025-11-29 07:01:39] [PASS] ✅ Carpeta existe: tests
+[2025-11-29 07:01:39] [PASS] ✅ Carpeta existe: docs
+[2025-11-29 07:01:39] [PASS] ✅ TenantManager tiene clase TenantManager
+[2025-11-29 07:01:39] [PASS] ✅ API tiene FastAPI app
+[2025-11-29 07:01:39] [PASS] ✅ API tiene endpoint /health
+[2025-11-29 07:01:39] [PASS] ✅ API tiene endpoint /api/v1/tenants
+[2025-11-29 07:01:40] [FAIL] ❌ docker-compose validate - docker-compose.yml no es válido
+[2025-11-29 07:01:40] [INFO] ═══════════════════════════════════════════════════════════════════════════════════════════════
+[2025-11-29 07:01:40] [INFO] 🧪 TESTING COMPLETADO - 0/0 PRUEBAS EXITOSAS
+[2025-11-29 07:01:40] [INFO] ═══════════════════════════════════════════════════════════════════════════════════════════════

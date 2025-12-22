@@ -1,0 +1,7 @@
+Backup generado: C:\Backups\nadakki_backup_20251023_235031.zip
+/health -> 200
+/api/v1/wp/agents -> ERROR
+/api/v1/wp/evaluate -> ERROR
+/api/v1/wp/auth -> ERROR
+Archivo faltante: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\includes\nadakki-monitor.php
+Archivo faltante: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\includes\nadakki-multi-tenant.php

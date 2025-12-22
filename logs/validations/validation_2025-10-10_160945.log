@@ -1,0 +1,104 @@
+[2025-10-10 16:09:45] [INFO] =====================================
+[2025-10-10 16:09:45] [INFO] NADAKKI AI SUITE - DAILY VALIDATION
+[2025-10-10 16:09:45] [INFO] Environment: production
+[2025-10-10 16:09:45] [INFO] =====================================
+[2025-10-10 16:09:45] [INFO] 1. SYSTEM HEALTH CHECKS
+[2025-10-10 16:09:45] [SUCCESS] ? Project directory accessible
+[2025-10-10 16:09:45] [SUCCESS]   ? Found: app.py
+[2025-10-10 16:09:45] [ERROR]   ? Missing: config.py
+[2025-10-10 16:09:45] [SUCCESS]   ? Found: requirements.txt
+[2025-10-10 16:09:45] [SUCCESS]   ? Found: docker-compose.yml
+[2025-10-10 16:09:45] [INFO] 
+2. MULTI-TENANT CONFIGURATION VALIDATION
+[2025-10-10 16:09:45] [WARNING]   ? banamerica.json - Not found
+[2025-10-10 16:09:45] [WARNING]   ? bancredito.json - Not found
+[2025-10-10 16:09:45] [ERROR]   ? banreservas.json - Missing fields: tenant_id, name, risk_tolerance, decision_thresholds
+[2025-10-10 16:09:45] [ERROR]   ? scotiabank.json - Missing fields: tenant_id, name, risk_tolerance, decision_thresholds
+[2025-10-10 16:09:45] [ERROR]   ? credicefi.json - Missing fields: name, risk_tolerance, decision_thresholds
+[2025-10-10 16:09:45] [INFO] 
+3. AWS INFRASTRUCTURE VALIDATION
+[2025-10-10 16:09:47] [ERROR]   ? Lambda: nadakki-ai-suite - State: 
+[2025-10-10 16:09:47] [ERROR]   ? Lambda: nadakki-multitenant-api - State: 
+[2025-10-10 16:09:47] [INFO] 
+4. API ENDPOINTS VALIDATION
+[2025-10-10 16:09:51] [ERROR]   ? Health Check - Failed: Unable to connect to the remote server
+[2025-10-10 16:09:55] [ERROR]   ? Agents Status - Failed: Unable to connect to the remote server
+[2025-10-10 16:09:59] [ERROR]   ? Tenants List - Failed: Unable to connect to the remote server
+[2025-10-10 16:09:59] [INFO] 
+5. AGENT STATUS VALIDATION
+[2025-10-10 16:09:59] [INFO]   Validating Tier1_Originacion...
+[2025-10-10 16:09:59] [ERROR]     ? SentinelBot - Module missing
+[2025-10-10 16:09:59] [ERROR]     ? DNAProfiler - Module missing
+[2025-10-10 16:09:59] [ERROR]     ? IncomeOracle - Module missing
+[2025-10-10 16:09:59] [ERROR]     ? BehaviorMiner - Module missing
+[2025-10-10 16:09:59] [INFO]   Validating Tier3_Engagement...
+[2025-10-10 16:09:59] [ERROR]     ? VoiceForge - Module missing
+[2025-10-10 16:09:59] [ERROR]     ? VisualizerPro - Module missing
+[2025-10-10 16:09:59] [ERROR]     ? DynamicMessaging - Module missing
+[2025-10-10 16:09:59] [ERROR]     ? MultiChannelOrchestrator - Module missing
+[2025-10-10 16:09:59] [INFO]   Validating Tier2_Decision...
+[2025-10-10 16:09:59] [ERROR]     ? QuantumDecision - Module missing
+[2025-10-10 16:09:59] [ERROR]     ? RiskOracle - Module missing
+[2025-10-10 16:09:59] [ERROR]     ? PolicyGuardian - Module missing
+[2025-10-10 16:09:59] [ERROR]     ? TurboApprover - Module missing
+[2025-10-10 16:09:59] [INFO] 
+6. DATABASE CONNECTIVITY
+[2025-10-10 16:09:59] [ERROR]   ? Database container - Not running
+[2025-10-10 16:09:59] [INFO] 
+7. PERFORMANCE METRICS
+[2025-10-10 16:09:59] [INFO]   Disk C: - Free: 37.54GB (68.25% used)
+[2025-10-10 16:09:59] [INFO]   Memory - Free: 6.79GB / Total: 15.89GB (57.27% used)
+[2025-10-10 16:09:59] [INFO] 
+8. SECURITY CHECKS
+[2025-10-10 16:09:59] [SUCCESS]   ? .env file exists
+[2025-10-10 16:09:59] [SUCCESS]     ? JWT_SECRET configured
+[2025-10-10 16:09:59] [ERROR]     ? DATABASE_PASSWORD missing
+[2025-10-10 16:09:59] [ERROR]     ? AWS_ACCESS_KEY_ID missing
+[2025-10-10 16:09:59] [INFO] 
+9. BACKUP STATUS
+[2025-10-10 16:09:59] [WARNING]   ? No backups found
+[2025-10-10 16:09:59] [INFO] 
+=====================================
+[2025-10-10 16:09:59] [INFO] VALIDATION SUMMARY
+[2025-10-10 16:09:59] [INFO] =====================================
+[2025-10-10 16:09:59] [INFO] Duration: 14.74 seconds
+[2025-10-10 16:09:59] [SUCCESS] Passed: 7
+[2025-10-10 16:09:59] [ERROR] Failed: 24
+[2025-10-10 16:09:59] [WARNING] Warnings: 3
+[2025-10-10 16:09:59] [INFO] =====================================
+[2025-10-10 16:09:59] [ERROR] 
+CRITICAL FAILURES:
+[2025-10-10 16:09:59] [ERROR]   ? [System] File: config.py: File not found
+[2025-10-10 16:09:59] [ERROR]   ? [Multi-Tenant] banreservas.json: Missing: tenant_id, name, risk_tolerance, decision_thresholds
+[2025-10-10 16:09:59] [ERROR]   ? [Multi-Tenant] scotiabank.json: Missing: tenant_id, name, risk_tolerance, decision_thresholds
+[2025-10-10 16:09:59] [ERROR]   ? [Multi-Tenant] credicefi.json: Missing: name, risk_tolerance, decision_thresholds
+[2025-10-10 16:09:59] [ERROR]   ? [AWS] Lambda: nadakki-ai-suite: State: 
+[2025-10-10 16:09:59] [ERROR]   ? [AWS] Lambda: nadakki-multitenant-api: State: 
+[2025-10-10 16:09:59] [ERROR]   ? [API] Health Check: Connection failed
+[2025-10-10 16:09:59] [ERROR]   ? [API] Agents Status: Connection failed
+[2025-10-10 16:09:59] [ERROR]   ? [API] Tenants List: Connection failed
+[2025-10-10 16:09:59] [ERROR]   ? [Agents] Tier1_Originacion/SentinelBot: Module not found
+[2025-10-10 16:09:59] [ERROR]   ? [Agents] Tier1_Originacion/DNAProfiler: Module not found
+[2025-10-10 16:09:59] [ERROR]   ? [Agents] Tier1_Originacion/IncomeOracle: Module not found
+[2025-10-10 16:10:00] [ERROR]   ? [Agents] Tier1_Originacion/BehaviorMiner: Module not found
+[2025-10-10 16:10:00] [ERROR]   ? [Agents] Tier3_Engagement/VoiceForge: Module not found
+[2025-10-10 16:10:00] [ERROR]   ? [Agents] Tier3_Engagement/VisualizerPro: Module not found
+[2025-10-10 16:10:00] [ERROR]   ? [Agents] Tier3_Engagement/DynamicMessaging: Module not found
+[2025-10-10 16:10:00] [ERROR]   ? [Agents] Tier3_Engagement/MultiChannelOrchestrator: Module not found
+[2025-10-10 16:10:00] [ERROR]   ? [Agents] Tier2_Decision/QuantumDecision: Module not found
+[2025-10-10 16:10:00] [ERROR]   ? [Agents] Tier2_Decision/RiskOracle: Module not found
+[2025-10-10 16:10:00] [ERROR]   ? [Agents] Tier2_Decision/PolicyGuardian: Module not found
+[2025-10-10 16:10:00] [ERROR]   ? [Agents] Tier2_Decision/TurboApprover: Module not found
+[2025-10-10 16:10:00] [ERROR]   ? [Database] Container Status: Container down
+[2025-10-10 16:10:00] [ERROR]   ? [Security] DATABASE_PASSWORD: Not configured
+[2025-10-10 16:10:00] [ERROR]   ? [Security] AWS_ACCESS_KEY_ID: Not configured
+[2025-10-10 16:10:00] [WARNING] 
+WARNINGS:
+[2025-10-10 16:10:00] [WARNING]   ? [Multi-Tenant] banamerica.json: Config not found
+[2025-10-10 16:10:00] [WARNING]   ? [Multi-Tenant] bancredito.json: Config not found
+[2025-10-10 16:10:00] [WARNING]   ? [Backup] Latest Backup: No backups
+[2025-10-10 16:10:00] [INFO] 
+Full report saved: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\logs\validations\validation_report_2025-10-10_160945.json
+[2025-10-10 16:10:00] [INFO] Log file: C:\Users\cesar\Projects\nadakki-ai-suite\nadakki-ai-suite\logs\validations\validation_2025-10-10_160945.log
+[2025-10-10 16:10:00] [ERROR] 
+? VALIDATION FAILED

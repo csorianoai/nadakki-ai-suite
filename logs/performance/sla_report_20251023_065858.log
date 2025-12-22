@@ -1,0 +1,8 @@
+[06:58:58] /health - Status: 200 - 51.91 ms
+[06:58:58] /api/admin/tenants - Status: 200 - 20 ms
+[06:58:58] /api/marketing/lead-scoring - Status: ERROR - -1 ms
+[06:58:58] /api/marketing/customer-segmentation - Status: ERROR - -1 ms
+
+--- RESUMEN FINAL ---
+Promedio general: 35.96 ms
+Endpoints probados: 2

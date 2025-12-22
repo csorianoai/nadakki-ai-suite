@@ -1,0 +1,7 @@
+2025-08-11 19:42:57,682 - [INFO] - TENANT:system - Sistema Nadakki AI Enterprise inicializado exitosamente
+2025-08-11 19:42:57,682 - [INFO] - TENANT:banco_popular_rd - Agente credit_similarity_agent ejecutado - Éxito: True, Tiempo: 0.33ms
+2025-08-11 19:42:57,682 - [INFO] - TENANT:scotiabank_rd - Agente credit_similarity_agent ejecutado - Éxito: True, Tiempo: 0.14ms
+2025-08-11 19:42:57,682 - [INFO] - TENANT:banreservas_rd - Agente credit_similarity_agent ejecutado - Éxito: True, Tiempo: 0.14ms
+2025-08-11 19:42:57,822 - [INFO] - TENANT:banco_popular_rd - Agente anomaly_detection_agent ejecutado - Éxito: True, Tiempo: 146.60ms
+2025-08-11 19:42:57,822 - [INFO] - TENANT:banco_ejemplo - Nueva institución agregada: banco_ejemplo
+2025-08-11 19:42:57,838 - [INFO] - TENANT:banco_ejemplo - Agente credit_similarity_agent ejecutado - Éxito: True, Tiempo: 0.19ms

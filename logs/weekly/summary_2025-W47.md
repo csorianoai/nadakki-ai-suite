@@ -1,0 +1,6 @@
+﻿# **NADAKKI AI SUITE — WEEKLY SUMMARY (2025 - Week 47)**
+Generated automatically on 2025-11-23 23:33
+
+---
+
+## 📋 DAILY LOGS CONSOLIDATED

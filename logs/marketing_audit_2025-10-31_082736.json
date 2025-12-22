@@ -1,0 +1,27 @@
+﻿[
+    {
+        "Endpoint":  "/api/v1/analyze",
+        "Status":  "❌ Inactivo",
+        "Records":  0
+    },
+    {
+        "Endpoint":  "/api/v1/marketing/agents/list",
+        "Status":  "❌ Inactivo",
+        "Records":  0
+    },
+    {
+        "Endpoint":  "/api/v1/marketing/campaigns/log",
+        "Status":  "❌ Inactivo",
+        "Records":  0
+    },
+    {
+        "Endpoint":  "/api/v1/marketing/campaigns/report",
+        "Status":  "❌ Inactivo",
+        "Records":  0
+    },
+    {
+        "Endpoint":  "/api/v1/audit/trail",
+        "Status":  "✅ OK",
+        "Records":  6
+    }
+]

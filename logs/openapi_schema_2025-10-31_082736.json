@@ -1,0 +1,232 @@
+﻿{
+    "openapi":  "3.1.0",
+    "info":  {
+                 "title":  "Content Performance Super-Agent v5.0",
+                 "description":  "Enterprise Content Performance Analytics with Self-Healing \u0026 Blockchain Audit",
+                 "version":  "5.0.0"
+             },
+    "paths":  {
+                  "/api/v1/analyze":  {
+                                          "post":  {
+                                                       "summary":  "Analyze Content Performance",
+                                                       "operationId":  "analyze_content_performance_api_v1_analyze_post",
+                                                       "requestBody":  {
+                                                                           "content":  {
+                                                                                           "application/json":  {
+                                                                                                                    "schema":  {
+                                                                                                                                   "items":  {
+                                                                                                                                                 "$ref":  "#/components/schemas/ContentItemRequest"
+                                                                                                                                             },
+                                                                                                                                   "type":  "array",
+                                                                                                                                   "title":  "Content Items"
+                                                                                                                               }
+                                                                                                                }
+                                                                                       },
+                                                                           "required":  true
+                                                                       },
+                                                       "responses":  {
+                                                                         "200":  {
+                                                                                     "description":  "Successful Response",
+                                                                                     "content":  {
+                                                                                                     "application/json":  {
+                                                                                                                              "schema":  {
+
+                                                                                                                                         }
+                                                                                                                          }
+                                                                                                 }
+                                                                                 },
+                                                                         "422":  {
+                                                                                     "description":  "Validation Error",
+                                                                                     "content":  {
+                                                                                                     "application/json":  {
+                                                                                                                              "schema":  {
+                                                                                                                                             "$ref":  "#/components/schemas/HTTPValidationError"
+                                                                                                                                         }
+                                                                                                                          }
+                                                                                                 }
+                                                                                 }
+                                                                     }
+                                                   }
+                                      },
+                  "/api/v1/status":  {
+                                         "get":  {
+                                                     "summary":  "Get Agent Status",
+                                                     "operationId":  "get_agent_status_api_v1_status_get",
+                                                     "responses":  {
+                                                                       "200":  {
+                                                                                   "description":  "Successful Response",
+                                                                                   "content":  {
+                                                                                                   "application/json":  {
+                                                                                                                            "schema":  {
+
+                                                                                                                                       }
+                                                                                                                        }
+                                                                                               }
+                                                                               }
+                                                                   }
+                                                 }
+                                     },
+                  "/api/v1/audit/trail":  {
+                                              "get":  {
+                                                          "summary":  "Get Audit Trail",
+                                                          "operationId":  "get_audit_trail_api_v1_audit_trail_get",
+                                                          "parameters":  [
+                                                                             {
+                                                                                 "name":  "limit",
+                                                                                 "in":  "query",
+                                                                                 "required":  false,
+                                                                                 "schema":  {
+                                                                                                "type":  "integer",
+                                                                                                "default":  50,
+                                                                                                "title":  "Limit"
+                                                                                            }
+                                                                             }
+                                                                         ],
+                                                          "responses":  {
+                                                                            "200":  {
+                                                                                        "description":  "Successful Response",
+                                                                                        "content":  {
+                                                                                                        "application/json":  {
+                                                                                                                                 "schema":  {
+
+                                                                                                                                            }
+                                                                                                                             }
+                                                                                                    }
+                                                                                    },
+                                                                            "422":  {
+                                                                                        "description":  "Validation Error",
+                                                                                        "content":  {
+                                                                                                        "application/json":  {
+                                                                                                                                 "schema":  {
+                                                                                                                                                "$ref":  "#/components/schemas/HTTPValidationError"
+                                                                                                                                            }
+                                                                                                                             }
+                                                                                                    }
+                                                                                    }
+                                                                        }
+                                                      }
+                                          },
+                  "/health":  {
+                                  "get":  {
+                                              "summary":  "Health Check",
+                                              "operationId":  "health_check_health_get",
+                                              "responses":  {
+                                                                "200":  {
+                                                                            "description":  "Successful Response",
+                                                                            "content":  {
+                                                                                            "application/json":  {
+                                                                                                                     "schema":  {
+
+                                                                                                                                }
+                                                                                                                 }
+                                                                                        }
+                                                                        }
+                                                            }
+                                          }
+                              }
+              },
+    "components":  {
+                       "schemas":  {
+                                       "ContentItemRequest":  {
+                                                                  "properties":  {
+                                                                                     "content_id":  {
+                                                                                                        "type":  "string",
+                                                                                                        "title":  "Content Id"
+                                                                                                    },
+                                                                                     "content_type":  {
+                                                                                                          "type":  "string",
+                                                                                                          "title":  "Content Type"
+                                                                                                      },
+                                                                                     "channel":  {
+                                                                                                     "type":  "string",
+                                                                                                     "title":  "Channel"
+                                                                                                 },
+                                                                                     "publish_date":  {
+                                                                                                          "type":  "string",
+                                                                                                          "title":  "Publish Date"
+                                                                                                      },
+                                                                                     "title":  {
+                                                                                                   "type":  "string",
+                                                                                                   "title":  "Title"
+                                                                                               },
+                                                                                     "metrics":  {
+                                                                                                     "additionalProperties":  true,
+                                                                                                     "type":  "object",
+                                                                                                     "title":  "Metrics"
+                                                                                                 },
+                                                                                     "topic_tags":  {
+                                                                                                        "items":  {
+                                                                                                                      "type":  "string"
+                                                                                                                  },
+                                                                                                        "type":  "array",
+                                                                                                        "title":  "Topic Tags",
+                                                                                                        "default":  [
+
+                                                                                                                    ]
+                                                                                                    },
+                                                                                     "marketing_consent":  {
+                                                                                                               "type":  "boolean",
+                                                                                                               "title":  "Marketing Consent",
+                                                                                                               "default":  true
+                                                                                                           }
+                                                                                 },
+                                                                  "type":  "object",
+                                                                  "required":  [
+                                                                                   "content_id",
+                                                                                   "content_type",
+                                                                                   "channel",
+                                                                                   "publish_date",
+                                                                                   "title",
+                                                                                   "metrics"
+                                                                               ],
+                                                                  "title":  "ContentItemRequest"
+                                                              },
+                                       "HTTPValidationError":  {
+                                                                   "properties":  {
+                                                                                      "detail":  {
+                                                                                                     "items":  {
+                                                                                                                   "$ref":  "#/components/schemas/ValidationError"
+                                                                                                               },
+                                                                                                     "type":  "array",
+                                                                                                     "title":  "Detail"
+                                                                                                 }
+                                                                                  },
+                                                                   "type":  "object",
+                                                                   "title":  "HTTPValidationError"
+                                                               },
+                                       "ValidationError":  {
+                                                               "properties":  {
+                                                                                  "loc":  {
+                                                                                              "items":  {
+                                                                                                            "anyOf":  [
+                                                                                                                          {
+                                                                                                                              "type":  "string"
+                                                                                                                          },
+                                                                                                                          {
+                                                                                                                              "type":  "integer"
+                                                                                                                          }
+                                                                                                                      ]
+                                                                                                        },
+                                                                                              "type":  "array",
+                                                                                              "title":  "Location"
+                                                                                          },
+                                                                                  "msg":  {
+                                                                                              "type":  "string",
+                                                                                              "title":  "Message"
+                                                                                          },
+                                                                                  "type":  {
+                                                                                               "type":  "string",
+                                                                                               "title":  "Error Type"
+                                                                                           }
+                                                                              },
+                                                               "type":  "object",
+                                                               "required":  [
+                                                                                "loc",
+                                                                                "msg",
+                                                                                "type"
+                                                                            ],
+                                                               "title":  "ValidationError"
+                                                           }
+                                   }
+                   }
+}

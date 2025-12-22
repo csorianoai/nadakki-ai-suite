@@ -1,0 +1,5 @@
+﻿"Endpoint","Count","AvgLatency","MinLatency","MaxLatency"
+"/health","2","51.91","51.91","51.91"
+"/api/admin/tenants","2","20","20","20"
+"/api/marketing/lead-scoring","2","-1","-1","-1"
+"/api/marketing/customer-segmentation","2","-1","-1","-1"

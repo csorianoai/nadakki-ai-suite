@@ -1,0 +1,39 @@
+﻿{
+    "timestamp":  "2025-10-24T19:05:38.765044",
+    "total_agents":  5,
+    "active_agents":  4,
+    "paused_agents":  1,
+    "usage":  {
+                  "cpu":  22.71,
+                  "memory":  78.28,
+                  "requests_per_min":  254,
+                  "uptime":  "99.79%"
+              },
+    "agents":  [
+                   {
+                       "id":  "lead_scoring",
+                       "category":  "marketing",
+                       "status":  "active"
+                   },
+                   {
+                       "id":  "customer_segmentation",
+                       "category":  "marketing",
+                       "status":  "paused"
+                   },
+                   {
+                       "id":  "risk_evaluator",
+                       "category":  "financial",
+                       "status":  "active"
+                   },
+                   {
+                       "id":  "contract_auditor",
+                       "category":  "legal",
+                       "status":  "active"
+                   },
+                   {
+                       "id":  "credit_predictor",
+                       "category":  "financial",
+                       "status":  "active"
+                   }
+               ]
+}

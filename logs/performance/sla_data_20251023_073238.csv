@@ -1,0 +1,5 @@
+﻿"Timestamp","Endpoint","Status","LatencyMS"
+"06:58:58","/health","200","51.91"
+"06:58:58","/api/admin/tenants","200","20"
+"06:58:58","/api/marketing/lead-scoring","ERROR","-1"
+"06:58:58","/api/marketing/customer-segmentation","ERROR","-1"

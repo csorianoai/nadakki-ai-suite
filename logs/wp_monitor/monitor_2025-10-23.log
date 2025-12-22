@@ -1,0 +1,3 @@
+2025-10-23 17:38:45 | /auth | OK | 60ms | authorized
+2025-10-23 17:38:45 | /agents | OK | 3ms | 24 agentes activos
+2025-10-23 17:38:45 | /evaluate | OK | 4ms | Agent lead_scoring

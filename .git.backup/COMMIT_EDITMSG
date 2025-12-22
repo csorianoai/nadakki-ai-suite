@@ -1,0 +1,10 @@
+feat: Initial commit - Nadakki AI Collections Multi-Tenant Platform
+
+- Multi-tenant credit evaluation system
+- 40+ specialized AI agents across 9 ecosystems
+- Hybrid similarity engine (Cosine + Euclidean + Jaccard)
+- REST API with Flask/Python
+- AWS Lambda ready architecture
+- Comprehensive .gitignore
+- Environment variables template (.env.example)
+- Documentation and configuration files
