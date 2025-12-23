@@ -101,12 +101,36 @@ class AgentRegistry:
         try:
             module = importlib.import_module(agent["module"])
             
-            # Buscar la clase principal
+            # Buscar la clase principal del agente (no dataclasses ni helpers)
             agent_class = None
+            agent_id_clean = agent_key.split('.')[-1].lower().replace('_', '')
+            
+            # Primero buscar clase que coincida con el nombre del archivo
             for name, obj in inspect.getmembers(module, inspect.isclass):
                 if obj.__module__ == module.__name__:
-                    agent_class = obj
-                    break
+                    name_lower = name.lower()
+                    # Priorizar clases que terminen en IA o que coincidan con el nombre del archivo
+                    if name_lower.endswith('ia') or name_lower == agent_id_clean:
+                        agent_class = obj
+                        break
+            
+            # Si no encontramos, buscar cualquier clase que NO sea dataclass/input/output
+            if not agent_class:
+                excluded_patterns = ['input', 'output', 'config', 'result', 'response', 'request', 
+                                    'anomaly', 'bucket', 'cache', 'flags', 'params', 'settings']
+                for name, obj in inspect.getmembers(module, inspect.isclass):
+                    if obj.__module__ == module.__name__:
+                        name_lower = name.lower()
+                        if not any(pattern in name_lower for pattern in excluded_patterns):
+                            agent_class = obj
+                            break
+            
+            # Último recurso: primera clase del módulo
+            if not agent_class:
+                for name, obj in inspect.getmembers(module, inspect.isclass):
+                    if obj.__module__ == module.__name__:
+                        agent_class = obj
+                        break
             
             if agent_class:
                 agent["class"] = agent_class
@@ -208,5 +232,6 @@ class AgentRegistry:
 
 # Instancia global
 registry = AgentRegistry()
+
 
 
