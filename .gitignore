@@ -5,3 +5,6 @@ __pycache__/
 .next/
 node_modules/
 nadakki-lambda-deployment.zip
+
+nadakki-lambda-deployment.zip
+*.zip
