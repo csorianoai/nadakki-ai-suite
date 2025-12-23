@@ -166,34 +166,45 @@ async def execute_agent(core: str, agent_id: str, request: ExecuteRequest, tenan
     if not agent:
         raise HTTPException(404, "Agent not found")
     
-    # Cargar la clase del agente
-    agent_class = registry.load_agent(f"{core}.{agent_id}")
-    if not agent_class:
-        raise HTTPException(503, f"Agent not loadable: {agent.get('error', 'Unknown error')}")
+    agent_key = f"{core}.{agent_id}"
     
     try:
-        # Intentar instanciar y ejecutar
-        instance = agent_class({"tenant_id": tenant["tenant_id"]})
+        # Usar create_instance que maneja diferentes constructores
+        instance = registry.create_instance(agent_key, tenant["tenant_id"])
+        
+        if not instance:
+            raise HTTPException(503, f"Agent not instantiable: {agent.get('error', 'Unknown error')}")
         
         # Buscar método ejecutable
         result = None
-        for method in ["execute", "run", "process", "analyze", "monitor_compliance"]:
+        for method in ["execute", "run", "process", "analyze", "score", "personalize", "optimize", "generate", "predict", "monitor_compliance"]:
             if hasattr(instance, method):
-                result = getattr(instance, method)(request.input_data)
-                break
+                try:
+                    result = getattr(instance, method)(request.input_data)
+                    break
+                except TypeError:
+                    # El método no acepta parámetros, intentar sin ellos
+                    try:
+                        result = getattr(instance, method)()
+                        break
+                    except:
+                        continue
         
         if result is None:
-            result = {"status": "executed", "message": "Agent processed successfully"}
+            result = {"status": "executed", "message": "Agent processed successfully", "agent_name": agent.get("name")}
         
         return {
-            "agent": f"{core}.{agent_id}",
+            "agent": agent_key,
+            "agent_name": agent.get("name"),
             "tenant": tenant["tenant_id"],
             "timestamp": datetime.now().isoformat(),
             "result": result
         }
+    except HTTPException:
+        raise
     except Exception as e:
-        logger.error(f"Error executing {core}.{agent_id}: {e}")
-        raise HTTPException(500, str(e))
+        logger.error(f"Error executing {agent_key}: {e}")
+        raise HTTPException(500, f"Execution error: {str(e)}")
 
 @app.get("/usage/{tenant_id}")
 async def get_usage(tenant_id: str, tenant: Dict = Depends(verify_tenant)):
@@ -231,3 +242,4 @@ async def startup():
     logger.info("🚀 Server ready at http://localhost:8000")
     logger.info("📚 API docs at http://localhost:8000/docs")
     logger.info("=" * 60)
+

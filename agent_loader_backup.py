@@ -111,8 +111,6 @@ class AgentRegistry:
             if agent_class:
                 agent["class"] = agent_class
                 agent["status"] = "loaded"
-                # Guardar info del constructor para instanciación correcta
-                agent["constructor_params"] = self._get_constructor_params(agent_class)
                 return agent_class
             else:
                 agent["status"] = "no_class"
@@ -124,54 +122,6 @@ class AgentRegistry:
             agent["error"] = str(e)[:100]
             logger.warning(f"Could not load {agent_key}: {e}")
             return None
-    
-    def _get_constructor_params(self, agent_class) -> list:
-        """Obtener parámetros del constructor"""
-        import inspect
-        try:
-            sig = inspect.signature(agent_class.__init__)
-            params = list(sig.parameters.keys())
-            return [p for p in params if p != 'self']
-        except:
-            return []
-    
-    def create_instance(self, agent_key: str, tenant_id: str = "default"):
-        """Crear instancia del agente con parámetros correctos"""
-        agent = self.agents.get(agent_key)
-        if not agent or not agent.get("class"):
-            self.load_agent(agent_key)
-            agent = self.agents.get(agent_key)
-        
-        if not agent or not agent.get("class"):
-            return None
-        
-        agent_class = agent["class"]
-        params = agent.get("constructor_params", [])
-        
-        try:
-            # Intentar diferentes patrones de constructor
-            if not params or params == []:
-                return agent_class()
-            elif params == ["config"] or params == ["tenant_config"]:
-                return agent_class({"tenant_id": tenant_id})
-            elif params == ["tenant_id"]:
-                return agent_class(tenant_id)
-            elif params == ["tenant_id", "config"]:
-                return agent_class(tenant_id, None)
-            elif "tenant_id" in params and "config" in params:
-                return agent_class(tenant_id=tenant_id, config=None)
-            elif "config" in params:
-                return agent_class(config={"tenant_id": tenant_id})
-            else:
-                # Fallback: intentar con dict
-                return agent_class({"tenant_id": tenant_id})
-        except Exception as e:
-            logger.error(f"Error creating instance of {agent_key}: {e}")
-            # Segundo intento con tenant_id directo
-            try:
-                return agent_class(tenant_id)
-            except:
-                return None
     
     def get_agent(self, core: str, agent_id: str) -> Optional[Dict]:
         """Obtener info de un agente"""
@@ -208,4 +158,3 @@ class AgentRegistry:
 
 # Instancia global
 registry = AgentRegistry()
-

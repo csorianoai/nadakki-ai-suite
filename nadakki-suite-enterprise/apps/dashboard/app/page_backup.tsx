@@ -224,8 +224,6 @@ function useBackendConnection() {
     lastSync: null,
   });
   const [realAgents, setRealAgents] = useState<any[]>([]);
-  const [realCores, setRealCores] = useState<any[]>([]);
-  const [agentsByCore, setAgentsByCore] = useState<Record<string, number>>({});
 
   useEffect(() => {
     const connectBackend = async () => {
@@ -239,12 +237,6 @@ function useBackendConnection() {
       if (data.agents) {
         setRealAgents(data.agents);
       }
-      if (data.cores) {
-        setRealCores(data.cores);
-      }
-      if (data.agentsByCore) {
-        setAgentsByCore(data.agentsByCore);
-      }
     };
 
     connectBackend();
@@ -252,7 +244,7 @@ function useBackendConnection() {
     return () => clearInterval(interval);
   }, []);
 
-  return { status, realAgents, realCores, agentsByCore };
+  return { status, realAgents };
 }
 // SECTION 3: SOUND ENGINE (AUTOEVALUACIÓN 7: UX con feedback auditivo)
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -2004,6 +1996,5 @@ ESTADÍSTICAS DEL CÓDIGO:
 • WCAG 2.1 AA compliant
 ═══════════════════════════════════════════════════════════════════════════════
 */
-
 
 
