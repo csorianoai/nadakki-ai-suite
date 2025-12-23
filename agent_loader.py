@@ -209,3 +209,4 @@ class AgentRegistry:
 # Instancia global
 registry = AgentRegistry()
 
+
