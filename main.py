@@ -180,12 +180,23 @@ async def execute_agent(core: str, agent_id: str, request: ExecuteRequest, tenan
         for method in ["execute", "run", "process", "analyze", "score", "personalize", "optimize", "generate", "predict", "monitor_compliance"]:
             if hasattr(instance, method):
                 try:
-                    result = getattr(instance, method)(request.input_data)
+                    method_result = getattr(instance, method)(request.input_data)
+                    # Handle async methods
+                    import asyncio
+                    if asyncio.iscoroutine(method_result):
+                        result = await method_result
+                    else:
+                        result = method_result
                     break
                 except TypeError:
                     # El método no acepta parámetros, intentar sin ellos
                     try:
-                        result = getattr(instance, method)()
+                        method_result = getattr(instance, method)()
+                        import asyncio
+                        if asyncio.iscoroutine(method_result):
+                            result = await method_result
+                        else:
+                            result = method_result
                         break
                     except:
                         continue
@@ -242,4 +253,5 @@ async def startup():
     logger.info("🚀 Server ready at http://localhost:8000")
     logger.info("📚 API docs at http://localhost:8000/docs")
     logger.info("=" * 60)
+
 
