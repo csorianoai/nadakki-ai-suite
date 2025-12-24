@@ -65,8 +65,8 @@ const fetchBackendData = async () => {
     
     return {
       connected: true,
-      version: health.version || '4.0.0',
-      agentsLoaded: agentsData.total || health.agents_loaded || 223,
+      version: health.version || '3.3.0',
+      agentsLoaded: agents.total || health.agents_loaded || 24,
       agents: agents.agents || [],
       categories: agents.categories || [],
     };
@@ -254,74 +254,6 @@ function useBackendConnection() {
 
   return { status, realAgents, realCores, agentsByCore };
 }
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// TRANSFORM BACKEND DATA TO DASHBOARD FORMAT - DATOS REALES
-// ═══════════════════════════════════════════════════════════════════════════════
-const REAL_CORE_CONFIG: Record<string, { name: string; icon: string; color: string; glowColor: string; category: Category }> = {
-  marketing: { name: 'Marketing Core', icon: '🎯', color: '#EC4899', glowColor: 'rgba(236,72,153,0.4)', category: 'Customer' },
-  legal: { name: 'Legal Core', icon: '⚖️', color: '#6366F1', glowColor: 'rgba(99,102,241,0.4)', category: 'Operations' },
-  logistica: { name: 'Logistics Core', icon: '📦', color: '#22C55E', glowColor: 'rgba(34,197,94,0.4)', category: 'Operations' },
-  contabilidad: { name: 'Accounting Core', icon: '💰', color: '#EAB308', glowColor: 'rgba(234,179,8,0.4)', category: 'Finance' },
-  presupuesto: { name: 'Budget Core', icon: '📊', color: '#A855F7', glowColor: 'rgba(168,85,247,0.4)', category: 'Finance' },
-  rrhh: { name: 'HR Core', icon: '👥', color: '#F472B6', glowColor: 'rgba(244,114,182,0.4)', category: 'Operations' },
-  originacion: { name: 'Origination Core', icon: '🔄', color: '#F97316', glowColor: 'rgba(249,115,22,0.4)', category: 'Finance' },
-  educacion: { name: 'Education Core', icon: '📚', color: '#14B8A6', glowColor: 'rgba(20,184,166,0.4)', category: 'Innovation' },
-  investigacion: { name: 'Research Core', icon: '🔬', color: '#8B5CF6', glowColor: 'rgba(139,92,246,0.4)', category: 'Innovation' },
-  ventascrm: { name: 'Sales CRM Core', icon: '📈', color: '#10B981', glowColor: 'rgba(16,185,129,0.4)', category: 'Customer' },
-  regtech: { name: 'RegTech Core', icon: '🏛️', color: '#DC2626', glowColor: 'rgba(220,38,38,0.4)', category: 'Security' },
-  compliance: { name: 'Compliance Core', icon: '✅', color: '#EF4444', glowColor: 'rgba(239,68,68,0.4)', category: 'Security' },
-  decision: { name: 'Decision Core', icon: '🧠', color: '#06B6D4', glowColor: 'rgba(6,182,212,0.4)', category: 'Analytics' },
-  experiencia: { name: 'Experience Core', icon: '🌟', color: '#FBBF24', glowColor: 'rgba(251,191,36,0.4)', category: 'Customer' },
-  fortaleza: { name: 'Security Core', icon: '🛡️', color: '#EF4444', glowColor: 'rgba(239,68,68,0.4)', category: 'Security' },
-  inteligencia: { name: 'Intelligence Core', icon: '🤖', color: '#8B5CF6', glowColor: 'rgba(139,92,246,0.4)', category: 'Analytics' },
-  operacional: { name: 'Operations Core', icon: '⚙️', color: '#FB923C', glowColor: 'rgba(251,146,60,0.4)', category: 'Operations' },
-  orchestration: { name: 'Orchestration Core', icon: '🎼', color: '#A78BFA', glowColor: 'rgba(167,139,250,0.4)', category: 'Analytics' },
-  recuperacion: { name: 'Recovery Core', icon: '💵', color: '#22C55E', glowColor: 'rgba(34,197,94,0.4)', category: 'Finance' },
-  vigilancia: { name: 'Surveillance Core', icon: '👁️', color: '#F43F5E', glowColor: 'rgba(244,63,94,0.4)', category: 'Security' },
-};
-
-const transformBackendToCore = (backendAgents: any[]): AICore[] => {
-  const coreMap = new Map<string, any[]>();
-  backendAgents.forEach(agent => {
-    if (!coreMap.has(agent.core)) coreMap.set(agent.core, []);
-    coreMap.get(agent.core)!.push(agent);
-  });
-
-  return Array.from(coreMap.entries()).map(([coreId, agents]) => {
-    const config = REAL_CORE_CONFIG[coreId] || { 
-      name: coreId.charAt(0).toUpperCase() + coreId.slice(1) + ' Core', 
-      icon: '📦', color: '#6B7280', glowColor: 'rgba(107,114,128,0.4)', category: 'Operations' as Category 
-    };
-    
-    return {
-      id: coreId,
-      name: config.name,
-      icon: config.icon,
-      color: config.color,
-      glowColor: config.glowColor,
-      category: config.category,
-      description: `${agents.length} agentes IA especializados`,
-      agents: agents.map((a: any, i: number) => ({
-        id: a.id,
-        name: a.name.replace(/_/g, ' ').replace(/^\w/, (c: string) => c.toUpperCase()),
-        type: a.id.replace(/ia$/i, ''),
-        status: (['active', 'active', 'active', 'processing', 'quantum'] as AgentStatus[])[i % 5],
-        accuracy: 92 + (i % 8),
-        tasksCompleted: 1000 + (i * 500),
-        consciousnessLevel: 0.7 + (i % 30) / 100,
-      })),
-      metrics: {
-        uptime: 99.5 + (coreId.length % 5) / 10,
-        latency: 30 + (coreId.length * 5),
-        throughput: 8000 + (agents.length * 200),
-        power: 85 + (agents.length % 15),
-        accuracy: 96 + (coreId.length % 4),
-        consciousness: 0.8 + (agents.length % 20) / 100,
-      },
-    } as AICore;
-  }).sort((a, b) => b.agents.length - a.agents.length);
-};
 // SECTION 3: SOUND ENGINE (AUTOEVALUACIÓN 7: UX con feedback auditivo)
 // ═══════════════════════════════════════════════════════════════════════════════
 
@@ -1872,29 +1804,6 @@ const DashboardContent = memo(function DashboardContent() {
 function DashboardProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(dashboardReducer, initialState);
   const sound = useMemo(() => QuantumSoundEngine.getInstance(), []);
-  // ═══ DATOS REALES DEL BACKEND ═══
-  const [realBackendCores, setRealBackendCores] = useState<AICore[]>([]);
-  
-  useEffect(() => {
-    const loadRealData = async () => {
-      try {
-        const data = await fetchBackendData();
-        if (data.agents && data.agents.length > 0) {
-          const transformed = transformBackendToCore(data.agents);
-          setRealBackendCores(transformed);
-          console.log('Dashboard: Cargados', data.agentsLoaded, 'agentes reales de', transformed.length, 'cores');
-        }
-      } catch (err) {
-        console.error('Error cargando datos:', err);
-      }
-    };
-    loadRealData();
-    const interval = setInterval(loadRealData, 30000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const activeCores = realBackendCores.length > 0 ? realBackendCores : ALL_CORES;
-
 
   useEffect(() => {
     sound.setEnabled(state.soundEnabled);
@@ -1916,7 +1825,7 @@ function DashboardProvider({ children }: { children: ReactNode }) {
   const value = useMemo(() => ({
     state,
     dispatch,
-    cores: activeCores,
+    cores: ALL_CORES,
     filteredCores,
     stats,
     sound,
@@ -2095,7 +2004,6 @@ ESTADÍSTICAS DEL CÓDIGO:
 • WCAG 2.1 AA compliant
 ═══════════════════════════════════════════════════════════════════════════════
 */
-
 
 
 
