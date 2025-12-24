@@ -261,42 +261,48 @@ class ABTestingImpactIA:
         if not stats.get("is_significant"):
             if not stats.get("sample_adequate"):
                 return "CONTINUAR: Muestra insuficiente. Continuar recolectando datos."
-            return "CONTINUAR: Sin diferencia significativa. Considerar nuevo test con variantes más distintas."
+            return "CONTINUAR: Sin diferencia significativa. Considerar nuevo test con variantes mas distintas."
         
         if winner:
-            return f"IMPLEMENTAR: {winner['variant']} es ganador con +{winner['improvement_pct']:.1f}% mejora. Impacto anual estimado: ${impact.get('incremental_revenue_annual', 0):,.0f}"
+            annual_impact = impact.get('incremental_revenue_annual', 0)
+            return f"IMPLEMENTAR: {winner['variant']} es ganador con +{winner['improvement_pct']:.1f}% mejora. Impacto anual estimado: ${annual_impact:,.0f}"
         
-        return "MANTENER: Control sigue siendo la mejor opción."
+        return "MANTENER: Control sigue siendo la mejor opcion."
     
     def _generate_insights(self, analysis: List[Dict], stats: Dict, winner: Optional[Dict]) -> List[str]:
         """Genera insights del test."""
         insights = []
         
         if not analysis:
-            return ["Datos insuficientes para análisis"]
+            return ["Datos insuficientes para analisis"]
         
         # Resultado principal
         if winner:
-            insights.append(f"✅ Test CONCLUSIVO: {winner['variant']} supera al control en {winner['improvement_pct']:.1f}%")
+            insights.append(f"Test CONCLUSIVO: {winner['variant']} supera al control en {winner['improvement_pct']:.1f}%")
         elif stats.get("is_significant"):
-            insights.append("⚠️ Diferencia significativa pero sin ganador claro")
+            insights.append("Diferencia significativa pero sin ganador claro")
         else:
-            insights.append("⏳ Test AÚN NO CONCLUSIVO: Diferencias dentro del margen de error")
+            insights.append("Test AUN NO CONCLUSIVO: Diferencias dentro del margen de error")
         
         # Sample size
         if not stats.get("sample_adequate"):
             min_needed = 1000
             current = min(a["visitors"] for a in analysis)
-            insights.append(f"📊 Muestra insuficiente: {current:,} vs {min_needed:,} mínimo recomendado")
+            insights.append(f"Muestra insuficiente: {current:,} vs {min_needed:,} minimo recomendado")
         
         # P-value
         p = stats.get("p_value", 1)
-        insights.append(f"📈 P-value: {p:.4f} ({'significativo' if p < 0.05 else 'no significativo'} al 95%)")
+        sig_text = "significativo" if p < 0.05 else "no significativo"
+        insights.append(f"P-value: {p:.4f} ({sig_text} al 95%)")
         
         # Mejores performers
         if len(analysis) > 1:
             sorted_variants = sorted(analysis, key=lambda x: x["conversion_rate"], reverse=True)
-            insights.append(f"🏆 Ranking: {' > '.join([f\"{v['variant']} ({v['conversion_rate']*100:.2f}%)\" for v in sorted_variants[:3]])}")
+            ranking_parts = []
+            for v in sorted_variants[:3]:
+                ranking_parts.append(f"{v['variant']} ({v['conversion_rate']*100:.2f}%)")
+            ranking_str = " > ".join(ranking_parts)
+            insights.append(f"Ranking: {ranking_str}")
         
         return insights[:5]
     
