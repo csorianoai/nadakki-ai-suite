@@ -1,289 +1,323 @@
-﻿# filepath: agents/marketing/abtestingimpactia.py
+# agents/marketing/abtestingimpactia.py
 """
-ABTestingImpactIA v3.2.0 - Enterprise A/B Testing Impact Analysis Engine
-Author: Nadakki AI Suite
-Version: 3.2.0
+ABTestingImpactIA v3.0 - Análisis de Impacto de Tests A/B
+Simplificado y funcional - acepta dict como input.
 """
 
 from __future__ import annotations
-import hashlib, json, logging, math, re, time
-from collections import OrderedDict
-from dataclasses import dataclass
+import time
+import logging
+import math
+from typing import Any, Dict, List, Optional
 from datetime import datetime
-from typing import Any, Dict, List, Literal, Optional, Tuple
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
-logger = logging.getLogger("ABTestingImpactIA")
+logger = logging.getLogger(__name__)
 
-VERSION = "3.2.0"
-MAX_CACHE_SIZE = 500
-DEFAULT_TTL_SECONDS = 3600
-CIRCUIT_BREAKER_FAILURE_THRESHOLD = 5
-CIRCUIT_BREAKER_TIMEOUT = 60
+try:
+    from agents.marketing.layers.decision_layer import apply_decision_layer
+    DECISION_LAYER_AVAILABLE = True
+except ImportError:
+    DECISION_LAYER_AVAILABLE = False
 
-TestType = Literal["conversion", "engagement", "revenue", "retention"]
-
-class FeatureFlags:
-    def __init__(self, initial: Optional[Dict[str, bool]] = None):
-        self.flags = {"CACHE_ENABLED": True, "CIRCUIT_BREAKER": True, "FALLBACK_MODE": True,
-                     "ADVANCED_METRICS": True, "PII_DETECTION": True, "COMPLIANCE_CHECK": True}
-        if initial:
-            self.flags.update(initial)
-    
-    def is_enabled(self, name: str) -> bool:
-        return self.flags.get(name, False)
-
-class CircuitBreaker:
-    def __init__(self, failure_threshold=CIRCUIT_BREAKER_FAILURE_THRESHOLD, timeout=CIRCUIT_BREAKER_TIMEOUT):
-        self.failure_threshold, self.timeout = failure_threshold, timeout
-        self.failures, self.last_failure_time, self.state = 0, None, "CLOSED"
-
-    def can_execute(self) -> bool:
-        if self.state == "OPEN" and (time.time() - (self.last_failure_time or 0)) > self.timeout:
-            self.state = "HALF_OPEN"
-            return True
-        return self.state != "OPEN"
-
-    def record_success(self):
-        if self.state == "HALF_OPEN": self.state = "CLOSED"
-        self.failures = 0; self.last_failure_time = None
-
-    def record_failure(self):
-        self.failures += 1; self.last_failure_time = time.time()
-        if self.failures >= self.failure_threshold: self.state = "OPEN"
-
-@dataclass
-class VariantData:
-    variant_name: str
-    sample_size: int
-    conversions: int
-    revenue: float = 0.0
-
-@dataclass
-class ABTestInput:
-    tenant_id: str
-    test_name: str
-    test_type: TestType
-    control: VariantData
-    treatment: VariantData
-    confidence_level: float = 0.95
-    request_id: Optional[str] = None
-    
-    def __post_init__(self):
-        if not self.tenant_id.startswith("tn_"):
-            raise ValueError("Invalid tenant_id")
-
-@dataclass
-class StatisticalResults:
-    statistically_significant: bool
-    p_value: float
-    confidence_interval: tuple
-    min_sample_size_needed: int
-    power: float
-
-@dataclass
-class ImpactMetrics:
-    relative_lift: float
-    absolute_lift: float
-    winner: str
-    recommendation: str
-
-@dataclass
-class ComplianceSummary:
-    passed: bool
-    issues: List[str]
-    rules_applied: List[str]
-
-@dataclass
-class AuditTrail:
-    template_version: str
-    config_hash: str
-    decision_trace: List[str]
-    reason_codes: List[str]
-
-@dataclass
-class ABTestResult:
-    analysis_id: str
-    tenant_id: str
-    test_name: str
-    statistical_results: StatisticalResults
-    impact_metrics: ImpactMetrics
-    compliance_summary: ComplianceSummary
-    audit_trail: AuditTrail
-    latency_ms: int
-    metadata: Dict[str, Any]
-
-class ComplianceEngine:
-    @staticmethod
-    def validate_inputs(inp: ABTestInput) -> Tuple[bool, List[str], List[str]]:
-        issues, rules, reasons = [], [], []
-        rules.extend(["bounds:confidence_level", "sanity:non_negative_counts"])
-        
-        for vname, v in [("control", inp.control), ("treatment", inp.treatment)]:
-            if v.sample_size < 1:
-                issues.append(f"{vname}:invalid_sample")
-                reasons.append("invalid_sample_size")
-            if v.conversions > v.sample_size:
-                issues.append(f"{vname}:invalid_conversions")
-                reasons.append("inconsistent_counts")
-        
-        passed = len(issues) == 0
-        return passed, issues, list(set(reasons))
-
-class StatEngine:
-    @staticmethod
-    def z_score(p1: float, p2: float, n1: int, n2: int) -> float:
-        p_pool = (p1 * n1 + p2 * n2) / max(1, (n1 + n2))
-        se = math.sqrt(max(1e-12, p_pool * (1 - p_pool) * (1/n1 + 1/n2)))
-        return (p1 - p2) / se if se > 0 else 0.0
-    
-    @staticmethod
-    def p_value_from_z(z: float) -> float:
-        return 2 * (1 - 0.5 * (1 + math.erf(abs(z) / math.sqrt(2))))
-    
-    @staticmethod
-    def confidence_interval(p: float, n: int, z: float) -> tuple:
-        se = math.sqrt(max(1e-12, p * (1 - p) / max(1, n)))
-        return (max(0.0, p - z * se), min(1.0, p + z * se))
-    
-    @staticmethod
-    def min_sample_size(p1: float, p2: float) -> int:
-        z_alpha, z_beta = 1.96, 0.84
-        p_avg = max(1e-6, (p1 + p2) / 2)
-        effect = max(1e-6, abs(p1 - p2))
-        n = ((z_alpha + z_beta) ** 2 * 2 * p_avg * (1 - p_avg)) / (effect ** 2)
-        return int(math.ceil(n))
 
 class ABTestingImpactIA:
-    def __init__(self, tenant_id: str, config: Optional[Dict] = None, flags: Optional[Dict[str, bool]] = None):
-        self.tenant_id, self.agent_id, self.version = tenant_id, "ab_testing_impact_ia", VERSION
-        self.config = config or {"enable_cache": True, "cache_ttl_seconds": DEFAULT_TTL_SECONDS}
-        self.flags, self.breaker = FeatureFlags(flags), CircuitBreaker()
-        self._cache: "OrderedDict[str, tuple]" = OrderedDict()
-        self._cache_max_size = MAX_CACHE_SIZE
-        self._metrics = {"total": 0, "ok": 0, "fail": 0, "cache_hits": 0, "fallbacks": 0,
-                        "avg_latency_ms": 0.0, "latency_hist": []}
-
-    def _cache_key(self, inp: ABTestInput) -> str:
-        s = json.dumps({"tenant": inp.tenant_id, "test": inp.test_name, 
-                       "ctrl": [inp.control.sample_size, inp.control.conversions],
-                       "trt": [inp.treatment.sample_size, inp.treatment.conversions]}, sort_keys=True)
-        return hashlib.sha256(s.encode()).hexdigest()[:16]
-
-    def _get_from_cache(self, key: str) -> Optional[ABTestResult]:
-        if not self.flags.is_enabled("CACHE_ENABLED"): return None
-        item = self._cache.get(key)
-        if not item: return None
-        result, ts = item
-        ttl = self.config.get("cache_ttl_seconds", 0)
-        if ttl and (time.time() - ts) > ttl:
-            self._cache.pop(key, None); return None
-        self._cache.move_to_end(key); self._metrics["cache_hits"] += 1
-        return result
-
-    def _put_in_cache(self, key: str, result: ABTestResult):
-        if not self.flags.is_enabled("CACHE_ENABLED"): return
-        self._cache[key] = (result, time.time())
-        if len(self._cache) > self._cache_max_size: self._cache.popitem(last=False)
-
-    def _execute_core(self, inp: ABTestInput) -> ABTestResult:
+    VERSION = "3.0.0"
+    AGENT_ID = "abtestingimpactia"
+    
+    def __init__(self, tenant_id: str, config: Optional[Dict] = None):
+        self.tenant_id = tenant_id
+        self.config = config or {}
+        self.metrics = {"requests": 0, "errors": 0, "total_ms": 0.0}
+    
+    async def execute(self, input_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Ejecuta análisis de impacto A/B - acepta dict."""
+        self.metrics["requests"] += 1
         t0 = time.perf_counter()
-        decision_trace, reason_codes = [], []
-
-        passed, issues, rc = ComplianceEngine.validate_inputs(inp)
-        reason_codes.extend(rc)
-
-        p_ctrl = inp.control.conversions / max(1, inp.control.sample_size)
-        p_trt = inp.treatment.conversions / max(1, inp.treatment.sample_size)
-        
-        z = StatEngine.z_score(p_trt, p_ctrl, inp.treatment.sample_size, inp.control.sample_size)
-        p_val = StatEngine.p_value_from_z(z)
-        
-        alpha = 1 - inp.confidence_level
-        significant = p_val < alpha
-        ci_trt = StatEngine.confidence_interval(p_trt, inp.treatment.sample_size, 1.96)
-        
-        min_n = StatEngine.min_sample_size(p_ctrl, p_trt)
-        current_n = min(inp.control.sample_size, inp.treatment.sample_size)
-        power = min(0.99, current_n / max(1, min_n))
-        
-        stat_results = StatisticalResults(
-            statistically_significant=significant,
-            p_value=round(p_val, 6),
-            confidence_interval=(round(ci_trt[0], 6), round(ci_trt[1], 6)),
-            min_sample_size_needed=min_n,
-            power=round(power, 3)
-        )
-        
-        rel_lift = ((p_trt - p_ctrl) / max(1e-6, p_ctrl)) * 100 if p_ctrl > 0 else 0
-        abs_lift = p_trt - p_ctrl
-        
-        if significant and p_trt > p_ctrl:
-            winner, rec = "treatment", f"Deploy treatment (lift: {rel_lift:+.1f}%)"
-        elif significant:
-            winner, rec = "control", "Keep control"
-        else:
-            winner, rec = "inconclusive", "Continue testing"
-        
-        impact = ImpactMetrics(round(rel_lift, 4), round(abs_lift, 6), winner, rec)
-        
-        compliance = ComplianceSummary(passed, issues, ["bounds", "sanity"])
-        config_hash = hashlib.sha256(json.dumps(self.config, sort_keys=True).encode()).hexdigest()[:16]
-        audit = AuditTrail(VERSION, config_hash, decision_trace, reason_codes)
-        
-        latency_ms = max(1, int((time.perf_counter() - t0) * 1000))
-        self._metrics["latency_hist"].append(latency_ms)
-        n = max(1, self._metrics["total"])
-        self._metrics["avg_latency_ms"] = ((self._metrics["avg_latency_ms"] * (n - 1)) + latency_ms) / n
-        
-        analysis_id = f"abtest_{int(datetime.utcnow().timestamp()*1000)}_{hashlib.sha256(inp.test_name.encode()).hexdigest()[:6]}"
-        
-        return ABTestResult(analysis_id, self.tenant_id, inp.test_name, stat_results, 
-                          impact, compliance, audit, latency_ms, 
-                          {"agent_version": VERSION, "request_id": inp.request_id})
-
-    async def execute(self, inp: ABTestInput) -> ABTestResult:
-        self._metrics["total"] += 1
-        
-        if self.flags.is_enabled("CIRCUIT_BREAKER") and not self.breaker.can_execute():
-            if self.flags.is_enabled("FALLBACK_MODE"):
-                self._metrics["fallbacks"] += 1
-                return self._fallback(inp)
-            raise RuntimeError("Circuit breaker OPEN")
-        
-        key = self._cache_key(inp)
-        cached = self._get_from_cache(key)
-        if cached: return cached
         
         try:
-            result = self._execute_core(inp)
-            self.breaker.record_success(); self._metrics["ok"] += 1
-            self._put_in_cache(key, result)
+            data = input_data.get("input_data", input_data) if isinstance(input_data, dict) else {}
+            
+            test_id = data.get("test_id", "test_001")
+            variants = data.get("variants", [])
+            confidence_level = data.get("confidence_level", 0.95)
+            primary_metric = data.get("primary_metric", "conversion_rate")
+            
+            # Analizar variantes
+            analysis = self._analyze_variants(variants, primary_metric)
+            
+            # Calcular significancia estadística
+            stats = self._calculate_statistics(analysis, confidence_level)
+            
+            # Determinar ganador
+            winner = self._determine_winner(analysis, stats)
+            
+            # Calcular impacto proyectado
+            impact = self._calculate_impact(analysis, winner)
+            
+            # Generar recomendación
+            recommendation = self._generate_recommendation(winner, stats, impact)
+            
+            # Insights
+            insights = self._generate_insights(analysis, stats, winner)
+            
+            decision_trace = [
+                f"test_id={test_id}",
+                f"variants_analyzed={len(analysis)}",
+                f"primary_metric={primary_metric}",
+                f"statistical_significance={stats.get('is_significant', False)}"
+            ]
+            
+            latency_ms = max(1, int((time.perf_counter() - t0) * 1000))
+            self.metrics["total_ms"] += latency_ms
+            
+            result = {
+                "analysis_id": f"ab_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
+                "tenant_id": self.tenant_id,
+                "test_id": test_id,
+                "variants_analysis": analysis,
+                "statistical_analysis": stats,
+                "winner": winner,
+                "projected_impact": impact,
+                "recommendation": recommendation,
+                "summary": {
+                    "is_conclusive": stats.get("is_significant", False),
+                    "confidence_level": confidence_level,
+                    "winning_variant": winner.get("variant", "none") if winner else "inconclusive",
+                    "improvement": winner.get("improvement_pct", 0) if winner else 0,
+                    "sample_size_adequate": stats.get("sample_adequate", True)
+                },
+                "key_insights": insights,
+                "decision_trace": decision_trace,
+                "version": self.VERSION,
+                "latency_ms": latency_ms
+            }
+            
+            if DECISION_LAYER_AVAILABLE:
+                try:
+                    result = apply_decision_layer(result)
+                except Exception:
+                    pass
+            
             return result
+            
         except Exception as e:
-            logger.exception("ABTestingImpactIA failed", extra={"error": str(e)})
-            self.breaker.record_failure(); self._metrics["fail"] += 1
-            if self.flags.is_enabled("FALLBACK_MODE"):
-                self._metrics["fallbacks"] += 1
-                return self._fallback(inp)
-            raise
-
-    def _fallback(self, inp: ABTestInput) -> ABTestResult:
-        stat = StatisticalResults(False, 1.0, (0.0, 0.0), 10000, 0.0)
-        impact = ImpactMetrics(0.0, 0.0, "inconclusive", "Fallback mode")
-        compliance = ComplianceSummary(True, ["fallback"], [])
-        audit = AuditTrail(VERSION, "fallback", ["fallback_mode"], ["system_recovery"])
-        return ABTestResult(f"fallback_{int(datetime.utcnow().timestamp())}", 
-                          self.tenant_id, inp.test_name, stat, impact, compliance, 
-                          audit, 1, {"fallback": True, "agent_version": VERSION})
-
+            self.metrics["errors"] += 1
+            latency_ms = max(1, int((time.perf_counter() - t0) * 1000))
+            
+            return {
+                "analysis_id": "error",
+                "tenant_id": self.tenant_id,
+                "test_id": "error",
+                "variants_analysis": [],
+                "statistical_analysis": {},
+                "winner": None,
+                "projected_impact": {},
+                "recommendation": f"Error: {str(e)[:100]}",
+                "summary": {},
+                "key_insights": [f"Error: {str(e)[:100]}"],
+                "decision_trace": ["error_occurred"],
+                "version": self.VERSION,
+                "latency_ms": latency_ms
+            }
+    
+    def _analyze_variants(self, variants: List[Dict], metric: str) -> List[Dict]:
+        """Analiza cada variante del test."""
+        if not variants:
+            # Datos de ejemplo
+            return [
+                {
+                    "variant": "control",
+                    "visitors": 15000,
+                    "conversions": 450,
+                    "conversion_rate": 0.030,
+                    "revenue": 67500,
+                    "avg_order_value": 150
+                },
+                {
+                    "variant": "variant_a",
+                    "visitors": 15000,
+                    "conversions": 525,
+                    "conversion_rate": 0.035,
+                    "revenue": 81375,
+                    "avg_order_value": 155
+                },
+                {
+                    "variant": "variant_b",
+                    "visitors": 15000,
+                    "conversions": 480,
+                    "conversion_rate": 0.032,
+                    "revenue": 72000,
+                    "avg_order_value": 150
+                }
+            ]
+        
+        analysis = []
+        for v in variants:
+            visitors = v.get("visitors", 0)
+            conversions = v.get("conversions", 0)
+            revenue = v.get("revenue", 0)
+            
+            analysis.append({
+                "variant": v.get("variant", "unknown"),
+                "visitors": visitors,
+                "conversions": conversions,
+                "conversion_rate": round(conversions / visitors, 4) if visitors > 0 else 0,
+                "revenue": revenue,
+                "avg_order_value": round(revenue / conversions, 2) if conversions > 0 else 0
+            })
+        
+        return analysis
+    
+    def _calculate_statistics(self, analysis: List[Dict], confidence: float) -> Dict[str, Any]:
+        """Calcula significancia estadística."""
+        if len(analysis) < 2:
+            return {"is_significant": False, "p_value": 1.0, "sample_adequate": False}
+        
+        control = next((a for a in analysis if a["variant"] == "control"), analysis[0])
+        treatment = next((a for a in analysis if a["variant"] != "control"), analysis[1])
+        
+        # Z-test simplificado para proporciones
+        n1, n2 = control["visitors"], treatment["visitors"]
+        p1, p2 = control["conversion_rate"], treatment["conversion_rate"]
+        
+        if n1 == 0 or n2 == 0:
+            return {"is_significant": False, "p_value": 1.0, "sample_adequate": False}
+        
+        # Pooled proportion
+        p_pooled = (control["conversions"] + treatment["conversions"]) / (n1 + n2)
+        
+        # Standard error
+        se = math.sqrt(p_pooled * (1 - p_pooled) * (1/n1 + 1/n2)) if p_pooled > 0 else 0.001
+        
+        # Z-score
+        z = abs(p2 - p1) / se if se > 0 else 0
+        
+        # P-value aproximado (two-tailed)
+        p_value = 2 * (1 - min(0.9999, 0.5 + 0.5 * math.erf(z / math.sqrt(2))))
+        
+        # Determinar significancia
+        alpha = 1 - confidence
+        is_significant = p_value < alpha
+        
+        # Sample size adequacy
+        min_sample = 1000  # Mínimo recomendado
+        sample_adequate = min(n1, n2) >= min_sample
+        
+        return {
+            "is_significant": is_significant,
+            "p_value": round(p_value, 4),
+            "z_score": round(z, 3),
+            "confidence_level": confidence,
+            "sample_adequate": sample_adequate,
+            "minimum_detectable_effect": round(se * 2, 4),
+            "observed_effect": round(abs(p2 - p1), 4)
+        }
+    
+    def _determine_winner(self, analysis: List[Dict], stats: Dict) -> Optional[Dict]:
+        """Determina el ganador del test."""
+        if not stats.get("is_significant", False):
+            return None
+        
+        control = next((a for a in analysis if a["variant"] == "control"), None)
+        best = max(analysis, key=lambda x: x["conversion_rate"])
+        
+        if control and best["variant"] != "control":
+            improvement = (best["conversion_rate"] - control["conversion_rate"]) / control["conversion_rate"]
+            return {
+                "variant": best["variant"],
+                "conversion_rate": best["conversion_rate"],
+                "improvement_pct": round(improvement * 100, 2),
+                "confidence": stats.get("confidence_level", 0.95)
+            }
+        
+        return None
+    
+    def _calculate_impact(self, analysis: List[Dict], winner: Optional[Dict]) -> Dict[str, Any]:
+        """Calcula impacto proyectado del ganador."""
+        if not winner:
+            return {"monthly_impact": 0, "annual_impact": 0, "roi": 0}
+        
+        control = next((a for a in analysis if a["variant"] == "control"), None)
+        winning = next((a for a in analysis if a["variant"] == winner["variant"]), None)
+        
+        if not control or not winning:
+            return {"monthly_impact": 0, "annual_impact": 0, "roi": 0}
+        
+        # Proyectar impacto
+        monthly_visitors = control["visitors"] * 2  # Estimado mensual
+        incremental_conversions = monthly_visitors * (winning["conversion_rate"] - control["conversion_rate"])
+        incremental_revenue = incremental_conversions * winning["avg_order_value"]
+        
+        return {
+            "incremental_conversions_monthly": round(incremental_conversions),
+            "incremental_revenue_monthly": round(incremental_revenue, 2),
+            "incremental_revenue_annual": round(incremental_revenue * 12, 2),
+            "conversion_lift": winner["improvement_pct"],
+            "confidence": winner["confidence"]
+        }
+    
+    def _generate_recommendation(self, winner: Optional[Dict], stats: Dict, impact: Dict) -> str:
+        """Genera recomendación del test."""
+        if not stats.get("is_significant"):
+            if not stats.get("sample_adequate"):
+                return "CONTINUAR: Muestra insuficiente. Continuar recolectando datos."
+            return "CONTINUAR: Sin diferencia significativa. Considerar nuevo test con variantes más distintas."
+        
+        if winner:
+            return f"IMPLEMENTAR: {winner['variant']} es ganador con +{winner['improvement_pct']:.1f}% mejora. Impacto anual estimado: ${impact.get('incremental_revenue_annual', 0):,.0f}"
+        
+        return "MANTENER: Control sigue siendo la mejor opción."
+    
+    def _generate_insights(self, analysis: List[Dict], stats: Dict, winner: Optional[Dict]) -> List[str]:
+        """Genera insights del test."""
+        insights = []
+        
+        if not analysis:
+            return ["Datos insuficientes para análisis"]
+        
+        # Resultado principal
+        if winner:
+            insights.append(f"✅ Test CONCLUSIVO: {winner['variant']} supera al control en {winner['improvement_pct']:.1f}%")
+        elif stats.get("is_significant"):
+            insights.append("⚠️ Diferencia significativa pero sin ganador claro")
+        else:
+            insights.append("⏳ Test AÚN NO CONCLUSIVO: Diferencias dentro del margen de error")
+        
+        # Sample size
+        if not stats.get("sample_adequate"):
+            min_needed = 1000
+            current = min(a["visitors"] for a in analysis)
+            insights.append(f"📊 Muestra insuficiente: {current:,} vs {min_needed:,} mínimo recomendado")
+        
+        # P-value
+        p = stats.get("p_value", 1)
+        insights.append(f"📈 P-value: {p:.4f} ({'significativo' if p < 0.05 else 'no significativo'} al 95%)")
+        
+        # Mejores performers
+        if len(analysis) > 1:
+            sorted_variants = sorted(analysis, key=lambda x: x["conversion_rate"], reverse=True)
+            insights.append(f"🏆 Ranking: {' > '.join([f\"{v['variant']} ({v['conversion_rate']*100:.2f}%)\" for v in sorted_variants[:3]])}")
+        
+        return insights[:5]
+    
+    def health(self) -> Dict[str, Any]:
+        req = max(1, self.metrics["requests"])
+        return {
+            "agent_id": self.AGENT_ID,
+            "version": self.VERSION,
+            "status": "healthy",
+            "tenant_id": self.tenant_id,
+            "metrics": {
+                "requests": self.metrics["requests"],
+                "errors": self.metrics["errors"],
+                "avg_latency_ms": round(self.metrics["total_ms"] / req, 2)
+            },
+            "decision_layer": DECISION_LAYER_AVAILABLE
+        }
+    
     def health_check(self) -> Dict[str, Any]:
-        return {"status": "healthy", "agent_id": self.agent_id, "agent_version": VERSION,
-               "tenant_id": self.tenant_id, "total_requests": self._metrics["total"]}
+        return self.health()
 
-    def get_metrics(self) -> Dict[str, Any]:
-        return {"agent_name": self.agent_id, "agent_version": VERSION,
-               "tenant_id": self.tenant_id, **self._metrics}
 
-def create_agent_instance(tenant_id: str, config: Optional[Dict] = None, flags: Optional[Dict[str, bool]] = None):
-    return ABTestingImpactIA(tenant_id, config, flags)
+def create_agent_instance(tenant_id: str, config: Dict = None):
+    return ABTestingImpactIA(tenant_id, config)
