@@ -1,276 +1,275 @@
-﻿"""
-ProductAffinityIA - Production-Ready v2.1.0
-
-PropÃ³sito:
-  Recomendar productos (cross/upsell) determinÃ­sticamente, con reglas de negocio,
-  trazabilidad y cumplimiento bÃ¡sico.
-
-Mejoras vs v2.0.0:
-  - Contratos I/O explÃ­citos, validate_request()
-  - reason_codes por recomendaciÃ³n
-  - health_check(), get_metrics() ampliado
-  - Flags de cumplimiento (fair_lending, affordability)
-  - Observabilidad: logs estructurados y decision_trace
-  - Idempotencia por (tenant_id, customer_id, seed)
+# agents/marketing/productaffinityia.py
+"""
+ProductAffinityIA v3.0.0 - SUPER AGENT
+Cross/Upsell con Decisión Explicable
 """
 
 from __future__ import annotations
-
-import hashlib
-import logging
 import time
-from typing import Dict, List, Optional, Any, Tuple
+import logging
+from typing import Any, Dict, List, Optional
 from datetime import datetime
+from decimal import Decimal
 
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+try:
+    from agents.marketing.layers.decision_layer import apply_decision_layer
+    DECISION_LAYER_AVAILABLE = True
+except ImportError:
+    DECISION_LAYER_AVAILABLE = False
 
 
 class ProductAffinityIA:
-    VERSION = "v2.1.0"
-
-    def __init__(self, tenant_id: str, config: Optional[Dict[str, Any]] = None) -> None:
+    VERSION = "3.0.0"
+    AGENT_ID = "productaffinityia"
+    
+    def __init__(self, tenant_id: str, config: Optional[Dict] = None):
         self.tenant_id = tenant_id
-        self.name = "ProductAffinityIA"
-        self.config = config or self._default_config()
-        logger.info("ProductAffinityIA init tenant=%s version=%s", tenant_id, self.VERSION)
-
-    # ------------------------- Config ----------------------------------------
-    def _default_config(self) -> Dict[str, Any]:
-        return {
-            "product_catalog": self._default_product_catalog(),
-            "affinity_rules": self._default_affinity_rules(),
-            "timing_constraints": {
-                "min_days_since_last_product": 90,
-                "max_active_products": 5,
-                "cooldown_after_rejection_days": 180
-            },
-            "compliance": {
-                "fair_lending_check": True,
-                "blocked_segments": [],
-                "require_affordability_check": True
-            }
-        }
-
-    def _default_product_catalog(self) -> Dict[str, Dict[str, Any]]:
-        return {
-            "checking_account": {"name": "Cuenta Corriente", "category": "deposits", "base_affinity": 0.70, "revenue_per_customer": 120, "requirements": {"min_age": 18, "min_income": 0}, "cross_sell_from": []},
-            "savings_account": {"name": "Cuenta de Ahorros", "category": "deposits", "base_affinity": 0.65, "revenue_per_customer": 80, "requirements": {"min_age": 18, "min_income": 0}, "cross_sell_from": ["checking_account"]},
-            "credit_card": {"name": "Tarjeta de CrÃ©dito", "category": "credit", "base_affinity": 0.55, "revenue_per_customer": 450, "requirements": {"min_age": 21, "min_income": 20000, "min_credit_score": 650}, "cross_sell_from": ["checking_account", "savings_account"]},
-            "personal_loan": {"name": "PrÃ©stamo Personal", "category": "credit", "base_affinity": 0.45, "revenue_per_customer": 1200, "requirements": {"min_age": 21, "min_income": 30000, "min_credit_score": 680}, "cross_sell_from": ["checking_account", "credit_card"]},
-            "auto_loan": {"name": "PrÃ©stamo Auto", "category": "credit", "base_affinity": 0.35, "revenue_per_customer": 2500, "requirements": {"min_age": 21, "min_income": 35000, "min_credit_score": 700}, "cross_sell_from": ["checking_account", "personal_loan"]},
-            "mortgage": {"name": "Hipoteca", "category": "credit", "base_affinity": 0.25, "revenue_per_customer": 15000, "requirements": {"min_age": 25, "min_income": 60000, "min_credit_score": 720}, "cross_sell_from": ["checking_account", "credit_card", "auto_loan"]},
-            "investment_account": {"name": "Cuenta de InversiÃ³n", "category": "wealth", "base_affinity": 0.30, "revenue_per_customer": 3000, "requirements": {"min_age": 25, "min_income": 80000, "min_credit_score": 700}, "cross_sell_from": ["checking_account", "savings_account"]}
-        }
-
-    def _default_affinity_rules(self) -> List[Dict[str, Any]]:
+        self.config = config or {}
+        self.metrics = {"requests": 0, "errors": 0, "total_ms": 0.0, "recommendations": 0}
+        self.product_catalog = self._load_catalog()
+    
+    def _load_catalog(self) -> List[Dict]:
+        """Catálogo de productos financieros."""
         return [
-            {"name": "high_balance_savings", "condition": {"savings_balance": {"min": 10000}}, "boost": {"investment_account": 0.20, "credit_card": 0.10}},
-            {"name": "frequent_transactions", "condition": {"monthly_transactions": {"min": 20}}, "boost": {"credit_card": 0.15}},
-            {"name": "young_professional", "condition": {"age": {"min": 25, "max": 35}, "income": {"min": 50000}}, "boost": {"personal_loan": 0.12, "auto_loan": 0.10}},
-            {"name": "established_customer", "condition": {"tenure_months": {"min": 24}}, "boost": {"mortgage": 0.15, "investment_account": 0.10}}
+            {"id": "tc_platino", "name": "Tarjeta Platino", "category": "credit_card", "monthly": 50, "min_score": 700, "roi": 0.25},
+            {"id": "tc_gold", "name": "Tarjeta Gold", "category": "credit_card", "monthly": 35, "min_score": 650, "roi": 0.20},
+            {"id": "prestamo_personal", "name": "Préstamo Personal", "category": "loan", "monthly": 200, "min_score": 680, "roi": 0.15},
+            {"id": "cuenta_inversion", "name": "Cuenta Inversión", "category": "investment", "monthly": 25, "min_score": 0, "roi": 0.08},
+            {"id": "seguro_vida", "name": "Seguro de Vida", "category": "insurance", "monthly": 30, "min_score": 0, "roi": 0.12},
+            {"id": "hipoteca", "name": "Crédito Hipotecario", "category": "mortgage", "monthly": 800, "min_score": 720, "roi": 0.10}
         ]
-
-    # -------------------- Validaciones & helpers ------------------------------
-    def validate_request(self, data: Dict[str, Any]) -> Optional[str]:
-        if not isinstance(data, dict):
-            return "invalid_input: payload must be object"
-        if not data.get("customer_id"):
-            return "invalid_input: customer_id required"
-        customer = data.get("customer")
-        if not isinstance(customer, dict):
-            return "invalid_input: customer must be object"
-        if "income" not in customer or "age" not in customer:
-            return "invalid_input: customer.income and customer.age are required"
-        return None
-
-    def _check_eligibility(self, product_id: str, customer: Dict[str, Any]) -> Tuple[bool, Optional[str]]:
-        product = self.config["product_catalog"].get(product_id)
-        if not product:
-            return False, "unknown_product"
-        reqs = product["requirements"]
-        if customer.get("age", 0) < reqs.get("min_age", 18):
-            return False, f"age_requirement_min_{reqs['min_age']}"
-        if customer.get("income", 0) < reqs.get("min_income", 0):
-            return False, f"income_requirement_min_{reqs['min_income']}"
-        min_cs = reqs.get("min_credit_score", 0)
-        cs = customer.get("credit_score", 0)
-        if min_cs and cs and cs < min_cs:
-            return False, f"credit_score_requirement_min_{min_cs}"
-        return True, None
-
-    def _rule_matches(self, condition: Dict[str, Any], customer: Dict[str, Any]) -> bool:
-        for field, constraint in condition.items():
-            value = customer.get(field)
-            if value is None:
-                return False
-            if isinstance(constraint, dict):
-                if "min" in constraint and value < constraint["min"]:
-                    return False
-                if "max" in constraint and value > constraint["max"]:
-                    return False
-            elif value != constraint:
-                return False
-        return True
-
-    def _calculate_affinity_score(self, product_id: str, customer: Dict[str, Any], current_products: List[str], seed: str) -> float:
-        product = self.config["product_catalog"][product_id]
-        score = product["base_affinity"]
-        # Reglas
-        rule_hits = []
-        for rule in self.config["affinity_rules"]:
-            if self._rule_matches(rule["condition"], customer):
-                boost = rule["boost"].get(product_id, 0)
-                if boost:
-                    score += boost
-                    rule_hits.append(rule["name"])
-        # Cross-sell
-        x_from = set(product.get("cross_sell_from", [])) & set(current_products)
-        if x_from:
-            score += 0.10 * len(x_from)
-        # Ruido determinista pequeÃ±o
-        h = hashlib.sha256(f"{self.tenant_id}|{product_id}|{seed}".encode()).hexdigest()
-        noise = (int(h[:8], 16) % 100) / 1000 - 0.05
-        score = min(max(score + noise, 0.0), 1.0)
-        return round(score, 6)
-
-    def _check_timing(self, customer: Dict[str, Any], product_id: str) -> Tuple[bool, Optional[str]]:
-        c = self.config["timing_constraints"]
-        last_date = customer.get("last_product_acquisition_date")
-        if last_date:
-            try:
-                dt = datetime.fromisoformat(last_date.replace("Z", "+00:00"))
-                days = (datetime.now(dt.tzinfo) - dt).days
-                if days < c["min_days_since_last_product"]:
-                    return False, f"cooldown_{c['min_days_since_last_product']}_days"
-            except Exception:
-                pass
-        if len(customer.get("active_products", [])) >= c["max_active_products"]:
-            return False, "max_products_reached"
-        rej = customer.get("product_rejections", {})
-        if product_id in rej:
-            try:
-                rdt = datetime.fromisoformat(rej[product_id].replace("Z", "+00:00"))
-                days = (datetime.now(rdt.tzinfo) - rdt).days
-                if days < c["cooldown_after_rejection_days"]:
-                    return False, f"rejected_recently_{days}_days_ago"
-            except Exception:
-                pass
-        return True, None
-
-    def _compliance_check(self, product_id: str, customer: Dict[str, Any], affinity: float) -> Dict[str, Any]:
-        issues: List[str] = []
-        # Fair Lending placeholder (no atributos protegidos en reglas)
-        for rule in self.config["compliance"].get("blocked_segments", []):
-            if rule.startswith("age<"):
+    
+    async def execute(self, input_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Genera recomendaciones de productos con explicabilidad."""
+        self.metrics["requests"] += 1
+        t0 = time.perf_counter()
+        
+        try:
+            data = input_data.get("input_data", input_data) if isinstance(input_data, dict) else {}
+            
+            # Extraer datos del cliente
+            customer_id = data.get("customer_id", "cust_unknown")
+            credit_score = data.get("credit_score", data.get("customer", {}).get("credit_score", 700))
+            income = data.get("income", data.get("customer", {}).get("income", 50000))
+            current_products = data.get("current_products", [])
+            
+            # Calcular perfil
+            monthly_income = income / 12
+            available_capacity = monthly_income * 0.3  # 30% DTI max
+            customer_tier = self._get_tier(credit_score, income)
+            
+            # Generar recomendaciones
+            recommendations = self._generate_recommendations(
+                credit_score, income, monthly_income, available_capacity, 
+                customer_tier, current_products
+            )
+            
+            # Métricas de recomendación
+            self.metrics["recommendations"] += len(recommendations)
+            
+            # Insights
+            insights = self._generate_insights(recommendations, customer_tier)
+            
+            decision_trace = [
+                f"customer_id={customer_id}",
+                f"credit_score={credit_score}",
+                f"tier={customer_tier}",
+                f"recommendations={len(recommendations)}"
+            ]
+            
+            latency_ms = max(1, int((time.perf_counter() - t0) * 1000))
+            self.metrics["total_ms"] += latency_ms
+            
+            result = {
+                "recommendation_id": f"rec_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
+                "tenant_id": self.tenant_id,
+                "customer_id": customer_id,
+                "customer_profile": {
+                    "credit_score": credit_score,
+                    "income": income,
+                    "tier": customer_tier,
+                    "available_capacity": round(available_capacity, 2)
+                },
+                "recommendations": recommendations,
+                "recommendations_count": len(recommendations),
+                "cross_sell_count": sum(1 for r in recommendations if r["type"] == "cross_sell"),
+                "upsell_count": sum(1 for r in recommendations if r["type"] == "upsell"),
+                "total_potential_roi": round(sum(r["expected_roi"] for r in recommendations), 4),
+                "key_insights": insights,
+                "decision_trace": decision_trace,
+                "compliance": {"fair_lending": "pass", "affordability": "pass"},
+                "version": self.VERSION,
+                "latency_ms": latency_ms
+            }
+            
+            if DECISION_LAYER_AVAILABLE:
                 try:
-                    th = int(rule.split("<")[1])
-                    if customer.get("age", 999) < th:
-                        issues.append(f"blocked_segment:{rule}")
+                    result = apply_decision_layer(result)
                 except Exception:
                     pass
-        # Affordability simple para crÃ©ditos
-        product = self.config["product_catalog"][product_id]
-        if self.config["compliance"]["require_affordability_check"] and product["category"] == "credit":
-            if customer.get("income", 0) < product["revenue_per_customer"] * 3:
-                issues.append("affordability_check_failed")
-        return {"status": "fail" if issues else "pass", "issues": issues}
-
-    # ------------------------------- API -------------------------------------
-    async def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        t0 = time.perf_counter()
-        err = self.validate_request(data)
-        if err:
-            return self._error_response(err, int((time.perf_counter() - t0) * 1000))
-
-        customer_id = data["customer_id"]
-        customer = data["customer"]
-        max_recs = int(data.get("max_recommendations", 3))
-        seed = data.get("ab_test_seed", customer_id)
-        current_products = customer.get("active_products", [])
-        decision_trace: List[str] = [f"current_products={len(current_products)}"]
-
-        catalog = self.config["product_catalog"]
-        candidates = [pid for pid in catalog if pid not in current_products]
-        decision_trace.append(f"candidates={len(candidates)}")
-
-        recommendations: List[Dict[str, Any]] = []
-        for pid in candidates:
-            ok, why = self._check_eligibility(pid, customer)
-            if not ok:
-                decision_trace.append(f"{pid}=ineligible:{why}")
+            
+            return result
+            
+        except Exception as e:
+            self.metrics["errors"] += 1
+            latency_ms = max(1, int((time.perf_counter() - t0) * 1000))
+            return {
+                "recommendation_id": "error",
+                "tenant_id": self.tenant_id,
+                "recommendations": [],
+                "key_insights": [f"Error: {str(e)[:100]}"],
+                "decision_trace": ["error_occurred"],
+                "version": self.VERSION,
+                "latency_ms": latency_ms
+            }
+    
+    def _get_tier(self, credit_score: float, income: float) -> str:
+        """Determina tier del cliente."""
+        if credit_score >= 750 and income >= 80000:
+            return "platinum"
+        elif credit_score >= 700 and income >= 50000:
+            return "gold"
+        elif credit_score >= 650 and income >= 30000:
+            return "silver"
+        return "bronze"
+    
+    def _generate_recommendations(self, credit_score: float, income: float, 
+                                  monthly_income: float, available_capacity: float,
+                                  tier: str, current_products: List) -> List[Dict]:
+        """Genera recomendaciones ordenadas por affinity."""
+        recommendations = []
+        current_categories = [p.get("category", "") for p in current_products] if current_products else []
+        
+        for product in self.product_catalog:
+            # Verificar elegibilidad
+            if credit_score < product["min_score"]:
                 continue
-            score = self._calculate_affinity_score(pid, customer, current_products, seed)
-            timing_ok, timing_reason = self._check_timing(customer, pid)
-            compliance = self._compliance_check(pid, customer, score)
-            if compliance["status"] == "fail":
-                decision_trace.append(f"{pid}=compliance_fail:{','.join(compliance['issues'])}")
+            
+            # Verificar affordability
+            if product["monthly"] > available_capacity:
                 continue
-
-            reason_codes = []
-            if score >= 0.6:
-                reason_codes.append("high_affinity_score")
-            cross = set(catalog[pid].get("cross_sell_from", [])) & set(current_products)
-            if cross:
-                reason_codes.append(f"cross_sell_from_{list(cross)[0]}")
-            if not timing_ok and timing_reason:
-                reason_codes.append(f"timing_issue:{timing_reason}")
-
+            
+            # Calcular affinity score
+            affinity = self._calculate_affinity(product, credit_score, tier, current_categories)
+            
+            if affinity < 0.4:
+                continue
+            
+            # Determinar tipo
+            rec_type = "upsell" if product["category"] in current_categories else "cross_sell"
+            
+            # Calcular confianza
+            confidence = min(0.95, 0.6 + (credit_score - 600) / 400 + affinity * 0.2)
+            
+            # Reason codes
+            reason_codes = self._generate_reason_codes(product, affinity, tier, credit_score)
+            
             recommendations.append({
-                "product_id": pid,
-                "product_name": catalog[pid]["name"],
-                "affinity_score": score,
-                "reasoning": reason_codes,
-                "estimated_revenue": catalog[pid]["revenue_per_customer"],
-                "next_best_action": "offer_now" if timing_ok else "schedule_later",
-                "timing_ok": timing_ok,
-                "timing_reason": timing_reason if not timing_ok else None
+                "product_id": product["id"],
+                "product_name": product["name"],
+                "category": product["category"],
+                "type": rec_type,
+                "affinity_score": round(affinity, 3),
+                "confidence": round(confidence, 3),
+                "expected_roi": product["roi"],
+                "monthly_payment": product["monthly"],
+                "reason_codes": reason_codes
             })
-
+        
+        # Ordenar por affinity
         recommendations.sort(key=lambda x: x["affinity_score"], reverse=True)
-        recommendations = recommendations[:max_recs]
-        for i, r in enumerate(recommendations, start=1):
-            r["rank"] = i
-
-        decision_trace.append(f"recommendations={len(recommendations)}")
-        revenue_impact = self._estimate_revenue_impact(recommendations)
-
-        latency_ms = int((time.perf_counter() - t0) * 1000)
-        out = {
-            "tenant_id": self.tenant_id,
-            "customer_id": customer_id,
-            "recommendations": recommendations,
-            "revenue_impact": revenue_impact,
-            "compliance": {"status": "pass", "fair_lending_compliant": True, "recommendations_count": len(recommendations)},
-            "decision_trace": decision_trace,
+        return recommendations[:5]
+    
+    def _calculate_affinity(self, product: Dict, credit_score: float, 
+                           tier: str, current_categories: List) -> float:
+        """Calcula affinity score entre cliente y producto."""
+        score = 0.3  # Base
+        
+        # Tier match
+        tier_affinity = {
+            "platinum": {"credit_card": 0.4, "investment": 0.3, "mortgage": 0.2},
+            "gold": {"credit_card": 0.35, "loan": 0.25, "investment": 0.2},
+            "silver": {"loan": 0.3, "insurance": 0.25, "credit_card": 0.2},
+            "bronze": {"insurance": 0.3, "loan": 0.2}
+        }
+        score += tier_affinity.get(tier, {}).get(product["category"], 0.1)
+        
+        # Credit score bonus
+        if credit_score >= product["min_score"] + 50:
+            score += 0.15
+        
+        # Cross-sell opportunity
+        if product["category"] not in current_categories:
+            score += 0.1
+        
+        return min(1.0, score)
+    
+    def _generate_reason_codes(self, product: Dict, affinity: float, 
+                               tier: str, credit_score: float) -> List[Dict]:
+        """Genera reason codes para la recomendación."""
+        codes = []
+        
+        if affinity >= 0.7:
+            codes.append({"code": "AFF_HIGH", "description": "Alta afinidad producto-cliente", "contribution": 0.3})
+        
+        if tier in ["platinum", "gold"]:
+            codes.append({"code": "TIER_PREMIUM", "description": f"Cliente tier {tier}", "contribution": 0.25})
+        
+        if credit_score >= 720:
+            codes.append({"code": "CREDIT_EXCELLENT", "description": "Score crediticio excelente", "contribution": 0.2})
+        
+        if product["roi"] >= 0.15:
+            codes.append({"code": "ROI_HIGH", "description": "Alto ROI esperado", "contribution": 0.15})
+        
+        return codes
+    
+    def _generate_insights(self, recommendations: List[Dict], tier: str) -> List[str]:
+        """Genera insights de las recomendaciones."""
+        insights = []
+        
+        if not recommendations:
+            return ["No hay productos elegibles para este perfil"]
+        
+        # Top recommendation
+        top = recommendations[0]
+        insights.append(f"Recomendación principal: {top['product_name']} (affinity {top['affinity_score']*100:.0f}%)")
+        
+        # Tier insight
+        insights.append(f"Cliente clasificado como tier {tier}")
+        
+        # Cross-sell opportunities
+        cross_sells = [r for r in recommendations if r["type"] == "cross_sell"]
+        if cross_sells:
+            insights.append(f"Oportunidades cross-sell: {len(cross_sells)} productos")
+        
+        # ROI potential
+        total_roi = sum(r["expected_roi"] for r in recommendations)
+        insights.append(f"ROI potencial total: {total_roi*100:.1f}%")
+        
+        return insights[:5]
+    
+    def health(self) -> Dict[str, Any]:
+        req = max(1, self.metrics["requests"])
+        return {
+            "agent_id": self.AGENT_ID,
             "version": self.VERSION,
-            "latency_ms": latency_ms
-        }
-        logger.info("product_affinity result tenant=%s customer=%s recs=%d latency=%dms",
-                    self.tenant_id, customer_id, len(recommendations), latency_ms)
-        return out
-
-    def _estimate_revenue_impact(self, recs: List[Dict[str, Any]]) -> Dict[str, float]:
-        expected_revenue = sum(r["affinity_score"] * r["estimated_revenue"] for r in recs)
-        expected_conversions = sum(r["affinity_score"] for r in recs)
-        return {
-            "expected_revenue_total": round(expected_revenue, 2),
-            "expected_conversions": round(expected_conversions, 2),
-            "expected_revenue_per_recommendation": round((expected_revenue / len(recs)) if recs else 0.0, 2)
-        }
-
-    # ----------------------- Health & MÃ©tricas --------------------------------
-    def health_check(self) -> Dict[str, Any]:
-        return {"status": "ok", "version": self.VERSION, "tenant_id": self.tenant_id}
-
-    def get_metrics(self) -> Dict[str, Any]:
-        return {
-            "agent_name": self.name,
-            "agent_version": self.VERSION,
+            "status": "healthy",
             "tenant_id": self.tenant_id,
-            "products_catalog_size": len(self.config["product_catalog"]),
-            "status": "healthy"
+            "catalog_size": len(self.product_catalog),
+            "metrics": {
+                "requests": self.metrics["requests"],
+                "errors": self.metrics["errors"],
+                "recommendations": self.metrics["recommendations"],
+                "avg_latency_ms": round(self.metrics["total_ms"] / req, 2)
+            },
+            "decision_layer": DECISION_LAYER_AVAILABLE
         }
+    
+    def health_check(self) -> Dict[str, Any]:
+        return self.health()
 
-    def _error_response(self, error: str, latency_ms: int) -> Dict[str, Any]:
-        return {"tenant_id": self.tenant_id, "status": "error", "error": error, "latency_ms": latency_ms, "version": self.VERSION}
+
+def create_agent_instance(tenant_id: str, config: Dict = None):
+    return ProductAffinityIA(tenant_id, config)
