@@ -101,36 +101,47 @@ class AgentRegistry:
         try:
             module = importlib.import_module(agent["module"])
             
-            # Buscar la clase principal del agente (no dataclasses ni helpers)
+            # Buscar la clase principal del agente
             agent_class = None
-            agent_id_clean = agent_key.split('.')[-1].lower().replace('_', '')
+            agent_id_clean = agent_key.split('.')[-1].lower().replace('_', '').replace('-', '')
             
-            # Primero buscar clase que coincida con el nombre del archivo
+            # Recolectar todas las clases del módulo
+            module_classes = []
             for name, obj in inspect.getmembers(module, inspect.isclass):
                 if obj.__module__ == module.__name__:
-                    name_lower = name.lower()
-                    # Priorizar clases que terminen en IA o que coincidan con el nombre del archivo
-                    if name_lower.endswith('ia') or name_lower == agent_id_clean:
+                    module_classes.append((name, obj))
+            
+            # Estrategia 1: Buscar clase que termine en 'IA' (patrón común)
+            for name, obj in module_classes:
+                if name.endswith('IA') or name.endswith('Ia'):
+                    agent_class = obj
+                    break
+            
+            # Estrategia 2: Buscar clase cuyo nombre contenga el ID del agente
+            if not agent_class:
+                for name, obj in module_classes:
+                    name_clean = name.lower().replace('_', '')
+                    if agent_id_clean in name_clean or name_clean in agent_id_clean:
                         agent_class = obj
                         break
             
-            # Si no encontramos, buscar cualquier clase que NO sea dataclass/input/output
+            # Estrategia 3: Excluir dataclasses y helpers conocidos
             if not agent_class:
-                excluded_patterns = ['input', 'output', 'config', 'result', 'response', 'request', 
-                                    'anomaly', 'bucket', 'cache', 'flags', 'params', 'settings']
-                for name, obj in inspect.getmembers(module, inspect.isclass):
-                    if obj.__module__ == module.__name__:
-                        name_lower = name.lower()
-                        if not any(pattern in name_lower for pattern in excluded_patterns):
+                excluded = ['input', 'output', 'config', 'result', 'response', 'request', 
+                           'anomaly', 'bucket', 'cache', 'flags', 'params', 'settings',
+                           'tokenbucket', 'lrucache', 'circuitbreaker', 'featureflags',
+                           'mlstrategy', 'utmparams', 'audittrail']
+                for name, obj in module_classes:
+                    name_lower = name.lower()
+                    if not any(excl in name_lower for excl in excluded):
+                        # Verificar que tiene método execute, run, process o analyze
+                        if any(hasattr(obj, m) for m in ['execute', 'run', 'process', 'analyze', 'score']):
                             agent_class = obj
                             break
             
-            # Último recurso: primera clase del módulo
-            if not agent_class:
-                for name, obj in inspect.getmembers(module, inspect.isclass):
-                    if obj.__module__ == module.__name__:
-                        agent_class = obj
-                        break
+            # Estrategia 4: Última clase del módulo (suele ser la principal)
+            if not agent_class and module_classes:
+                agent_class = module_classes[-1][1]
             
             if agent_class:
                 agent["class"] = agent_class
@@ -232,6 +243,7 @@ class AgentRegistry:
 
 # Instancia global
 registry = AgentRegistry()
+
 
 
 
