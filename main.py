@@ -162,47 +162,89 @@ class ExecuteRequest(BaseModel):
 
 @app.post("/agents/{core}/{agent_id}/execute")
 async def execute_agent(core: str, agent_id: str, request: ExecuteRequest, tenant: Dict = Depends(verify_tenant)):
+    """
+    Ejecutar un agente con manejo robusto de input.
+    Los agentes pueden esperar dict o objetos tipados - manejamos ambos casos.
+    """
     agent = registry.get_agent(core, agent_id)
     if not agent:
-        raise HTTPException(404, "Agent not found")
+        raise HTTPException(404, f"Agent not found: {core}/{agent_id}")
     
     agent_key = f"{core}.{agent_id}"
     
     try:
-        # Usar create_instance que maneja diferentes constructores
+        # Crear instancia del agente
         instance = registry.create_instance(agent_key, tenant["tenant_id"])
         
         if not instance:
             raise HTTPException(503, f"Agent not instantiable: {agent.get('error', 'Unknown error')}")
         
-        # Buscar método ejecutable
+        # Preparar input data
+        input_data = request.input_data or {}
+        
+        # Inyectar tenant_id en el input si no está presente
+        if isinstance(input_data, dict) and "tenant_id" not in input_data:
+            input_data["tenant_id"] = tenant["tenant_id"]
+        
+        # Buscar y ejecutar método
         result = None
-        for method in ["execute", "run", "process", "analyze", "score", "personalize", "optimize", "generate", "predict", "monitor_compliance"]:
-            if hasattr(instance, method):
-                try:
-                    method_result = getattr(instance, method)(request.input_data)
-                    # Handle async methods
-                    import asyncio
-                    if asyncio.iscoroutine(method_result):
-                        result = await method_result
-                    else:
-                        result = method_result
-                    break
-                except TypeError:
-                    # El método no acepta parámetros, intentar sin ellos
+        methods_to_try = ["execute", "run", "process", "analyze", "score", "personalize", "optimize", "generate", "predict"]
+        
+        for method_name in methods_to_try:
+            if hasattr(instance, method_name):
+                method = getattr(instance, method_name)
+                if callable(method):
                     try:
-                        method_result = getattr(instance, method)()
+                        # Intentar llamar con input_data
+                        method_result = method(input_data)
+                        
+                        # Manejar métodos async
                         import asyncio
                         if asyncio.iscoroutine(method_result):
                             result = await method_result
                         else:
                             result = method_result
                         break
-                    except:
-                        continue
+                    except TypeError as te:
+                        # Si falla por tipo de argumento, intentar sin argumentos
+                        if "argument" in str(te).lower() or "positional" in str(te).lower():
+                            try:
+                                method_result = method()
+                                import asyncio
+                                if asyncio.iscoroutine(method_result):
+                                    result = await method_result
+                                else:
+                                    result = method_result
+                                break
+                            except:
+                                continue
+                        else:
+                            # Re-raise si es otro tipo de TypeError
+                            raise
+                    except AttributeError as ae:
+                        # Error común: 'dict' object has no attribute 'x'
+                        # El agente espera un objeto tipado, devolver error informativo
+                        return {
+                            "agent": agent_key,
+                            "agent_name": agent.get("name"),
+                            "tenant": tenant["tenant_id"],
+                            "timestamp": datetime.now().isoformat(),
+                            "status": "input_schema_error",
+                            "error": str(ae),
+                            "message": "Agent requires typed input. Check agent documentation for required schema.",
+                            "input_received": list(input_data.keys()) if isinstance(input_data, dict) else type(input_data).__name__
+                        }
         
         if result is None:
-            result = {"status": "executed", "message": "Agent processed successfully", "agent_name": agent.get("name")}
+            result = {"status": "executed", "message": "Agent processed but returned no result"}
+        
+        # Serializar resultado
+        if hasattr(result, 'dict'):
+            result = result.dict()
+        elif hasattr(result, 'model_dump'):
+            result = result.model_dump()
+        elif hasattr(result, '__dict__') and not isinstance(result, dict):
+            result = vars(result)
         
         return {
             "agent": agent_key,
@@ -211,11 +253,24 @@ async def execute_agent(core: str, agent_id: str, request: ExecuteRequest, tenan
             "timestamp": datetime.now().isoformat(),
             "result": result
         }
+        
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"Error executing {agent_key}: {e}")
-        raise HTTPException(500, f"Execution error: {str(e)}")
+        error_msg = str(e)
+        logger.error(f"Error executing {agent_key}: {error_msg}")
+        
+        # Devolver error estructurado en lugar de 500
+        return {
+            "agent": agent_key,
+            "agent_name": agent.get("name"),
+            "tenant": tenant["tenant_id"],
+            "timestamp": datetime.now().isoformat(),
+            "status": "error",
+            "error_type": type(e).__name__,
+            "error": error_msg,
+            "suggestion": "Check agent input schema requirements"
+        }
 
 @app.get("/usage/{tenant_id}")
 async def get_usage(tenant_id: str, tenant: Dict = Depends(verify_tenant)):
@@ -253,5 +308,6 @@ async def startup():
     logger.info("🚀 Server ready at http://localhost:8000")
     logger.info("📚 API docs at http://localhost:8000/docs")
     logger.info("=" * 60)
+
 
 
