@@ -1,0 +1,424 @@
+{
+  "agents": [
+    {
+      "needs_retraining": false,
+      "agent_id": "emailautomationia",
+      "grade": "A+",
+      "category": "Email Marketing",
+      "function": "Genera emails personalizados con IA, optimiza subject lines, determina mejor hora de envío",
+      "latency_ms": 348.0,
+      "score": 95,
+      "breakdown": {
+        "robustness": 15.0,
+        "functionality": 40,
+        "completeness": 25.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": false,
+      "agent_id": "abtestingia",
+      "grade": "A+",
+      "category": "Optimization",
+      "function": "Analiza experimentos A/B con significancia estadística, determina ganador y recomienda acciones",
+      "latency_ms": 340.0,
+      "score": 95,
+      "breakdown": {
+        "robustness": 15.0,
+        "functionality": 40,
+        "completeness": 25.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": false,
+      "agent_id": "customersegmentatonia",
+      "grade": "A+",
+      "category": "Segmentation",
+      "function": "Segmenta clientes usando RFM y ML, identifica grupos de alto valor",
+      "latency_ms": 341.0,
+      "score": 95,
+      "breakdown": {
+        "robustness": 15.0,
+        "functionality": 40,
+        "completeness": 25.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "leadscoringia",
+      "grade": "F",
+      "category": "Lead Management",
+      "function": "Califica leads con scoring predictivo basado en comportamiento e interacciones",
+      "latency_ms": 1027.0,
+      "score": 45,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 5
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "campaignoptimizeria",
+      "grade": "F",
+      "category": "Campaign Management",
+      "function": "Optimiza campañas multicanal, ajusta presupuestos y recomienda mejoras",
+      "latency_ms": 315.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "socialpostgeneratoria",
+      "grade": "F",
+      "category": "Content",
+      "function": "Genera contenido optimizado para redes sociales según plataforma y audiencia",
+      "latency_ms": 330.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Media"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "retentionpredictorea",
+      "grade": "F",
+      "category": "Analytics",
+      "function": "Predice probabilidad de churn y recomienda acciones de retención",
+      "latency_ms": 352.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "personalizationengineia",
+      "grade": "F",
+      "category": "Personalization",
+      "function": "Motor de personalización en tiempo real basado en comportamiento del usuario",
+      "latency_ms": 351.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "influencermatcheria",
+      "grade": "D",
+      "category": "Influencer Marketing",
+      "function": "Encuentra influencers ideales para campañas según audiencia y presupuesto",
+      "latency_ms": 290.0,
+      "score": 60,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 20
+      },
+      "complexity": "Media"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "influencermatchingia",
+      "grade": "F",
+      "category": "Influencer Marketing",
+      "function": "Matching avanzado de influencers con análisis de engagement y ROI esperado",
+      "latency_ms": 347.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Media"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "contentperformanceia",
+      "grade": null,
+      "category": "Analytics",
+      "function": "Analiza rendimiento de contenido, identifica top performers y áreas de mejora",
+      "latency_ms": 0,
+      "score": 0,
+      "breakdown": {},
+      "complexity": "Media"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "creativeanalyzeria",
+      "grade": "F",
+      "category": "Creative",
+      "function": "Analiza creatividades publicitarias, mide efectividad y sugiere optimizaciones",
+      "latency_ms": 717.0,
+      "score": 50,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 10
+      },
+      "complexity": "Media"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "budgetforecastia",
+      "grade": "F",
+      "category": "Finance",
+      "function": "Proyecta presupuestos de marketing basado en históricos y objetivos",
+      "latency_ms": 325.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "attributionmodelia",
+      "grade": "F",
+      "category": "Analytics",
+      "function": "Atribución multicanal avanzada, asigna crédito a touchpoints de conversión",
+      "latency_ms": 317.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "conversioncohortia",
+      "grade": "F",
+      "category": "Analytics",
+      "function": "Análisis de cohortes de conversión, tracking de retención por grupo",
+      "latency_ms": 347.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "journeyoptimizeria",
+      "grade": "F",
+      "category": "Customer Experience",
+      "function": "Optimiza customer journey, reduce drop-offs y mejora conversión por etapa",
+      "latency_ms": 371.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "contactqualityia",
+      "grade": "D",
+      "category": "Data Quality",
+      "function": "Valida calidad de contactos, detecta emails/teléfonos inválidos",
+      "latency_ms": 281.0,
+      "score": 60,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 20
+      },
+      "complexity": "Baja"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "competitoranalyzeria",
+      "grade": "F",
+      "category": "Competitive Intelligence",
+      "function": "Analiza competidores, compara precios, features y posicionamiento",
+      "latency_ms": 308.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Media"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "competitorintelligenceia",
+      "grade": "F",
+      "category": "Competitive Intelligence",
+      "function": "Inteligencia competitiva avanzada con análisis SWOT y tendencias",
+      "latency_ms": 327.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "marketingmixmodelia",
+      "grade": "F",
+      "category": "Analytics",
+      "function": "Modelo de marketing mix (MMM), optimiza distribución de presupuesto por canal",
+      "latency_ms": 399.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "marketingorchestratorea",
+      "grade": "F",
+      "category": "Automation",
+      "function": "Orquesta workflows de marketing automatizados, coordina agentes",
+      "latency_ms": 331.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "abtestingimpactia",
+      "grade": "F",
+      "category": "Optimization",
+      "function": "Mide impacto de tests A/B en revenue y métricas de negocio",
+      "latency_ms": 330.0,
+      "score": 55,
+      "breakdown": {
+        "robustness": 0.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": false,
+      "agent_id": "productaffinityia",
+      "grade": "B+",
+      "category": "Recommendations",
+      "function": "Analiza afinidad de productos, recomienda cross-sell y up-sell",
+      "latency_ms": 393.0,
+      "score": 82,
+      "breakdown": {
+        "robustness": 15.0,
+        "functionality": 40,
+        "completeness": 12.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": false,
+      "agent_id": "geosegmentationia",
+      "grade": "A+",
+      "category": "Segmentation",
+      "function": "Segmentación geográfica, detecta clusters por performance regional",
+      "latency_ms": 314.0,
+      "score": 95,
+      "breakdown": {
+        "robustness": 15.0,
+        "functionality": 40,
+        "completeness": 25.0,
+        "performance": 15
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": false,
+      "agent_id": "minimalformia",
+      "grade": "A+",
+      "category": "Lead Capture",
+      "function": "Optimiza formularios de captación, reduce fricción y mejora conversión",
+      "latency_ms": 267.0,
+      "score": 100,
+      "breakdown": {
+        "robustness": 15.0,
+        "functionality": 40,
+        "completeness": 25.0,
+        "performance": 20
+      },
+      "complexity": "Alta"
+    },
+    {
+      "needs_retraining": true,
+      "agent_id": "cashofferfilteria",
+      "grade": "C",
+      "category": "Credit",
+      "function": "Filtra y prioriza ofertas de crédito según perfil de riesgo",
+      "latency_ms": 516.0,
+      "score": 65,
+      "breakdown": {
+        "robustness": 15.0,
+        "functionality": 40,
+        "completeness": 0.0,
+        "performance": 10
+      },
+      "complexity": "Alta"
+    }
+  ],
+  "evaluation_date": "2025-12-23T23:59:20Z",
+  "tenant_id": "credicefi",
+  "summary": {
+    "top_performer": "minimalformia",
+    "total_agents": 26,
+    "average_score": 62.0,
+    "top_score": 100,
+    "needs_retraining": 20
+  }
+}
