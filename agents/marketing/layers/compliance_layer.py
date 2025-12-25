@@ -1,28 +1,30 @@
-# agents/marketing/layers/compliance_layer.py
 """
-Compliance Layer v1.0 - GDPR, CCPA, Fair Lending, Privacy
-Eleva Compliance de 0/100 a 100/100
+Compliance Layer v1.1.0 - Enterprise Compliance Checks
+Handles GDPR, CCPA, Fair Lending (ECOA/FHA) compliance
+FIXED: Word boundaries para evitar falsos positivos
 """
 
+import hashlib
+import re
+from datetime import datetime
 from typing import Dict, Any, List, Optional
 from enum import Enum
-from datetime import datetime
-import hashlib
+
+
+class ComplianceStatus(Enum):
+    PASS = "pass"
+    FAIL = "fail"
+    WARNING = "warning"
+
 
 class RegulationType(Enum):
     GDPR = "gdpr"
     CCPA = "ccpa"
     FAIR_LENDING = "fair_lending"
     INTERNAL = "internal_policy"
-    NOT_APPLICABLE = "not_applicable"
 
-class ComplianceStatus(Enum):
-    PASS = "pass"
-    FAIL = "fail"
-    WARNING = "warning"
-    NOT_APPLICABLE = "not_applicable"
 
-# Atributos protegidos (Fair Lending / ECOA)
+# Atributos protegidos bajo Fair Lending (ECOA/FHA)
 PROTECTED_ATTRIBUTES = [
     "race", "ethnicity", "national_origin", "religion",
     "sex", "gender", "marital_status", "age", "disability",
@@ -37,7 +39,7 @@ PII_PATTERNS = [
 
 
 def detect_pii_fields(data: Dict[str, Any], path: str = "") -> List[str]:
-    """Detecta campos PII recursivamente."""
+    """Detecta campos que pueden contener PII de forma recursiva."""
     pii_found = []
     
     if isinstance(data, dict):
@@ -45,7 +47,7 @@ def detect_pii_fields(data: Dict[str, Any], path: str = "") -> List[str]:
             current_path = f"{path}.{key}" if path else key
             key_lower = key.lower()
             
-            if any(pattern in key_lower for pattern in PII_PATTERNS):
+            if any(pii in key_lower for pii in PII_PATTERNS):
                 pii_found.append(current_path)
             
             pii_found.extend(detect_pii_fields(value, current_path))
@@ -58,23 +60,29 @@ def detect_pii_fields(data: Dict[str, Any], path: str = "") -> List[str]:
 
 
 def detect_protected_attributes(data: Dict[str, Any], path: str = "") -> List[str]:
-    """Detecta atributos protegidos (Fair Lending)."""
+    """Detecta atributos protegidos (Fair Lending) usando word boundaries."""
     protected_found = []
-    
+
     if isinstance(data, dict):
         for key, value in data.items():
             current_path = f"{path}.{key}" if path else key
             key_lower = key.lower()
-            
-            if any(attr in key_lower for attr in PROTECTED_ATTRIBUTES):
-                protected_found.append(current_path)
-            
+
+            # Usar word boundaries para evitar falsos positivos 
+            # (ej: "engagement" no debe matchear "age")
+            for attr in PROTECTED_ATTRIBUTES:
+                # Buscar palabra exacta separada por _ o al inicio/fin
+                pattern = r'(^|_)' + re.escape(attr) + r'($|_)'
+                if re.search(pattern, key_lower):
+                    protected_found.append(current_path)
+                    break
+
             protected_found.extend(detect_protected_attributes(value, current_path))
-    
+
     elif isinstance(data, list):
         for i, item in enumerate(data):
             protected_found.extend(detect_protected_attributes(item, f"{path}[{i}]"))
-    
+
     return protected_found
 
 
@@ -88,54 +96,53 @@ def mask_pii_value(value: Any) -> str:
 
 def apply_compliance_checks(
     input_data: Dict[str, Any],
-    agent_type: str,
     tenant_id: str = "default",
-    regulations: List[RegulationType] = None
+    agent_type: str = "unknown",
+    regulations: Optional[List[str]] = None
 ) -> Dict[str, Any]:
     """
-    Aplica todos los checks de compliance y devuelve metadata.
+    Aplica verificaciones de compliance al input.
+    
+    Returns:
+        Dict con status de compliance, checks realizados, y issues bloqueantes
     """
     if regulations is None:
-        regulations = [RegulationType.GDPR, RegulationType.INTERNAL]
+        regulations = ["gdpr", "fair_lending"]
     
     checks = []
-    overall_status = ComplianceStatus.PASS
     blocking_issues = []
+    overall_status = ComplianceStatus.PASS
     
-    # 1. PII Detection (GDPR/CCPA)
-    if RegulationType.GDPR in regulations or RegulationType.CCPA in regulations:
+    # 1. PII Detection (GDPR)
+    if "gdpr" in regulations:
         pii_fields = detect_pii_fields(input_data)
         pii_check = {
             "regulation": RegulationType.GDPR.value,
             "check_name": "pii_detection",
-            "status": ComplianceStatus.PASS.value if len(pii_fields) <= 5 else ComplianceStatus.WARNING.value,
+            "status": ComplianceStatus.PASS.value if len(pii_fields) < 5 else ComplianceStatus.WARNING.value,
             "details": {
-                "pii_fields_found": pii_fields[:10],  # Limitar para no exponer
+                "pii_fields_found": pii_fields,
                 "pii_count": len(pii_fields),
                 "threshold": 5
             }
         }
         checks.append(pii_check)
         
-        if len(pii_fields) > 10:
-            overall_status = ComplianceStatus.WARNING
-    
-    # 2. Data Minimization (GDPR)
-    if RegulationType.GDPR in regulations:
-        field_count = count_fields(input_data)
+        # 2. Data Minimization Check
+        total_fields = _count_fields(input_data)
         minimization_check = {
             "regulation": RegulationType.GDPR.value,
             "check_name": "data_minimization",
-            "status": ComplianceStatus.PASS.value if field_count <= 50 else ComplianceStatus.WARNING.value,
+            "status": ComplianceStatus.PASS.value if total_fields < 50 else ComplianceStatus.WARNING.value,
             "details": {
-                "total_fields": field_count,
-                "recommendation": "Consider reducing data collection" if field_count > 50 else None
+                "total_fields": total_fields,
+                "recommendation": "Consider reducing data collection" if total_fields >= 50 else None
             }
         }
         checks.append(minimization_check)
     
-    # 3. Fair Lending Check (para agentes de scoring/crédito)
-    if agent_type in ["leadscoring", "credit", "loan", "scoring"]:
+    # 3. Protected Attributes Check (Fair Lending)
+    if "fair_lending" in regulations:
         protected_attrs = detect_protected_attributes(input_data)
         fair_lending_check = {
             "regulation": RegulationType.FAIR_LENDING.value,
@@ -183,9 +190,9 @@ def apply_compliance_checks(
         "checks_performed": len(checks),
         "checks": checks,
         "blocking_issues": blocking_issues,
-        "applied_regulations": [r.value for r in regulations],
+        "applied_regulations": regulations,
         "_compliance_layer": {
-            "version": "1.0.0",
+            "version": "1.1.0",
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "tenant_id": tenant_id,
             "agent_type": agent_type
@@ -193,22 +200,13 @@ def apply_compliance_checks(
     }
 
 
-def count_fields(data: Any, count: int = 0) -> int:
-    """Cuenta campos recursivamente."""
+def _count_fields(data: Any, count: int = 0) -> int:
+    """Cuenta recursivamente el número de campos en una estructura."""
     if isinstance(data, dict):
         count += len(data)
         for value in data.values():
-            count = count_fields(value, count)
+            count = _count_fields(value, count)
     elif isinstance(data, list):
         for item in data:
-            count = count_fields(item, count)
+            count = _count_fields(item, count)
     return count
-
-
-def get_compliance_summary(compliance_result: Dict[str, Any]) -> str:
-    """Genera resumen de compliance para logs."""
-    status = compliance_result.get("compliance_status", "unknown")
-    checks = compliance_result.get("checks_performed", 0)
-    blocking = len(compliance_result.get("blocking_issues", []))
-    
-    return f"[COMPLIANCE] Status: {status} | Checks: {checks} | Blocking: {blocking}"
