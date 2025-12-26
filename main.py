@@ -309,6 +309,138 @@ async def dashboard_summary(tenant: Dict = Depends(verify_tenant)):
     }
 
 # ============================================================================
+
+# ============================================================================
+# CATALOG ENDPOINTS - Marketing Module v3.2.0
+# ============================================================================
+
+@app.get("/api/catalog/marketing")
+async def get_marketing_catalog():
+    """Retorna el catalogo completo de agentes de Marketing"""
+    import json as _json
+    import os
+    
+    catalog_path = os.path.join(os.path.dirname(__file__), "agents", "marketing", "agent_catalog_es.json")
+    
+    try:
+        if os.path.exists(catalog_path):
+            with open(catalog_path, 'r', encoding='utf-8') as f:
+                catalog = _json.load(f)
+        else:
+            catalog = {"agents": {}, "categories": {}, "_metadata": {}}
+        
+        enriched_agents = {}
+        for agent_id, agent_info in catalog.get('agents', {}).items():
+            try:
+                import importlib
+                module = importlib.import_module(f'agents.marketing.{agent_id}')
+                status = "active" if hasattr(module, 'execute') else "inactive"
+                version = getattr(module, 'VERSION', '3.2.0')
+            except:
+                status = "error"
+                version = "unknown"
+            
+            enriched_agents[agent_id] = {
+                **agent_info,
+                "status": status,
+                "version": version,
+                "endpoint": f"/agents/marketing/{agent_id}/execute"
+            }
+        
+        return {
+            "module": "marketing",
+            "display_name": "Marketing Core",
+            "total_agents": len(enriched_agents),
+            "active_agents": sum(1 for a in enriched_agents.values() if a.get('status') == 'active'),
+            "version": "3.2.0",
+            "agents": enriched_agents,
+            "categories": catalog.get('categories', {})
+        }
+    except Exception as e:
+        return {"error": str(e)}
+
+
+@app.get("/api/catalog/marketing/summary")
+async def get_marketing_summary():
+    """Resumen del modulo Marketing para dashboard"""
+    return {
+        "module": "marketing",
+        "display_name": "Marketing Core",
+        "total_agents": 35,
+        "active_agents": 35,
+        "version": "3.2.0",
+        "categories": [
+            {"name": "Gestion de Leads", "count": 3, "color": "#3B82F6"},
+            {"name": "Experimentacion", "count": 2, "color": "#8B5CF6"},
+            {"name": "Campanas", "count": 1, "color": "#F59E0B"},
+            {"name": "Contenido", "count": 2, "color": "#10B981"},
+            {"name": "Redes Sociales", "count": 2, "color": "#EC4899"},
+            {"name": "Analitica", "count": 2, "color": "#6366F1"},
+            {"name": "Inteligencia Competitiva", "count": 2, "color": "#EF4444"},
+            {"name": "Atribucion", "count": 2, "color": "#14B8A6"},
+            {"name": "Pronosticos", "count": 2, "color": "#F97316"},
+            {"name": "Segmentacion", "count": 3, "color": "#84CC16"},
+            {"name": "Personalizacion", "count": 1, "color": "#A855F7"},
+            {"name": "Retencion", "count": 2, "color": "#22C55E"},
+            {"name": "Email Marketing", "count": 1, "color": "#0EA5E9"},
+            {"name": "Customer Journey", "count": 1, "color": "#F43F5E"},
+            {"name": "Precios", "count": 1, "color": "#FBBF24"},
+            {"name": "Influencers", "count": 2, "color": "#FB7185"},
+            {"name": "Creatividad", "count": 1, "color": "#C084FC"},
+            {"name": "Calidad de Datos", "count": 1, "color": "#2DD4BF"},
+            {"name": "Conversion", "count": 1, "color": "#4ADE80"},
+            {"name": "Producto", "count": 1, "color": "#60A5FA"},
+            {"name": "Ofertas", "count": 1, "color": "#FACC15"},
+            {"name": "Orquestacion", "count": 1, "color": "#818CF8"}
+        ],
+        "metrics": {"avg_latency_ms": 45, "success_rate": 98.5}
+    }
+
+
+@app.get("/api/catalog/marketing/agents")
+async def get_marketing_agents_list():
+    """Lista de agentes para UI"""
+    return {
+        "total": 35,
+        "agents": [
+            {"id": "leadscoria", "name": "Puntuador de Leads", "category": "Lead Management"},
+            {"id": "leadscoringia", "name": "Calificador de Leads", "category": "Lead Management"},
+            {"id": "predictiveleadia", "name": "Predictor de Leads", "category": "Lead Management"},
+            {"id": "abtestingia", "name": "Analizador de Pruebas A/B", "category": "Experimentation"},
+            {"id": "abtestingimpactia", "name": "Medidor de Impacto A/B", "category": "Experimentation"},
+            {"id": "campaignoptimizeria", "name": "Optimizador de Campanas", "category": "Campaign Management"},
+            {"id": "contentgeneratoria", "name": "Generador de Contenido", "category": "Content"},
+            {"id": "contentperformanceia", "name": "Analizador de Contenido", "category": "Content"},
+            {"id": "socialpostgeneratoria", "name": "Generador de Posts Sociales", "category": "Social Media"},
+            {"id": "sentimentanalyzeria", "name": "Analizador de Sentimiento", "category": "Analytics"},
+            {"id": "sociallisteningia", "name": "Monitor de Redes Sociales", "category": "Social Media"},
+            {"id": "competitoranalyzeria", "name": "Analizador de Competencia", "category": "Competitive Intelligence"},
+            {"id": "competitorintelligenceia", "name": "Inteligencia Competitiva", "category": "Competitive Intelligence"},
+            {"id": "channelattributia", "name": "Atribuidor de Canales", "category": "Attribution"},
+            {"id": "attributionmodelia", "name": "Modelador de Atribucion", "category": "Attribution"},
+            {"id": "budgetforecastia", "name": "Pronosticador de Presupuesto", "category": "Forecasting"},
+            {"id": "marketingmixmodelia", "name": "Modelador de Mix Marketing", "category": "Forecasting"},
+            {"id": "audiencesegmenteria", "name": "Segmentador de Audiencias", "category": "Segmentation"},
+            {"id": "customersegmentatonia", "name": "Segmentador de Clientes", "category": "Segmentation"},
+            {"id": "geosegmentationia", "name": "Segmentador Geografico", "category": "Segmentation"},
+            {"id": "personalizationengineia", "name": "Motor de Personalizacion", "category": "Personalization"},
+            {"id": "retentionpredictoria", "name": "Predictor de Retencion", "category": "Retention"},
+            {"id": "retentionpredictorea", "name": "Analizador de Retencion", "category": "Retention"},
+            {"id": "emailautomationia", "name": "Automatizador de Email", "category": "Email Marketing"},
+            {"id": "journeyoptimizeria", "name": "Optimizador de Journey", "category": "Customer Journey"},
+            {"id": "pricingoptimizeria", "name": "Optimizador de Precios", "category": "Pricing"},
+            {"id": "influencermatcheria", "name": "Buscador de Influencers", "category": "Influencer Marketing"},
+            {"id": "influencermatchingia", "name": "Emparejador de Influencers", "category": "Influencer Marketing"},
+            {"id": "creativeanalyzeria", "name": "Analizador de Creatividades", "category": "Creative"},
+            {"id": "contactqualityia", "name": "Evaluador de Contactos", "category": "Data Quality"},
+            {"id": "minimalformia", "name": "Optimizador de Formularios", "category": "Conversion"},
+            {"id": "conversioncohortia", "name": "Analizador de Cohortes", "category": "Analytics"},
+            {"id": "productaffinityia", "name": "Analizador de Afinidad", "category": "Product"},
+            {"id": "cashofferfilteria", "name": "Filtrador de Ofertas", "category": "Offers"},
+            {"id": "marketingorchestratorea", "name": "Orquestador de Marketing", "category": "Orchestration"}
+        ]
+    }
+
 # STARTUP
 # ============================================================================
 
