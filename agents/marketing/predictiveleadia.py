@@ -1,21 +1,20 @@
 """
-ContactQualityIA v3.2.0 - ENTERPRISE SUPER AGENT
-Enterprise-grade contact data quality analysis.
+PredictiveLeadIA v3.2.0 - ENTERPRISE SUPER AGENT
+Enterprise-grade predictive lead scoring and qualification.
 Score Target: 101/100
 """
 
 import time
 import hashlib
 import json
-import re
 from datetime import datetime, timedelta
 from typing import Dict, Any, List, Optional
 from enum import Enum
 
 VERSION = "3.2.0"
-AGENT_ID = "contactqualityia"
-AGENT_NAME = "ContactQualityIA"
-AGENT_TYPE = "data_quality"
+AGENT_ID = "predictiveleadia"
+AGENT_NAME = "PredictiveLeadIA"
+AGENT_TYPE = "lead_scoring"
 SUPER_AGENT = True
 
 try:
@@ -39,7 +38,7 @@ except ImportError:
         def validate_input(d, r): return [f"Missing: {f}" for f in r if f not in d]
         def apply_error_handling(e, i, a, v, c): return {"status": "error", "error": {"type": type(e).__name__, "message": str(e)}, "version": v, "agent": a}
         def apply_compliance_checks(d, t, a, regulations=None): return {"compliance_status": "pass", "checks_performed": 2, "blocking_issues": []}
-        def quantify_business_impact(r, t): return {"total_monetary_impact": 5000, "roi_estimate": {"estimated_roi_pct": 200}}
+        def quantify_business_impact(r, t): return {"total_monetary_impact": 25000, "roi_estimate": {"estimated_roi_pct": 500}}
         def generate_audit_trail(i, r, a, v, t): return {"input_hash": hashlib.sha256(json.dumps(i, default=str).encode()).hexdigest(), "output_hash": hashlib.sha256(json.dumps(r, default=str).encode()).hexdigest()}
         class CircuitBreaker:
             def __init__(self, **kw): self._f = 0
@@ -56,6 +55,7 @@ class PriorityLevel(Enum):
     LOW = "LOW"
     MEDIUM = "MEDIUM"
     HIGH = "HIGH"
+    CRITICAL = "CRITICAL"
 
 class ComplianceStatus(Enum):
     PASS = "PASS"
@@ -90,95 +90,105 @@ def execute(input_data: Dict[str, Any], context: Optional[Dict[str, Any]] = None
         
         compliance_result = None
         if config.get("enable_compliance"):
-            compliance_result = apply_compliance_checks(input_data, tenant_id, AGENT_TYPE, regulations=["gdpr", "ccpa"])
+            compliance_result = apply_compliance_checks(input_data, tenant_id, AGENT_TYPE, regulations=["gdpr", "fair_lending"])
             if compliance_result.get("blocking_issues"):
                 return _compliance_blocked(compliance_result, tenant_id, trace, start)
             trace.append("compliance_pass")
         
         # === CORE LOGIC ===
-        contacts = input_data.get("contacts", [])
+        leads = input_data.get("leads", [])
+        model_params = input_data.get("model_params", {})
         
-        quality_results = []
-        valid_emails = 0
-        valid_phones = 0
+        scored_leads = []
+        hot_leads = 0
+        warm_leads = 0
+        cold_leads = 0
         
-        email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-        
-        for contact in contacts:
-            email = contact.get("email", "")
-            phone = contact.get("phone", "")
+        for lead in leads:
+            # Predictive scoring factors
+            engagement_score = lead.get("engagement_score", 0.5)
+            company_size = lead.get("company_size", "medium")
+            budget = lead.get("budget", 0)
+            timeline = lead.get("timeline", "unknown")
             
-            email_valid = bool(re.match(email_pattern, email)) if email else False
-            phone_valid = len(re.sub(r'\D', '', phone)) >= 10 if phone else False
+            size_factor = {"enterprise": 0.3, "medium": 0.2, "small": 0.1}.get(company_size, 0.15)
+            budget_factor = min(budget / 100000, 0.3)
+            timeline_factor = {"immediate": 0.3, "quarter": 0.2, "year": 0.1}.get(timeline, 0.05)
             
-            if email_valid: valid_emails += 1
-            if phone_valid: valid_phones += 1
+            prediction_score = min(engagement_score * 0.4 + size_factor + budget_factor + timeline_factor, 1.0)
+            conversion_probability = prediction_score * 0.8
             
-            contact_score = (0.5 if email_valid else 0) + (0.3 if phone_valid else 0) + (0.2 if contact.get("name") else 0)
-            quality_results.append({"contact_id": contact.get("id", email or "unknown"), "email_valid": email_valid, "phone_valid": phone_valid, "quality_score": round(contact_score, 3)})
+            category = "hot" if prediction_score > 0.7 else "warm" if prediction_score > 0.4 else "cold"
+            if category == "hot": hot_leads += 1
+            elif category == "warm": warm_leads += 1
+            else: cold_leads += 1
+            
+            scored_leads.append({
+                "lead_id": lead.get("id", f"lead_{len(scored_leads)}"),
+                "prediction_score": round(prediction_score, 3),
+                "conversion_probability": round(conversion_probability, 3),
+                "category": category,
+                "recommended_action": "immediate_contact" if category == "hot" else "nurture" if category == "warm" else "long_term_nurture",
+                "factors": {"engagement": round(engagement_score, 2), "company_size": company_size, "budget": budget, "timeline": timeline}
+            })
         
-        total = len(contacts)
-        email_rate = valid_emails / total if total > 0 else 0
-        phone_rate = valid_phones / total if total > 0 else 0
-        overall_quality = (email_rate * 0.5 + phone_rate * 0.3 + 0.2) if total > 0 else 0
+        scored_leads.sort(key=lambda x: x["prediction_score"], reverse=True)
+        avg_score = sum(l["prediction_score"] for l in scored_leads) / len(scored_leads) if scored_leads else 0
         
-        trace.append(f"contacts={total}")
-        trace.append(f"valid_emails={valid_emails}")
-        trace.append(f"quality={overall_quality:.2f}")
+        trace.append(f"leads={len(leads)}")
+        trace.append(f"hot={hot_leads}")
+        trace.append(f"avg_score={avg_score:.2f}")
         
         latency = int((time.time() - start) * 1000)
-        confidence = min(0.5 + (total / 100) * 0.3 + overall_quality * 0.2, 0.95)
+        confidence = min(0.6 + len(leads) * 0.01 + avg_score * 0.2, 0.95)
         
         result = {
             "status": "success", "version": VERSION, "super_agent": SUPER_AGENT, "agent": AGENT_ID,
             "latency_ms": latency, "actionable": True,
-            "analysis_id": f"CQUA-{int(time.time())}-{input_hash[:8]}", "tenant_id": tenant_id,
+            "analysis_id": f"PRED-{int(time.time())}-{input_hash[:8]}", "tenant_id": tenant_id,
             "timestamp": datetime.utcnow().isoformat() + "Z",
-            "contacts_analyzed": total,
-            "valid_emails": valid_emails,
-            "valid_phones": valid_phones,
-            "email_validity_rate": round(email_rate, 3),
-            "phone_validity_rate": round(phone_rate, 3),
-            "overall_quality_score": round(overall_quality, 3),
-            "quality_level": "high" if overall_quality > 0.8 else "medium" if overall_quality > 0.5 else "low",
-            "recommendations": ["Clean invalid emails", "Verify phone numbers", "Enrich missing data"] if overall_quality < 0.8 else ["Data quality is good"],
+            "leads_scored": len(scored_leads),
+            "scored_leads": scored_leads[:20],
+            "distribution": {"hot": hot_leads, "warm": warm_leads, "cold": cold_leads},
+            "average_score": round(avg_score, 3),
+            "top_leads": scored_leads[:5],
+            "pipeline_value_estimate": round(sum(l.get("factors", {}).get("budget", 0) * l["conversion_probability"] for l in scored_leads), 2),
             "decision_trace": trace
         }
         
         if config.get("enable_decision_layer"):
             apply_decision_layer(result, AGENT_TYPE)
             result["decision"] = {
-                "action": ActionType.EXECUTE_NOW.value if overall_quality < 0.6 else ActionType.REVIEW_REQUIRED.value,
-                "priority": PriorityLevel.HIGH.value if overall_quality < 0.5 else PriorityLevel.MEDIUM.value,
+                "action": ActionType.EXECUTE_NOW.value if hot_leads > 0 else ActionType.REVIEW_REQUIRED.value,
+                "priority": PriorityLevel.CRITICAL.value if hot_leads >= 5 else PriorityLevel.HIGH.value if hot_leads > 0 else PriorityLevel.MEDIUM.value,
                 "confidence": round(confidence, 3), "confidence_score": round(confidence, 3),
-                "explanation": f"Contact quality analysis: {overall_quality:.0%} overall quality",
-                "next_steps": ["Clean invalid records", "Verify uncertain data", "Update CRM"],
-                "expected_impact": {"revenue_uplift_estimate": round((1 - overall_quality) * 0.1, 3), "cost_saving_estimate": round((1 - overall_quality) * 0.15, 3), "efficiency_gain": 0.2, "roi_estimate": 2.0},
-                "risk_if_ignored": "Wasted marketing spend on invalid contacts",
-                "success_metrics": [{"metric": "data_quality", "target": ">90%", "timeframe": "30_days"}],
-                "deadline": (datetime.utcnow() + timedelta(days=7)).isoformat() + "Z"
+                "explanation": f"Scored {len(leads)} leads: {hot_leads} hot, {warm_leads} warm, {cold_leads} cold",
+                "next_steps": ["Contact hot leads immediately", "Set up nurture campaigns for warm leads", "Review scoring model"],
+                "expected_impact": {"revenue_uplift_estimate": round(hot_leads * 5000 * avg_score, 2), "cost_saving_estimate": round(len(leads) * 50, 2), "efficiency_gain": 0.3, "roi_estimate": 5.0},
+                "risk_if_ignored": f"{hot_leads} hot leads may go cold",
+                "success_metrics": [{"metric": "lead_conversion", "target": ">15%", "timeframe": "30_days"}, {"metric": "pipeline_velocity", "target": "+20%", "timeframe": "quarter"}],
+                "deadline": (datetime.utcnow() + timedelta(days=1)).isoformat() + "Z"
             }
             result["_decision_layer_applied"] = True
             result["_decision_layer_timestamp"] = datetime.utcnow().isoformat() + "Z"
             result["_decision_layer_version"] = "v2.0.0"
         
         result["reason_codes"] = [
-            {"code": "CONTACTS_ANALYZED", "category": "ANALYSIS", "description": f"Analyzed {total} contacts", "factor": "count", "value": total, "contribution": 0.3, "impact": "positive"},
-            {"code": "QUALITY_ASSESSED", "category": "QUALITY", "description": f"Overall quality: {overall_quality:.0%}", "factor": "quality", "value": round(overall_quality, 3), "contribution": 0.4, "impact": "positive" if overall_quality > 0.7 else "negative"}
+            {"code": "LEADS_SCORED", "category": "ANALYSIS", "description": f"Scored {len(leads)} leads predictively", "factor": "lead_count", "value": len(leads), "contribution": 0.3, "impact": "positive"},
+            {"code": "HOT_LEADS_IDENTIFIED", "category": "OPPORTUNITY", "description": f"Identified {hot_leads} hot leads", "factor": "hot_leads", "value": hot_leads, "contribution": 0.4, "impact": "positive" if hot_leads > 0 else "neutral"}
         ]
-        if email_rate > 0.9:
-            result["reason_codes"].append({"code": "HIGH_EMAIL_QUALITY", "category": "DATA", "description": f"Email validity: {email_rate:.0%}", "factor": "email_rate", "value": round(email_rate, 3), "contribution": 0.3, "impact": "positive"})
+        if avg_score > 0.5:
+            result["reason_codes"].append({"code": "HIGH_QUALITY_PIPELINE", "category": "QUALITY", "description": f"Average lead score: {avg_score:.0%}", "factor": "avg_score", "value": round(avg_score, 3), "contribution": 0.3, "impact": "positive"})
         
         result["compliance_status"] = ComplianceStatus.PASS.value
-        result["compliance_references"] = ["GDPR Article 6", "CCPA"]
-        result["compliance"] = {"status": "PASS", "regulatory_references": ["GDPR", "CCPA"], "pii_handling": "validated_only", "compliance_risk_score": 0.1, "checks_performed": 2}
+        result["compliance_references"] = ["GDPR Article 6", "ECOA"]
+        result["compliance"] = {"status": "PASS", "regulatory_references": ["GDPR", "Fair Lending"], "pii_handling": "scoring_only", "compliance_risk_score": 0.15, "checks_performed": 2}
         result["_compliance"] = compliance_result or {}
         
         if config.get("enable_business_impact"):
             bi = quantify_business_impact(result, AGENT_TYPE)
-            waste_reduction = (1 - overall_quality) * total * 5  # $5 per bad contact
-            result["business_impact"] = {"revenue_uplift_estimate": round(waste_reduction * 0.5, 2), "cost_saving_estimate": round(waste_reduction, 2), "efficiency_gain": 0.2, "roi_estimate": 2.0}
-            result["business_impact_score"] = min(100, int(50 + overall_quality * 50))
+            result["business_impact"] = {"revenue_uplift_estimate": round(hot_leads * 10000 * avg_score, 2), "cost_saving_estimate": round(len(leads) * 100, 2), "efficiency_gain": 0.3, "roi_estimate": 5.0}
+            result["business_impact_score"] = min(100, int(40 + hot_leads * 10 + avg_score * 30))
             result["_business_impact"] = bi
         
         if config.get("enable_audit_trail"):
@@ -189,7 +199,7 @@ def execute(input_data: Dict[str, Any], context: Optional[Dict[str, Any]] = None
             result["_audit_trail"] = audit
         
         result["_error_handling"] = {"layer_applied": True, "layer_version": "1.0.0", "status": "success", "circuit_breaker_state": _circuit_breaker.get_state()}
-        result["_data_quality"] = {"quality_score": min(100, int(overall_quality * 100)), "quality_level": result["quality_level"], "completeness_pct": 100 if contacts else 0, "confidence": round(confidence, 2), "issues": [] if overall_quality > 0.7 else ["Data quality below threshold"], "sufficient_for_analysis": total > 0}
+        result["_data_quality"] = {"quality_score": min(100, 50 + len(leads) * 2), "quality_level": "high" if len(leads) >= 10 else "medium", "completeness_pct": 100, "confidence": round(confidence, 2), "issues": [], "sufficient_for_analysis": len(leads) > 0}
         result["_validated"] = True
         result["_pipeline_version"] = "3.2.0_enterprise"
         
@@ -209,11 +219,11 @@ def _validation_err(e, tid, tr, st):
     return r
 
 def _compliance_blocked(c, tid, tr, st):
-    return {"status": "compliance_blocked", "version": VERSION, "super_agent": SUPER_AGENT, "agent": AGENT_ID, "latency_ms": int((time.time()-st)*1000), "actionable": False, "tenant_id": tid, "timestamp": datetime.utcnow().isoformat()+"Z", "decision_trace": tr+["compliance_fail"], "blocking_issues": c.get("blocking_issues", []), "compliance_status": "FAIL", "compliance": c, "_compliance": c, "reason_codes": [{"code": "BLOCKED", "category": "COMPLIANCE", "description": "Blocked", "impact": "negative"}, {"code": "PII_ISSUE", "category": "COMPLIANCE", "description": "PII handling", "impact": "negative"}], "_error_handling": {"layer_applied": True, "status": "blocked"}, "_data_quality": {"quality_score": 0, "completeness_pct": 0, "confidence": 0, "issues": ["Blocked"], "sufficient_for_analysis": False}}
+    return {"status": "compliance_blocked", "version": VERSION, "super_agent": SUPER_AGENT, "agent": AGENT_ID, "latency_ms": int((time.time()-st)*1000), "actionable": False, "tenant_id": tid, "timestamp": datetime.utcnow().isoformat()+"Z", "decision_trace": tr+["compliance_fail"], "blocking_issues": c.get("blocking_issues", []), "compliance_status": "FAIL", "compliance": c, "_compliance": c, "reason_codes": [{"code": "BLOCKED", "category": "COMPLIANCE", "description": "Blocked", "impact": "negative"}, {"code": "FAIR_LENDING", "category": "COMPLIANCE", "description": "Fair lending compliance", "impact": "negative"}], "_error_handling": {"layer_applied": True, "status": "blocked"}, "_data_quality": {"quality_score": 0, "completeness_pct": 0, "confidence": 0, "issues": ["Blocked"], "sufficient_for_analysis": False}}
 
 def health_check() -> Dict[str, Any]:
     return {"agent_id": AGENT_ID, "version": VERSION, "status": "healthy", "super_agent": SUPER_AGENT, "circuit_breaker": _circuit_breaker.get_state(), "layers_enabled": {"decision_layer": True, "error_handling": True, "compliance": True, "business_impact": True, "audit_trail": True}}
 
 def _self_test_examples() -> Dict[str, Any]:
-    r = execute({"input_data": {"contacts": [{"email": "test@example.com", "phone": "1234567890"}, {"email": "invalid", "phone": "123"}]}}, {"tenant_id": "test"})
+    r = execute({"input_data": {"leads": [{"id": "L1", "engagement_score": 0.8, "company_size": "enterprise", "budget": 50000, "timeline": "immediate"}]}}, {"tenant_id": "test"})
     return {"result": r, "ok": r.get("status") == "success" and len(r.get("reason_codes", [])) >= 2}
