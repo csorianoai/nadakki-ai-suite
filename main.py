@@ -171,6 +171,22 @@ async def execute_agent(core: str, agent_id: str, request: ExecuteRequest, tenan
         raise HTTPException(404, f"Agent not found: {core}/{agent_id}")
     
     agent_key = f"{core}.{agent_id}"
+
+    # SUPER AGENT v3.2.0 SUPPORT - Try module-level execute first
+    try:
+        import importlib as _imp
+        _mod = _imp.import_module(f'agents.{core}.{agent_id}')
+        if hasattr(_mod, 'execute') and callable(_mod.execute):
+            _in = request.input_data or {}
+            if isinstance(_in, dict) and 'tenant_id' not in _in:
+                _in['tenant_id'] = tenant['tenant_id']
+            _ctx = {'tenant_id': tenant['tenant_id']}
+            _res = _mod.execute({'input_data': _in}, _ctx)
+            from datetime import datetime as _dt
+            return {'agent': agent_key, 'agent_name': agent_id.title(), 'tenant': tenant['tenant_id'], 'timestamp': str(_dt.utcnow()), 'result': _res}
+    except Exception as _e:
+        pass  # Fall through to class-based execution
+
     
     try:
         # Crear instancia del agente
