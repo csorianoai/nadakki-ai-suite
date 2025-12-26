@@ -461,3 +461,423 @@ async def startup():
 
 
 
+
+# ============================================================================
+# CATALOG ENDPOINTS - ALL CORES (Auto-generated)
+# ============================================================================
+
+# --- LEGAL CORE (32 agentes) ---
+@app.get("/api/catalog/legal/agents")
+async def get_legal_agents():
+    return {
+        "total": 32,
+        "core": "legal",
+        "display_name": "Legal AI System",
+        "agents": [
+            {"id": "derechoadministrativo", "name": "Derecho Administrativo", "category": "Administrativo"},
+            {"id": "derechoadministrativophd", "name": "Derecho Administrativo PhD", "category": "Administrativo"},
+            {"id": "derechoambiental", "name": "Derecho Ambiental", "category": "Ambiental"},
+            {"id": "derechobancario", "name": "Derecho Bancario", "category": "Bancario"},
+            {"id": "derechocivilphd", "name": "Derecho Civil PhD", "category": "Civil"},
+            {"id": "derechocomercial", "name": "Derecho Comercial", "category": "Comercial"},
+            {"id": "derechocomercialephd", "name": "Derecho Comercial PhD", "category": "Comercial"},
+            {"id": "derechoconstitucional", "name": "Derecho Constitucional", "category": "Constitucional"},
+            {"id": "derechoconstitucionalphd", "name": "Derecho Constitucional PhD", "category": "Constitucional"},
+            {"id": "derechocontratacion", "name": "Derecho Contratacion", "category": "Contratos"},
+            {"id": "derechofamiliaphd", "name": "Derecho Familia PhD", "category": "Familia"},
+            {"id": "derechofamiliar", "name": "Derecho Familiar", "category": "Familia"},
+            {"id": "derechofinanciero", "name": "Derecho Financiero", "category": "Financiero"},
+            {"id": "derechoinmobiliario", "name": "Derecho Inmobiliario", "category": "Inmobiliario"},
+            {"id": "derechoinmobiliariophd", "name": "Derecho Inmobiliario PhD", "category": "Inmobiliario"},
+            {"id": "derechointelectual", "name": "Derecho Intelectual", "category": "Propiedad Intelectual"},
+            {"id": "derechointernacional", "name": "Derecho Internacional", "category": "Internacional"},
+            {"id": "derecholaboral", "name": "Derecho Laboral", "category": "Laboral"},
+            {"id": "derecholaboralphd", "name": "Derecho Laboral PhD", "category": "Laboral"},
+            {"id": "derechomarcario", "name": "Derecho Marcario", "category": "Marcas"},
+            {"id": "derechomaritimo", "name": "Derecho Maritimo", "category": "Maritimo"},
+            {"id": "derechomigratorio", "name": "Derecho Migratorio", "category": "Migratorio"},
+            {"id": "derechominero", "name": "Derecho Minero", "category": "Minero"},
+            {"id": "derechonotarial", "name": "Derecho Notarial", "category": "Notarial"},
+            {"id": "derechopenal", "name": "Derecho Penal", "category": "Penal"},
+            {"id": "derechopenalphd", "name": "Derecho Penal PhD", "category": "Penal"},
+            {"id": "derechoprocesalpenal", "name": "Derecho Procesal Penal", "category": "Procesal"},
+            {"id": "derechoprocesalpenalphd", "name": "Derecho Procesal Penal PhD", "category": "Procesal"},
+            {"id": "derechoseguros", "name": "Derecho Seguros", "category": "Seguros"},
+            {"id": "derechotributario", "name": "Derecho Tributario", "category": "Tributario"},
+            {"id": "derechotributariophd", "name": "Derecho Tributario PhD", "category": "Tributario"},
+            {"id": "legal_coordinator", "name": "Coordinador Legal", "category": "Coordinacion"}
+        ]
+    }
+
+# --- LOGISTICA CORE (23 agentes) ---
+@app.get("/api/catalog/logistica/agents")
+async def get_logistica_agents():
+    return {
+        "total": 23,
+        "core": "logistica",
+        "display_name": "Logistica Inteligente",
+        "agents": [
+            {"id": "alertasinventario", "name": "Alertas de Inventario", "category": "Inventario"},
+            {"id": "almaceninteligente", "name": "Almacen Inteligente", "category": "Almacen"},
+            {"id": "analisisrendimiento", "name": "Analisis de Rendimiento", "category": "Analytics"},
+            {"id": "controlcalidad", "name": "Control de Calidad", "category": "Calidad"},
+            {"id": "controlcalidadia", "name": "Control Calidad IA", "category": "Calidad"},
+            {"id": "controlpedidosia", "name": "Control de Pedidos IA", "category": "Pedidos"},
+            {"id": "costoslogisticos", "name": "Costos Logisticos", "category": "Costos"},
+            {"id": "evaluadorproveedoresia", "name": "Evaluador de Proveedores", "category": "Proveedores"},
+            {"id": "gestionriesgos", "name": "Gestion de Riesgos", "category": "Riesgos"},
+            {"id": "logisticareversa", "name": "Logistica Reversa", "category": "Reversa"},
+            {"id": "logistica_coordinator", "name": "Coordinador Logistica", "category": "Coordinacion"},
+            {"id": "optimizacionalmacen", "name": "Optimizacion Almacen", "category": "Almacen"},
+            {"id": "optimizacioncostos", "name": "Optimizacion de Costos", "category": "Costos"},
+            {"id": "optimizadorrutasia", "name": "Optimizador de Rutas", "category": "Rutas"},
+            {"id": "planificaciondemanda", "name": "Planificacion Demanda", "category": "Demanda"},
+            {"id": "predicciondemanda", "name": "Prediccion de Demanda", "category": "Demanda"},
+            {"id": "previsioninventarioia", "name": "Prevision de Inventario", "category": "Inventario"},
+            {"id": "seguridadcarga", "name": "Seguridad de Carga", "category": "Seguridad"},
+            {"id": "sostenibilidadia", "name": "Sostenibilidad IA", "category": "Sostenibilidad"},
+            {"id": "transporteoptimizado", "name": "Transporte Optimizado", "category": "Transporte"},
+            {"id": "transportepredictivo", "name": "Transporte Predictivo", "category": "Transporte"},
+            {"id": "trazabilidadia", "name": "Trazabilidad IA", "category": "Trazabilidad"},
+            {"id": "trazabilidadtotal", "name": "Trazabilidad Total", "category": "Trazabilidad"}
+        ]
+    }
+
+# --- CONTABILIDAD CORE (22 agentes) ---
+@app.get("/api/catalog/contabilidad/agents")
+async def get_contabilidad_agents():
+    return {
+        "total": 22,
+        "core": "contabilidad",
+        "display_name": "Contabilidad Cuantica",
+        "agents": [
+            {"id": "activosfijos", "name": "Activos Fijos", "category": "Activos"},
+            {"id": "analisis_financiero", "name": "Analisis Financiero", "category": "Analisis"},
+            {"id": "analisis_financiero_super_agent", "name": "Analisis Financiero Super", "category": "Analisis"},
+            {"id": "auditoriainterna", "name": "Auditoria Interna", "category": "Auditoria"},
+            {"id": "cierrecontable", "name": "Cierre Contable", "category": "Cierres"},
+            {"id": "compliance_contable", "name": "Compliance Contable", "category": "Compliance"},
+            {"id": "conciliacionbancaria", "name": "Conciliacion Bancaria", "category": "Conciliacion"},
+            {"id": "contabilidadinteligente", "name": "Contabilidad Inteligente", "category": "General"},
+            {"id": "contabilidad_coordinator", "name": "Coordinador Contabilidad", "category": "Coordinacion"},
+            {"id": "controlgastos", "name": "Control de Gastos", "category": "Gastos"},
+            {"id": "dgiiautoreporter", "name": "DGII Auto Reporter", "category": "Fiscal"},
+            {"id": "facturacionelectronica", "name": "Facturacion Electronica", "category": "Facturacion"},
+            {"id": "facturacionia", "name": "Facturacion IA", "category": "Facturacion"},
+            {"id": "flujocajaia", "name": "Flujo de Caja IA", "category": "Flujo"},
+            {"id": "flujocajaprediccion", "name": "Prediccion Flujo Caja", "category": "Flujo"},
+            {"id": "inventariovaloracion", "name": "Valoracion Inventario", "category": "Inventario"},
+            {"id": "previsionfiscal", "name": "Prevision Fiscal", "category": "Fiscal"},
+            {"id": "reconcilia_auto", "name": "Reconciliacion Auto", "category": "Conciliacion"},
+            {"id": "reportesejecutivos", "name": "Reportes Ejecutivos", "category": "Reportes"},
+            {"id": "reportes_fiscales", "name": "Reportes Fiscales", "category": "Fiscal"},
+            {"id": "reportingfinanciero", "name": "Reporting Financiero", "category": "Reportes"},
+            {"id": "tributarioia", "name": "Tributario IA", "category": "Fiscal"}
+        ]
+    }
+
+# --- PRESUPUESTO CORE (13 agentes) ---
+@app.get("/api/catalog/presupuesto/agents")
+async def get_presupuesto_agents():
+    return {
+        "total": 13,
+        "core": "presupuesto",
+        "display_name": "Presupuesto Inteligente",
+        "agents": [
+            {"id": "analisisvarianza", "name": "Analisis de Varianza", "category": "Varianza"},
+            {"id": "budgetoptimizer", "name": "Optimizador de Budget", "category": "Optimizacion"},
+            {"id": "controlpresupuestario", "name": "Control Presupuestario", "category": "Control"},
+            {"id": "costocentros", "name": "Centros de Costo", "category": "Costos"},
+            {"id": "forecastingavanzado", "name": "Forecasting Avanzado", "category": "Forecasting"},
+            {"id": "forecastingia", "name": "Forecasting IA", "category": "Forecasting"},
+            {"id": "optimizacionrecursos", "name": "Optimizacion Recursos", "category": "Optimizacion"},
+            {"id": "planificacionestrategica", "name": "Planificacion Estrategica", "category": "Planificacion"},
+            {"id": "presupuestomaestro", "name": "Presupuesto Maestro", "category": "General"},
+            {"id": "presupuestopredictivoia", "name": "Presupuesto Predictivo", "category": "Prediccion"},
+            {"id": "presupuesto_coordinator", "name": "Coordinador Presupuesto", "category": "Coordinacion"},
+            {"id": "roipredictor", "name": "Predictor de ROI", "category": "ROI"},
+            {"id": "varianzaanalisis", "name": "Analisis Varianza", "category": "Varianza"}
+        ]
+    }
+
+# --- ORIGINACION CORE (10 agentes) ---
+@app.get("/api/catalog/originacion/agents")
+async def get_originacion_agents():
+    return {
+        "total": 10,
+        "core": "originacion",
+        "display_name": "Originacion Neural",
+        "agents": [
+            {"id": "base_components_v2", "name": "Componentes Base v2", "category": "Base"},
+            {"id": "behaviorminer", "name": "Behavior Miner", "category": "Behavioral"},
+            {"id": "behavior_miner_v2", "name": "Behavior Miner v2", "category": "Behavioral"},
+            {"id": "dnaprofiler", "name": "DNA Profiler", "category": "Profiling"},
+            {"id": "dna_profiler_v2", "name": "DNA Profiler v2", "category": "Profiling"},
+            {"id": "incomeoracle", "name": "Income Oracle", "category": "Income"},
+            {"id": "income_oracle_v2", "name": "Income Oracle v2", "category": "Income"},
+            {"id": "originacion_coordinator", "name": "Coordinador Originacion", "category": "Coordinacion"},
+            {"id": "sentinelbot", "name": "Sentinel Bot", "category": "Monitoring"},
+            {"id": "sentinel_bot_v2", "name": "Sentinel Bot v2", "category": "Monitoring"}
+        ]
+    }
+
+# --- RRHH CORE (10 agentes) ---
+@app.get("/api/catalog/rrhh/agents")
+async def get_rrhh_agents():
+    return {
+        "total": 10,
+        "core": "rrhh",
+        "display_name": "Recursos Humanos IA",
+        "agents": [
+            {"id": "capacitacionia", "name": "Capacitacion IA", "category": "Capacitacion"},
+            {"id": "cvanalyzeria", "name": "Analizador de CV", "category": "Reclutamiento"},
+            {"id": "nominaautomatica", "name": "Nomina Automatica", "category": "Nomina"},
+            {"id": "nominainteligente", "name": "Nomina Inteligente", "category": "Nomina"},
+            {"id": "performanceanalyzer", "name": "Analizador Performance", "category": "Performance"},
+            {"id": "performancetracker", "name": "Tracker de Performance", "category": "Performance"},
+            {"id": "rrhh_coordinator", "name": "Coordinador RRHH", "category": "Coordinacion"},
+            {"id": "selectioncvia", "name": "Seleccion CV IA", "category": "Reclutamiento"},
+            {"id": "talentoprediccion", "name": "Prediccion de Talento", "category": "Talento"},
+            {"id": "talentopredictor", "name": "Predictor de Talento", "category": "Talento"}
+        ]
+    }
+
+# --- EDUCACION CORE (9 agentes) ---
+@app.get("/api/catalog/educacion/agents")
+async def get_educacion_agents():
+    return {
+        "total": 9,
+        "core": "educacion",
+        "display_name": "Educacion Adaptativa",
+        "agents": [
+            {"id": "competenciasia", "name": "Competencias IA", "category": "Competencias"},
+            {"id": "contenidopersonalizado", "name": "Contenido Personalizado", "category": "Contenido"},
+            {"id": "curriculumadaptativo", "name": "Curriculum Adaptativo", "category": "Curriculum"},
+            {"id": "cursosautomaticos", "name": "Cursos Automaticos", "category": "Cursos"},
+            {"id": "educacion_coordinator", "name": "Coordinador Educacion", "category": "Coordinacion"},
+            {"id": "evaluacionadaptativa", "name": "Evaluacion Adaptativa", "category": "Evaluacion"},
+            {"id": "evaluacionia", "name": "Evaluacion IA", "category": "Evaluacion"},
+            {"id": "progresionestudiante", "name": "Progresion Estudiante", "category": "Progreso"},
+            {"id": "tutorvirtualia", "name": "Tutor Virtual IA", "category": "Tutoria"}
+        ]
+    }
+
+# --- INVESTIGACION CORE (9 agentes) ---
+@app.get("/api/catalog/investigacion/agents")
+async def get_investigacion_agents():
+    return {
+        "total": 9,
+        "core": "investigacion",
+        "display_name": "Investigacion I+D",
+        "agents": [
+            {"id": "analisistendencias", "name": "Analisis de Tendencias", "category": "Tendencias"},
+            {"id": "innovacionia", "name": "Innovacion IA", "category": "Innovacion"},
+            {"id": "innovaciontracker", "name": "Tracker de Innovacion", "category": "Innovacion"},
+            {"id": "investigacion_coordinator", "name": "Coordinador Investigacion", "category": "Coordinacion"},
+            {"id": "patentesanalyzer", "name": "Analizador de Patentes", "category": "Patentes"},
+            {"id": "patentesautomaticos", "name": "Patentes Automaticas", "category": "Patentes"},
+            {"id": "prototipogenerator", "name": "Generador Prototipos", "category": "Prototipos"},
+            {"id": "prototiposgenerativos", "name": "Prototipos Generativos", "category": "Prototipos"},
+            {"id": "tendenciasia", "name": "Tendencias IA", "category": "Tendencias"}
+        ]
+    }
+
+# --- VENTASCRM CORE (9 agentes) ---
+@app.get("/api/catalog/ventascrm/agents")
+async def get_ventascrm_agents():
+    return {
+        "total": 9,
+        "core": "ventascrm",
+        "display_name": "Ventas CRM Cuantico",
+        "agents": [
+            {"id": "churnpredictor", "name": "Predictor de Churn", "category": "Churn"},
+            {"id": "cierrepredictivoia", "name": "Cierre Predictivo IA", "category": "Cierre"},
+            {"id": "clientelifecycleia", "name": "Lifecycle Cliente IA", "category": "Lifecycle"},
+            {"id": "communicationbot", "name": "Bot de Comunicacion", "category": "Comunicacion"},
+            {"id": "leadscoringia", "name": "Lead Scoring IA", "category": "Leads"},
+            {"id": "pipelineoptimizer", "name": "Optimizador Pipeline", "category": "Pipeline"},
+            {"id": "pipelinepredictivoia", "name": "Pipeline Predictivo IA", "category": "Pipeline"},
+            {"id": "upsellengine", "name": "Motor de Upsell", "category": "Upsell"},
+            {"id": "ventascrm_coordinator", "name": "Coordinador Ventas", "category": "Coordinacion"}
+        ]
+    }
+
+# --- REGTECH CORE (8 agentes) ---
+@app.get("/api/catalog/regtech/agents")
+async def get_regtech_agents():
+    return {
+        "total": 8,
+        "core": "regtech",
+        "display_name": "RegTech Compliance",
+        "agents": [
+            {"id": "amldetector", "name": "Detector AML", "category": "AML"},
+            {"id": "amltiemporeal", "name": "AML Tiempo Real", "category": "AML"},
+            {"id": "kycautomatico", "name": "KYC Automatico", "category": "KYC"},
+            {"id": "monitoreotransacciones", "name": "Monitoreo Transacciones", "category": "Monitoreo"},
+            {"id": "regtech_coordinator", "name": "Coordinador RegTech", "category": "Coordinacion"},
+            {"id": "reportesregulatorios", "name": "Reportes Regulatorios", "category": "Reportes"},
+            {"id": "reportingregulatorio", "name": "Reporting Regulatorio", "category": "Reportes"},
+            {"id": "sancioneschecker", "name": "Checker de Sanciones", "category": "Sanciones"}
+        ]
+    }
+
+# --- COMPLIANCE CORE (5 agentes) ---
+@app.get("/api/catalog/compliance/agents")
+async def get_compliance_agents():
+    return {
+        "total": 5,
+        "core": "compliance",
+        "display_name": "Compliance Core",
+        "agents": [
+            {"id": "auditmaster", "name": "Audit Master", "category": "Auditoria"},
+            {"id": "compliancewatchdog", "name": "Compliance Watchdog", "category": "Monitoreo"},
+            {"id": "compliance_coordinator", "name": "Coordinador Compliance", "category": "Coordinacion"},
+            {"id": "docguardian", "name": "Doc Guardian", "category": "Documentos"},
+            {"id": "regulatory_radar", "name": "Regulatory Radar", "category": "Regulatorio"}
+        ]
+    }
+
+# --- DECISION CORE (5 agentes) ---
+@app.get("/api/catalog/decision/agents")
+async def get_decision_agents():
+    return {
+        "total": 5,
+        "core": "decision",
+        "display_name": "Motor de Decisiones",
+        "agents": [
+            {"id": "decision_coordinator", "name": "Coordinador Decision", "category": "Coordinacion"},
+            {"id": "policyguardian", "name": "Policy Guardian", "category": "Politicas"},
+            {"id": "quantumdecision", "name": "Quantum Decision", "category": "Decisiones"},
+            {"id": "riskoracle", "name": "Risk Oracle", "category": "Riesgo"},
+            {"id": "turboapprover", "name": "Turbo Approver", "category": "Aprobaciones"}
+        ]
+    }
+
+# --- EXPERIENCIA CORE (5 agentes) ---
+@app.get("/api/catalog/experiencia/agents")
+async def get_experiencia_agents():
+    return {
+        "total": 5,
+        "core": "experiencia",
+        "display_name": "Experiencia Cliente",
+        "agents": [
+            {"id": "chatbotsupreme", "name": "Chatbot Supreme", "category": "Chatbot"},
+            {"id": "customergenius", "name": "Customer Genius", "category": "Cliente"},
+            {"id": "experiencia_coordinator", "name": "Coordinador Experiencia", "category": "Coordinacion"},
+            {"id": "onboardingwizard", "name": "Onboarding Wizard", "category": "Onboarding"},
+            {"id": "personalizationengine", "name": "Engine Personalizacion", "category": "Personalizacion"}
+        ]
+    }
+
+# --- FORTALEZA CORE (5 agentes) ---
+@app.get("/api/catalog/fortaleza/agents")
+async def get_fortaleza_agents():
+    return {
+        "total": 5,
+        "core": "fortaleza",
+        "display_name": "Fortaleza Security",
+        "agents": [
+            {"id": "backupguardian", "name": "Backup Guardian", "category": "Backup"},
+            {"id": "cybersentinel", "name": "Cyber Sentinel", "category": "Ciberseguridad"},
+            {"id": "datavault", "name": "Data Vault", "category": "Datos"},
+            {"id": "fortaleza_coordinator", "name": "Coordinador Fortaleza", "category": "Coordinacion"},
+            {"id": "systemhealthmonitor", "name": "System Health Monitor", "category": "Monitoreo"}
+        ]
+    }
+
+# --- INTELIGENCIA CORE (5 agentes) ---
+@app.get("/api/catalog/inteligencia/agents")
+async def get_inteligencia_agents():
+    return {
+        "total": 5,
+        "core": "inteligencia",
+        "display_name": "Inteligencia Neural",
+        "agents": [
+            {"id": "cashfloworacle", "name": "Cashflow Oracle", "category": "Cashflow"},
+            {"id": "inteligencia_coordinator", "name": "Coordinador Inteligencia", "category": "Coordinacion"},
+            {"id": "pricinggenius", "name": "Pricing Genius", "category": "Pricing"},
+            {"id": "profitmaximizer", "name": "Profit Maximizer", "category": "Profit"},
+            {"id": "roimaster", "name": "ROI Master", "category": "ROI"}
+        ]
+    }
+
+# --- OPERACIONAL CORE (5 agentes) ---
+@app.get("/api/catalog/operacional/agents")
+async def get_operacional_agents():
+    return {
+        "total": 5,
+        "core": "operacional",
+        "display_name": "Operaciones Automaticas",
+        "agents": [
+            {"id": "costoptimizer", "name": "Cost Optimizer", "category": "Costos"},
+            {"id": "operacional_coordinator", "name": "Coordinador Operacional", "category": "Coordinacion"},
+            {"id": "processgenius", "name": "Process Genius", "category": "Procesos"},
+            {"id": "qualitycontroller", "name": "Quality Controller", "category": "Calidad"},
+            {"id": "workflowmaster", "name": "Workflow Master", "category": "Workflows"}
+        ]
+    }
+
+# --- ORCHESTRATION CORE (5 agentes) ---
+@app.get("/api/catalog/orchestration/agents")
+async def get_orchestration_agents():
+    return {
+        "total": 5,
+        "core": "orchestration",
+        "display_name": "Orchestration Center",
+        "agents": [
+            {"id": "coordinator", "name": "Coordinator", "category": "Coordinacion"},
+            {"id": "healthchecker", "name": "Health Checker", "category": "Health"},
+            {"id": "loadbalancer", "name": "Load Balancer", "category": "Balance"},
+            {"id": "orchestrationmaster", "name": "Orchestration Master", "category": "Orquestacion"},
+            {"id": "resourcemanager", "name": "Resource Manager", "category": "Recursos"}
+        ]
+    }
+
+# --- RECUPERACION CORE (5 agentes) ---
+@app.get("/api/catalog/recuperacion/agents")
+async def get_recuperacion_agents():
+    return {
+        "total": 5,
+        "core": "recuperacion",
+        "display_name": "Recuperacion IA",
+        "agents": [
+            {"id": "collectionmaster", "name": "Collection Master", "category": "Cobranza"},
+            {"id": "legalpathway", "name": "Legal Pathway", "category": "Legal"},
+            {"id": "negotiationbot", "name": "Negotiation Bot", "category": "Negociacion"},
+            {"id": "recoveryoptimizer", "name": "Recovery Optimizer", "category": "Optimizacion"},
+            {"id": "recuperacion_coordinator", "name": "Coordinador Recuperacion", "category": "Coordinacion"}
+        ]
+    }
+
+# --- VIGILANCIA CORE (4 agentes) ---
+@app.get("/api/catalog/vigilancia/agents")
+async def get_vigilancia_agents():
+    return {
+        "total": 4,
+        "core": "vigilancia",
+        "display_name": "Vigilancia Continua",
+        "agents": [
+            {"id": "earlywarning", "name": "Early Warning", "category": "Alertas"},
+            {"id": "marketradar", "name": "Market Radar", "category": "Mercado"},
+            {"id": "portfoliosentinel", "name": "Portfolio Sentinel", "category": "Portfolio"},
+            {"id": "vigilancia_coordinator", "name": "Coordinador Vigilancia", "category": "Coordinacion"}
+        ]
+    }
+
+# ============================================================================
+# GENERIC CATALOG ENDPOINT (fallback for any core)
+# ============================================================================
+
+@app.get("/api/catalog/{core_id}/agents")
+async def get_core_agents_generic(core_id: str):
+    """Endpoint generico para obtener agentes de cualquier core"""
+    if core_id not in registry.cores:
+        raise HTTPException(404, f"Core '{core_id}' not found")
+    
+    agents = registry.get_agents_by_core(core_id)
+    return {
+        "total": len(agents),
+        "core": core_id,
+        "agents": [{"id": a["id"], "name": a["name"], "category": "General"} for a in agents]
+    }
+
