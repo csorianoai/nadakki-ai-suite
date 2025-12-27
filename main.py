@@ -1191,24 +1191,382 @@ async def workflow_campaign_optimization(request: WorkflowRequest):
         workflow_result["summary"] = generate_workflow_summary(workflow_result["steps"])
         return workflow_result
 
-@workflow_router.get("/")
-async def list_workflows():
-    """Lista los workflows disponibles"""
+
+# ============================================================================
+# ============================================================================
+# WORKFLOW #2: CUSTOMER ACQUISITION INTELLIGENCE v1.1.0
+# ============================================================================
+# ============================================================================
+
+WORKFLOW_CUSTOMER_ACQUISITION = {
+    "id": "customer-acquisition-intelligence",
+    "name": "Customer Acquisition Intelligence",
+    "version": "1.1.0",
+    "description": "Pipeline inteligente de adquisición: segmenta, predice, califica, prioriza y activa leads de alto valor",
+    "steps": [
+        {"order": 1, "core": "marketing", "agent": "audiencesegmenteria", "name": "Audience Segmentation", "phase": "TARGETING", "required": True},
+        {"order": 2, "core": "marketing", "agent": "geosegmentationia", "name": "Geo Segmentation", "phase": "TARGETING", "required": False},
+        {"order": 3, "core": "marketing", "agent": "predictiveleadia", "name": "Predictive Lead Analysis", "phase": "INTENT", "required": True},
+        {"order": 4, "core": "marketing", "agent": "contactqualityia", "name": "Contact Quality Validation", "phase": "QUALITY", "required": True},
+        {"order": 5, "core": "marketing", "agent": "leadscoria", "name": "Lead Scoring Primary", "phase": "SCORING", "required": True},
+        {"order": 6, "core": "marketing", "agent": "leadscoringia", "name": "Lead Scoring Validation", "phase": "SCORING", "required": True},
+        {"order": 7, "core": "marketing", "agent": "conversioncohortia", "name": "Conversion Cohort Analysis", "phase": "ACTIVATION", "required": True}
+    ],
+    "user_phases": [
+        {"id": "TARGETING", "name": "🎯 Targeting", "description": "¿A quién atacamos?", "agents": ["audiencesegmenteria", "geosegmentationia"]},
+        {"id": "INTENT", "name": "🔮 Intent Analysis", "description": "¿Quién tiene alta propensión?", "agents": ["predictiveleadia"]},
+        {"id": "QUALITY", "name": "✅ Quality Gate", "description": "¿La data es confiable?", "agents": ["contactqualityia"]},
+        {"id": "SCORING", "name": "📊 Scoring", "description": "¿Cuál es la prioridad?", "agents": ["leadscoria", "leadscoringia"]},
+        {"id": "ACTIVATION", "name": "🚀 Activation", "description": "¿Cómo los activamos?", "agents": ["conversioncohortia"]}
+    ],
+    "scoring_resolution": {
+        "strategy": "PRIMARY_WITH_VALIDATION",
+        "conflict_threshold": 15,
+        "confidence_penalty_on_conflict": 0.2,
+        "rules": {
+            "no_conflict": "difference <= 15% → use average, full confidence",
+            "mild_conflict": "15% < difference <= 25% → use primary, -10% confidence",
+            "severe_conflict": "difference > 25% → flag for review, -20% confidence"
+        }
+    }
+}
+
+class AcquisitionRequest(BaseModel):
+    target_market: str = Field(default="B2B", description="B2B, B2C, or Both")
+    industry_focus: List[str] = Field(default=[], description="Industries to target")
+    company_size: List[str] = Field(default=["SMB", "MidMarket"], description="Company sizes")
+    regions: List[str] = Field(default=[], description="Target regions")
+    leads: List[Dict] = Field(default=[], description="Existing leads to analyze")
+    leads_count: int = Field(default=0, description="Number of leads")
+    min_quality_score: float = Field(default=0.5, description="Minimum quality threshold")
+    auto_activate: bool = Field(default=False, description="Auto-trigger downstream workflows")
+    confidence_threshold: float = Field(default=0.7, description="Min confidence for activation")
+
+def resolve_scoring_conflict(primary_result: Dict, secondary_result: Dict) -> Dict:
+    """Árbitro de conflictos entre leadscoria y leadscoringia"""
+    config = WORKFLOW_CUSTOMER_ACQUISITION["scoring_resolution"]
+    threshold = config["conflict_threshold"] / 100
+    penalty = config["confidence_penalty_on_conflict"]
+    
+    primary_score = safe_get(primary_result, "result", "scores", "final_score", default=0)
+    if primary_score == 0:
+        primary_score = safe_get(primary_result, "result", "conversion_probability", default=0.5)
+    
+    secondary_score = safe_get(secondary_result, "result", "scores", "final_score", default=0)
+    if secondary_score == 0:
+        secondary_score = safe_get(secondary_result, "result", "conversion_probability", default=0.5)
+    
+    primary_conf = safe_get(primary_result, "result", "decision", "confidence", default=0.7)
+    secondary_conf = safe_get(secondary_result, "result", "decision", "confidence", default=0.7)
+    
+    difference = abs(primary_score - secondary_score)
+    difference_pct = difference * 100
+    
+    if difference <= threshold:
+        resolution = "CONSENSUS"
+        final_score = (primary_score + secondary_score) / 2
+        confidence = (primary_conf + secondary_conf) / 2
+        conflict_level = "NONE"
+    elif difference <= threshold * 1.67:
+        resolution = "PRIMARY_WINS"
+        final_score = primary_score
+        confidence = primary_conf - (penalty * 0.5)
+        conflict_level = "MILD"
+    else:
+        resolution = "REVIEW_REQUIRED"
+        final_score = primary_score
+        confidence = max(primary_conf, secondary_conf) - penalty
+        conflict_level = "SEVERE"
+    
+    confidence = max(0.3, min(1.0, confidence))
+    
+    explanations = {
+        "CONSENSUS": f"Scores within {difference_pct:.1f}% - high agreement between models",
+        "PRIMARY_WINS": f"Mild conflict ({difference_pct:.1f}%) - using primary scorer with slight confidence reduction",
+        "REVIEW_REQUIRED": f"Significant conflict ({difference_pct:.1f}%) - manual review recommended before activation"
+    }
+    
     return {
-        "workflows": [{
-            "id": WORKFLOW_CAMPAIGN_OPTIMIZATION["id"],
-            "name": WORKFLOW_CAMPAIGN_OPTIMIZATION["name"],
-            "version": WORKFLOW_CAMPAIGN_OPTIMIZATION["version"],
-            "description": WORKFLOW_CAMPAIGN_OPTIMIZATION["description"],
-            "steps_count": len(WORKFLOW_CAMPAIGN_OPTIMIZATION["steps"]),
-            "endpoint": "/workflows/campaign-optimization"
-        }],
-        "total": 1
+        "primary_score": round(primary_score, 3),
+        "secondary_score": round(secondary_score, 3),
+        "difference_pct": round(difference_pct, 1),
+        "conflict_level": conflict_level,
+        "resolution": resolution,
+        "final_score": round(final_score, 3),
+        "confidence": round(confidence, 3),
+        "strategy_applied": config["strategy"],
+        "explanation": explanations.get(resolution, "Unknown resolution")
+    }
+
+def generate_unified_decision(workflow_id: str, steps: List[Dict], scoring_resolution: Dict, request_data: Dict) -> Dict:
+    """Genera UNA SOLA DECISIÓN unificada"""
+    final_score = scoring_resolution["final_score"]
+    confidence = scoring_resolution["confidence"]
+    conflict_level = scoring_resolution["conflict_level"]
+    
+    if conflict_level == "SEVERE":
+        decision = "REVIEW_BEFORE_ACTIVATION"
+        priority = "MEDIUM"
+    elif final_score >= 0.7 and confidence >= 0.7:
+        decision = "ACTIVATE_ACQUISITION"
+        priority = "HIGH"
+    elif final_score >= 0.5 and confidence >= 0.6:
+        decision = "NURTURE_PIPELINE"
+        priority = "MEDIUM"
+    elif final_score >= 0.3:
+        decision = "ENRICH_AND_REANALYZE"
+        priority = "LOW"
+    else:
+        decision = "DISQUALIFY"
+        priority = "LOW"
+    
+    raw_segments = safe_get(steps[0], "result", "segments", default=[])
+    segments = []
+    for seg in raw_segments[:5]:
+        segment_score = final_score + (0.1 if seg.get("segment") == "high_value" else 0)
+        channels = ["EMAIL", "PAID_SEARCH", "LINKEDIN"] if segment_score > 0.7 else (["EMAIL", "CONTENT"] if segment_score > 0.5 else ["CONTENT", "ORGANIC"])
+        segments.append({
+            "segment": seg.get("segment", "unknown"),
+            "size": seg.get("count", 0),
+            "priority": "HIGH" if segment_score > 0.7 else ("MEDIUM" if segment_score > 0.5 else "LOW"),
+            "expected_cvr": round(segment_score * 0.22, 3),
+            "expected_ltv": round(segment_score * 5500, 0),
+            "recommended_channels": channels
+        })
+    
+    total_leads = sum(s.get("size", 0) for s in segments) or request_data.get("leads_count", 100)
+    qualified = int(total_leads * final_score)
+    pipeline_value = qualified * 5000
+    
+    actions_map = {
+        "ACTIVATE_ACQUISITION": ["emailautomationia", "campaignoptimizeria", "sync_to_crm", "alert_sales_team"],
+        "NURTURE_PIPELINE": ["content-performance-engine", "emailautomationia", "schedule_reanalysis_14d"],
+        "ENRICH_AND_REANALYZE": ["enrich_from_clearbit", "enrich_from_zoominfo", "schedule_reanalysis_7d"],
+        "REVIEW_BEFORE_ACTIVATION": ["create_review_task", "notify_marketing_ops", "hold_automation"],
+        "DISQUALIFY": ["archive_leads", "update_exclusion_list"]
+    }
+    
+    valid_days = 7 if decision == "ACTIVATE_ACQUISITION" else 14
+    valid_until = (datetime.utcnow() + timedelta(days=valid_days)).isoformat() + "Z"
+    
+    return {
+        "decision": decision,
+        "confidence": confidence,
+        "valid_until": valid_until,
+        "segments": segments,
+        "lead_summary": {
+            "total_analyzed": total_leads,
+            "qualified": qualified,
+            "disqualified": total_leads - qualified,
+            "qualification_rate": round(final_score, 3)
+        },
+        "next_actions": actions_map.get(decision, ["manual_review"]),
+        "business_impact": {
+            "pipeline_value": pipeline_value,
+            "expected_roi": round(2.5 + (confidence * 2), 1),
+            "payback_days": 35 - int(confidence * 15)
+        },
+        "scoring_metadata": {
+            "resolution": scoring_resolution["resolution"],
+            "conflict_level": conflict_level,
+            "explanation": scoring_resolution["explanation"]
+        }
+    }
+
+@workflow_router.post("/customer-acquisition-intelligence")
+async def workflow_customer_acquisition(request: AcquisitionRequest):
+    """
+    🎯 Customer Acquisition Intelligence Workflow v1.1.0
+    
+    SECUENCIA (ORDEN CORREGIDO):
+    1. audiencesegmenteria    → ¿Quiénes son mis mercados?
+    2. geosegmentationia      → ¿Dónde están? (opcional)
+    3. predictiveleadia       → ¿Quién tiene alta propensión?
+    4. contactqualityia       → ¿La data es confiable?
+    5. leadscoria             → Scoring primario
+    6. leadscoringia          → Validación scoring
+    7. conversioncohortia     → Análisis de cohortes
+    
+    OUTPUT: Una decisión unificada, no 7 outputs.
+    """
+    workflow_id = f"CAI-{int(datetime.utcnow().timestamp())}-{uuid4().hex[:8]}"
+    tenant_id = "workflow"
+    
+    workflow_logger.info(f"Starting Customer Acquisition Intelligence: {workflow_id}")
+    
+    workflow_result = {
+        "workflow_id": workflow_id,
+        "workflow_name": WORKFLOW_CUSTOMER_ACQUISITION["name"],
+        "workflow_version": WORKFLOW_CUSTOMER_ACQUISITION["version"],
+        "tenant_id": tenant_id,
+        "started_at": datetime.utcnow().isoformat() + "Z",
+        "request_summary": {
+            "target_market": request.target_market,
+            "industries": request.industry_focus,
+            "regions": request.regions,
+            "leads_count": len(request.leads) or request.leads_count
+        },
+        "phases": [],
+        "steps": [],
+        "status": "running"
+    }
+    
+    try:
+        # STEP 1: AUDIENCE SEGMENTATION
+        step1_input = {
+            "target_market": request.target_market,
+            "industries": request.industry_focus,
+            "company_sizes": request.company_size,
+            "leads": request.leads,
+            "leads_count": request.leads_count or len(request.leads)
+        }
+        step1 = await execute_workflow_step(workflow_id, WORKFLOW_CUSTOMER_ACQUISITION["steps"][0], step1_input, tenant_id)
+        workflow_result["steps"].append(step1)
+        if step1["required"] and step1["status"] == "error":
+            raise Exception(f"Required step failed: {step1['step_name']}")
+        
+        # STEP 2: GEO SEGMENTATION (opcional)
+        if request.regions:
+            step2_input = {"segments": safe_get(step1, "result", "segments", default=[]), "regions": request.regions}
+            step2 = await execute_workflow_step(workflow_id, WORKFLOW_CUSTOMER_ACQUISITION["steps"][1], step2_input, tenant_id)
+        else:
+            step2 = {"step_id": f"{workflow_id}-step2", "step_order": 2, "step_name": "Geo Segmentation", "status": "skipped", "reason": "No regions specified", "result": {}}
+        workflow_result["steps"].append(step2)
+        
+        # STEP 3: PREDICTIVE LEAD ANALYSIS
+        step3_input = {"segments": safe_get(step1, "result", "segments", default=[]), "leads": request.leads, "target_market": request.target_market}
+        step3 = await execute_workflow_step(workflow_id, WORKFLOW_CUSTOMER_ACQUISITION["steps"][2], step3_input, tenant_id)
+        workflow_result["steps"].append(step3)
+        if step3["required"] and step3["status"] == "error":
+            raise Exception(f"Required step failed: {step3['step_name']}")
+        
+        # STEP 4: CONTACT QUALITY
+        step4_input = {"segments": safe_get(step1, "result", "segments", default=[]), "predictions": safe_get(step3, "result", default={}), "leads": request.leads, "min_quality": request.min_quality_score}
+        step4 = await execute_workflow_step(workflow_id, WORKFLOW_CUSTOMER_ACQUISITION["steps"][3], step4_input, tenant_id)
+        workflow_result["steps"].append(step4)
+        if step4["required"] and step4["status"] == "error":
+            raise Exception(f"Required step failed: {step4['step_name']}")
+        
+        # STEP 5: LEAD SCORING PRIMARY
+        step5_input = {"segments": safe_get(step1, "result", "segments", default=[]), "predictions": safe_get(step3, "result", default={}), "quality_data": safe_get(step4, "result", default={}), "leads": request.leads}
+        step5 = await execute_workflow_step(workflow_id, WORKFLOW_CUSTOMER_ACQUISITION["steps"][4], step5_input, tenant_id)
+        workflow_result["steps"].append(step5)
+        if step5["required"] and step5["status"] == "error":
+            raise Exception(f"Required step failed: {step5['step_name']}")
+        
+        # STEP 6: LEAD SCORING VALIDATION
+        step6_input = {"segments": safe_get(step1, "result", "segments", default=[]), "primary_scores": safe_get(step5, "result", "scores", default={}), "leads": request.leads, "validation_mode": True}
+        step6 = await execute_workflow_step(workflow_id, WORKFLOW_CUSTOMER_ACQUISITION["steps"][5], step6_input, tenant_id)
+        workflow_result["steps"].append(step6)
+        if step6["required"] and step6["status"] == "error":
+            raise Exception(f"Required step failed: {step6['step_name']}")
+        
+        # SCORING RESOLUTION (ÁRBITRO)
+        scoring_resolution = resolve_scoring_conflict(step5, step6)
+        
+        # STEP 7: CONVERSION COHORT ANALYSIS
+        step7_input = {"segments": safe_get(step1, "result", "segments", default=[]), "final_score": scoring_resolution["final_score"], "resolution": scoring_resolution["resolution"]}
+        step7 = await execute_workflow_step(workflow_id, WORKFLOW_CUSTOMER_ACQUISITION["steps"][6], step7_input, tenant_id)
+        workflow_result["steps"].append(step7)
+        if step7["required"] and step7["status"] == "error":
+            raise Exception(f"Required step failed: {step7['step_name']}")
+        
+        # GENERATE UNIFIED DECISION
+        unified_decision = generate_unified_decision(workflow_id, workflow_result["steps"], scoring_resolution, request.dict())
+        
+        # FINAL OUTPUT
+        workflow_result["completed_at"] = datetime.utcnow().isoformat() + "Z"
+        workflow_result["status"] = "success"
+        workflow_result["decision"] = unified_decision
+        
+        total_duration = sum(s.get("duration_ms", 0) for s in workflow_result["steps"] if isinstance(s.get("duration_ms"), (int, float)))
+        workflow_result["summary"] = {
+            "steps_executed": len([s for s in workflow_result["steps"] if s.get("status") != "skipped"]),
+            "total_duration_ms": round(total_duration, 2),
+            "final_decision": unified_decision["decision"],
+            "confidence": unified_decision["confidence"],
+            "pipeline_value": unified_decision["business_impact"]["pipeline_value"]
+        }
+        
+        workflow_result["audit_trail"] = {
+            "workflow_input_hash": generate_hash(request.dict()),
+            "decision_hash": generate_hash(unified_decision),
+            "scoring_resolution": scoring_resolution["resolution"],
+            "conflict_level": scoring_resolution["conflict_level"]
+        }
+        
+        workflow_logger.info(f"Workflow {workflow_id} completed: {unified_decision['decision']} (confidence: {unified_decision['confidence']})")
+        return workflow_result
+        
+    except Exception as e:
+        workflow_logger.error(f"Workflow {workflow_id} failed: {e}")
+        workflow_result["completed_at"] = datetime.utcnow().isoformat() + "Z"
+        workflow_result["status"] = "error"
+        workflow_result["error"] = str(e)
+        return workflow_result
+
+@workflow_router.get("/customer-acquisition-intelligence/schema")
+async def acquisition_schema():
+    """Schema del workflow Customer Acquisition"""
+    return {
+        "workflow": {
+            "id": WORKFLOW_CUSTOMER_ACQUISITION["id"],
+            "name": WORKFLOW_CUSTOMER_ACQUISITION["name"],
+            "version": WORKFLOW_CUSTOMER_ACQUISITION["version"],
+            "agents_count": 7,
+            "phases": WORKFLOW_CUSTOMER_ACQUISITION["user_phases"]
+        },
+        "scoring_resolution": WORKFLOW_CUSTOMER_ACQUISITION["scoring_resolution"],
+        "example_request": {
+            "target_market": "B2B",
+            "industry_focus": ["technology", "finance"],
+            "company_size": ["SMB", "MidMarket"],
+            "regions": ["US", "LATAM"],
+            "auto_activate": False
+        },
+        "possible_decisions": ["ACTIVATE_ACQUISITION", "NURTURE_PIPELINE", "ENRICH_AND_REANALYZE", "REVIEW_BEFORE_ACTIVATION", "DISQUALIFY"]
+    }
+
+@workflow_router.get("/")
+async def list_all_workflows():
+    """Lista todos los workflows disponibles"""
+    return {
+        "workflows": [
+            {
+                "id": "campaign-optimization",
+                "name": "Campaign Optimization",
+                "version": "1.0.0",
+                "tier": "CORE",
+                "agents": 5,
+                "status": "active",
+                "endpoint": "/workflows/campaign-optimization"
+            },
+            {
+                "id": "customer-acquisition-intelligence",
+                "name": "Customer Acquisition Intelligence",
+                "version": "1.1.0",
+                "tier": "CORE",
+                "agents": 7,
+                "status": "active",
+                "endpoint": "/workflows/customer-acquisition-intelligence"
+            }
+        ],
+        "total": 2,
+        "pending_workflows": [
+            "customer-lifecycle-revenue",
+            "content-performance-engine",
+            "social-media-intelligence",
+            "email-automation-master",
+            "multi-channel-attribution",
+            "competitive-intelligence-hub",
+            "ab-testing-experimentation",
+            "influencer-partnership-engine"
+        ]
     }
 
 @workflow_router.get("/campaign-optimization/schema")
 async def workflow_schema():
-    """Schema del workflow para documentación"""
+    """Schema del workflow Campaign Optimization"""
     return {
         "workflow": WORKFLOW_CAMPAIGN_OPTIMIZATION,
         "example_request": {
@@ -1221,7 +1579,7 @@ async def workflow_schema():
 @workflow_router.get("/health")
 async def workflow_health():
     """Health check del workflow engine"""
-    return {"status": "healthy", "engine_version": "1.0.0", "workflows_available": 1}
+    return {"status": "healthy", "engine_version": "1.1.0", "workflows_available": 2}
 
 # Integrar el workflow router en la app
 app.include_router(workflow_router)
