@@ -3,17 +3,13 @@ NADAKKI AI SUITE v4.0.0 - Enterprise AI Platform
 185+ Agents across 20 AI Cores
 """
 
-from fastapi import FastAPI, Header, HTTPException, Depends, APIRouter
+from fastapi import FastAPI, Header, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Dict, Any, Optional, List
 from pydantic import BaseModel, Field
 from datetime import datetime, timedelta
 import logging
 from collections import defaultdict
-import hashlib
-import json
-import importlib
-from uuid import uuid4
 
 # ============================================================================
 # SETUP
@@ -21,7 +17,6 @@ from uuid import uuid4
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("NadakkiAISuite")
-workflow_logger = logging.getLogger("WorkflowEngine")
 
 app = FastAPI(
     title="Nadakki AI Suite",
@@ -446,6 +441,26 @@ async def get_marketing_agents_list():
         ]
     }
 
+# STARTUP
+# ============================================================================
+
+@app.on_event("startup")
+async def startup():
+    logger.info("=" * 60)
+    logger.info("NADAKKI AI SUITE v4.0.0 - STARTING")
+    logger.info("=" * 60)
+    logger.info(f"✓ {registry.total} agents across {len(registry.cores)} cores")
+    for core, agents in sorted(registry.cores.items(), key=lambda x: -len(x[1])):
+        logger.info(f"  • {core}: {len(agents)} agents")
+    logger.info("=" * 60)
+    logger.info("🚀 Server ready at http://localhost:8000")
+    logger.info("📚 API docs at http://localhost:8000/docs")
+    logger.info("=" * 60)
+
+
+
+
+
 
 # ============================================================================
 # CATALOG ENDPOINTS - ALL CORES (Auto-generated)
@@ -866,381 +881,3 @@ async def get_core_agents_generic(core_id: str):
         "agents": [{"id": a["id"], "name": a["name"], "category": "General"} for a in agents]
     }
 
-
-# ============================================================================
-# ============================================================================
-# WORKFLOW ENGINE - Campaign Optimization v1.0.0
-# Enterprise-grade workflow orchestration
-# ============================================================================
-# ============================================================================
-
-# Crear router específico para workflows
-workflow_router = APIRouter(prefix="/workflows", tags=["workflows"])
-
-# Workflow Configuration
-WORKFLOW_CAMPAIGN_OPTIMIZATION = {
-    "id": "campaign-optimization",
-    "name": "Campaign Optimization Workflow",
-    "version": "1.0.0",
-    "description": "Optimiza campañas de marketing usando 5 agentes especializados en secuencia",
-    "steps": [
-        {"order": 1, "core": "marketing", "agent": "audiencesegmenteria", "name": "Audience Analysis", "required": True},
-        {"order": 2, "core": "marketing", "agent": "leadscoria", "name": "Lead Scoring", "required": True},
-        {"order": 3, "core": "marketing", "agent": "abtestingimpactia", "name": "A/B Test Strategy", "required": False},
-        {"order": 4, "core": "marketing", "agent": "campaignoptimizeria", "name": "Campaign Design", "required": True},
-        {"order": 5, "core": "marketing", "agent": "budgetforecastia", "name": "Budget Allocation", "required": True}
-    ]
-}
-
-# Workflow Request Models
-class CampaignBrief(BaseModel):
-    name: str = Field(default="Unnamed Campaign", description="Nombre de la campaña")
-    objective: str = Field(default="lead_generation", description="Objetivo")
-    channel: str = Field(default="email", description="Canal principal")
-    target_audience: str = Field(default="", description="Audiencia objetivo")
-
-class WorkflowRequest(BaseModel):
-    campaign_brief: CampaignBrief = Field(default_factory=CampaignBrief)
-    leads: List[Dict] = Field(default=[], description="Lista de leads")
-    leads_count: int = Field(default=0, description="Cantidad de leads")
-    budget: float = Field(default=0, description="Presupuesto total")
-    ab_test_data: Dict = Field(default={}, description="Datos de A/B testing")
-    include_ab_strategy: bool = Field(default=True, description="Incluir A/B testing")
-    target_criteria: Dict = Field(default={}, description="Criterios de segmentación")
-    scoring_criteria: Dict = Field(default={}, description="Criterios de scoring")
-
-# Utility Functions
-def generate_hash(data: Any) -> str:
-    """Genera hash SHA256 para auditoría"""
-    try:
-        return hashlib.sha256(json.dumps(data, sort_keys=True, default=str).encode()).hexdigest()[:16]
-    except:
-        return "hash_error"
-
-def safe_get(data: Dict, *keys, default=None):
-    """Obtiene valor anidado de forma segura"""
-    result = data
-    for key in keys:
-        if isinstance(result, dict):
-            result = result.get(key, default)
-        else:
-            return default
-    return result if result is not None else default
-
-# Agent Execution (using same pattern as main endpoint)
-async def execute_agent_internal(core: str, agent_id: str, input_data: Dict, tenant_id: str = "workflow") -> Dict:
-    """Ejecuta un agente usando el mismo patrón que el endpoint principal"""
-    try:
-        module = importlib.import_module(f'agents.{core}.{agent_id}')
-        
-        if not hasattr(module, 'execute') or not callable(module.execute):
-            return {"status": "error", "error": f"Agent {core}.{agent_id} has no execute function"}
-        
-        prepared_input = input_data.copy() if isinstance(input_data, dict) else {}
-        if 'tenant_id' not in prepared_input:
-            prepared_input['tenant_id'] = tenant_id
-        
-        context = {'tenant_id': tenant_id}
-        result = module.execute({'input_data': prepared_input}, context)
-        
-        return result
-        
-    except ImportError as e:
-        workflow_logger.error(f"Failed to import agent {core}.{agent_id}: {e}")
-        return {"status": "error", "error": f"Agent module not found: {core}.{agent_id}"}
-    except Exception as e:
-        workflow_logger.error(f"Agent execution failed {core}.{agent_id}: {e}")
-        return {"status": "error", "error": str(e)}
-
-# Workflow Step Execution
-async def execute_workflow_step(workflow_id: str, step_config: Dict, input_data: Dict, tenant_id: str = "workflow") -> Dict:
-    """Ejecuta un paso del workflow con auditoría completa"""
-    step_id = f"{workflow_id}-step{step_config['order']}"
-    started_at = datetime.utcnow()
-    
-    core = step_config["core"]
-    agent_id = step_config["agent"]
-    
-    workflow_logger.info(f"Executing step {step_id}: {core}.{agent_id}")
-    
-    try:
-        result = await execute_agent_internal(core, agent_id, input_data, tenant_id)
-        
-        if result.get("status") == "success":
-            status = "success"
-        elif result.get("status") == "error":
-            status = "error"
-        elif result.get("_decision_layer_applied") or result.get("decision"):
-            status = "success"
-        else:
-            status = "warning"
-            
-    except Exception as e:
-        result = {"status": "error", "error": str(e)}
-        status = "error"
-    
-    completed_at = datetime.utcnow()
-    duration_ms = (completed_at - started_at).total_seconds() * 1000
-    
-    return {
-        "step_id": step_id,
-        "step_order": step_config["order"],
-        "step_name": step_config["name"],
-        "agent": f"{core}.{agent_id}",
-        "required": step_config.get("required", True),
-        "status": status,
-        "started_at": started_at.isoformat() + "Z",
-        "completed_at": completed_at.isoformat() + "Z",
-        "duration_ms": round(duration_ms, 2),
-        "input_hash": generate_hash(input_data),
-        "output_hash": generate_hash(result),
-        "result": result
-    }
-
-# Summary & Recommendations
-def generate_workflow_summary(steps: List[Dict]) -> Dict:
-    """Genera resumen ejecutivo del workflow"""
-    successful = sum(1 for s in steps if s["status"] in ["success", "skipped"])
-    failed = sum(1 for s in steps if s["status"] == "error")
-    total_duration = sum(s.get("duration_ms", 0) for s in steps)
-    
-    roi_estimate = 0
-    confidence_values = []
-    
-    for step in steps:
-        result = step.get("result", {})
-        business_impact = result.get("business_impact", {})
-        if business_impact.get("roi_estimate"):
-            roi_estimate = business_impact["roi_estimate"]
-        decision = result.get("decision", {})
-        if decision.get("confidence"):
-            confidence_values.append(decision["confidence"])
-    
-    return {
-        "steps_completed": f"{successful}/{len(steps)}",
-        "steps_failed": failed,
-        "total_duration_ms": round(total_duration, 2),
-        "estimated_roi": roi_estimate,
-        "average_confidence": round(sum(confidence_values)/len(confidence_values), 3) if confidence_values else 0,
-        "workflow_status": "success" if failed == 0 else ("partial" if successful > 0 else "failed")
-    }
-
-def extract_recommendations(steps: List[Dict]) -> List[Dict]:
-    """Extrae recomendaciones accionables"""
-    recommendations = []
-    
-    for step in steps:
-        if step["status"] == "skipped":
-            continue
-        result = step.get("result", {})
-        decision = result.get("decision", {})
-        if decision:
-            recommendations.append({
-                "source": step["step_name"],
-                "source_agent": step["agent"],
-                "action": decision.get("action", "REVIEW"),
-                "priority": decision.get("priority", "MEDIUM"),
-                "confidence": decision.get("confidence", 0),
-                "explanation": decision.get("explanation", ""),
-                "next_steps": decision.get("next_steps", []),
-                "expected_impact": decision.get("expected_impact", {})
-            })
-    
-    priority_order = {"HIGH": 0, "CRITICAL": 0, "MEDIUM": 1, "LOW": 2}
-    recommendations.sort(key=lambda x: priority_order.get(x.get("priority", "LOW"), 2))
-    
-    return recommendations
-
-# Main Workflow Endpoint
-@workflow_router.post("/campaign-optimization")
-async def workflow_campaign_optimization(request: WorkflowRequest):
-    """
-    🚀 Workflow de Optimización de Campañas
-    
-    Orquesta 5 agentes especializados:
-    1. audiencesegmenteria - Análisis de audiencias
-    2. leadscoria - Scoring de leads
-    3. abtestingimpactia - Estrategia A/B (opcional)
-    4. campaignoptimizeria - Diseño de campaña
-    5. budgetforecastia - Presupuesto y ROI
-    """
-    workflow_id = f"WF-{int(datetime.utcnow().timestamp())}-{uuid4().hex[:8]}"
-    tenant_id = "workflow"
-    
-    workflow_logger.info(f"Starting workflow {workflow_id}")
-    
-    workflow_result = {
-        "workflow_id": workflow_id,
-        "workflow_name": WORKFLOW_CAMPAIGN_OPTIMIZATION["name"],
-        "workflow_version": WORKFLOW_CAMPAIGN_OPTIMIZATION["version"],
-        "tenant_id": tenant_id,
-        "started_at": datetime.utcnow().isoformat() + "Z",
-        "input_summary": {
-            "campaign_name": request.campaign_brief.name,
-            "objective": request.campaign_brief.objective,
-            "channel": request.campaign_brief.channel,
-            "budget": request.budget,
-            "leads_count": request.leads_count or len(request.leads),
-            "include_ab_strategy": request.include_ab_strategy
-        },
-        "steps": [],
-        "status": "running"
-    }
-    
-    try:
-        # PASO 1: AUDIENCE SEGMENTATION
-        step1_input = {
-            "campaign_brief": request.campaign_brief.dict(),
-            "leads": request.leads,
-            "leads_count": request.leads_count or len(request.leads),
-            "target_criteria": request.target_criteria,
-            "channel": request.campaign_brief.channel
-        }
-        step1 = await execute_workflow_step(workflow_id, WORKFLOW_CAMPAIGN_OPTIMIZATION["steps"][0], step1_input, tenant_id)
-        workflow_result["steps"].append(step1)
-        if step1["required"] and step1["status"] == "error":
-            raise Exception(f"Required step failed: {step1['step_name']}")
-        
-        # PASO 2: LEAD SCORING
-        step2_input = {
-            "segments": safe_get(step1, "result", "segments", default=[]),
-            "segment_distribution": safe_get(step1, "result", "segment_distribution", default={}),
-            "leads": request.leads,
-            "scoring_criteria": request.scoring_criteria,
-            "channel": request.campaign_brief.channel
-        }
-        step2 = await execute_workflow_step(workflow_id, WORKFLOW_CAMPAIGN_OPTIMIZATION["steps"][1], step2_input, tenant_id)
-        workflow_result["steps"].append(step2)
-        if step2["required"] and step2["status"] == "error":
-            raise Exception(f"Required step failed: {step2['step_name']}")
-        
-        # PASO 3: A/B TEST STRATEGY (Opcional)
-        if request.include_ab_strategy or request.ab_test_data:
-            step3_input = {
-                "segments": safe_get(step1, "result", "segments", default=[]),
-                "lead_scores": safe_get(step2, "result", "scores", default={}),
-                "ab_test_data": request.ab_test_data if request.ab_test_data else {
-                    "variant_a": {"clicks": 100, "conversions": 10, "impressions": 1000},
-                    "variant_b": {"clicks": 120, "conversions": 12, "impressions": 1000}
-                },
-                "channel": request.campaign_brief.channel,
-                "test_name": f"{request.campaign_brief.name}_ab_test"
-            }
-            step3 = await execute_workflow_step(workflow_id, WORKFLOW_CAMPAIGN_OPTIMIZATION["steps"][2], step3_input, tenant_id)
-            workflow_result["steps"].append(step3)
-        else:
-            workflow_result["steps"].append({
-                "step_id": f"{workflow_id}-step3",
-                "step_order": 3,
-                "step_name": "A/B Test Strategy",
-                "agent": "marketing.abtestingimpactia",
-                "required": False,
-                "status": "skipped",
-                "reason": "A/B testing not requested",
-                "result": {}
-            })
-        
-        # PASO 4: CAMPAIGN DESIGN
-        step4_input = {
-            "segments": safe_get(step1, "result", "segments", default=[]),
-            "lead_scores": safe_get(step2, "result", "scores", default={}),
-            "lead_category": safe_get(step2, "result", "category", default=""),
-            "ab_recommendations": safe_get(workflow_result["steps"][2], "result", "test_results", default={}),
-            "campaign_brief": request.campaign_brief.dict(),
-            "budget": request.budget,
-            "channel": request.campaign_brief.channel
-        }
-        step4 = await execute_workflow_step(workflow_id, WORKFLOW_CAMPAIGN_OPTIMIZATION["steps"][3], step4_input, tenant_id)
-        workflow_result["steps"].append(step4)
-        if step4["required"] and step4["status"] == "error":
-            raise Exception(f"Required step failed: {step4['step_name']}")
-        
-        # PASO 5: BUDGET ALLOCATION
-        step5_input = {
-            "optimized_campaign": safe_get(step4, "result", default={}),
-            "segments": safe_get(step1, "result", "segments", default=[]),
-            "total_budget": request.budget,
-            "channel": request.campaign_brief.channel,
-            "campaign_name": request.campaign_brief.name
-        }
-        step5 = await execute_workflow_step(workflow_id, WORKFLOW_CAMPAIGN_OPTIMIZATION["steps"][4], step5_input, tenant_id)
-        workflow_result["steps"].append(step5)
-        if step5["required"] and step5["status"] == "error":
-            raise Exception(f"Required step failed: {step5['step_name']}")
-        
-        # CONSOLIDACIÓN
-        workflow_result["completed_at"] = datetime.utcnow().isoformat() + "Z"
-        workflow_result["status"] = "success"
-        workflow_result["summary"] = generate_workflow_summary(workflow_result["steps"])
-        workflow_result["recommendations"] = extract_recommendations(workflow_result["steps"])
-        workflow_result["audit_trail"] = {
-            "workflow_input_hash": generate_hash(request.dict()),
-            "workflow_output_hash": generate_hash(workflow_result["steps"]),
-            "steps_executed": len([s for s in workflow_result["steps"] if s["status"] != "skipped"]),
-            "total_duration_ms": workflow_result["summary"]["total_duration_ms"]
-        }
-        
-        workflow_logger.info(f"Workflow {workflow_id} completed successfully")
-        return workflow_result
-        
-    except Exception as e:
-        workflow_logger.error(f"Workflow {workflow_id} failed: {e}")
-        workflow_result["completed_at"] = datetime.utcnow().isoformat() + "Z"
-        workflow_result["status"] = "error"
-        workflow_result["error"] = str(e)
-        workflow_result["summary"] = generate_workflow_summary(workflow_result["steps"])
-        return workflow_result
-
-@workflow_router.get("/")
-async def list_workflows():
-    """Lista los workflows disponibles"""
-    return {
-        "workflows": [{
-            "id": WORKFLOW_CAMPAIGN_OPTIMIZATION["id"],
-            "name": WORKFLOW_CAMPAIGN_OPTIMIZATION["name"],
-            "version": WORKFLOW_CAMPAIGN_OPTIMIZATION["version"],
-            "description": WORKFLOW_CAMPAIGN_OPTIMIZATION["description"],
-            "steps_count": len(WORKFLOW_CAMPAIGN_OPTIMIZATION["steps"]),
-            "endpoint": "/workflows/campaign-optimization"
-        }],
-        "total": 1
-    }
-
-@workflow_router.get("/campaign-optimization/schema")
-async def workflow_schema():
-    """Schema del workflow para documentación"""
-    return {
-        "workflow": WORKFLOW_CAMPAIGN_OPTIMIZATION,
-        "example_request": {
-            "campaign_brief": {"name": "Q1 2025 Campaign", "objective": "lead_generation", "channel": "email"},
-            "budget": 10000,
-            "include_ab_strategy": True
-        }
-    }
-
-@workflow_router.get("/health")
-async def workflow_health():
-    """Health check del workflow engine"""
-    return {"status": "healthy", "engine_version": "1.0.0", "workflows_available": 1}
-
-# Integrar el workflow router en la app
-app.include_router(workflow_router)
-
-
-# ============================================================================
-# STARTUP
-# ============================================================================
-
-@app.on_event("startup")
-async def startup():
-    logger.info("=" * 60)
-    logger.info("NADAKKI AI SUITE v4.0.0 - STARTING")
-    logger.info("=" * 60)
-    logger.info(f"✓ {registry.total} agents across {len(registry.cores)} cores")
-    for core, agents in sorted(registry.cores.items(), key=lambda x: -len(x[1])):
-        logger.info(f"  • {core}: {len(agents)} agents")
-    logger.info("=" * 60)
-    logger.info("🚀 Server ready at http://localhost:8000")
-    logger.info("📚 API docs at http://localhost:8000/docs")
-    logger.info("🔄 Workflows at http://localhost:8000/workflows")
-    logger.info("=" * 60)
