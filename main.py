@@ -15,6 +15,7 @@ import hashlib
 import json
 import importlib
 from uuid import uuid4
+from multitenant_integration import register_tenant_routes
 
 # ============================================================================
 # SETUP
@@ -39,6 +40,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Registrar rutas multi-tenant
+register_tenant_routes(app)
 
 # ============================================================================
 # AGENT REGISTRY
