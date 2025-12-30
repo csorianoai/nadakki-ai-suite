@@ -5,7 +5,8 @@ NADAKKI AI SUITE - MULTI-TENANT INTEGRATION MODULE v2.0.0
 from datetime import datetime, timedelta
 from typing import Dict, Any, Optional, List
 from pydantic import BaseModel, Field
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
+from admin_auth import verify_admin_key
 from uuid import uuid4
 import hashlib
 import json
@@ -122,7 +123,7 @@ async def get_tenant(tenant_id: str):
             "status": t["status"]}
 
 @tenant_router.post("")
-async def create_tenant(tenant: TenantCreate):
+async def create_tenant(tenant: TenantCreate, admin = Depends(verify_admin_key)):
     if tenant.plan not in PRICING_TIERS: raise HTTPException(400, f"Invalid plan: {tenant.plan}")
     tenant_id = generate_tenant_id()
     api_key = generate_api_key()
@@ -138,7 +139,7 @@ async def create_tenant(tenant: TenantCreate):
     return {"success": True, "tenant_id": tenant_id, "api_key": api_key, "message": "Tenant created"}
 
 @tenant_router.patch("/{tenant_id}")
-async def update_tenant(tenant_id: str, update: TenantUpdate):
+async def update_tenant(tenant_id: str, update: TenantUpdate, admin = Depends(verify_admin_key)):
     if tenant_id not in TENANTS_DB: raise HTTPException(404, "Tenant not found")
     t = TENANTS_DB[tenant_id]
     if update.name: t["name"] = update.name
@@ -148,13 +149,13 @@ async def update_tenant(tenant_id: str, update: TenantUpdate):
     return {"success": True, "tenant_id": tenant_id}
 
 @tenant_router.post("/{tenant_id}/activate")
-async def activate_tenant(tenant_id: str):
+async def activate_tenant(tenant_id: str, admin = Depends(verify_admin_key)):
     if tenant_id not in TENANTS_DB: raise HTTPException(404, "Tenant not found")
     TENANTS_DB[tenant_id]["status"] = "active"
     return {"success": True, "status": "active"}
 
 @tenant_router.post("/{tenant_id}/suspend")
-async def suspend_tenant(tenant_id: str):
+async def suspend_tenant(tenant_id: str, admin = Depends(verify_admin_key)):
     if tenant_id not in TENANTS_DB: raise HTTPException(404, "Tenant not found")
     TENANTS_DB[tenant_id]["status"] = "suspended"
     return {"success": True, "status": "suspended"}
