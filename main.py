@@ -17,6 +17,7 @@ import importlib
 from uuid import uuid4
 from multitenant_integration import register_tenant_routes
 from decision_logger import register_decision_log_routes, log_workflow_decision
+from dashboard_metrics import register_enhanced_dashboard_routes
 
 # ============================================================================
 # SETUP
@@ -45,6 +46,7 @@ app.add_middleware(
 # Registrar rutas multi-tenant
 register_tenant_routes(app)
 register_decision_log_routes(app)
+register_enhanced_dashboard_routes(app)
 
 # ============================================================================
 # AGENT REGISTRY
