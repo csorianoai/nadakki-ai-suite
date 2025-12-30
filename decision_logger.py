@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from typing import Dict, Any, Optional, List
 from uuid import uuid4
 from fastapi import APIRouter, HTTPException
+from typing import Dict, Any
 import hashlib
 import json
 import logging
@@ -137,6 +138,15 @@ async def api_verify_chain(tenant_id: str):
 def register_decision_log_routes(app):
     app.include_router(decision_log_router)
     logger.info("Decision logging routes registered: /decision-logs")
+
+
+@decision_log_router.post("/{tenant_id}/log")
+async def api_log_decision(tenant_id: str, workflow_response: Dict[str, Any]):
+    """Loguea una decisión de workflow manualmente"""
+    contract = log_workflow_decision(workflow_response, tenant_id)
+    return {"success": True, "decision_id": contract["decision_id"], "chain_position": contract["audit"]["chain_position"]}
+
+from typing import Dict, Any
 
 __all__ = ["DECISION_STORE", "log_workflow_decision", "get_tenant_decisions", "get_tenant_decision_stats", 
            "verify_decision_chain", "decision_log_router", "register_decision_log_routes"]
