@@ -45,9 +45,7 @@ def init_database():
                 output_hash TEXT,
                 previous_hash TEXT,
                 contract_json TEXT NOT NULL,
-                created_at TEXT NOT NULL,
-                
-                
+                created_at TEXT NOT NULL
             )
         """)
         
@@ -448,3 +446,4 @@ __all__ = [
     "init_database",
     "load_from_database"
 ]
+
