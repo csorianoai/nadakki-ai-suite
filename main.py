@@ -1,7 +1,8 @@
 """
-NADAKKI AI SUITE v4.0.0 - Enterprise AI Platform
+NADAKKI AI SUITE v4.0.1 - Enterprise AI Platform
 185+ Agents across 20 AI Cores
 10 Marketing Workflows
+FIX: Auto-logging + Multi-tenant en todos los workflows
 """
 
 from fastapi import FastAPI, Header, HTTPException, Depends, APIRouter
@@ -30,7 +31,7 @@ workflow_logger = logging.getLogger("WorkflowEngine")
 app = FastAPI(
     title="Nadakki AI Suite",
     description="Enterprise AI Platform - 185+ Agents across 20 AI Cores",
-    version="4.0.0",
+    version="4.0.1",
     docs_url="/docs",
     redoc_url="/redoc"
 )
@@ -105,7 +106,7 @@ async def verify_tenant(x_tenant_id: str = Header(None), x_api_key: str = Header
 async def root():
     return {
         "service": "Nadakki AI Suite",
-        "version": "4.0.0",
+        "version": "4.0.1",
         "status": "operational",
         "total_agents": registry.total,
         "total_cores": len(registry.cores),
@@ -117,7 +118,7 @@ async def root():
 async def health():
     return {
         "status": "healthy",
-        "version": "4.0.0",
+        "version": "4.0.1",
         "agents_loaded": registry.total,
         "cores_active": len(registry.cores),
         "timestamp": datetime.now().isoformat()
@@ -286,7 +287,7 @@ async def dashboard_summary(tenant: Dict = Depends(verify_tenant)):
         "cores": registry.get_cores(),
         "by_core": registry.get_core_summary(),
         "system_status": "active",
-        "version": "4.0.0",
+        "version": "4.0.1",
         "timestamp": datetime.now().isoformat()
     }
 
@@ -681,7 +682,8 @@ async def get_core_agents_generic(core_id: str):
 
 # ============================================================================
 # ============================================================================
-# WORKFLOW ENGINE v2.0.0 - 10 MARKETING WORKFLOWS
+# WORKFLOW ENGINE v2.0.1 - 10 MARKETING WORKFLOWS (FIXED)
+# FIX: Auto-logging + Multi-tenant en todos los workflows
 # ============================================================================
 # ============================================================================
 
@@ -833,10 +835,10 @@ class WorkflowRequest(BaseModel):
     scoring_criteria: Dict = Field(default={})
 
 @workflow_router.post("/campaign-optimization")
-async def workflow_campaign_optimization(request: WorkflowRequest):
+async def workflow_campaign_optimization(request: WorkflowRequest, tenant: Dict = Depends(verify_tenant)):
     workflow_id = f"WF-{int(datetime.utcnow().timestamp())}-{uuid4().hex[:8]}"
-    tenant_id = "workflow"
-    workflow_logger.info(f"Starting workflow {workflow_id}")
+    tenant_id = tenant["tenant_id"]
+    workflow_logger.info(f"Starting workflow {workflow_id} for tenant {tenant_id}")
     
     workflow_result = {
         "workflow_id": workflow_id,
@@ -877,6 +879,7 @@ async def workflow_campaign_optimization(request: WorkflowRequest):
         workflow_result["summary"] = generate_workflow_summary(workflow_result["steps"])
         workflow_result["recommendations"] = extract_recommendations(workflow_result["steps"])
         
+        log_workflow_decision(workflow_result, tenant_id)
         return workflow_result
     except Exception as e:
         workflow_result["status"] = "error"
@@ -901,19 +904,7 @@ WORKFLOW_CUSTOMER_ACQUISITION = {
         {"order": 5, "core": "marketing", "agent": "leadscoria", "name": "Lead Scoring Primary", "required": True},
         {"order": 6, "core": "marketing", "agent": "leadscoringia", "name": "Lead Scoring Validation", "required": True},
         {"order": 7, "core": "marketing", "agent": "conversioncohortia", "name": "Conversion Cohort Analysis", "required": True}
-    ],
-    "user_phases": [
-        {"id": "TARGETING", "name": "🎯 Targeting"},
-        {"id": "INTENT", "name": "🔮 Intent Analysis"},
-        {"id": "QUALITY", "name": "✅ Quality Gate"},
-        {"id": "SCORING", "name": "📊 Scoring"},
-        {"id": "ACTIVATION", "name": "🚀 Activation"}
-    ],
-    "scoring_resolution": {
-        "strategy": "PRIMARY_WITH_VALIDATION",
-        "conflict_threshold": 15,
-        "confidence_penalty_on_conflict": 0.2
-    }
+    ]
 }
 
 class AcquisitionRequest(BaseModel):
@@ -928,9 +919,8 @@ class AcquisitionRequest(BaseModel):
     confidence_threshold: float = Field(default=0.7)
 
 def resolve_scoring_conflict(primary_result: Dict, secondary_result: Dict) -> Dict:
-    config = WORKFLOW_CUSTOMER_ACQUISITION["scoring_resolution"]
-    threshold = config["conflict_threshold"] / 100
-    penalty = config["confidence_penalty_on_conflict"]
+    threshold = 0.15
+    penalty = 0.2
     
     primary_score = safe_get(primary_result, "result", "scores", "final_score", default=0) or safe_get(primary_result, "result", "conversion_probability", default=0.5)
     secondary_score = safe_get(secondary_result, "result", "scores", "final_score", default=0) or safe_get(secondary_result, "result", "conversion_probability", default=0.5)
@@ -940,11 +930,11 @@ def resolve_scoring_conflict(primary_result: Dict, secondary_result: Dict) -> Di
     difference = abs(primary_score - secondary_score)
     
     if difference <= threshold:
-        return {"resolution": "CONSENSUS", "final_score": round((primary_score + secondary_score) / 2, 3), "confidence": round((primary_conf + secondary_conf) / 2, 3), "conflict_level": "NONE", "explanation": f"Scores within {difference*100:.1f}%"}
+        return {"resolution": "CONSENSUS", "final_score": round((primary_score + secondary_score) / 2, 3), "confidence": round((primary_conf + secondary_conf) / 2, 3), "conflict_level": "NONE"}
     elif difference <= threshold * 1.67:
-        return {"resolution": "PRIMARY_WINS", "final_score": round(primary_score, 3), "confidence": round(primary_conf - (penalty * 0.5), 3), "conflict_level": "MILD", "explanation": f"Mild conflict ({difference*100:.1f}%)"}
+        return {"resolution": "PRIMARY_WINS", "final_score": round(primary_score, 3), "confidence": round(primary_conf - (penalty * 0.5), 3), "conflict_level": "MILD"}
     else:
-        return {"resolution": "REVIEW_REQUIRED", "final_score": round(primary_score, 3), "confidence": round(max(primary_conf, secondary_conf) - penalty, 3), "conflict_level": "SEVERE", "explanation": f"Significant conflict ({difference*100:.1f}%)"}
+        return {"resolution": "REVIEW_REQUIRED", "final_score": round(primary_score, 3), "confidence": round(max(primary_conf, secondary_conf) - penalty, 3), "conflict_level": "SEVERE"}
 
 def generate_unified_decision(workflow_id: str, steps: List[Dict], scoring_resolution: Dict, request_data: Dict) -> Dict:
     final_score = scoring_resolution["final_score"]
@@ -974,10 +964,10 @@ def generate_unified_decision(workflow_id: str, steps: List[Dict], scoring_resol
     }
 
 @workflow_router.post("/customer-acquisition-intelligence")
-async def workflow_customer_acquisition(request: AcquisitionRequest):
+async def workflow_customer_acquisition(request: AcquisitionRequest, tenant: Dict = Depends(verify_tenant)):
     workflow_id = f"CAI-{int(datetime.utcnow().timestamp())}-{uuid4().hex[:8]}"
-    tenant_id = "workflow"
-    workflow_logger.info(f"Starting Customer Acquisition Intelligence: {workflow_id}")
+    tenant_id = tenant["tenant_id"]
+    workflow_logger.info(f"Starting Customer Acquisition Intelligence: {workflow_id} for tenant {tenant_id}")
     
     workflow_result = {
         "workflow_id": workflow_id,
@@ -1025,6 +1015,7 @@ async def workflow_customer_acquisition(request: AcquisitionRequest):
         workflow_result["summary"]["final_decision"] = unified_decision["decision"]
         workflow_result["summary"]["pipeline_value"] = unified_decision["business_impact"]["pipeline_value"]
         
+        log_workflow_decision(workflow_result, tenant_id)
         return workflow_result
     except Exception as e:
         workflow_result["status"] = "error"
@@ -1058,11 +1049,11 @@ class LifecycleRequest(BaseModel):
     products: List[Dict] = Field(default=[])
 
 @workflow_router.post("/customer-lifecycle-revenue")
-async def workflow_customer_lifecycle(request: LifecycleRequest):
+async def workflow_customer_lifecycle(request: LifecycleRequest, tenant: Dict = Depends(verify_tenant)):
     workflow_id = f"CLR-{int(datetime.utcnow().timestamp())}-{uuid4().hex[:8]}"
-    tenant_id = "workflow"
+    tenant_id = tenant["tenant_id"]
     
-    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_CUSTOMER_LIFECYCLE["name"], "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
+    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_CUSTOMER_LIFECYCLE["name"], "tenant_id": tenant_id, "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
     
     try:
         prev_result = {}
@@ -1074,6 +1065,8 @@ async def workflow_customer_lifecycle(request: LifecycleRequest):
         workflow_result["completed_at"] = datetime.utcnow().isoformat() + "Z"
         workflow_result["status"] = "success"
         workflow_result["summary"] = generate_workflow_summary(workflow_result["steps"])
+        
+        log_workflow_decision(workflow_result, tenant_id)
         return workflow_result
     except Exception as e:
         workflow_result["status"] = "error"
@@ -1107,11 +1100,11 @@ class ContentRequest(BaseModel):
     existing_content: List[Dict] = Field(default=[])
 
 @workflow_router.post("/content-performance-engine")
-async def workflow_content_performance(request: ContentRequest):
+async def workflow_content_performance(request: ContentRequest, tenant: Dict = Depends(verify_tenant)):
     workflow_id = f"CPE-{int(datetime.utcnow().timestamp())}-{uuid4().hex[:8]}"
-    tenant_id = "workflow"
+    tenant_id = tenant["tenant_id"]
     
-    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_CONTENT_PERFORMANCE["name"], "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
+    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_CONTENT_PERFORMANCE["name"], "tenant_id": tenant_id, "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
     
     try:
         prev_result = {}
@@ -1123,6 +1116,8 @@ async def workflow_content_performance(request: ContentRequest):
         workflow_result["completed_at"] = datetime.utcnow().isoformat() + "Z"
         workflow_result["status"] = "success"
         workflow_result["summary"] = generate_workflow_summary(workflow_result["steps"])
+        
+        log_workflow_decision(workflow_result, tenant_id)
         return workflow_result
     except Exception as e:
         workflow_result["status"] = "error"
@@ -1154,11 +1149,11 @@ class SocialRequest(BaseModel):
     post_topics: List[str] = Field(default=[])
 
 @workflow_router.post("/social-media-intelligence")
-async def workflow_social_intelligence(request: SocialRequest):
+async def workflow_social_intelligence(request: SocialRequest, tenant: Dict = Depends(verify_tenant)):
     workflow_id = f"SMI-{int(datetime.utcnow().timestamp())}-{uuid4().hex[:8]}"
-    tenant_id = "workflow"
+    tenant_id = tenant["tenant_id"]
     
-    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_SOCIAL_INTELLIGENCE["name"], "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
+    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_SOCIAL_INTELLIGENCE["name"], "tenant_id": tenant_id, "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
     
     try:
         prev_result = {}
@@ -1170,6 +1165,8 @@ async def workflow_social_intelligence(request: SocialRequest):
         workflow_result["completed_at"] = datetime.utcnow().isoformat() + "Z"
         workflow_result["status"] = "success"
         workflow_result["summary"] = generate_workflow_summary(workflow_result["steps"])
+        
+        log_workflow_decision(workflow_result, tenant_id)
         return workflow_result
     except Exception as e:
         workflow_result["status"] = "error"
@@ -1202,11 +1199,11 @@ class EmailAutomationRequest(BaseModel):
     email_content: Dict = Field(default={})
 
 @workflow_router.post("/email-automation-master")
-async def workflow_email_automation(request: EmailAutomationRequest):
+async def workflow_email_automation(request: EmailAutomationRequest, tenant: Dict = Depends(verify_tenant)):
     workflow_id = f"EAM-{int(datetime.utcnow().timestamp())}-{uuid4().hex[:8]}"
-    tenant_id = "workflow"
+    tenant_id = tenant["tenant_id"]
     
-    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_EMAIL_AUTOMATION["name"], "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
+    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_EMAIL_AUTOMATION["name"], "tenant_id": tenant_id, "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
     
     try:
         prev_result = {}
@@ -1218,6 +1215,8 @@ async def workflow_email_automation(request: EmailAutomationRequest):
         workflow_result["completed_at"] = datetime.utcnow().isoformat() + "Z"
         workflow_result["status"] = "success"
         workflow_result["summary"] = generate_workflow_summary(workflow_result["steps"])
+        
+        log_workflow_decision(workflow_result, tenant_id)
         return workflow_result
     except Exception as e:
         workflow_result["status"] = "error"
@@ -1250,11 +1249,11 @@ class AttributionRequest(BaseModel):
     attribution_model: str = Field(default="data_driven")
 
 @workflow_router.post("/multi-channel-attribution")
-async def workflow_attribution(request: AttributionRequest):
+async def workflow_attribution(request: AttributionRequest, tenant: Dict = Depends(verify_tenant)):
     workflow_id = f"MCA-{int(datetime.utcnow().timestamp())}-{uuid4().hex[:8]}"
-    tenant_id = "workflow"
+    tenant_id = tenant["tenant_id"]
     
-    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_ATTRIBUTION["name"], "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
+    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_ATTRIBUTION["name"], "tenant_id": tenant_id, "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
     
     try:
         prev_result = {}
@@ -1266,6 +1265,8 @@ async def workflow_attribution(request: AttributionRequest):
         workflow_result["completed_at"] = datetime.utcnow().isoformat() + "Z"
         workflow_result["status"] = "success"
         workflow_result["summary"] = generate_workflow_summary(workflow_result["steps"])
+        
+        log_workflow_decision(workflow_result, tenant_id)
         return workflow_result
     except Exception as e:
         workflow_result["status"] = "error"
@@ -1296,11 +1297,11 @@ class CompetitiveRequest(BaseModel):
     market_segment: str = Field(default="")
 
 @workflow_router.post("/competitive-intelligence-hub")
-async def workflow_competitive(request: CompetitiveRequest):
+async def workflow_competitive(request: CompetitiveRequest, tenant: Dict = Depends(verify_tenant)):
     workflow_id = f"CIH-{int(datetime.utcnow().timestamp())}-{uuid4().hex[:8]}"
-    tenant_id = "workflow"
+    tenant_id = tenant["tenant_id"]
     
-    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_COMPETITIVE["name"], "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
+    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_COMPETITIVE["name"], "tenant_id": tenant_id, "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
     
     try:
         prev_result = {}
@@ -1312,6 +1313,8 @@ async def workflow_competitive(request: CompetitiveRequest):
         workflow_result["completed_at"] = datetime.utcnow().isoformat() + "Z"
         workflow_result["status"] = "success"
         workflow_result["summary"] = generate_workflow_summary(workflow_result["steps"])
+        
+        log_workflow_decision(workflow_result, tenant_id)
         return workflow_result
     except Exception as e:
         workflow_result["status"] = "error"
@@ -1343,11 +1346,11 @@ class ExperimentationRequest(BaseModel):
     confidence_level: float = Field(default=0.95)
 
 @workflow_router.post("/ab-testing-experimentation")
-async def workflow_experimentation(request: ExperimentationRequest):
+async def workflow_experimentation(request: ExperimentationRequest, tenant: Dict = Depends(verify_tenant)):
     workflow_id = f"ABT-{int(datetime.utcnow().timestamp())}-{uuid4().hex[:8]}"
-    tenant_id = "workflow"
+    tenant_id = tenant["tenant_id"]
     
-    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_EXPERIMENTATION["name"], "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
+    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_EXPERIMENTATION["name"], "tenant_id": tenant_id, "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
     
     try:
         prev_result = {}
@@ -1359,6 +1362,8 @@ async def workflow_experimentation(request: ExperimentationRequest):
         workflow_result["completed_at"] = datetime.utcnow().isoformat() + "Z"
         workflow_result["status"] = "success"
         workflow_result["summary"] = generate_workflow_summary(workflow_result["steps"])
+        
+        log_workflow_decision(workflow_result, tenant_id)
         return workflow_result
     except Exception as e:
         workflow_result["status"] = "error"
@@ -1389,11 +1394,11 @@ class InfluencerRequest(BaseModel):
     niche: str = Field(default="")
 
 @workflow_router.post("/influencer-partnership-engine")
-async def workflow_influencer(request: InfluencerRequest):
+async def workflow_influencer(request: InfluencerRequest, tenant: Dict = Depends(verify_tenant)):
     workflow_id = f"IPE-{int(datetime.utcnow().timestamp())}-{uuid4().hex[:8]}"
-    tenant_id = "workflow"
+    tenant_id = tenant["tenant_id"]
     
-    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_INFLUENCER["name"], "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
+    workflow_result = {"workflow_id": workflow_id, "workflow_name": WORKFLOW_INFLUENCER["name"], "tenant_id": tenant_id, "started_at": datetime.utcnow().isoformat() + "Z", "steps": [], "status": "running"}
     
     try:
         prev_result = {}
@@ -1405,6 +1410,8 @@ async def workflow_influencer(request: InfluencerRequest):
         workflow_result["completed_at"] = datetime.utcnow().isoformat() + "Z"
         workflow_result["status"] = "success"
         workflow_result["summary"] = generate_workflow_summary(workflow_result["steps"])
+        
+        log_workflow_decision(workflow_result, tenant_id)
         return workflow_result
     except Exception as e:
         workflow_result["status"] = "error"
@@ -1482,7 +1489,7 @@ async def influencer_schema():
 
 @workflow_router.get("/health")
 async def workflow_health():
-    return {"status": "healthy", "engine_version": "2.0.0", "workflows_available": 10, "total_agents_in_workflows": 43}
+    return {"status": "healthy", "engine_version": "2.0.1", "workflows_available": 10, "total_agents_in_workflows": 43}
 
 
 # ============================================================================
@@ -1494,10 +1501,11 @@ app.include_router(workflow_router)
 @app.on_event("startup")
 async def startup():
     logger.info("=" * 60)
-    logger.info("NADAKKI AI SUITE v4.0.0 - STARTING")
+    logger.info("NADAKKI AI SUITE v4.0.1 - STARTING")
+    logger.info("FIX: Auto-logging + Multi-tenant en todos los workflows")
     logger.info("=" * 60)
     logger.info(f"✓ {registry.total} agents across {len(registry.cores)} cores")
-    logger.info("✓ 10 Marketing Workflows ready")
+    logger.info("✓ 10 Marketing Workflows ready (with auto-logging)")
     for core, agents in sorted(registry.cores.items(), key=lambda x: -len(x[1])):
         logger.info(f"  • {core}: {len(agents)} agents")
     logger.info("=" * 60)
