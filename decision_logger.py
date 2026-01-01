@@ -46,8 +46,8 @@ def init_database():
                 previous_hash TEXT,
                 contract_json TEXT NOT NULL,
                 created_at TEXT NOT NULL,
-                INDEX idx_tenant (tenant_id),
-                INDEX idx_created (created_at)
+                
+                
             )
         """)
         
