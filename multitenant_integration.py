@@ -52,6 +52,20 @@ TENANTS_DB: Dict[str, Dict] = {
         "plan": "professional", "status": "active", "api_key": "banco_demo_key_2025_secure",
         "region": "latam", "created_at": "2025-12-01T00:00:00Z",
         "billing": {"decisions_this_month": 0, "month_started": datetime.utcnow().replace(day=1).isoformat() + "Z"}
+    },
+    "sfrentals": {
+        "tenant_id": "sfrentals", 
+        "name": "Nadaki Excursions", 
+        "email": "sales@nadakiexcursions.com",
+        "website": "https://www.nadakiexcursions.com",
+        "plan": "enterprise", 
+        "status": "active", 
+        "api_key": "sfrentals_ndk_2026_x7K9mPqL2vNwYhT4",
+        "region": "usa",
+        "industry": "tourism",
+        "modules": ["marketing"],
+        "created_at": "2026-01-03T00:00:00Z",
+        "billing": {"decisions_this_month": 0, "month_started": datetime.utcnow().replace(day=1).isoformat() + "Z"}
     }
 }
 
@@ -216,3 +230,4 @@ def register_tenant_routes(app):
     logger.info("Multi-tenant routes registered: /tenants, /decisions, /audit, /pricing, /dashboard")
 
 __all__ = ["PRICING_TIERS", "TENANTS_DB", "TenantContext", "register_tenant_routes"]
+
