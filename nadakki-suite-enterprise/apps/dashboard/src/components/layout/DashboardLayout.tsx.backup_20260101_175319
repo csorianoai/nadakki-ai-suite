@@ -1,0 +1,538 @@
+'use client';
+
+import React, { useState, ReactNode } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// ARQUITECTURA JERARQUICA - NADAKKI AI ENTERPRISE SUITE
+// ═══════════════════════════════════════════════════════════════════════════════
+
+interface NavModule {
+  id: string;
+  icon: string;
+  label: string;
+  href: string;
+  badge?: number | string;
+}
+
+interface NavCore {
+  id: string;
+  title: string;
+  icon: string;
+  color: string;
+  gradient: string;
+  modules: NavModule[];
+}
+
+const navigationStructure: NavCore[] = [
+  // ═══════════════════════════════════════════════════════════════════════════
+  // 🧠 CORE FINANCIERO
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'financial-core',
+    title: 'CORE FINANCIERO',
+    icon: '🧠',
+    color: '#667eea',
+    gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
+    modules: [
+      { id: 'originacion', icon: '🌱', label: 'Originación Neural', href: '/originacion', badge: 12 },
+      { id: 'recuperacion', icon: '🛟', label: 'Recuperación IA', href: '/recuperacion', badge: 8 },
+      { id: 'contabilidad', icon: '📊', label: 'Contabilidad Cuántica', href: '/contabilidad', badge: 21 },
+      { id: 'presupuesto', icon: '💰', label: 'Presupuesto Inteligente', href: '/presupuesto', badge: 13 },
+    ],
+  },
+  // ═══════════════════════════════════════════════════════════════════════════
+  // ⚠️ CORE DE RIESGOS
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'risk-core',
+    title: 'CORE DE RIESGOS',
+    icon: '⚠️',
+    color: '#ff6b9d',
+    gradient: 'linear-gradient(135deg, #ff6b9d, #ff4757)',
+    modules: [
+      { id: 'verificacion', icon: '🔐', label: 'Verificación Biométrica', href: '/verificacion', badge: 15 },
+      { id: 'decision', icon: '⚖️', label: 'Motor de Decisiones', href: '/decision', badge: 20 },
+      { id: 'vigilancia', icon: '👁️', label: 'Vigilancia Continua', href: '/vigilancia', badge: 4 },
+      { id: 'compliance', icon: '✅', label: 'Compliance IA', href: '/compliance', badge: 5 },
+    ],
+  },
+  // ═══════════════════════════════════════════════════════════════════════════
+  // ⚙️ CORE OPERACIONAL
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'ops-core',
+    title: 'CORE OPERACIONAL',
+    icon: '⚙️',
+    color: '#26de81',
+    gradient: 'linear-gradient(135deg, #26de81, #20bf6b)',
+    modules: [
+      { id: 'operaciones', icon: '🔧', label: 'Operaciones Automáticas', href: '/operaciones', badge: 5 },
+      { id: 'rrhh', icon: '👥', label: 'Recursos Humanos IA', href: '/rrhh', badge: 10 },
+      { id: 'logistica', icon: '🚚', label: 'Logística Inteligente', href: '/logistica', badge: 23 },
+      { id: 'investigacion', icon: '🔬', label: 'I+D Neural', href: '/investigacion', badge: 9 },
+    ],
+  },
+  // ═══════════════════════════════════════════════════════════════════════════
+  // 🎯 CORE CLIENTE & MARKETING
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'customer-core',
+    title: 'CORE CLIENTE',
+    icon: '🎯',
+    color: '#fd79a8',
+    gradient: 'linear-gradient(135deg, #fd79a8, #e84393)',
+    modules: [
+      { id: 'campaigns', icon: '📢', label: 'Campañas Marketing', href: '/campaigns', badge: 37 },
+      { id: 'social', icon: '🔗', label: 'Social Media IA', href: '/social', badge: 6 },
+      { id: 'ai-studio', icon: '🤖', label: 'AI Content Studio', href: '/ai-studio', badge: 8 },
+      { id: 'analytics', icon: '📈', label: 'Analytics & ROI', href: '/analytics', badge: 12 },
+      { id: 'ventascrm', icon: '🤝', label: 'Ventas & CRM', href: '/ventascrm', badge: 9 },
+      { id: 'experiencia', icon: '💎', label: 'Experiencia Cliente', href: '/experiencia', badge: 5 },
+    ],
+  },
+  // ═══════════════════════════════════════════════════════════════════════════
+  // 🛡️ CORE REGTECH & LEGAL
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'regtech-core',
+    title: 'CORE REGTECH',
+    icon: '🛡️',
+    color: '#a55eea',
+    gradient: 'linear-gradient(135deg, #a55eea, #8b4cf7)',
+    modules: [
+      { id: 'legal', icon: '⚖️', label: 'Legal Intelligence', href: '/legal', badge: 32 },
+      { id: 'regtech', icon: '📋', label: 'RegTech Compliance', href: '/regtech', badge: 8 },
+      { id: 'fortaleza', icon: '🏰', label: 'Fortaleza Security', href: '/fortaleza', badge: 5 },
+    ],
+  },
+  // ═══════════════════════════════════════════════════════════════════════════
+  // 🚀 SISTEMA & CONFIGURACIÓN
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'system',
+    title: 'SISTEMA',
+    icon: '🚀',
+    color: '#00d4ff',
+    gradient: 'linear-gradient(135deg, #00d4ff, #0099cc)',
+    modules: [
+      { id: 'dashboard', icon: '🏠', label: 'Dashboard Principal', href: '/', badge: '∞' },
+      { id: 'export', icon: '📥', label: 'Centro de Exportación', href: '/export', badge: 4 },
+      { id: 'notifications', icon: '🔔', label: 'Notificaciones', href: '/notifications', badge: 'NEW' },
+      { id: 'scheduler', icon: '⏰', label: 'Scheduler', href: '/scheduler', badge: 8 },
+      { id: 'tenants', icon: '🏢', label: 'Multi-Tenant', href: '/tenants', badge: 7 },
+      { id: 'settings', icon: '⚙️', label: 'Configuración', href: '/settings', badge: '•' },
+    ],
+  },
+];
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// ESTILOS CYBERPUNK
+// ═══════════════════════════════════════════════════════════════════════════════
+
+const colors = {
+  bg: { 
+    primary: '#0a0f1c', 
+    secondary: '#1a1f2e', 
+    tertiary: '#252b3f',
+    sidebar: 'rgba(26, 31, 46, 0.98)',
+  },
+  border: { subtle: 'rgba(51, 65, 85, 0.5)', accent: 'rgba(6, 182, 212, 0.3)' },
+  text: { primary: '#f8fafc', secondary: '#94a3b8', muted: '#64748b' },
+  neon: { blue: '#00d4ff', purple: '#a55eea', green: '#26de81', pink: '#fd79a8' },
+};
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// COMPONENTES
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function NavItem({ module, coreColor, isActive, isCollapsed }: { 
+  module: NavModule; 
+  coreColor: string; 
+  isActive: boolean; 
+  isCollapsed: boolean;
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  return (
+    <Link href={module.href} style={{ textDecoration: 'none' }}>
+      <div
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: isCollapsed ? 0 : '10px',
+          padding: isCollapsed ? '10px' : '10px 14px',
+          margin: '2px 8px',
+          borderRadius: '10px',
+          cursor: 'pointer',
+          transition: 'all 0.2s ease',
+          backgroundColor: isActive ? `${coreColor}20` : isHovered ? 'rgba(51, 65, 85, 0.4)' : 'transparent',
+          borderLeft: isActive ? `3px solid ${coreColor}` : '3px solid transparent',
+          justifyContent: isCollapsed ? 'center' : 'flex-start',
+          position: 'relative',
+        }}
+      >
+        <span style={{ 
+          fontSize: isCollapsed ? '18px' : '16px',
+          filter: isActive ? `drop-shadow(0 0 6px ${coreColor})` : 'none',
+        }}>
+          {module.icon}
+        </span>
+        
+        {!isCollapsed && (
+          <>
+            <span style={{ 
+              fontSize: '13px', 
+              fontWeight: isActive ? 600 : 400, 
+              color: isActive ? coreColor : colors.text.secondary,
+              flex: 1,
+            }}>
+              {module.label}
+            </span>
+            
+            {module.badge && (
+              <span style={{
+                fontSize: '10px',
+                fontWeight: 700,
+                padding: '2px 6px',
+                borderRadius: '10px',
+                backgroundColor: isActive ? `${coreColor}30` : 'rgba(255,255,255,0.1)',
+                color: isActive ? coreColor : colors.text.muted,
+              }}>
+                {module.badge}
+              </span>
+            )}
+          </>
+        )}
+
+        {isCollapsed && isHovered && (
+          <div style={{
+            position: 'absolute', left: '100%', marginLeft: '10px', backgroundColor: colors.bg.tertiary,
+            border: `1px solid ${colors.border.subtle}`, borderRadius: '8px', padding: '8px 12px',
+            whiteSpace: 'nowrap', zIndex: 1000, boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+          }}>
+            <span style={{ color: coreColor, fontWeight: 600, fontSize: '12px' }}>{module.label}</span>
+          </div>
+        )}
+      </div>
+    </Link>
+  );
+}
+
+function CoreSection({ core, currentPath, isCollapsed }: { 
+  core: NavCore; 
+  currentPath: string; 
+  isCollapsed: boolean;
+}) {
+  const [isExpanded, setIsExpanded] = useState(true);
+  const hasActiveModule = core.modules.some(m => currentPath === m.href || (m.href !== '/' && currentPath.startsWith(m.href)));
+  
+  return (
+    <div style={{ marginBottom: '8px' }}>
+      {/* Core Header */}
+      <div
+        onClick={() => !isCollapsed && setIsExpanded(!isExpanded)}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          padding: isCollapsed ? '12px 8px' : '8px 16px',
+          cursor: isCollapsed ? 'default' : 'pointer',
+          justifyContent: isCollapsed ? 'center' : 'flex-start',
+          borderLeft: hasActiveModule ? `3px solid ${core.color}` : '3px solid transparent',
+          backgroundColor: hasActiveModule ? `${core.color}10` : 'transparent',
+          transition: 'all 0.2s ease',
+        }}
+      >
+        <span style={{ 
+          fontSize: isCollapsed ? '20px' : '14px',
+          filter: hasActiveModule ? `drop-shadow(0 0 8px ${core.color})` : 'none',
+        }}>
+          {core.icon}
+        </span>
+        
+        {!isCollapsed && (
+          <>
+            <span style={{ 
+              fontSize: '10px', 
+              fontWeight: 800, 
+              color: hasActiveModule ? core.color : colors.text.muted,
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              flex: 1,
+            }}>
+              {core.title}
+            </span>
+            <span style={{
+              fontSize: '10px',
+              color: colors.text.muted,
+              transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+              transition: 'transform 0.2s ease',
+            }}>
+              ▼
+            </span>
+          </>
+        )}
+      </div>
+
+      {/* Core Modules */}
+      {(isExpanded || isCollapsed) && (
+        <div style={{ 
+          overflow: 'hidden',
+          maxHeight: isExpanded || isCollapsed ? '1000px' : '0px',
+          transition: 'max-height 0.3s ease',
+        }}>
+          {core.modules.map((module) => (
+            <NavItem
+              key={module.id}
+              module={module}
+              coreColor={core.color}
+              isActive={currentPath === module.href || (module.href !== '/' && currentPath.startsWith(module.href))}
+              isCollapsed={isCollapsed}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// LAYOUT PRINCIPAL
+// ═══════════════════════════════════════════════════════════════════════════════
+
+export default function DashboardLayout({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const sidebarWidth = isCollapsed ? 72 : 280;
+
+  // Calcular total de agentes
+  const totalAgents = navigationStructure.reduce((sum, core) => 
+    sum + core.modules.reduce((s, m) => s + (typeof m.badge === 'number' ? m.badge : 0), 0), 0
+  );
+
+  return (
+    <div style={{ 
+      display: 'flex', 
+      minHeight: '100vh', 
+      backgroundColor: colors.bg.primary,
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    }}>
+      {/* SIDEBAR */}
+      <aside style={{
+        width: sidebarWidth,
+        backgroundColor: colors.bg.sidebar,
+        backdropFilter: 'blur(30px)',
+        borderRight: `1px solid ${colors.border.subtle}`,
+        position: 'fixed',
+        left: 0,
+        top: 0,
+        height: '100vh',
+        zIndex: 100,
+        transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        overflowY: 'auto',
+        overflowX: 'hidden',
+      }}>
+        {/* Línea neón superior */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '2px',
+          background: `linear-gradient(90deg, transparent, ${colors.neon.blue}, ${colors.neon.purple}, ${colors.neon.green}, transparent)`,
+          animation: 'neonFlow 3s ease-in-out infinite',
+        }} />
+
+        {/* Header */}
+        <div style={{
+          padding: isCollapsed ? '20px 8px' : '24px 20px',
+          borderBottom: `1px solid ${colors.border.subtle}`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: isCollapsed ? 'center' : 'flex-start',
+          gap: '12px',
+          minHeight: '90px',
+        }}>
+          <div style={{
+            width: '44px',
+            height: '44px',
+            borderRadius: '14px',
+            background: 'linear-gradient(135deg, #667eea, #764ba2)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '22px',
+            boxShadow: '0 0 25px rgba(102, 126, 234, 0.4)',
+            animation: 'pulse 2s ease-in-out infinite',
+          }}>
+            🚀
+          </div>
+          
+          {!isCollapsed && (
+            <div>
+              <div style={{ 
+                fontSize: '18px', 
+                fontWeight: 800, 
+                color: colors.text.primary,
+                letterSpacing: '0.05em',
+                background: 'linear-gradient(135deg, #667eea, #764ba2)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>
+                NADAKKI AI
+              </div>
+              <div style={{ 
+                fontSize: '9px', 
+                color: colors.text.muted, 
+                textTransform: 'uppercase',
+                letterSpacing: '0.15em',
+                marginTop: '2px',
+              }}>
+                Enterprise Multi-Tenant
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Toggle Button */}
+        <button
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          style={{
+            position: 'absolute',
+            top: '100px',
+            right: '-14px',
+            width: '28px',
+            height: '28px',
+            borderRadius: '50%',
+            backgroundColor: colors.bg.tertiary,
+            border: `1px solid ${colors.border.subtle}`,
+            color: colors.text.secondary,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '12px',
+            zIndex: 101,
+            transition: 'all 0.2s ease',
+          }}
+        >
+          {isCollapsed ? '→' : '←'}
+        </button>
+
+        {/* Stats Bar */}
+        {!isCollapsed && (
+          <div style={{
+            padding: '12px 16px',
+            margin: '12px 12px 8px',
+            borderRadius: '12px',
+            background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
+            border: '1px solid rgba(102, 126, 234, 0.2)',
+            display: 'flex',
+            justifyContent: 'space-around',
+          }}>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '18px', fontWeight: 800, color: colors.neon.blue }}>{totalAgents}</div>
+              <div style={{ fontSize: '9px', color: colors.text.muted, textTransform: 'uppercase' }}>Agentes</div>
+            </div>
+            <div style={{ width: '1px', backgroundColor: colors.border.subtle }} />
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '18px', fontWeight: 800, color: colors.neon.green }}>6</div>
+              <div style={{ fontSize: '9px', color: colors.text.muted, textTransform: 'uppercase' }}>Cores</div>
+            </div>
+            <div style={{ width: '1px', backgroundColor: colors.border.subtle }} />
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '18px', fontWeight: 800, color: colors.neon.purple }}>97%</div>
+              <div style={{ fontSize: '9px', color: colors.text.muted, textTransform: 'uppercase' }}>Uptime</div>
+            </div>
+          </div>
+        )}
+
+        {/* Navigation */}
+        <nav style={{ padding: '8px 0', flex: 1 }}>
+          {navigationStructure.map((core) => (
+            <CoreSection
+              key={core.id}
+              core={core}
+              currentPath={pathname}
+              isCollapsed={isCollapsed}
+            />
+          ))}
+        </nav>
+
+        {/* Tenant Selector Footer */}
+        {!isCollapsed && (
+          <div style={{
+            padding: '16px',
+            borderTop: `1px solid ${colors.border.subtle}`,
+            backgroundColor: colors.bg.sidebar,
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              padding: '12px',
+              borderRadius: '12px',
+              background: 'rgba(51, 65, 85, 0.3)',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+            }}>
+              <div style={{
+                width: '38px',
+                height: '38px',
+                borderRadius: '10px',
+                background: 'linear-gradient(135deg, #667eea, #764ba2)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '18px',
+              }}>
+                🏦
+              </div>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontSize: '13px', fontWeight: 600, color: colors.text.primary }}>
+                  Credicefi
+                </div>
+                <div style={{ fontSize: '10px', color: colors.text.muted }}>
+                  Enterprise Plan • Activo
+                </div>
+              </div>
+              <div style={{
+                width: '10px',
+                height: '10px',
+                borderRadius: '50%',
+                backgroundColor: '#26de81',
+                boxShadow: '0 0 10px #26de81',
+              }} />
+            </div>
+          </div>
+        )}
+      </aside>
+
+      {/* MAIN CONTENT */}
+      <main style={{
+        flex: 1,
+        marginLeft: sidebarWidth,
+        transition: 'margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        minHeight: '100vh',
+      }}>
+        {children}
+      </main>
+
+      {/* Estilos de animación */}
+      <style>{`
+        @keyframes neonFlow {
+          0%, 100% { opacity: 0.4; }
+          50% { opacity: 1; }
+        }
+        @keyframes pulse {
+          0%, 100% { box-shadow: 0 0 25px rgba(102, 126, 234, 0.4); }
+          50% { box-shadow: 0 0 35px rgba(102, 126, 234, 0.6); }
+        }
+      `}</style>
+    </div>
+  );
+}

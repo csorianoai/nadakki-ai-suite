@@ -1,0 +1,139 @@
+'use client';
+
+import React, { useState, useEffect, ReactNode } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+interface NavModule { id: string; icon: string; label: string; href: string; badge?: number | string; }
+interface NavCore { id: string; title: string; icon: string; color: string; gradient: string; modules: NavModule[]; }
+
+const navigationStructure: NavCore[] = [
+  { id: 'system', title: 'SISTEMA', icon: '🚀', color: '#00d4ff', gradient: 'linear-gradient(135deg, #00d4ff, #0099cc)', modules: [
+    { id: 'dashboard', icon: '🏠', label: 'Dashboard Principal', href: '/', badge: '∞' },
+    { id: 'tenants', icon: '🏢', label: 'Multi-Tenant', href: '/tenants', badge: 7 },
+    { id: 'settings', icon: '⚙️', label: 'Configuración', href: '/settings', badge: '•' },
+  ]},
+  { id: 'workflows', title: 'WORKFLOWS', icon: '🔄', color: '#8B5CF6', gradient: 'linear-gradient(135deg, #8B5CF6, #6366F1)', modules: [
+    { id: 'workflow-campaign', icon: '📢', label: 'Campaign Optimization', href: '/workflows/campaign-optimization', badge: '5' },
+    { id: 'workflow-acquisition', icon: '🎯', label: 'Customer Acquisition', href: '/workflows/customer-acquisition', badge: '7' },
+    { id: 'workflow-lifecycle', icon: '♻️', label: 'Customer Lifecycle', href: '/workflows/customer-lifecycle', badge: '6' },
+    { id: 'workflow-content', icon: '📝', label: 'Content Performance', href: '/workflows/content-performance', badge: '5' },
+    { id: 'workflow-social', icon: '📱', label: 'Social Media Intelligence', href: '/workflows/social-intelligence', badge: '4' },
+    { id: 'workflow-email', icon: '✉️', label: 'Email Automation', href: '/workflows/email-automation', badge: '4' },
+    { id: 'workflow-attribution', icon: '📊', label: 'Multi-Channel Attribution', href: '/workflows/attribution', badge: '4' },
+    { id: 'workflow-competitive', icon: '🔍', label: 'Competitive Intelligence', href: '/workflows/competitive', badge: '3' },
+    { id: 'workflow-testing', icon: '🧪', label: 'A/B Testing', href: '/workflows/ab-testing', badge: '3' },
+    { id: 'workflow-influencer', icon: '⭐', label: 'Influencer Partnership', href: '/workflows/influencer', badge: '2' },
+  ]},
+  { id: 'lead-management', title: 'LEAD MANAGEMENT', icon: '🎯', color: '#22C55E', gradient: 'linear-gradient(135deg, #22C55E, #16A34A)', modules: [
+    { id: 'leadscoria', icon: '📊', label: 'LeadScorIA', href: '/agents/leadscoria', badge: 'ML' },
+    { id: 'leadscoringia', icon: '🎯', label: 'LeadScoringIA', href: '/agents/leadscoringia', badge: 'AI' },
+    { id: 'predictiveleadia', icon: '🔮', label: 'PredictiveLeadIA', href: '/agents/predictiveleadia', badge: 'AI' },
+  ]},
+  { id: 'content-generation', title: 'CONTENT GENERATION', icon: '📝', color: '#F97316', gradient: 'linear-gradient(135deg, #F97316, #EA580C)', modules: [
+    { id: 'contentgeneratoria', icon: '✍️', label: 'ContentGeneratorIA', href: '/agents/contentgeneratoria', badge: 'GPT' },
+    { id: 'contentperformanceia', icon: '📈', label: 'ContentPerformanceIA', href: '/agents/contentperformanceia', badge: 'AI' },
+    { id: 'socialpostgeneratoria', icon: '📱', label: 'SocialPostGeneratorIA', href: '/agents/socialpostgeneratoria', badge: 'AI' },
+    { id: 'videoreelautogenia', icon: '🎬', label: 'VideoReelAutogenIA', href: '/agents/videoreelautogenia', badge: 'NEW' },
+  ]},
+  { id: 'analytics-agents', title: 'ANALYTICS', icon: '📊', color: '#06B6D4', gradient: 'linear-gradient(135deg, #06B6D4, #0891B2)', modules: [
+    { id: 'sentimentanalyzeria', icon: '😊', label: 'SentimentAnalyzerIA', href: '/agents/sentimentanalyzeria', badge: 'NLP' },
+    { id: 'attributionmodelia', icon: '🔗', label: 'AttributionModelIA', href: '/agents/attributionmodelia', badge: 'ML' },
+    { id: 'budgetforecastia', icon: '💰', label: 'BudgetForecastIA', href: '/agents/budgetforecastia', badge: 'AI' },
+    { id: 'marketingmixmodelia', icon: '🎛️', label: 'MarketingMixModelIA', href: '/agents/marketingmixmodelia', badge: 'ML' },
+  ]},
+  { id: 'social-media', title: 'SOCIAL MEDIA', icon: '🔗', color: '#EC4899', gradient: 'linear-gradient(135deg, #EC4899, #DB2777)', modules: [
+    { id: 'sociallisteningia', icon: '👂', label: 'SocialListeningIA', href: '/agents/sociallisteningia', badge: 'LIVE' },
+    { id: 'influencermatcheria', icon: '⭐', label: 'InfluencerMatcherIA', href: '/agents/influencermatcheria', badge: 'AI' },
+    { id: 'influencermatchingia', icon: '🤝', label: 'InfluencerMatchingIA', href: '/agents/influencermatchingia', badge: 'AI' },
+  ]},
+  { id: 'experimentation', title: 'A/B TESTING', icon: '🧪', color: '#A855F7', gradient: 'linear-gradient(135deg, #A855F7, #9333EA)', modules: [
+    { id: 'abtestingia', icon: '🔬', label: 'ABTestingIA', href: '/agents/abtestingia', badge: 'STAT' },
+    { id: 'abtestingimpactia', icon: '📉', label: 'ABTestingImpactIA', href: '/agents/abtestingimpactia', badge: 'ML' },
+  ]},
+  { id: 'campaign-management', title: 'CAMPAIGNS', icon: '📢', color: '#EAB308', gradient: 'linear-gradient(135deg, #EAB308, #CA8A04)', modules: [
+    { id: 'campaignoptimizeria', icon: '🚀', label: 'CampaignOptimizerIA', href: '/agents/campaignoptimizeria', badge: 'AI' },
+    { id: 'emailautomationia', icon: '✉️', label: 'EmailAutomationIA', href: '/agents/emailautomationia', badge: 'AUTO' },
+    { id: 'marketingorchestratorea', icon: '🎭', label: 'MarketingOrchestratorIA', href: '/agents/marketingorchestratorea', badge: 'CORE' },
+  ]},
+  { id: 'segmentation', title: 'SEGMENTATION', icon: '👥', color: '#14B8A6', gradient: 'linear-gradient(135deg, #14B8A6, #0D9488)', modules: [
+    { id: 'audiencesegmenteria', icon: '🎯', label: 'AudienceSegmenterIA', href: '/agents/audiencesegmenteria', badge: 'ML' },
+    { id: 'customersegmentatonia', icon: '👤', label: 'CustomerSegmentationIA', href: '/agents/customersegmentatonia', badge: 'AI' },
+    { id: 'geosegmentationia', icon: '🌍', label: 'GeoSegmentationIA', href: '/agents/geosegmentationia', badge: 'GEO' },
+    { id: 'personalizationengineia', icon: '✨', label: 'PersonalizationEngineIA', href: '/agents/personalizationengineia', badge: 'AI' },
+  ]},
+  { id: 'competitive-intel', title: 'COMPETITIVE INTEL', icon: '🔍', color: '#EF4444', gradient: 'linear-gradient(135deg, #EF4444, #DC2626)', modules: [
+    { id: 'competitoranalyzeria', icon: '🕵️', label: 'CompetitorAnalyzerIA', href: '/agents/competitoranalyzeria', badge: 'AI' },
+    { id: 'competitorintelligenceia', icon: '📡', label: 'CompetitorIntelligenceIA', href: '/agents/competitorintelligenceia', badge: 'LIVE' },
+  ]},
+  { id: 'retention', title: 'RETENTION', icon: '💚', color: '#10B981', gradient: 'linear-gradient(135deg, #10B981, #059669)', modules: [
+    { id: 'retentionpredictorea', icon: '🔮', label: 'RetentionPredictorIA', href: '/agents/retentionpredictorea', badge: 'ML' },
+    { id: 'journeyoptimizeria', icon: '🛤️', label: 'JourneyOptimizerIA', href: '/agents/journeyoptimizeria', badge: 'AI' },
+    { id: 'productaffinityia', icon: '❤️', label: 'ProductAffinityIA', href: '/agents/productaffinityia', badge: 'REC' },
+  ]},
+];
+
+const colors = {
+  bg: { primary: '#0a0f1c', secondary: '#1a1f2e', tertiary: '#252b3f', sidebar: 'rgba(26, 31, 46, 0.98)' },
+  border: { subtle: 'rgba(51, 65, 85, 0.5)' },
+  text: { primary: '#f8fafc', secondary: '#94a3b8', muted: '#64748b' },
+  neon: { blue: '#00d4ff', purple: '#a55eea', green: '#26de81' },
+};
+
+function NavItem({ module, coreColor, isActive, isCollapsed }: { module: NavModule; coreColor: string; isActive: boolean; isCollapsed: boolean }) {
+  const [isHovered, setIsHovered] = useState(false);
+  return (
+    <Link href={module.href} style={{ textDecoration: 'none' }}>
+      <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}
+        style={{ display: 'flex', alignItems: 'center', gap: isCollapsed ? 0 : '10px', padding: isCollapsed ? '10px' : '8px 12px 8px 20px', margin: '1px 6px', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.2s ease', backgroundColor: isActive ? `${coreColor}25` : isHovered ? 'rgba(51, 65, 85, 0.4)' : 'transparent', borderLeft: isActive ? `3px solid ${coreColor}` : '3px solid transparent', justifyContent: isCollapsed ? 'center' : 'flex-start', position: 'relative' }}>
+        <span style={{ fontSize: isCollapsed ? '16px' : '14px', filter: isActive ? `drop-shadow(0 0 6px ${coreColor})` : 'none' }}>{module.icon}</span>
+        {!isCollapsed && (<><span style={{ fontSize: '12px', fontWeight: isActive ? 600 : 400, color: isActive ? coreColor : colors.text.secondary, flex: 1 }}>{module.label}</span>{module.badge && (<span style={{ fontSize: '9px', fontWeight: 700, padding: '2px 5px', borderRadius: '8px', backgroundColor: isActive ? `${coreColor}30` : 'rgba(255,255,255,0.08)', color: isActive ? coreColor : colors.text.muted }}>{module.badge}</span>)}</>)}
+        {isCollapsed && isHovered && (<div style={{ position: 'absolute', left: '100%', marginLeft: '10px', backgroundColor: colors.bg.tertiary, border: `1px solid ${colors.border.subtle}`, borderRadius: '8px', padding: '8px 12px', whiteSpace: 'nowrap', zIndex: 1000, boxShadow: '0 4px 20px rgba(0,0,0,0.4)' }}><span style={{ color: coreColor, fontWeight: 600, fontSize: '12px' }}>{module.label}</span></div>)}
+      </div>
+    </Link>
+  );
+}
+
+function CoreSection({ core, currentPath, isCollapsed, isExpanded, onToggle }: { core: NavCore; currentPath: string; isCollapsed: boolean; isExpanded: boolean; onToggle: () => void }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const hasActiveModule = core.modules.some(m => currentPath === m.href || (m.href !== '/' && currentPath.startsWith(m.href)));
+  return (
+    <div style={{ marginBottom: '2px', borderRadius: '10px', margin: '3px 6px', overflow: 'hidden', backgroundColor: isExpanded || hasActiveModule ? `${core.color}08` : 'transparent', border: `1px solid ${isExpanded || hasActiveModule ? `${core.color}25` : 'transparent'}`, transition: 'all 0.3s ease' }}>
+      <div onClick={() => !isCollapsed && onToggle()} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: isCollapsed ? '10px 6px' : '10px 12px', cursor: isCollapsed ? 'default' : 'pointer', justifyContent: isCollapsed ? 'center' : 'flex-start', backgroundColor: isHovered && !isCollapsed ? `${core.color}15` : 'transparent', borderRadius: '8px', transition: 'all 0.2s ease', position: 'relative' }}>
+        {!isCollapsed && <div style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: '3px', height: hasActiveModule ? '60%' : '0%', backgroundColor: core.color, borderRadius: '0 3px 3px 0', transition: 'height 0.3s ease', boxShadow: hasActiveModule ? `0 0 8px ${core.color}` : 'none' }} />}
+        <div style={{ width: '28px', height: '28px', borderRadius: '8px', background: isExpanded || hasActiveModule ? core.gradient : 'rgba(51, 65, 85, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', transition: 'all 0.3s ease', boxShadow: isExpanded || hasActiveModule ? `0 0 12px ${core.color}40` : 'none' }}>{core.icon}</div>
+        {!isCollapsed && (<><div style={{ flex: 1 }}><div style={{ fontSize: '10px', fontWeight: 700, color: isExpanded || hasActiveModule ? core.color : colors.text.secondary, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{core.title}</div><div style={{ fontSize: '9px', color: colors.text.muted, marginTop: '1px' }}>{core.modules.length} items</div></div><div style={{ width: '20px', height: '20px', borderRadius: '5px', backgroundColor: isExpanded ? `${core.color}20` : 'rgba(51, 65, 85, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ fontSize: '9px', color: isExpanded ? core.color : colors.text.muted, transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease', display: 'inline-block' }}>▼</span></div></>)}
+      </div>
+      <div style={{ maxHeight: (isExpanded || isCollapsed) ? '600px' : '0px', opacity: (isExpanded || isCollapsed) ? 1 : 0, overflow: 'hidden', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', paddingBottom: isExpanded ? '6px' : '0px' }}>
+        {core.modules.map((module) => (<NavItem key={module.id} module={module} coreColor={core.color} isActive={currentPath === module.href || (module.href !== '/' && currentPath.startsWith(module.href))} isCollapsed={isCollapsed} />))}
+      </div>
+    </div>
+  );
+}
+
+export default function DashboardLayout({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [expandedCores, setExpandedCores] = useState<string[]>(['system', 'workflows']);
+  const sidebarWidth = isCollapsed ? 68 : 280;
+  useEffect(() => { const activeCore = navigationStructure.find(core => core.modules.some(m => pathname === m.href || (m.href !== '/' && pathname.startsWith(m.href)))); if (activeCore && !expandedCores.includes(activeCore.id)) { setExpandedCores(prev => [...prev, activeCore.id]); } }, [pathname]);
+  const toggleCore = (coreId: string) => setExpandedCores(prev => prev.includes(coreId) ? prev.filter(id => id !== coreId) : [...prev, coreId]);
+  return (
+    <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: colors.bg.primary, fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+      <aside style={{ width: sidebarWidth, backgroundColor: colors.bg.sidebar, backdropFilter: 'blur(30px)', borderRight: `1px solid ${colors.border.subtle}`, position: 'fixed', left: 0, top: 0, height: '100vh', zIndex: 100, transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1)', overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: `linear-gradient(90deg, transparent, ${colors.neon.blue}, ${colors.neon.purple}, ${colors.neon.green}, transparent)`, animation: 'neonFlow 3s ease-in-out infinite' }} />
+        <div style={{ padding: isCollapsed ? '16px 6px' : '16px 14px', borderBottom: `1px solid ${colors.border.subtle}`, display: 'flex', alignItems: 'center', justifyContent: isCollapsed ? 'center' : 'flex-start', gap: '10px', minHeight: '70px', flexShrink: 0 }}>
+          <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'linear-gradient(135deg, #667eea, #764ba2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', boxShadow: '0 0 20px rgba(102, 126, 234, 0.4)', animation: 'pulse 2s ease-in-out infinite', flexShrink: 0 }}>🚀</div>
+          {!isCollapsed && (<div><div style={{ fontSize: '15px', fontWeight: 800, background: 'linear-gradient(135deg, #667eea, #764ba2)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>NADAKKI AI</div><div style={{ fontSize: '8px', color: colors.text.muted, textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '1px' }}>Marketing Intelligence</div></div>)}
+        </div>
+        <button onClick={() => setIsCollapsed(!isCollapsed)} style={{ position: 'absolute', top: '80px', right: '-12px', width: '24px', height: '24px', borderRadius: '50%', backgroundColor: colors.bg.tertiary, border: `1px solid ${colors.border.subtle}`, color: colors.text.secondary, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', zIndex: 101 }}>{isCollapsed ? '→' : '←'}</button>
+        {!isCollapsed && (<div style={{ padding: '8px 10px', margin: '10px 10px 6px', borderRadius: '8px', background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1))', border: '1px solid rgba(139, 92, 246, 0.2)', display: 'flex', justifyContent: 'space-around', flexShrink: 0 }}><div style={{ textAlign: 'center' }}><div style={{ fontSize: '14px', fontWeight: 800, color: colors.neon.purple }}>35</div><div style={{ fontSize: '7px', color: colors.text.muted, textTransform: 'uppercase' }}>Agentes</div></div><div style={{ width: '1px', backgroundColor: colors.border.subtle }} /><div style={{ textAlign: 'center' }}><div style={{ fontSize: '14px', fontWeight: 800, color: colors.neon.green }}>10</div><div style={{ fontSize: '7px', color: colors.text.muted, textTransform: 'uppercase' }}>Workflows</div></div><div style={{ width: '1px', backgroundColor: colors.border.subtle }} /><div style={{ textAlign: 'center' }}><div style={{ fontSize: '14px', fontWeight: 800, color: colors.neon.blue }}>43</div><div style={{ fontSize: '7px', color: colors.text.muted, textTransform: 'uppercase' }}>Activos</div></div></div>)}
+        {!isCollapsed && (<div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0 12px 6px', gap: '6px' }}><button onClick={() => setExpandedCores(navigationStructure.map(c => c.id))} style={{ fontSize: '9px', color: colors.text.muted, background: 'none', border: 'none', cursor: 'pointer', padding: '3px 6px', borderRadius: '4px' }}>Expandir</button><span style={{ color: colors.border.subtle, fontSize: '9px' }}>|</span><button onClick={() => setExpandedCores([])} style={{ fontSize: '9px', color: colors.text.muted, background: 'none', border: 'none', cursor: 'pointer', padding: '3px 6px', borderRadius: '4px' }}>Colapsar</button></div>)}
+        <nav style={{ padding: '2px 0', flex: 1, overflowY: 'auto', overflowX: 'hidden' }}>{navigationStructure.map((core, index) => (<React.Fragment key={core.id}><CoreSection core={core} currentPath={pathname} isCollapsed={isCollapsed} isExpanded={expandedCores.includes(core.id)} onToggle={() => toggleCore(core.id)} />{index < navigationStructure.length - 1 && !isCollapsed && <div style={{ height: '1px', margin: '4px 16px', background: `linear-gradient(90deg, transparent, ${colors.border.subtle}, transparent)` }} />}</React.Fragment>))}</nav>
+        {!isCollapsed && (<div style={{ padding: '10px', borderTop: `1px solid ${colors.border.subtle}`, backgroundColor: colors.bg.sidebar, flexShrink: 0 }}><div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 10px', borderRadius: '8px', background: 'rgba(51, 65, 85, 0.3)', cursor: 'pointer' }}><div style={{ width: '30px', height: '30px', borderRadius: '8px', background: 'linear-gradient(135deg, #667eea, #764ba2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px' }}>🏦</div><div style={{ flex: 1 }}><div style={{ fontSize: '11px', fontWeight: 600, color: colors.text.primary }}>Credicefi</div><div style={{ fontSize: '8px', color: colors.text.muted }}>Enterprise • Activo</div></div><div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#26de81', boxShadow: '0 0 8px #26de81' }} /></div></div>)}
+      </aside>
+      <main style={{ flex: 1, marginLeft: sidebarWidth, transition: 'margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1)', minHeight: '100vh' }}>{children}</main>
+      <style>{`@keyframes neonFlow { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } } @keyframes pulse { 0%, 100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.4); } 50% { box-shadow: 0 0 30px rgba(102, 126, 234, 0.6); } } aside::-webkit-scrollbar { width: 3px; } aside::-webkit-scrollbar-track { background: transparent; } aside::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }`}</style>
+    </div>
+  );
+}

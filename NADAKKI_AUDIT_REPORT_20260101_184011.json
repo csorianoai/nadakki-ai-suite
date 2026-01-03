@@ -1,0 +1,615 @@
+{
+  "timestamp": "2026-01-01 18:39:18",
+  "tenant_id": "credicefi",
+  "base_url": "https://nadakki-ai-suite.onrender.com",
+  "sections": {
+    "agents_catalog": [
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/agents",
+        "status_code": 200,
+        "name": "Lista de Agentes",
+        "response_time_ms": 368,
+        "method": "GET",
+        "response_preview": "{\"total\":225,\"by_core\":{\"compliance\":5,\"ventascrm\":9,\"logistica\":23,\"marketing\":35,\"experiencia\":5,\"rrhh\":10,\"originacion\":10,\"legal\":32,\"vigilancia\":5,\"contabilidad\":22,\"fortaleza\":5,\"recuperacion\":5...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/catalog/marketing/agents",
+        "status_code": 200,
+        "name": "Agentes Marketing",
+        "response_time_ms": 501,
+        "method": "GET",
+        "response_preview": "{\"total\":35,\"agents\":[{\"id\":\"leadscoria\",\"name\":\"Puntuador de Leads\",\"category\":\"Lead Management\"},{\"id\":\"leadscoringia\",\"name\":\"Calificador de Leads\",\"category\":\"Lead Management\"},{\"id\":\"predictivele...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/catalog/originacion/agents",
+        "status_code": 200,
+        "name": "Agentes Originacion",
+        "response_time_ms": 299,
+        "method": "GET",
+        "response_preview": "{\"total\":10,\"core\":\"originacion\",\"display_name\":\"Originacion Neural\",\"agents\":[{\"id\":\"base_components_v2\",\"name\":\"Componentes Base v2\"},{\"id\":\"behaviorminer\",\"name\":\"Behavior Miner\"},{\"id\":\"behavior_m...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/catalog/decision/agents",
+        "status_code": 200,
+        "name": "Agentes Decision",
+        "response_time_ms": 308,
+        "method": "GET",
+        "response_preview": "{\"total\":5,\"core\":\"decision\",\"agents\":[{\"id\":\"decision_coordinator\",\"name\":\"Coordinador Decision\"},{\"id\":\"policyguardian\",\"name\":\"Policy Guardian\"},{\"id\":\"quantumdecision\",\"name\":\"Quantum Decision\"},{...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/catalog/vigilancia/agents",
+        "status_code": 200,
+        "name": "Agentes Vigilancia",
+        "response_time_ms": 300,
+        "method": "GET",
+        "response_preview": "{\"total\":4,\"core\":\"vigilancia\",\"agents\":[{\"id\":\"earlywarning\",\"name\":\"Early Warning\"},{\"id\":\"marketradar\",\"name\":\"Market Radar\"},{\"id\":\"portfoliosentinel\",\"name\":\"Portfolio Sentinel\"},{\"id\":\"vigilanci...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/catalog/recuperacion/agents",
+        "status_code": 200,
+        "name": "Agentes Recuperacion",
+        "response_time_ms": 288,
+        "method": "GET",
+        "response_preview": "{\"total\":5,\"core\":\"recuperacion\",\"agents\":[{\"id\":\"collectionmaster\",\"name\":\"Collection Master\"},{\"id\":\"legalpathway\",\"name\":\"Legal Pathway\"},{\"id\":\"negotiationbot\",\"name\":\"Negotiation Bot\"},{\"id\":\"rec...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/catalog/legal/agents",
+        "status_code": 200,
+        "name": "Agentes Legal",
+        "response_time_ms": 498,
+        "method": "GET",
+        "response_preview": "{\"total\":32,\"core\":\"legal\",\"display_name\":\"Legal AI System\",\"agents\":[{\"id\":\"derechoadministrativo\",\"name\":\"Derecho Administrativo\"},{\"id\":\"derechoadministrativophd\",\"name\":\"Derecho Administrativo PhD...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/catalog/contabilidad/agents",
+        "status_code": 200,
+        "name": "Agentes Contabilidad",
+        "response_time_ms": 310,
+        "method": "GET",
+        "response_preview": "{\"total\":22,\"core\":\"contabilidad\",\"display_name\":\"Contabilidad Cuantica\",\"agents\":[{\"id\":\"activosfijos\",\"name\":\"Activos Fijos\"},{\"id\":\"analisis_financiero\",\"name\":\"Analisis Financiero\"},{\"id\":\"analisi...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/catalog/logistica/agents",
+        "status_code": 200,
+        "name": "Agentes Logistica",
+        "response_time_ms": 295,
+        "method": "GET",
+        "response_preview": "{\"total\":23,\"core\":\"logistica\",\"display_name\":\"Logistica Inteligente\",\"agents\":[{\"id\":\"alertasinventario\",\"name\":\"Alertas de Inventario\"},{\"id\":\"almaceninteligente\",\"name\":\"Almacen Inteligente\"},{\"id\"...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/catalog/regtech/agents",
+        "status_code": 200,
+        "name": "Agentes RegTech",
+        "response_time_ms": 287,
+        "method": "GET",
+        "response_preview": "{\"total\":8,\"core\":\"regtech\",\"display_name\":\"RegTech Compliance\",\"agents\":[{\"id\":\"amldetector\",\"name\":\"Detector AML\"},{\"id\":\"amltiemporeal\",\"name\":\"AML Tiempo Real\"},{\"id\":\"kycautomatico\",\"name\":\"KYC A...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/catalog/ventascrm/agents",
+        "status_code": 200,
+        "name": "Agentes VentasCRM",
+        "response_time_ms": 293,
+        "method": "GET",
+        "response_preview": "{\"total\":9,\"core\":\"ventascrm\",\"display_name\":\"Ventas CRM Cuantico\",\"agents\":[{\"id\":\"churnpredictor\",\"name\":\"Predictor de Churn\"},{\"id\":\"cierrepredictivoia\",\"name\":\"Cierre Predictivo IA\"},{\"id\":\"client...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/catalog/rrhh/agents",
+        "status_code": 200,
+        "name": "Agentes RRHH",
+        "response_time_ms": 283,
+        "method": "GET",
+        "response_preview": "{\"total\":10,\"core\":\"rrhh\",\"display_name\":\"Recursos Humanos IA\",\"agents\":[{\"id\":\"capacitacionia\",\"name\":\"Capacitacion IA\"},{\"id\":\"cvanalyzeria\",\"name\":\"Analizador de CV\"},{\"id\":\"nominaautomatica\",\"name...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/catalog/presupuesto/agents",
+        "status_code": 200,
+        "name": "Agentes Presupuesto",
+        "response_time_ms": 319,
+        "method": "GET",
+        "response_preview": "{\"total\":13,\"core\":\"presupuesto\",\"display_name\":\"Presupuesto Inteligente\",\"agents\":[{\"id\":\"analisisvarianza\",\"name\":\"Analisis de Varianza\"},{\"id\":\"budgetoptimizer\",\"name\":\"Optimizador de Budget\"},{\"id...",
+        "error": null,
+        "status": "OK"
+      }
+    ],
+    "connectivity": [
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/",
+        "status_code": 0,
+        "name": "Root Endpoint",
+        "response_time_ms": 30038,
+        "method": "GET",
+        "response_preview": null,
+        "error": "The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/health",
+        "status_code": 200,
+        "name": "Health Check",
+        "response_time_ms": 2675,
+        "method": "GET",
+        "response_preview": "{\"status\":\"healthy\",\"version\":\"4.0.1\",\"agents_loaded\":225,\"cores_active\":20,\"timestamp\":\"2026-01-01T23:39:51.501583\"}",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/health",
+        "status_code": 404,
+        "name": "API Health",
+        "response_time_ms": 353,
+        "method": "GET",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/docs",
+        "status_code": 200,
+        "name": "OpenAPI Docs",
+        "response_time_ms": 483,
+        "method": "GET",
+        "response_preview": "\"\\n    <!DOCTYPE html>\\n    <html>\\n    <head>\\n    <link type=\\\"text/css\\\" rel=\\\"stylesheet\\\" href=\\\"https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css\\\">\\n    <link rel=\\\"shortcut icon\\\" ...",
+        "error": null,
+        "status": "OK"
+      }
+    ],
+    "health": [
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/metrics",
+        "status_code": 404,
+        "name": "System Metrics",
+        "response_time_ms": 314,
+        "method": "GET",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/agents/metrics",
+        "status_code": 404,
+        "name": "Agent Metrics",
+        "response_time_ms": 316,
+        "method": "GET",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      }
+    ],
+    "cores": [
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/originacion/creditanalyzer/execute",
+        "status_code": 404,
+        "name": "originacion/creditanalyzer",
+        "response_time_ms": 296,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/originacion/riskassessor/execute",
+        "status_code": 404,
+        "name": "originacion/riskassessor",
+        "response_time_ms": 335,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/decision/decisionengine/execute",
+        "status_code": 404,
+        "name": "decision/decisionengine",
+        "response_time_ms": 314,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/legal/contractanalyzer/execute",
+        "status_code": 404,
+        "name": "legal/contractanalyzer",
+        "response_time_ms": 299,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/contabilidad/analisis_financiero/execute",
+        "status_code": 404,
+        "name": "contabilidad/analisis_financiero",
+        "response_time_ms": 338,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      }
+    ],
+    "agents_execution": [
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/leadscoria/execute",
+        "status_code": 404,
+        "name": "marketing/leadscoria",
+        "response_time_ms": 514,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/leadscoringia/execute",
+        "status_code": 404,
+        "name": "marketing/leadscoringia",
+        "response_time_ms": 580,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/predictiveleadia/execute",
+        "status_code": 404,
+        "name": "marketing/predictiveleadia",
+        "response_time_ms": 344,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/abtestingia/execute",
+        "status_code": 404,
+        "name": "marketing/abtestingia",
+        "response_time_ms": 308,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/abtestingimpactia/execute",
+        "status_code": 404,
+        "name": "marketing/abtestingimpactia",
+        "response_time_ms": 271,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/campaignoptimizeria/execute",
+        "status_code": 404,
+        "name": "marketing/campaignoptimizeria",
+        "response_time_ms": 313,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/contentgeneratoria/execute",
+        "status_code": 404,
+        "name": "marketing/contentgeneratoria",
+        "response_time_ms": 277,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/contentperformanceia/execute",
+        "status_code": 404,
+        "name": "marketing/contentperformanceia",
+        "response_time_ms": 312,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/socialpostgeneratoria/execute",
+        "status_code": 404,
+        "name": "marketing/socialpostgeneratoria",
+        "response_time_ms": 303,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/sentimentanalyzeria/execute",
+        "status_code": 404,
+        "name": "marketing/sentimentanalyzeria",
+        "response_time_ms": 308,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/sociallisteningia/execute",
+        "status_code": 404,
+        "name": "marketing/sociallisteningia",
+        "response_time_ms": 274,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/competitoranalyzeria/execute",
+        "status_code": 404,
+        "name": "marketing/competitoranalyzeria",
+        "response_time_ms": 293,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/competitorintelligenceia/execute",
+        "status_code": 404,
+        "name": "marketing/competitorintelligenceia",
+        "response_time_ms": 297,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/channelattributia/execute",
+        "status_code": 404,
+        "name": "marketing/channelattributia",
+        "response_time_ms": 277,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/attributionmodelia/execute",
+        "status_code": 404,
+        "name": "marketing/attributionmodelia",
+        "response_time_ms": 310,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/budgetforecastia/execute",
+        "status_code": 404,
+        "name": "marketing/budgetforecastia",
+        "response_time_ms": 304,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/marketingmixmodelia/execute",
+        "status_code": 404,
+        "name": "marketing/marketingmixmodelia",
+        "response_time_ms": 283,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/audiencesegmenteria/execute",
+        "status_code": 404,
+        "name": "marketing/audiencesegmenteria",
+        "response_time_ms": 303,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/customersegmentatonia/execute",
+        "status_code": 404,
+        "name": "marketing/customersegmentatonia",
+        "response_time_ms": 284,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/geosegmentationia/execute",
+        "status_code": 404,
+        "name": "marketing/geosegmentationia",
+        "response_time_ms": 307,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/personalizationengineia/execute",
+        "status_code": 404,
+        "name": "marketing/personalizationengineia",
+        "response_time_ms": 330,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/retentionpredictorea/execute",
+        "status_code": 404,
+        "name": "marketing/retentionpredictorea",
+        "response_time_ms": 275,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/emailautomationia/execute",
+        "status_code": 404,
+        "name": "marketing/emailautomationia",
+        "response_time_ms": 297,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/journeyoptimizeria/execute",
+        "status_code": 404,
+        "name": "marketing/journeyoptimizeria",
+        "response_time_ms": 292,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/influencermatcheria/execute",
+        "status_code": 404,
+        "name": "marketing/influencermatcheria",
+        "response_time_ms": 268,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/influencermatchingia/execute",
+        "status_code": 404,
+        "name": "marketing/influencermatchingia",
+        "response_time_ms": 299,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/creativeanalyzeria/execute",
+        "status_code": 404,
+        "name": "marketing/creativeanalyzeria",
+        "response_time_ms": 288,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/productaffinityia/execute",
+        "status_code": 404,
+        "name": "marketing/productaffinityia",
+        "response_time_ms": 296,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/marketingorchestratorea/execute",
+        "status_code": 404,
+        "name": "marketing/marketingorchestratorea",
+        "response_time_ms": 301,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/minimalformia/execute",
+        "status_code": 404,
+        "name": "marketing/minimalformia",
+        "response_time_ms": 304,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/api/v1/agents/marketing/cashofferfilteria/execute",
+        "status_code": 404,
+        "name": "marketing/cashofferfilteria",
+        "response_time_ms": 312,
+        "method": "POST",
+        "response_preview": null,
+        "error": "Response status code does not indicate success: 404 (Not Found).",
+        "status": "FAILED"
+      }
+    ],
+    "workflows": [
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/workflows",
+        "status_code": 200,
+        "name": "Lista Workflows",
+        "response_time_ms": 543,
+        "method": "GET",
+        "response_preview": "{\"workflows\":[{\"id\":\"campaign-optimization\",\"name\":\"Campaign Optimization\",\"version\":\"1.0.0\",\"tier\":\"CORE\",\"agents\":5,\"status\":\"active\"},{\"id\":\"customer-acquisition-intelligence\",\"name\":\"Customer Acqu...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/workflows/health",
+        "status_code": 200,
+        "name": "Workflow Health",
+        "response_time_ms": 414,
+        "method": "GET",
+        "response_preview": "{\"status\":\"healthy\",\"engine_version\":\"2.0.1\",\"workflows_available\":10,\"total_agents_in_workflows\":43}",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/workflows/campaign-optimization/schema",
+        "status_code": 200,
+        "name": "Campaign Optimization Schema",
+        "response_time_ms": 317,
+        "method": "GET",
+        "response_preview": "{\"workflow\":{\"id\":\"campaign-optimization\",\"name\":\"Campaign Optimization Workflow\",\"version\":\"1.0.0\",\"description\":\"Optimiza campañas de marketing usando 5 agentes especializados\",\"steps\":[\"@{order=1; ...",
+        "error": null,
+        "status": "OK"
+      },
+      {
+        "url": "https://nadakki-ai-suite.onrender.com/workflows/campaign-optimization",
+        "status_code": 200,
+        "name": "Execute Campaign Workflow",
+        "response_time_ms": 629,
+        "method": "POST",
+        "response_preview": "{\"workflow_id\":\"WF-1767310808-047e7148\",\"workflow_name\":\"Campaign Optimization Workflow\",\"workflow_version\":\"1.0.0\",\"tenant_id\":\"credicefi\",\"started_at\":\"2026-01-01T23:40:08.224971Z\",\"steps\":[{\"step_i...",
+        "error": null,
+        "status": "OK"
+      }
+    ]
+  },
+  "summary": {
+    "failed": 40,
+    "total_tests": 59,
+    "passed": 19,
+    "warnings": 0
+  }
+}
