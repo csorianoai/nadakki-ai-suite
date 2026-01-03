@@ -1,158 +1,224 @@
 """
-Tenant Manager para Nadakki AI Suite
-Maneja configuraciones específicas por institución financiera
+NADAKKI AI SUITE - Tenant Management System
+Gestión de tenants, módulos y permisos
 """
 
+from fastapi import APIRouter, HTTPException, Header
+from pydantic import BaseModel, Field
+from typing import Dict, List, Optional
+from datetime import datetime
 import json
-from pathlib import Path
-from typing import Dict, Optional, List
+import os
 
-class TenantManager:
-    def __init__(self):
-        self.base_dir = Path(__file__).parent
-        self.config_dir = self.base_dir / "config" / "tenants"
-        self._config_cache = {}
-        
-        # Crear directorio si no existe
-        self.config_dir.mkdir(parents=True, exist_ok=True)
-    
-    def load_tenant_config(self, tenant_id: str) -> Optional[Dict]:
-        """Carga configuración específica de un tenant"""
-        try:
-            # Verificar cache primero
-            if tenant_id in self._config_cache:
-                return self._config_cache[tenant_id]
-            
-            config_file = self.config_dir / f"{tenant_id}.json"
-            
-            if not config_file.exists():
-                print(f"⚠️  Configuración no encontrada para tenant: {tenant_id}")
-                return None
-            
-            with open(config_file, 'r', encoding='utf-8') as f:
-                config = json.load(f)
-            
-            # Guardar en cache
-            self._config_cache[tenant_id] = config
-            return config
-            
-        except Exception as e:
-            print(f"❌ Error cargando configuración de {tenant_id}: {str(e)}")
-            return None
-    
-    def get_ai_thresholds(self, tenant_id: str) -> Dict:
-        """Obtiene umbrales de IA específicos del tenant"""
-        config = self.load_tenant_config(tenant_id)
-        
-        # Defaults si no hay configuración
-        defaults = {
-            "reject_auto": 0.90,
-            "high_risk": 0.80,
-            "risky": 0.70,
-            "medium_risk": 0.50,
-            "low_risk": 0.00
-        }
-        
-        if not config:
-            return defaults
-        
-        return config.get("ai_engine", {}).get("similarity_thresholds", defaults)
-    
-    def get_algorithm_weights(self, tenant_id: str) -> Dict:
-        """Obtiene pesos de algoritmos específicos del tenant"""
-        config = self.load_tenant_config(tenant_id)
-        
-        defaults = {
-            "cosine": 0.4,
-            "euclidean": 0.3, 
-            "jaccard": 0.3
-        }
-        
-        if not config:
-            return defaults
-        
-        return config.get("ai_engine", {}).get("algorithm_weights", defaults)
-    
-    def get_business_rules(self, tenant_id: str) -> Dict:
-        """Obtiene reglas de negocio específicas del tenant"""
-        config = self.load_tenant_config(tenant_id)
-        
-        defaults = {
-            "max_loan_amount": 1000000,
-            "min_credit_score": 600,
-            "max_debt_to_income": 0.40
-        }
-        
-        if not config:
-            return defaults
-        
-        return config.get("business_rules", defaults)
-    
-    def get_pricing_plan(self, tenant_id: str) -> Dict:
-        """Obtiene plan de pricing del tenant"""
-        config = self.load_tenant_config(tenant_id)
-        
-        defaults = {
-            "tier": "starter",
-            "monthly_evaluations_limit": 1000,
-            "price_per_month": 999
-        }
-        
-        if not config:
-            return defaults
-        
-        return config.get("pricing_plan", defaults)
-    
-    def get_tenant_info(self, tenant_id: str) -> Dict:
-        """Obtiene información básica del tenant"""
-        config = self.load_tenant_config(tenant_id)
-        
-        if not config:
-            return {
-                "id": tenant_id,
-                "name": "Unknown",
-                "type": "financial",
-                "status": "unknown"
+router = APIRouter(prefix="/api/tenants", tags=["Tenants"])
+
+# Base de datos simple en archivo JSON (en producción usar PostgreSQL/MongoDB)
+TENANTS_DB_FILE = "tenants_db.json"
+
+class TenantCreate(BaseModel):
+    tenant_id: str = Field(..., description="ID único del tenant")
+    name: str = Field(..., description="Nombre de la empresa")
+    email: str = Field(..., description="Email de contacto")
+    website: Optional[str] = None
+    plan: str = Field(default="starter", description="Plan: starter, professional, enterprise")
+    modules: List[str] = Field(default=["marketing"], description="Módulos habilitados")
+    industry: Optional[str] = None
+    timezone: str = Field(default="America/Mexico_City")
+    language: str = Field(default="es")
+
+class TenantResponse(BaseModel):
+    tenant_id: str
+    name: str
+    email: str
+    website: Optional[str]
+    plan: str
+    modules: List[str]
+    api_key: str
+    created_at: str
+    status: str
+
+class TenantIntegration(BaseModel):
+    integration_type: str  # meta, twitter, google, sendgrid, hubspot
+    credentials: Dict
+    status: str = "pending"
+
+def load_tenants_db() -> Dict:
+    """Cargar base de datos de tenants"""
+    if os.path.exists(TENANTS_DB_FILE):
+        with open(TENANTS_DB_FILE, "r") as f:
+            return json.load(f)
+    return {"tenants": {}, "integrations": {}}
+
+def save_tenants_db(data: Dict):
+    """Guardar base de datos de tenants"""
+    with open(TENANTS_DB_FILE, "w") as f:
+        json.dump(data, f, indent=2)
+
+def generate_api_key(tenant_id: str) -> str:
+    """Generar API key único para el tenant"""
+    import hashlib
+    import secrets
+    base = f"{tenant_id}_{secrets.token_urlsafe(16)}"
+    return f"{tenant_id}_ndk_{hashlib.sha256(base.encode()).hexdigest()[:24]}"
+
+@router.get("/")
+async def list_tenants():
+    """Listar todos los tenants (solo admin)"""
+    db = load_tenants_db()
+    return {
+        "total": len(db["tenants"]),
+        "tenants": [
+            {
+                "tenant_id": tid,
+                "name": t.get("name"),
+                "plan": t.get("plan"),
+                "modules": t.get("modules", []),
+                "status": t.get("status", "active")
             }
-        
-        return config.get("tenant_info", {})
-    
-    def list_all_tenants(self) -> List[Dict]:
-        """Lista todos los tenants configurados"""
-        tenants = []
-        
-        try:
-            for config_file in self.config_dir.glob("*.json"):
-                tenant_id = config_file.stem
-                config = self.load_tenant_config(tenant_id)
-                
-                if config:
-                    tenant_info = config.get("tenant_info", {})
-                    pricing = config.get("pricing_plan", {})
-                    
-                    tenants.append({
-                        "tenant_id": tenant_id,
-                        "name": tenant_info.get("name", ""),
-                        "type": tenant_info.get("type", ""),
-                        "status": tenant_info.get("status", ""),
-                        "tier": pricing.get("tier", ""),
-                        "monthly_limit": pricing.get("monthly_evaluations_limit", 0)
-                    })
-        
-        except Exception as e:
-            print(f"❌ Error listando tenants: {str(e)}")
-        
-        return tenants
-    
-    def validate_tenant(self, tenant_id: str) -> bool:
-        """Valida que un tenant existe y está activo"""
-        config = self.load_tenant_config(tenant_id)
-        
-        if not config:
-            return False
-        
-        tenant_info = config.get("tenant_info", {})
-        return tenant_info.get("status") == "active"
+            for tid, t in db["tenants"].items()
+        ]
+    }
 
-# Instancia global del tenant manager
-tenant_manager = TenantManager()
+@router.get("/{tenant_id}")
+async def get_tenant(tenant_id: str):
+    """Obtener información de un tenant"""
+    db = load_tenants_db()
+    if tenant_id not in db["tenants"]:
+        raise HTTPException(404, f"Tenant {tenant_id} not found")
+    
+    tenant = db["tenants"][tenant_id]
+    return {
+        "tenant_id": tenant_id,
+        "name": tenant.get("name"),
+        "email": tenant.get("email"),
+        "website": tenant.get("website"),
+        "plan": tenant.get("plan"),
+        "modules": tenant.get("modules", []),
+        "integrations": db.get("integrations", {}).get(tenant_id, {}),
+        "created_at": tenant.get("created_at"),
+        "status": tenant.get("status", "active")
+    }
+
+@router.post("/", response_model=TenantResponse)
+async def create_tenant(tenant: TenantCreate):
+    """Crear un nuevo tenant"""
+    db = load_tenants_db()
+    
+    if tenant.tenant_id in db["tenants"]:
+        raise HTTPException(400, f"Tenant {tenant.tenant_id} already exists")
+    
+    api_key = generate_api_key(tenant.tenant_id)
+    
+    db["tenants"][tenant.tenant_id] = {
+        "name": tenant.name,
+        "email": tenant.email,
+        "website": tenant.website,
+        "plan": tenant.plan,
+        "modules": tenant.modules,
+        "api_key": api_key,
+        "settings": {
+            "industry": tenant.industry,
+            "timezone": tenant.timezone,
+            "language": tenant.language
+        },
+        "created_at": datetime.now().isoformat(),
+        "status": "active"
+    }
+    
+    db["integrations"][tenant.tenant_id] = {}
+    
+    save_tenants_db(db)
+    
+    return TenantResponse(
+        tenant_id=tenant.tenant_id,
+        name=tenant.name,
+        email=tenant.email,
+        website=tenant.website,
+        plan=tenant.plan,
+        modules=tenant.modules,
+        api_key=api_key,
+        created_at=db["tenants"][tenant.tenant_id]["created_at"],
+        status="active"
+    )
+
+@router.put("/{tenant_id}/modules")
+async def update_tenant_modules(tenant_id: str, modules: List[str]):
+    """Actualizar módulos habilitados para un tenant"""
+    db = load_tenants_db()
+    
+    if tenant_id not in db["tenants"]:
+        raise HTTPException(404, f"Tenant {tenant_id} not found")
+    
+    valid_modules = ["marketing", "legal", "finanzas", "compliance", "regtech", "contabilidad", 
+                     "rrhh", "operaciones", "logistica", "ventas", "all"]
+    
+    for mod in modules:
+        if mod not in valid_modules:
+            raise HTTPException(400, f"Invalid module: {mod}")
+    
+    db["tenants"][tenant_id]["modules"] = modules
+    save_tenants_db(db)
+    
+    return {"tenant_id": tenant_id, "modules": modules, "status": "updated"}
+
+@router.post("/{tenant_id}/integrations/{integration_type}")
+async def add_integration(tenant_id: str, integration_type: str, credentials: Dict):
+    """Agregar una integración a un tenant (Meta, Twitter, Google, etc.)"""
+    db = load_tenants_db()
+    
+    if tenant_id not in db["tenants"]:
+        raise HTTPException(404, f"Tenant {tenant_id} not found")
+    
+    valid_integrations = ["meta", "twitter", "google_analytics", "google_ads", 
+                         "sendgrid", "mailchimp", "hubspot", "salesforce"]
+    
+    if integration_type not in valid_integrations:
+        raise HTTPException(400, f"Invalid integration type: {integration_type}")
+    
+    if tenant_id not in db["integrations"]:
+        db["integrations"][tenant_id] = {}
+    
+    db["integrations"][tenant_id][integration_type] = {
+        "credentials": credentials,
+        "status": "connected",
+        "connected_at": datetime.now().isoformat()
+    }
+    
+    save_tenants_db(db)
+    
+    return {
+        "tenant_id": tenant_id,
+        "integration": integration_type,
+        "status": "connected"
+    }
+
+@router.get("/{tenant_id}/integrations")
+async def get_integrations(tenant_id: str):
+    """Obtener integraciones de un tenant"""
+    db = load_tenants_db()
+    
+    if tenant_id not in db["tenants"]:
+        raise HTTPException(404, f"Tenant {tenant_id} not found")
+    
+    return {
+        "tenant_id": tenant_id,
+        "integrations": db.get("integrations", {}).get(tenant_id, {})
+    }
+
+@router.delete("/{tenant_id}/integrations/{integration_type}")
+async def remove_integration(tenant_id: str, integration_type: str):
+    """Eliminar una integración"""
+    db = load_tenants_db()
+    
+    if tenant_id not in db["tenants"]:
+        raise HTTPException(404, f"Tenant {tenant_id} not found")
+    
+    if tenant_id in db["integrations"] and integration_type in db["integrations"][tenant_id]:
+        del db["integrations"][tenant_id][integration_type]
+        save_tenants_db(db)
+    
+    return {"tenant_id": tenant_id, "integration": integration_type, "status": "removed"}
+
+def register_tenant_management_routes(app):
+    """Registrar rutas de gestión de tenants"""
+    app.include_router(router)

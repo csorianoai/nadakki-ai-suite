@@ -1,0 +1,42 @@
+{
+  "tenants": {
+    "sfrentals": {
+      "name": "Nadaki Excursions",
+      "email": "sales@nadakiexcursions.com",
+      "website": "https://www.nadakiexcursions.com",
+      "plan": "enterprise",
+      "modules": ["marketing"],
+      "api_key": "sfrentals_ndk_2026_x7K9mPqL2vNwYhT4",
+      "settings": {
+        "industry": "tourism",
+        "timezone": "America/Los_Angeles",
+        "language": "es"
+      },
+      "created_at": "2026-01-03T12:00:00",
+      "status": "active"
+    },
+    "demo": {
+      "name": "Demo Account",
+      "email": "demo@nadakki.com",
+      "plan": "starter",
+      "modules": ["marketing"],
+      "api_key": "demo_key_12345",
+      "created_at": "2025-01-01T00:00:00",
+      "status": "active"
+    },
+    "credicefi": {
+      "name": "Credicefi",
+      "email": "admin@credicefi.com",
+      "plan": "enterprise",
+      "modules": ["marketing", "finanzas", "compliance"],
+      "api_key": "nadakki_klbJUiJetf-5hH1rpCsLfqRIHPdirm0gUajAUkxov8I",
+      "created_at": "2025-06-01T00:00:00",
+      "status": "active"
+    }
+  },
+  "integrations": {
+    "sfrentals": {},
+    "demo": {},
+    "credicefi": {}
+  }
+}

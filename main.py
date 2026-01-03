@@ -19,6 +19,7 @@ from uuid import uuid4
 from multitenant_integration import register_tenant_routes
 from decision_logger import register_decision_log_routes, log_workflow_decision
 from dashboard_metrics import register_enhanced_dashboard_routes
+from tenant_manager import register_tenant_management_routes
 
 # ============================================================================
 # SETUP
@@ -61,10 +62,46 @@ logger.info(f"✓ Loaded {registry.total} agents across {len(registry.cores)} co
 # AUTH & RATE LIMITING
 # ============================================================================
 
+# ============================================================================
+# TENANT REGISTRY - Multi-tenant Configuration
+# ============================================================================
+
 VALID_TENANTS = {
-    "demo": {"api_key": "demo_key_12345", "plan": "starter"},
-    "nadakki": {"api_key": "nadakki_master_key_2025", "plan": "enterprise"},
-    "credicefi": {"api_key": "nadakki_klbJUiJetf-5hH1rpCsLfqRIHPdirm0gUajAUkxov8I", "plan": "enterprise"}
+    "demo": {
+        "api_key": "demo_key_12345", 
+        "plan": "starter",
+        "name": "Demo Account",
+        "modules": ["marketing"],
+        "settings": {}
+    },
+    "nadakki": {
+        "api_key": "nadakki_master_key_2025", 
+        "plan": "enterprise",
+        "name": "Nadakki (Master)",
+        "modules": ["all"],
+        "settings": {"is_admin": True}
+    },
+    "credicefi": {
+        "api_key": "nadakki_klbJUiJetf-5hH1rpCsLfqRIHPdirm0gUajAUkxov8I", 
+        "plan": "enterprise",
+        "name": "Credicefi",
+        "modules": ["marketing", "finanzas", "compliance"],
+        "settings": {}
+    },
+    "sfrentals": {
+        "api_key": "sfrentals_ndk_2026_x7K9mPqL2vNwYhT4",
+        "plan": "enterprise",
+        "name": "Nadaki Excursions",
+        "email": "sales@nadakiexcursions.com",
+        "website": "https://www.nadakiexcursions.com",
+        "modules": ["marketing"],
+        "settings": {
+            "industry": "tourism",
+            "timezone": "America/Los_Angeles",
+            "language": "es",
+            "created_at": "2026-01-03"
+        }
+    }
 }
 
 class RateLimiter:
@@ -1513,3 +1550,5 @@ async def startup():
     logger.info("📚 API docs at http://localhost:8000/docs")
     logger.info("🔄 Workflows (10): http://localhost:8000/workflows")
     logger.info("=" * 60)
+
+
