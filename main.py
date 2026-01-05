@@ -1533,6 +1533,10 @@ async def workflow_health():
 # REGISTER ROUTER & STARTUP
 # ============================================================================
 
+# Assistant Router (Chatbot)
+from api.assistant import router as assistant_router
+app.include_router(assistant_router)
+
 # Campaigns Router
 from api.campaigns import router as campaigns_router
 app.include_router(campaigns_router)
@@ -1558,6 +1562,7 @@ async def startup():
     logger.info("📚 API docs at http://localhost:8000/docs")
     logger.info("🔄 Workflows (10): http://localhost:8000/workflows")
     logger.info("=" * 60)
+
 
 
 
