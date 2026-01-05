@@ -1533,6 +1533,10 @@ async def workflow_health():
 # REGISTER ROUTER & STARTUP
 # ============================================================================
 
+# Campaigns Router
+from api.campaigns import router as campaigns_router
+app.include_router(campaigns_router)
+
 # Social Connections Router
 from api.social import router as social_router
 app.include_router(social_router)
@@ -1554,6 +1558,7 @@ async def startup():
     logger.info("📚 API docs at http://localhost:8000/docs")
     logger.info("🔄 Workflows (10): http://localhost:8000/workflows")
     logger.info("=" * 60)
+
 
 
 
