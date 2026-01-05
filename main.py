@@ -29,6 +29,12 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(na
 logger = logging.getLogger("NadakkiAISuite")
 workflow_logger = logging.getLogger("WorkflowEngine")
 
+
+# Phase 3 Marketing APIs
+from api.journeys.routes import router as journeys_router
+from api.templates.routes import router as templates_router
+from api.integrations.routes import router as integrations_router
+
 app = FastAPI(
     title="Nadakki AI Suite",
     description="Enterprise AI Platform - 185+ Agents across 20 AI Cores",
@@ -1567,3 +1573,8 @@ async def startup():
 
 
 
+
+# Phase 3 Marketing Routers
+app.include_router(journeys_router)
+app.include_router(templates_router)
+app.include_router(integrations_router)
