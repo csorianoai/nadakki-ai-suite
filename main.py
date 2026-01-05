@@ -34,6 +34,10 @@ workflow_logger = logging.getLogger("WorkflowEngine")
 from api.journeys.routes import router as journeys_router
 from api.templates.routes import router as templates_router
 from api.integrations.routes import router as integrations_router
+# Phase 3+ APIs
+from api.campaigns.routes import router as campaigns_router
+from api.segments.routes import router as segments_router
+from api.agents.routes import router as agents_router
 
 app = FastAPI(
     title="Nadakki AI Suite",
@@ -1578,3 +1582,8 @@ async def startup():
 app.include_router(journeys_router)
 app.include_router(templates_router)
 app.include_router(integrations_router)
+# Phase 3+ Routers
+app.include_router(campaigns_router)
+app.include_router(segments_router)
+app.include_router(agents_router)
+
