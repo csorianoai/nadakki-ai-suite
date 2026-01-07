@@ -6,6 +6,17 @@ FIX: Auto-logging + Multi-tenant en todos los workflows
 """
 
 from fastapi import FastAPI, Header, HTTPException, Depends, APIRouter
+
+# New routers for complete system
+try:
+    from routers import analytics
+    from routers import campaigns_v2
+    from routers import ai_generation
+except ImportError as e:
+    print(f"Warning: Could not import new routers: {e}")
+    analytics = None
+    campaigns_v2 = None
+    ai_generation = None
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Dict, Any, Optional, List
 from pydantic import BaseModel, Field
@@ -1587,3 +1598,12 @@ app.include_router(campaigns_router)
 app.include_router(segments_router)
 app.include_router(agents_router)
 
+
+
+# Register new routers
+if analytics:
+    app.include_router(analytics.router)
+if campaigns_v2:
+    app.include_router(campaigns_v2.router)
+if ai_generation:
+    app.include_router(ai_generation.router)
