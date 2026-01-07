@@ -7,6 +7,14 @@ FIX: Auto-logging + Multi-tenant en todos los workflows
 
 from fastapi import FastAPI, Header, HTTPException, Depends, APIRouter
 
+# Initialize database on startup
+try:
+    from database import init_database
+    init_database()
+    print("✅ Database initialized successfully")
+except Exception as e:
+    print(f"⚠️ Database initialization warning: {e}")
+
 # New routers for complete system
 try:
     from routers import analytics
@@ -1607,3 +1615,4 @@ if campaigns_v2:
     app.include_router(campaigns_v2.router)
 if ai_generation:
     app.include_router(ai_generation.router)
+

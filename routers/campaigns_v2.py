@@ -1,5 +1,5 @@
 """
-Campaign Persistence Router - Full CRUD with drafts and versioning
+Campaign Persistence Router v2 - Real Database Persistence
 NADAKKI AI Suite v2.0
 """
 from fastapi import APIRouter, HTTPException, Query, Body
@@ -9,6 +9,8 @@ from datetime import datetime
 from enum import Enum
 import uuid
 import json
+
+from database import get_db
 
 router = APIRouter(prefix="/campaigns", tags=["Campaigns"])
 
@@ -55,7 +57,7 @@ class CampaignUpdate(BaseModel):
 
 class CampaignDraft(BaseModel):
     campaign_id: str
-    version: int
+    version: int = 1
     content: Dict[str, Any]
     auto_save: bool = True
     tenant_id: str = "default"
@@ -63,8 +65,8 @@ class CampaignDraft(BaseModel):
 class Campaign(BaseModel):
     id: str
     name: str
-    type: CampaignType
-    status: CampaignStatus
+    type: str
+    status: str
     description: str
     subject: Optional[str]
     content: Dict[str, Any]
@@ -74,85 +76,36 @@ class Campaign(BaseModel):
     settings: Dict[str, Any]
     version: int
     tenant_id: str
-    created_at: datetime
-    updated_at: datetime
+    created_at: str
+    updated_at: str
     created_by: str
     metrics: Dict[str, Any]
 
 # ═══════════════════════════════════════════════════════════════
-# BASE DE DATOS EN MEMORIA
+# HELPER FUNCTIONS
 # ═══════════════════════════════════════════════════════════════
 
-class CampaignDB:
-    def __init__(self):
-        self.campaigns: Dict[str, Campaign] = {}
-        self.drafts: Dict[str, List[CampaignDraft]] = {}
-        self._seed_data()
-    
-    def _seed_data(self):
-        """Seed with sample campaigns"""
-        samples = [
-            {
-                "name": "Welcome Series - Day 1",
-                "type": CampaignType.EMAIL,
-                "status": CampaignStatus.ACTIVE,
-                "description": "First email in welcome sequence",
-                "subject": "Welcome to {{company_name}}! 🎉",
-                "audience_size": 12450,
-                "metrics": {"sent": 12450, "delivered": 12300, "opened": 5535, "clicked": 1230, "converted": 245}
-            },
-            {
-                "name": "Cart Abandonment Reminder",
-                "type": CampaignType.MULTI_CHANNEL,
-                "status": CampaignStatus.ACTIVE,
-                "description": "Multi-channel cart recovery",
-                "subject": "You left something behind! 🛒",
-                "audience_size": 3420,
-                "metrics": {"sent": 3420, "delivered": 3380, "opened": 1860, "clicked": 680, "converted": 170}
-            },
-            {
-                "name": "Monthly Newsletter",
-                "type": CampaignType.EMAIL,
-                "status": CampaignStatus.SCHEDULED,
-                "description": "January 2026 newsletter",
-                "subject": "Your January Update 📰",
-                "audience_size": 45200,
-                "metrics": {"sent": 0, "delivered": 0, "opened": 0, "clicked": 0, "converted": 0}
-            },
-            {
-                "name": "Flash Sale Alert",
-                "type": CampaignType.PUSH,
-                "status": CampaignStatus.DRAFT,
-                "description": "24-hour flash sale notification",
-                "subject": "⚡ 50% OFF - 24 Hours Only!",
-                "audience_size": 28900,
-                "metrics": {"sent": 0, "delivered": 0, "opened": 0, "clicked": 0, "converted": 0}
-            },
-        ]
-        
-        for i, sample in enumerate(samples):
-            campaign_id = f"cmp_{uuid.uuid4().hex[:8]}"
-            self.campaigns[campaign_id] = Campaign(
-                id=campaign_id,
-                name=sample["name"],
-                type=sample["type"],
-                status=sample["status"],
-                description=sample["description"],
-                subject=sample["subject"],
-                content={"body": "", "blocks": []},
-                audience_id=f"aud_{i+1}",
-                audience_size=sample["audience_size"],
-                schedule=None,
-                settings={"track_opens": True, "track_clicks": True},
-                version=1,
-                tenant_id="default",
-                created_at=datetime.now(),
-                updated_at=datetime.now(),
-                created_by="system",
-                metrics=sample["metrics"]
-            )
-
-campaign_db = CampaignDB()
+def row_to_campaign(row) -> Campaign:
+    """Convert database row to Campaign model"""
+    return Campaign(
+        id=row["id"],
+        name=row["name"],
+        type=row["type"],
+        status=row["status"],
+        description=row["description"] or "",
+        subject=row["subject"],
+        content=json.loads(row["content"]) if row["content"] else {},
+        audience_id=row["audience_id"],
+        audience_size=row["audience_size"] or 0,
+        schedule=json.loads(row["schedule"]) if row["schedule"] else None,
+        settings=json.loads(row["settings"]) if row["settings"] else {},
+        version=row["version"] or 1,
+        tenant_id=row["tenant_id"],
+        created_at=row["created_at"],
+        updated_at=row["updated_at"],
+        created_by=row["created_by"] or "user",
+        metrics=json.loads(row["metrics"]) if row["metrics"] else {"sent": 0, "delivered": 0, "opened": 0, "clicked": 0, "converted": 0}
+    )
 
 # ═══════════════════════════════════════════════════════════════
 # ENDPOINTS
@@ -166,173 +119,274 @@ async def list_campaigns(
     limit: int = Query(default=50, le=100),
     offset: int = Query(default=0)
 ):
-    """List all campaigns with optional filtering"""
-    campaigns = list(campaign_db.campaigns.values())
-    
-    # Filter by tenant
-    campaigns = [c for c in campaigns if c.tenant_id == tenant_id]
-    
-    # Filter by status
-    if status:
-        campaigns = [c for c in campaigns if c.status == status]
-    
-    # Filter by type
-    if type:
-        campaigns = [c for c in campaigns if c.type == type]
-    
-    # Sort by updated_at desc
-    campaigns.sort(key=lambda x: x.updated_at, reverse=True)
-    
-    return campaigns[offset:offset+limit]
+    """List all campaigns from DATABASE"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        
+        query = "SELECT * FROM campaigns WHERE tenant_id = ?"
+        params = [tenant_id]
+        
+        if status:
+            query += " AND status = ?"
+            params.append(status.value)
+        
+        if type:
+            query += " AND type = ?"
+            params.append(type.value)
+        
+        query += " ORDER BY updated_at DESC LIMIT ? OFFSET ?"
+        params.extend([limit, offset])
+        
+        cursor.execute(query, params)
+        rows = cursor.fetchall()
+        
+        return [row_to_campaign(row) for row in rows]
 
 @router.get("/{campaign_id}", response_model=Campaign)
 async def get_campaign(campaign_id: str):
-    """Get single campaign by ID"""
-    if campaign_id not in campaign_db.campaigns:
-        raise HTTPException(status_code=404, detail="Campaign not found")
-    return campaign_db.campaigns[campaign_id]
+    """Get single campaign by ID from DATABASE"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM campaigns WHERE id = ?", (campaign_id,))
+        row = cursor.fetchone()
+        
+        if not row:
+            raise HTTPException(status_code=404, detail="Campaign not found")
+        
+        return row_to_campaign(row)
 
 @router.post("", response_model=Campaign)
 async def create_campaign(campaign: CampaignCreate):
-    """Create new campaign"""
+    """Create new campaign in DATABASE"""
     campaign_id = f"cmp_{uuid.uuid4().hex[:8]}"
+    now = datetime.now().isoformat()
     
-    new_campaign = Campaign(
-        id=campaign_id,
-        name=campaign.name,
-        type=campaign.type,
-        status=CampaignStatus.DRAFT,
-        description=campaign.description,
-        subject=campaign.subject,
-        content=campaign.content,
-        audience_id=campaign.audience_id,
-        audience_size=0,
-        schedule=campaign.schedule,
-        settings=campaign.settings,
-        version=1,
-        tenant_id=campaign.tenant_id,
-        created_at=datetime.now(),
-        updated_at=datetime.now(),
-        created_by="user",
-        metrics={"sent": 0, "delivered": 0, "opened": 0, "clicked": 0, "converted": 0}
-    )
-    
-    campaign_db.campaigns[campaign_id] = new_campaign
-    return new_campaign
+    with get_db() as conn:
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            INSERT INTO campaigns (id, tenant_id, name, type, status, description, subject, content, audience_id, audience_size, schedule, settings, version, created_at, updated_at, created_by, metrics)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, 1, ?, ?, 'user', ?)
+        ''', (
+            campaign_id,
+            campaign.tenant_id,
+            campaign.name,
+            campaign.type.value,
+            CampaignStatus.DRAFT.value,
+            campaign.description,
+            campaign.subject,
+            json.dumps(campaign.content),
+            campaign.audience_id,
+            json.dumps(campaign.schedule) if campaign.schedule else None,
+            json.dumps(campaign.settings),
+            now,
+            now,
+            json.dumps({"sent": 0, "delivered": 0, "opened": 0, "clicked": 0, "converted": 0})
+        ))
+        
+        cursor.execute("SELECT * FROM campaigns WHERE id = ?", (campaign_id,))
+        row = cursor.fetchone()
+        
+        return row_to_campaign(row)
 
 @router.put("/{campaign_id}", response_model=Campaign)
 async def update_campaign(campaign_id: str, update: CampaignUpdate):
-    """Update existing campaign"""
-    if campaign_id not in campaign_db.campaigns:
-        raise HTTPException(status_code=404, detail="Campaign not found")
-    
-    campaign = campaign_db.campaigns[campaign_id]
-    update_data = update.dict(exclude_unset=True)
-    
-    for field, value in update_data.items():
-        if value is not None:
-            setattr(campaign, field, value)
-    
-    campaign.updated_at = datetime.now()
-    campaign.version += 1
-    
-    return campaign
+    """Update existing campaign in DATABASE"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        
+        # Check exists
+        cursor.execute("SELECT * FROM campaigns WHERE id = ?", (campaign_id,))
+        row = cursor.fetchone()
+        if not row:
+            raise HTTPException(status_code=404, detail="Campaign not found")
+        
+        # Build update query
+        updates = []
+        params = []
+        
+        if update.name is not None:
+            updates.append("name = ?")
+            params.append(update.name)
+        if update.description is not None:
+            updates.append("description = ?")
+            params.append(update.description)
+        if update.subject is not None:
+            updates.append("subject = ?")
+            params.append(update.subject)
+        if update.content is not None:
+            updates.append("content = ?")
+            params.append(json.dumps(update.content))
+        if update.audience_id is not None:
+            updates.append("audience_id = ?")
+            params.append(update.audience_id)
+        if update.schedule is not None:
+            updates.append("schedule = ?")
+            params.append(json.dumps(update.schedule))
+        if update.settings is not None:
+            updates.append("settings = ?")
+            params.append(json.dumps(update.settings))
+        if update.status is not None:
+            updates.append("status = ?")
+            params.append(update.status.value)
+        
+        updates.append("updated_at = ?")
+        params.append(datetime.now().isoformat())
+        updates.append("version = version + 1")
+        
+        params.append(campaign_id)
+        
+        cursor.execute(f"UPDATE campaigns SET {', '.join(updates)} WHERE id = ?", params)
+        cursor.execute("SELECT * FROM campaigns WHERE id = ?", (campaign_id,))
+        row = cursor.fetchone()
+        
+        return row_to_campaign(row)
 
 @router.post("/{campaign_id}/save-draft")
 async def save_campaign_draft(campaign_id: str, draft: CampaignDraft):
-    """Save campaign draft (auto-save support)"""
-    if campaign_id not in campaign_db.drafts:
-        campaign_db.drafts[campaign_id] = []
+    """Save campaign draft to DATABASE (auto-save support)"""
+    now = datetime.now().isoformat()
     
-    draft.version = len(campaign_db.drafts[campaign_id]) + 1
-    campaign_db.drafts[campaign_id].append(draft)
-    
-    # Also update main campaign content
-    if campaign_id in campaign_db.campaigns:
-        campaign_db.campaigns[campaign_id].content = draft.content
-        campaign_db.campaigns[campaign_id].updated_at = datetime.now()
+    with get_db() as conn:
+        cursor = conn.cursor()
+        
+        # Get current version
+        cursor.execute("SELECT version FROM campaigns WHERE id = ?", (campaign_id,))
+        row = cursor.fetchone()
+        version = (row["version"] + 1) if row else 1
+        
+        # Save draft
+        cursor.execute('''
+            INSERT INTO campaign_drafts (campaign_id, version, content, created_at, tenant_id)
+            VALUES (?, ?, ?, ?, ?)
+        ''', (campaign_id, version, json.dumps(draft.content), now, draft.tenant_id))
+        
+        # Update main campaign
+        if row:
+            cursor.execute('''
+                UPDATE campaigns 
+                SET content = ?, updated_at = ?, version = ?
+                WHERE id = ?
+            ''', (json.dumps(draft.content), now, version, campaign_id))
     
     return {
         "success": True,
         "campaign_id": campaign_id,
-        "version": draft.version,
-        "saved_at": datetime.now().isoformat()
+        "version": version,
+        "saved_at": now,
+        "persisted": True
     }
 
 @router.get("/{campaign_id}/drafts")
 async def get_campaign_drafts(campaign_id: str):
-    """Get all drafts/versions of a campaign"""
-    return campaign_db.drafts.get(campaign_id, [])
+    """Get all drafts/versions of a campaign from DATABASE"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT * FROM campaign_drafts 
+            WHERE campaign_id = ? 
+            ORDER BY version DESC
+        ''', (campaign_id,))
+        
+        return [
+            {
+                "version": row["version"],
+                "content": json.loads(row["content"]) if row["content"] else {},
+                "created_at": row["created_at"]
+            }
+            for row in cursor.fetchall()
+        ]
 
 @router.post("/{campaign_id}/duplicate", response_model=Campaign)
 async def duplicate_campaign(campaign_id: str):
-    """Duplicate an existing campaign"""
-    if campaign_id not in campaign_db.campaigns:
-        raise HTTPException(status_code=404, detail="Campaign not found")
-    
-    original = campaign_db.campaigns[campaign_id]
-    new_id = f"cmp_{uuid.uuid4().hex[:8]}"
-    
-    duplicate = Campaign(
-        id=new_id,
-        name=f"{original.name} (Copy)",
-        type=original.type,
-        status=CampaignStatus.DRAFT,
-        description=original.description,
-        subject=original.subject,
-        content=original.content.copy(),
-        audience_id=original.audience_id,
-        audience_size=original.audience_size,
-        schedule=None,
-        settings=original.settings.copy(),
-        version=1,
-        tenant_id=original.tenant_id,
-        created_at=datetime.now(),
-        updated_at=datetime.now(),
-        created_by="user",
-        metrics={"sent": 0, "delivered": 0, "opened": 0, "clicked": 0, "converted": 0}
-    )
-    
-    campaign_db.campaigns[new_id] = duplicate
-    return duplicate
+    """Duplicate an existing campaign in DATABASE"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT * FROM campaigns WHERE id = ?", (campaign_id,))
+        row = cursor.fetchone()
+        if not row:
+            raise HTTPException(status_code=404, detail="Campaign not found")
+        
+        new_id = f"cmp_{uuid.uuid4().hex[:8]}"
+        now = datetime.now().isoformat()
+        
+        cursor.execute('''
+            INSERT INTO campaigns (id, tenant_id, name, type, status, description, subject, content, audience_id, audience_size, schedule, settings, version, created_at, updated_at, created_by, metrics)
+            VALUES (?, ?, ?, ?, 'draft', ?, ?, ?, ?, ?, NULL, ?, 1, ?, ?, 'user', ?)
+        ''', (
+            new_id,
+            row["tenant_id"],
+            f"{row['name']} (Copy)",
+            row["type"],
+            row["description"],
+            row["subject"],
+            row["content"],
+            row["audience_id"],
+            row["audience_size"],
+            row["settings"],
+            now,
+            now,
+            json.dumps({"sent": 0, "delivered": 0, "opened": 0, "clicked": 0, "converted": 0})
+        ))
+        
+        cursor.execute("SELECT * FROM campaigns WHERE id = ?", (new_id,))
+        new_row = cursor.fetchone()
+        
+        return row_to_campaign(new_row)
 
 @router.delete("/{campaign_id}")
 async def delete_campaign(campaign_id: str):
-    """Delete campaign (soft delete - moves to archived)"""
-    if campaign_id not in campaign_db.campaigns:
-        raise HTTPException(status_code=404, detail="Campaign not found")
+    """Archive campaign in DATABASE (soft delete)"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT id FROM campaigns WHERE id = ?", (campaign_id,))
+        if not cursor.fetchone():
+            raise HTTPException(status_code=404, detail="Campaign not found")
+        
+        cursor.execute('''
+            UPDATE campaigns SET status = 'archived', updated_at = ? WHERE id = ?
+        ''', (datetime.now().isoformat(), campaign_id))
     
-    campaign_db.campaigns[campaign_id].status = CampaignStatus.ARCHIVED
-    return {"success": True, "message": "Campaign archived"}
+    return {"success": True, "message": "Campaign archived", "persisted": True}
 
 @router.post("/{campaign_id}/activate")
 async def activate_campaign(campaign_id: str):
-    """Activate a campaign"""
-    if campaign_id not in campaign_db.campaigns:
-        raise HTTPException(status_code=404, detail="Campaign not found")
+    """Activate a campaign in DATABASE"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT status FROM campaigns WHERE id = ?", (campaign_id,))
+        row = cursor.fetchone()
+        if not row:
+            raise HTTPException(status_code=404, detail="Campaign not found")
+        
+        if row["status"] not in ["draft", "paused", "scheduled"]:
+            raise HTTPException(status_code=400, detail="Campaign cannot be activated from current status")
+        
+        cursor.execute('''
+            UPDATE campaigns SET status = 'active', updated_at = ? WHERE id = ?
+        ''', (datetime.now().isoformat(), campaign_id))
     
-    campaign = campaign_db.campaigns[campaign_id]
-    
-    if campaign.status not in [CampaignStatus.DRAFT, CampaignStatus.PAUSED, CampaignStatus.SCHEDULED]:
-        raise HTTPException(status_code=400, detail="Campaign cannot be activated from current status")
-    
-    campaign.status = CampaignStatus.ACTIVE
-    campaign.updated_at = datetime.now()
-    
-    return {"success": True, "status": "active"}
+    return {"success": True, "status": "active", "persisted": True}
 
 @router.post("/{campaign_id}/pause")
 async def pause_campaign(campaign_id: str):
-    """Pause an active campaign"""
-    if campaign_id not in campaign_db.campaigns:
-        raise HTTPException(status_code=404, detail="Campaign not found")
+    """Pause an active campaign in DATABASE"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT status FROM campaigns WHERE id = ?", (campaign_id,))
+        row = cursor.fetchone()
+        if not row:
+            raise HTTPException(status_code=404, detail="Campaign not found")
+        
+        if row["status"] != "active":
+            raise HTTPException(status_code=400, detail="Only active campaigns can be paused")
+        
+        cursor.execute('''
+            UPDATE campaigns SET status = 'paused', updated_at = ? WHERE id = ?
+        ''', (datetime.now().isoformat(), campaign_id))
     
-    campaign = campaign_db.campaigns[campaign_id]
-    
-    if campaign.status != CampaignStatus.ACTIVE:
-        raise HTTPException(status_code=400, detail="Only active campaigns can be paused")
-    
-    campaign.status = CampaignStatus.PAUSED
-    campaign.updated_at = datetime.now()
-    
-    return {"success": True, "status": "paused"}
+    return {"success": True, "status": "paused", "persisted": True}

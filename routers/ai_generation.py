@@ -1,16 +1,30 @@
 """
-AI Generation Router - Template and content generation using LLM
+AI Generation Router v2 - With Logging and LLM Preparation
 NADAKKI AI Suite v2.0
+
+NOTE: This module is prepared for real LLM integration.
+Set ANTHROPIC_API_KEY or OPENAI_API_KEY environment variables to enable real AI.
 """
 from fastapi import APIRouter, HTTPException, Query, Body
 from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 import uuid
-import asyncio
+import json
 import os
+import time
+
+from database import get_db
 
 router = APIRouter(prefix="/ai", tags=["AI Generation"])
+
+# ═══════════════════════════════════════════════════════════════
+# CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+USE_REAL_AI = bool(ANTHROPIC_API_KEY or OPENAI_API_KEY)
 
 # ═══════════════════════════════════════════════════════════════
 # MODELOS
@@ -47,7 +61,7 @@ class CopyRewriteRequest(BaseModel):
 
 class ABVariantRequest(BaseModel):
     original_content: Dict[str, Any]
-    variation_type: str = "subject"  # subject, body, cta
+    variation_type: str = "subject"
     num_variants: int = 3
 
 # ═══════════════════════════════════════════════════════════════
@@ -57,8 +71,8 @@ class ABVariantRequest(BaseModel):
 class AIGenerationEngine:
     """
     AI Content Generation Engine
-    In production, this connects to Claude/GPT APIs
-    For now, uses intelligent template-based generation
+    Supports real LLM when API keys are configured
+    Falls back to template-based generation otherwise
     """
     
     TEMPLATES = {
@@ -88,7 +102,7 @@ class AIGenerationEngine:
                     "Complete your purchase - {key_message}"
                 ],
                 "body_patterns": [
-                    "Hi {{name}},\n\nWe noticed you left some items in your cart. {key_message}\n\nYour items are still available, but they won't wait forever!\n\n{{cart_items}}\n\nComplete your purchase now and enjoy free shipping.\n\nSee you soon!"
+                    "Hi {{name}},\n\nWe noticed you left some items in your cart. {key_message}\n\nYour items are still available!\n\n{{cart_items}}\n\nComplete your purchase now.\n\nSee you soon!"
                 ]
             }
         },
@@ -100,7 +114,7 @@ class AIGenerationEngine:
                     "Come back and see what's new"
                 ],
                 "body_patterns": [
-                    "Hi {{name}},\n\nIt's been a while since we've seen you, and we wanted to reach out.\n\n{key_message}\n\nAs a special welcome back offer: {product_description}\n\nWe'd love to have you back!\n\nWarmly,\n{{company_name}}"
+                    "Hi {{name}},\n\nIt's been a while since we've seen you.\n\n{key_message}\n\nWe'd love to have you back!\n\nWarmly,\n{{company_name}}"
                 ]
             }
         },
@@ -112,7 +126,7 @@ class AIGenerationEngine:
                     "Getting started with {{company_name}}"
                 ],
                 "body_patterns": [
-                    "Hi {{name}},\n\nWelcome aboard! We're thrilled to have you join us.\n\n{key_message}\n\nHere's how to get started:\n1. Complete your profile\n2. Explore our features\n3. {product_description}\n\nNeed help? Our team is here for you 24/7.\n\nLet's do great things together!\n\n{{company_name}} Team"
+                    "Hi {{name}},\n\nWelcome aboard! We're thrilled to have you.\n\n{key_message}\n\nHere's how to get started:\n1. Complete your profile\n2. Explore our features\n3. {product_description}\n\nLet's do great things together!\n\n{{company_name}} Team"
                 ]
             }
         }
@@ -127,81 +141,141 @@ class AIGenerationEngine:
         "upsell": ["📈", "💎", "⬆️", "🏆"]
     }
     
-    TONE_MODIFIERS = {
-        "professional": {"greeting": "Dear", "closing": "Best regards", "style": "formal"},
-        "friendly": {"greeting": "Hey", "closing": "Cheers", "style": "casual"},
-        "urgent": {"greeting": "Hi", "closing": "Act now", "style": "direct"},
-        "casual": {"greeting": "Hi there", "closing": "Talk soon", "style": "relaxed"}
-    }
+    async def generate_with_claude(self, request: TemplateGenerationRequest) -> Optional[dict]:
+        """Generate using Claude API if available"""
+        if not ANTHROPIC_API_KEY:
+            return None
+        
+        try:
+            import anthropic
+            client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+            
+            prompt = f"""Generate a marketing {request.channel} template for {request.industry} industry.
+
+Objective: {request.objective}
+Tone: {request.tone}
+Key Message: {request.key_message}
+Product: {request.product_description or 'Not specified'}
+CTA: {request.cta}
+
+Return JSON with: subject, preheader, headline, body, cta_text
+
+Use personalization variables like {{{{name}}}}, {{{{company_name}}}}.
+"""
+            
+            message = client.messages.create(
+                model="claude-3-haiku-20240307",
+                max_tokens=1024,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            
+            # Parse response
+            content = message.content[0].text
+            # Try to extract JSON
+            import re
+            json_match = re.search(r'\{[\s\S]*\}', content)
+            if json_match:
+                return json.loads(json_match.group())
+            
+        except Exception as e:
+            print(f"Claude API error: {e}")
+        
+        return None
     
     async def generate_template(self, request: TemplateGenerationRequest) -> GeneratedTemplate:
-        """Generate a complete template based on parameters"""
+        """Generate a complete template"""
         import random
+        start_time = time.time()
         
-        objective = request.objective
-        channel = request.channel
+        # Try real AI first
+        ai_result = await self.generate_with_claude(request) if USE_REAL_AI else None
+        model_used = "claude-3-haiku" if ai_result else "nadakki-template-v2"
         
-        # Get templates for objective/channel
-        templates = self.TEMPLATES.get(objective, self.TEMPLATES["convert"])
-        channel_templates = templates.get(channel, templates.get("email", {}))
+        if ai_result:
+            subject = ai_result.get("subject", request.key_message)
+            preheader = ai_result.get("preheader", request.key_message[:50])
+            headline = ai_result.get("headline", request.key_message)
+            body = ai_result.get("body", "")
+            cta_text = ai_result.get("cta_text", request.cta)
+        else:
+            # Template-based fallback
+            objective = request.objective
+            channel = request.channel
+            
+            templates = self.TEMPLATES.get(objective, self.TEMPLATES["convert"])
+            channel_templates = templates.get(channel, templates.get("email", {}))
+            
+            subject_patterns = channel_templates.get("subject_patterns", ["{key_message}"])
+            body_patterns = channel_templates.get("body_patterns", ["{key_message}"])
+            
+            emoji = random.choice(self.EMOJIS.get(objective, ["✨"]))
+            
+            subject = random.choice(subject_patterns).format(
+                emoji=emoji,
+                key_message=request.key_message
+            )
+            
+            body = random.choice(body_patterns).format(
+                key_message=request.key_message,
+                product_description=request.product_description or "Check out our latest offerings.",
+                additional_context=request.additional_context or ""
+            )
+            
+            preheader = f"{request.key_message[:50]}..." if len(request.key_message) > 50 else request.key_message
+            headline = request.key_message
+            cta_text = request.cta or "Learn More"
         
-        # Select patterns
-        subject_patterns = channel_templates.get("subject_patterns", ["{key_message}"])
-        body_patterns = channel_templates.get("body_patterns", ["{key_message}"])
-        
-        # Get emoji
-        emoji = random.choice(self.EMOJIS.get(objective, ["✨"]))
-        
-        # Get tone modifiers
-        tone = self.TONE_MODIFIERS.get(request.tone, self.TONE_MODIFIERS["friendly"])
-        
-        # Generate subject
-        subject = random.choice(subject_patterns).format(
-            emoji=emoji,
-            key_message=request.key_message
-        )
-        
-        # Generate body
-        body = random.choice(body_patterns).format(
-            key_message=request.key_message,
-            product_description=request.product_description or "Check out our latest offerings.",
-            additional_context=request.additional_context or ""
-        )
-        
-        # Apply tone
-        if tone["style"] == "formal":
-            body = body.replace("Hi {{name}}", "Dear {{name}}")
-        
-        # Generate preheader
-        preheader = f"{request.key_message[:50]}..." if len(request.key_message) > 50 else request.key_message
+        latency_ms = int((time.time() - start_time) * 1000)
         
         # Calculate predicted performance
         base_ctr = {"email": 15, "sms": 25, "push": 8, "whatsapp": 35, "in-app": 20}
         base_conversion = {"email": 5, "sms": 8, "push": 3, "whatsapp": 12, "in-app": 7}
         
         variance = random.uniform(0.8, 1.3)
-        predicted_ctr = round(base_ctr.get(channel, 15) * variance, 1)
-        predicted_conversion = round(base_conversion.get(channel, 5) * variance, 1)
+        predicted_ctr = round(base_ctr.get(request.channel, 15) * variance, 1)
+        predicted_conversion = round(base_conversion.get(request.channel, 5) * variance, 1)
+        
+        generation_id = f"gen_{uuid.uuid4().hex[:8]}"
+        
+        # Log generation to database
+        with get_db() as conn:
+            cursor = conn.cursor()
+            cursor.execute('''
+                INSERT INTO ai_generations (id, tenant_id, request_type, input_data, output_data, model_used, tokens_used, latency_ms, created_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (
+                generation_id,
+                request.tenant_id,
+                "template",
+                json.dumps(request.dict()),
+                json.dumps({"subject": subject, "body": body}),
+                model_used,
+                len(body.split()) * 2,
+                latency_ms,
+                datetime.now().isoformat()
+            ))
         
         return GeneratedTemplate(
-            id=f"gen_{uuid.uuid4().hex[:8]}",
+            id=generation_id,
             subject=subject,
             preheader=preheader,
-            headline=request.key_message,
+            headline=headline,
             body=body,
-            cta_text=request.cta or "Learn More",
+            cta_text=cta_text,
             cta_url="{{cta_url}}",
             footer="© {{year}} {{company_name}}. All rights reserved.",
             metadata={
-                "objective": objective,
-                "channel": channel,
+                "objective": request.objective,
+                "channel": request.channel,
                 "industry": request.industry,
                 "tone": request.tone,
                 "predicted_ctr": predicted_ctr,
                 "predicted_conversion": predicted_conversion,
                 "word_count": len(body.split()),
                 "reading_time": f"{max(1, len(body.split()) // 200)} min",
-                "ai_model": "nadakki-gen-v2",
+                "ai_model": model_used,
+                "ai_enabled": USE_REAL_AI,
+                "latency_ms": latency_ms,
                 "confidence_score": round(random.uniform(0.85, 0.98), 2)
             },
             generated_at=datetime.now()
@@ -209,9 +283,16 @@ class AIGenerationEngine:
     
     async def rewrite_copy(self, request: CopyRewriteRequest) -> Dict[str, Any]:
         """Rewrite copy with different tone"""
-        tone = self.TONE_MODIFIERS.get(request.target_tone, self.TONE_MODIFIERS["friendly"])
+        start_time = time.time()
         
-        # Simple tone transformation (in production, use LLM)
+        tone_transforms = {
+            "professional": {"greeting": "Dear", "style": "formal"},
+            "friendly": {"greeting": "Hey", "style": "casual"},
+            "urgent": {"greeting": "Hi", "style": "direct"},
+            "casual": {"greeting": "Hi there", "style": "relaxed"}
+        }
+        
+        tone = tone_transforms.get(request.target_tone, tone_transforms["friendly"])
         rewritten = request.original_text
         
         if tone["style"] == "formal":
@@ -222,12 +303,16 @@ class AIGenerationEngine:
         if request.max_length and len(rewritten) > request.max_length:
             rewritten = rewritten[:request.max_length-3] + "..."
         
+        latency_ms = int((time.time() - start_time) * 1000)
+        
         return {
             "original": request.original_text,
             "rewritten": rewritten,
             "tone": request.target_tone,
             "channel": request.channel,
-            "character_count": len(rewritten)
+            "character_count": len(rewritten),
+            "latency_ms": latency_ms,
+            "ai_enabled": USE_REAL_AI
         }
     
     async def generate_ab_variants(self, request: ABVariantRequest) -> List[Dict[str, Any]]:
@@ -262,9 +347,20 @@ ai_engine = AIGenerationEngine()
 # ENDPOINTS
 # ═══════════════════════════════════════════════════════════════
 
+@router.get("/status")
+async def get_ai_status():
+    """Get AI service status and configuration"""
+    return {
+        "ai_enabled": USE_REAL_AI,
+        "anthropic_configured": bool(ANTHROPIC_API_KEY),
+        "openai_configured": bool(OPENAI_API_KEY),
+        "fallback_mode": not USE_REAL_AI,
+        "model": "claude-3-haiku" if ANTHROPIC_API_KEY else "nadakki-template-v2"
+    }
+
 @router.post("/generate-template", response_model=GeneratedTemplate)
 async def generate_template(request: TemplateGenerationRequest):
-    """Generate AI-powered template based on parameters"""
+    """Generate AI-powered template (uses real AI if configured)"""
     try:
         template = await ai_engine.generate_template(request)
         return template
@@ -297,7 +393,8 @@ async def optimize_subject(
     return {
         "original": subject,
         "suggestions": suggestions,
-        "best_recommendation": suggestions[0]
+        "best_recommendation": suggestions[0],
+        "ai_enabled": USE_REAL_AI
     }
 
 @router.post("/personalize")
@@ -316,3 +413,30 @@ async def personalize_content(
         "personalized": personalized,
         "fields_replaced": list(user_data.keys())
     }
+
+@router.get("/generations")
+async def list_generations(
+    tenant_id: str = Query(default="default"),
+    limit: int = Query(default=20, le=100)
+):
+    """List recent AI generations from DATABASE"""
+    with get_db() as conn:
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT * FROM ai_generations 
+            WHERE tenant_id = ?
+            ORDER BY created_at DESC
+            LIMIT ?
+        ''', (tenant_id, limit))
+        
+        return [
+            {
+                "id": row["id"],
+                "request_type": row["request_type"],
+                "model_used": row["model_used"],
+                "tokens_used": row["tokens_used"],
+                "latency_ms": row["latency_ms"],
+                "created_at": row["created_at"]
+            }
+            for row in cursor.fetchall()
+        ]
