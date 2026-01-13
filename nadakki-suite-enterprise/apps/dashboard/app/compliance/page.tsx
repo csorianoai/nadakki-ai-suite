@@ -1,8 +1,3 @@
-notepad "nadakki-suite-enterprise\apps\dashboard\app\compliance\page.tsx"
-```
-
-Esto abrirá Notepad. **Borra TODO el contenido** y pega esto exactamente:
-```
 "use client";
 import { useState, useEffect } from "react";
 interface Agent { id: string; name: string; category: string; }
