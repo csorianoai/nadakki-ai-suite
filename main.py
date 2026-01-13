@@ -410,7 +410,7 @@ async def get_marketing_summary():
 @app.get("/api/catalog/marketing/agents")
 async def get_marketing_agents_list():
     return {
-        "total": 35,
+        "total": 36,
         "agents": [
             {"id": "leadscoria", "name": "Puntuador de Leads", "category": "Lead Management"},
             {"id": "leadscoringia", "name": "Calificador de Leads", "category": "Lead Management"},
@@ -446,7 +446,8 @@ async def get_marketing_agents_list():
             {"id": "conversioncohortia", "name": "Analizador de Cohortes", "category": "Analytics"},
             {"id": "productaffinityia", "name": "Analizador de Afinidad", "category": "Product"},
             {"id": "cashofferfilteria", "name": "Filtrador de Ofertas", "category": "Offers"},
-            {"id": "marketingorchestratorea", "name": "Orquestador de Marketing", "category": "Orchestration"}
+            {"id": "marketingorchestratorea", "name": "Orquestador de Marketing", "category": "Orchestration"},
+            {"id": "campaignstrategyorchestratoria", "name": "Orquestador de Estrategia de Campanas", "category": "Orchestration"}
         ]
     }
 
