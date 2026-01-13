@@ -19,20 +19,20 @@ INTEGRATIONS_DB = {
 SYNC_LOGS: List[Dict] = []
 
 @router.get("")
-async def list_integrations(tenant_id: str = Query(...)):
+async def list_integrations(tenant_id: str = Query("credicefi", description="Tenant ID")):
     integrations = [i for i in INTEGRATIONS_DB.values() if i["tenant_id"] == tenant_id]
     connected = len([i for i in integrations if i["status"] == "connected"])
     return {"integrations": integrations, "summary": {"total": len(integrations), "connected": connected, "success_rate": 99.8}}
 
 @router.get("/{integration_id}")
-async def get_integration(integration_id: str, tenant_id: str = Query(...)):
+async def get_integration(integration_id: str, tenant_id: str = Query("credicefi", description="Tenant ID")):
     integration = INTEGRATIONS_DB.get(integration_id)
     if not integration:
         raise HTTPException(status_code=404, detail="Integration not found")
     return integration
 
 @router.post("/{integration_id}/connect")
-async def connect_integration(integration_id: str, tenant_id: str = Query(...)):
+async def connect_integration(integration_id: str, tenant_id: str = Query("credicefi", description="Tenant ID")):
     integration = INTEGRATIONS_DB.get(integration_id)
     if not integration:
         raise HTTPException(status_code=404, detail="Integration not found")
@@ -41,7 +41,7 @@ async def connect_integration(integration_id: str, tenant_id: str = Query(...)):
     return {"message": f"{integration['name']} connected", "status": "connected"}
 
 @router.post("/{integration_id}/disconnect")
-async def disconnect_integration(integration_id: str, tenant_id: str = Query(...)):
+async def disconnect_integration(integration_id: str, tenant_id: str = Query("credicefi", description="Tenant ID")):
     integration = INTEGRATIONS_DB.get(integration_id)
     if not integration:
         raise HTTPException(status_code=404, detail="Integration not found")
@@ -49,7 +49,7 @@ async def disconnect_integration(integration_id: str, tenant_id: str = Query(...
     return {"message": f"{integration['name']} disconnected", "status": "disconnected"}
 
 @router.post("/{integration_id}/sync")
-async def sync_integration(integration_id: str, tenant_id: str = Query(...)):
+async def sync_integration(integration_id: str, tenant_id: str = Query("credicefi", description="Tenant ID")):
     integration = INTEGRATIONS_DB.get(integration_id)
     if not integration:
         raise HTTPException(status_code=404, detail="Integration not found")
@@ -61,7 +61,7 @@ async def sync_integration(integration_id: str, tenant_id: str = Query(...)):
     return {"message": f"Synced {integration['name']}", "records": records}
 
 @router.post("/sync-all")
-async def sync_all(tenant_id: str = Query(...)):
+async def sync_all(tenant_id: str = Query("credicefi", description="Tenant ID")):
     results = []
     for i in INTEGRATIONS_DB.values():
         if i["tenant_id"] == tenant_id and i["status"] == "connected":
@@ -70,7 +70,7 @@ async def sync_all(tenant_id: str = Query(...)):
     return {"message": f"Synced {len(results)} integrations", "results": results}
 
 @router.get("/logs/recent")
-async def get_logs(tenant_id: str = Query(...), limit: int = 10):
+async def get_logs(tenant_id: str = Query("credicefi", description="Tenant ID"), limit: int = 10):
     return {"logs": SYNC_LOGS[:limit], "total": len(SYNC_LOGS)}
 
 @router.get("/available")

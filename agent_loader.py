@@ -263,4 +263,19 @@ class AgentRegistry:
 
 
 # Instancia global del registry
+
+    def get_cores(self) -> List[Dict[str, Any]]:
+        """Retorna lista de cores con información detallada"""
+        cores_list = []
+        for core_id, agent_ids in self.cores.items():
+            cores_list.append({
+                "id": core_id,
+                "name": core_id.replace("_", " ").title(),
+                "agents_count": len(agent_ids),
+                "agents": agent_ids,
+                "status": "active"
+            })
+        return cores_list
+
+
 registry = AgentRegistry()

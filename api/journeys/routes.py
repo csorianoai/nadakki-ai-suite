@@ -64,21 +64,21 @@ def init_sample_journeys():
 init_sample_journeys()
 
 @router.get("")
-async def list_journeys(tenant_id: str = Query(...), status: Optional[str] = None, limit: int = 20):
+async def list_journeys(tenant_id: str = Query("default", description="Tenant ID"), status: Optional[str] = None, limit: int = 20):
     journeys = [j for j in JOURNEYS_DB.values() if j["tenant_id"] == tenant_id]
     if status:
         journeys = [j for j in journeys if j["status"] == status]
     return {"journeys": journeys[:limit], "total": len(journeys)}
 
 @router.get("/{journey_id}")
-async def get_journey(journey_id: str, tenant_id: str = Query(...)):
+async def get_journey(journey_id: str, tenant_id: str = Query("default", description="Tenant ID")):
     journey = JOURNEYS_DB.get(journey_id)
     if not journey or journey["tenant_id"] != tenant_id:
         raise HTTPException(status_code=404, detail="Journey not found")
     return journey
 
 @router.post("")
-async def create_journey(data: JourneyCreate, tenant_id: str = Query(...)):
+async def create_journey(data: JourneyCreate, tenant_id: str = Query("default", description="Tenant ID")):
     journey_id = f"journey-{uuid.uuid4().hex[:8]}"
     journey = {
         "id": journey_id, "tenant_id": tenant_id, "name": data.name,
@@ -93,7 +93,7 @@ async def create_journey(data: JourneyCreate, tenant_id: str = Query(...)):
     return {"id": journey_id, "message": "Journey created", "journey": journey}
 
 @router.put("/{journey_id}")
-async def update_journey(journey_id: str, data: dict, tenant_id: str = Query(...)):
+async def update_journey(journey_id: str, data: dict, tenant_id: str = Query("default", description="Tenant ID")):
     journey = JOURNEYS_DB.get(journey_id)
     if not journey or journey["tenant_id"] != tenant_id:
         raise HTTPException(status_code=404, detail="Journey not found")
@@ -102,7 +102,7 @@ async def update_journey(journey_id: str, data: dict, tenant_id: str = Query(...
     return {"message": "Journey updated", "journey": journey}
 
 @router.post("/{journey_id}/activate")
-async def activate_journey(journey_id: str, tenant_id: str = Query(...)):
+async def activate_journey(journey_id: str, tenant_id: str = Query("default", description="Tenant ID")):
     journey = JOURNEYS_DB.get(journey_id)
     if not journey:
         raise HTTPException(status_code=404, detail="Journey not found")
@@ -110,7 +110,7 @@ async def activate_journey(journey_id: str, tenant_id: str = Query(...)):
     return {"message": "Journey activated", "status": "active"}
 
 @router.post("/{journey_id}/pause")
-async def pause_journey(journey_id: str, tenant_id: str = Query(...)):
+async def pause_journey(journey_id: str, tenant_id: str = Query("default", description="Tenant ID")):
     journey = JOURNEYS_DB.get(journey_id)
     if not journey:
         raise HTTPException(status_code=404, detail="Journey not found")
@@ -118,13 +118,13 @@ async def pause_journey(journey_id: str, tenant_id: str = Query(...)):
     return {"message": "Journey paused", "status": "paused"}
 
 @router.delete("/{journey_id}")
-async def delete_journey(journey_id: str, tenant_id: str = Query(...)):
+async def delete_journey(journey_id: str, tenant_id: str = Query("default", description="Tenant ID")):
     if journey_id in JOURNEYS_DB:
         del JOURNEYS_DB[journey_id]
     return {"message": "Journey deleted"}
 
 @router.get("/{journey_id}/stats")
-async def get_journey_stats(journey_id: str, tenant_id: str = Query(...)):
+async def get_journey_stats(journey_id: str, tenant_id: str = Query("default", description="Tenant ID")):
     journey = JOURNEYS_DB.get(journey_id)
     if not journey:
         raise HTTPException(status_code=404, detail="Journey not found")
