@@ -1,19 +1,19 @@
-notepad "nadakki-suite-enterprise\apps\dashboard\app\compliance\page.tsx"
-```
+﻿const fs = require('fs');
+const path = require('path');
 
-Esto abrirá Notepad. **Borra TODO el contenido** y pega esto exactamente:
-```
-"use client";
+const cores = ['compliance', 'contabilidad', 'decision', 'experiencia', 'fortaleza', 'investigacion', 'legal', 'logistica', 'operaciones', 'originacion', 'presupuesto', 'recuperacion', 'regtech', 'rrhh', 'ventascrm', 'vigilancia'];
+
+const template = \"use client";
 import { useState, useEffect } from "react";
 interface Agent { id: string; name: string; category: string; }
-export default function compliancePage() {
+export default function CORE_NAMEPage() {
   const [agents, setAgents] = useState<Agent[]>([]);
   const [loading, setLoading] = useState(true);
   const [executing, setExecuting] = useState<string | null>(null);
   const [result, setResult] = useState<any>(null);
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
-    fetch("https://nadakki-ai-suite.onrender.com/api/catalog/compliance/agents")
+    fetch("https://nadakki-ai-suite.onrender.com/api/catalog/CORE_NAME/agents")
       .then((res) => res.json())
       .then((data) => { setAgents(data.agents || []); setLoading(false); })
       .catch(() => setLoading(false));
@@ -23,7 +23,7 @@ export default function compliancePage() {
     setResult(null);
     setShowModal(true);
     try {
-      const response = await fetch("https://nadakki-ai-suite.onrender.com/agents/compliance/" + agentId + "/execute", {
+      const response = await fetch(\\\https://nadakki-ai-suite.onrender.com/agents/CORE_NAME/\\\/execute\\\, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ input_data: { test: true }, tenant_id: "credicefi" })
@@ -38,7 +38,7 @@ export default function compliancePage() {
   if (loading) return <div className="p-8 text-center">Loading...</div>;
   return (
     <div className="p-8">
-      <h1 className="text-3xl font-bold mb-6 capitalize">Compliance Agents</h1>
+      <h1 className="text-3xl font-bold mb-6 capitalize">CORE_NAME Agents</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {agents.map((agent) => (
           <div key={agent.id} className="border rounded-lg p-4 hover:shadow-lg transition">
@@ -69,4 +69,11 @@ export default function compliancePage() {
       )}
     </div>
   );
-}
+}\;
+
+cores.forEach(core => {
+  const filePath = path.join('nadakki-suite-enterprise', 'apps', 'dashboard', 'app', core, 'page.tsx');
+  const content = template.replace(/CORE_NAME/g, core);
+  fs.writeFileSync(filePath, content, 'utf8');
+  console.log('Created:', filePath);
+});

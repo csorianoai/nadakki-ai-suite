@@ -18,7 +18,7 @@ export default function presupuestoPage() {
     setResult(null);
     setShowModal(true);
     try {
-      const response = await fetch(`https://nadakki-ai-suite.onrender.com/agents/presupuesto/${agentId}/execute`, {
+      const response = await fetch("https://nadakki-ai-suite.onrender.com/agents/presupuesto/" + agentId + "/execute", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ input_data: { test: true }, tenant_id: "credicefi" })
@@ -33,7 +33,7 @@ export default function presupuestoPage() {
   if (loading) return <div className="p-8 text-center">Loading...</div>;
   return (
     <div className="p-8">
-      <h1 className="text-3xl font-bold mb-6 capitalize">presupuesto Agents</h1>
+      <h1 className="text-3xl font-bold mb-6 capitalize">Presupuesto Agents</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {agents.map((agent) => (
           <div key={agent.id} className="border rounded-lg p-4 hover:shadow-lg transition">
