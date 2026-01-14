@@ -1,0 +1,21 @@
+{
+  "execution_id": "EXEC-2f9d510c",
+  "tenant_id": "nadaki_miami_001",
+  "timestamp": "2026-01-14T00:38:32.385281+00:00",
+  "success": true,
+  "success_rate": 1.0,
+  "duration_ms": 208,
+  "industry": "boat_rental",
+  "factors": {
+    "budget_level": 45000.0,
+    "channel_count": 9,
+    "audience_count": 5,
+    "objective_count": 1,
+    "parse_confidence": 0.7000000000000001
+  },
+  "success_factors": [
+    "Multi-channel approach",
+    "Adequate budget allocation",
+    "ML-optimized agent allocation"
+  ]
+}

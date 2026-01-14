@@ -1,0 +1,13 @@
+{
+  "entry_id": "AUDIT-431055235326",
+  "timestamp": "2026-01-14T00:38:32.409977+00:00",
+  "action": "execution_started",
+  "actor": "credicefi_001",
+  "resource": "PLAN-fa4e8cf9",
+  "details": {
+    "execution_id": "EXEC-936b5da9",
+    "dry_run": true
+  },
+  "previous_hash": "7cdda8a67ac5fb06294bdb66e6dd05b6725d500ef5a2fb56ec96d5bcfd34823a",
+  "hash": "f162a527d786be2089a4bc374e4aa1fe5575e19139fc6c54cb626ac53c3df247"
+}
