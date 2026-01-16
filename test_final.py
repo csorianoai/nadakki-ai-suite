@@ -1,44 +1,27 @@
-﻿import sys
-sys.path.insert(0, '.')
-import asyncio
-from dotenv import load_dotenv
-load_dotenv()
-
-# Reimportar para cargar cambios
-import importlib
-import agents.shared_layers.executors.llm_executor as llm_mod
-importlib.reload(llm_mod)
-
-llm_mod._llm = None
-llm = llm_mod.get_llm()
-
-prompt = "Responde SOLO con un emoji de playa"
+﻿import asyncio
+from hyper_agents import create_autonomous_marketing_system, EventType
 
 async def test():
-    print("\n" + "="*60)
-    print("   PRUEBA FINAL - TODOS LOS MODELOS")
+    print("="*60)
+    print("  SISTEMA AUTONOMO COMPLETO - TEST FINAL")
     print("="*60)
     
-    print("\n[1/4] GPT-4o-mini...")
-    r1 = await llm.generate(prompt, model="gpt-4o-mini")
-    print(f"       {r1['content']}  |  ${r1['cost']:.6f}")
+    system = await create_autonomous_marketing_system("credicefi", auto_start=True, load_defaults=False)
     
-    print("\n[2/4] DeepSeek...")
-    r2 = await llm.generate(prompt, model="deepseek-chat")
-    print(f"       {r2['content']}  |  ${r2['cost']:.6f}")
+    print("\nEjecutando workflow lead_nurturing...")
+    result = await system.run_workflow("lead_nurturing", {"lead_id": "001"})
+    print(f"Status: {result['status']}")
     
-    print("\n[3/4] Claude Haiku...")
-    r3 = await llm.generate(prompt, model="claude-3-haiku-20240307")
-    print(f"       {r3['content']}  |  ${r3['cost']:.6f}")
+    print("\nPublicando evento...")
+    await system.publish_event(EventType.LEAD_CREATED, {"lead_id": "002"})
     
-    print("\n[4/4] Grok-3...")
-    r4 = await llm.generate(prompt, model="grok-3")
-    print(f"       {r4['content']}  |  ${r4['cost']:.6f}")
+    print("\nDashboard:")
+    d = system.get_dashboard()
+    print(f"  Agentes activos: {d['system_health']['agents_active']}")
     
+    await system.stop()
     print("\n" + "="*60)
-    stats = llm.get_stats()
-    print(f"   TOTAL: {stats['calls']} llamadas | ${stats['cost']:.6f}")
+    print("  SISTEMA AUTONOMO v3.3.0 OPERATIVO")
     print("="*60)
 
 asyncio.run(test())
-print("\n   4/4 MODELOS FUNCIONANDO!")
