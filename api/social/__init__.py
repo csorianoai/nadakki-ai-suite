@@ -212,5 +212,47 @@ def get_docs_url(platform: str) -> str:
 
 
 # Crear archivo __init__.py
+
+@router.post("/{platform}/connect")
+async def connect_platform_manual(
+    platform: str,
+    tenant_id: str = Query("default"),
+    body: dict = None
+):
+    """Conecta una plataforma manualmente con credenciales ya obtenidas"""
+    from fastapi import Body
+    
+    if platform not in OAUTH_CONFIG:
+        raise HTTPException(status_code=400, detail=f"Plataforma no soportada: {platform}")
+    
+    # Inicializar tenant si no existe
+    if tenant_id not in SOCIAL_CONNECTIONS:
+        SOCIAL_CONNECTIONS[tenant_id] = {}
+    
+    # Guardar conexion
+    SOCIAL_CONNECTIONS[tenant_id][platform] = {
+        "connected": True,
+        "account": body.get("page_name", body.get("account_name", f"@{tenant_id}")),
+        "account_id": body.get("page_id", body.get("account_id", f"{platform}_manual")),
+        "access_token": body.get("access_token", ""),
+        "app_id": body.get("app_id", ""),
+        "app_secret": body.get("app_secret", ""),
+        "followers": body.get("followers"),
+        "last_sync": datetime.now().isoformat(),
+        "connection_type": "manual"
+    }
+    
+    logger.info(f"Manually connected {platform} for tenant {tenant_id}")
+    
+    return {
+        "success": True,
+        "platform": platform,
+        "tenant_id": tenant_id,
+        "account": SOCIAL_CONNECTIONS[tenant_id][platform]["account"],
+        "message": f"{platform} conectado exitosamente"
+    }
+
+
 def get_router():
     return router
+

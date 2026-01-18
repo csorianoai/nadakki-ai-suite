@@ -8,3 +8,6 @@ nadakki-lambda-deployment.zip
 
 nadakki-lambda-deployment.zip
 *.zip
+
+# API Reference con credenciales
+API_REFERENCE.md
