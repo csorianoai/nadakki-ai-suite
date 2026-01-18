@@ -18,7 +18,6 @@ except Exception as e:
 # New routers for complete system
 try:
     from routers import analytics
-from routers.sitemap_proxy import router as sitemap_router
     from routers import campaigns_v2
     from routers import ai_generation
 except ImportError as e:
@@ -26,6 +25,10 @@ except ImportError as e:
     analytics = None
     campaigns_v2 = None
     ai_generation = None
+
+# Import sitemap router separately
+from routers.sitemap_proxy import router as sitemap_router
+
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Dict, Any, Optional, List
 from pydantic import BaseModel, Field
