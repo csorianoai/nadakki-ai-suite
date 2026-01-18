@@ -18,6 +18,7 @@ except Exception as e:
 # New routers for complete system
 try:
     from routers import analytics
+from routers.sitemap_proxy import router as sitemap_router
     from routers import campaigns_v2
     from routers import ai_generation
 except ImportError as e:
@@ -1606,6 +1607,7 @@ app.include_router(integrations_router)
 app.include_router(campaigns_router)
 app.include_router(segments_router)
 app.include_router(agents_router)
+app.include_router(sitemap_router)
 
 
 
