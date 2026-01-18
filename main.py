@@ -9,9 +9,10 @@ from fastapi import FastAPI, Header, HTTPException, Depends, APIRouter
 
 # Initialize database on startup
 try:
-    from database import init_database
-    init_database()
-    print("✅ Database initialized successfully")
+    # Database initialization - disabled temporarily for deploy
+    # from database import init_database
+    # init_database()
+    print("⚠️ Database initialization disabled for deploy")
 except Exception as e:
     print(f"⚠️ Database initialization warning: {e}")
 
