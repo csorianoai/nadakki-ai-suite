@@ -69,7 +69,25 @@ DOMAIN_CONFIGS: Dict[str, dict] = {
         ]
     },
 }
-
+"nadakiexcursions.com": {
+        "name": "Nadaki Excursions",
+        "supabase_url": None,
+        "pages": [
+            {"path": "/", "priority": 1.0, "changefreq": "daily"},
+            {"path": "/tours", "priority": 0.9, "changefreq": "weekly"},
+            {"path": "/about", "priority": 0.7, "changefreq": "monthly"},
+            {"path": "/contact", "priority": 0.7, "changefreq": "monthly"},
+        ]
+    },
+    "ramonalmonte-soriano.lovable.app": {
+        "name": "Ramon Almonte Blog",
+        "supabase_url": None,
+        "pages": [
+            {"path": "/", "priority": 1.0, "changefreq": "weekly"},
+            {"path": "/blog", "priority": 0.9, "changefreq": "daily"},
+            {"path": "/about", "priority": 0.7, "changefreq": "monthly"},
+        ]
+    },
 def generate_xml(domain: str, pages: List[dict]) -> str:
     today = date.today().isoformat()
     urls = ""
