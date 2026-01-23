@@ -1,0 +1,1089 @@
+﻿{
+    "Summary":  {
+                    "TotalChecks":  106,
+                    "Warnings":  21,
+                    "Failed":  3,
+                    "Passed":  82
+                },
+    "Agents":  {
+                   "Adapters":  [
+                                    {
+                                        "Platforms":  [
+                                                          "Facebook",
+                                                          "Instagram"
+                                                      ],
+                                        "Name":  "meta_adapter.py",
+                                        "Exists":  false
+                                    },
+                                    {
+                                        "Platforms":  [
+                                                          "LinkedIn"
+                                                      ],
+                                        "Name":  "linkedin_adapter.py",
+                                        "Exists":  false
+                                    },
+                                    {
+                                        "Platforms":  [
+                                                          "TikTok"
+                                                      ],
+                                        "Name":  "tiktok_adapter.py",
+                                        "Exists":  false
+                                    },
+                                    {
+                                        "Platforms":  [
+                                                          "Twitter/X"
+                                                      ],
+                                        "Name":  "x_adapter.py",
+                                        "Exists":  false
+                                    },
+                                    {
+                                        "Platforms":  [
+                                                          "Pinterest"
+                                                      ],
+                                        "Name":  "pinterest_adapter.py",
+                                        "Exists":  false
+                                    },
+                                    {
+                                        "Platforms":  [
+                                                          "YouTube"
+                                                      ],
+                                        "Name":  "youtube_adapter.py",
+                                        "Exists":  false
+                                    },
+                                    {
+                                        "Platforms":  [
+                                                          "WhatsApp"
+                                                      ],
+                                        "Name":  "whatsapp_adapter.py",
+                                        "Exists":  false
+                                    }
+                                ],
+                   "Marketing":  [
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  true,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "abtestingia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  18.19,
+                                         "Lines":  263,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\abtestingia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "abtestingimpactia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  9.48,
+                                         "Lines":  127,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\abtestingimpactia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "attributionmodelia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  8.39,
+                                         "Lines":  117,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\attributionmodelia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "audiencesegmenteria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  15.32,
+                                         "Lines":  246,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\audiencesegmenteria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "budgetforecastia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  8.39,
+                                         "Lines":  117,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\budgetforecastia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "campaignoptimizeria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  14.26,
+                                         "Lines":  227,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\campaignoptimizeria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  true,
+                                         "HasComplianceLayer":  false,
+                                         "HasHealthCheck":  false,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "campaignstrategyorchestratoria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  66.88,
+                                         "Lines":  1763,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\campaignstrategyorchestratoria.py",
+                                         "HasAuditTrail":  false,
+                                         "Score":  45,
+                                         "HasDecisionLayer":  false,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "cashofferfilteria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  8.39,
+                                         "Lines":  117,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\cashofferfilteria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "channelattributia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  15.03,
+                                         "Lines":  244,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\channelattributia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "competitoranalyzeria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  12.55,
+                                         "Lines":  200,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\competitoranalyzeria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "competitorintelligenceia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  13.42,
+                                         "Lines":  205,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\competitorintelligenceia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "contactqualityia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  13.79,
+                                         "Lines":  220,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\contactqualityia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  true,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "contentgeneratoria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  14.19,
+                                         "Lines":  233,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\contentgeneratoria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "contentperformanceia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  8.4,
+                                         "Lines":  117,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\contentperformanceia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "conversioncohortia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  14.22,
+                                         "Lines":  219,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\conversioncohortia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "creativeanalyzeria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  13.17,
+                                         "Lines":  215,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\creativeanalyzeria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "customersegmentatonia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  12.44,
+                                         "Lines":  196,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\customersegmentatonia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  true,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "emailautomationia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  15.73,
+                                         "Lines":  231,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\emailautomationia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "geosegmentationia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  11.33,
+                                         "Lines":  184,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\geosegmentationia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  true,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "influencermatcheria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  13.72,
+                                         "Lines":  209,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\influencermatcheria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  true,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "influencermatchingia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  12.39,
+                                         "Lines":  198,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\influencermatchingia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "journeyoptimizeria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  13.29,
+                                         "Lines":  208,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\journeyoptimizeria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "leadscoria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  14.74,
+                                         "Lines":  248,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\leadscoria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "leadscoringia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  8.37,
+                                         "Lines":  117,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\leadscoringia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "marketingmixmodelia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  8.39,
+                                         "Lines":  117,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\marketingmixmodelia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "marketingorchestratorea",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  8.4,
+                                         "Lines":  117,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\marketingorchestratorea.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "minimalformia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  11.96,
+                                         "Lines":  191,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\minimalformia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  false,
+                                         "IsOperative":  true,
+                                         "HasComplianceLayer":  false,
+                                         "HasHealthCheck":  false,
+                                         "HasCircuitBreaker":  false,
+                                         "Name":  "multi_industry_config",
+                                         "HasSuperAgent":  false,
+                                         "SizeKB":  37.62,
+                                         "Lines":  967,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\multi_industry_config.py",
+                                         "HasAuditTrail":  false,
+                                         "Score":  0,
+                                         "HasDecisionLayer":  false,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "personalizationengineia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  13.53,
+                                         "Lines":  211,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\personalizationengineia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "predictiveleadia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  14.48,
+                                         "Lines":  230,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\predictiveleadia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "pricingoptimizeria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  15.98,
+                                         "Lines":  254,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\pricingoptimizeria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "productaffinityia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  12.67,
+                                         "Lines":  203,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\productaffinityia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "retentionpredictorea",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  8.4,
+                                         "Lines":  117,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\retentionpredictorea.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "retentionpredictoria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  14.96,
+                                         "Lines":  241,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\retentionpredictoria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "sentimentanalyzeria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  13.98,
+                                         "Lines":  236,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\sentimentanalyzeria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  false,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "sociallisteningia",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  13.75,
+                                         "Lines":  220,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\sociallisteningia.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  true,
+                                         "IsOperative":  true,
+                                         "HasComplianceLayer":  true,
+                                         "HasHealthCheck":  true,
+                                         "HasCircuitBreaker":  true,
+                                         "Name":  "socialpostgeneratoria",
+                                         "HasSuperAgent":  true,
+                                         "SizeKB":  8.4,
+                                         "Lines":  117,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\socialpostgeneratoria.py",
+                                         "HasAuditTrail":  true,
+                                         "Score":  100,
+                                         "HasDecisionLayer":  true,
+                                         "HasAnalyzeMethod":  false
+                                     },
+                                     {
+                                         "HasExecuteMethod":  [
+
+                                                              ],
+                                         "IsOperative":  [
+
+                                                         ],
+                                         "HasComplianceLayer":  [
+
+                                                                ],
+                                         "HasHealthCheck":  [
+
+                                                            ],
+                                         "HasCircuitBreaker":  [
+
+                                                               ],
+                                         "Name":  "__init__",
+                                         "HasSuperAgent":  [
+
+                                                           ],
+                                         "SizeKB":  0,
+                                         "Lines":  0,
+                                         "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\__init__.py",
+                                         "HasAuditTrail":  [
+
+                                                           ],
+                                         "Score":  0,
+                                         "HasDecisionLayer":  [
+
+                                                              ],
+                                         "HasAnalyzeMethod":  [
+
+                                                              ]
+                                     }
+                                 ],
+                   "Executors":  [
+                                     {
+                                         "HasRealAPICall":  false,
+                                         "SizeKB":  1.44,
+                                         "Name":  "base_social.py",
+                                         "HasPublishMethod":  true,
+                                         "Exists":  true
+                                     },
+                                     {
+                                         "HasRealAPICall":  true,
+                                         "SizeKB":  4.22,
+                                         "Name":  "facebook_executor.py",
+                                         "HasPublishMethod":  true,
+                                         "Exists":  true
+                                     },
+                                     {
+                                         "HasRealAPICall":  true,
+                                         "SizeKB":  4.36,
+                                         "Name":  "instagram_executor.py",
+                                         "HasPublishMethod":  true,
+                                         "Exists":  true
+                                     },
+                                     {
+                                         "HasRealAPICall":  false,
+                                         "SizeKB":  4.49,
+                                         "Name":  "social_manager.py",
+                                         "HasPublishMethod":  true,
+                                         "Exists":  true
+                                     },
+                                     {
+                                         "HasRealAPICall":  false,
+                                         "SizeKB":  0.41,
+                                         "Name":  "__init__.py",
+                                         "HasPublishMethod":  false,
+                                         "Exists":  true
+                                     }
+                                 ],
+                   "HyperAgents":  [
+                                       {
+                                           "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\hyper_agents\\core",
+                                           "Exists":  true,
+                                           "MissingFiles":  [
+                                                                "cortex.py",
+                                                                "base_agent.py"
+                                                            ],
+                                           "Name":  "core",
+                                           "Files":  [
+                                                         "__init__.py",
+                                                         "types.py",
+                                                         "adapters.py"
+                                                     ]
+                                       },
+                                       {
+                                           "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\hyper_agents\\memory",
+                                           "Exists":  true,
+                                           "MissingFiles":  [
+
+                                                            ],
+                                           "Name":  "memory",
+                                           "Files":  [
+                                                         "__init__.py",
+                                                         "quantum_memory.py"
+                                                     ]
+                                       },
+                                       {
+                                           "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\hyper_agents\\learning",
+                                           "Exists":  true,
+                                           "MissingFiles":  [
+                                                                "rl_learning_engine.py"
+                                                            ],
+                                           "Name":  "learning",
+                                           "Files":  [
+                                                         "__init__.py"
+                                                     ]
+                                       },
+                                       {
+                                           "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\hyper_agents\\budget",
+                                           "Exists":  true,
+                                           "MissingFiles":  [
+
+                                                            ],
+                                           "Name":  "budget",
+                                           "Files":  [
+                                                         "__init__.py",
+                                                         "budget_manager.py"
+                                                     ]
+                                       },
+                                       {
+                                           "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\hyper_agents\\safety",
+                                           "Exists":  true,
+                                           "MissingFiles":  [
+
+                                                            ],
+                                           "Name":  "safety",
+                                           "Files":  [
+                                                         "__init__.py",
+                                                         "safety_filter.py"
+                                                     ]
+                                       },
+                                       {
+                                           "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\hyper_agents\\marketing",
+                                           "Exists":  true,
+                                           "MissingFiles":  [
+
+                                                            ],
+                                           "Name":  "marketing",
+                                           "Files":  [
+                                                         "__init__.py",
+                                                         "hyper_marketing_bridge.py"
+                                                     ]
+                                       },
+                                       {
+                                           "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\hyper_agents\\executors",
+                                           "Exists":  true,
+                                           "MissingFiles":  [
+                                                                "mock_executor.py"
+                                                            ],
+                                           "Name":  "executors",
+                                           "Files":  [
+                                                         "__init__.py",
+                                                         "meta_executor.py"
+                                                     ]
+                                       },
+                                       {
+                                           "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\hyper_agents\\autonomous",
+                                           "Exists":  true,
+                                           "MissingFiles":  [
+                                                                "autonomous_agent_wrapper.py"
+                                                            ],
+                                           "Name":  "autonomous",
+                                           "Files":  [
+                                                         "__init__.py"
+                                                     ]
+                                       },
+                                       {
+                                           "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\hyper_agents\\triggers",
+                                           "Exists":  true,
+                                           "MissingFiles":  [
+
+                                                            ],
+                                           "Name":  "triggers",
+                                           "Files":  [
+                                                         "__init__.py",
+                                                         "event_bus.py",
+                                                         "event_trigger_agent.py",
+                                                         "scheduler.py"
+                                                     ]
+                                       },
+                                       {
+                                           "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\hyper_agents\\orchestration",
+                                           "Exists":  true,
+                                           "MissingFiles":  [
+
+                                                            ],
+                                           "Name":  "orchestration",
+                                           "Files":  [
+                                                         "__init__.py",
+                                                         "autonomous_orchestrator.py"
+                                                     ]
+                                       },
+                                       {
+                                           "Path":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\hyper_agents\\monitoring",
+                                           "Exists":  true,
+                                           "MissingFiles":  [
+
+                                                            ],
+                                           "Name":  "monitoring",
+                                           "Files":  [
+                                                         "__init__.py",
+                                                         "autonomy_dashboard.py"
+                                                     ]
+                                       }
+                                   ]
+               },
+    "Connections":  {
+                        "Meta":  {
+                                     "AppID":  "140247778746",
+                                     "BusinessVerified":  true,
+                                     "AppName":  "BUDHA FASHION",
+                                     "PageID":  "59633914943",
+                                     "Mode":  "LIVE"
+                                 },
+                        "FacebookTokenValid":  false
+                    },
+    "ProjectRoot":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite",
+    "Dependencies":  {
+                         "Requirements":  {
+                                              "celery":  false,
+                                              "pydantic":  true,
+                                              "python-dotenv":  true,
+                                              "httpx":  false,
+                                              "flask":  false,
+                                              "anthropic":  false,
+                                              "sqlalchemy":  false,
+                                              "redis":  true,
+                                              "requests":  true,
+                                              "openai":  false,
+                                              "fastapi":  true,
+                                              "aiohttp":  false
+                                          }
+                     },
+    "Timestamp":  "2026-01-19 16:11:19",
+    "APIs":  {
+                 "Files":  [
+                               {
+                                   "HasFastAPI":  true,
+                                   "EndpointCount":  39,
+                                   "Name":  "main.py",
+                                   "HasFlask":  false,
+                                   "Exists":  true
+                               },
+                               {
+                                   "Exists":  false,
+                                   "Name":  "app.py"
+                               },
+                               {
+                                   "HasFastAPI":  false,
+                                   "EndpointCount":  0,
+                                   "Name":  "api/__init__.py",
+                                   "HasFlask":  false,
+                                   "Exists":  true
+                               },
+                               {
+                                   "Exists":  false,
+                                   "Name":  "api/v1/__init__.py"
+                               },
+                               {
+                                   "Exists":  false,
+                                   "Name":  "api/v1/marketing.py"
+                               },
+                               {
+                                   "Exists":  false,
+                                   "Name":  "api/v1/agents.py"
+                               },
+                               {
+                                   "Exists":  false,
+                                   "Name":  "api/v1/health.py"
+                               }
+                           ]
+             },
+    "Configuration":  {
+                          "Git":  {
+                                      "Branch":  "main",
+                                      "ChangedFilesCount":  0,
+                                      "HasChanges":  false
+                                  },
+                          "EnvVars":  {
+                                          "OPENAI_API_KEY":  true,
+                                          "FACEBOOK_APP_ID":  false,
+                                          "REDIS_URL":  false,
+                                          "FACEBOOK_APP_SECRET":  false,
+                                          "FACEBOOK_ACCESS_TOKEN":  true,
+                                          "ANTHROPIC_API_KEY":  true,
+                                          "SECRET_KEY":  false,
+                                          "FACEBOOK_PAGE_ID":  true,
+                                          "DATABASE_URL":  true
+                                      },
+                          "ConfigFiles":  {
+                                              "config/tenants.json":  false,
+                                              "requirements.txt":  true,
+                                              "docker-compose.yml":  true,
+                                              "setup.py":  false,
+                                              ".gitignore":  true,
+                                              "pyproject.toml":  false,
+                                              "config/agents.json":  false,
+                                              "Dockerfile":  true
+                                          }
+                      },
+    "DirectoryStructure":  {
+                               "ExpectedDirs":  {
+                                                    "hyper_agents/core":  {
+                                                                              "DirCount":  1,
+                                                                              "FileCount":  5,
+                                                                              "Exists":  true
+                                                                          },
+                                                    "agents/shared_layers/executors":  {
+                                                                                           "DirCount":  3,
+                                                                                           "FileCount":  3,
+                                                                                           "Exists":  true
+                                                                                       },
+                                                    "hyper_agents/memory":  {
+                                                                                "DirCount":  1,
+                                                                                "FileCount":  2,
+                                                                                "Exists":  true
+                                                                            },
+                                                    "frontend":  {
+                                                                     "DirCount":  2,
+                                                                     "FileCount":  7,
+                                                                     "Exists":  true
+                                                                 },
+                                                    "hyper_agents/triggers":  {
+                                                                                  "DirCount":  1,
+                                                                                  "FileCount":  4,
+                                                                                  "Exists":  true
+                                                                              },
+                                                    "hyper_agents/orchestration":  {
+                                                                                       "DirCount":  1,
+                                                                                       "FileCount":  2,
+                                                                                       "Exists":  true
+                                                                                   },
+                                                    "agents/marketing":  {
+                                                                             "DirCount":  5,
+                                                                             "FileCount":  46,
+                                                                             "Exists":  true
+                                                                         },
+                                                    "tests":  {
+                                                                  "DirCount":  3,
+                                                                  "FileCount":  1,
+                                                                  "Exists":  true
+                                                              },
+                                                    "agents/shared_layers/executors/social":  {
+                                                                                                  "DirCount":  1,
+                                                                                                  "FileCount":  5,
+                                                                                                  "Exists":  true
+                                                                                              },
+                                                    "hyper_agents/safety":  {
+                                                                                "DirCount":  1,
+                                                                                "FileCount":  2,
+                                                                                "Exists":  true
+                                                                            },
+                                                    "hyper_agents/marketing":  {
+                                                                                   "DirCount":  1,
+                                                                                   "FileCount":  2,
+                                                                                   "Exists":  true
+                                                                               },
+                                                    "hyper_agents/autonomous":  {
+                                                                                    "DirCount":  1,
+                                                                                    "FileCount":  2,
+                                                                                    "Exists":  true
+                                                                                },
+                                                    "agents/marketing/layers":  {
+                                                                                    "DirCount":  1,
+                                                                                    "FileCount":  11,
+                                                                                    "Exists":  true
+                                                                                },
+                                                    "hyper_agents/executors":  {
+                                                                                   "DirCount":  1,
+                                                                                   "FileCount":  4,
+                                                                                   "Exists":  true
+                                                                               },
+                                                    "NadakkiSocialAdapters":  {
+                                                                                  "DirCount":  4,
+                                                                                  "FileCount":  5,
+                                                                                  "Exists":  true
+                                                                              },
+                                                    "hyper_agents/learning":  {
+                                                                                  "DirCount":  1,
+                                                                                  "FileCount":  2,
+                                                                                  "Exists":  true
+                                                                              },
+                                                    "agents/shared_layers":  {
+                                                                                 "DirCount":  5,
+                                                                                 "FileCount":  1,
+                                                                                 "Exists":  true
+                                                                             },
+                                                    "api":  {
+                                                                "DirCount":  9,
+                                                                "FileCount":  5,
+                                                                "Exists":  true
+                                                            },
+                                                    "hyper_agents/monitoring":  {
+                                                                                    "DirCount":  1,
+                                                                                    "FileCount":  2,
+                                                                                    "Exists":  true
+                                                                                },
+                                                    "agents":  {
+                                                                   "DirCount":  22,
+                                                                   "FileCount":  4,
+                                                                   "Exists":  true
+                                                               },
+                                                    "config":  {
+                                                                   "DirCount":  3,
+                                                                   "FileCount":  5,
+                                                                   "Exists":  true
+                                                               },
+                                                    "hyper_agents/budget":  {
+                                                                                "DirCount":  1,
+                                                                                "FileCount":  2,
+                                                                                "Exists":  true
+                                                                            },
+                                                    "hyper_agents":  {
+                                                                         "DirCount":  14,
+                                                                         "FileCount":  5,
+                                                                         "Exists":  true
+                                                                     },
+                                                    "core":  {
+                                                                 "DirCount":  7,
+                                                                 "FileCount":  6,
+                                                                 "Exists":  true
+                                                             }
+                                                },
+                               "Root":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite"
+                           },
+    "SystemInfo":  {
+                       "Git":  "git version 2.52.0.windows.1",
+                       "Node":  "NOT_FOUND",
+                       "Build":  "26200",
+                       "OS":  "Microsoft Windows 11 Pro",
+                       "Python":  "Python 3.14.2"
+                   }
+}

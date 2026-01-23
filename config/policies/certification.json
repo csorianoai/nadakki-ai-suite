@@ -1,0 +1,22 @@
+{
+    "max_confidence_override":  1,
+    "allowed_actions":  [
+                            "all"
+                        ],
+    "blocked_keywords":  [
+
+                         ],
+    "allowed_autonomy_levels":  [
+                                    "full_auto",
+                                    "semi",
+                                    "supervised",
+                                    "manual"
+                                ],
+    "tenant_name":  "Certification Environment",
+    "require_human_approval":  false,
+    "rate_limits":  {
+                        "requests_per_minute":  1000,
+                        "requests_per_day":  100000
+                    },
+    "tenant_id":  "certification"
+}
