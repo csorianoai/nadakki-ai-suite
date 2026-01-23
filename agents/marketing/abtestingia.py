@@ -260,3 +260,22 @@ def _self_test_examples() -> Dict[str, Any]:
     r2 = execute(invalid, {"tenant_id": "test"})
     checks = {"valid_status": r1.get("status") == "success", "has_decision": "decision" in r1, "has_reason_codes": len(r1.get("reason_codes", [])) >= 2, "has_compliance": "compliance_status" in r1, "has_business_impact": "business_impact_score" in r1, "has_audit": "_input_hash" in r1 and "_output_hash" in r1, "invalid_handled": r2.get("status") in ["error", "validation_error", "success"]}
     return {"valid_result": r1, "invalid_result": r2, "checks": checks, "all_passed": all(checks.values())}
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# NADAKKI_OPERATIVE_BIND_V2 639047180933
+# ═══════════════════════════════════════════════════════════════════════════════
+from nadakki_operative_final import OperativeMixin
+
+class ABTestingAgentOperative:
+    def __init__(self):
+        self.agent_id = AGENT_ID
+        self.agent_name = AGENT_NAME
+        self.version = VERSION
+    
+    def execute(self, input_data, tenant_id="default", **kwargs):
+        context = {"tenant_id": tenant_id, **kwargs}
+        return execute(input_data, context)
+
+OperativeMixin.bind(ABTestingAgentOperative)
+ABTestingIA_operative = ABTestingAgentOperative()

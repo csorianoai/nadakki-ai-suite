@@ -200,3 +200,22 @@ def _build_compliance_blocked_response(compliance, tenant_id, trace, start):
 def health_check() -> Dict[str, Any]:
     return {"agent_id": AGENT_ID, "version": VERSION, "status": "healthy", "super_agent": SUPER_AGENT, "circuit_breaker": _circuit_breaker.get_state(), "layers_enabled": {"decision_layer": True, "error_handling": True, "compliance": True, "business_impact": True, "audit_trail": True}}
 
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# NADAKKI_OPERATIVE_BIND_V2 639047180936
+# ═══════════════════════════════════════════════════════════════════════════════
+from nadakki_operative_final import OperativeMixin
+
+class ProductAffinityAgentOperative:
+    def __init__(self):
+        self.agent_id = AGENT_ID
+        self.agent_name = AGENT_NAME
+        self.version = VERSION
+    
+    def execute(self, input_data, tenant_id="default", **kwargs):
+        context = {"tenant_id": tenant_id, **kwargs}
+        return execute(input_data, context)
+
+OperativeMixin.bind(ProductAffinityAgentOperative)
+ProductAffinityIA_operative = ProductAffinityAgentOperative()

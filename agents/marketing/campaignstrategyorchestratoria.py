@@ -1760,3 +1760,24 @@ async def test_orchestrator():
 
 if __name__ == "__main__":
     asyncio.run(test_orchestrator())
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# NADAKKI_OPERATIVE_BIND_V2 manual_cso_001
+# ═══════════════════════════════════════════════════════════════════════════════
+from nadakki_operative_final import OperativeMixin
+
+AGENT_NAME = "CampaignStrategyOrchestratorIA"
+
+class CampaignStrategyOrchestratorAgentOperative:
+    def __init__(self):
+        self.agent_id = AGENT_ID
+        self.agent_name = AGENT_NAME
+        self.version = VERSION
+    
+    def execute(self, input_data, tenant_id="default", **kwargs):
+        context = {"tenant_id": tenant_id, **kwargs}
+        return orchestrate_campaign(input_data, context)
+
+OperativeMixin.bind(CampaignStrategyOrchestratorAgentOperative)
+campaignstrategyorchestratoria_operative = CampaignStrategyOrchestratorAgentOperative()

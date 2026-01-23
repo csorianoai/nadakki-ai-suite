@@ -1,5 +1,4 @@
-version: '3.8'
-
+version: "3.8"
 services:
   postgres:
     image: postgres:16-alpine
@@ -15,8 +14,6 @@ services:
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U nadakki_user"]
       interval: 10s
-      timeout: 5s
-      retries: 5
     restart: unless-stopped
 
   redis:
@@ -27,9 +24,20 @@ services:
       - "6379:6379"
     volumes:
       - redis_data:/data
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nadakki-api
+    environment:
+      DATABASE_URL: postgresql://nadakki_user:nadakki_secure_password_2025@postgres:5432/nadakki
+      REDIS_URL: redis://:nadakki_redis_password_2025@redis:6379
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
     restart: unless-stopped
 
 volumes:

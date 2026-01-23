@@ -1,0 +1,505 @@
+{
+  "generated_at": "2026-01-22T22:47:06.567578",
+  "version": "4.0.0-FINAL",
+  "statistics": {
+    "total_agents": 36,
+    "certified_success": 36,
+    "certification_errors": 0,
+    "average_score": 89.4,
+    "enterprise_ready": 36,
+    "autonomous": 0,
+    "operative": 0
+  },
+  "agents": {
+    "ABTestingAgentOperative": {
+      "agent": "ABTestingAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.278070"
+    },
+    "ABTestingImpactAgentOperative": {
+      "agent": "ABTestingImpactAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.287071"
+    },
+    "AttributionModelAgentOperative": {
+      "agent": "AttributionModelAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.294341"
+    },
+    "AudienceSegmenterAgentOperative": {
+      "agent": "AudienceSegmenterAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.303343"
+    },
+    "BudgetForecastAgentOperative": {
+      "agent": "BudgetForecastAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.311342"
+    },
+    "CampaignOptimizerAgentOperative": {
+      "agent": "CampaignOptimizerAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.314341"
+    },
+    "CampaignStrategyOrchestratorAgentOperative": {
+      "agent": "CampaignStrategyOrchestratorAgentOperative",
+      "score": 80,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": false,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.359477"
+    },
+    "CashOfferFilterAgentOperative": {
+      "agent": "CashOfferFilterAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.359477"
+    },
+    "ChannelAttributAgentOperative": {
+      "agent": "ChannelAttributAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.378592"
+    },
+    "CompetitorAnalyzerAgentOperative": {
+      "agent": "CompetitorAnalyzerAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.387593"
+    },
+    "CompetitorIntelligenceAgentOperative": {
+      "agent": "CompetitorIntelligenceAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.392647"
+    },
+    "ContactQualityAgentOperative": {
+      "agent": "ContactQualityAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.392647"
+    },
+    "ContentGeneratorAgentOperative": {
+      "agent": "ContentGeneratorAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.408273"
+    },
+    "ContentPerformanceAgentOperative": {
+      "agent": "ContentPerformanceAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.416139"
+    },
+    "ConversionCohortAgentOperative": {
+      "agent": "ConversionCohortAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.426209"
+    },
+    "CreativeAnalyzerAgentOperative": {
+      "agent": "CreativeAnalyzerAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.434208"
+    },
+    "CustomerSegmentationAgentOperative": {
+      "agent": "CustomerSegmentationAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.437207"
+    },
+    "EmailAutomationAgentOperative": {
+      "agent": "EmailAutomationAgentOperative",
+      "score": 80,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": false,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.441211"
+    },
+    "GeoSegmentationAgentOperative": {
+      "agent": "GeoSegmentationAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.449208"
+    },
+    "InfluencerMatcherAgentOperative": {
+      "agent": "InfluencerMatcherAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.457237"
+    },
+    "InfluencerMatchingAgentOperative": {
+      "agent": "InfluencerMatchingAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.457237"
+    },
+    "JourneyOptimizerAgentOperative": {
+      "agent": "JourneyOptimizerAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.477387"
+    },
+    "LeadScorAgentOperative": {
+      "agent": "LeadScorAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.480388"
+    },
+    "LeadScoringAgentOperative": {
+      "agent": "LeadScoringAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.482388"
+    },
+    "MarketingMixModelAgentOperative": {
+      "agent": "MarketingMixModelAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.490395"
+    },
+    "MarketingOrchestratorAgentOperative": {
+      "agent": "MarketingOrchestratorAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.499105"
+    },
+    "MinimalFormAgentOperative": {
+      "agent": "MinimalFormAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.507104"
+    },
+    "PersonalizationEngineAgentOperative": {
+      "agent": "PersonalizationEngineAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.510104"
+    },
+    "PredictiveLeadAgentOperative": {
+      "agent": "PredictiveLeadAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.519106"
+    },
+    "PricingOptimizerAgentOperative": {
+      "agent": "PricingOptimizerAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.527381"
+    },
+    "ProductAffinityAgentOperative": {
+      "agent": "ProductAffinityAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.536381"
+    },
+    "RetentionPredictorAgentOperative": {
+      "agent": "RetentionPredictorAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.552380"
+    },
+    "SentimentAnalyzerAgentOperative": {
+      "agent": "SentimentAnalyzerAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.555388"
+    },
+    "SocialListeningAgentOperative": {
+      "agent": "SocialListeningAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.563380"
+    },
+    "SocialPostGeneratorAgentOperative": {
+      "agent": "SocialPostGeneratorAgentOperative",
+      "score": 90,
+      "level": "ENTERPRISE_ELITE",
+      "capabilities": {
+        "operative_binding": true,
+        "basic_execution": true,
+        "has_audit": true,
+        "has_correlation": true,
+        "multi_tenant": true,
+        "native_execute": true
+      },
+      "certified_at": "2026-01-22T22:47:06.566551"
+    }
+  }
+}

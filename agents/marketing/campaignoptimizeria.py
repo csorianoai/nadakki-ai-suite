@@ -224,3 +224,22 @@ def health_check() -> Dict[str, Any]:
 def _self_test_examples() -> Dict[str, Any]:
     r = execute({"input_data": {"campaigns": [{"id": "C1", "channel": "google", "ctr": 0.05, "roi": 2.5}, {"id": "C2", "channel": "facebook", "ctr": 0.03, "roi": 1.8}], "budget": 10000}}, {"tenant_id": "test"})
     return {"result": r, "ok": r.get("status") == "success" and len(r.get("reason_codes", [])) >= 2}
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# NADAKKI_OPERATIVE_BIND_V2 639047180934
+# ═══════════════════════════════════════════════════════════════════════════════
+from nadakki_operative_final import OperativeMixin
+
+class CampaignOptimizerAgentOperative:
+    def __init__(self):
+        self.agent_id = AGENT_ID
+        self.agent_name = AGENT_NAME
+        self.version = VERSION
+    
+    def execute(self, input_data, tenant_id="default", **kwargs):
+        context = {"tenant_id": tenant_id, **kwargs}
+        return execute(input_data, context)
+
+OperativeMixin.bind(CampaignOptimizerAgentOperative)
+CampaignOptimizerIA_operative = CampaignOptimizerAgentOperative()

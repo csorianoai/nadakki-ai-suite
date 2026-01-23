@@ -228,3 +228,22 @@ def _self_test_examples() -> Dict[str, Any]:
     r1 = execute(valid, {"tenant_id": "test"})
     checks = {"status_ok": r1.get("status") == "success", "has_decision": "decision" in r1, "reason_codes_2plus": len(r1.get("reason_codes", [])) >= 2, "has_compliance": "compliance_status" in r1, "has_bi_score": "business_impact_score" in r1, "has_hashes": "_input_hash" in r1}
     return {"result": r1, "checks": checks, "all_passed": all(checks.values())}
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# NADAKKI_OPERATIVE_BIND_V2 639047180935
+# ═══════════════════════════════════════════════════════════════════════════════
+from nadakki_operative_final import OperativeMixin
+
+class EmailAutomationAgentOperative:
+    def __init__(self):
+        self.agent_id = AGENT_ID
+        self.agent_name = AGENT_NAME
+        self.version = VERSION
+    
+    def execute(self, input_data, tenant_id="default", **kwargs):
+        context = {"tenant_id": tenant_id, **kwargs}
+        return execute(input_data, context)
+
+OperativeMixin.bind(EmailAutomationAgentOperative)
+EmailAutomationIA_operative = EmailAutomationAgentOperative()

@@ -195,3 +195,22 @@ def health_check() -> Dict[str, Any]:
 def _self_test_examples() -> Dict[str, Any]:
     r = execute({"input_data": {"brand": {"name": "Co"}, "influencers": [{"name": "A", "followers": 50000, "engagement_rate": 0.04}], "budget": 1000}}, {"tenant_id": "test"})
     return {"result": r, "ok": r.get("status") == "success" and len(r.get("reason_codes", [])) >= 2}
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# NADAKKI_OPERATIVE_BIND_V2 639047180936
+# ═══════════════════════════════════════════════════════════════════════════════
+from nadakki_operative_final import OperativeMixin
+
+class InfluencerMatchingAgentOperative:
+    def __init__(self):
+        self.agent_id = AGENT_ID
+        self.agent_name = AGENT_NAME
+        self.version = VERSION
+    
+    def execute(self, input_data, tenant_id="default", **kwargs):
+        context = {"tenant_id": tenant_id, **kwargs}
+        return execute(input_data, context)
+
+OperativeMixin.bind(InfluencerMatchingAgentOperative)
+InfluencerMatchingIA_operative = InfluencerMatchingAgentOperative()

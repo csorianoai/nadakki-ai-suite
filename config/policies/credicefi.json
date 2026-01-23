@@ -1,0 +1,11 @@
+{
+    "tenant_name": "Credicefi",
+    "tenant_id": "credicefi",
+    "min_confidence": 0.75,
+    "max_content_length": 8000,
+    "mode": "default",
+    "allowed_actions": ["publish_content", "send_email", "post_social", "analyze", "personalize"],
+    "blocked_keywords": ["spam", "hack", "phishing", "malware", "delete_all", "drop_database"],
+    "require_approval_for_high_risk": true,
+    "high_risk_threshold": 0.6
+}

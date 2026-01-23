@@ -243,3 +243,22 @@ def health_check() -> Dict[str, Any]:
 def _self_test_examples() -> Dict[str, Any]:
     r = execute({"input_data": {"users": [{"id": "U1", "ltv": 1500, "recency_days": 5, "tenure_days": 365}, {"id": "U2", "ltv": 200, "recency_days": 100, "tenure_days": 180, "engagement_trend": "decreasing"}]}}, {"tenant_id": "test"})
     return {"result": r, "ok": r.get("status") == "success" and len(r.get("reason_codes", [])) >= 2}
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# NADAKKI_OPERATIVE_BIND_V2 639047180934
+# ═══════════════════════════════════════════════════════════════════════════════
+from nadakki_operative_final import OperativeMixin
+
+class AudienceSegmenterAgentOperative:
+    def __init__(self):
+        self.agent_id = AGENT_ID
+        self.agent_name = AGENT_NAME
+        self.version = VERSION
+    
+    def execute(self, input_data, tenant_id="default", **kwargs):
+        context = {"tenant_id": tenant_id, **kwargs}
+        return execute(input_data, context)
+
+OperativeMixin.bind(AudienceSegmenterAgentOperative)
+AudienceSegmenterIA_operative = AudienceSegmenterAgentOperative()

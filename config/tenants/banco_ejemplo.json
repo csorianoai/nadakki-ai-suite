@@ -1,0 +1,29 @@
+{
+    "tenant_id": "banco_ejemplo",
+    "name": "Banco Ejemplo S.A.",
+    "industry": "FINANCIAL_SERVICES",
+    "autonomy_level": "semi",
+    "confidence_threshold": 0.75,
+    "max_daily_actions": 100,
+    "allowed_actions": [
+        "publish_content",
+        "post_social",
+        "send_email",
+        "analyze"
+    ],
+    "blocked_actions": [],
+    "notification_email": "admin@bancoejemplo.com",
+    "notification_slack": "#marketing-ai-alerts",
+    "custom_rules": {
+        "require_approval_for_budget_over": 1000,
+        "max_posts_per_hour": 5,
+        "allowed_platforms": ["facebook", "instagram"],
+        "content_review_required": false
+    },
+    "credentials": {
+        "facebook_page_id": "YOUR_PAGE_ID",
+        "instagram_account_id": "YOUR_IG_ACCOUNT_ID"
+    },
+    "created_at": "2026-01-22T00:00:00Z",
+    "updated_at": "2026-01-22T00:00:00Z"
+}

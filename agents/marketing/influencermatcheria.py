@@ -206,3 +206,22 @@ def _self_test_examples() -> Dict[str, Any]:
     valid = {"input_data": {"brand": {"name": "TechCo", "industry": "tech"}, "influencers": [{"name": "TechGuru", "followers": 100000, "engagement_rate": 0.05, "niche": "tech", "cost_per_post": 500}], "budget": 5000}}
     r = execute(valid, {"tenant_id": "test"})
     return {"result": r, "checks": {"ok": r.get("status") == "success", "decision": "decision" in r, "rc2": len(r.get("reason_codes", [])) >= 2}}
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# NADAKKI_OPERATIVE_BIND_V2 639047180936
+# ═══════════════════════════════════════════════════════════════════════════════
+from nadakki_operative_final import OperativeMixin
+
+class InfluencerMatcherAgentOperative:
+    def __init__(self):
+        self.agent_id = AGENT_ID
+        self.agent_name = AGENT_NAME
+        self.version = VERSION
+    
+    def execute(self, input_data, tenant_id="default", **kwargs):
+        context = {"tenant_id": tenant_id, **kwargs}
+        return execute(input_data, context)
+
+OperativeMixin.bind(InfluencerMatcherAgentOperative)
+InfluencerMatcherIA_operative = InfluencerMatcherAgentOperative()

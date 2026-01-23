@@ -238,3 +238,22 @@ def health_check() -> Dict[str, Any]:
 def _self_test_examples() -> Dict[str, Any]:
     r = execute({"input_data": {"customers": [{"id": "C1", "usage_trend": -0.5, "support_tickets": 5, "tenure_months": 3, "nps_score": 4, "mrr": 500}]}}, {"tenant_id": "test"})
     return {"result": r, "ok": r.get("status") == "success" and len(r.get("reason_codes", [])) >= 2}
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# NADAKKI_OPERATIVE_BIND_V2 639047180937
+# ═══════════════════════════════════════════════════════════════════════════════
+from nadakki_operative_final import OperativeMixin
+
+class RetentionPredictorAgentOperative:
+    def __init__(self):
+        self.agent_id = AGENT_ID
+        self.agent_name = AGENT_NAME
+        self.version = VERSION
+    
+    def execute(self, input_data, tenant_id="default", **kwargs):
+        context = {"tenant_id": tenant_id, **kwargs}
+        return execute(input_data, context)
+
+OperativeMixin.bind(RetentionPredictorAgentOperative)
+RetentionPredictorIA_operative = RetentionPredictorAgentOperative()

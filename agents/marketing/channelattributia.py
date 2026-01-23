@@ -241,3 +241,22 @@ def health_check() -> Dict[str, Any]:
 def _self_test_examples() -> Dict[str, Any]:
     r = execute({"input_data": {"channels": [{"name": "google", "spend": 5000, "conversions": 100, "revenue": 15000}, {"name": "facebook", "spend": 3000, "conversions": 50, "revenue": 7500}], "model": "linear"}}, {"tenant_id": "test"})
     return {"result": r, "ok": r.get("status") == "success" and len(r.get("reason_codes", [])) >= 2}
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# NADAKKI_OPERATIVE_BIND_V2 639047180934
+# ═══════════════════════════════════════════════════════════════════════════════
+from nadakki_operative_final import OperativeMixin
+
+class ChannelAttributAgentOperative:
+    def __init__(self):
+        self.agent_id = AGENT_ID
+        self.agent_name = AGENT_NAME
+        self.version = VERSION
+    
+    def execute(self, input_data, tenant_id="default", **kwargs):
+        context = {"tenant_id": tenant_id, **kwargs}
+        return execute(input_data, context)
+
+OperativeMixin.bind(ChannelAttributAgentOperative)
+ChannelAttributIA_operative = ChannelAttributAgentOperative()
