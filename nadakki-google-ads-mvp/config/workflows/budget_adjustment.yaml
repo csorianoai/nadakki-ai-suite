@@ -1,0 +1,90 @@
+# ============================================================================
+# NADAKKI AI Suite - Budget Adjustment Workflow
+# Focused budget optimization with approval gates
+# ============================================================================
+
+name: budget_adjustment
+version: "1.0"
+description: "Budget adjustment workflow with approval for large changes"
+
+inputs:
+  tenant_id:
+    type: string
+    required: true
+  max_change_percent:
+    type: number
+    default: 20
+  require_approval_above:
+    type: number
+    default: 15
+
+outputs:
+  adjustments_made:
+    type: integer
+  total_budget_change:
+    type: number
+
+tags:
+  - budget
+  - optimization
+  - approval-required
+
+timeout_minutes: 60
+
+steps:
+  - name: fetch_campaign_data
+    type: operation
+    operation: get_campaign_metrics@v1
+    params: {}
+    next_step: run_budget_analysis
+    on_error: abort_workflow
+
+  - name: run_budget_analysis
+    type: agent
+    agent: budget_pacing_agent
+    agent_params:
+      campaigns: "${steps.fetch_campaign_data.result.data.campaigns}"
+    next_step: check_approval_needed
+    on_error: abort_workflow
+
+  - name: check_approval_needed
+    type: condition
+    condition: "${steps.run_budget_analysis.result.risk_score} > 0.5"
+    on_true: require_approval
+    on_false: execute_changes
+
+  - name: require_approval
+    type: approval
+    approval_message: "Budget changes exceed threshold. Risk score: ${steps.run_budget_analysis.result.risk_score}"
+    timeout_hours: 24
+    next_step: execute_changes
+
+  - name: execute_changes
+    type: operation
+    operation: execute_action_plan@v1
+    params:
+      plan_id: "${steps.run_budget_analysis.result.plan_id}"
+    next_step: log_completion
+    on_error: log_failure
+
+  - name: log_completion
+    type: operation
+    operation: log_event@v1
+    params:
+      event: "budget_adjustment_complete"
+      changes: "${steps.execute_changes.result}"
+    next_step: null
+
+  - name: log_failure
+    type: operation
+    operation: log_event@v1
+    params:
+      event: "budget_adjustment_failed"
+    next_step: null
+
+  - name: abort_workflow
+    type: operation
+    operation: log_event@v1
+    params:
+      event: "workflow_aborted"
+    next_step: null

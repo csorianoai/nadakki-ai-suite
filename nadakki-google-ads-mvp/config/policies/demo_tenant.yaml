@@ -1,0 +1,71 @@
+# ============================================================================
+# NADAKKI AI Suite - Tenant Policy Configuration
+# Financial Institution: Demo Tenant
+# ============================================================================
+
+tenant_id: "demo_tenant"
+version: "1.0"
+
+# Budget Controls
+budget_limits:
+  daily_max_usd: 500
+  change_max_percent: 30
+  min_budget_usd: 10
+
+# Keyword/Content Rules (Financial Services Compliance)
+keyword_rules:
+  prohibited:
+    - "guaranteed approval"
+    - "instant loan"
+    - "no credit check"
+    - "free money"
+    - "get rich quick"
+    - "100% approved"
+    - "no documentation"
+    - "bad credit ok"
+  required_disclaimers:
+    - "Equal Housing Opportunity"
+  
+# Approval Gates (require human approval)
+approval_gates:
+  - rule: "budget_change > 20%"
+    requires: "human_approval"
+    notify:
+      - "marketing@institution.com"
+  
+  - rule: "geo_expansion"
+    requires: "human_approval"
+    notify:
+      - "compliance@institution.com"
+  
+  - rule: "new_campaign"
+    requires: "human_approval"
+
+# Content Rules for Ads
+content_rules:
+  max_headline_length: 30
+  max_description_length: 90
+  max_emoji_count: 1  # Conservative for financial services
+  
+# Rate Limits
+rate_limits:
+  operations_per_minute: 30
+  budget_changes_per_day: 10
+
+# Scheduling
+scheduling:
+  allowed_hours:
+    start: 6
+    end: 22
+  timezone: "America/New_York"
+  blackout_dates: []
+
+# Notification Settings
+notifications:
+  email:
+    - "marketing@institution.com"
+  slack_webhook: ""
+  notify_on:
+    - "approval_required"
+    - "budget_change_executed"
+    - "policy_violation"
