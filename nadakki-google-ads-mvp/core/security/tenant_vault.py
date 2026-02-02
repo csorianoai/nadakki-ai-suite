@@ -1,172 +1,127 @@
+# ===============================================================================
+# NADAKKI AI Suite - TenantCredentialVault
+# core/security/tenant_vault.py
+# Day 1 - Component 1 of 4
+# ===============================================================================
+
 """
-============================================================================
-NADAKKI AI SUITE - Tenant Credential Vault
-Multi-Tenant Secure Credential Management with KMS Interface
-============================================================================
-REUSABLE FOR: Any financial institution requiring secure OAuth storage
-============================================================================
+Multi-tenant credential management with encryption.
+
+MVP: Fernet symmetric encryption with interface extensible to AWS KMS.
+Each tenant's Google Ads credentials are stored encrypted at rest.
+
+Security Model:
+- Encryption key from env var CREDENTIAL_ENCRYPTION_KEY
+- In-memory TTL cache (5 min) to reduce DB reads
+- Audit log of every credential access
+- Automatic OAuth token refresh when within 5 min of expiry
 """
 
 from cryptography.fernet import Fernet
 from datetime import datetime, timedelta
 from typing import Optional, Protocol, Dict, Any
-from abc import ABC, abstractmethod
 import os
 import json
-import asyncio
-import httpx
 import logging
+import hashlib
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("nadakki.security.vault")
 
 
-# ============================================================================
-# ABSTRACT INTERFACE (For future KMS migration)
-# ============================================================================
+# -----------------------------------------------------------------------------
+# Interface for future KMS migration
+# -----------------------------------------------------------------------------
 
 class CredentialVaultInterface(Protocol):
-    """Interface for credential vault implementations.
-    
-    This allows easy migration from Fernet to AWS KMS, Azure Key Vault,
-    or any other encryption service without changing the calling code.
-    """
+    """Protocol for credential vault implementations."""
     async def store_credentials(self, tenant_id: str, credentials: dict) -> None: ...
     async def get_credentials(self, tenant_id: str) -> Optional[dict]: ...
     async def refresh_if_needed(self, tenant_id: str) -> dict: ...
-    async def revoke_credentials(self, tenant_id: str) -> None: ...
+    async def delete_credentials(self, tenant_id: str) -> bool: ...
 
 
-class EncryptionProvider(ABC):
-    """Abstract encryption provider for KMS migration support"""
-    
-    @abstractmethod
-    def encrypt(self, data: bytes) -> bytes: ...
-    
-    @abstractmethod
-    def decrypt(self, encrypted_data: bytes) -> bytes: ...
-
-
-class FernetEncryption(EncryptionProvider):
-    """Fernet-based encryption (MVP - upgrade to KMS in production)"""
-    
-    def __init__(self, key: bytes = None):
-        if key is None:
-            key = os.getenv("CREDENTIAL_ENCRYPTION_KEY")
-            if key:
-                key = key.encode() if isinstance(key, str) else key
-            else:
-                key = Fernet.generate_key()
-                logger.warning("Generated new encryption key - store securely!")
-        self.fernet = Fernet(key)
-    
-    def encrypt(self, data: bytes) -> bytes:
-        return self.fernet.encrypt(data)
-    
-    def decrypt(self, encrypted_data: bytes) -> bytes:
-        return self.fernet.decrypt(encrypted_data)
-
-
-# ============================================================================
-# TENANT CREDENTIAL VAULT - MAIN CLASS
-# ============================================================================
+# -----------------------------------------------------------------------------
+# MVP Implementation
+# -----------------------------------------------------------------------------
 
 class TenantCredentialVault:
     """
-    Multi-tenant credential vault with:
-    - Encryption at rest (Fernet/KMS)
-    - TTL-based caching
-    - Automatic OAuth token refresh
-    - Audit logging for compliance
-    - Institution-agnostic design
+    Fernet-based credential vault with TTL cache and audit logging.
     
-    USAGE:
-        vault = TenantCredentialVault(db_connection)
-        await vault.store_credentials("sfrentals", {...})
-        creds = await vault.get_credentials("sfrentals")
+    Usage:
+        vault = TenantCredentialVault(db)
+        await vault.store_credentials("bank01", {
+            "refresh_token": "...",
+            "customer_id": "1234567890",
+            "manager_customer_id": "9876543210",
+            "access_token": "...",
+            "expires_at": "2026-02-01T20:00:00"
+        })
+        
+        creds = await vault.refresh_if_needed("bank01")
     """
     
     CACHE_TTL_SECONDS = 300  # 5 minutes
     TOKEN_REFRESH_BUFFER_MINUTES = 5
     
-    def __init__(
-        self,
-        db_connection,
-        encryption_provider: EncryptionProvider = None,
-        oauth_config: Dict[str, str] = None
-    ):
+    def __init__(self, db_connection, encryption_key: str = None):
         self.db = db_connection
-        self.encryption = encryption_provider or FernetEncryption()
-        self.oauth_config = oauth_config or {
-            "client_id": os.getenv("NADAKKI_GOOGLE_CLIENT_ID"),
-            "client_secret": os.getenv("NADAKKI_GOOGLE_CLIENT_SECRET"),
-            "token_endpoint": "https://oauth2.googleapis.com/token"
-        }
+        
+        # Encryption setup
+        key = encryption_key or os.getenv("CREDENTIAL_ENCRYPTION_KEY")
+        if not key:
+            logger.warning(
+                "CREDENTIAL_ENCRYPTION_KEY not set. Generating ephemeral key. "
+                "DO NOT use this in production."
+            )
+            key = Fernet.generate_key()
+        
+        if isinstance(key, str):
+            key = key.encode()
+        
+        self.fernet = Fernet(key)
         self._cache: Dict[str, dict] = {}
-        self._locks: Dict[str, asyncio.Lock] = {}
     
-    # ========================================================================
-    # PUBLIC API
-    # ========================================================================
+    # ---------------------------------------------------------------------
+    # Core Operations
+    # ---------------------------------------------------------------------
     
-    async def store_credentials(
-        self,
-        tenant_id: str,
-        credentials: dict,
-        metadata: dict = None
-    ) -> None:
-        """Store encrypted credentials for a tenant.
-        
-        Args:
-            tenant_id: Unique identifier for the financial institution
-            credentials: OAuth credentials (access_token, refresh_token, etc.)
-            metadata: Optional metadata (institution_name, plan, etc.)
-        """
-        # Validate required fields
-        required = ["refresh_token", "customer_id"]
-        for field in required:
-            if field not in credentials:
-                raise ValueError(f"Missing required credential field: {field}")
-        
-        # Add timestamps
-        credentials["stored_at"] = datetime.utcnow().isoformat()
-        if "expires_at" not in credentials and "expires_in" in credentials:
-            expires_at = datetime.utcnow() + timedelta(seconds=credentials["expires_in"])
-            credentials["expires_at"] = expires_at.isoformat()
+    async def store_credentials(self, tenant_id: str, credentials: dict) -> None:
+        """Store encrypted credentials for a tenant."""
+        self._validate_tenant_id(tenant_id)
         
         # Encrypt
-        encrypted = self.encryption.encrypt(json.dumps(credentials).encode())
+        plaintext = json.dumps(credentials, default=str).encode()
+        encrypted = self.fernet.encrypt(plaintext).decode()
         
-        # Store in database
+        # Upsert
         await self.db.execute("""
-            INSERT INTO tenant_credentials (
-                tenant_id, encrypted_data, metadata, created_at, updated_at
-            ) VALUES ($1, $2, $3, NOW(), NOW())
-            ON CONFLICT (tenant_id) 
-            DO UPDATE SET 
-                encrypted_data = $2,
-                metadata = COALESCE($3, tenant_credentials.metadata),
-                updated_at = NOW()
-        """, tenant_id, encrypted.decode(), json.dumps(metadata or {}))
-        
-        # Audit log
-        await self._log_access(tenant_id, "store", {"has_refresh_token": True})
+            INSERT INTO tenant_credentials (tenant_id, encrypted_data, updated_at)
+            VALUES ($1, $2, NOW())
+            ON CONFLICT (tenant_id)
+            DO UPDATE SET encrypted_data = $2, updated_at = NOW()
+        """, tenant_id, encrypted)
         
         # Invalidate cache
         self._cache.pop(tenant_id, None)
         
-        logger.info(f"Stored credentials for tenant: {tenant_id}")
+        # Audit
+        await self._audit_log(tenant_id, "store", {
+            "has_refresh_token": "refresh_token" in credentials,
+            "has_customer_id": "customer_id" in credentials,
+        })
+        
+        logger.info(f"Credentials stored for tenant: {tenant_id}")
     
     async def get_credentials(self, tenant_id: str) -> Optional[dict]:
-        """Get decrypted credentials for a tenant.
+        """Get decrypted credentials for a tenant."""
+        self._validate_tenant_id(tenant_id)
         
-        Returns cached version if available and not expired.
-        """
         # Check cache
-        if tenant_id in self._cache:
-            cached = self._cache[tenant_id]
-            if datetime.utcnow() < cached["cache_expires"]:
-                await self._log_access(tenant_id, "read_cached")
-                return cached["data"]
+        cached = self._get_from_cache(tenant_id)
+        if cached is not None:
+            await self._audit_log(tenant_id, "read_cached")
+            return cached
         
         # Fetch from DB
         row = await self.db.fetchone(
@@ -179,171 +134,213 @@ class TenantCredentialVault:
             return None
         
         # Decrypt
-        decrypted = json.loads(
-            self.encryption.decrypt(row["encrypted_data"].encode())
-        )
+        try:
+            decrypted = json.loads(
+                self.fernet.decrypt(row["encrypted_data"].encode())
+            )
+        except Exception as e:
+            logger.error(f"Decryption failed for tenant {tenant_id}: {e}")
+            raise ValueError(f"Cannot decrypt credentials for tenant: {tenant_id}")
         
-        # Update cache
-        self._cache[tenant_id] = {
-            "data": decrypted,
-            "cache_expires": datetime.utcnow() + timedelta(seconds=self.CACHE_TTL_SECONDS)
-        }
+        # Cache
+        self._put_in_cache(tenant_id, decrypted)
         
-        await self._log_access(tenant_id, "read")
+        await self._audit_log(tenant_id, "read")
         return decrypted
     
     async def refresh_if_needed(self, tenant_id: str) -> dict:
-        """Refresh OAuth token if it's about to expire.
+        """Get credentials, refreshing OAuth token if near expiry."""
+        creds = await self.get_credentials(tenant_id)
         
-        Returns credentials with valid access_token.
-        """
-        # Get lock for this tenant to prevent concurrent refreshes
-        if tenant_id not in self._locks:
-            self._locks[tenant_id] = asyncio.Lock()
+        if not creds:
+            raise ValueError(f"No credentials for tenant: {tenant_id}")
         
-        async with self._locks[tenant_id]:
-            creds = await self.get_credentials(tenant_id)
-            
-            if not creds:
-                raise ValueError(f"No credentials for tenant: {tenant_id}")
-            
-            # Check if refresh needed
-            expires_at = datetime.fromisoformat(
-                creds.get("expires_at", "2000-01-01T00:00:00")
-            )
-            refresh_threshold = datetime.utcnow() + timedelta(
-                minutes=self.TOKEN_REFRESH_BUFFER_MINUTES
-            )
-            
-            if datetime.utcnow() < refresh_threshold < expires_at:
-                # Token still valid
-                return creds
-            
-            # Need to refresh
-            logger.info(f"Refreshing OAuth token for tenant: {tenant_id}")
-            new_creds = await self._refresh_oauth_token(creds)
-            await self.store_credentials(tenant_id, new_creds)
-            
-            return new_creds
+        # Check expiry
+        expires_at_str = creds.get("expires_at")
+        if not expires_at_str:
+            # No expiry tracked - assume needs refresh
+            return await self._do_refresh(tenant_id, creds)
+        
+        try:
+            expires_at = datetime.fromisoformat(expires_at_str)
+        except (ValueError, TypeError):
+            return await self._do_refresh(tenant_id, creds)
+        
+        buffer = timedelta(minutes=self.TOKEN_REFRESH_BUFFER_MINUTES)
+        if datetime.utcnow() > expires_at - buffer:
+            return await self._do_refresh(tenant_id, creds)
+        
+        return creds
     
-    async def revoke_credentials(self, tenant_id: str) -> None:
-        """Revoke and delete credentials for a tenant."""
-        await self.db.execute(
+    async def delete_credentials(self, tenant_id: str) -> bool:
+        """Delete credentials for a tenant (GDPR right-to-erasure)."""
+        self._validate_tenant_id(tenant_id)
+        
+        result = await self.db.execute(
             "DELETE FROM tenant_credentials WHERE tenant_id = $1",
             tenant_id
         )
+        
         self._cache.pop(tenant_id, None)
-        await self._log_access(tenant_id, "revoke")
-        logger.info(f"Revoked credentials for tenant: {tenant_id}")
+        
+        await self._audit_log(tenant_id, "delete")
+        logger.info(f"Credentials deleted for tenant: {tenant_id}")
+        
+        return result > 0 if isinstance(result, int) else True
     
-    async def get_all_tenants(self) -> list:
-        """Get list of all tenant IDs with stored credentials."""
+    async def list_tenants(self) -> list:
+        """List all tenants with stored credentials."""
         rows = await self.db.fetch(
-            "SELECT tenant_id FROM tenant_credentials ORDER BY tenant_id"
+            "SELECT tenant_id, updated_at FROM tenant_credentials ORDER BY tenant_id"
         )
-        return [row["tenant_id"] for row in rows]
+        return [{"tenant_id": r["tenant_id"], "updated_at": r["updated_at"]} for r in rows]
     
-    # ========================================================================
-    # PRIVATE METHODS
-    # ========================================================================
+    # ---------------------------------------------------------------------
+    # OAuth Token Refresh
+    # ---------------------------------------------------------------------
     
-    async def _refresh_oauth_token(self, creds: dict) -> dict:
+    async def _do_refresh(self, tenant_id: str, creds: dict) -> dict:
         """Refresh OAuth token with Google."""
-        async with httpx.AsyncClient(timeout=30.0) as client:
+        import httpx
+        
+        refresh_token = creds.get("refresh_token")
+        if not refresh_token:
+            raise ValueError(f"No refresh_token for tenant: {tenant_id}")
+        
+        client_id = os.getenv("NADAKKI_GOOGLE_CLIENT_ID")
+        client_secret = os.getenv("NADAKKI_GOOGLE_CLIENT_SECRET")
+        
+        if not client_id or not client_secret:
+            raise EnvironmentError(
+                "NADAKKI_GOOGLE_CLIENT_ID and NADAKKI_GOOGLE_CLIENT_SECRET must be set"
+            )
+        
+        logger.info(f"Refreshing OAuth token for tenant: {tenant_id}")
+        
+        async with httpx.AsyncClient(timeout=30) as client:
             response = await client.post(
-                self.oauth_config["token_endpoint"],
+                "https://oauth2.googleapis.com/token",
                 data={
-                    "client_id": self.oauth_config["client_id"],
-                    "client_secret": self.oauth_config["client_secret"],
-                    "refresh_token": creds["refresh_token"],
+                    "client_id": client_id,
+                    "client_secret": client_secret,
+                    "refresh_token": refresh_token,
                     "grant_type": "refresh_token"
                 }
             )
             
             if response.status_code != 200:
-                logger.error(f"Token refresh failed: {response.text}")
-                raise Exception(f"Token refresh failed: {response.status_code}")
+                error_body = response.text
+                logger.error(
+                    f"Token refresh failed for {tenant_id}: "
+                    f"status={response.status_code} body={error_body}"
+                )
+                raise Exception(
+                    f"Token refresh failed for tenant {tenant_id}: {response.status_code}"
+                )
             
             data = response.json()
-            
-            return {
-                **creds,
-                "access_token": data["access_token"],
-                "expires_at": (
-                    datetime.utcnow() + timedelta(seconds=data.get("expires_in", 3600))
-                ).isoformat(),
-                "token_type": data.get("token_type", "Bearer"),
-                "refreshed_at": datetime.utcnow().isoformat()
-            }
+        
+        # Update credentials
+        new_creds = {
+            **creds,
+            "access_token": data["access_token"],
+            "expires_at": (
+                datetime.utcnow() + timedelta(seconds=data.get("expires_in", 3600))
+            ).isoformat(),
+        }
+        
+        # If Google returned a new refresh token, update it
+        if "refresh_token" in data:
+            new_creds["refresh_token"] = data["refresh_token"]
+        
+        # Persist
+        await self.store_credentials(tenant_id, new_creds)
+        
+        await self._audit_log(tenant_id, "token_refresh", {
+            "new_expiry": new_creds["expires_at"]
+        })
+        
+        return new_creds
     
-    async def _log_access(
-        self,
-        tenant_id: str,
-        action: str,
-        details: dict = None
-    ):
-        """Audit log of credential access for compliance."""
-        await self.db.execute("""
-            INSERT INTO credential_access_log (
-                tenant_id, action, details, timestamp, ip_address
-            ) VALUES ($1, $2, $3, NOW(), $4)
-        """, tenant_id, action, json.dumps(details or {}), None)
+    # ---------------------------------------------------------------------
+    # Cache Management
+    # ---------------------------------------------------------------------
+    
+    def _get_from_cache(self, tenant_id: str) -> Optional[dict]:
+        """Get from TTL cache."""
+        entry = self._cache.get(tenant_id)
+        if entry and datetime.utcnow() < entry["expires"]:
+            return entry["data"]
+        
+        # Expired - remove
+        self._cache.pop(tenant_id, None)
+        return None
+    
+    def _put_in_cache(self, tenant_id: str, data: dict):
+        """Put in TTL cache."""
+        self._cache[tenant_id] = {
+            "data": data,
+            "expires": datetime.utcnow() + timedelta(seconds=self.CACHE_TTL_SECONDS)
+        }
+    
+    def clear_cache(self, tenant_id: str = None):
+        """Clear cache for one or all tenants."""
+        if tenant_id:
+            self._cache.pop(tenant_id, None)
+        else:
+            self._cache.clear()
+    
+    # ---------------------------------------------------------------------
+    # Audit & Validation
+    # ---------------------------------------------------------------------
+    
+    async def _audit_log(self, tenant_id: str, action: str, metadata: dict = None):
+        """Record credential access in audit log."""
+        try:
+            await self.db.execute("""
+                INSERT INTO credential_access_log 
+                (tenant_id, action, metadata, timestamp)
+                VALUES ($1, $2, $3, NOW())
+            """, tenant_id, action, json.dumps(metadata or {}))
+        except Exception as e:
+            # Audit failure should not block operation
+            logger.error(f"Audit log failed: {e}")
+    
+    @staticmethod
+    def _validate_tenant_id(tenant_id: str):
+        """Validate tenant_id format."""
+        if not tenant_id or not isinstance(tenant_id, str):
+            raise ValueError("tenant_id must be a non-empty string")
+        if len(tenant_id) > 100:
+            raise ValueError("tenant_id must be <= 100 characters")
+        if not all(c.isalnum() or c in ('-', '_') for c in tenant_id):
+            raise ValueError("tenant_id must contain only alphanumeric, hyphens, underscores")
 
 
-# ============================================================================
-# DATABASE SCHEMA
-# ============================================================================
+# -----------------------------------------------------------------------------
+# Database Schema
+# -----------------------------------------------------------------------------
 
-VAULT_SCHEMA_SQL = """
--- Tenant Credentials Table
+VAULT_SCHEMA = """
+-- Tenant credentials (encrypted at rest)
 CREATE TABLE IF NOT EXISTS tenant_credentials (
     tenant_id VARCHAR(100) PRIMARY KEY,
     encrypted_data TEXT NOT NULL,
-    metadata JSONB DEFAULT '{}',
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Index for faster lookups
-CREATE INDEX IF NOT EXISTS idx_tenant_creds_updated 
-    ON tenant_credentials(updated_at);
-
--- Credential Access Log for Compliance
+-- Audit log for credential access
 CREATE TABLE IF NOT EXISTS credential_access_log (
     id BIGSERIAL PRIMARY KEY,
     tenant_id VARCHAR(100) NOT NULL,
     action VARCHAR(50) NOT NULL,
-    details JSONB DEFAULT '{}',
-    timestamp TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    ip_address INET
+    metadata JSONB DEFAULT '{}',
+    timestamp TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Index for audit queries
 CREATE INDEX IF NOT EXISTS idx_cred_access_tenant 
     ON credential_access_log(tenant_id);
 CREATE INDEX IF NOT EXISTS idx_cred_access_timestamp 
     ON credential_access_log(timestamp);
-
--- Partition by month for large-scale deployments (optional)
--- CREATE TABLE credential_access_log_2026_01 PARTITION OF credential_access_log
---     FOR VALUES FROM ('2026-01-01') TO ('2026-02-01');
 """
-
-# ============================================================================
-# FACTORY FUNCTIONS
-# ============================================================================
-
-async def create_vault(db_connection, use_kms: bool = False) -> TenantCredentialVault:
-    """Factory to create appropriate vault instance.
-    
-    Args:
-        db_connection: Database connection
-        use_kms: If True, use AWS KMS (requires boto3)
-    """
-    if use_kms:
-        # Future: Import and use KMS provider
-        # from .kms_provider import AWSKMSEncryption
-        # encryption = AWSKMSEncryption(key_id=os.getenv("KMS_KEY_ID"))
-        raise NotImplementedError("KMS provider coming in Phase 2")
-    
-    return TenantCredentialVault(db_connection)

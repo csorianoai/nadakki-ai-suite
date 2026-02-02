@@ -1,34 +1,21 @@
-# NADAKKI AI Suite - Google Ads Integration
-# Core Dependencies
+# NADAKKI Google Ads MVP - Requirements
 
-# Google Ads
-google-ads>=21.0.0
-
-# Web Framework
-fastapi>=0.100.0
-uvicorn>=0.23.0
-
-# Database
-asyncpg>=0.28.0
-sqlalchemy>=2.0.0
-
-# Security
-cryptography>=41.0.0
-python-jose>=3.3.0
-
-# HTTP Client
-httpx>=0.24.0
-
-# Configuration
+# Core
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.0.0
 pyyaml>=6.0
-python-dotenv>=1.0.0
+cryptography>=41.0.0
+httpx>=0.25.0
 
-# Observability
-prometheus-client>=0.17.0
+# Google Ads API
+google-ads>=24.0.0
 
 # Testing
 pytest>=7.4.0
 pytest-asyncio>=0.21.0
 
-# Utilities
-python-dateutil>=2.8.0
+# Production (optional — uncomment as needed)
+# gunicorn>=21.2.0
+# mangum>=0.17.0
+# psycopg2-binary>=2.9.0

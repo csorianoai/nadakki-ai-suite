@@ -1,176 +1,374 @@
+# ===============================================================================
+# NADAKKI AI Suite - SearchTermsCleanerIA
+# agents/marketing/search_terms_cleaner_agent.py
+# Day 4 - Component 3 of 3
+# ===============================================================================
+
 """
-NADAKKI AI Suite - Search Terms Cleaner Agent
-Analyze and Optimize Search Terms / Negative Keywords
+Search Terms Cleaner Agent - classifies search terms as positive/negative.
+
+Analyzes search terms data and:
+1. Identifies wasted spend on irrelevant terms
+2. Recommends negative keywords to add
+3. Identifies high-performing terms to add as exact match
+4. Generates ActionPlan with cleanup operations
+
+Classification logic:
+- Spend > threshold + 0 conversions > NEGATIVE (waste)
+- Conversions > 0 + good CPA > POSITIVE (add as exact)
+- Low impressions > MONITOR (need more data)
+- Contains irrelevant keywords > NEGATIVE (pattern match)
+
+Usage:
+    cleaner = SearchTermsCleanerIA(knowledge_store)
+    
+    plan = cleaner.analyze_and_clean(
+        tenant_id="bank01",
+        search_terms=[
+            {"term": "personal loan rates", "impressions": 500, "clicks": 25, "cost": 50, "conversions": 3},
+            {"term": "free money no credit check", "impressions": 200, "clicks": 15, "cost": 30, "conversions": 0},
+        ],
+        industry="financial_services",
+    )
 """
 
-from typing import Dict, Any, List
-from enum import Enum
+from typing import Dict, List, Any, Optional
+from datetime import datetime
 import logging
 
+from core.knowledge.yaml_store import YamlKnowledgeStore
 from core.agents.action_plan import ActionPlan, OperationPriority
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("nadakki.agents.search_terms_cleaner")
 
 
-class SearchTermClassification(Enum):
-    KEEP = "keep"
-    NEGATIVE = "negative"
-    REVIEW = "review"
-    EXPAND = "expand"
+class TermClassification:
+    POSITIVE = "positive"       # Good term, add as keyword
+    NEGATIVE = "negative"       # Bad term, add as negative
+    MONITOR = "monitor"         # Need more data
+    NEUTRAL = "neutral"         # OK, no action needed
 
 
-class SearchTermsCleanerAgent:
+class SearchTermsCleanerIA:
     """
-    Search terms analysis agent that:
-    - Analyzes search term performance
-    - Identifies wasteful terms for negatives
-    - Finds high-performing terms to add
-    - Creates cleanup action plans
+    Classifies search terms and generates cleanup ActionPlans.
     """
     
-    AGENT_ID = "search_terms_agent"
-    AGENT_NAME = "SearchTermsCleanerAgent"
+    AGENT_NAME = "SearchTermsCleanerIA"
+    VERSION = "1.0.0"
     
-    MIN_IMPRESSIONS = 100
-    LOW_CTR_THRESHOLD = 0.01
-    HIGH_CTR_THRESHOLD = 0.05
-    LOW_CONVERSION_RATE = 0.001
-    HIGH_COST_NO_CONV = 50
+    # Default thresholds
+    WASTE_SPEND_THRESHOLD = 10.0    # $10 spend with 0 conversions = waste
+    LOW_IMPRESSION_THRESHOLD = 50   # Below 50 impressions = need more data
+    GOOD_CPA_MULTIPLIER = 1.5      # CPA below 1.5x benchmark = good
+    HIGH_CTR_THRESHOLD = 5.0       # CTR > 5% = strong positive signal
     
-    def __init__(self, connector, policy_engine=None):
-        self.connector = connector
-        self.policy_engine = policy_engine
+    # Irrelevant patterns for financial services
+    DEFAULT_IRRELEVANT_PATTERNS = [
+        "free", "hack", "cheat", "scam", "reddit", "forum",
+        "youtube", "tutorial", "diy", "template", "sample",
+        "salary", "job", "career", "internship", "interview",
+        "download", "torrent", "crack", "pirate",
+    ]
     
-    async def analyze_and_clean(self, tenant_id: str, campaign_ids: List[str] = None,
-                                search_terms: List[Dict] = None) -> ActionPlan:
-        """Analyze search terms and create cleanup plan."""
-        plan = ActionPlan(
-            agent_id=self.AGENT_ID,
-            agent_name=self.AGENT_NAME,
-            tenant_id=tenant_id,
-            tags=["search_terms", "negatives", "optimization"]
+    def __init__(self, knowledge_store: YamlKnowledgeStore):
+        self.kb = knowledge_store
+        logger.info(f"{self.AGENT_NAME} v{self.VERSION} initialized")
+    
+    # ---------------------------------------------------------------------
+    # Main Entry Point
+    # ---------------------------------------------------------------------
+    
+    def analyze_and_clean(
+        self,
+        tenant_id: str,
+        search_terms: List[dict],
+        industry: str = "financial_services",
+        custom_negatives: List[str] = None,
+        target_cpa: float = None,
+    ) -> ActionPlan:
+        """
+        Analyze search terms and generate cleanup ActionPlan.
+        
+        Args:
+            tenant_id: Tenant ID
+            search_terms: List of dicts with:
+                - term: str (the search query)
+                - impressions: int
+                - clicks: int
+                - cost: float (spend)
+                - conversions: int
+                - cpa: float (optional, calculated if missing)
+                - ctr: float (optional, calculated if missing)
+            industry: For benchmark comparison
+            custom_negatives: Additional words to flag as negative
+            target_cpa: Override target CPA (otherwise uses benchmark)
+        """
+        # Get benchmarks for CPA comparison
+        benchmarks = self.kb.get_benchmarks(tenant_id, industry)
+        benchmark_cpa = target_cpa or benchmarks.get("metrics", {}).get(
+            "search", {}
+        ).get("avg_cpa", 50.0)
+        
+        # Get guardrails for forbidden words
+        guardrails = self.kb.get_guardrails(tenant_id, industry)
+        forbidden = guardrails.get("content_guardrails", {}).get("forbidden_words", [])
+        
+        # Build negative patterns list
+        negative_patterns = list(self.DEFAULT_IRRELEVANT_PATTERNS)
+        if custom_negatives:
+            negative_patterns.extend(custom_negatives)
+        
+        logger.info(
+            f"[{tenant_id}] Analyzing {len(search_terms)} search terms "
+            f"(benchmark CPA: ${benchmark_cpa:.2f})"
         )
         
-        if not search_terms:
-            search_terms = await self._fetch_search_terms(tenant_id, campaign_ids)
+        # Classify each term
+        classifications = []
+        for term_data in search_terms:
+            classification = self._classify_term(
+                term_data, benchmark_cpa, negative_patterns, forbidden
+            )
+            classifications.append(classification)
         
-        classifications = self._classify_terms(search_terms)
-        
-        plan.analysis = {
-            "total_terms_analyzed": len(search_terms),
-            "keep": len([c for c in classifications if c["classification"] == SearchTermClassification.KEEP]),
-            "negative": len([c for c in classifications if c["classification"] == SearchTermClassification.NEGATIVE]),
-            "review": len([c for c in classifications if c["classification"] == SearchTermClassification.REVIEW]),
-            "expand": len([c for c in classifications if c["classification"] == SearchTermClassification.EXPAND]),
-            "potential_savings_usd": sum(c["cost"] for c in classifications if c["classification"] == SearchTermClassification.NEGATIVE)
-        }
-        
-        plan.rationale = self._build_rationale(plan.analysis)
-        
-        negatives = [c for c in classifications if c["classification"] == SearchTermClassification.NEGATIVE]
-        
-        if negatives:
-            by_ad_group = {}
-            for neg in negatives:
-                ag_id = neg.get("ad_group_id", "default")
-                if ag_id not in by_ad_group:
-                    by_ad_group[ag_id] = []
-                by_ad_group[ag_id].append(neg)
-            
-            for ad_group_id, terms in by_ad_group.items():
-                plan.add_operation(
-                    operation_name="add_negative_keywords@v1",
-                    params={
-                        "ad_group_id": ad_group_id,
-                        "keywords": [{"text": t["term"], "match_type": "EXACT"} for t in terms]
-                    },
-                    priority=OperationPriority.MEDIUM,
-                    estimated_impact={
-                        "keywords_added": len(terms),
-                        "estimated_savings_usd": sum(t["cost"] for t in terms)
-                    },
-                    requires_review=len(terms) > 20
-                )
-        
-        plan.risk_score = self._calculate_risk(classifications)
-        plan.risk_factors = self._identify_risk_factors(classifications)
+        # Build ActionPlan
+        plan = self._build_cleanup_plan(
+            tenant_id, classifications, benchmark_cpa
+        )
         
         return plan
     
-    async def _fetch_search_terms(self, tenant_id: str, campaign_ids: List[str] = None) -> List[Dict]:
-        """Fetch search term report (mock for MVP)."""
-        return [
-            {"term": "buy cheap loans", "impressions": 500, "clicks": 2, "cost": 45.0, "conversions": 0, "ad_group_id": "ag1"},
-            {"term": "best mortgage rates", "impressions": 1000, "clicks": 80, "cost": 120.0, "conversions": 5, "ad_group_id": "ag1"},
-            {"term": "free money no credit", "impressions": 200, "clicks": 10, "cost": 30.0, "conversions": 0, "ad_group_id": "ag2"},
-        ]
+    # ---------------------------------------------------------------------
+    # Classification Logic
+    # ---------------------------------------------------------------------
     
-    def _classify_terms(self, search_terms: List[Dict]) -> List[Dict]:
-        """Classify each search term."""
-        return [
-            {**term, "classification": self._classify_single_term(term),
-             "reasons": self._get_classification_reasons(term, self._classify_single_term(term))}
-            for term in search_terms
-        ]
-    
-    def _classify_single_term(self, term: Dict) -> SearchTermClassification:
+    def _classify_term(
+        self,
+        term_data: dict,
+        benchmark_cpa: float,
+        negative_patterns: List[str],
+        forbidden_words: List[str],
+    ) -> dict:
         """Classify a single search term."""
-        impressions = term.get("impressions", 0)
-        clicks = term.get("clicks", 0)
-        cost = term.get("cost", 0)
-        conversions = term.get("conversions", 0)
+        term = term_data.get("term", "").strip().lower()
+        impressions = term_data.get("impressions", 0)
+        clicks = term_data.get("clicks", 0)
+        cost = term_data.get("cost", 0.0)
+        conversions = term_data.get("conversions", 0)
         
-        if impressions < self.MIN_IMPRESSIONS:
-            return SearchTermClassification.REVIEW
+        # Calculate derived metrics
+        ctr = (clicks / impressions * 100) if impressions > 0 else 0
+        cpa = (cost / conversions) if conversions > 0 else float('inf')
         
-        ctr = clicks / impressions if impressions > 0 else 0
-        conv_rate = conversions / clicks if clicks > 0 else 0
-        
-        if cost > self.HIGH_COST_NO_CONV and conversions == 0:
-            return SearchTermClassification.NEGATIVE
-        
-        if ctr < self.LOW_CTR_THRESHOLD and impressions > 200:
-            return SearchTermClassification.NEGATIVE
-        
-        if ctr > self.HIGH_CTR_THRESHOLD and conversions > 0:
-            return SearchTermClassification.EXPAND
-        
-        if conv_rate < self.LOW_CONVERSION_RATE and clicks > 20:
-            return SearchTermClassification.NEGATIVE
-        
-        return SearchTermClassification.KEEP
-    
-    def _get_classification_reasons(self, term: Dict, classification: SearchTermClassification) -> List[str]:
-        """Get reasons for classification."""
+        classification = TermClassification.NEUTRAL
         reasons = []
-        if classification == SearchTermClassification.NEGATIVE:
-            if term.get("cost", 0) > self.HIGH_COST_NO_CONV and term.get("conversions", 0) == 0:
-                reasons.append(f"High cost (${term['cost']:.2f}) with no conversions")
-            impressions = term.get("impressions", 0)
-            clicks = term.get("clicks", 0)
-            if impressions > 0 and clicks / impressions < self.LOW_CTR_THRESHOLD:
-                reasons.append(f"Low CTR ({clicks/impressions:.2%})")
-        return reasons
+        confidence = 0.5
+        
+        # Rule 1: Pattern match - contains irrelevant word
+        for pattern in negative_patterns:
+            if pattern.lower() in term:
+                classification = TermClassification.NEGATIVE
+                reasons.append(f"Contains irrelevant pattern: '{pattern}'")
+                confidence = 0.85
+                break
+        
+        # Rule 2: Contains forbidden words from guardrails
+        if classification == TermClassification.NEUTRAL:
+            for forbidden in forbidden_words:
+                if forbidden.lower() in term:
+                    classification = TermClassification.NEGATIVE
+                    reasons.append(f"Contains forbidden term: '{forbidden}'")
+                    confidence = 0.9
+                    break
+        
+        # Rule 3: High spend + zero conversions = waste
+        if classification == TermClassification.NEUTRAL:
+            if cost >= self.WASTE_SPEND_THRESHOLD and conversions == 0:
+                classification = TermClassification.NEGATIVE
+                reasons.append(f"Wasted ${cost:.2f} with 0 conversions")
+                confidence = 0.9
+        
+        # Rule 4: Low data - need more impressions
+        if classification == TermClassification.NEUTRAL:
+            if impressions < self.LOW_IMPRESSION_THRESHOLD:
+                classification = TermClassification.MONITOR
+                reasons.append(f"Only {impressions} impressions - need more data")
+                confidence = 0.4
+        
+        # Rule 5: Good performer - add as keyword
+        if classification == TermClassification.NEUTRAL:
+            if conversions > 0 and cpa <= benchmark_cpa * self.GOOD_CPA_MULTIPLIER:
+                classification = TermClassification.POSITIVE
+                reasons.append(
+                    f"Converting at ${cpa:.2f} CPA (benchmark: ${benchmark_cpa:.2f})"
+                )
+                confidence = 0.8
+                
+                if ctr > self.HIGH_CTR_THRESHOLD:
+                    confidence = 0.9
+                    reasons.append(f"High CTR: {ctr:.1f}%")
+        
+        # Rule 6: Converting but expensive
+        if classification == TermClassification.NEUTRAL:
+            if conversions > 0 and cpa > benchmark_cpa * 2:
+                classification = TermClassification.MONITOR
+                reasons.append(
+                    f"Converting but expensive: ${cpa:.2f} CPA "
+                    f"(2x+ benchmark ${benchmark_cpa:.2f})"
+                )
+                confidence = 0.6
+        
+        if not reasons:
+            reasons.append("No strong signal either way")
+        
+        return {
+            "term": term_data.get("term", ""),
+            "impressions": impressions,
+            "clicks": clicks,
+            "cost": cost,
+            "conversions": conversions,
+            "ctr": round(ctr, 2),
+            "cpa": round(cpa, 2) if cpa != float('inf') else None,
+            "classification": classification,
+            "reasons": reasons,
+            "confidence": confidence,
+        }
     
-    def _build_rationale(self, analysis: Dict) -> str:
-        return (
-            f"Analyzed {analysis['total_terms_analyzed']} search terms. "
-            f"Found {analysis['negative']} terms to add as negatives "
-            f"(potential savings: ${analysis['potential_savings_usd']:.2f}). "
-            f"{analysis['expand']} high-performing terms for expansion."
+    # ---------------------------------------------------------------------
+    # ActionPlan Building
+    # ---------------------------------------------------------------------
+    
+    def _build_cleanup_plan(
+        self,
+        tenant_id: str,
+        classifications: List[dict],
+        benchmark_cpa: float,
+    ) -> ActionPlan:
+        """Build ActionPlan from classifications."""
+        negatives = [c for c in classifications if c["classification"] == TermClassification.NEGATIVE]
+        positives = [c for c in classifications if c["classification"] == TermClassification.POSITIVE]
+        monitors = [c for c in classifications if c["classification"] == TermClassification.MONITOR]
+        
+        total_waste = sum(c["cost"] for c in negatives)
+        
+        plan = ActionPlan(
+            tenant_id=tenant_id,
+            agent_name=self.AGENT_NAME,
+            title=f"Search Terms Cleanup - {len(negatives)} negatives, {len(positives)} positives",
+            description=(
+                f"Analyzed {len(classifications)} search terms. "
+                f"Found {len(negatives)} to negate (${total_waste:.2f} wasted), "
+                f"{len(positives)} high performers to add, "
+                f"{len(monitors)} to monitor."
+            ),
+            rationale=self._build_rationale(classifications, benchmark_cpa),
         )
+        
+        # Get applicable rules
+        rules = self.kb.match_rules(tenant_id, {"wasted_spend_pct_above": 15})
+        plan.rules_consulted = [r["id"] for r in rules]
+        
+        # Store full classification data in benchmarks_referenced
+        plan.benchmarks_referenced = {
+            "negatives": [{"term": c["term"], "cost": c["cost"], "reasons": c["reasons"]} for c in negatives],
+            "positives": [{"term": c["term"], "conversions": c["conversions"], "cpa": c["cpa"]} for c in positives],
+            "monitors": [{"term": c["term"], "impressions": c["impressions"]} for c in monitors],
+            "total_waste": total_waste,
+            "benchmark_cpa": benchmark_cpa,
+        }
+        
+        # Add metrics operation to track improvement
+        if negatives or positives:
+            plan.add_operation(
+                operation_name="get_campaign_metrics@v1",
+                payload={
+                    "metrics": ["search_terms", "wasted_spend", "negative_keywords"],
+                    "context": "search_terms_cleanup",
+                    "negatives_to_add": [c["term"] for c in negatives],
+                    "positives_to_add": [c["term"] for c in positives],
+                },
+                description=(
+                    f"Apply {len(negatives)} negative keywords "
+                    f"(save ~${total_waste:.2f}) and "
+                    f"add {len(positives)} positive terms as exact match"
+                ),
+                priority=OperationPriority.HIGH if total_waste > 50 else OperationPriority.MEDIUM,
+            )
+        
+        plan.risk_score = min(0.1 + (total_waste / 500) * 0.3, 0.6)
+        plan.requires_approval = total_waste > 100 or len(negatives) > 20
+        plan.propose()
+        
+        logger.info(
+            f"[{tenant_id}] Cleanup plan: {len(negatives)} negatives (${total_waste:.2f} waste), "
+            f"{len(positives)} positives, {len(monitors)} monitoring"
+        )
+        
+        return plan
     
-    def _calculate_risk(self, classifications: List[Dict]) -> float:
-        negatives = len([c for c in classifications if c["classification"] == SearchTermClassification.NEGATIVE])
-        if negatives > 50:
-            return 0.6
-        elif negatives > 20:
-            return 0.4
-        return 0.2
+    def _build_rationale(
+        self, classifications: List[dict], benchmark_cpa: float
+    ) -> str:
+        """Build rationale summary."""
+        negatives = [c for c in classifications if c["classification"] == TermClassification.NEGATIVE]
+        positives = [c for c in classifications if c["classification"] == TermClassification.POSITIVE]
+        
+        parts = [f"Benchmark CPA: ${benchmark_cpa:.2f}"]
+        
+        if negatives:
+            top_waste = sorted(negatives, key=lambda c: c["cost"], reverse=True)[:3]
+            parts.append("Top wasted terms:")
+            for t in top_waste:
+                parts.append(f"  * '{t['term']}' - ${t['cost']:.2f} ({t['reasons'][0]})")
+        
+        if positives:
+            parts.append("Top performing terms:")
+            for t in positives[:3]:
+                parts.append(
+                    f"  * '{t['term']}' - {t['conversions']} conv, "
+                    f"${t['cpa']:.2f} CPA"
+                )
+        
+        return "\n".join(parts)
     
-    def _identify_risk_factors(self, classifications: List[Dict]) -> List[str]:
-        factors = []
-        negatives = [c for c in classifications if c["classification"] == SearchTermClassification.NEGATIVE]
-        if len(negatives) > 50:
-            factors.append(f"Large number of negatives ({len(negatives)})")
-        return factors
+    # ---------------------------------------------------------------------
+    # Quick Summary
+    # ---------------------------------------------------------------------
+    
+    def get_summary(
+        self,
+        tenant_id: str,
+        search_terms: List[dict],
+        industry: str = "financial_services",
+    ) -> dict:
+        """
+        Quick summary without ActionPlan. For dashboard widgets.
+        """
+        benchmarks = self.kb.get_benchmarks(tenant_id, industry)
+        benchmark_cpa = benchmarks.get("metrics", {}).get("search", {}).get("avg_cpa", 50.0)
+        guardrails = self.kb.get_guardrails(tenant_id, industry)
+        forbidden = guardrails.get("content_guardrails", {}).get("forbidden_words", [])
+        
+        classifications = []
+        for term_data in search_terms:
+            c = self._classify_term(
+                term_data, benchmark_cpa,
+                self.DEFAULT_IRRELEVANT_PATTERNS, forbidden
+            )
+            classifications.append(c)
+        
+        negatives = [c for c in classifications if c["classification"] == TermClassification.NEGATIVE]
+        positives = [c for c in classifications if c["classification"] == TermClassification.POSITIVE]
+        
+        return {
+            "tenant_id": tenant_id,
+            "total_terms": len(classifications),
+            "negatives": len(negatives),
+            "positives": len(positives),
+            "monitoring": sum(1 for c in classifications if c["classification"] == TermClassification.MONITOR),
+            "neutral": sum(1 for c in classifications if c["classification"] == TermClassification.NEUTRAL),
+            "total_waste": sum(c["cost"] for c in negatives),
+            "benchmark_cpa": benchmark_cpa,
+            "classifications": classifications,
+        }

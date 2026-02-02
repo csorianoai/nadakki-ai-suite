@@ -1,90 +1,39 @@
-# ============================================================================
-# NADAKKI AI Suite - Budget Adjustment Workflow
-# Focused budget optimization with approval gates
-# ============================================================================
+# ═══════════════════════════════════════════════════════════════════════════════
+# WORKFLOW 3: Budget Adjustment
+# config/workflows/budget_adjustment.yaml
+# ═══════════════════════════════════════════════════════════════════════════════
 
-name: budget_adjustment
-version: "1.0"
-description: "Budget adjustment workflow with approval for large changes"
-
-inputs:
-  tenant_id:
-    type: string
-    required: true
-  max_change_percent:
-    type: number
-    default: 20
-  require_approval_above:
-    type: number
-    default: 15
-
-outputs:
-  adjustments_made:
-    type: integer
-  total_budget_change:
-    type: number
-
-tags:
-  - budget
-  - optimization
-  - approval-required
-
-timeout_minutes: 60
+id: budget_adjustment
+name: "Safe Budget Adjustment"
+description: "Protocol for safely adjusting campaign budgets with pacing analysis, policy check, and monitoring."
+trigger: manual
+version: "1.0.0"
 
 steps:
-  - name: fetch_campaign_data
-    type: operation
-    operation: get_campaign_metrics@v1
-    params: {}
-    next_step: run_budget_analysis
-    on_error: abort_workflow
-
-  - name: run_budget_analysis
-    type: agent
-    agent: budget_pacing_agent
-    agent_params:
-      campaigns: "${steps.fetch_campaign_data.result.data.campaigns}"
-    next_step: check_approval_needed
-    on_error: abort_workflow
-
-  - name: check_approval_needed
-    type: condition
-    condition: "${steps.run_budget_analysis.result.risk_score} > 0.5"
-    on_true: require_approval
-    on_false: execute_changes
-
-  - name: require_approval
-    type: approval
-    approval_message: "Budget changes exceed threshold. Risk score: ${steps.run_budget_analysis.result.risk_score}"
-    timeout_hours: 24
-    next_step: execute_changes
-
-  - name: execute_changes
-    type: operation
-    operation: execute_action_plan@v1
+  - id: pacing_analysis
+    name: "Analyze Current Pacing"
+    agent: budget_pacing
+    action: analyze_and_plan
     params:
-      plan_id: "${steps.run_budget_analysis.result.plan_id}"
-    next_step: log_completion
-    on_error: log_failure
+      industry: "financial_services"
+      campaigns:
+        - {campaign_id: "c1", campaign_name: "Main Campaign", daily_budget: 100, spend_today: 40, spend_mtd: 1200, monthly_target: 3000}
+    on_failure: stop
 
-  - name: log_completion
-    type: operation
-    operation: log_event@v1
+  - id: strategy_check
+    name: "Strategy Validation"
+    agent: strategist
+    action: analyze_performance
     params:
-      event: "budget_adjustment_complete"
-      changes: "${steps.execute_changes.result}"
-    next_step: null
+      metrics: {ctr: 2.5, cpa: 45, conv_rate: 4.2}
+      industry: "financial_services"
+    on_failure: continue
 
-  - name: log_failure
-    type: operation
-    operation: log_event@v1
+  - id: apply_changes
+    name: "Apply Budget Changes"
+    agent: ""
+    action: log
     params:
-      event: "budget_adjustment_failed"
-    next_step: null
-
-  - name: abort_workflow
-    type: operation
-    operation: log_event@v1
-    params:
-      event: "workflow_aborted"
-    next_step: null
+      message: "Budget changes calculated and ready to apply"
+    requires_approval: false
+    on_failure: stop

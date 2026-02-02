@@ -1,382 +1,348 @@
+# ===============================================================================
+# NADAKKI AI Suite - OrchestratorIA
+# agents/marketing/orchestrator_agent.py
+# Day 5 - Component 3 of 3
+# ===============================================================================
+
 """
-NADAKKI AI Suite - Google Ads Orchestrator Agent
-Intelligent Agent Orchestration and Workflow Management
+Orchestrator Meta-Agent - decides WHICH workflow to run and WHEN.
+
+This is the "brain" that coordinates all other agents:
+1. Receives a high-level request or scheduled trigger
+2. Analyzes the situation (performance data, context)
+3. Selects the appropriate workflow
+4. Triggers execution through the WorkflowEngine
+
+The OrchestratorIA is the only agent a user/scheduler needs to interact with.
+All other agents are called indirectly through workflows.
+
+Usage:
+    orchestrator = OrchestratorIA(workflow_engine, knowledge_store)
+    
+    # High-level request
+    result = await orchestrator.handle_request(
+        tenant_id="bank01",
+        request_type="optimize",
+        context={"urgency": "normal"},
+    )
+    
+    # Scheduled trigger
+    result = await orchestrator.handle_schedule(
+        tenant_id="bank01",
+        trigger="weekly_optimization",
+    )
 """
 
-from typing import Dict, Any, List, Optional
+from typing import Dict, List, Any, Optional
 from datetime import datetime
-from enum import Enum
 import logging
 
-from core.agents.action_plan import ActionPlan, OperationPriority
+from core.workflows.engine import WorkflowEngine
+from core.knowledge.yaml_store import YamlKnowledgeStore
 
-logger = logging.getLogger(__name__)
-
-
-class OptimizationObjective(Enum):
-    MAXIMIZE_CONVERSIONS = "maximize_conversions"
-    MINIMIZE_CPA = "minimize_cpa"
-    MAXIMIZE_ROAS = "maximize_roas"
-    BUDGET_EFFICIENCY = "budget_efficiency"
-    TRAFFIC_GROWTH = "traffic_growth"
+logger = logging.getLogger("nadakki.agents.orchestrator")
 
 
-class GoogleAdsOrchestratorAgent:
+class OrchestratorIA:
     """
-    Orchestrator agent that:
-    - Analyzes account state
-    - Selects appropriate agents/workflows
-    - Coordinates multi-agent execution
-    - Manages campaign optimization cycles
-    
-    USAGE:
-        orchestrator = GoogleAdsOrchestratorAgent(workflow_engine, agents)
-        result = await orchestrator.run_optimization_cycle(tenant_id, objective)
+    Meta-Agent that coordinates all Google Ads agents via workflows.
     """
     
-    AGENT_ID = "google_ads_orchestrator"
-    AGENT_NAME = "GoogleAdsOrchestratorAgent"
+    AGENT_NAME = "OrchestratorIA"
+    VERSION = "1.0.0"
     
-    # Workflow mapping by objective
-    WORKFLOW_MAP = {
-        OptimizationObjective.BUDGET_EFFICIENCY: "budget_adjustment.yaml",
-        OptimizationObjective.MAXIMIZE_CONVERSIONS: "daily_optimization.yaml",
-        OptimizationObjective.MINIMIZE_CPA: "daily_optimization.yaml",
-        OptimizationObjective.MAXIMIZE_ROAS: "daily_optimization.yaml",
-        OptimizationObjective.TRAFFIC_GROWTH: "traffic_growth.yaml"
+    # Request type > workflow mapping
+    REQUEST_WORKFLOW_MAP = {
+        "optimize": "weekly_optimization",
+        "weekly": "weekly_optimization",
+        "launch_campaign": "new_campaign_launch",
+        "new_campaign": "new_campaign_launch",
+        "adjust_budget": "budget_adjustment",
+        "budget": "budget_adjustment",
+        "emergency": "emergency_pause",
+        "pause": "emergency_pause",
+        "clean_search_terms": "search_terms_cleanup",
+        "search_terms": "search_terms_cleanup",
+        "cleanup": "search_terms_cleanup",
     }
     
-    # Agent mapping by task type
-    AGENT_MAP = {
-        "budget_pacing": "budget_pacing_agent",
-        "ad_copy": "rsa_copy_agent",
-        "search_terms": "search_terms_agent",
-        "keyword_expansion": "keyword_expansion_agent",
-        "bid_adjustment": "bid_adjustment_agent"
+    # Priority mapping
+    PRIORITY_MAP = {
+        "critical": ["emergency_pause"],
+        "high": ["budget_adjustment", "search_terms_cleanup"],
+        "normal": ["weekly_optimization", "new_campaign_launch"],
     }
     
-    def __init__(self, workflow_engine, connector, agents: Dict[str, Any], policy_engine):
-        self.workflow_engine = workflow_engine
-        self.connector = connector
-        self.agents = agents
-        self.policy_engine = policy_engine
+    def __init__(
+        self,
+        workflow_engine: WorkflowEngine,
+        knowledge_store: YamlKnowledgeStore = None,
+    ):
+        self.engine = workflow_engine
+        self.kb = knowledge_store
+        self._request_history: List[dict] = []
+        logger.info(f"{self.AGENT_NAME} v{self.VERSION} initialized")
     
-    async def run_optimization_cycle(
+    # ---------------------------------------------------------------------
+    # Main Entry Points
+    # ---------------------------------------------------------------------
+    
+    async def handle_request(
         self,
         tenant_id: str,
-        objective: OptimizationObjective = OptimizationObjective.BUDGET_EFFICIENCY,
-        campaign_ids: List[str] = None,
-        dry_run: bool = False
-    ) -> Dict[str, Any]:
-        """Run a complete optimization cycle.
+        request_type: str,
+        context: dict = None,
+        auto_approve: bool = False,
+    ) -> dict:
+        """
+        Handle a high-level request by selecting and running the right workflow.
         
         Args:
-            tenant_id: Target tenant
-            objective: Optimization objective
-            campaign_ids: Specific campaigns (optional)
-            dry_run: If True, don't execute changes
-            
-        Returns:
-            Summary of optimization actions taken
+            tenant_id: Tenant ID
+            request_type: Type of request (optimize, launch_campaign, emergency, etc.)
+            context: Additional context to pass to the workflow
+            auto_approve: Auto-approve approval gates
         """
-        logger.info(f"Starting optimization cycle for {tenant_id} with objective: {objective.value}")
+        context = context or {}
         
-        cycle_result = {
-            "tenant_id": tenant_id,
-            "objective": objective.value,
-            "started_at": datetime.utcnow().isoformat(),
-            "phases": [],
-            "total_operations": 0,
-            "successful_operations": 0,
-            "errors": []
-        }
+        # 1. Select workflow
+        workflow_id = self._select_workflow(request_type, context)
         
-        try:
-            # Phase 1: Account Analysis
-            analysis = await self._analyze_account(tenant_id, campaign_ids)
-            cycle_result["phases"].append({
-                "name": "account_analysis",
-                "status": "completed",
-                "data": analysis
-            })
-            
-            # Phase 2: Select and prioritize agents
-            agent_sequence = self._select_agents(objective, analysis)
-            cycle_result["phases"].append({
-                "name": "agent_selection",
-                "status": "completed",
-                "agents": agent_sequence
-            })
-            
-            # Phase 3: Execute agents in sequence
-            for agent_name in agent_sequence:
-                agent_result = await self._execute_agent(
-                    tenant_id, agent_name, analysis, dry_run
-                )
-                
-                cycle_result["phases"].append({
-                    "name": f"agent_{agent_name}",
-                    "status": "completed" if agent_result.get("success") else "failed",
-                    "data": agent_result
-                })
-                
-                cycle_result["total_operations"] += agent_result.get("operations_count", 0)
-                cycle_result["successful_operations"] += agent_result.get("successful_operations", 0)
-                
-                if agent_result.get("errors"):
-                    cycle_result["errors"].extend(agent_result["errors"])
-            
-            cycle_result["status"] = "completed"
-            
-        except Exception as e:
-            logger.error(f"Optimization cycle failed: {e}")
-            cycle_result["status"] = "failed"
-            cycle_result["errors"].append(str(e))
-        
-        cycle_result["completed_at"] = datetime.utcnow().isoformat()
-        
-        return cycle_result
-    
-    async def run_workflow(
-        self,
-        tenant_id: str,
-        workflow_name: str,
-        input_data: Dict[str, Any] = None
-    ) -> Dict[str, Any]:
-        """Run a specific workflow.
-        
-        Args:
-            tenant_id: Target tenant
-            workflow_name: Name of workflow file
-            input_data: Input parameters
-            
-        Returns:
-            Workflow execution result
-        """
-        execution = await self.workflow_engine.start(
-            workflow_file=workflow_name,
-            input_data=input_data or {},
-            tenant_id=tenant_id
-        )
-        
-        return {
-            "execution_id": execution.execution_id,
-            "workflow": execution.workflow_name,
-            "status": execution.status.value,
-            "step_results": execution.step_results,
-            "output": execution.output_data
-        }
-    
-    async def get_recommendations(
-        self,
-        tenant_id: str,
-        campaign_ids: List[str] = None
-    ) -> Dict[str, Any]:
-        """Get optimization recommendations without executing.
-        
-        Returns analysis and recommendations from all relevant agents.
-        """
-        analysis = await self._analyze_account(tenant_id, campaign_ids)
-        
-        recommendations = {
-            "tenant_id": tenant_id,
-            "generated_at": datetime.utcnow().isoformat(),
-            "account_health": self._calculate_health_score(analysis),
-            "recommendations": []
-        }
-        
-        # Get recommendations from each agent
-        if "budget_pacing_agent" in self.agents:
-            agent = self.agents["budget_pacing_agent"]
-            plan = await agent.analyze_and_plan(tenant_id, analysis.get("campaigns"))
-            
-            if plan.operations:
-                recommendations["recommendations"].append({
-                    "agent": "budget_pacing",
-                    "priority": "high" if plan.risk_score < 0.5 else "medium",
-                    "summary": plan.rationale,
-                    "operations": len(plan.operations),
-                    "risk_score": plan.risk_score
-                })
-        
-        if "search_terms_agent" in self.agents:
-            agent = self.agents["search_terms_agent"]
-            plan = await agent.analyze_and_clean(tenant_id)
-            
-            if plan.operations:
-                recommendations["recommendations"].append({
-                    "agent": "search_terms",
-                    "priority": "medium",
-                    "summary": plan.rationale,
-                    "operations": len(plan.operations),
-                    "potential_savings": plan.analysis.get("potential_savings_usd", 0)
-                })
-        
-        return recommendations
-    
-    async def schedule_daily_optimization(
-        self,
-        tenant_id: str,
-        objective: OptimizationObjective = OptimizationObjective.BUDGET_EFFICIENCY
-    ) -> Dict[str, Any]:
-        """Schedule daily optimization workflow."""
-        workflow_file = self.WORKFLOW_MAP.get(objective, "daily_optimization.yaml")
-        
-        return await self.run_workflow(
-            tenant_id=tenant_id,
-            workflow_name=workflow_file,
-            input_data={
-                "objective": objective.value,
-                "scheduled": True,
-                "timestamp": datetime.utcnow().isoformat()
+        if not workflow_id:
+            return {
+                "status": "error",
+                "message": f"No workflow found for request type: {request_type}",
+                "available_types": list(self.REQUEST_WORKFLOW_MAP.keys()),
             }
+        
+        logger.info(
+            f"[{tenant_id}] Orchestrator: request_type='{request_type}' > "
+            f"workflow='{workflow_id}'"
         )
-    
-    # ========================================================================
-    # PRIVATE METHODS
-    # ========================================================================
-    
-    async def _analyze_account(
-        self,
-        tenant_id: str,
-        campaign_ids: List[str] = None
-    ) -> Dict[str, Any]:
-        """Analyze account state."""
-        result = await self.connector.get_metrics(tenant_id, campaign_ids)
         
-        if not result.success:
-            return {"error": result.error_message, "campaigns": []}
-        
-        campaigns = result.data.get("campaigns", [])
-        
-        # Calculate aggregates
-        total_spend = sum(c.get("cost_micros", 0) for c in campaigns) / 1_000_000
-        total_conversions = sum(c.get("conversions", 0) for c in campaigns)
-        total_clicks = sum(c.get("clicks", 0) for c in campaigns)
-        total_impressions = sum(c.get("impressions", 0) for c in campaigns)
-        
-        return {
-            "campaigns": campaigns,
-            "campaign_count": len(campaigns),
-            "active_campaigns": len([c for c in campaigns if c.get("status") == "ENABLED"]),
-            "total_spend_usd": total_spend,
-            "total_conversions": total_conversions,
-            "total_clicks": total_clicks,
-            "total_impressions": total_impressions,
-            "avg_ctr": total_clicks / total_impressions if total_impressions > 0 else 0,
-            "avg_cpc": total_spend / total_clicks if total_clicks > 0 else 0,
-            "avg_cpa": total_spend / total_conversions if total_conversions > 0 else 0
-        }
-    
-    def _select_agents(
-        self,
-        objective: OptimizationObjective,
-        analysis: Dict[str, Any]
-    ) -> List[str]:
-        """Select and prioritize agents based on objective and analysis."""
-        agents = []
-        
-        # Always run budget pacing for efficiency
-        if objective == OptimizationObjective.BUDGET_EFFICIENCY:
-            agents.append("budget_pacing_agent")
-        
-        # Add search terms for CPA optimization
-        if objective in [OptimizationObjective.MINIMIZE_CPA, OptimizationObjective.MAXIMIZE_ROAS]:
-            agents.append("search_terms_agent")
-            agents.append("budget_pacing_agent")
-        
-        # Add all agents for conversion maximization
-        if objective == OptimizationObjective.MAXIMIZE_CONVERSIONS:
-            agents.extend(["budget_pacing_agent", "search_terms_agent"])
-        
-        # Traffic growth focuses on budget and keywords
-        if objective == OptimizationObjective.TRAFFIC_GROWTH:
-            agents.extend(["budget_pacing_agent"])
-        
-        # Remove duplicates while preserving order
-        seen = set()
-        return [a for a in agents if not (a in seen or seen.add(a))]
-    
-    async def _execute_agent(
-        self,
-        tenant_id: str,
-        agent_name: str,
-        analysis: Dict[str, Any],
-        dry_run: bool
-    ) -> Dict[str, Any]:
-        """Execute a single agent."""
-        agent = self.agents.get(agent_name)
-        if not agent:
-            return {"success": False, "error": f"Agent not found: {agent_name}"}
-        
+        # 2. Run workflow
         try:
-            # Get action plan from agent
-            if hasattr(agent, 'analyze_and_plan'):
-                plan = await agent.analyze_and_plan(tenant_id, analysis.get("campaigns"))
-            elif hasattr(agent, 'analyze_and_clean'):
-                plan = await agent.analyze_and_clean(tenant_id)
-            else:
-                return {"success": False, "error": "Agent has no executable method"}
-            
-            if dry_run or not plan.operations:
-                return {
-                    "success": True,
-                    "dry_run": True,
-                    "operations_count": len(plan.operations),
-                    "successful_operations": 0,
-                    "plan_id": plan.plan_id,
-                    "analysis": plan.analysis
-                }
-            
-            # Execute plan
-            from core.execution.action_plan_executor import ActionPlanExecutor
-            executor = ActionPlanExecutor(
-                self.connector,
-                self.workflow_engine.telemetry
+            execution = await self.engine.run(
+                workflow_id=workflow_id,
+                tenant_id=tenant_id,
+                context=context,
+                auto_approve=auto_approve,
             )
             
-            result = await executor.execute(plan)
-            
-            return {
-                "success": result.success,
-                "operations_count": result.executed_operations + result.failed_operations,
-                "successful_operations": result.executed_operations,
-                "plan_id": plan.plan_id,
-                "results": result.results,
-                "errors": [result.error_message] if result.error_message else []
+            result = {
+                "status": "success",
+                "request_type": request_type,
+                "workflow_id": workflow_id,
+                "execution_id": execution.execution_id,
+                "workflow_status": execution.status.value,
+                "steps_completed": sum(
+                    1 for s in execution.steps
+                    if s.get("status") == "completed"
+                ),
+                "total_steps": len(execution.steps),
+                "plans_generated": execution.plans_generated,
             }
-            
+        
         except Exception as e:
-            logger.error(f"Agent {agent_name} execution failed: {e}")
-            return {
-                "success": False,
+            result = {
+                "status": "error",
+                "request_type": request_type,
+                "workflow_id": workflow_id,
                 "error": str(e),
-                "operations_count": 0,
-                "successful_operations": 0
             }
+            logger.error(f"[{tenant_id}] Orchestrator error: {e}")
+        
+        # Record
+        self._request_history.append({
+            "tenant_id": tenant_id,
+            "request_type": request_type,
+            "workflow_id": workflow_id,
+            "result_status": result["status"],
+            "timestamp": datetime.utcnow().isoformat(),
+        })
+        
+        return result
     
-    def _calculate_health_score(self, analysis: Dict[str, Any]) -> float:
-        """Calculate overall account health score (0-100)."""
-        score = 50.0  # Base score
+    async def handle_schedule(
+        self,
+        tenant_id: str,
+        trigger: str,
+        context: dict = None,
+    ) -> dict:
+        """
+        Handle a scheduled trigger.
+        Maps trigger names to workflows.
+        """
+        trigger_workflow_map = {
+            "weekly_optimization": "weekly_optimization",
+            "schedule_weekly": "weekly_optimization",
+            "search_terms_cleanup": "search_terms_cleanup",
+            "every_monday": "weekly_optimization",
+            "every_wednesday": "search_terms_cleanup",
+        }
         
-        # CTR contribution (0-20 points)
-        ctr = analysis.get("avg_ctr", 0)
-        if ctr > 0.05:
-            score += 20
-        elif ctr > 0.02:
-            score += 10
+        workflow_id = trigger_workflow_map.get(trigger)
+        if not workflow_id:
+            return {
+                "status": "error",
+                "message": f"No workflow for trigger: {trigger}",
+            }
         
-        # CPA contribution (0-20 points) - lower is better
-        cpa = analysis.get("avg_cpa", 0)
-        if cpa > 0 and cpa < 50:
-            score += 20
-        elif cpa > 0 and cpa < 100:
-            score += 10
+        return await self.handle_request(
+            tenant_id, workflow_id, context, auto_approve=True
+        )
+    
+    # ---------------------------------------------------------------------
+    # Intelligent Routing
+    # ---------------------------------------------------------------------
+    
+    async def auto_triage(
+        self,
+        tenant_id: str,
+        metrics: dict,
+        industry: str = "financial_services",
+    ) -> dict:
+        """
+        Automatically assess performance and decide which workflow to run.
         
-        # Active campaign ratio (0-10 points)
-        total = analysis.get("campaign_count", 0)
-        active = analysis.get("active_campaigns", 0)
-        if total > 0 and active / total > 0.8:
-            score += 10
+        Args:
+            metrics: Current campaign metrics (ctr, cpa, conv_rate, budget_pacing)
+        """
+        cpa = metrics.get("cpa", 0)
+        ctr = metrics.get("ctr", 0)
+        budget_pacing = metrics.get("budget_pacing", 100)
         
-        return min(score, 100.0)
+        # Get thresholds from KB
+        thresholds = {}
+        if self.kb:
+            benchmarks = self.kb.get_benchmarks(tenant_id, industry)
+            thresholds = benchmarks.get("thresholds", {})
+        
+        critical_thresholds = thresholds.get("critical", {})
+        warning_thresholds = thresholds.get("warning", {})
+        
+        benchmark_cpa = 50.0  # Default
+        if self.kb:
+            b = self.kb.get_benchmarks(tenant_id, industry)
+            benchmark_cpa = b.get("metrics", {}).get("search", {}).get("avg_cpa", 50.0)
+        
+        # Decision logic
+        urgency = "normal"
+        recommended_workflows = []
+        reasons = []
+        
+        # Critical: CPA way too high
+        cpa_multiplier = critical_thresholds.get("cpa_multiplier", 3.0)
+        if cpa > benchmark_cpa * cpa_multiplier:
+            urgency = "critical"
+            recommended_workflows.append("emergency_pause")
+            reasons.append(f"CPA ${cpa:.2f} is {cpa/benchmark_cpa:.1f}x benchmark")
+        
+        # Critical: Budget overspend
+        if budget_pacing > 150:
+            urgency = "critical"
+            recommended_workflows.append("emergency_pause")
+            reasons.append(f"Budget pacing at {budget_pacing}% (critical threshold: 150%)")
+        
+        # Warning: High CPA
+        warn_cpa_mult = warning_thresholds.get("cpa_multiplier", 2.0)
+        if cpa > benchmark_cpa * warn_cpa_mult and urgency != "critical":
+            urgency = "high"
+            recommended_workflows.append("budget_adjustment")
+            reasons.append(f"CPA ${cpa:.2f} above warning threshold")
+        
+        # Warning: Low CTR
+        if ctr < warning_thresholds.get("ctr_minimum", 2.0):
+            if urgency not in ("critical",):
+                urgency = "high"
+            recommended_workflows.append("weekly_optimization")
+            reasons.append(f"CTR {ctr:.2f}% below minimum")
+        
+        # Normal: Regular optimization needed
+        if not recommended_workflows:
+            recommended_workflows.append("weekly_optimization")
+            reasons.append("Regular optimization cycle")
+        
+        # Execute the highest-priority workflow
+        primary_workflow = recommended_workflows[0]
+        
+        result = await self.handle_request(
+            tenant_id, primary_workflow,
+            context={"urgency": urgency, "metrics": metrics},
+            auto_approve=(urgency == "critical"),
+        )
+        
+        result["triage"] = {
+            "urgency": urgency,
+            "recommended_workflows": recommended_workflows,
+            "reasons": reasons,
+            "benchmark_cpa": benchmark_cpa,
+        }
+        
+        return result
+    
+    # ---------------------------------------------------------------------
+    # Workflow Selection
+    # ---------------------------------------------------------------------
+    
+    def _select_workflow(self, request_type: str, context: dict) -> Optional[str]:
+        """Select the best workflow for a request."""
+        # Direct mapping first
+        workflow_id = self.REQUEST_WORKFLOW_MAP.get(request_type.lower())
+        if workflow_id:
+            # Verify it exists in the engine
+            if self.engine.get_workflow(workflow_id):
+                return workflow_id
+        
+        # Try request_type as direct workflow_id
+        if self.engine.get_workflow(request_type):
+            return request_type
+        
+        return None
+    
+    # ---------------------------------------------------------------------
+    # Status & History
+    # ---------------------------------------------------------------------
+    
+    def get_available_actions(self) -> List[dict]:
+        """Get all available request types and their workflows."""
+        actions = []
+        seen = set()
+        
+        for request_type, workflow_id in self.REQUEST_WORKFLOW_MAP.items():
+            if workflow_id not in seen:
+                wf = self.engine.get_workflow(workflow_id)
+                actions.append({
+                    "request_types": [
+                        k for k, v in self.REQUEST_WORKFLOW_MAP.items()
+                        if v == workflow_id
+                    ],
+                    "workflow_id": workflow_id,
+                    "name": wf.get("name", workflow_id) if wf else workflow_id,
+                    "steps": len(wf.get("steps", [])) if wf else 0,
+                })
+                seen.add(workflow_id)
+        
+        return actions
+    
+    def get_request_history(
+        self, tenant_id: str = None, limit: int = 20
+    ) -> List[dict]:
+        """Get recent orchestrator requests."""
+        history = self._request_history
+        if tenant_id:
+            history = [h for h in history if h["tenant_id"] == tenant_id]
+        return list(reversed(history[-limit:]))
+    
+    def get_stats(self) -> dict:
+        """Get orchestrator statistics."""
+        total = len(self._request_history)
+        success = sum(1 for h in self._request_history if h["result_status"] == "success")
+        
+        return {
+            "total_requests": total,
+            "successful": success,
+            "available_workflows": len(self.engine.list_workflows()),
+            "available_agents": list(self.engine.agents.keys()),
+            "success_rate": f"{success/total*100:.0f}%" if total > 0 else "N/A",
+        }

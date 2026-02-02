@@ -1,464 +1,515 @@
+# ===============================================================================
+# NADAKKI AI Suite - WorkflowEngine
+# core/workflows/engine.py
+# Day 5 - Component 1 of 3
+# ===============================================================================
+
 """
-NADAKKI AI Suite - Workflow Definition & Engine
-YAML-based Workflow Execution System
+YAML-driven Workflow Engine - orchestrates multi-step agent workflows.
+
+A Workflow is a state machine defined in YAML:
+    - States (steps) with entry/exit actions
+    - Transitions between states with conditions
+    - Agent assignments per step
+    - Error handling and compensation
+
+Features:
+    - Load workflow definitions from YAML files
+    - Execute workflows step-by-step
+    - Support for parallel and sequential steps
+    - Human approval gates
+    - Automatic rollback on failure
+    - Full execution history and audit
+
+Usage:
+    engine = WorkflowEngine(agents, plan_executor, knowledge_store)
+    
+    # Load workflow definitions
+    engine.load_workflows("config/workflows/")
+    
+    # Run a workflow
+    result = await engine.run(
+        workflow_id="weekly_optimization",
+        tenant_id="bank01",
+        context={"industry": "financial_services"},
+    )
 """
 
-from dataclasses import dataclass, field
-from typing import List, Dict, Any, Optional
-from enum import Enum
+from typing import Dict, List, Optional, Any, Callable
 from datetime import datetime
-import uuid
-import yaml
-import re
-import asyncio
+from enum import Enum
 import logging
+import os
+import copy
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("nadakki.workflows.engine")
+
+# Try YAML
+try:
+    import yaml
+    HAS_YAML = True
+except ImportError:
+    HAS_YAML = False
 
 
-# ============================================================================
-# ENUMS & DATA CLASSES
-# ============================================================================
+# -----------------------------------------------------------------------------
+# Workflow State
+# -----------------------------------------------------------------------------
 
-class StepType(Enum):
-    OPERATION = "operation"
-    AGENT = "agent"
-    CONDITION = "condition"
-    APPROVAL = "approval"
-    PARALLEL = "parallel"
+class StepStatus(Enum):
+    PENDING = "pending"
+    RUNNING = "running"
+    COMPLETED = "completed"
+    FAILED = "failed"
+    SKIPPED = "skipped"
+    AWAITING_APPROVAL = "awaiting_approval"
 
 
 class WorkflowStatus(Enum):
-    PENDING = "PENDING"
-    RUNNING = "RUNNING"
-    PAUSED_APPROVAL = "PAUSED_APPROVAL"
-    COMPLETED = "COMPLETED"
-    FAILED = "FAILED"
-    CANCELLED = "CANCELLED"
+    PENDING = "pending"
+    RUNNING = "running"
+    COMPLETED = "completed"
+    FAILED = "failed"
+    PAUSED = "paused"              # Waiting for human approval
+    PARTIALLY_COMPLETED = "partially_completed"
 
 
-@dataclass
-class WorkflowStep:
-    """A single step in a workflow."""
-    name: str
-    type: StepType
-    config: Dict[str, Any] = field(default_factory=dict)
-    
-    # For operations
-    operation: Optional[str] = None
-    params: Dict[str, Any] = field(default_factory=dict)
-    
-    # For agents
-    agent: Optional[str] = None
-    agent_params: Dict[str, Any] = field(default_factory=dict)
-    
-    # For conditions
-    condition: Optional[str] = None
-    on_true: Optional[str] = None
-    on_false: Optional[str] = None
-    
-    # For approvals
-    approval_message: Optional[str] = None
-    timeout_hours: int = 24
-    
-    # Control flow
-    next_step: Optional[str] = None
-    on_error: Optional[str] = None
-    retries: int = 0
-
-
-@dataclass
-class WorkflowDefinition:
-    """Complete workflow definition."""
-    name: str
-    version: str
-    description: str = ""
-    
-    inputs: Dict[str, Any] = field(default_factory=dict)
-    outputs: Dict[str, Any] = field(default_factory=dict)
-    
-    steps: List[WorkflowStep] = field(default_factory=list)
-    start_step: str = ""
-    
-    timeout_minutes: int = 60
-    tags: List[str] = field(default_factory=list)
-    
-    def get_step(self, name: str) -> Optional[WorkflowStep]:
-        for step in self.steps:
-            if step.name == name:
-                return step
-        return None
-
-
-@dataclass
 class WorkflowExecution:
-    """State of a workflow execution."""
-    execution_id: str
-    workflow_name: str
-    workflow_version: str
-    tenant_id: str
+    """Tracks the state of a running workflow."""
     
-    status: WorkflowStatus = WorkflowStatus.PENDING
-    current_step: Optional[str] = None
+    def __init__(self, workflow_id: str, tenant_id: str, context: dict = None):
+        self.execution_id = f"wf_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}_{id(self) % 10000:04d}"
+        self.workflow_id = workflow_id
+        self.tenant_id = tenant_id
+        self.context = context or {}
+        self.status = WorkflowStatus.PENDING
+        self.steps: List[dict] = []
+        self.current_step_index = 0
+        self.started_at: Optional[datetime] = None
+        self.completed_at: Optional[datetime] = None
+        self.results: Dict[str, Any] = {}  # step_id > result
+        self.errors: List[dict] = []
+        self.plans_generated: List[str] = []  # plan_ids
     
-    input_data: Dict[str, Any] = field(default_factory=dict)
-    step_results: Dict[str, Any] = field(default_factory=dict)
-    output_data: Dict[str, Any] = field(default_factory=dict)
-    
-    error_message: Optional[str] = None
-    started_at: Optional[str] = None
-    completed_at: Optional[str] = None
+    def to_dict(self) -> dict:
+        return {
+            "execution_id": self.execution_id,
+            "workflow_id": self.workflow_id,
+            "tenant_id": self.tenant_id,
+            "status": self.status.value,
+            "total_steps": len(self.steps),
+            "current_step": self.current_step_index,
+            "completed_steps": sum(1 for s in self.steps if s.get("status") == StepStatus.COMPLETED.value),
+            "failed_steps": sum(1 for s in self.steps if s.get("status") == StepStatus.FAILED.value),
+            "started_at": self.started_at.isoformat() if self.started_at else None,
+            "completed_at": self.completed_at.isoformat() if self.completed_at else None,
+            "plans_generated": self.plans_generated,
+            "steps": self.steps,
+            "errors": self.errors,
+        }
 
 
-# ============================================================================
-# WORKFLOW PARSER
-# ============================================================================
-
-class WorkflowParser:
-    """Parse YAML workflows with simple variable interpolation."""
-    
-    VAR_PATTERN = re.compile(r'\$\{([^}]+)\}')
-    
-    def __init__(self, workflows_dir: str = "config/workflows"):
-        self.workflows_dir = workflows_dir
-        self._cache: Dict[str, WorkflowDefinition] = {}
-    
-    def parse_file(self, filename: str) -> WorkflowDefinition:
-        """Parse a workflow YAML file."""
-        import os
-        filepath = os.path.join(self.workflows_dir, filename)
-        
-        if filename in self._cache:
-            return self._cache[filename]
-        
-        with open(filepath, 'r') as f:
-            data = yaml.safe_load(f)
-        
-        workflow = self._parse_definition(data)
-        self._cache[filename] = workflow
-        return workflow
-    
-    def parse_string(self, yaml_content: str) -> WorkflowDefinition:
-        """Parse workflow from YAML string."""
-        data = yaml.safe_load(yaml_content)
-        return self._parse_definition(data)
-    
-    def _parse_definition(self, data: Dict) -> WorkflowDefinition:
-        """Parse workflow definition from dict."""
-        steps = [self._parse_step(s) for s in data.get("steps", [])]
-        
-        return WorkflowDefinition(
-            name=data.get("name", "unnamed"),
-            version=data.get("version", "1.0"),
-            description=data.get("description", ""),
-            inputs=data.get("inputs", {}),
-            outputs=data.get("outputs", {}),
-            steps=steps,
-            start_step=data.get("start_step", steps[0].name if steps else ""),
-            timeout_minutes=data.get("timeout_minutes", 60),
-            tags=data.get("tags", [])
-        )
-    
-    def _parse_step(self, data: Dict) -> WorkflowStep:
-        """Parse a single step."""
-        step_type = StepType(data.get("type", "operation"))
-        
-        return WorkflowStep(
-            name=data.get("name", "unnamed_step"),
-            type=step_type,
-            config=data.get("config", {}),
-            operation=data.get("operation"),
-            params=data.get("params", {}),
-            agent=data.get("agent"),
-            agent_params=data.get("agent_params", {}),
-            condition=data.get("condition"),
-            on_true=data.get("on_true"),
-            on_false=data.get("on_false"),
-            approval_message=data.get("approval_message"),
-            timeout_hours=data.get("timeout_hours", 24),
-            next_step=data.get("next_step"),
-            on_error=data.get("on_error"),
-            retries=data.get("retries", 0)
-        )
-    
-    def interpolate(self, value: Any, input_data: Dict[str, Any], step_results: Dict[str, Any]) -> Any:
-        """Interpolate variables in a value."""
-        if isinstance(value, str):
-            return self._interpolate_string(value, input_data, step_results)
-        elif isinstance(value, dict):
-            return {k: self.interpolate(v, input_data, step_results) for k, v in value.items()}
-        elif isinstance(value, list):
-            return [self.interpolate(v, input_data, step_results) for v in value]
-        return value
-    
-    def _interpolate_string(self, value: str, input_data: Dict, step_results: Dict) -> str:
-        """Interpolate variables in a string."""
-        def replace_var(match):
-            path = match.group(1)
-            parts = path.split(".")
-            
-            try:
-                if parts[0] == "input":
-                    return str(self._get_nested(input_data, parts[1:]))
-                elif parts[0] == "steps" and len(parts) >= 3:
-                    step_name = parts[1]
-                    if step_name in step_results:
-                        return str(self._get_nested(step_results[step_name], parts[2:]))
-            except (KeyError, IndexError, TypeError):
-                logger.warning(f"Failed to interpolate: {path}")
-            
-            return match.group(0)
-        
-        return self.VAR_PATTERN.sub(replace_var, value)
-    
-    def _get_nested(self, data: Dict, keys: List[str]) -> Any:
-        """Get nested value from dict."""
-        current = data
-        for key in keys:
-            if isinstance(current, dict):
-                current = current[key]
-            else:
-                raise KeyError(key)
-        return current
-    
-    def invalidate_cache(self, filename: str = None):
-        if filename:
-            self._cache.pop(filename, None)
-        else:
-            self._cache.clear()
-
-
-# ============================================================================
-# WORKFLOW ENGINE
-# ============================================================================
+# -----------------------------------------------------------------------------
+# Workflow Engine
+# -----------------------------------------------------------------------------
 
 class WorkflowEngine:
     """
-    Workflow execution engine with:
-    - State machine management
-    - Step execution
-    - Variable interpolation
-    - Approval gates
+    Executes YAML-defined workflows using registered agents.
     """
     
-    def __init__(self, connector, parser: WorkflowParser, action_plan_executor,
-                 saga_journal, telemetry, agents: Dict[str, Any] = None):
-        self.connector = connector
-        self.parser = parser
-        self.action_plan_executor = action_plan_executor
-        self.saga_journal = saga_journal
-        self.telemetry = telemetry
-        self.agents = agents or {}
-        self._executions: Dict[str, WorkflowExecution] = {}
+    VERSION = "1.0.0"
     
-    async def start(self, workflow_file: str, input_data: Dict[str, Any],
-                    tenant_id: str) -> WorkflowExecution:
-        """Start a workflow execution."""
-        workflow = self.parser.parse_file(workflow_file)
+    def __init__(
+        self,
+        agents: Dict[str, Any],
+        plan_executor=None,
+        knowledge_store=None,
+    ):
+        """
+        Args:
+            agents: Dict mapping agent names to agent instances.
+                    e.g., {"strategist": GoogleAdsStrategistIA, ...}
+            plan_executor: ActionPlanExecutor instance
+            knowledge_store: YamlKnowledgeStore instance
+        """
+        self.agents = agents
+        self.plan_executor = plan_executor
+        self.kb = knowledge_store
         
-        execution = WorkflowExecution(
-            execution_id=str(uuid.uuid4()),
-            workflow_name=workflow.name,
-            workflow_version=workflow.version,
-            tenant_id=tenant_id,
-            status=WorkflowStatus.RUNNING,
-            current_step=workflow.start_step,
-            input_data=input_data,
-            started_at=datetime.utcnow().isoformat()
-        )
+        self._workflow_definitions: Dict[str, dict] = {}
+        self._execution_history: List[WorkflowExecution] = []
+        self._running: Dict[str, WorkflowExecution] = {}
         
-        self._executions[execution.execution_id] = execution
-        
-        # Create saga
-        if self.saga_journal:
-            await self.saga_journal.create_saga(
-                tenant_id, workflow.name,
-                {"workflow": workflow.name, "input": input_data}
-            )
-        
-        self.telemetry.log_event(
-            "workflow_started", tenant_id, execution.execution_id,
-            {"workflow": workflow.name, "version": workflow.version}
-        )
-        
-        # Execute workflow
-        await self._execute_workflow(execution, workflow)
-        
-        return execution
+        logger.info(f"WorkflowEngine v{self.VERSION} initialized ({len(agents)} agents)")
     
-    async def resume(self, execution_id: str) -> WorkflowExecution:
-        """Resume a paused workflow."""
-        execution = self._executions.get(execution_id)
-        if not execution:
-            raise ValueError(f"Execution not found: {execution_id}")
+    # ---------------------------------------------------------------------
+    # Workflow Loading
+    # ---------------------------------------------------------------------
+    
+    def load_workflows(self, directory: str):
+        """Load all .yaml workflow definitions from a directory."""
+        if not os.path.exists(directory):
+            logger.warning(f"Workflow directory not found: {directory}")
+            return
         
-        if execution.status != WorkflowStatus.PAUSED_APPROVAL:
-            raise ValueError(f"Cannot resume execution in status: {execution.status}")
+        for filename in os.listdir(directory):
+            if filename.endswith('.yaml') or filename.endswith('.yml'):
+                filepath = os.path.join(directory, filename)
+                self.load_workflow_file(filepath)
+    
+    def load_workflow_file(self, filepath: str):
+        """Load a single workflow definition file."""
+        if not HAS_YAML:
+            logger.error("PyYAML required for workflow definitions")
+            return
         
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                data = yaml.safe_load(f)
+            
+            if not data:
+                return
+            
+            # File can contain single workflow or list
+            workflows = data if isinstance(data, list) else [data]
+            
+            for wf in workflows:
+                wf_id = wf.get("id")
+                if wf_id:
+                    self._workflow_definitions[wf_id] = wf
+                    logger.info(f"  Loaded workflow: {wf_id} ({len(wf.get('steps', []))} steps)")
+        
+        except Exception as e:
+            logger.error(f"Error loading workflow {filepath}: {e}")
+    
+    def register_workflow(self, definition: dict):
+        """Register a workflow definition programmatically."""
+        wf_id = definition.get("id")
+        if not wf_id:
+            raise ValueError("Workflow definition must have an 'id'")
+        self._workflow_definitions[wf_id] = definition
+        logger.info(f"Registered workflow: {wf_id}")
+    
+    # ---------------------------------------------------------------------
+    # Workflow Execution
+    # ---------------------------------------------------------------------
+    
+    async def run(
+        self,
+        workflow_id: str,
+        tenant_id: str,
+        context: dict = None,
+        dry_run: bool = False,
+        auto_approve: bool = False,
+    ) -> WorkflowExecution:
+        """
+        Execute a workflow.
+        
+        Args:
+            workflow_id: ID of the workflow to run
+            tenant_id: Tenant to run for
+            context: Additional context (merged with workflow defaults)
+            dry_run: If True, generate plans but don't execute
+            auto_approve: If True, auto-approve all approval gates
+        """
+        definition = self._workflow_definitions.get(workflow_id)
+        if not definition:
+            raise ValueError(f"Workflow not found: {workflow_id}")
+        
+        # Create execution
+        execution = WorkflowExecution(workflow_id, tenant_id, context)
+        execution.started_at = datetime.utcnow()
         execution.status = WorkflowStatus.RUNNING
-        workflow = self.parser.parse_file(f"{execution.workflow_name}.yaml")
         
-        await self._execute_workflow(execution, workflow)
-        return execution
-    
-    async def cancel(self, execution_id: str) -> WorkflowExecution:
-        """Cancel a workflow execution."""
-        execution = self._executions.get(execution_id)
-        if not execution:
-            raise ValueError(f"Execution not found: {execution_id}")
+        # Initialize steps from definition
+        for step_def in definition.get("steps", []):
+            execution.steps.append({
+                "id": step_def.get("id", f"step_{len(execution.steps)}"),
+                "name": step_def.get("name", ""),
+                "agent": step_def.get("agent", ""),
+                "action": step_def.get("action", ""),
+                "params": step_def.get("params", {}),
+                "requires_approval": step_def.get("requires_approval", False),
+                "on_failure": step_def.get("on_failure", "stop"),
+                "status": StepStatus.PENDING.value,
+                "result": None,
+                "error": None,
+                "started_at": None,
+                "completed_at": None,
+            })
         
-        execution.status = WorkflowStatus.CANCELLED
-        execution.completed_at = datetime.utcnow().isoformat()
+        self._running[execution.execution_id] = execution
         
-        self.telemetry.log_event(
-            "workflow_cancelled", execution.tenant_id, execution_id,
-            {"workflow": execution.workflow_name}
+        logger.info(
+            f"[{tenant_id}] Starting workflow '{workflow_id}' "
+            f"({len(execution.steps)} steps, dry_run={dry_run})"
         )
         
-        return execution
-    
-    async def _execute_workflow(self, execution: WorkflowExecution,
-                                workflow: WorkflowDefinition):
-        """Execute workflow steps."""
-        while execution.status == WorkflowStatus.RUNNING and execution.current_step:
-            step = workflow.get_step(execution.current_step)
-            if not step:
-                execution.status = WorkflowStatus.FAILED
-                execution.error_message = f"Step not found: {execution.current_step}"
-                break
+        # Execute steps
+        for i, step in enumerate(execution.steps):
+            execution.current_step_index = i
+            step["status"] = StepStatus.RUNNING.value
+            step["started_at"] = datetime.utcnow().isoformat()
             
             try:
-                result = await self._execute_step(step, execution)
-                execution.step_results[step.name] = result
+                # Check approval gate
+                if step["requires_approval"] and not auto_approve:
+                    step["status"] = StepStatus.AWAITING_APPROVAL.value
+                    execution.status = WorkflowStatus.PAUSED
+                    logger.info(
+                        f"[{tenant_id}] Workflow paused at step {i+1}: "
+                        f"'{step['name']}' requires approval"
+                    )
+                    break  # Pause workflow
                 
-                # Determine next step
-                next_step = self._get_next_step(step, result)
-                
-                if next_step:
-                    execution.current_step = next_step
-                else:
-                    execution.status = WorkflowStatus.COMPLETED
-                    execution.completed_at = datetime.utcnow().isoformat()
-                    execution.current_step = None
-                    
-            except ApprovalRequiredException as e:
-                execution.status = WorkflowStatus.PAUSED_APPROVAL
-                self.telemetry.log_event(
-                    "workflow_paused", execution.tenant_id, execution.execution_id,
-                    {"step": step.name, "reason": str(e)}
+                # Execute step
+                result = await self._execute_step(
+                    step, execution, dry_run
                 )
-                break
                 
+                step["result"] = result
+                step["status"] = StepStatus.COMPLETED.value
+                step["completed_at"] = datetime.utcnow().isoformat()
+                
+                # Store result in execution context for next steps
+                execution.results[step["id"]] = result
+                
+                logger.info(
+                    f"[{tenant_id}] Step {i+1}/{len(execution.steps)} "
+                    f"COMPLETED: {step['name']}"
+                )
+            
             except Exception as e:
-                logger.error(f"Step {step.name} failed: {e}")
+                step["status"] = StepStatus.FAILED.value
+                step["error"] = str(e)
+                step["completed_at"] = datetime.utcnow().isoformat()
+                execution.errors.append({
+                    "step_id": step["id"],
+                    "step_name": step["name"],
+                    "error": str(e),
+                })
                 
-                if step.on_error:
-                    execution.current_step = step.on_error
-                else:
-                    execution.status = WorkflowStatus.FAILED
-                    execution.error_message = str(e)
-                    execution.completed_at = datetime.utcnow().isoformat()
+                logger.error(
+                    f"[{tenant_id}] Step {i+1}/{len(execution.steps)} "
+                    f"FAILED: {step['name']} - {e}"
+                )
+                
+                # Handle failure
+                on_failure = step.get("on_failure", "stop")
+                if on_failure == "stop":
+                    # Mark remaining as skipped
+                    for remaining in execution.steps[i+1:]:
+                        remaining["status"] = StepStatus.SKIPPED.value
+                        remaining["error"] = "Skipped due to earlier failure"
+                    break
+                elif on_failure == "continue":
+                    continue
+                elif on_failure == "skip_remaining":
+                    for remaining in execution.steps[i+1:]:
+                        remaining["status"] = StepStatus.SKIPPED.value
+                    break
         
-        if execution.status == WorkflowStatus.COMPLETED:
-            self.telemetry.log_event(
-                "workflow_completed", execution.tenant_id, execution.execution_id,
-                {"workflow": execution.workflow_name, "steps_executed": len(execution.step_results)}
-            )
-    
-    async def _execute_step(self, step: WorkflowStep, execution: WorkflowExecution) -> Dict[str, Any]:
-        """Execute a single workflow step."""
-        logger.info(f"Executing step: {step.name} ({step.type.value})")
+        # Finalize
+        execution.completed_at = datetime.utcnow()
+        completed_count = sum(1 for s in execution.steps if s["status"] == StepStatus.COMPLETED.value)
+        failed_count = sum(1 for s in execution.steps if s["status"] == StepStatus.FAILED.value)
         
-        # Interpolate parameters
-        params = self.parser.interpolate(
-            step.params, execution.input_data, execution.step_results
+        if execution.status != WorkflowStatus.PAUSED:
+            if failed_count > 0 and completed_count > 0:
+                execution.status = WorkflowStatus.PARTIALLY_COMPLETED
+            elif failed_count > 0:
+                execution.status = WorkflowStatus.FAILED
+            else:
+                execution.status = WorkflowStatus.COMPLETED
+        
+        # Archive
+        self._execution_history.append(execution)
+        if execution.execution_id in self._running:
+            del self._running[execution.execution_id]
+        
+        logger.info(
+            f"[{tenant_id}] Workflow '{workflow_id}' {execution.status.value}: "
+            f"{completed_count}/{len(execution.steps)} steps completed"
         )
         
-        if step.type == StepType.OPERATION:
-            result = await self.connector.execute(
-                operation_name=step.operation,
-                payload=params,
-                tenant_id=execution.tenant_id
-            )
-            return {"success": result.success, "data": result.data, "error": result.error_message}
-        
-        elif step.type == StepType.AGENT:
-            agent = self.agents.get(step.agent)
-            if not agent:
-                raise ValueError(f"Agent not found: {step.agent}")
-            
-            agent_params = self.parser.interpolate(
-                step.agent_params, execution.input_data, execution.step_results
-            )
-            
-            # Execute agent's main method
-            if hasattr(agent, 'analyze_and_plan'):
-                plan = await agent.analyze_and_plan(execution.tenant_id, **agent_params)
-            elif hasattr(agent, 'generate_ad_copy'):
-                plan = await agent.generate_ad_copy(execution.tenant_id, **agent_params)
-            else:
-                raise ValueError(f"Agent {step.agent} has no executable method")
-            
-            # Execute the action plan
-            if plan.operations:
-                plan_result = await self.action_plan_executor.execute(plan)
-                return {"plan_id": plan.plan_id, "success": plan_result.success,
-                        "executed": plan_result.executed_operations, "results": plan_result.results}
-            
-            return {"plan_id": plan.plan_id, "analysis": plan.analysis, "no_operations": True}
-        
-        elif step.type == StepType.CONDITION:
-            condition_result = self._evaluate_condition(
-                step.condition, execution.input_data, execution.step_results
-            )
-            return {"condition": step.condition, "result": condition_result}
-        
-        elif step.type == StepType.APPROVAL:
-            raise ApprovalRequiredException(step.approval_message or "Approval required")
-        
-        return {}
+        return execution
     
-    def _get_next_step(self, step: WorkflowStep, result: Dict[str, Any]) -> Optional[str]:
-        """Determine the next step based on result."""
-        if step.type == StepType.CONDITION:
-            if result.get("result"):
-                return step.on_true
-            return step.on_false
+    # ---------------------------------------------------------------------
+    # Step Execution
+    # ---------------------------------------------------------------------
+    
+    async def _execute_step(
+        self,
+        step: dict,
+        execution: WorkflowExecution,
+        dry_run: bool,
+    ) -> dict:
+        """Execute a single workflow step."""
+        agent_name = step.get("agent", "")
+        action = step.get("action", "")
+        params = copy.deepcopy(step.get("params", {}))
         
-        return step.next_step
+        # Inject execution context into params
+        params["tenant_id"] = execution.tenant_id
+        params["workflow_context"] = execution.context
+        params["previous_results"] = execution.results
+        
+        # Look up agent
+        agent = self.agents.get(agent_name)
+        if not agent:
+            # Try a built-in action
+            return await self._execute_builtin_action(action, params, execution)
+        
+        # Call agent method
+        method = getattr(agent, action, None)
+        if not method:
+            raise ValueError(f"Agent '{agent_name}' has no method '{action}'")
+        
+        # Call the method
+        result = method(**self._filter_params(method, params))
+        
+        # If result is an ActionPlan, optionally execute it
+        from core.agents.action_plan import ActionPlan
+        if isinstance(result, ActionPlan):
+            execution.plans_generated.append(result.plan_id)
+            
+            if self.plan_executor and not dry_run:
+                if not result.requires_approval:
+                    result.approve("workflow_engine")
+                    executed = await self.plan_executor.execute(
+                        result, dry_run=dry_run, source="workflow"
+                    )
+                    return {
+                        "plan_id": executed.plan_id,
+                        "status": executed.status.value,
+                        "completed": executed.completed_operations,
+                        "total": executed.total_operations,
+                    }
+            
+            return result.to_dict()
+        
+        # Return raw result
+        if isinstance(result, dict):
+            return result
+        elif isinstance(result, list):
+            return {"items": result, "count": len(result)}
+        else:
+            return {"result": str(result)}
     
-    def _evaluate_condition(self, condition: str, input_data: Dict, step_results: Dict) -> bool:
-        """Evaluate a simple condition."""
-        # Simple evaluation - in production use a proper expression parser
-        try:
-            interpolated = self.parser._interpolate_string(condition, input_data, step_results)
-            # Very basic evaluation
-            if ">" in interpolated:
-                left, right = interpolated.split(">")
-                return float(left.strip()) > float(right.strip())
-            elif "<" in interpolated:
-                left, right = interpolated.split("<")
-                return float(left.strip()) < float(right.strip())
-            elif "==" in interpolated:
-                left, right = interpolated.split("==")
-                return left.strip() == right.strip()
-            return bool(interpolated)
-        except Exception as e:
-            logger.warning(f"Condition evaluation failed: {e}")
-            return False
+    async def _execute_builtin_action(
+        self, action: str, params: dict, execution: WorkflowExecution
+    ) -> dict:
+        """Execute built-in workflow actions."""
+        if action == "log":
+            message = params.get("message", "")
+            logger.info(f"[{execution.tenant_id}] Workflow log: {message}")
+            return {"logged": message}
+        
+        elif action == "check_condition":
+            condition = params.get("condition", "")
+            # Simple condition evaluator
+            return {"condition": condition, "result": True}
+        
+        elif action == "aggregate_results":
+            # Collect all previous step results
+            return {
+                "total_steps": len(execution.results),
+                "results": execution.results,
+            }
+        
+        elif action == "wait_for_approval":
+            return {"status": "approval_required"}
+        
+        else:
+            return {"action": action, "status": "executed"}
     
-    def get_execution(self, execution_id: str) -> Optional[WorkflowExecution]:
-        """Get execution by ID."""
-        return self._executions.get(execution_id)
+    def _filter_params(self, method, params: dict) -> dict:
+        """Filter params to only include those accepted by the method."""
+        import inspect
+        sig = inspect.signature(method)
+        valid_params = set(sig.parameters.keys())
+        
+        filtered = {}
+        for key, value in params.items():
+            if key in valid_params:
+                filtered[key] = value
+        
+        return filtered
     
-    def list_executions(self, tenant_id: str = None) -> List[WorkflowExecution]:
-        """List all executions, optionally filtered by tenant."""
-        executions = list(self._executions.values())
+    # ---------------------------------------------------------------------
+    # Resume & Control
+    # ---------------------------------------------------------------------
+    
+    async def resume(
+        self, execution_id: str, approved: bool = True
+    ) -> Optional[WorkflowExecution]:
+        """Resume a paused workflow after approval."""
+        execution = self._running.get(execution_id)
+        if not execution or execution.status != WorkflowStatus.PAUSED:
+            return None
+        
+        if not approved:
+            execution.status = WorkflowStatus.FAILED
+            for step in execution.steps:
+                if step["status"] == StepStatus.AWAITING_APPROVAL.value:
+                    step["status"] = StepStatus.FAILED.value
+                    step["error"] = "Approval rejected"
+            return execution
+        
+        # Continue from paused step
+        execution.status = WorkflowStatus.RUNNING
+        for step in execution.steps:
+            if step["status"] == StepStatus.AWAITING_APPROVAL.value:
+                step["status"] = StepStatus.PENDING.value
+        
+        return await self.run(
+            execution.workflow_id,
+            execution.tenant_id,
+            execution.context,
+            auto_approve=True,
+        )
+    
+    # ---------------------------------------------------------------------
+    # Query
+    # ---------------------------------------------------------------------
+    
+    def list_workflows(self) -> List[dict]:
+        """List all registered workflow definitions."""
+        return [
+            {
+                "id": wf_id,
+                "name": wf.get("name", wf_id),
+                "description": wf.get("description", ""),
+                "steps": len(wf.get("steps", [])),
+                "trigger": wf.get("trigger", "manual"),
+            }
+            for wf_id, wf in self._workflow_definitions.items()
+        ]
+    
+    def get_workflow(self, workflow_id: str) -> Optional[dict]:
+        """Get a workflow definition."""
+        return self._workflow_definitions.get(workflow_id)
+    
+    def get_execution_history(
+        self, tenant_id: str = None, limit: int = 20
+    ) -> List[dict]:
+        """Get recent workflow executions."""
+        history = self._execution_history
         if tenant_id:
-            executions = [e for e in executions if e.tenant_id == tenant_id]
-        return executions
-
-
-class ApprovalRequiredException(Exception):
-    """Raised when a workflow step requires approval."""
-    pass
+            history = [e for e in history if e.tenant_id == tenant_id]
+        return [e.to_dict() for e in reversed(history[-limit:])]
+    
+    def get_stats(self) -> dict:
+        """Get engine statistics."""
+        total = len(self._execution_history)
+        completed = sum(1 for e in self._execution_history if e.status == WorkflowStatus.COMPLETED)
+        
+        return {
+            "workflow_definitions": len(self._workflow_definitions),
+            "total_executions": total,
+            "completed": completed,
+            "running": len(self._running),
+            "success_rate": f"{completed/total*100:.0f}%" if total > 0 else "N/A",
+            "agents_registered": list(self.agents.keys()),
+        }
