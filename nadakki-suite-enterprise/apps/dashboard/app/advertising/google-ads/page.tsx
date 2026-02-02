@@ -1,12 +1,15 @@
 ﻿'use client';
+
 import { useEffect, useState } from 'react';
 import { getAdvertisingAPI } from '@/packages/api-client';
 import type { Agent, Metrics } from '@/packages/api-client/types';
+
 export default function GoogleAdsDashboard() {
   const api = getAdvertisingAPI();
   const [agents, setAgents] = useState<Agent[]>([]);
   const [metrics, setMetrics] = useState<Metrics | null>(null);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -24,10 +27,13 @@ export default function GoogleAdsDashboard() {
     };
     loadData();
   }, [api]);
+
   if (loading) return <div className="p-8 text-center">Cargando datos...</div>;
+
   return (
     <div className="p-8">
       <h1 className="text-3xl font-bold mb-6">🔍 Google Ads Dashboard</h1>
+
       {metrics && (
         <div className="grid grid-cols-4 gap-4 mb-8">
           <div className="p-4 border rounded bg-white">
@@ -48,6 +54,7 @@ export default function GoogleAdsDashboard() {
           </div>
         </div>
       )}
+
       <h2 className="text-2xl font-bold mb-4">🤖 Agentes IA</h2>
       <div className="grid grid-cols-2 gap-4">
         {agents.length > 0 ? (
