@@ -1,0 +1,100 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# Nadakki Google Ads Knowledge Base - Benchmarks
+# knowledge/global/google_ads/benchmarks.yaml
+# ═══════════════════════════════════════════════════════════════════════════════
+
+version: "1.0.0"
+updated: "2026-02-02"
+
+# Industry benchmarks for evaluating campaign performance.
+# Source: Google Ads Industry Benchmarks + Course Data
+
+benchmarks:
+  financial_services:
+    search:
+      avg_ctr: 2.91
+      avg_cpc: 3.56
+      avg_conv_rate: 5.1
+      avg_cpa: 49.0
+      good_quality_score: 7
+    display:
+      avg_ctr: 0.52
+      avg_cpc: 0.86
+      avg_conv_rate: 1.19
+    performance_max:
+      avg_conv_rate: 3.5
+      avg_roas: 2.8
+
+  banking:
+    search:
+      avg_ctr: 3.12
+      avg_cpc: 2.89
+      avg_conv_rate: 5.8
+      avg_cpa: 42.0
+      good_quality_score: 7
+    display:
+      avg_ctr: 0.48
+      avg_cpc: 0.75
+      avg_conv_rate: 1.05
+
+  insurance:
+    search:
+      avg_ctr: 2.53
+      avg_cpc: 4.12
+      avg_conv_rate: 4.5
+      avg_cpa: 65.0
+      good_quality_score: 6
+    display:
+      avg_ctr: 0.45
+      avg_cpc: 0.92
+      avg_conv_rate: 0.98
+
+  lending:
+    search:
+      avg_ctr: 2.75
+      avg_cpc: 3.85
+      avg_conv_rate: 4.8
+      avg_cpa: 55.0
+      good_quality_score: 6
+    display:
+      avg_ctr: 0.50
+      avg_cpc: 0.88
+      avg_conv_rate: 1.10
+
+  fintech:
+    search:
+      avg_ctr: 3.25
+      avg_cpc: 2.45
+      avg_conv_rate: 6.2
+      avg_cpa: 38.0
+      good_quality_score: 7
+    display:
+      avg_ctr: 0.55
+      avg_cpc: 0.72
+      avg_conv_rate: 1.35
+
+  # Default fallback for unknown industries
+  default:
+    search:
+      avg_ctr: 3.17
+      avg_cpc: 2.69
+      avg_conv_rate: 3.75
+      avg_cpa: 48.96
+      good_quality_score: 7
+    display:
+      avg_ctr: 0.46
+      avg_cpc: 0.63
+      avg_conv_rate: 0.77
+
+# Performance thresholds for alerting
+thresholds:
+  critical:
+    cpa_multiplier: 3.0     # Alert if CPA > 3x benchmark
+    ctr_minimum: 1.0        # Alert if CTR < 1%
+    conv_rate_minimum: 1.0  # Alert if conv rate < 1%
+    budget_overspend: 1.2   # Alert if spend > 120% of budget
+  warning:
+    cpa_multiplier: 2.0     # Warn if CPA > 2x benchmark
+    ctr_minimum: 2.0        # Warn if CTR < 2%
+    quality_score_min: 5    # Warn if QS < 5
+    budget_pacing_low: 0.7  # Warn if spend < 70% of budget
