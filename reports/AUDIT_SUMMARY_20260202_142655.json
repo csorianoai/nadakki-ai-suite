@@ -1,0 +1,21 @@
+﻿{
+    "autonomous_system":  {
+                              "exists":  true,
+                              "directory":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\hyper_agents"
+                          },
+    "multi_tenant":  {
+                         "tenant_loader":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\config\\tenant_loader.py",
+                         "configs_directory":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\config\\tenants",
+                         "exists":  false
+                     },
+    "timestamp":  "2026-02-02 14:26:55",
+    "meta_facebook":  {
+                          "exists":  true,
+                          "wrapper":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\wrappers\\meta_graph_client.py"
+                      },
+    "google_ads":  {
+                       "config_directory":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\config\\google_ads",
+                       "directory":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\google_ads",
+                       "exists":  true
+                   }
+}

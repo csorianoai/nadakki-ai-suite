@@ -1623,6 +1623,16 @@ if campaigns_v2:
     app.include_router(campaigns_v2.router)
 if ai_generation:
     app.include_router(ai_generation.router)
+    
+    # Advertising Router (seguro)
+    try:
+        if advertising_router:
+            app.include_router(advertising_router.router)
+            print("✅ Advertising router registered")
+    except NameError:
+        print("⚠️  Advertising router not defined")
+    except AttributeError as e:
+        print(f"⚠️  Advertising router error: {e}")
 
 # ============================================================================
 # CÃ“DIGO PARA AGREGAR A main.py - ORCHESTRATOR V5.0 ULTRA ENDPOINTS
@@ -1944,4 +1954,6 @@ if ORCHESTRATOR_V5_AVAILABLE:
     logger.info("   â€¢ GET  /api/orchestrator/metrics")
     logger.info("   â€¢ GET  /api/orchestrator/dashboard")
     logger.info("=" * 60)
+
+
 

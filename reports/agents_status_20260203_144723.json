@@ -1,0 +1,1907 @@
+﻿{
+    "timestamp":  "2026-02-03 14:47:43",
+    "projectRoot":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite",
+    "agentsRoot":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents",
+    "total":  271,
+    "ok":  0,
+    "fail":  271,
+    "agents":  [
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.agent_compat.",
+                       "file":  "agents\\agent_compat.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.registry.",
+                       "file":  "agents\\registry.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.registry_backup.",
+                       "file":  "agents\\registry_backup.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.compliance.auditmaster.",
+                       "file":  "agents\\compliance\\auditmaster.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.compliance.compliancewatchdog.",
+                       "file":  "agents\\compliance\\compliancewatchdog.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.compliance.compliance_coordinator.",
+                       "file":  "agents\\compliance\\compliance_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.compliance.docguardian.",
+                       "file":  "agents\\compliance\\docguardian.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.compliance.regulatory_radar.",
+                       "file":  "agents\\compliance\\regulatory_radar.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.activosfijos.",
+                       "file":  "agents\\contabilidad\\activosfijos.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.analisis_financiero.",
+                       "file":  "agents\\contabilidad\\analisis_financiero.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.analisis_financiero_super_agent.",
+                       "file":  "agents\\contabilidad\\analisis_financiero_super_agent.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.auditoriainterna.",
+                       "file":  "agents\\contabilidad\\auditoriainterna.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.cierrecontable.",
+                       "file":  "agents\\contabilidad\\cierrecontable.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.compliance_contable.",
+                       "file":  "agents\\contabilidad\\compliance_contable.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.conciliacionbancaria.",
+                       "file":  "agents\\contabilidad\\conciliacionbancaria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.contabilidadinteligente.",
+                       "file":  "agents\\contabilidad\\contabilidadinteligente.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.contabilidad_coordinator.",
+                       "file":  "agents\\contabilidad\\contabilidad_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.controlgastos.",
+                       "file":  "agents\\contabilidad\\controlgastos.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.dgiiautoreporter.",
+                       "file":  "agents\\contabilidad\\dgiiautoreporter.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.facturacionelectronica.",
+                       "file":  "agents\\contabilidad\\facturacionelectronica.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.facturacionia.",
+                       "file":  "agents\\contabilidad\\facturacionia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.flujocajaia.",
+                       "file":  "agents\\contabilidad\\flujocajaia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.flujocajaprediccion.",
+                       "file":  "agents\\contabilidad\\flujocajaprediccion.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.inventariovaloracion.",
+                       "file":  "agents\\contabilidad\\inventariovaloracion.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.previsionfiscal.",
+                       "file":  "agents\\contabilidad\\previsionfiscal.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.reconcilia_auto.",
+                       "file":  "agents\\contabilidad\\reconcilia_auto.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.reportesejecutivos.",
+                       "file":  "agents\\contabilidad\\reportesejecutivos.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.reportes_fiscales.",
+                       "file":  "agents\\contabilidad\\reportes_fiscales.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.reportingfinanciero.",
+                       "file":  "agents\\contabilidad\\reportingfinanciero.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.contabilidad.tributarioia.",
+                       "file":  "agents\\contabilidad\\tributarioia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.decision.decision_coordinator.",
+                       "file":  "agents\\decision\\decision_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.decision.policyguardian.",
+                       "file":  "agents\\decision\\policyguardian.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.decision.quantumdecision.",
+                       "file":  "agents\\decision\\quantumdecision.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.decision.riskoracle.",
+                       "file":  "agents\\decision\\riskoracle.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.decision.turboapprover.",
+                       "file":  "agents\\decision\\turboapprover.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.educacion.competenciasia.",
+                       "file":  "agents\\educacion\\competenciasia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.educacion.contenidopersonalizado.",
+                       "file":  "agents\\educacion\\contenidopersonalizado.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.educacion.curriculumadaptativo.",
+                       "file":  "agents\\educacion\\curriculumadaptativo.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.educacion.cursosautomaticos.",
+                       "file":  "agents\\educacion\\cursosautomaticos.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.educacion.educacion_coordinator.",
+                       "file":  "agents\\educacion\\educacion_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.educacion.evaluacionadaptativa.",
+                       "file":  "agents\\educacion\\evaluacionadaptativa.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.educacion.evaluacionia.",
+                       "file":  "agents\\educacion\\evaluacionia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.educacion.progresionestudiante.",
+                       "file":  "agents\\educacion\\progresionestudiante.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.educacion.tutorvirtualia.",
+                       "file":  "agents\\educacion\\tutorvirtualia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.experiencia.chatbotsupreme.",
+                       "file":  "agents\\experiencia\\chatbotsupreme.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.experiencia.customergenius.",
+                       "file":  "agents\\experiencia\\customergenius.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.experiencia.experiencia_coordinator.",
+                       "file":  "agents\\experiencia\\experiencia_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.experiencia.onboardingwizard.",
+                       "file":  "agents\\experiencia\\onboardingwizard.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.experiencia.personalizationengine.",
+                       "file":  "agents\\experiencia\\personalizationengine.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.fortaleza.backupguardian.",
+                       "file":  "agents\\fortaleza\\backupguardian.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.fortaleza.cybersentinel.",
+                       "file":  "agents\\fortaleza\\cybersentinel.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.fortaleza.datavault.",
+                       "file":  "agents\\fortaleza\\datavault.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.fortaleza.fortaleza_coordinator.",
+                       "file":  "agents\\fortaleza\\fortaleza_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.fortaleza.systemhealthmonitor.",
+                       "file":  "agents\\fortaleza\\systemhealthmonitor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.inteligencia.cashfloworacle.",
+                       "file":  "agents\\inteligencia\\cashfloworacle.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.inteligencia.inteligencia_coordinator.",
+                       "file":  "agents\\inteligencia\\inteligencia_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.inteligencia.pricinggenius.",
+                       "file":  "agents\\inteligencia\\pricinggenius.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.inteligencia.profitmaximizer.",
+                       "file":  "agents\\inteligencia\\profitmaximizer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.inteligencia.roimaster.",
+                       "file":  "agents\\inteligencia\\roimaster.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.investigacion.analisistendencias.",
+                       "file":  "agents\\investigacion\\analisistendencias.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.investigacion.innovacionia.",
+                       "file":  "agents\\investigacion\\innovacionia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.investigacion.innovaciontracker.",
+                       "file":  "agents\\investigacion\\innovaciontracker.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.investigacion.investigacion_coordinator.",
+                       "file":  "agents\\investigacion\\investigacion_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.investigacion.patentesanalyzer.",
+                       "file":  "agents\\investigacion\\patentesanalyzer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.investigacion.patentesautomaticos.",
+                       "file":  "agents\\investigacion\\patentesautomaticos.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.investigacion.prototipogenerator.",
+                       "file":  "agents\\investigacion\\prototipogenerator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.investigacion.prototiposgenerativos.",
+                       "file":  "agents\\investigacion\\prototiposgenerativos.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.investigacion.tendenciasia.",
+                       "file":  "agents\\investigacion\\tendenciasia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechoadministrativo.",
+                       "file":  "agents\\legal\\derechoadministrativo.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechoadministrativophd.",
+                       "file":  "agents\\legal\\derechoadministrativophd.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechoambiental.",
+                       "file":  "agents\\legal\\derechoambiental.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechobancario.",
+                       "file":  "agents\\legal\\derechobancario.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechocivilphd.",
+                       "file":  "agents\\legal\\derechocivilphd.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechocomercial.",
+                       "file":  "agents\\legal\\derechocomercial.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechocomercialephd.",
+                       "file":  "agents\\legal\\derechocomercialephd.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechoconstitucional.",
+                       "file":  "agents\\legal\\derechoconstitucional.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechoconstitucionalphd.",
+                       "file":  "agents\\legal\\derechoconstitucionalphd.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechocontratacion.",
+                       "file":  "agents\\legal\\derechocontratacion.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechofamiliaphd.",
+                       "file":  "agents\\legal\\derechofamiliaphd.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechofamiliar.",
+                       "file":  "agents\\legal\\derechofamiliar.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechofinanciero.",
+                       "file":  "agents\\legal\\derechofinanciero.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechoinmobiliario.",
+                       "file":  "agents\\legal\\derechoinmobiliario.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechoinmobiliariophd.",
+                       "file":  "agents\\legal\\derechoinmobiliariophd.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechointelectual.",
+                       "file":  "agents\\legal\\derechointelectual.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechointernacional.",
+                       "file":  "agents\\legal\\derechointernacional.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derecholaboral.",
+                       "file":  "agents\\legal\\derecholaboral.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derecholaboralphd.",
+                       "file":  "agents\\legal\\derecholaboralphd.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechomarcario.",
+                       "file":  "agents\\legal\\derechomarcario.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechomaritimo.",
+                       "file":  "agents\\legal\\derechomaritimo.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechomigratorio.",
+                       "file":  "agents\\legal\\derechomigratorio.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechominero.",
+                       "file":  "agents\\legal\\derechominero.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechonotarial.",
+                       "file":  "agents\\legal\\derechonotarial.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechopenal.",
+                       "file":  "agents\\legal\\derechopenal.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechopenalphd.",
+                       "file":  "agents\\legal\\derechopenalphd.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechoprocesalpenal.",
+                       "file":  "agents\\legal\\derechoprocesalpenal.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechoprocesalpenalphd.",
+                       "file":  "agents\\legal\\derechoprocesalpenalphd.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechoseguros.",
+                       "file":  "agents\\legal\\derechoseguros.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechotributario.",
+                       "file":  "agents\\legal\\derechotributario.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.derechotributariophd.",
+                       "file":  "agents\\legal\\derechotributariophd.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.legal.legal_coordinator.",
+                       "file":  "agents\\legal\\legal_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.alertasinventario.",
+                       "file":  "agents\\logistica\\alertasinventario.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.almaceninteligente.",
+                       "file":  "agents\\logistica\\almaceninteligente.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.analisisrendimiento.",
+                       "file":  "agents\\logistica\\analisisrendimiento.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.controlcalidad.",
+                       "file":  "agents\\logistica\\controlcalidad.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.controlcalidadia.",
+                       "file":  "agents\\logistica\\controlcalidadia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.controlpedidosia.",
+                       "file":  "agents\\logistica\\controlpedidosia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.costoslogisticos.",
+                       "file":  "agents\\logistica\\costoslogisticos.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.evaluadorproveedoresia.",
+                       "file":  "agents\\logistica\\evaluadorproveedoresia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.gestionriesgos.",
+                       "file":  "agents\\logistica\\gestionriesgos.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.logisticareversa.",
+                       "file":  "agents\\logistica\\logisticareversa.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.logistica_coordinator.",
+                       "file":  "agents\\logistica\\logistica_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.optimizacionalmacen.",
+                       "file":  "agents\\logistica\\optimizacionalmacen.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.optimizacioncostos.",
+                       "file":  "agents\\logistica\\optimizacioncostos.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.optimizadorrutasia.",
+                       "file":  "agents\\logistica\\optimizadorrutasia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.planificaciondemanda.",
+                       "file":  "agents\\logistica\\planificaciondemanda.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.predicciondemanda.",
+                       "file":  "agents\\logistica\\predicciondemanda.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.previsioninventarioia.",
+                       "file":  "agents\\logistica\\previsioninventarioia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.seguridadcarga.",
+                       "file":  "agents\\logistica\\seguridadcarga.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.sostenibilidadia.",
+                       "file":  "agents\\logistica\\sostenibilidadia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.transporteoptimizado.",
+                       "file":  "agents\\logistica\\transporteoptimizado.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.transportepredictivo.",
+                       "file":  "agents\\logistica\\transportepredictivo.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.trazabilidadia.",
+                       "file":  "agents\\logistica\\trazabilidadia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.logistica.trazabilidadtotal.",
+                       "file":  "agents\\logistica\\trazabilidadtotal.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.abtestingia.",
+                       "file":  "agents\\marketing\\abtestingia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.abtestingimpactia.",
+                       "file":  "agents\\marketing\\abtestingimpactia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.attributionmodelia.",
+                       "file":  "agents\\marketing\\attributionmodelia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.audiencesegmenteria.",
+                       "file":  "agents\\marketing\\audiencesegmenteria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.budgetforecastia.",
+                       "file":  "agents\\marketing\\budgetforecastia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.campaignoptimizeria.",
+                       "file":  "agents\\marketing\\campaignoptimizeria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.campaignstrategyorchestratoria.",
+                       "file":  "agents\\marketing\\campaignstrategyorchestratoria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.cashofferfilteria.",
+                       "file":  "agents\\marketing\\cashofferfilteria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.channelattributia.",
+                       "file":  "agents\\marketing\\channelattributia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.competitoranalyzeria.",
+                       "file":  "agents\\marketing\\competitoranalyzeria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.competitorintelligenceia.",
+                       "file":  "agents\\marketing\\competitorintelligenceia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.contactqualityia.",
+                       "file":  "agents\\marketing\\contactqualityia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.contentgeneratoria.",
+                       "file":  "agents\\marketing\\contentgeneratoria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.contentperformanceia.",
+                       "file":  "agents\\marketing\\contentperformanceia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.conversioncohortia.",
+                       "file":  "agents\\marketing\\conversioncohortia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.creativeanalyzeria.",
+                       "file":  "agents\\marketing\\creativeanalyzeria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.customersegmentatonia.",
+                       "file":  "agents\\marketing\\customersegmentatonia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.emailautomationia.",
+                       "file":  "agents\\marketing\\emailautomationia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.geosegmentationia.",
+                       "file":  "agents\\marketing\\geosegmentationia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.influencermatcheria.",
+                       "file":  "agents\\marketing\\influencermatcheria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.influencermatchingia.",
+                       "file":  "agents\\marketing\\influencermatchingia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.journeyoptimizeria.",
+                       "file":  "agents\\marketing\\journeyoptimizeria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.leadscoria.",
+                       "file":  "agents\\marketing\\leadscoria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.leadscoringia.",
+                       "file":  "agents\\marketing\\leadscoringia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.marketingmixmodelia.",
+                       "file":  "agents\\marketing\\marketingmixmodelia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.marketingorchestratorea.",
+                       "file":  "agents\\marketing\\marketingorchestratorea.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.minimalformia.",
+                       "file":  "agents\\marketing\\minimalformia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.multi_industry_config.",
+                       "file":  "agents\\marketing\\multi_industry_config.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 19:48:46"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.personalizationengineia.",
+                       "file":  "agents\\marketing\\personalizationengineia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.predictiveleadia.",
+                       "file":  "agents\\marketing\\predictiveleadia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.pricingoptimizeria.",
+                       "file":  "agents\\marketing\\pricingoptimizeria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.productaffinityia.",
+                       "file":  "agents\\marketing\\productaffinityia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.retentionpredictorea.",
+                       "file":  "agents\\marketing\\retentionpredictorea.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.retentionpredictoria.",
+                       "file":  "agents\\marketing\\retentionpredictoria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.sentimentanalyzeria.",
+                       "file":  "agents\\marketing\\sentimentanalyzeria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.sociallisteningia.",
+                       "file":  "agents\\marketing\\sociallisteningia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.socialpostgeneratoria.",
+                       "file":  "agents\\marketing\\socialpostgeneratoria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.backup_placeholders_20251011_084324.brandsentimentia.",
+                       "file":  "agents\\marketing\\backup_placeholders_20251011_084324\\brandsentimentia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.backup_placeholders_20251011_084324.contentviralityia.",
+                       "file":  "agents\\marketing\\backup_placeholders_20251011_084324\\contentviralityia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.backup_placeholders_20251011_084324.fidelizedprofileia.",
+                       "file":  "agents\\marketing\\backup_placeholders_20251011_084324\\fidelizedprofileia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.backup_placeholders_20251011_084324.influencermatchia.",
+                       "file":  "agents\\marketing\\backup_placeholders_20251011_084324\\influencermatchia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.backup_placeholders_20251011_084324.videoreelautogenia.",
+                       "file":  "agents\\marketing\\backup_placeholders_20251011_084324\\videoreelautogenia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.executors.email_executor.",
+                       "file":  "agents\\marketing\\executors\\email_executor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.executors.meta_executor.",
+                       "file":  "agents\\marketing\\executors\\meta_executor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.layers.audit_trail_layer.",
+                       "file":  "agents\\marketing\\layers\\audit_trail_layer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.layers.authority_layer.",
+                       "file":  "agents\\marketing\\layers\\authority_layer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.layers.authority_layer_v2.",
+                       "file":  "agents\\marketing\\layers\\authority_layer_v2.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.layers.business_impact_layer.",
+                       "file":  "agents\\marketing\\layers\\business_impact_layer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.layers.compliance_layer.",
+                       "file":  "agents\\marketing\\layers\\compliance_layer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.layers.decision_layer.",
+                       "file":  "agents\\marketing\\layers\\decision_layer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.layers.decision_layer_v2.",
+                       "file":  "agents\\marketing\\layers\\decision_layer_v2.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.layers.error_handling_layer.",
+                       "file":  "agents\\marketing\\layers\\error_handling_layer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.layers.reason_codes_layer.",
+                       "file":  "agents\\marketing\\layers\\reason_codes_layer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.layers.reason_codes_layer_v2.",
+                       "file":  "agents\\marketing\\layers\\reason_codes_layer_v2.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.operative.inject_operative.",
+                       "file":  "agents\\marketing\\operative\\inject_operative.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.operative.test_operative.",
+                       "file":  "agents\\marketing\\operative\\test_operative.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.orchestrator.campaignstrategyorchestratoria_v4.",
+                       "file":  "agents\\marketing\\orchestrator\\campaignstrategyorchestratoria_v4.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 19:35:01"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.orchestrator.campaignstrategyorchestratoria_v5.",
+                       "file":  "agents\\marketing\\orchestrator\\campaignstrategyorchestratoria_v5.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 19:49:20"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing.wrappers.operative_wrapper.",
+                       "file":  "agents\\marketing\\wrappers\\operative_wrapper.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-23 10:06:17"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing._archived.canonical.",
+                       "file":  "agents\\marketing\\_archived\\canonical.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing._archived.canonical_backup_20251011_084547.",
+                       "file":  "agents\\marketing\\_archived\\canonical_backup_20251011_084547.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing._archived.canonical_backup_20251012_091337.",
+                       "file":  "agents\\marketing\\_archived\\canonical_backup_20251012_091337.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing._archived.content_generator_v3.",
+                       "file":  "agents\\marketing\\_archived\\content_generator_v3.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing._archived.leadscoringia_backup_20251012_120320.",
+                       "file":  "agents\\marketing\\_archived\\leadscoringia_backup_20251012_120320.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing._archived.schemas_from_sandbox.",
+                       "file":  "agents\\marketing\\_archived\\schemas_from_sandbox.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.marketing._archived.validate_agents.",
+                       "file":  "agents\\marketing\\_archived\\validate_agents.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.operacional.costoptimizer.",
+                       "file":  "agents\\operacional\\costoptimizer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.operacional.operacional_coordinator.",
+                       "file":  "agents\\operacional\\operacional_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.operacional.processgenius.",
+                       "file":  "agents\\operacional\\processgenius.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.operacional.qualitycontroller.",
+                       "file":  "agents\\operacional\\qualitycontroller.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.operacional.workflowmaster.",
+                       "file":  "agents\\operacional\\workflowmaster.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.orchestration.coordinator.",
+                       "file":  "agents\\orchestration\\coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.orchestration.healthchecker.",
+                       "file":  "agents\\orchestration\\healthchecker.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.orchestration.loadbalancer.",
+                       "file":  "agents\\orchestration\\loadbalancer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.orchestration.orchestrationmaster.",
+                       "file":  "agents\\orchestration\\orchestrationmaster.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.orchestration.resourcemanager.",
+                       "file":  "agents\\orchestration\\resourcemanager.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.originacion.base_components_v2.",
+                       "file":  "agents\\originacion\\base_components_v2.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.originacion.behaviorminer.",
+                       "file":  "agents\\originacion\\behaviorminer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.originacion.behavior_miner_v2.",
+                       "file":  "agents\\originacion\\behavior_miner_v2.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.originacion.dnaprofiler.",
+                       "file":  "agents\\originacion\\dnaprofiler.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.originacion.dna_profiler_v2.",
+                       "file":  "agents\\originacion\\dna_profiler_v2.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.originacion.incomeoracle.",
+                       "file":  "agents\\originacion\\incomeoracle.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.originacion.income_oracle_v2.",
+                       "file":  "agents\\originacion\\income_oracle_v2.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.originacion.originacion_coordinator.",
+                       "file":  "agents\\originacion\\originacion_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.originacion.sentinelbot.",
+                       "file":  "agents\\originacion\\sentinelbot.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.originacion.sentinel_bot_v2.",
+                       "file":  "agents\\originacion\\sentinel_bot_v2.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.analisisvarianza.",
+                       "file":  "agents\\presupuesto\\analisisvarianza.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.budgetoptimizer.",
+                       "file":  "agents\\presupuesto\\budgetoptimizer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.controlpresupuestario.",
+                       "file":  "agents\\presupuesto\\controlpresupuestario.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.costocentros.",
+                       "file":  "agents\\presupuesto\\costocentros.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.forecastingavanzado.",
+                       "file":  "agents\\presupuesto\\forecastingavanzado.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.forecastingia.",
+                       "file":  "agents\\presupuesto\\forecastingia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.optimizacionrecursos.",
+                       "file":  "agents\\presupuesto\\optimizacionrecursos.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.planificacionestrategica.",
+                       "file":  "agents\\presupuesto\\planificacionestrategica.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.presupuestomaestro.",
+                       "file":  "agents\\presupuesto\\presupuestomaestro.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.presupuestopredictivoia.",
+                       "file":  "agents\\presupuesto\\presupuestopredictivoia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.presupuesto_coordinator.",
+                       "file":  "agents\\presupuesto\\presupuesto_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.roipredictor.",
+                       "file":  "agents\\presupuesto\\roipredictor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.presupuesto.varianzaanalisis.",
+                       "file":  "agents\\presupuesto\\varianzaanalisis.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.recuperacion.collectionmaster.",
+                       "file":  "agents\\recuperacion\\collectionmaster.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.recuperacion.legalpathway.",
+                       "file":  "agents\\recuperacion\\legalpathway.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.recuperacion.negotiationbot.",
+                       "file":  "agents\\recuperacion\\negotiationbot.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.recuperacion.recoveryoptimizer.",
+                       "file":  "agents\\recuperacion\\recoveryoptimizer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.recuperacion.recuperacion_coordinator.",
+                       "file":  "agents\\recuperacion\\recuperacion_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.regtech.amldetector.",
+                       "file":  "agents\\regtech\\amldetector.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.regtech.amltiemporeal.",
+                       "file":  "agents\\regtech\\amltiemporeal.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.regtech.kycautomatico.",
+                       "file":  "agents\\regtech\\kycautomatico.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.regtech.monitoreotransacciones.",
+                       "file":  "agents\\regtech\\monitoreotransacciones.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.regtech.regtech_coordinator.",
+                       "file":  "agents\\regtech\\regtech_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.regtech.reportesregulatorios.",
+                       "file":  "agents\\regtech\\reportesregulatorios.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.regtech.reportingregulatorio.",
+                       "file":  "agents\\regtech\\reportingregulatorio.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.regtech.sancioneschecker.",
+                       "file":  "agents\\regtech\\sancioneschecker.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.rrhh.capacitacionia.",
+                       "file":  "agents\\rrhh\\capacitacionia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.rrhh.cvanalyzeria.",
+                       "file":  "agents\\rrhh\\cvanalyzeria.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.rrhh.nominaautomatica.",
+                       "file":  "agents\\rrhh\\nominaautomatica.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.rrhh.nominainteligente.",
+                       "file":  "agents\\rrhh\\nominainteligente.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.rrhh.performanceanalyzer.",
+                       "file":  "agents\\rrhh\\performanceanalyzer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.rrhh.performancetracker.",
+                       "file":  "agents\\rrhh\\performancetracker.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.rrhh.rrhh_coordinator.",
+                       "file":  "agents\\rrhh\\rrhh_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.rrhh.selectioncvia.",
+                       "file":  "agents\\rrhh\\selectioncvia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.rrhh.talentoprediccion.",
+                       "file":  "agents\\rrhh\\talentoprediccion.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.rrhh.talentopredictor.",
+                       "file":  "agents\\rrhh\\talentopredictor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.shared_layers.ai_router.models_config.",
+                       "file":  "agents\\shared_layers\\ai_router\\models_config.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-15 14:26:38"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.shared_layers.ai_router.router.",
+                       "file":  "agents\\shared_layers\\ai_router\\router.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-15 14:28:14"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.shared_layers.executors.base_executor.",
+                       "file":  "agents\\shared_layers\\executors\\base_executor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-15 14:47:24"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.shared_layers.executors.llm_executor.",
+                       "file":  "agents\\shared_layers\\executors\\llm_executor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-15 14:47:25"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.shared_layers.executors.providers.anthropic_executor.",
+                       "file":  "agents\\shared_layers\\executors\\providers\\anthropic_executor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-15 14:47:24"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.shared_layers.executors.providers.deepseek_executor.",
+                       "file":  "agents\\shared_layers\\executors\\providers\\deepseek_executor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-15 14:47:24"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.shared_layers.executors.providers.grok_executor.",
+                       "file":  "agents\\shared_layers\\executors\\providers\\grok_executor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-15 15:26:51"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.shared_layers.executors.providers.openai_executor.",
+                       "file":  "agents\\shared_layers\\executors\\providers\\openai_executor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-15 14:47:24"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.shared_layers.executors.social.base_social.",
+                       "file":  "agents\\shared_layers\\executors\\social\\base_social.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-15 15:31:18"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.shared_layers.executors.social.facebook_executor.",
+                       "file":  "agents\\shared_layers\\executors\\social\\facebook_executor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-15 15:31:18"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.shared_layers.executors.social.instagram_executor.",
+                       "file":  "agents\\shared_layers\\executors\\social\\instagram_executor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-15 15:31:18"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.shared_layers.executors.social.social_manager.",
+                       "file":  "agents\\shared_layers\\executors\\social\\social_manager.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-15 15:31:18"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.ventascrm.churnpredictor.",
+                       "file":  "agents\\ventascrm\\churnpredictor.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.ventascrm.cierrepredictivoia.",
+                       "file":  "agents\\ventascrm\\cierrepredictivoia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.ventascrm.clientelifecycleia.",
+                       "file":  "agents\\ventascrm\\clientelifecycleia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.ventascrm.communicationbot.",
+                       "file":  "agents\\ventascrm\\communicationbot.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.ventascrm.leadscoringia.",
+                       "file":  "agents\\ventascrm\\leadscoringia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.ventascrm.pipelineoptimizer.",
+                       "file":  "agents\\ventascrm\\pipelineoptimizer.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.ventascrm.pipelinepredictivoia.",
+                       "file":  "agents\\ventascrm\\pipelinepredictivoia.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.ventascrm.upsellengine.",
+                       "file":  "agents\\ventascrm\\upsellengine.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.ventascrm.ventascrm_coordinator.",
+                       "file":  "agents\\ventascrm\\ventascrm_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.vigilancia.earlywarning.",
+                       "file":  "agents\\vigilancia\\earlywarning.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.vigilancia.marketradar.",
+                       "file":  "agents\\vigilancia\\marketradar.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.vigilancia.portfoliosentinel.",
+                       "file":  "agents\\vigilancia\\portfoliosentinel.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.vigilancia.stresstester.",
+                       "file":  "agents\\vigilancia\\stresstester.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   },
+                   {
+                       "ok_import":  false,
+                       "module":  "agents.vigilancia.vigilancia_coordinator.",
+                       "file":  "agents\\vigilancia\\vigilancia_coordinator.py",
+                       "error":  "python exec failed / no output",
+                       "modified":  "2026-01-13 14:02:19"
+                   }
+               ]
+}
