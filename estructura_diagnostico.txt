@@ -1,0 +1,26 @@
+﻿# ============================================================
+# DIAGNÓSTICO DE ESTRUCTURA - 2026-02-03 17:02:53
+# ============================================================
+
+DIRECTORIO ACTUAL: C:\Users\ramon\Projects\nadakki-ai-suite
+ES FRONTEND: No
+ES BACKEND: Sí
+TIENE MVP: Sí
+
+RAÍZ GIT: C:/Users/ramon/Projects/nadakki-ai-suite
+
+## RECOMENDACIONES:
+
+1. Si esto es FRONTEND:
+   - El MVP debe estar en el directorio del BACKEND
+   - Hacer git commit/push solo de archivos frontend
+
+2. Si esto es BACKEND:
+   - El MVP debe estar aquí
+   - Integrar con estructura existente
+   - Hacer git commit/push desde aquí
+
+3. Acciones inmediatas:
+   - Determinar tipo de proyecto
+   - Mover MVP a ubicación correcta
+   - Ejecutar git desde directorio correcto
