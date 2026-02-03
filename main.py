@@ -1,4 +1,4 @@
-"""
+﻿"""
 NADAKKI AI SUITE v4.0.1 - Enterprise AI Platform
 185+ Agents across 20 AI Cores
 10 Marketing Workflows
@@ -12,15 +12,16 @@ try:
     # Database initialization - disabled temporarily for deploy
     # from database import init_database
     # init_database()
-    print("⚠️ Database initialization disabled for deploy")
+    print("âš ï¸ Database initialization disabled for deploy")
 except Exception as e:
-    print(f"⚠️ Database initialization warning: {e}")
+    print(f"âš ï¸ Database initialization warning: {e}")
 
 # New routers for complete system
 try:
     from routers import analytics
     from routers import campaigns_v2
     from routers import ai_generation
+    from routers import advertising_router
 except ImportError as e:
     print(f"Warning: Could not import new routers: {e}")
     analytics = None
@@ -90,7 +91,7 @@ register_enhanced_dashboard_routes(app)
 
 from agent_loader import registry, CORES_CONFIG
 
-logger.info(f"✓ Loaded {registry.total} agents across {len(registry.cores)} cores")
+logger.info(f"âœ“ Loaded {registry.total} agents across {len(registry.cores)} cores")
 
 # ============================================================================
 # AUTH & RATE LIMITING
@@ -880,7 +881,7 @@ WORKFLOW_CAMPAIGN_OPTIMIZATION = {
     "id": "campaign-optimization",
     "name": "Campaign Optimization Workflow",
     "version": "1.0.0",
-    "description": "Optimiza campañas de marketing usando 5 agentes especializados",
+    "description": "Optimiza campaÃ±as de marketing usando 5 agentes especializados",
     "steps": [
         {"order": 1, "core": "marketing", "agent": "audiencesegmenteria", "name": "Audience Analysis", "required": True},
         {"order": 2, "core": "marketing", "agent": "leadscoria", "name": "Lead Scoring", "required": True},
@@ -967,7 +968,7 @@ WORKFLOW_CUSTOMER_ACQUISITION = {
     "id": "customer-acquisition-intelligence",
     "name": "Customer Acquisition Intelligence",
     "version": "1.1.0",
-    "description": "Pipeline inteligente de adquisición con 7 agentes",
+    "description": "Pipeline inteligente de adquisiciÃ³n con 7 agentes",
     "steps": [
         {"order": 1, "core": "marketing", "agent": "audiencesegmenteria", "name": "Audience Segmentation", "required": True},
         {"order": 2, "core": "marketing", "agent": "geosegmentationia", "name": "Geo Segmentation", "required": False},
@@ -1254,7 +1255,7 @@ WORKFLOW_EMAIL_AUTOMATION = {
     "id": "email-automation-master",
     "name": "Email Automation Master",
     "version": "1.0.0",
-    "description": "Automatiza comunicación personalizada a escala",
+    "description": "Automatiza comunicaciÃ³n personalizada a escala",
     "steps": [
         {"order": 1, "core": "marketing", "agent": "customersegmentatonia", "name": "Customer Segmentation", "required": True},
         {"order": 2, "core": "marketing", "agent": "personalizationengineia", "name": "Personalization Engine", "required": True},
@@ -1304,7 +1305,7 @@ WORKFLOW_ATTRIBUTION = {
     "id": "multi-channel-attribution",
     "name": "Multi-Channel Attribution",
     "version": "1.0.0",
-    "description": "Sabe exactamente qué canal genera revenue",
+    "description": "Sabe exactamente quÃ© canal genera revenue",
     "steps": [
         {"order": 1, "core": "marketing", "agent": "channelattributia", "name": "Channel Attribution", "required": True},
         {"order": 2, "core": "marketing", "agent": "attributionmodelia", "name": "Attribution Modeling", "required": True},
@@ -1354,7 +1355,7 @@ WORKFLOW_COMPETITIVE = {
     "id": "competitive-intelligence-hub",
     "name": "Competitive Intelligence Hub",
     "version": "1.0.0",
-    "description": "Análisis completo de competencia",
+    "description": "AnÃ¡lisis completo de competencia",
     "steps": [
         {"order": 1, "core": "marketing", "agent": "competitoranalyzeria", "name": "Competitor Analysis", "required": True},
         {"order": 2, "core": "marketing", "agent": "competitorintelligenceia", "name": "Competitor Intelligence", "required": True},
@@ -1402,7 +1403,7 @@ WORKFLOW_EXPERIMENTATION = {
     "id": "ab-testing-experimentation",
     "name": "A/B Testing & Experimentation",
     "version": "1.0.0",
-    "description": "Cultura de experimentación basada en datos",
+    "description": "Cultura de experimentaciÃ³n basada en datos",
     "steps": [
         {"order": 1, "core": "marketing", "agent": "abtestingia", "name": "A/B Test Design", "required": True},
         {"order": 2, "core": "marketing", "agent": "abtestingimpactia", "name": "A/B Test Impact", "required": True},
@@ -1451,7 +1452,7 @@ WORKFLOW_INFLUENCER = {
     "id": "influencer-partnership-engine",
     "name": "Influencer & Partnership Engine",
     "version": "1.0.0",
-    "description": "Amplifica reach a través de influencers",
+    "description": "Amplifica reach a travÃ©s de influencers",
     "steps": [
         {"order": 1, "core": "marketing", "agent": "influencermatcheria", "name": "Influencer Search", "required": True},
         {"order": 2, "core": "marketing", "agent": "influencermatchingia", "name": "Influencer Matching", "required": True}
@@ -1588,14 +1589,14 @@ async def startup():
     logger.info("NADAKKI AI SUITE v4.0.1 - STARTING")
     logger.info("FIX: Auto-logging + Multi-tenant en todos los workflows")
     logger.info("=" * 60)
-    logger.info(f"✓ {registry.total} agents across {len(registry.cores)} cores")
-    logger.info("✓ 10 Marketing Workflows ready (with auto-logging)")
+    logger.info(f"âœ“ {registry.total} agents across {len(registry.cores)} cores")
+    logger.info("âœ“ 10 Marketing Workflows ready (with auto-logging)")
     for core, agents in sorted(registry.cores.items(), key=lambda x: -len(x[1])):
-        logger.info(f"  • {core}: {len(agents)} agents")
+        logger.info(f"  â€¢ {core}: {len(agents)} agents")
     logger.info("=" * 60)
-    logger.info("🚀 Server ready at http://localhost:8000")
-    logger.info("📚 API docs at http://localhost:8000/docs")
-    logger.info("🔄 Workflows (10): http://localhost:8000/workflows")
+    logger.info("ðŸš€ Server ready at http://localhost:8000")
+    logger.info("ðŸ“š API docs at http://localhost:8000/docs")
+    logger.info("ðŸ”„ Workflows (10): http://localhost:8000/workflows")
     logger.info("=" * 60)
 
 
@@ -1624,13 +1625,13 @@ if ai_generation:
     app.include_router(ai_generation.router)
 
 # ============================================================================
-# CÓDIGO PARA AGREGAR A main.py - ORCHESTRATOR V5.0 ULTRA ENDPOINTS
+# CÃ“DIGO PARA AGREGAR A main.py - ORCHESTRATOR V5.0 ULTRA ENDPOINTS
 # ============================================================================
 # 
 # INSTRUCCIONES:
 # 1. Abre main.py en tu proyecto: C:\Users\ramon\Projects\nadakki-ai-suite\main.py
-# 2. Copia TODO el código de abajo
-# 3. Pégalo AL FINAL del archivo main.py (antes de cualquier if __name__ == "__main__")
+# 2. Copia TODO el cÃ³digo de abajo
+# 3. PÃ©galo AL FINAL del archivo main.py (antes de cualquier if __name__ == "__main__")
 # 4. Guarda el archivo
 # 5. Haz git add main.py && git commit -m "feat: Add Orchestrator V5.0 endpoints" && git push
 #
@@ -1652,13 +1653,13 @@ try:
         IndustryType
     )
     ORCHESTRATOR_V5_AVAILABLE = True
-    logger.info(f"✅ Orchestrator V5.0 ULTRA loaded - {ORCHESTRATOR_VERSION} - {ORCHESTRATOR_BENCHMARK}")
+    logger.info(f"âœ… Orchestrator V5.0 ULTRA loaded - {ORCHESTRATOR_VERSION} - {ORCHESTRATOR_BENCHMARK}")
 except ImportError as e:
     ORCHESTRATOR_V5_AVAILABLE = False
     ORCHESTRATOR_VERSION = "not_installed"
     ORCHESTRATOR_BENCHMARK = "N/A"
     ORCHESTRATOR_COMPARABLE = []
-    logger.warning(f"⚠️ Orchestrator V5.0 not available: {e}")
+    logger.warning(f"âš ï¸ Orchestrator V5.0 not available: {e}")
 
 # ============================================================================
 # ORCHESTRATOR REQUEST MODELS
@@ -1932,14 +1933,15 @@ async def orchestrator_dashboard_summary(
 
 if ORCHESTRATOR_V5_AVAILABLE:
     logger.info("=" * 60)
-    logger.info("🚀 ORCHESTRATOR V5.0 ULTRA ENDPOINTS ACTIVE")
+    logger.info("ðŸš€ ORCHESTRATOR V5.0 ULTRA ENDPOINTS ACTIVE")
     logger.info(f"   Version: {ORCHESTRATOR_VERSION}")
     logger.info(f"   Benchmark: {ORCHESTRATOR_BENCHMARK}")
     logger.info("   Endpoints:")
-    logger.info("   • POST /api/orchestrator/execute")
-    logger.info("   • GET  /api/orchestrator/health")
-    logger.info("   • GET  /api/orchestrator/industries")
-    logger.info("   • GET  /api/orchestrator/tasks")
-    logger.info("   • GET  /api/orchestrator/metrics")
-    logger.info("   • GET  /api/orchestrator/dashboard")
+    logger.info("   â€¢ POST /api/orchestrator/execute")
+    logger.info("   â€¢ GET  /api/orchestrator/health")
+    logger.info("   â€¢ GET  /api/orchestrator/industries")
+    logger.info("   â€¢ GET  /api/orchestrator/tasks")
+    logger.info("   â€¢ GET  /api/orchestrator/metrics")
+    logger.info("   â€¢ GET  /api/orchestrator/dashboard")
     logger.info("=" * 60)
+
