@@ -1,0 +1,2817 @@
+﻿{
+    "Timestamp":  "2026-02-04 11:00:53",
+    "ProjectPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite",
+    "Analysis":  {
+                     "TotalFilesFound":  239,
+                     "RelevantFiles":  219,
+                     "UniqueAgents":  219,
+                     "FilesByType":  {
+                                         "IA":  202,
+                                         "Agent":  17
+                                     },
+                     "Modules":  10,
+                     "GoogleAdsAgents":  7
+                 },
+    "Modules":  [
+                    {
+                        "Name":  "marketing",
+                        "AgentCount":  91,
+                        "Agents":  [
+                                       {
+                                           "Name":  "Abtesting",
+                                           "Type":  "IA",
+                                           "FileName":  "abtestingia.py"
+                                       },
+                                       {
+                                           "Name":  "Abtestingimpact",
+                                           "Type":  "IA",
+                                           "FileName":  "abtestingimpactia.py"
+                                       },
+                                       {
+                                           "Name":  "Attributionmodel",
+                                           "Type":  "IA",
+                                           "FileName":  "attributionmodelia.py"
+                                       },
+                                       {
+                                           "Name":  "Audiencesegmenter",
+                                           "Type":  "IA",
+                                           "FileName":  "audiencesegmenteria.py"
+                                       },
+                                       {
+                                           "Name":  "Budgetforecast",
+                                           "Type":  "IA",
+                                           "FileName":  "budgetforecastia.py"
+                                       },
+                                       {
+                                           "Name":  "Campaignoptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "campaignoptimizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Campaignstrategyorchestrator",
+                                           "Type":  "IA",
+                                           "FileName":  "campaignstrategyorchestratoria.py"
+                                       },
+                                       {
+                                           "Name":  "Cashofferfilter",
+                                           "Type":  "IA",
+                                           "FileName":  "cashofferfilteria.py"
+                                       },
+                                       {
+                                           "Name":  "Channelattribut",
+                                           "Type":  "IA",
+                                           "FileName":  "channelattributia.py"
+                                       },
+                                       {
+                                           "Name":  "Competitoranalyzer",
+                                           "Type":  "IA",
+                                           "FileName":  "competitoranalyzeria.py"
+                                       },
+                                       {
+                                           "Name":  "Competitorintelligence",
+                                           "Type":  "IA",
+                                           "FileName":  "competitorintelligenceia.py"
+                                       },
+                                       {
+                                           "Name":  "Contactquality",
+                                           "Type":  "IA",
+                                           "FileName":  "contactqualityia.py"
+                                       },
+                                       {
+                                           "Name":  "Contentgenerator",
+                                           "Type":  "IA",
+                                           "FileName":  "contentgeneratoria.py"
+                                       },
+                                       {
+                                           "Name":  "Contentperformance",
+                                           "Type":  "IA",
+                                           "FileName":  "contentperformanceia.py"
+                                       },
+                                       {
+                                           "Name":  "Conversioncohort",
+                                           "Type":  "IA",
+                                           "FileName":  "conversioncohortia.py"
+                                       },
+                                       {
+                                           "Name":  "Creativeanalyzer",
+                                           "Type":  "IA",
+                                           "FileName":  "creativeanalyzeria.py"
+                                       },
+                                       {
+                                           "Name":  "Customersegmentaton",
+                                           "Type":  "IA",
+                                           "FileName":  "customersegmentatonia.py"
+                                       },
+                                       {
+                                           "Name":  "Emailautomation",
+                                           "Type":  "IA",
+                                           "FileName":  "emailautomationia.py"
+                                       },
+                                       {
+                                           "Name":  "Geosegmentation",
+                                           "Type":  "IA",
+                                           "FileName":  "geosegmentationia.py"
+                                       },
+                                       {
+                                           "Name":  "Influencermatcher",
+                                           "Type":  "IA",
+                                           "FileName":  "influencermatcheria.py"
+                                       },
+                                       {
+                                           "Name":  "Influencermatching",
+                                           "Type":  "IA",
+                                           "FileName":  "influencermatchingia.py"
+                                       },
+                                       {
+                                           "Name":  "Journeyoptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "journeyoptimizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Leadscor",
+                                           "Type":  "IA",
+                                           "FileName":  "leadscoria.py"
+                                       },
+                                       {
+                                           "Name":  "Leadscoring",
+                                           "Type":  "IA",
+                                           "FileName":  "leadscoringia.py"
+                                       },
+                                       {
+                                           "Name":  "Marketingmixmodel",
+                                           "Type":  "IA",
+                                           "FileName":  "marketingmixmodelia.py"
+                                       },
+                                       {
+                                           "Name":  "Minimalform",
+                                           "Type":  "IA",
+                                           "FileName":  "minimalformia.py"
+                                       },
+                                       {
+                                           "Name":  "Personalizationengine",
+                                           "Type":  "IA",
+                                           "FileName":  "personalizationengineia.py"
+                                       },
+                                       {
+                                           "Name":  "Predictivelead",
+                                           "Type":  "IA",
+                                           "FileName":  "predictiveleadia.py"
+                                       },
+                                       {
+                                           "Name":  "Pricingoptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "pricingoptimizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Productaffinity",
+                                           "Type":  "IA",
+                                           "FileName":  "productaffinityia.py"
+                                       },
+                                       {
+                                           "Name":  "Retentionpredictor",
+                                           "Type":  "IA",
+                                           "FileName":  "retentionpredictoria.py"
+                                       },
+                                       {
+                                           "Name":  "Sentimentanalyzer",
+                                           "Type":  "IA",
+                                           "FileName":  "sentimentanalyzeria.py"
+                                       },
+                                       {
+                                           "Name":  "Sociallistening",
+                                           "Type":  "IA",
+                                           "FileName":  "sociallisteningia.py"
+                                       },
+                                       {
+                                           "Name":  "Socialpostgenerator",
+                                           "Type":  "IA",
+                                           "FileName":  "socialpostgeneratoria.py"
+                                       },
+                                       {
+                                           "Name":  "Brandsentiment",
+                                           "Type":  "IA",
+                                           "FileName":  "brandsentimentia.py"
+                                       },
+                                       {
+                                           "Name":  "Contentvirality",
+                                           "Type":  "IA",
+                                           "FileName":  "contentviralityia.py"
+                                       },
+                                       {
+                                           "Name":  "Fidelizedprofile",
+                                           "Type":  "IA",
+                                           "FileName":  "fidelizedprofileia.py"
+                                       },
+                                       {
+                                           "Name":  "Influencermatch",
+                                           "Type":  "IA",
+                                           "FileName":  "influencermatchia.py"
+                                       },
+                                       {
+                                           "Name":  "Videoreelautogen",
+                                           "Type":  "IA",
+                                           "FileName":  "videoreelautogenia.py"
+                                       },
+                                       {
+                                           "Name":  "Abtestingimpact",
+                                           "Type":  "IA",
+                                           "FileName":  "abtestingimpactia.py"
+                                       },
+                                       {
+                                           "Name":  "Adschanneloptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "adschanneloptimizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Brandsentiment",
+                                           "Type":  "IA",
+                                           "FileName":  "brandsentimentia.py"
+                                       },
+                                       {
+                                           "Name":  "Budgetallocator",
+                                           "Type":  "IA",
+                                           "FileName":  "budgetallocatoria.py"
+                                       },
+                                       {
+                                           "Name":  "Campaignoptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "campaignoptimizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Cashofferfilter",
+                                           "Type":  "IA",
+                                           "FileName":  "cashofferfilteria.py"
+                                       },
+                                       {
+                                           "Name":  "Channelblend",
+                                           "Type":  "IA",
+                                           "FileName":  "channelblendia.py"
+                                       },
+                                       {
+                                           "Name":  "Clientprofiling",
+                                           "Type":  "IA",
+                                           "FileName":  "clientprofilingia.py"
+                                       },
+                                       {
+                                           "Name":  "Competitorintelligence",
+                                           "Type":  "IA",
+                                           "FileName":  "competitorintelligenceia.py"
+                                       },
+                                       {
+                                           "Name":  "Contactquality",
+                                           "Type":  "IA",
+                                           "FileName":  "contactqualityia.py"
+                                       },
+                                       {
+                                           "Name":  "Contentengagement",
+                                           "Type":  "IA",
+                                           "FileName":  "contentengagementia.py"
+                                       },
+                                       {
+                                           "Name":  "Contentgenerator",
+                                           "Type":  "IA",
+                                           "FileName":  "contentgeneratoria.py"
+                                       },
+                                       {
+                                           "Name":  "Contentvirality",
+                                           "Type":  "IA",
+                                           "FileName":  "contentviralityia.py"
+                                       },
+                                       {
+                                           "Name":  "Conversioncohort",
+                                           "Type":  "IA",
+                                           "FileName":  "conversioncohortia.py"
+                                       },
+                                       {
+                                           "Name":  "Conversionpredictor",
+                                           "Type":  "IA",
+                                           "FileName":  "conversionpredictoria.py"
+                                       },
+                                       {
+                                           "Name":  "Emailautomation",
+                                           "Type":  "IA",
+                                           "FileName":  "emailautomationia.py"
+                                       },
+                                       {
+                                           "Name":  "Emotiontracker",
+                                           "Type":  "IA",
+                                           "FileName":  "emotiontrackeria.py"
+                                       },
+                                       {
+                                           "Name":  "Fidelizedprofile",
+                                           "Type":  "IA",
+                                           "FileName":  "fidelizedprofileia.py"
+                                       },
+                                       {
+                                           "Name":  "Funneloptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "funneloptimizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Geosegmentation",
+                                           "Type":  "IA",
+                                           "FileName":  "geosegmentationia.py"
+                                       },
+                                       {
+                                           "Name":  "Heatmapinsight",
+                                           "Type":  "IA",
+                                           "FileName":  "heatmapinsightia.py"
+                                       },
+                                       {
+                                           "Name":  "Influencermatcher",
+                                           "Type":  "IA",
+                                           "FileName":  "influencermatcheria.py"
+                                       },
+                                       {
+                                           "Name":  "Influencermatch",
+                                           "Type":  "IA",
+                                           "FileName":  "influencermatchia.py"
+                                       },
+                                       {
+                                           "Name":  "Leadretention",
+                                           "Type":  "IA",
+                                           "FileName":  "leadretentionia.py"
+                                       },
+                                       {
+                                           "Name":  "Leadscoring",
+                                           "Type":  "IA",
+                                           "FileName":  "leadscoringia.py"
+                                       },
+                                       {
+                                           "Name":  "Leadsoptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "leadsOptimizerIA.py"
+                                       },
+                                       {
+                                           "Name":  "Marketsegmentation",
+                                           "Type":  "IA",
+                                           "FileName":  "marketsegmentationia.py"
+                                       },
+                                       {
+                                           "Name":  "Messagepersonalizer",
+                                           "Type":  "IA",
+                                           "FileName":  "messagepersonalizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Minimalform",
+                                           "Type":  "IA",
+                                           "FileName":  "minimalformia.py"
+                                       },
+                                       {
+                                           "Name":  "Multichannelattribution",
+                                           "Type":  "IA",
+                                           "FileName":  "multichannelattributionia.py"
+                                       },
+                                       {
+                                           "Name":  "Offersforecast",
+                                           "Type":  "IA",
+                                           "FileName":  "offersforecastia.py"
+                                       },
+                                       {
+                                           "Name":  "Offerspersonalization",
+                                           "Type":  "IA",
+                                           "FileName":  "offerspersonalizationia.py"
+                                       },
+                                       {
+                                           "Name":  "Productaffinity",
+                                           "Type":  "IA",
+                                           "FileName":  "productaffinityia.py"
+                                       },
+                                       {
+                                           "Name":  "Promotionsengine",
+                                           "Type":  "IA",
+                                           "FileName":  "promotionsengineia.py"
+                                       },
+                                       {
+                                           "Name":  "Retargetingoptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "retargetingoptimizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Roiattribution",
+                                           "Type":  "IA",
+                                           "FileName":  "roiattributionia.py"
+                                       },
+                                       {
+                                           "Name":  "Searchintenttracker",
+                                           "Type":  "IA",
+                                           "FileName":  "searchintenttrackeria.py"
+                                       },
+                                       {
+                                           "Name":  "Seasonalityanalyzer",
+                                           "Type":  "IA",
+                                           "FileName":  "seasonalityanalyzeria.py"
+                                       },
+                                       {
+                                           "Name":  "Socialpostgenerator",
+                                           "Type":  "IA",
+                                           "FileName":  "socialpostgeneratoria.py"
+                                       },
+                                       {
+                                           "Name":  "Touchpointanalyzer",
+                                           "Type":  "IA",
+                                           "FileName":  "touchpointanalyzeria.py"
+                                       },
+                                       {
+                                           "Name":  "Videoreelautogen",
+                                           "Type":  "IA",
+                                           "FileName":  "videoreelautogenia.py"
+                                       },
+                                       {
+                                           "Name":  "Viralpotential",
+                                           "Type":  "IA",
+                                           "FileName":  "viralpotentialia.py"
+                                       },
+                                       {
+                                           "Name":  "Google Ads Budget Pacing ",
+                                           "Type":  "Agent",
+                                           "FileName":  "google_ads_budget_pacing_agent.py"
+                                       },
+                                       {
+                                           "Name":  "Google Ads Strategist ",
+                                           "Type":  "Agent",
+                                           "FileName":  "google_ads_strategist_agent.py"
+                                       },
+                                       {
+                                           "Name":  "Orchestrator ",
+                                           "Type":  "Agent",
+                                           "FileName":  "orchestrator_agent.py"
+                                       },
+                                       {
+                                           "Name":  "Rsa Ad Copy Generator ",
+                                           "Type":  "Agent",
+                                           "FileName":  "rsa_ad_copy_generator_agent.py"
+                                       },
+                                       {
+                                           "Name":  "Search Terms Cleaner ",
+                                           "Type":  "Agent",
+                                           "FileName":  "search_terms_cleaner_agent.py"
+                                       },
+                                       {
+                                           "Name":  "Google Ads Budget Pacing ",
+                                           "Type":  "Agent",
+                                           "FileName":  "google_ads_budget_pacing_agent.py"
+                                       },
+                                       {
+                                           "Name":  "Google Ads Strategist ",
+                                           "Type":  "Agent",
+                                           "FileName":  "google_ads_strategist_agent.py"
+                                       },
+                                       {
+                                           "Name":  "Orchestrator ",
+                                           "Type":  "Agent",
+                                           "FileName":  "orchestrator_agent.py"
+                                       },
+                                       {
+                                           "Name":  "Rsa Ad Copy Generator ",
+                                           "Type":  "Agent",
+                                           "FileName":  "rsa_ad_copy_generator_agent.py"
+                                       },
+                                       {
+                                           "Name":  "Search Terms Cleaner ",
+                                           "Type":  "Agent",
+                                           "FileName":  "search_terms_cleaner_agent.py"
+                                       }
+                                   ]
+                    },
+                    {
+                        "Name":  "unknown",
+                        "AgentCount":  76,
+                        "Agents":  [
+                                       {
+                                           "Name":  "Conciliacionbancar",
+                                           "Type":  "IA",
+                                           "FileName":  "conciliacionbancaria.py"
+                                       },
+                                       {
+                                           "Name":  "Facturacion",
+                                           "Type":  "IA",
+                                           "FileName":  "facturacionia.py"
+                                       },
+                                       {
+                                           "Name":  "Flujocaja",
+                                           "Type":  "IA",
+                                           "FileName":  "flujocajaia.py"
+                                       },
+                                       {
+                                           "Name":  "Tributario",
+                                           "Type":  "IA",
+                                           "FileName":  "tributarioia.py"
+                                       },
+                                       {
+                                           "Name":  "Competencias",
+                                           "Type":  "IA",
+                                           "FileName":  "competenciasia.py"
+                                       },
+                                       {
+                                           "Name":  "Evaluacion",
+                                           "Type":  "IA",
+                                           "FileName":  "evaluacionia.py"
+                                       },
+                                       {
+                                           "Name":  "Tutorvirtual",
+                                           "Type":  "IA",
+                                           "FileName":  "tutorvirtualia.py"
+                                       },
+                                       {
+                                           "Name":  "Innovacion",
+                                           "Type":  "IA",
+                                           "FileName":  "innovacionia.py"
+                                       },
+                                       {
+                                           "Name":  "Tendencias",
+                                           "Type":  "IA",
+                                           "FileName":  "tendenciasia.py"
+                                       },
+                                       {
+                                           "Name":  "Controlcalidad",
+                                           "Type":  "IA",
+                                           "FileName":  "controlcalidadia.py"
+                                       },
+                                       {
+                                           "Name":  "Controlpedidos",
+                                           "Type":  "IA",
+                                           "FileName":  "controlpedidosia.py"
+                                       },
+                                       {
+                                           "Name":  "Evaluadorproveedores",
+                                           "Type":  "IA",
+                                           "FileName":  "evaluadorproveedoresia.py"
+                                       },
+                                       {
+                                           "Name":  "Optimizadorrutas",
+                                           "Type":  "IA",
+                                           "FileName":  "optimizadorrutasia.py"
+                                       },
+                                       {
+                                           "Name":  "Previsioninventario",
+                                           "Type":  "IA",
+                                           "FileName":  "previsioninventarioia.py"
+                                       },
+                                       {
+                                           "Name":  "Sostenibilidad",
+                                           "Type":  "IA",
+                                           "FileName":  "sostenibilidadia.py"
+                                       },
+                                       {
+                                           "Name":  "Trazabilidad",
+                                           "Type":  "IA",
+                                           "FileName":  "trazabilidadia.py"
+                                       },
+                                       {
+                                           "Name":  "Abtestingimpact",
+                                           "Type":  "IA",
+                                           "FileName":  "abtestingimpactia.py"
+                                       },
+                                       {
+                                           "Name":  "Adschanneloptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "adschanneloptimizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Brandsentiment",
+                                           "Type":  "IA",
+                                           "FileName":  "brandsentimentia.py"
+                                       },
+                                       {
+                                           "Name":  "Budgetallocator",
+                                           "Type":  "IA",
+                                           "FileName":  "budgetallocatoria.py"
+                                       },
+                                       {
+                                           "Name":  "Campaignoptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "campaignoptimizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Cashofferfilter",
+                                           "Type":  "IA",
+                                           "FileName":  "cashofferfilteria.py"
+                                       },
+                                       {
+                                           "Name":  "Channelblend",
+                                           "Type":  "IA",
+                                           "FileName":  "channelblendia.py"
+                                       },
+                                       {
+                                           "Name":  "Clientprofiling",
+                                           "Type":  "IA",
+                                           "FileName":  "clientprofilingia.py"
+                                       },
+                                       {
+                                           "Name":  "Competitorintelligence",
+                                           "Type":  "IA",
+                                           "FileName":  "competitorintelligenceia.py"
+                                       },
+                                       {
+                                           "Name":  "Contactquality",
+                                           "Type":  "IA",
+                                           "FileName":  "contactqualityia.py"
+                                       },
+                                       {
+                                           "Name":  "Contentengagement",
+                                           "Type":  "IA",
+                                           "FileName":  "contentengagementia.py"
+                                       },
+                                       {
+                                           "Name":  "Contentgenerator",
+                                           "Type":  "IA",
+                                           "FileName":  "contentgeneratoria.py"
+                                       },
+                                       {
+                                           "Name":  "Contentvirality",
+                                           "Type":  "IA",
+                                           "FileName":  "contentviralityia.py"
+                                       },
+                                       {
+                                           "Name":  "Conversioncohort",
+                                           "Type":  "IA",
+                                           "FileName":  "conversioncohortia.py"
+                                       },
+                                       {
+                                           "Name":  "Conversionpredictor",
+                                           "Type":  "IA",
+                                           "FileName":  "conversionpredictoria.py"
+                                       },
+                                       {
+                                           "Name":  "Emailautomation",
+                                           "Type":  "IA",
+                                           "FileName":  "emailautomationia.py"
+                                       },
+                                       {
+                                           "Name":  "Emotiontracker",
+                                           "Type":  "IA",
+                                           "FileName":  "emotiontrackeria.py"
+                                       },
+                                       {
+                                           "Name":  "Fidelizedprofile",
+                                           "Type":  "IA",
+                                           "FileName":  "fidelizedprofileia.py"
+                                       },
+                                       {
+                                           "Name":  "Funneloptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "funneloptimizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Geosegmentation",
+                                           "Type":  "IA",
+                                           "FileName":  "geosegmentationia.py"
+                                       },
+                                       {
+                                           "Name":  "Heatmapinsight",
+                                           "Type":  "IA",
+                                           "FileName":  "heatmapinsightia.py"
+                                       },
+                                       {
+                                           "Name":  "Influencermatcher",
+                                           "Type":  "IA",
+                                           "FileName":  "influencermatcheria.py"
+                                       },
+                                       {
+                                           "Name":  "Influencermatch",
+                                           "Type":  "IA",
+                                           "FileName":  "influencermatchia.py"
+                                       },
+                                       {
+                                           "Name":  "Leadretention",
+                                           "Type":  "IA",
+                                           "FileName":  "leadretentionia.py"
+                                       },
+                                       {
+                                           "Name":  "Leadscoring",
+                                           "Type":  "IA",
+                                           "FileName":  "leadscoringia.py"
+                                       },
+                                       {
+                                           "Name":  "Leadsoptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "leadsOptimizerIA.py"
+                                       },
+                                       {
+                                           "Name":  "Marketsegmentation",
+                                           "Type":  "IA",
+                                           "FileName":  "marketsegmentationia.py"
+                                       },
+                                       {
+                                           "Name":  "Messagepersonalizer",
+                                           "Type":  "IA",
+                                           "FileName":  "messagepersonalizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Minimalform",
+                                           "Type":  "IA",
+                                           "FileName":  "minimalformia.py"
+                                       },
+                                       {
+                                           "Name":  "Multichannelattribution",
+                                           "Type":  "IA",
+                                           "FileName":  "multichannelattributionia.py"
+                                       },
+                                       {
+                                           "Name":  "Offersforecast",
+                                           "Type":  "IA",
+                                           "FileName":  "offersforecastia.py"
+                                       },
+                                       {
+                                           "Name":  "Offerspersonalization",
+                                           "Type":  "IA",
+                                           "FileName":  "offerspersonalizationia.py"
+                                       },
+                                       {
+                                           "Name":  "Productaffinity",
+                                           "Type":  "IA",
+                                           "FileName":  "productaffinityia.py"
+                                       },
+                                       {
+                                           "Name":  "Promotionsengine",
+                                           "Type":  "IA",
+                                           "FileName":  "promotionsengineia.py"
+                                       },
+                                       {
+                                           "Name":  "Retargetingoptimizer",
+                                           "Type":  "IA",
+                                           "FileName":  "retargetingoptimizeria.py"
+                                       },
+                                       {
+                                           "Name":  "Roiattribution",
+                                           "Type":  "IA",
+                                           "FileName":  "roiattributionia.py"
+                                       },
+                                       {
+                                           "Name":  "Searchintenttracker",
+                                           "Type":  "IA",
+                                           "FileName":  "searchintenttrackeria.py"
+                                       },
+                                       {
+                                           "Name":  "Seasonalityanalyzer",
+                                           "Type":  "IA",
+                                           "FileName":  "seasonalityanalyzeria.py"
+                                       },
+                                       {
+                                           "Name":  "Socialpostgenerator",
+                                           "Type":  "IA",
+                                           "FileName":  "socialpostgeneratoria.py"
+                                       },
+                                       {
+                                           "Name":  "Touchpointanalyzer",
+                                           "Type":  "IA",
+                                           "FileName":  "touchpointanalyzeria.py"
+                                       },
+                                       {
+                                           "Name":  "Videoreelautogen",
+                                           "Type":  "IA",
+                                           "FileName":  "videoreelautogenia.py"
+                                       },
+                                       {
+                                           "Name":  "Viralpotential",
+                                           "Type":  "IA",
+                                           "FileName":  "viralpotentialia.py"
+                                       },
+                                       {
+                                           "Name":  "Forecasting",
+                                           "Type":  "IA",
+                                           "FileName":  "forecastingia.py"
+                                       },
+                                       {
+                                           "Name":  "Presupuestopredictivo",
+                                           "Type":  "IA",
+                                           "FileName":  "presupuestopredictivoia.py"
+                                       },
+                                       {
+                                           "Name":  "Capacitacion",
+                                           "Type":  "IA",
+                                           "FileName":  "capacitacionia.py"
+                                       },
+                                       {
+                                           "Name":  "Cvanalyzer",
+                                           "Type":  "IA",
+                                           "FileName":  "cvanalyzeria.py"
+                                       },
+                                       {
+                                           "Name":  "Selectioncv",
+                                           "Type":  "IA",
+                                           "FileName":  "selectioncvia.py"
+                                       },
+                                       {
+                                           "Name":  "Cierrepredictivo",
+                                           "Type":  "IA",
+                                           "FileName":  "cierrepredictivoia.py"
+                                       },
+                                       {
+                                           "Name":  "Clientelifecycle",
+                                           "Type":  "IA",
+                                           "FileName":  "clientelifecycleia.py"
+                                       },
+                                       {
+                                           "Name":  "Leadscoring",
+                                           "Type":  "IA",
+                                           "FileName":  "leadscoringia.py"
+                                       },
+                                       {
+                                           "Name":  "Pipelinepredictivo",
+                                           "Type":  "IA",
+                                           "FileName":  "pipelinepredictivoia.py"
+                                       },
+                                       {
+                                           "Name":  "D",
+                                           "Type":  "IA",
+                                           "FileName":  "dia.py"
+                                       },
+                                       {
+                                           "Name":  " D",
+                                           "Type":  "IA",
+                                           "FileName":  "_dia.py"
+                                       },
+                                       {
+                                           "Name":  "Test Contentperformance",
+                                           "Type":  "IA",
+                                           "FileName":  "test_contentperformanceia.py"
+                                       },
+                                       {
+                                           "Name":  "Check ",
+                                           "Type":  "Agent",
+                                           "FileName":  "check_agent.py"
+                                       },
+                                       {
+                                           "Name":  "Evaluate ",
+                                           "Type":  "Agent",
+                                           "FileName":  "evaluate_agent.py"
+                                       },
+                                       {
+                                           "Name":  "Run Super",
+                                           "Type":  "Agent",
+                                           "FileName":  "run_superagent.py"
+                                       },
+                                       {
+                                           "Name":  "Base Hyper ",
+                                           "Type":  "Agent",
+                                           "FileName":  "base_hyper_agent.py"
+                                       },
+                                       {
+                                           "Name":  "Event Trigger ",
+                                           "Type":  "Agent",
+                                           "FileName":  "event_trigger_agent.py"
+                                       },
+                                       {
+                                           "Name":  "User ",
+                                           "Type":  "Agent",
+                                           "FileName":  "user_agent.py"
+                                       }
+                                   ]
+                    },
+                    {
+                        "Name":  "logistica",
+                        "AgentCount":  14,
+                        "Agents":  [
+                                       {
+                                           "Name":  "Controlcalidad",
+                                           "Type":  "IA",
+                                           "FileName":  "controlcalidadia.py"
+                                       },
+                                       {
+                                           "Name":  "Controlpedidos",
+                                           "Type":  "IA",
+                                           "FileName":  "controlpedidosia.py"
+                                       },
+                                       {
+                                           "Name":  "Evaluadorproveedores",
+                                           "Type":  "IA",
+                                           "FileName":  "evaluadorproveedoresia.py"
+                                       },
+                                       {
+                                           "Name":  "Optimizadorrutas",
+                                           "Type":  "IA",
+                                           "FileName":  "optimizadorrutasia.py"
+                                       },
+                                       {
+                                           "Name":  "Previsioninventario",
+                                           "Type":  "IA",
+                                           "FileName":  "previsioninventarioia.py"
+                                       },
+                                       {
+                                           "Name":  "Sostenibilidad",
+                                           "Type":  "IA",
+                                           "FileName":  "sostenibilidadia.py"
+                                       },
+                                       {
+                                           "Name":  "Trazabilidad",
+                                           "Type":  "IA",
+                                           "FileName":  "trazabilidadia.py"
+                                       },
+                                       {
+                                           "Name":  "Controlcalidad",
+                                           "Type":  "IA",
+                                           "FileName":  "controlcalidadia.py"
+                                       },
+                                       {
+                                           "Name":  "Controlpedidos",
+                                           "Type":  "IA",
+                                           "FileName":  "controlpedidosia.py"
+                                       },
+                                       {
+                                           "Name":  "Evaluadorproveedores",
+                                           "Type":  "IA",
+                                           "FileName":  "evaluadorproveedoresia.py"
+                                       },
+                                       {
+                                           "Name":  "Optimizadorrutas",
+                                           "Type":  "IA",
+                                           "FileName":  "optimizadorrutasia.py"
+                                       },
+                                       {
+                                           "Name":  "Previsioninventario",
+                                           "Type":  "IA",
+                                           "FileName":  "previsioninventarioia.py"
+                                       },
+                                       {
+                                           "Name":  "Sostenibilidad",
+                                           "Type":  "IA",
+                                           "FileName":  "sostenibilidadia.py"
+                                       },
+                                       {
+                                           "Name":  "Trazabilidad",
+                                           "Type":  "IA",
+                                           "FileName":  "trazabilidadia.py"
+                                       }
+                                   ]
+                    },
+                    {
+                        "Name":  "contabilidad",
+                        "AgentCount":  9,
+                        "Agents":  [
+                                       {
+                                           "Name":  "Conciliacionbancar",
+                                           "Type":  "IA",
+                                           "FileName":  "conciliacionbancaria.py"
+                                       },
+                                       {
+                                           "Name":  "Facturacion",
+                                           "Type":  "IA",
+                                           "FileName":  "facturacionia.py"
+                                       },
+                                       {
+                                           "Name":  "Flujocaja",
+                                           "Type":  "IA",
+                                           "FileName":  "flujocajaia.py"
+                                       },
+                                       {
+                                           "Name":  "Tributario",
+                                           "Type":  "IA",
+                                           "FileName":  "tributarioia.py"
+                                       },
+                                       {
+                                           "Name":  "Conciliacionbancar",
+                                           "Type":  "IA",
+                                           "FileName":  "conciliacionbancaria.py"
+                                       },
+                                       {
+                                           "Name":  "Facturacion",
+                                           "Type":  "IA",
+                                           "FileName":  "facturacionia.py"
+                                       },
+                                       {
+                                           "Name":  "Flujocaja",
+                                           "Type":  "IA",
+                                           "FileName":  "flujocajaia.py"
+                                       },
+                                       {
+                                           "Name":  "Tributario",
+                                           "Type":  "IA",
+                                           "FileName":  "tributarioia.py"
+                                       },
+                                       {
+                                           "Name":  "Analisis Financiero Super ",
+                                           "Type":  "Agent",
+                                           "FileName":  "analisis_financiero_super_agent.py"
+                                       }
+                                   ]
+                    },
+                    {
+                        "Name":  "ventascrm",
+                        "AgentCount":  8,
+                        "Agents":  [
+                                       {
+                                           "Name":  "Cierrepredictivo",
+                                           "Type":  "IA",
+                                           "FileName":  "cierrepredictivoia.py"
+                                       },
+                                       {
+                                           "Name":  "Clientelifecycle",
+                                           "Type":  "IA",
+                                           "FileName":  "clientelifecycleia.py"
+                                       },
+                                       {
+                                           "Name":  "Leadscoring",
+                                           "Type":  "IA",
+                                           "FileName":  "leadscoringia.py"
+                                       },
+                                       {
+                                           "Name":  "Pipelinepredictivo",
+                                           "Type":  "IA",
+                                           "FileName":  "pipelinepredictivoia.py"
+                                       },
+                                       {
+                                           "Name":  "Cierrepredictivo",
+                                           "Type":  "IA",
+                                           "FileName":  "cierrepredictivoia.py"
+                                       },
+                                       {
+                                           "Name":  "Clientelifecycle",
+                                           "Type":  "IA",
+                                           "FileName":  "clientelifecycleia.py"
+                                       },
+                                       {
+                                           "Name":  "Leadscoring",
+                                           "Type":  "IA",
+                                           "FileName":  "leadscoringia.py"
+                                       },
+                                       {
+                                           "Name":  "Pipelinepredictivo",
+                                           "Type":  "IA",
+                                           "FileName":  "pipelinepredictivoia.py"
+                                       }
+                                   ]
+                    },
+                    {
+                        "Name":  "educacion",
+                        "AgentCount":  6,
+                        "Agents":  [
+                                       {
+                                           "Name":  "Competencias",
+                                           "Type":  "IA",
+                                           "FileName":  "competenciasia.py"
+                                       },
+                                       {
+                                           "Name":  "Evaluacion",
+                                           "Type":  "IA",
+                                           "FileName":  "evaluacionia.py"
+                                       },
+                                       {
+                                           "Name":  "Tutorvirtual",
+                                           "Type":  "IA",
+                                           "FileName":  "tutorvirtualia.py"
+                                       },
+                                       {
+                                           "Name":  "Competencias",
+                                           "Type":  "IA",
+                                           "FileName":  "competenciasia.py"
+                                       },
+                                       {
+                                           "Name":  "Evaluacion",
+                                           "Type":  "IA",
+                                           "FileName":  "evaluacionia.py"
+                                       },
+                                       {
+                                           "Name":  "Tutorvirtual",
+                                           "Type":  "IA",
+                                           "FileName":  "tutorvirtualia.py"
+                                       }
+                                   ]
+                    },
+                    {
+                        "Name":  "rrhh",
+                        "AgentCount":  6,
+                        "Agents":  [
+                                       {
+                                           "Name":  "Capacitacion",
+                                           "Type":  "IA",
+                                           "FileName":  "capacitacionia.py"
+                                       },
+                                       {
+                                           "Name":  "Cvanalyzer",
+                                           "Type":  "IA",
+                                           "FileName":  "cvanalyzeria.py"
+                                       },
+                                       {
+                                           "Name":  "Selectioncv",
+                                           "Type":  "IA",
+                                           "FileName":  "selectioncvia.py"
+                                       },
+                                       {
+                                           "Name":  "Capacitacion",
+                                           "Type":  "IA",
+                                           "FileName":  "capacitacionia.py"
+                                       },
+                                       {
+                                           "Name":  "Cvanalyzer",
+                                           "Type":  "IA",
+                                           "FileName":  "cvanalyzeria.py"
+                                       },
+                                       {
+                                           "Name":  "Selectioncv",
+                                           "Type":  "IA",
+                                           "FileName":  "selectioncvia.py"
+                                       }
+                                   ]
+                    },
+                    {
+                        "Name":  "investigacion",
+                        "AgentCount":  4,
+                        "Agents":  [
+                                       {
+                                           "Name":  "Innovacion",
+                                           "Type":  "IA",
+                                           "FileName":  "innovacionia.py"
+                                       },
+                                       {
+                                           "Name":  "Tendencias",
+                                           "Type":  "IA",
+                                           "FileName":  "tendenciasia.py"
+                                       },
+                                       {
+                                           "Name":  "Innovacion",
+                                           "Type":  "IA",
+                                           "FileName":  "innovacionia.py"
+                                       },
+                                       {
+                                           "Name":  "Tendencias",
+                                           "Type":  "IA",
+                                           "FileName":  "tendenciasia.py"
+                                       }
+                                   ]
+                    },
+                    {
+                        "Name":  "presupuesto",
+                        "AgentCount":  4,
+                        "Agents":  [
+                                       {
+                                           "Name":  "Forecasting",
+                                           "Type":  "IA",
+                                           "FileName":  "forecastingia.py"
+                                       },
+                                       {
+                                           "Name":  "Presupuestopredictivo",
+                                           "Type":  "IA",
+                                           "FileName":  "presupuestopredictivoia.py"
+                                       },
+                                       {
+                                           "Name":  "Forecasting",
+                                           "Type":  "IA",
+                                           "FileName":  "forecastingia.py"
+                                       },
+                                       {
+                                           "Name":  "Presupuestopredictivo",
+                                           "Type":  "IA",
+                                           "FileName":  "presupuestopredictivoia.py"
+                                       }
+                                   ]
+                    },
+                    {
+                        "Name":  "financialcore",
+                        "AgentCount":  1,
+                        "Agents":  {
+                                       "Name":  "Flujocaja",
+                                       "Type":  "IA",
+                                       "FileName":  "flujocajaia.py"
+                                   }
+                    }
+                ],
+    "GoogleAdsMVP":  [
+                         {
+                             "Name":  "Google Ads Budget Pacing ",
+                             "Type":  "Agent",
+                             "FileName":  "google_ads_budget_pacing_agent.py",
+                             "RelativePath":  "\\agents\\marketing\\advertising\\agents\\marketing\\google_ads_budget_pacing_agent.py"
+                         },
+                         {
+                             "Name":  "Google Ads Strategist ",
+                             "Type":  "Agent",
+                             "FileName":  "google_ads_strategist_agent.py",
+                             "RelativePath":  "\\agents\\marketing\\advertising\\agents\\marketing\\google_ads_strategist_agent.py"
+                         },
+                         {
+                             "Name":  "Google Ads Budget Pacing ",
+                             "Type":  "Agent",
+                             "FileName":  "google_ads_budget_pacing_agent.py",
+                             "RelativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\google_ads_budget_pacing_agent.py"
+                         },
+                         {
+                             "Name":  "Google Ads Strategist ",
+                             "Type":  "Agent",
+                             "FileName":  "google_ads_strategist_agent.py",
+                             "RelativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\google_ads_strategist_agent.py"
+                         },
+                         {
+                             "Name":  "Orchestrator ",
+                             "Type":  "Agent",
+                             "FileName":  "orchestrator_agent.py",
+                             "RelativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\orchestrator_agent.py"
+                         },
+                         {
+                             "Name":  "Rsa Ad Copy Generator ",
+                             "Type":  "Agent",
+                             "FileName":  "rsa_ad_copy_generator_agent.py",
+                             "RelativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\rsa_ad_copy_generator_agent.py"
+                         },
+                         {
+                             "Name":  "Search Terms Cleaner ",
+                             "Type":  "Agent",
+                             "FileName":  "search_terms_cleaner_agent.py",
+                             "RelativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\search_terms_cleaner_agent.py"
+                         }
+                     ],
+    "FileDetails":  [
+                        {
+                            "FileName":  "conciliacionbancaria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\contabilidad\\conciliacionbancaria.py",
+                            "SizeKB":  6,
+                            "LastModified":  "\/Date(1768330939510)\/"
+                        },
+                        {
+                            "FileName":  "facturacionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\contabilidad\\facturacionia.py",
+                            "SizeKB":  4.05,
+                            "LastModified":  "\/Date(1768330939510)\/"
+                        },
+                        {
+                            "FileName":  "flujocajaia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\contabilidad\\flujocajaia.py",
+                            "SizeKB":  6.92,
+                            "LastModified":  "\/Date(1768330939510)\/"
+                        },
+                        {
+                            "FileName":  "tributarioia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\contabilidad\\tributarioia.py",
+                            "SizeKB":  4.05,
+                            "LastModified":  "\/Date(1768330939532)\/"
+                        },
+                        {
+                            "FileName":  "competenciasia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\educacion\\competenciasia.py",
+                            "SizeKB":  4.12,
+                            "LastModified":  "\/Date(1768330939532)\/"
+                        },
+                        {
+                            "FileName":  "evaluacionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\educacion\\evaluacionia.py",
+                            "SizeKB":  5.86,
+                            "LastModified":  "\/Date(1768330939542)\/"
+                        },
+                        {
+                            "FileName":  "tutorvirtualia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\educacion\\tutorvirtualia.py",
+                            "SizeKB":  4.12,
+                            "LastModified":  "\/Date(1768330939542)\/"
+                        },
+                        {
+                            "FileName":  "innovacionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\investigacion\\innovacionia.py",
+                            "SizeKB":  4.14,
+                            "LastModified":  "\/Date(1768330939558)\/"
+                        },
+                        {
+                            "FileName":  "tendenciasia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\investigacion\\tendenciasia.py",
+                            "SizeKB":  5.88,
+                            "LastModified":  "\/Date(1768330939558)\/"
+                        },
+                        {
+                            "FileName":  "controlcalidadia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\logistica\\controlcalidadia.py",
+                            "SizeKB":  5.29,
+                            "LastModified":  "\/Date(1768330939590)\/"
+                        },
+                        {
+                            "FileName":  "controlpedidosia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\logistica\\controlpedidosia.py",
+                            "SizeKB":  5.9,
+                            "LastModified":  "\/Date(1768330939590)\/"
+                        },
+                        {
+                            "FileName":  "evaluadorproveedoresia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\logistica\\evaluadorproveedoresia.py",
+                            "SizeKB":  6,
+                            "LastModified":  "\/Date(1768330939590)\/"
+                        },
+                        {
+                            "FileName":  "optimizadorrutasia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\logistica\\optimizadorrutasia.py",
+                            "SizeKB":  7.04,
+                            "LastModified":  "\/Date(1768330939590)\/"
+                        },
+                        {
+                            "FileName":  "previsioninventarioia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\logistica\\previsioninventarioia.py",
+                            "SizeKB":  7.05,
+                            "LastModified":  "\/Date(1768330939590)\/"
+                        },
+                        {
+                            "FileName":  "sostenibilidadia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\logistica\\sostenibilidadia.py",
+                            "SizeKB":  4.13,
+                            "LastModified":  "\/Date(1768330939605)\/"
+                        },
+                        {
+                            "FileName":  "trazabilidadia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\logistica\\trazabilidadia.py",
+                            "SizeKB":  5.88,
+                            "LastModified":  "\/Date(1768330939605)\/"
+                        },
+                        {
+                            "FileName":  "abtestingia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\abtestingia.py",
+                            "SizeKB":  19.18,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "abtestingimpactia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\abtestingimpactia.py",
+                            "SizeKB":  10.49,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "attributionmodelia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\attributionmodelia.py",
+                            "SizeKB":  9.41,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "audiencesegmenteria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\audiencesegmenteria.py",
+                            "SizeKB":  16.34,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "budgetforecastia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\budgetforecastia.py",
+                            "SizeKB":  9.4,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "campaignoptimizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\campaignoptimizeria.py",
+                            "SizeKB":  15.28,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "campaignstrategyorchestratoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\campaignstrategyorchestratoria.py",
+                            "SizeKB":  69.73,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "cashofferfilteria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\cashofferfilteria.py",
+                            "SizeKB":  9.4,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "channelattributia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\channelattributia.py",
+                            "SizeKB":  16.04,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "competitoranalyzeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\competitoranalyzeria.py",
+                            "SizeKB":  13.58,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "competitorintelligenceia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\competitorintelligenceia.py",
+                            "SizeKB":  14.46,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "contactqualityia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\contactqualityia.py",
+                            "SizeKB":  14.8,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "contentgeneratoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\contentgeneratoria.py",
+                            "SizeKB":  15.21,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "contentperformanceia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\contentperformanceia.py",
+                            "SizeKB":  9.42,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "conversioncohortia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\conversioncohortia.py",
+                            "SizeKB":  15.24,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "creativeanalyzeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\creativeanalyzeria.py",
+                            "SizeKB":  14.18,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "customersegmentatonia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\customersegmentatonia.py",
+                            "SizeKB":  13.48,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "emailautomationia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\emailautomationia.py",
+                            "SizeKB":  16.74,
+                            "LastModified":  "\/Date(1769180777497)\/"
+                        },
+                        {
+                            "FileName":  "geosegmentationia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\geosegmentationia.py",
+                            "SizeKB":  12.34,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "influencermatcheria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\influencermatcheria.py",
+                            "SizeKB":  14.74,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "influencermatchingia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\influencermatchingia.py",
+                            "SizeKB":  13.41,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "journeyoptimizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\journeyoptimizeria.py",
+                            "SizeKB":  14.3,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "leadscoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\leadscoria.py",
+                            "SizeKB":  15.73,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "leadscoringia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\leadscoringia.py",
+                            "SizeKB":  9.37,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "marketingmixmodelia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\marketingmixmodelia.py",
+                            "SizeKB":  9.41,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "minimalformia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\minimalformia.py",
+                            "SizeKB":  12.96,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "personalizationengineia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\personalizationengineia.py",
+                            "SizeKB":  14.57,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "predictiveleadia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\predictiveleadia.py",
+                            "SizeKB":  15.49,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "pricingoptimizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\pricingoptimizeria.py",
+                            "SizeKB":  17,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "productaffinityia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\productaffinityia.py",
+                            "SizeKB":  13.69,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "retentionpredictoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\retentionpredictoria.py",
+                            "SizeKB":  15.99,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "sentimentanalyzeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\sentimentanalyzeria.py",
+                            "SizeKB":  15,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "sociallisteningia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\sociallisteningia.py",
+                            "SizeKB":  14.76,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "socialpostgeneratoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\socialpostgeneratoria.py",
+                            "SizeKB":  9.43,
+                            "LastModified":  "\/Date(1769180777513)\/"
+                        },
+                        {
+                            "FileName":  "brandsentimentia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\backup_placeholders_20251011_084324\\brandsentimentia.py",
+                            "SizeKB":  5.93,
+                            "LastModified":  "\/Date(1768330939637)\/"
+                        },
+                        {
+                            "FileName":  "contentviralityia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\backup_placeholders_20251011_084324\\contentviralityia.py",
+                            "SizeKB":  7,
+                            "LastModified":  "\/Date(1768330939637)\/"
+                        },
+                        {
+                            "FileName":  "fidelizedprofileia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\backup_placeholders_20251011_084324\\fidelizedprofileia.py",
+                            "SizeKB":  7.05,
+                            "LastModified":  "\/Date(1768330939637)\/"
+                        },
+                        {
+                            "FileName":  "influencermatchia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\backup_placeholders_20251011_084324\\influencermatchia.py",
+                            "SizeKB":  5.92,
+                            "LastModified":  "\/Date(1768330939637)\/"
+                        },
+                        {
+                            "FileName":  "videoreelautogenia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\marketing\\backup_placeholders_20251011_084324\\videoreelautogenia.py",
+                            "SizeKB":  7.02,
+                            "LastModified":  "\/Date(1768330939637)\/"
+                        },
+                        {
+                            "FileName":  "forecastingia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\presupuesto\\forecastingia.py",
+                            "SizeKB":  6.97,
+                            "LastModified":  "\/Date(1768330939685)\/"
+                        },
+                        {
+                            "FileName":  "presupuestopredictivoia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\presupuesto\\presupuestopredictivoia.py",
+                            "SizeKB":  4.21,
+                            "LastModified":  "\/Date(1768330939685)\/"
+                        },
+                        {
+                            "FileName":  "capacitacionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\rrhh\\capacitacionia.py",
+                            "SizeKB":  5.87,
+                            "LastModified":  "\/Date(1768330939743)\/"
+                        },
+                        {
+                            "FileName":  "cvanalyzeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\rrhh\\cvanalyzeria.py",
+                            "SizeKB":  6.92,
+                            "LastModified":  "\/Date(1768330939753)\/"
+                        },
+                        {
+                            "FileName":  "selectioncvia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\rrhh\\selectioncvia.py",
+                            "SizeKB":  4.08,
+                            "LastModified":  "\/Date(1768330939765)\/"
+                        },
+                        {
+                            "FileName":  "cierrepredictivoia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\ventascrm\\cierrepredictivoia.py",
+                            "SizeKB":  4.18,
+                            "LastModified":  "\/Date(1768330939796)\/"
+                        },
+                        {
+                            "FileName":  "clientelifecycleia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\ventascrm\\clientelifecycleia.py",
+                            "SizeKB":  4.19,
+                            "LastModified":  "\/Date(1768330939812)\/"
+                        },
+                        {
+                            "FileName":  "leadscoringia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\ventascrm\\leadscoringia.py",
+                            "SizeKB":  6.95,
+                            "LastModified":  "\/Date(1768330939812)\/"
+                        },
+                        {
+                            "FileName":  "pipelinepredictivoia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents\\ventascrm\\pipelinepredictivoia.py",
+                            "SizeKB":  4.21,
+                            "LastModified":  "\/Date(1768330939812)\/"
+                        },
+                        {
+                            "FileName":  "conciliacionbancaria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\contabilidad\\conciliacionbancaria.py",
+                            "SizeKB":  6,
+                            "LastModified":  "\/Date(1768330939891)\/"
+                        },
+                        {
+                            "FileName":  "facturacionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\contabilidad\\facturacionia.py",
+                            "SizeKB":  4.05,
+                            "LastModified":  "\/Date(1768330939906)\/"
+                        },
+                        {
+                            "FileName":  "flujocajaia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\contabilidad\\flujocajaia.py",
+                            "SizeKB":  6.92,
+                            "LastModified":  "\/Date(1768330939906)\/"
+                        },
+                        {
+                            "FileName":  "tributarioia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\contabilidad\\tributarioia.py",
+                            "SizeKB":  4.05,
+                            "LastModified":  "\/Date(1768330939915)\/"
+                        },
+                        {
+                            "FileName":  "competenciasia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\educacion\\competenciasia.py",
+                            "SizeKB":  4.12,
+                            "LastModified":  "\/Date(1768330939938)\/"
+                        },
+                        {
+                            "FileName":  "evaluacionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\educacion\\evaluacionia.py",
+                            "SizeKB":  5.86,
+                            "LastModified":  "\/Date(1768330939954)\/"
+                        },
+                        {
+                            "FileName":  "tutorvirtualia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\educacion\\tutorvirtualia.py",
+                            "SizeKB":  4.12,
+                            "LastModified":  "\/Date(1768330939954)\/"
+                        },
+                        {
+                            "FileName":  "innovacionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\investigacion\\innovacionia.py",
+                            "SizeKB":  4.14,
+                            "LastModified":  "\/Date(1768330940018)\/"
+                        },
+                        {
+                            "FileName":  "tendenciasia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\investigacion\\tendenciasia.py",
+                            "SizeKB":  5.88,
+                            "LastModified":  "\/Date(1768330940027)\/"
+                        },
+                        {
+                            "FileName":  "controlcalidadia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\logistica\\controlcalidadia.py",
+                            "SizeKB":  5.29,
+                            "LastModified":  "\/Date(1768330940091)\/"
+                        },
+                        {
+                            "FileName":  "controlpedidosia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\logistica\\controlpedidosia.py",
+                            "SizeKB":  5.9,
+                            "LastModified":  "\/Date(1768330940097)\/"
+                        },
+                        {
+                            "FileName":  "evaluadorproveedoresia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\logistica\\evaluadorproveedoresia.py",
+                            "SizeKB":  6,
+                            "LastModified":  "\/Date(1768330940097)\/"
+                        },
+                        {
+                            "FileName":  "optimizadorrutasia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\logistica\\optimizadorrutasia.py",
+                            "SizeKB":  7.04,
+                            "LastModified":  "\/Date(1768330940097)\/"
+                        },
+                        {
+                            "FileName":  "previsioninventarioia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\logistica\\previsioninventarioia.py",
+                            "SizeKB":  7.05,
+                            "LastModified":  "\/Date(1768330940113)\/"
+                        },
+                        {
+                            "FileName":  "sostenibilidadia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\logistica\\sostenibilidadia.py",
+                            "SizeKB":  4.13,
+                            "LastModified":  "\/Date(1768330940113)\/"
+                        },
+                        {
+                            "FileName":  "trazabilidadia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\logistica\\trazabilidadia.py",
+                            "SizeKB":  5.88,
+                            "LastModified":  "\/Date(1768330940113)\/"
+                        },
+                        {
+                            "FileName":  "abtestingimpactia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\abtestingimpactia.py",
+                            "SizeKB":  5.92,
+                            "LastModified":  "\/Date(1768330940113)\/"
+                        },
+                        {
+                            "FileName":  "adschanneloptimizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\adschanneloptimizeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "brandsentimentia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\brandsentimentia.py",
+                            "SizeKB":  5.93,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "budgetallocatoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\budgetallocatoria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "campaignoptimizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\campaignoptimizeria.py",
+                            "SizeKB":  4.17,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "cashofferfilteria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\cashofferfilteria.py",
+                            "SizeKB":  7.03,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "channelblendia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\channelblendia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "clientprofilingia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\clientprofilingia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "competitorintelligenceia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\competitorintelligenceia.py",
+                            "SizeKB":  6.03,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "contactqualityia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\contactqualityia.py",
+                            "SizeKB":  7.01,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "contentengagementia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\contentengagementia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "contentgeneratoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\contentgeneratoria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "contentviralityia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\contentviralityia.py",
+                            "SizeKB":  7,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "conversioncohortia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\conversioncohortia.py",
+                            "SizeKB":  5.94,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "conversionpredictoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\conversionpredictoria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "emailautomationia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\emailautomationia.py",
+                            "SizeKB":  4.14,
+                            "LastModified":  "\/Date(1768330940130)\/"
+                        },
+                        {
+                            "FileName":  "emotiontrackeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\emotiontrackeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940138)\/"
+                        },
+                        {
+                            "FileName":  "fidelizedprofileia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\fidelizedprofileia.py",
+                            "SizeKB":  7.05,
+                            "LastModified":  "\/Date(1768330940145)\/"
+                        },
+                        {
+                            "FileName":  "funneloptimizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\funneloptimizeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940145)\/"
+                        },
+                        {
+                            "FileName":  "geosegmentationia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\geosegmentationia.py",
+                            "SizeKB":  5.93,
+                            "LastModified":  "\/Date(1768330940145)\/"
+                        },
+                        {
+                            "FileName":  "heatmapinsightia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\heatmapinsightia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940145)\/"
+                        },
+                        {
+                            "FileName":  "influencermatcheria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\influencermatcheria.py",
+                            "SizeKB":  4.13,
+                            "LastModified":  "\/Date(1768330940145)\/"
+                        },
+                        {
+                            "FileName":  "influencermatchia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\influencermatchia.py",
+                            "SizeKB":  5.92,
+                            "LastModified":  "\/Date(1768330940145)\/"
+                        },
+                        {
+                            "FileName":  "leadretentionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\leadretentionia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940145)\/"
+                        },
+                        {
+                            "FileName":  "leadscoringia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\leadscoringia.py",
+                            "SizeKB":  4.12,
+                            "LastModified":  "\/Date(1768330940145)\/"
+                        },
+                        {
+                            "FileName":  "leadsOptimizerIA.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\leadsOptimizerIA.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940145)\/"
+                        },
+                        {
+                            "FileName":  "marketsegmentationia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\marketsegmentationia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "messagepersonalizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\messagepersonalizeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "minimalformia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\minimalformia.py",
+                            "SizeKB":  5.89,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "multichannelattributionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\multichannelattributionia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "offersforecastia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\offersforecastia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "offerspersonalizationia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\offerspersonalizationia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "productaffinityia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\productaffinityia.py",
+                            "SizeKB":  7.02,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "promotionsengineia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\promotionsengineia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "retargetingoptimizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\retargetingoptimizeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "roiattributionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\roiattributionia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "searchintenttrackeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\searchintenttrackeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "seasonalityanalyzeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\seasonalityanalyzeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "socialpostgeneratoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\socialpostgeneratoria.py",
+                            "SizeKB":  7.08,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "touchpointanalyzeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\touchpointanalyzeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "videoreelautogenia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\videoreelautogenia.py",
+                            "SizeKB":  7.02,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "viralpotentialia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\marketing\\viralpotentialia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330940161)\/"
+                        },
+                        {
+                            "FileName":  "forecastingia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\presupuesto\\forecastingia.py",
+                            "SizeKB":  6.97,
+                            "LastModified":  "\/Date(1768330940240)\/"
+                        },
+                        {
+                            "FileName":  "presupuestopredictivoia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\presupuesto\\presupuestopredictivoia.py",
+                            "SizeKB":  4.21,
+                            "LastModified":  "\/Date(1768330940240)\/"
+                        },
+                        {
+                            "FileName":  "capacitacionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\rrhh\\capacitacionia.py",
+                            "SizeKB":  5.87,
+                            "LastModified":  "\/Date(1768330940289)\/"
+                        },
+                        {
+                            "FileName":  "cvanalyzeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\rrhh\\cvanalyzeria.py",
+                            "SizeKB":  6.92,
+                            "LastModified":  "\/Date(1768330940289)\/"
+                        },
+                        {
+                            "FileName":  "selectioncvia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\rrhh\\selectioncvia.py",
+                            "SizeKB":  4.08,
+                            "LastModified":  "\/Date(1768330940303)\/"
+                        },
+                        {
+                            "FileName":  "cierrepredictivoia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\ventascrm\\cierrepredictivoia.py",
+                            "SizeKB":  4.18,
+                            "LastModified":  "\/Date(1768330940303)\/"
+                        },
+                        {
+                            "FileName":  "clientelifecycleia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\ventascrm\\clientelifecycleia.py",
+                            "SizeKB":  4.19,
+                            "LastModified":  "\/Date(1768330940322)\/"
+                        },
+                        {
+                            "FileName":  "leadscoringia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\ventascrm\\leadscoringia.py",
+                            "SizeKB":  6.95,
+                            "LastModified":  "\/Date(1768330940322)\/"
+                        },
+                        {
+                            "FileName":  "pipelinepredictivoia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\agents_backup_20250907_123025\\ventascrm\\pipelinepredictivoia.py",
+                            "SizeKB":  4.21,
+                            "LastModified":  "\/Date(1768330940322)\/"
+                        },
+                        {
+                            "FileName":  "conciliacionbancaria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\contabilidad\\conciliacionbancaria.py",
+                            "SizeKB":  6,
+                            "LastModified":  "\/Date(1768330941239)\/"
+                        },
+                        {
+                            "FileName":  "facturacionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\contabilidad\\facturacionia.py",
+                            "SizeKB":  4.05,
+                            "LastModified":  "\/Date(1768330941239)\/"
+                        },
+                        {
+                            "FileName":  "flujocajaia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\contabilidad\\flujocajaia.py",
+                            "SizeKB":  6.92,
+                            "LastModified":  "\/Date(1768330941239)\/"
+                        },
+                        {
+                            "FileName":  "tributarioia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\contabilidad\\tributarioia.py",
+                            "SizeKB":  4.05,
+                            "LastModified":  "\/Date(1768330941239)\/"
+                        },
+                        {
+                            "FileName":  "competenciasia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\educacion\\competenciasia.py",
+                            "SizeKB":  4.12,
+                            "LastModified":  "\/Date(1768330941256)\/"
+                        },
+                        {
+                            "FileName":  "evaluacionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\educacion\\evaluacionia.py",
+                            "SizeKB":  5.86,
+                            "LastModified":  "\/Date(1768330941271)\/"
+                        },
+                        {
+                            "FileName":  "tutorvirtualia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\educacion\\tutorvirtualia.py",
+                            "SizeKB":  4.12,
+                            "LastModified":  "\/Date(1768330941271)\/"
+                        },
+                        {
+                            "FileName":  "flujocajaia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\financial_core\\inteligencia_financiera\\flujocajaia.py",
+                            "SizeKB":  6.92,
+                            "LastModified":  "\/Date(1768330941357)\/"
+                        },
+                        {
+                            "FileName":  "innovacionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\investigacion\\innovacionia.py",
+                            "SizeKB":  4.14,
+                            "LastModified":  "\/Date(1768330941430)\/"
+                        },
+                        {
+                            "FileName":  "tendenciasia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\investigacion\\tendenciasia.py",
+                            "SizeKB":  5.88,
+                            "LastModified":  "\/Date(1768330941442)\/"
+                        },
+                        {
+                            "FileName":  "controlcalidadia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\logistica\\controlcalidadia.py",
+                            "SizeKB":  5.29,
+                            "LastModified":  "\/Date(1768330941478)\/"
+                        },
+                        {
+                            "FileName":  "controlpedidosia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\logistica\\controlpedidosia.py",
+                            "SizeKB":  5.9,
+                            "LastModified":  "\/Date(1768330941489)\/"
+                        },
+                        {
+                            "FileName":  "evaluadorproveedoresia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\logistica\\evaluadorproveedoresia.py",
+                            "SizeKB":  6,
+                            "LastModified":  "\/Date(1768330941489)\/"
+                        },
+                        {
+                            "FileName":  "optimizadorrutasia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\logistica\\optimizadorrutasia.py",
+                            "SizeKB":  7.04,
+                            "LastModified":  "\/Date(1768330941491)\/"
+                        },
+                        {
+                            "FileName":  "previsioninventarioia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\logistica\\previsioninventarioia.py",
+                            "SizeKB":  7.05,
+                            "LastModified":  "\/Date(1768330941494)\/"
+                        },
+                        {
+                            "FileName":  "sostenibilidadia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\logistica\\sostenibilidadia.py",
+                            "SizeKB":  4.13,
+                            "LastModified":  "\/Date(1768330941506)\/"
+                        },
+                        {
+                            "FileName":  "trazabilidadia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\logistica\\trazabilidadia.py",
+                            "SizeKB":  5.88,
+                            "LastModified":  "\/Date(1768330941510)\/"
+                        },
+                        {
+                            "FileName":  "abtestingimpactia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\abtestingimpactia.py",
+                            "SizeKB":  5.92,
+                            "LastModified":  "\/Date(1768330941510)\/"
+                        },
+                        {
+                            "FileName":  "adschanneloptimizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\adschanneloptimizeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941510)\/"
+                        },
+                        {
+                            "FileName":  "brandsentimentia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\brandsentimentia.py",
+                            "SizeKB":  5.93,
+                            "LastModified":  "\/Date(1768330941510)\/"
+                        },
+                        {
+                            "FileName":  "budgetallocatoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\budgetallocatoria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941524)\/"
+                        },
+                        {
+                            "FileName":  "campaignoptimizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\campaignoptimizeria.py",
+                            "SizeKB":  4.17,
+                            "LastModified":  "\/Date(1768330941524)\/"
+                        },
+                        {
+                            "FileName":  "cashofferfilteria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\cashofferfilteria.py",
+                            "SizeKB":  7.03,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "channelblendia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\channelblendia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "clientprofilingia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\clientprofilingia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "competitorintelligenceia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\competitorintelligenceia.py",
+                            "SizeKB":  6.03,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "contactqualityia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\contactqualityia.py",
+                            "SizeKB":  7.01,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "contentengagementia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\contentengagementia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "contentgeneratoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\contentgeneratoria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "contentviralityia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\contentviralityia.py",
+                            "SizeKB":  7,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "conversioncohortia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\conversioncohortia.py",
+                            "SizeKB":  5.94,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "conversionpredictoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\conversionpredictoria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "emailautomationia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\emailautomationia.py",
+                            "SizeKB":  4.14,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "emotiontrackeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\emotiontrackeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "fidelizedprofileia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\fidelizedprofileia.py",
+                            "SizeKB":  7.05,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "funneloptimizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\funneloptimizeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "geosegmentationia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\geosegmentationia.py",
+                            "SizeKB":  5.93,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "heatmapinsightia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\heatmapinsightia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941526)\/"
+                        },
+                        {
+                            "FileName":  "influencermatcheria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\influencermatcheria.py",
+                            "SizeKB":  4.13,
+                            "LastModified":  "\/Date(1768330941539)\/"
+                        },
+                        {
+                            "FileName":  "influencermatchia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\influencermatchia.py",
+                            "SizeKB":  5.92,
+                            "LastModified":  "\/Date(1768330941539)\/"
+                        },
+                        {
+                            "FileName":  "leadretentionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\leadretentionia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941539)\/"
+                        },
+                        {
+                            "FileName":  "leadscoringia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\leadscoringia.py",
+                            "SizeKB":  4.12,
+                            "LastModified":  "\/Date(1768330941539)\/"
+                        },
+                        {
+                            "FileName":  "leadsOptimizerIA.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\leadsOptimizerIA.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941539)\/"
+                        },
+                        {
+                            "FileName":  "marketsegmentationia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\marketsegmentationia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941546)\/"
+                        },
+                        {
+                            "FileName":  "messagepersonalizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\messagepersonalizeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941546)\/"
+                        },
+                        {
+                            "FileName":  "minimalformia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\minimalformia.py",
+                            "SizeKB":  5.89,
+                            "LastModified":  "\/Date(1768330941546)\/"
+                        },
+                        {
+                            "FileName":  "multichannelattributionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\multichannelattributionia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941546)\/"
+                        },
+                        {
+                            "FileName":  "offersforecastia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\offersforecastia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941546)\/"
+                        },
+                        {
+                            "FileName":  "offerspersonalizationia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\offerspersonalizationia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941546)\/"
+                        },
+                        {
+                            "FileName":  "productaffinityia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\productaffinityia.py",
+                            "SizeKB":  7.02,
+                            "LastModified":  "\/Date(1768330941546)\/"
+                        },
+                        {
+                            "FileName":  "promotionsengineia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\promotionsengineia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941563)\/"
+                        },
+                        {
+                            "FileName":  "retargetingoptimizeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\retargetingoptimizeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941563)\/"
+                        },
+                        {
+                            "FileName":  "roiattributionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\roiattributionia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941563)\/"
+                        },
+                        {
+                            "FileName":  "searchintenttrackeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\searchintenttrackeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941563)\/"
+                        },
+                        {
+                            "FileName":  "seasonalityanalyzeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\seasonalityanalyzeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941563)\/"
+                        },
+                        {
+                            "FileName":  "socialpostgeneratoria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\socialpostgeneratoria.py",
+                            "SizeKB":  7.08,
+                            "LastModified":  "\/Date(1768330941563)\/"
+                        },
+                        {
+                            "FileName":  "touchpointanalyzeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\touchpointanalyzeria.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941563)\/"
+                        },
+                        {
+                            "FileName":  "videoreelautogenia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\videoreelautogenia.py",
+                            "SizeKB":  7.02,
+                            "LastModified":  "\/Date(1768330941563)\/"
+                        },
+                        {
+                            "FileName":  "viralpotentialia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\marketing\\viralpotentialia.py",
+                            "SizeKB":  0,
+                            "LastModified":  "\/Date(1768330941565)\/"
+                        },
+                        {
+                            "FileName":  "forecastingia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\presupuesto\\forecastingia.py",
+                            "SizeKB":  6.97,
+                            "LastModified":  "\/Date(1768330941636)\/"
+                        },
+                        {
+                            "FileName":  "presupuestopredictivoia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\presupuesto\\presupuestopredictivoia.py",
+                            "SizeKB":  4.21,
+                            "LastModified":  "\/Date(1768330941636)\/"
+                        },
+                        {
+                            "FileName":  "capacitacionia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\rrhh\\capacitacionia.py",
+                            "SizeKB":  5.87,
+                            "LastModified":  "\/Date(1768330941690)\/"
+                        },
+                        {
+                            "FileName":  "cvanalyzeria.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\rrhh\\cvanalyzeria.py",
+                            "SizeKB":  6.92,
+                            "LastModified":  "\/Date(1768330941692)\/"
+                        },
+                        {
+                            "FileName":  "selectioncvia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\rrhh\\selectioncvia.py",
+                            "SizeKB":  4.08,
+                            "LastModified":  "\/Date(1768330941706)\/"
+                        },
+                        {
+                            "FileName":  "cierrepredictivoia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\ventascrm\\cierrepredictivoia.py",
+                            "SizeKB":  4.18,
+                            "LastModified":  "\/Date(1768330941706)\/"
+                        },
+                        {
+                            "FileName":  "clientelifecycleia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\ventascrm\\clientelifecycleia.py",
+                            "SizeKB":  4.19,
+                            "LastModified":  "\/Date(1768330941716)\/"
+                        },
+                        {
+                            "FileName":  "leadscoringia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\ventascrm\\leadscoringia.py",
+                            "SizeKB":  6.95,
+                            "LastModified":  "\/Date(1768330941716)\/"
+                        },
+                        {
+                            "FileName":  "pipelinepredictivoia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\backup_golden_20250928_200328\\agents\\ventascrm\\pipelinepredictivoia.py",
+                            "SizeKB":  4.21,
+                            "LastModified":  "\/Date(1768330941716)\/"
+                        },
+                        {
+                            "FileName":  "dia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\lambda-deployment\\scipy\\sparse\\dia.py",
+                            "SizeKB":  0.57,
+                            "LastModified":  "\/Date(1768330949835)\/"
+                        },
+                        {
+                            "FileName":  "_dia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\legacy_flask\\lambda-deployment\\scipy\\sparse\\_dia.py",
+                            "SizeKB":  24.01,
+                            "LastModified":  "\/Date(1768330949740)\/"
+                        },
+                        {
+                            "FileName":  "test_contentperformanceia.py",
+                            "Type":  "IA",
+                            "RelativePath":  "\\tests\\agentes_avanzados\\test_contentperformanceia.py",
+                            "SizeKB":  0.23,
+                            "LastModified":  "\/Date(1768330957588)\/"
+                        },
+                        {
+                            "FileName":  "check_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\check_agent.py",
+                            "SizeKB":  0.56,
+                            "LastModified":  "\/Date(1769189174611)\/"
+                        },
+                        {
+                            "FileName":  "evaluate_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\evaluate_agent.py",
+                            "SizeKB":  14.94,
+                            "LastModified":  "\/Date(1768330940954)\/"
+                        },
+                        {
+                            "FileName":  "run_superagent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\run_superagent.py",
+                            "SizeKB":  0.62,
+                            "LastModified":  "\/Date(1768330957445)\/"
+                        },
+                        {
+                            "FileName":  "analisis_financiero_super_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\agents\\contabilidad\\analisis_financiero_super_agent.py",
+                            "SizeKB":  56.3,
+                            "LastModified":  "\/Date(1768330939510)\/"
+                        },
+                        {
+                            "FileName":  "google_ads_budget_pacing_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\agents\\marketing\\advertising\\agents\\marketing\\google_ads_budget_pacing_agent.py",
+                            "SizeKB":  10.76,
+                            "LastModified":  "\/Date(1770051225658)\/"
+                        },
+                        {
+                            "FileName":  "google_ads_strategist_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\agents\\marketing\\advertising\\agents\\marketing\\google_ads_strategist_agent.py",
+                            "SizeKB":  15.69,
+                            "LastModified":  "\/Date(1770051225658)\/"
+                        },
+                        {
+                            "FileName":  "orchestrator_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\agents\\marketing\\advertising\\agents\\marketing\\orchestrator_agent.py",
+                            "SizeKB":  12.44,
+                            "LastModified":  "\/Date(1770051225660)\/"
+                        },
+                        {
+                            "FileName":  "rsa_ad_copy_generator_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\agents\\marketing\\advertising\\agents\\marketing\\rsa_ad_copy_generator_agent.py",
+                            "SizeKB":  19.06,
+                            "LastModified":  "\/Date(1770051225660)\/"
+                        },
+                        {
+                            "FileName":  "search_terms_cleaner_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\agents\\marketing\\advertising\\agents\\marketing\\search_terms_cleaner_agent.py",
+                            "SizeKB":  15.35,
+                            "LastModified":  "\/Date(1770051225660)\/"
+                        },
+                        {
+                            "FileName":  "base_hyper_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\hyper_agents\\core\\base_hyper_agent.py",
+                            "SizeKB":  9.72,
+                            "LastModified":  "\/Date(1768517620000)\/"
+                        },
+                        {
+                            "FileName":  "event_trigger_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\hyper_agents\\triggers\\event_trigger_agent.py",
+                            "SizeKB":  15.8,
+                            "LastModified":  "\/Date(1768520218000)\/"
+                        },
+                        {
+                            "FileName":  "user_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\legacy_flask\\lambda-deployment\\werkzeug\\user_agent.py",
+                            "SizeKB":  1.43,
+                            "LastModified":  "\/Date(1768330954055)\/"
+                        },
+                        {
+                            "FileName":  "google_ads_budget_pacing_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\google_ads_budget_pacing_agent.py",
+                            "SizeKB":  10.76,
+                            "LastModified":  "\/Date(1770051225658)\/"
+                        },
+                        {
+                            "FileName":  "google_ads_strategist_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\google_ads_strategist_agent.py",
+                            "SizeKB":  15.69,
+                            "LastModified":  "\/Date(1770051225658)\/"
+                        },
+                        {
+                            "FileName":  "orchestrator_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\orchestrator_agent.py",
+                            "SizeKB":  12.44,
+                            "LastModified":  "\/Date(1770051225660)\/"
+                        },
+                        {
+                            "FileName":  "rsa_ad_copy_generator_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\rsa_ad_copy_generator_agent.py",
+                            "SizeKB":  19.06,
+                            "LastModified":  "\/Date(1770051225660)\/"
+                        },
+                        {
+                            "FileName":  "search_terms_cleaner_agent.py",
+                            "Type":  "Agent",
+                            "RelativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\search_terms_cleaner_agent.py",
+                            "SizeKB":  15.35,
+                            "LastModified":  "\/Date(1770051225660)\/"
+                        }
+                    ],
+    "SampleAnalysis":  [
+                           {
+                               "FileName":  "conciliacionbancaria.py",
+                               "HasClass":  true,
+                               "ClassName":  "ConciliacionbancariaConfig",
+                               "Lines":  50
+                           },
+                           {
+                               "FileName":  "facturacionia.py",
+                               "HasClass":  true,
+                               "ClassName":  "InvoicingAIEngine",
+                               "Lines":  50
+                           },
+                           {
+                               "FileName":  "flujocajaia.py",
+                               "HasClass":  true,
+                               "ClassName":  "FlujocajaiaConfig",
+                               "Lines":  50
+                           },
+                           {
+                               "FileName":  "tributarioia.py",
+                               "HasClass":  true,
+                               "ClassName":  "TaxComplianceEngine",
+                               "Lines":  50
+                           },
+                           {
+                               "FileName":  "competenciasia.py",
+                               "HasClass":  true,
+                               "ClassName":  "CompetencyAIEngine",
+                               "Lines":  50
+                           },
+                           {
+                               "FileName":  "evaluacionia.py",
+                               "HasClass":  true,
+                               "ClassName":  "EvaluacioniaConfig",
+                               "Lines":  50
+                           },
+                           {
+                               "FileName":  "tutorvirtualia.py",
+                               "HasClass":  true,
+                               "ClassName":  "VirtualTutorAIEngine",
+                               "Lines":  50
+                           },
+                           {
+                               "FileName":  "innovacionia.py",
+                               "HasClass":  true,
+                               "ClassName":  "InnovationAIEngine",
+                               "Lines":  50
+                           },
+                           {
+                               "FileName":  "tendenciasia.py",
+                               "HasClass":  true,
+                               "ClassName":  "TendenciasiaConfig",
+                               "Lines":  50
+                           },
+                           {
+                               "FileName":  "controlcalidadia.py",
+                               "HasClass":  true,
+                               "ClassName":  "QualityControlAIEngine",
+                               "Lines":  50
+                           }
+                       ],
+    "Statistics":  {
+                       "AverageFileSizeKB":  6.61,
+                       "TotalSizeMB":  1.41,
+                       "FilesWithClasses":  10,
+                       "RecentFiles":  219
+                   }
+}

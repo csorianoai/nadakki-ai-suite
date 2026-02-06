@@ -1,0 +1,584 @@
+﻿{
+    "Timestamp":  "2026-02-04 11:11:41",
+    "TotalFiles":  93,
+    "IA_Files":  59,
+    "Agent_Files":  34,
+    "Modules":  {
+                    "unknown":  [
+                                    {
+                                        "Name":  "check_agent.py",
+                                        "Path":  "check_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\check_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "evaluate_agent.py",
+                                        "Path":  "evaluate_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\evaluate_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "run_superagent.py",
+                                        "Path":  "run_superagent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\run_superagent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_abtest_agent.py",
+                                        "Path":  "test_abtest_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_abtest_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_attribution_agent.py",
+                                        "Path":  "test_attribution_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_attribution_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_budget_agent.py",
+                                        "Path":  "test_budget_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_budget_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_campaign_agent.py",
+                                        "Path":  "test_campaign_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_campaign_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_competitor_agent.py",
+                                        "Path":  "test_competitor_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_competitor_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_content_agent.py",
+                                        "Path":  "test_content_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_content_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_creative_agent.py",
+                                        "Path":  "test_creative_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_creative_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_email_agent.py",
+                                        "Path":  "test_email_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_email_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_influencer_agent.py",
+                                        "Path":  "test_influencer_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_influencer_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_journey_agent.py",
+                                        "Path":  "test_journey_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_journey_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_lead_agent.py",
+                                        "Path":  "test_lead_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_lead_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_mmm_agent.py",
+                                        "Path":  "test_mmm_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_mmm_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_multi_agent.py",
+                                        "Path":  "test_multi_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_multi_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_orchestrator_agent.py",
+                                        "Path":  "test_orchestrator_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_orchestrator_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_personalization_agent.py",
+                                        "Path":  "test_personalization_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_personalization_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_real_agent.py",
+                                        "Path":  "test_real_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_real_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_retention_agent.py",
+                                        "Path":  "test_retention_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_retention_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_segmentation_agent.py",
+                                        "Path":  "test_segmentation_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_segmentation_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_social_agent.py",
+                                        "Path":  "test_social_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_social_agent.py",
+                                        "Type":  "Agent"
+                                    },
+                                    {
+                                        "Name":  "test_super_agent.py",
+                                        "Path":  "test_super_agent.py",
+                                        "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\test_super_agent.py",
+                                        "Type":  "Agent"
+                                    }
+                                ],
+                    "marketing":  [
+                                      {
+                                          "Name":  "google_ads_budget_pacing_agent.py",
+                                          "Path":  "agents/marketing/advertising/agents/marketing/google_ads_budget_pacing_agent.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\agents\\marketing\\google_ads_budget_pacing_agent.py",
+                                          "Type":  "Agent"
+                                      },
+                                      {
+                                          "Name":  "google_ads_strategist_agent.py",
+                                          "Path":  "agents/marketing/advertising/agents/marketing/google_ads_strategist_agent.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\agents\\marketing\\google_ads_strategist_agent.py",
+                                          "Type":  "Agent"
+                                      },
+                                      {
+                                          "Name":  "orchestrator_agent.py",
+                                          "Path":  "agents/marketing/advertising/agents/marketing/orchestrator_agent.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\agents\\marketing\\orchestrator_agent.py",
+                                          "Type":  "Agent"
+                                      },
+                                      {
+                                          "Name":  "rsa_ad_copy_generator_agent.py",
+                                          "Path":  "agents/marketing/advertising/agents/marketing/rsa_ad_copy_generator_agent.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\agents\\marketing\\rsa_ad_copy_generator_agent.py",
+                                          "Type":  "Agent"
+                                      },
+                                      {
+                                          "Name":  "search_terms_cleaner_agent.py",
+                                          "Path":  "agents/marketing/advertising/agents/marketing/search_terms_cleaner_agent.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\agents\\marketing\\search_terms_cleaner_agent.py",
+                                          "Type":  "Agent"
+                                      },
+                                      {
+                                          "Name":  "abtestingia.py",
+                                          "Path":  "agents/marketing/abtestingia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\abtestingia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "abtestingimpactia.py",
+                                          "Path":  "agents/marketing/abtestingimpactia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\abtestingimpactia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "attributionmodelia.py",
+                                          "Path":  "agents/marketing/attributionmodelia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\attributionmodelia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "audiencesegmenteria.py",
+                                          "Path":  "agents/marketing/audiencesegmenteria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\audiencesegmenteria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "budgetforecastia.py",
+                                          "Path":  "agents/marketing/budgetforecastia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\budgetforecastia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "campaignoptimizeria.py",
+                                          "Path":  "agents/marketing/campaignoptimizeria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\campaignoptimizeria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "campaignstrategyorchestratoria.py",
+                                          "Path":  "agents/marketing/campaignstrategyorchestratoria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\campaignstrategyorchestratoria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "cashofferfilteria.py",
+                                          "Path":  "agents/marketing/cashofferfilteria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\cashofferfilteria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "channelattributia.py",
+                                          "Path":  "agents/marketing/channelattributia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\channelattributia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "competitoranalyzeria.py",
+                                          "Path":  "agents/marketing/competitoranalyzeria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\competitoranalyzeria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "competitorintelligenceia.py",
+                                          "Path":  "agents/marketing/competitorintelligenceia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\competitorintelligenceia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "contactqualityia.py",
+                                          "Path":  "agents/marketing/contactqualityia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\contactqualityia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "contentgeneratoria.py",
+                                          "Path":  "agents/marketing/contentgeneratoria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\contentgeneratoria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "contentperformanceia.py",
+                                          "Path":  "agents/marketing/contentperformanceia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\contentperformanceia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "conversioncohortia.py",
+                                          "Path":  "agents/marketing/conversioncohortia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\conversioncohortia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "creativeanalyzeria.py",
+                                          "Path":  "agents/marketing/creativeanalyzeria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\creativeanalyzeria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "customersegmentatonia.py",
+                                          "Path":  "agents/marketing/customersegmentatonia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\customersegmentatonia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "emailautomationia.py",
+                                          "Path":  "agents/marketing/emailautomationia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\emailautomationia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "geosegmentationia.py",
+                                          "Path":  "agents/marketing/geosegmentationia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\geosegmentationia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "influencermatcheria.py",
+                                          "Path":  "agents/marketing/influencermatcheria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\influencermatcheria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "influencermatchingia.py",
+                                          "Path":  "agents/marketing/influencermatchingia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\influencermatchingia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "journeyoptimizeria.py",
+                                          "Path":  "agents/marketing/journeyoptimizeria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\journeyoptimizeria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "leadscoria.py",
+                                          "Path":  "agents/marketing/leadscoria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\leadscoria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "leadscoringia.py",
+                                          "Path":  "agents/marketing/leadscoringia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\leadscoringia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "marketingmixmodelia.py",
+                                          "Path":  "agents/marketing/marketingmixmodelia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\marketingmixmodelia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "minimalformia.py",
+                                          "Path":  "agents/marketing/minimalformia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\minimalformia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "personalizationengineia.py",
+                                          "Path":  "agents/marketing/personalizationengineia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\personalizationengineia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "predictiveleadia.py",
+                                          "Path":  "agents/marketing/predictiveleadia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\predictiveleadia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "pricingoptimizeria.py",
+                                          "Path":  "agents/marketing/pricingoptimizeria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\pricingoptimizeria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "productaffinityia.py",
+                                          "Path":  "agents/marketing/productaffinityia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\productaffinityia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "retentionpredictoria.py",
+                                          "Path":  "agents/marketing/retentionpredictoria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\retentionpredictoria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "sentimentanalyzeria.py",
+                                          "Path":  "agents/marketing/sentimentanalyzeria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\sentimentanalyzeria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "sociallisteningia.py",
+                                          "Path":  "agents/marketing/sociallisteningia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\sociallisteningia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "socialpostgeneratoria.py",
+                                          "Path":  "agents/marketing/socialpostgeneratoria.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\socialpostgeneratoria.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "google_ads_budget_pacing_agent.py",
+                                          "Path":  "nadakki-google-ads-mvp/agents/marketing/google_ads_budget_pacing_agent.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\nadakki-google-ads-mvp\\agents\\marketing\\google_ads_budget_pacing_agent.py",
+                                          "Type":  "Agent"
+                                      },
+                                      {
+                                          "Name":  "google_ads_strategist_agent.py",
+                                          "Path":  "nadakki-google-ads-mvp/agents/marketing/google_ads_strategist_agent.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\nadakki-google-ads-mvp\\agents\\marketing\\google_ads_strategist_agent.py",
+                                          "Type":  "Agent"
+                                      },
+                                      {
+                                          "Name":  "orchestrator_agent.py",
+                                          "Path":  "nadakki-google-ads-mvp/agents/marketing/orchestrator_agent.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\nadakki-google-ads-mvp\\agents\\marketing\\orchestrator_agent.py",
+                                          "Type":  "Agent"
+                                      },
+                                      {
+                                          "Name":  "rsa_ad_copy_generator_agent.py",
+                                          "Path":  "nadakki-google-ads-mvp/agents/marketing/rsa_ad_copy_generator_agent.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\nadakki-google-ads-mvp\\agents\\marketing\\rsa_ad_copy_generator_agent.py",
+                                          "Type":  "Agent"
+                                      },
+                                      {
+                                          "Name":  "search_terms_cleaner_agent.py",
+                                          "Path":  "nadakki-google-ads-mvp/agents/marketing/search_terms_cleaner_agent.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\nadakki-google-ads-mvp\\agents\\marketing\\search_terms_cleaner_agent.py",
+                                          "Type":  "Agent"
+                                      }
+                                  ],
+                    "educacion":  [
+                                      {
+                                          "Name":  "competenciasia.py",
+                                          "Path":  "agents/educacion/competenciasia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\educacion\\competenciasia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "evaluacionia.py",
+                                          "Path":  "agents/educacion/evaluacionia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\educacion\\evaluacionia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "tutorvirtualia.py",
+                                          "Path":  "agents/educacion/tutorvirtualia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\educacion\\tutorvirtualia.py",
+                                          "Type":  "IA"
+                                      }
+                                  ],
+                    "presupuesto":  [
+                                        {
+                                            "Name":  "forecastingia.py",
+                                            "Path":  "agents/presupuesto/forecastingia.py",
+                                            "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\presupuesto\\forecastingia.py",
+                                            "Type":  "IA"
+                                        },
+                                        {
+                                            "Name":  "presupuestopredictivoia.py",
+                                            "Path":  "agents/presupuesto/presupuestopredictivoia.py",
+                                            "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\presupuesto\\presupuestopredictivoia.py",
+                                            "Type":  "IA"
+                                        }
+                                    ],
+                    "rrhh":  [
+                                 {
+                                     "Name":  "capacitacionia.py",
+                                     "Path":  "agents/rrhh/capacitacionia.py",
+                                     "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\rrhh\\capacitacionia.py",
+                                     "Type":  "IA"
+                                 },
+                                 {
+                                     "Name":  "cvanalyzeria.py",
+                                     "Path":  "agents/rrhh/cvanalyzeria.py",
+                                     "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\rrhh\\cvanalyzeria.py",
+                                     "Type":  "IA"
+                                 },
+                                 {
+                                     "Name":  "selectioncvia.py",
+                                     "Path":  "agents/rrhh/selectioncvia.py",
+                                     "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\rrhh\\selectioncvia.py",
+                                     "Type":  "IA"
+                                 }
+                             ],
+                    "logistica":  [
+                                      {
+                                          "Name":  "controlcalidadia.py",
+                                          "Path":  "agents/logistica/controlcalidadia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\logistica\\controlcalidadia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "controlpedidosia.py",
+                                          "Path":  "agents/logistica/controlpedidosia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\logistica\\controlpedidosia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "evaluadorproveedoresia.py",
+                                          "Path":  "agents/logistica/evaluadorproveedoresia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\logistica\\evaluadorproveedoresia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "optimizadorrutasia.py",
+                                          "Path":  "agents/logistica/optimizadorrutasia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\logistica\\optimizadorrutasia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "previsioninventarioia.py",
+                                          "Path":  "agents/logistica/previsioninventarioia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\logistica\\previsioninventarioia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "sostenibilidadia.py",
+                                          "Path":  "agents/logistica/sostenibilidadia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\logistica\\sostenibilidadia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "trazabilidadia.py",
+                                          "Path":  "agents/logistica/trazabilidadia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\logistica\\trazabilidadia.py",
+                                          "Type":  "IA"
+                                      }
+                                  ],
+                    "contabilidad":  [
+                                         {
+                                             "Name":  "analisis_financiero_super_agent.py",
+                                             "Path":  "agents/contabilidad/analisis_financiero_super_agent.py",
+                                             "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\contabilidad\\analisis_financiero_super_agent.py",
+                                             "Type":  "Agent"
+                                         },
+                                         {
+                                             "Name":  "conciliacionbancaria.py",
+                                             "Path":  "agents/contabilidad/conciliacionbancaria.py",
+                                             "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\contabilidad\\conciliacionbancaria.py",
+                                             "Type":  "IA"
+                                         },
+                                         {
+                                             "Name":  "facturacionia.py",
+                                             "Path":  "agents/contabilidad/facturacionia.py",
+                                             "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\contabilidad\\facturacionia.py",
+                                             "Type":  "IA"
+                                         },
+                                         {
+                                             "Name":  "flujocajaia.py",
+                                             "Path":  "agents/contabilidad/flujocajaia.py",
+                                             "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\contabilidad\\flujocajaia.py",
+                                             "Type":  "IA"
+                                         },
+                                         {
+                                             "Name":  "tributarioia.py",
+                                             "Path":  "agents/contabilidad/tributarioia.py",
+                                             "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\contabilidad\\tributarioia.py",
+                                             "Type":  "IA"
+                                         }
+                                     ],
+                    "investigacion":  [
+                                          {
+                                              "Name":  "innovacionia.py",
+                                              "Path":  "agents/investigacion/innovacionia.py",
+                                              "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\investigacion\\innovacionia.py",
+                                              "Type":  "IA"
+                                          },
+                                          {
+                                              "Name":  "tendenciasia.py",
+                                              "Path":  "agents/investigacion/tendenciasia.py",
+                                              "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\investigacion\\tendenciasia.py",
+                                              "Type":  "IA"
+                                          }
+                                      ],
+                    "ventascrm":  [
+                                      {
+                                          "Name":  "cierrepredictivoia.py",
+                                          "Path":  "agents/ventascrm/cierrepredictivoia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\ventascrm\\cierrepredictivoia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "clientelifecycleia.py",
+                                          "Path":  "agents/ventascrm/clientelifecycleia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\ventascrm\\clientelifecycleia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "leadscoringia.py",
+                                          "Path":  "agents/ventascrm/leadscoringia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\ventascrm\\leadscoringia.py",
+                                          "Type":  "IA"
+                                      },
+                                      {
+                                          "Name":  "pipelinepredictivoia.py",
+                                          "Path":  "agents/ventascrm/pipelinepredictivoia.py",
+                                          "FullPath":  "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\ventascrm\\pipelinepredictivoia.py",
+                                          "Type":  "IA"
+                                      }
+                                  ]
+                }
+}

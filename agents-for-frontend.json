@@ -1,0 +1,2476 @@
+﻿{
+    "totalAgents":  219,
+    "googleAdsAgents":  7,
+    "modules":  10,
+    "agentsByModule":  [
+                           {
+                               "module":  "marketing",
+                               "count":  91,
+                               "agents":  [
+                                              {
+                                                  "Name":  "Abtesting",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_abtesting"
+                                              },
+                                              {
+                                                  "Name":  "Abtestingimpact",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_abtestingimpact"
+                                              },
+                                              {
+                                                  "Name":  "Attributionmodel",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_attributionmodel"
+                                              },
+                                              {
+                                                  "Name":  "Audiencesegmenter",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_audiencesegmenter"
+                                              },
+                                              {
+                                                  "Name":  "Budgetforecast",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_budgetforecast"
+                                              },
+                                              {
+                                                  "Name":  "Campaignoptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_campaignoptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Campaignstrategyorchestrator",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_campaignstrategyorchestrator"
+                                              },
+                                              {
+                                                  "Name":  "Cashofferfilter",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_cashofferfilter"
+                                              },
+                                              {
+                                                  "Name":  "Channelattribut",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_channelattribut"
+                                              },
+                                              {
+                                                  "Name":  "Competitoranalyzer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_competitoranalyzer"
+                                              },
+                                              {
+                                                  "Name":  "Competitorintelligence",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_competitorintelligence"
+                                              },
+                                              {
+                                                  "Name":  "Contactquality",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_contactquality"
+                                              },
+                                              {
+                                                  "Name":  "Contentgenerator",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_contentgenerator"
+                                              },
+                                              {
+                                                  "Name":  "Contentperformance",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_contentperformance"
+                                              },
+                                              {
+                                                  "Name":  "Conversioncohort",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_conversioncohort"
+                                              },
+                                              {
+                                                  "Name":  "Creativeanalyzer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_creativeanalyzer"
+                                              },
+                                              {
+                                                  "Name":  "Customersegmentaton",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_customersegmentaton"
+                                              },
+                                              {
+                                                  "Name":  "Emailautomation",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_emailautomation"
+                                              },
+                                              {
+                                                  "Name":  "Geosegmentation",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_geosegmentation"
+                                              },
+                                              {
+                                                  "Name":  "Influencermatcher",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_influencermatcher"
+                                              },
+                                              {
+                                                  "Name":  "Influencermatching",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_influencermatching"
+                                              },
+                                              {
+                                                  "Name":  "Journeyoptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_journeyoptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Leadscor",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_leadscor"
+                                              },
+                                              {
+                                                  "Name":  "Leadscoring",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_leadscoring"
+                                              },
+                                              {
+                                                  "Name":  "Marketingmixmodel",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_marketingmixmodel"
+                                              },
+                                              {
+                                                  "Name":  "Minimalform",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_minimalform"
+                                              },
+                                              {
+                                                  "Name":  "Personalizationengine",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_personalizationengine"
+                                              },
+                                              {
+                                                  "Name":  "Predictivelead",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_predictivelead"
+                                              },
+                                              {
+                                                  "Name":  "Pricingoptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_pricingoptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Productaffinity",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_productaffinity"
+                                              },
+                                              {
+                                                  "Name":  "Retentionpredictor",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_retentionpredictor"
+                                              },
+                                              {
+                                                  "Name":  "Sentimentanalyzer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_sentimentanalyzer"
+                                              },
+                                              {
+                                                  "Name":  "Sociallistening",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_sociallistening"
+                                              },
+                                              {
+                                                  "Name":  "Socialpostgenerator",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_socialpostgenerator"
+                                              },
+                                              {
+                                                  "Name":  "Brandsentiment",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_brandsentiment"
+                                              },
+                                              {
+                                                  "Name":  "Contentvirality",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_contentvirality"
+                                              },
+                                              {
+                                                  "Name":  "Fidelizedprofile",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_fidelizedprofile"
+                                              },
+                                              {
+                                                  "Name":  "Influencermatch",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_influencermatch"
+                                              },
+                                              {
+                                                  "Name":  "Videoreelautogen",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_videoreelautogen"
+                                              },
+                                              {
+                                                  "Name":  "Abtestingimpact",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_abtestingimpact"
+                                              },
+                                              {
+                                                  "Name":  "Adschanneloptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_adschanneloptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Brandsentiment",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_brandsentiment"
+                                              },
+                                              {
+                                                  "Name":  "Budgetallocator",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_budgetallocator"
+                                              },
+                                              {
+                                                  "Name":  "Campaignoptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_campaignoptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Cashofferfilter",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_cashofferfilter"
+                                              },
+                                              {
+                                                  "Name":  "Channelblend",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_channelblend"
+                                              },
+                                              {
+                                                  "Name":  "Clientprofiling",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_clientprofiling"
+                                              },
+                                              {
+                                                  "Name":  "Competitorintelligence",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_competitorintelligence"
+                                              },
+                                              {
+                                                  "Name":  "Contactquality",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_contactquality"
+                                              },
+                                              {
+                                                  "Name":  "Contentengagement",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_contentengagement"
+                                              },
+                                              {
+                                                  "Name":  "Contentgenerator",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_contentgenerator"
+                                              },
+                                              {
+                                                  "Name":  "Contentvirality",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_contentvirality"
+                                              },
+                                              {
+                                                  "Name":  "Conversioncohort",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_conversioncohort"
+                                              },
+                                              {
+                                                  "Name":  "Conversionpredictor",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_conversionpredictor"
+                                              },
+                                              {
+                                                  "Name":  "Emailautomation",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_emailautomation"
+                                              },
+                                              {
+                                                  "Name":  "Emotiontracker",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_emotiontracker"
+                                              },
+                                              {
+                                                  "Name":  "Fidelizedprofile",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_fidelizedprofile"
+                                              },
+                                              {
+                                                  "Name":  "Funneloptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_funneloptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Geosegmentation",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_geosegmentation"
+                                              },
+                                              {
+                                                  "Name":  "Heatmapinsight",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_heatmapinsight"
+                                              },
+                                              {
+                                                  "Name":  "Influencermatcher",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_influencermatcher"
+                                              },
+                                              {
+                                                  "Name":  "Influencermatch",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_influencermatch"
+                                              },
+                                              {
+                                                  "Name":  "Leadretention",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_leadretention"
+                                              },
+                                              {
+                                                  "Name":  "Leadscoring",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_leadscoring"
+                                              },
+                                              {
+                                                  "Name":  "Leadsoptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_leadsoptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Marketsegmentation",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_marketsegmentation"
+                                              },
+                                              {
+                                                  "Name":  "Messagepersonalizer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_messagepersonalizer"
+                                              },
+                                              {
+                                                  "Name":  "Minimalform",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_minimalform"
+                                              },
+                                              {
+                                                  "Name":  "Multichannelattribution",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_multichannelattribution"
+                                              },
+                                              {
+                                                  "Name":  "Offersforecast",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_offersforecast"
+                                              },
+                                              {
+                                                  "Name":  "Offerspersonalization",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_offerspersonalization"
+                                              },
+                                              {
+                                                  "Name":  "Productaffinity",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_productaffinity"
+                                              },
+                                              {
+                                                  "Name":  "Promotionsengine",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_promotionsengine"
+                                              },
+                                              {
+                                                  "Name":  "Retargetingoptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_retargetingoptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Roiattribution",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_roiattribution"
+                                              },
+                                              {
+                                                  "Name":  "Searchintenttracker",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_searchintenttracker"
+                                              },
+                                              {
+                                                  "Name":  "Seasonalityanalyzer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_seasonalityanalyzer"
+                                              },
+                                              {
+                                                  "Name":  "Socialpostgenerator",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_socialpostgenerator"
+                                              },
+                                              {
+                                                  "Name":  "Touchpointanalyzer",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_touchpointanalyzer"
+                                              },
+                                              {
+                                                  "Name":  "Videoreelautogen",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_videoreelautogen"
+                                              },
+                                              {
+                                                  "Name":  "Viralpotential",
+                                                  "Type":  "IA",
+                                                  "id":  "marketing_viralpotential"
+                                              },
+                                              {
+                                                  "Name":  "Google Ads Budget Pacing ",
+                                                  "Type":  "Agent",
+                                                  "id":  "marketing_google_ads_budget_pacing_"
+                                              },
+                                              {
+                                                  "Name":  "Google Ads Strategist ",
+                                                  "Type":  "Agent",
+                                                  "id":  "marketing_google_ads_strategist_"
+                                              },
+                                              {
+                                                  "Name":  "Orchestrator ",
+                                                  "Type":  "Agent",
+                                                  "id":  "marketing_orchestrator_"
+                                              },
+                                              {
+                                                  "Name":  "Rsa Ad Copy Generator ",
+                                                  "Type":  "Agent",
+                                                  "id":  "marketing_rsa_ad_copy_generator_"
+                                              },
+                                              {
+                                                  "Name":  "Search Terms Cleaner ",
+                                                  "Type":  "Agent",
+                                                  "id":  "marketing_search_terms_cleaner_"
+                                              },
+                                              {
+                                                  "Name":  "Google Ads Budget Pacing ",
+                                                  "Type":  "Agent",
+                                                  "id":  "marketing_google_ads_budget_pacing_"
+                                              },
+                                              {
+                                                  "Name":  "Google Ads Strategist ",
+                                                  "Type":  "Agent",
+                                                  "id":  "marketing_google_ads_strategist_"
+                                              },
+                                              {
+                                                  "Name":  "Orchestrator ",
+                                                  "Type":  "Agent",
+                                                  "id":  "marketing_orchestrator_"
+                                              },
+                                              {
+                                                  "Name":  "Rsa Ad Copy Generator ",
+                                                  "Type":  "Agent",
+                                                  "id":  "marketing_rsa_ad_copy_generator_"
+                                              },
+                                              {
+                                                  "Name":  "Search Terms Cleaner ",
+                                                  "Type":  "Agent",
+                                                  "id":  "marketing_search_terms_cleaner_"
+                                              }
+                                          ]
+                           },
+                           {
+                               "module":  "unknown",
+                               "count":  76,
+                               "agents":  [
+                                              {
+                                                  "Name":  "Conciliacionbancar",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_conciliacionbancar"
+                                              },
+                                              {
+                                                  "Name":  "Facturacion",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_facturacion"
+                                              },
+                                              {
+                                                  "Name":  "Flujocaja",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_flujocaja"
+                                              },
+                                              {
+                                                  "Name":  "Tributario",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_tributario"
+                                              },
+                                              {
+                                                  "Name":  "Competencias",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_competencias"
+                                              },
+                                              {
+                                                  "Name":  "Evaluacion",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_evaluacion"
+                                              },
+                                              {
+                                                  "Name":  "Tutorvirtual",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_tutorvirtual"
+                                              },
+                                              {
+                                                  "Name":  "Innovacion",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_innovacion"
+                                              },
+                                              {
+                                                  "Name":  "Tendencias",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_tendencias"
+                                              },
+                                              {
+                                                  "Name":  "Controlcalidad",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_controlcalidad"
+                                              },
+                                              {
+                                                  "Name":  "Controlpedidos",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_controlpedidos"
+                                              },
+                                              {
+                                                  "Name":  "Evaluadorproveedores",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_evaluadorproveedores"
+                                              },
+                                              {
+                                                  "Name":  "Optimizadorrutas",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_optimizadorrutas"
+                                              },
+                                              {
+                                                  "Name":  "Previsioninventario",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_previsioninventario"
+                                              },
+                                              {
+                                                  "Name":  "Sostenibilidad",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_sostenibilidad"
+                                              },
+                                              {
+                                                  "Name":  "Trazabilidad",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_trazabilidad"
+                                              },
+                                              {
+                                                  "Name":  "Abtestingimpact",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_abtestingimpact"
+                                              },
+                                              {
+                                                  "Name":  "Adschanneloptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_adschanneloptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Brandsentiment",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_brandsentiment"
+                                              },
+                                              {
+                                                  "Name":  "Budgetallocator",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_budgetallocator"
+                                              },
+                                              {
+                                                  "Name":  "Campaignoptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_campaignoptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Cashofferfilter",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_cashofferfilter"
+                                              },
+                                              {
+                                                  "Name":  "Channelblend",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_channelblend"
+                                              },
+                                              {
+                                                  "Name":  "Clientprofiling",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_clientprofiling"
+                                              },
+                                              {
+                                                  "Name":  "Competitorintelligence",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_competitorintelligence"
+                                              },
+                                              {
+                                                  "Name":  "Contactquality",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_contactquality"
+                                              },
+                                              {
+                                                  "Name":  "Contentengagement",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_contentengagement"
+                                              },
+                                              {
+                                                  "Name":  "Contentgenerator",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_contentgenerator"
+                                              },
+                                              {
+                                                  "Name":  "Contentvirality",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_contentvirality"
+                                              },
+                                              {
+                                                  "Name":  "Conversioncohort",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_conversioncohort"
+                                              },
+                                              {
+                                                  "Name":  "Conversionpredictor",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_conversionpredictor"
+                                              },
+                                              {
+                                                  "Name":  "Emailautomation",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_emailautomation"
+                                              },
+                                              {
+                                                  "Name":  "Emotiontracker",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_emotiontracker"
+                                              },
+                                              {
+                                                  "Name":  "Fidelizedprofile",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_fidelizedprofile"
+                                              },
+                                              {
+                                                  "Name":  "Funneloptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_funneloptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Geosegmentation",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_geosegmentation"
+                                              },
+                                              {
+                                                  "Name":  "Heatmapinsight",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_heatmapinsight"
+                                              },
+                                              {
+                                                  "Name":  "Influencermatcher",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_influencermatcher"
+                                              },
+                                              {
+                                                  "Name":  "Influencermatch",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_influencermatch"
+                                              },
+                                              {
+                                                  "Name":  "Leadretention",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_leadretention"
+                                              },
+                                              {
+                                                  "Name":  "Leadscoring",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_leadscoring"
+                                              },
+                                              {
+                                                  "Name":  "Leadsoptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_leadsoptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Marketsegmentation",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_marketsegmentation"
+                                              },
+                                              {
+                                                  "Name":  "Messagepersonalizer",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_messagepersonalizer"
+                                              },
+                                              {
+                                                  "Name":  "Minimalform",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_minimalform"
+                                              },
+                                              {
+                                                  "Name":  "Multichannelattribution",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_multichannelattribution"
+                                              },
+                                              {
+                                                  "Name":  "Offersforecast",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_offersforecast"
+                                              },
+                                              {
+                                                  "Name":  "Offerspersonalization",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_offerspersonalization"
+                                              },
+                                              {
+                                                  "Name":  "Productaffinity",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_productaffinity"
+                                              },
+                                              {
+                                                  "Name":  "Promotionsengine",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_promotionsengine"
+                                              },
+                                              {
+                                                  "Name":  "Retargetingoptimizer",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_retargetingoptimizer"
+                                              },
+                                              {
+                                                  "Name":  "Roiattribution",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_roiattribution"
+                                              },
+                                              {
+                                                  "Name":  "Searchintenttracker",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_searchintenttracker"
+                                              },
+                                              {
+                                                  "Name":  "Seasonalityanalyzer",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_seasonalityanalyzer"
+                                              },
+                                              {
+                                                  "Name":  "Socialpostgenerator",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_socialpostgenerator"
+                                              },
+                                              {
+                                                  "Name":  "Touchpointanalyzer",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_touchpointanalyzer"
+                                              },
+                                              {
+                                                  "Name":  "Videoreelautogen",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_videoreelautogen"
+                                              },
+                                              {
+                                                  "Name":  "Viralpotential",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_viralpotential"
+                                              },
+                                              {
+                                                  "Name":  "Forecasting",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_forecasting"
+                                              },
+                                              {
+                                                  "Name":  "Presupuestopredictivo",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_presupuestopredictivo"
+                                              },
+                                              {
+                                                  "Name":  "Capacitacion",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_capacitacion"
+                                              },
+                                              {
+                                                  "Name":  "Cvanalyzer",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_cvanalyzer"
+                                              },
+                                              {
+                                                  "Name":  "Selectioncv",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_selectioncv"
+                                              },
+                                              {
+                                                  "Name":  "Cierrepredictivo",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_cierrepredictivo"
+                                              },
+                                              {
+                                                  "Name":  "Clientelifecycle",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_clientelifecycle"
+                                              },
+                                              {
+                                                  "Name":  "Leadscoring",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_leadscoring"
+                                              },
+                                              {
+                                                  "Name":  "Pipelinepredictivo",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_pipelinepredictivo"
+                                              },
+                                              {
+                                                  "Name":  "D",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_d"
+                                              },
+                                              {
+                                                  "Name":  " D",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown__d"
+                                              },
+                                              {
+                                                  "Name":  "Test Contentperformance",
+                                                  "Type":  "IA",
+                                                  "id":  "unknown_test_contentperformance"
+                                              },
+                                              {
+                                                  "Name":  "Check ",
+                                                  "Type":  "Agent",
+                                                  "id":  "unknown_check_"
+                                              },
+                                              {
+                                                  "Name":  "Evaluate ",
+                                                  "Type":  "Agent",
+                                                  "id":  "unknown_evaluate_"
+                                              },
+                                              {
+                                                  "Name":  "Run Super",
+                                                  "Type":  "Agent",
+                                                  "id":  "unknown_run_super"
+                                              },
+                                              {
+                                                  "Name":  "Base Hyper ",
+                                                  "Type":  "Agent",
+                                                  "id":  "unknown_base_hyper_"
+                                              },
+                                              {
+                                                  "Name":  "Event Trigger ",
+                                                  "Type":  "Agent",
+                                                  "id":  "unknown_event_trigger_"
+                                              },
+                                              {
+                                                  "Name":  "User ",
+                                                  "Type":  "Agent",
+                                                  "id":  "unknown_user_"
+                                              }
+                                          ]
+                           },
+                           {
+                               "module":  "logistica",
+                               "count":  14,
+                               "agents":  [
+                                              {
+                                                  "Name":  "Controlcalidad",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_controlcalidad"
+                                              },
+                                              {
+                                                  "Name":  "Controlpedidos",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_controlpedidos"
+                                              },
+                                              {
+                                                  "Name":  "Evaluadorproveedores",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_evaluadorproveedores"
+                                              },
+                                              {
+                                                  "Name":  "Optimizadorrutas",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_optimizadorrutas"
+                                              },
+                                              {
+                                                  "Name":  "Previsioninventario",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_previsioninventario"
+                                              },
+                                              {
+                                                  "Name":  "Sostenibilidad",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_sostenibilidad"
+                                              },
+                                              {
+                                                  "Name":  "Trazabilidad",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_trazabilidad"
+                                              },
+                                              {
+                                                  "Name":  "Controlcalidad",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_controlcalidad"
+                                              },
+                                              {
+                                                  "Name":  "Controlpedidos",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_controlpedidos"
+                                              },
+                                              {
+                                                  "Name":  "Evaluadorproveedores",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_evaluadorproveedores"
+                                              },
+                                              {
+                                                  "Name":  "Optimizadorrutas",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_optimizadorrutas"
+                                              },
+                                              {
+                                                  "Name":  "Previsioninventario",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_previsioninventario"
+                                              },
+                                              {
+                                                  "Name":  "Sostenibilidad",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_sostenibilidad"
+                                              },
+                                              {
+                                                  "Name":  "Trazabilidad",
+                                                  "Type":  "IA",
+                                                  "id":  "logistica_trazabilidad"
+                                              }
+                                          ]
+                           },
+                           {
+                               "module":  "contabilidad",
+                               "count":  9,
+                               "agents":  [
+                                              {
+                                                  "Name":  "Conciliacionbancar",
+                                                  "Type":  "IA",
+                                                  "id":  "contabilidad_conciliacionbancar"
+                                              },
+                                              {
+                                                  "Name":  "Facturacion",
+                                                  "Type":  "IA",
+                                                  "id":  "contabilidad_facturacion"
+                                              },
+                                              {
+                                                  "Name":  "Flujocaja",
+                                                  "Type":  "IA",
+                                                  "id":  "contabilidad_flujocaja"
+                                              },
+                                              {
+                                                  "Name":  "Tributario",
+                                                  "Type":  "IA",
+                                                  "id":  "contabilidad_tributario"
+                                              },
+                                              {
+                                                  "Name":  "Conciliacionbancar",
+                                                  "Type":  "IA",
+                                                  "id":  "contabilidad_conciliacionbancar"
+                                              },
+                                              {
+                                                  "Name":  "Facturacion",
+                                                  "Type":  "IA",
+                                                  "id":  "contabilidad_facturacion"
+                                              },
+                                              {
+                                                  "Name":  "Flujocaja",
+                                                  "Type":  "IA",
+                                                  "id":  "contabilidad_flujocaja"
+                                              },
+                                              {
+                                                  "Name":  "Tributario",
+                                                  "Type":  "IA",
+                                                  "id":  "contabilidad_tributario"
+                                              },
+                                              {
+                                                  "Name":  "Analisis Financiero Super ",
+                                                  "Type":  "Agent",
+                                                  "id":  "contabilidad_analisis_financiero_super_"
+                                              }
+                                          ]
+                           },
+                           {
+                               "module":  "ventascrm",
+                               "count":  8,
+                               "agents":  [
+                                              {
+                                                  "Name":  "Cierrepredictivo",
+                                                  "Type":  "IA",
+                                                  "id":  "ventascrm_cierrepredictivo"
+                                              },
+                                              {
+                                                  "Name":  "Clientelifecycle",
+                                                  "Type":  "IA",
+                                                  "id":  "ventascrm_clientelifecycle"
+                                              },
+                                              {
+                                                  "Name":  "Leadscoring",
+                                                  "Type":  "IA",
+                                                  "id":  "ventascrm_leadscoring"
+                                              },
+                                              {
+                                                  "Name":  "Pipelinepredictivo",
+                                                  "Type":  "IA",
+                                                  "id":  "ventascrm_pipelinepredictivo"
+                                              },
+                                              {
+                                                  "Name":  "Cierrepredictivo",
+                                                  "Type":  "IA",
+                                                  "id":  "ventascrm_cierrepredictivo"
+                                              },
+                                              {
+                                                  "Name":  "Clientelifecycle",
+                                                  "Type":  "IA",
+                                                  "id":  "ventascrm_clientelifecycle"
+                                              },
+                                              {
+                                                  "Name":  "Leadscoring",
+                                                  "Type":  "IA",
+                                                  "id":  "ventascrm_leadscoring"
+                                              },
+                                              {
+                                                  "Name":  "Pipelinepredictivo",
+                                                  "Type":  "IA",
+                                                  "id":  "ventascrm_pipelinepredictivo"
+                                              }
+                                          ]
+                           },
+                           {
+                               "module":  "educacion",
+                               "count":  6,
+                               "agents":  [
+                                              {
+                                                  "Name":  "Competencias",
+                                                  "Type":  "IA",
+                                                  "id":  "educacion_competencias"
+                                              },
+                                              {
+                                                  "Name":  "Evaluacion",
+                                                  "Type":  "IA",
+                                                  "id":  "educacion_evaluacion"
+                                              },
+                                              {
+                                                  "Name":  "Tutorvirtual",
+                                                  "Type":  "IA",
+                                                  "id":  "educacion_tutorvirtual"
+                                              },
+                                              {
+                                                  "Name":  "Competencias",
+                                                  "Type":  "IA",
+                                                  "id":  "educacion_competencias"
+                                              },
+                                              {
+                                                  "Name":  "Evaluacion",
+                                                  "Type":  "IA",
+                                                  "id":  "educacion_evaluacion"
+                                              },
+                                              {
+                                                  "Name":  "Tutorvirtual",
+                                                  "Type":  "IA",
+                                                  "id":  "educacion_tutorvirtual"
+                                              }
+                                          ]
+                           },
+                           {
+                               "module":  "rrhh",
+                               "count":  6,
+                               "agents":  [
+                                              {
+                                                  "Name":  "Capacitacion",
+                                                  "Type":  "IA",
+                                                  "id":  "rrhh_capacitacion"
+                                              },
+                                              {
+                                                  "Name":  "Cvanalyzer",
+                                                  "Type":  "IA",
+                                                  "id":  "rrhh_cvanalyzer"
+                                              },
+                                              {
+                                                  "Name":  "Selectioncv",
+                                                  "Type":  "IA",
+                                                  "id":  "rrhh_selectioncv"
+                                              },
+                                              {
+                                                  "Name":  "Capacitacion",
+                                                  "Type":  "IA",
+                                                  "id":  "rrhh_capacitacion"
+                                              },
+                                              {
+                                                  "Name":  "Cvanalyzer",
+                                                  "Type":  "IA",
+                                                  "id":  "rrhh_cvanalyzer"
+                                              },
+                                              {
+                                                  "Name":  "Selectioncv",
+                                                  "Type":  "IA",
+                                                  "id":  "rrhh_selectioncv"
+                                              }
+                                          ]
+                           },
+                           {
+                               "module":  "investigacion",
+                               "count":  4,
+                               "agents":  [
+                                              {
+                                                  "Name":  "Innovacion",
+                                                  "Type":  "IA",
+                                                  "id":  "investigacion_innovacion"
+                                              },
+                                              {
+                                                  "Name":  "Tendencias",
+                                                  "Type":  "IA",
+                                                  "id":  "investigacion_tendencias"
+                                              },
+                                              {
+                                                  "Name":  "Innovacion",
+                                                  "Type":  "IA",
+                                                  "id":  "investigacion_innovacion"
+                                              },
+                                              {
+                                                  "Name":  "Tendencias",
+                                                  "Type":  "IA",
+                                                  "id":  "investigacion_tendencias"
+                                              }
+                                          ]
+                           },
+                           {
+                               "module":  "presupuesto",
+                               "count":  4,
+                               "agents":  [
+                                              {
+                                                  "Name":  "Forecasting",
+                                                  "Type":  "IA",
+                                                  "id":  "presupuesto_forecasting"
+                                              },
+                                              {
+                                                  "Name":  "Presupuestopredictivo",
+                                                  "Type":  "IA",
+                                                  "id":  "presupuesto_presupuestopredictivo"
+                                              },
+                                              {
+                                                  "Name":  "Forecasting",
+                                                  "Type":  "IA",
+                                                  "id":  "presupuesto_forecasting"
+                                              },
+                                              {
+                                                  "Name":  "Presupuestopredictivo",
+                                                  "Type":  "IA",
+                                                  "id":  "presupuesto_presupuestopredictivo"
+                                              }
+                                          ]
+                           },
+                           {
+                               "module":  "financialcore",
+                               "count":  1,
+                               "agents":  {
+                                              "Name":  "Flujocaja",
+                                              "Type":  "IA",
+                                              "id":  "financialcore_flujocaja"
+                                          }
+                           }
+                       ],
+    "allAgents":  [
+                      {
+                          "id":  "unknown_fidelizedprofile",
+                          "Name":  "Fidelizedprofile",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "investigacion_tendencias",
+                          "Name":  "Tendencias",
+                          "Module":  "investigacion",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_conversioncohort",
+                          "Name":  "Conversioncohort",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_contentgenerator",
+                          "Name":  "Contentgenerator",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_channelblend",
+                          "Name":  "Channelblend",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_clientprofiling",
+                          "Name":  "Clientprofiling",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_adschanneloptimizer",
+                          "Name":  "Adschanneloptimizer",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_leadscoring",
+                          "Name":  "Leadscoring",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "educacion_competencias",
+                          "Name":  "Competencias",
+                          "Module":  "educacion",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "ventascrm_clientelifecycle",
+                          "Name":  "Clientelifecycle",
+                          "Module":  "ventascrm",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_influencermatch",
+                          "Name":  "Influencermatch",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_competencias",
+                          "Name":  "Competencias",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_videoreelautogen",
+                          "Name":  "Videoreelautogen",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_sociallistening",
+                          "Name":  "Sociallistening",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_searchintenttracker",
+                          "Name":  "Searchintenttracker",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_contentvirality",
+                          "Name":  "Contentvirality",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_cashofferfilter",
+                          "Name":  "Cashofferfilter",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_socialpostgenerator",
+                          "Name":  "Socialpostgenerator",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_viralpotential",
+                          "Name":  "Viralpotential",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "rrhh_capacitacion",
+                          "Name":  "Capacitacion",
+                          "Module":  "rrhh",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_google_ads_strategist_",
+                          "Name":  "Google Ads Strategist ",
+                          "Module":  "marketing",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "unknown_base_hyper_",
+                          "Name":  "Base Hyper ",
+                          "Module":  "unknown",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "unknown_evaluate_",
+                          "Name":  "Evaluate ",
+                          "Module":  "unknown",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "logistica_evaluadorproveedores",
+                          "Name":  "Evaluadorproveedores",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_clientelifecycle",
+                          "Name":  "Clientelifecycle",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "educacion_tutorvirtual",
+                          "Name":  "Tutorvirtual",
+                          "Module":  "educacion",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_tendencias",
+                          "Name":  "Tendencias",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "logistica_previsioninventario",
+                          "Name":  "Previsioninventario",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_leadscoring",
+                          "Name":  "Leadscoring",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_retentionpredictor",
+                          "Name":  "Retentionpredictor",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_touchpointanalyzer",
+                          "Name":  "Touchpointanalyzer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_productaffinity",
+                          "Name":  "Productaffinity",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "educacion_evaluacion",
+                          "Name":  "Evaluacion",
+                          "Module":  "educacion",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_multichannelattribution",
+                          "Name":  "Multichannelattribution",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_campaignoptimizer",
+                          "Name":  "Campaignoptimizer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_rsa_ad_copy_generator_",
+                          "Name":  "Rsa Ad Copy Generator ",
+                          "Module":  "marketing",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "rrhh_cvanalyzer",
+                          "Name":  "Cvanalyzer",
+                          "Module":  "rrhh",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_cashofferfilter",
+                          "Name":  "Cashofferfilter",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_user_",
+                          "Name":  "User ",
+                          "Module":  "unknown",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "marketing_leadsoptimizer",
+                          "Name":  "Leadsoptimizer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_previsioninventario",
+                          "Name":  "Previsioninventario",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_emotiontracker",
+                          "Name":  "Emotiontracker",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "logistica_controlcalidad",
+                          "Name":  "Controlcalidad",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_orchestrator_",
+                          "Name":  "Orchestrator ",
+                          "Module":  "marketing",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "unknown__d",
+                          "Name":  " D",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "contabilidad_conciliacionbancar",
+                          "Name":  "Conciliacionbancar",
+                          "Module":  "contabilidad",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_predictivelead",
+                          "Name":  "Predictivelead",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_brandsentiment",
+                          "Name":  "Brandsentiment",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_creativeanalyzer",
+                          "Name":  "Creativeanalyzer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_controlcalidad",
+                          "Name":  "Controlcalidad",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "logistica_previsioninventario",
+                          "Name":  "Previsioninventario",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_flujocaja",
+                          "Name":  "Flujocaja",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "logistica_controlpedidos",
+                          "Name":  "Controlpedidos",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_contactquality",
+                          "Name":  "Contactquality",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_fidelizedprofile",
+                          "Name":  "Fidelizedprofile",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_contentvirality",
+                          "Name":  "Contentvirality",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "educacion_evaluacion",
+                          "Name":  "Evaluacion",
+                          "Module":  "educacion",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "ventascrm_cierrepredictivo",
+                          "Name":  "Cierrepredictivo",
+                          "Module":  "ventascrm",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_conversionpredictor",
+                          "Name":  "Conversionpredictor",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_leadscoring",
+                          "Name":  "Leadscoring",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_cashofferfilter",
+                          "Name":  "Cashofferfilter",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "ventascrm_leadscoring",
+                          "Name":  "Leadscoring",
+                          "Module":  "ventascrm",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_emailautomation",
+                          "Name":  "Emailautomation",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "logistica_optimizadorrutas",
+                          "Name":  "Optimizadorrutas",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "presupuesto_presupuestopredictivo",
+                          "Name":  "Presupuestopredictivo",
+                          "Module":  "presupuesto",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_retargetingoptimizer",
+                          "Name":  "Retargetingoptimizer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_channelblend",
+                          "Name":  "Channelblend",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_conversioncohort",
+                          "Name":  "Conversioncohort",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_marketsegmentation",
+                          "Name":  "Marketsegmentation",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_forecasting",
+                          "Name":  "Forecasting",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_contentvirality",
+                          "Name":  "Contentvirality",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_google_ads_strategist_",
+                          "Name":  "Google Ads Strategist ",
+                          "Module":  "marketing",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "logistica_trazabilidad",
+                          "Name":  "Trazabilidad",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_clientprofiling",
+                          "Name":  "Clientprofiling",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_seasonalityanalyzer",
+                          "Name":  "Seasonalityanalyzer",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "logistica_sostenibilidad",
+                          "Name":  "Sostenibilidad",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_retargetingoptimizer",
+                          "Name":  "Retargetingoptimizer",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "investigacion_innovacion",
+                          "Name":  "Innovacion",
+                          "Module":  "investigacion",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_emailautomation",
+                          "Name":  "Emailautomation",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_campaignstrategyorchestrator",
+                          "Name":  "Campaignstrategyorchestrator",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_evaluadorproveedores",
+                          "Name":  "Evaluadorproveedores",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_campaignoptimizer",
+                          "Name":  "Campaignoptimizer",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_innovacion",
+                          "Name":  "Innovacion",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "educacion_tutorvirtual",
+                          "Name":  "Tutorvirtual",
+                          "Module":  "educacion",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_abtestingimpact",
+                          "Name":  "Abtestingimpact",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_offersforecast",
+                          "Name":  "Offersforecast",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_attributionmodel",
+                          "Name":  "Attributionmodel",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_conversionpredictor",
+                          "Name":  "Conversionpredictor",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "presupuesto_forecasting",
+                          "Name":  "Forecasting",
+                          "Module":  "presupuesto",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_trazabilidad",
+                          "Name":  "Trazabilidad",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_orchestrator_",
+                          "Name":  "Orchestrator ",
+                          "Module":  "marketing",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "unknown_evaluacion",
+                          "Name":  "Evaluacion",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_channelattribut",
+                          "Name":  "Channelattribut",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_videoreelautogen",
+                          "Name":  "Videoreelautogen",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_customersegmentaton",
+                          "Name":  "Customersegmentaton",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_minimalform",
+                          "Name":  "Minimalform",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "ventascrm_leadscoring",
+                          "Name":  "Leadscoring",
+                          "Module":  "ventascrm",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_searchintenttracker",
+                          "Name":  "Searchintenttracker",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_promotionsengine",
+                          "Name":  "Promotionsengine",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_leadretention",
+                          "Name":  "Leadretention",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_selectioncv",
+                          "Name":  "Selectioncv",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "logistica_controlpedidos",
+                          "Name":  "Controlpedidos",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_run_super",
+                          "Name":  "Run Super",
+                          "Module":  "unknown",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "unknown_productaffinity",
+                          "Name":  "Productaffinity",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_pricingoptimizer",
+                          "Name":  "Pricingoptimizer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_abtestingimpact",
+                          "Name":  "Abtestingimpact",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "logistica_trazabilidad",
+                          "Name":  "Trazabilidad",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_leadretention",
+                          "Name":  "Leadretention",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_promotionsengine",
+                          "Name":  "Promotionsengine",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_touchpointanalyzer",
+                          "Name":  "Touchpointanalyzer",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_budgetallocator",
+                          "Name":  "Budgetallocator",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_contactquality",
+                          "Name":  "Contactquality",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_brandsentiment",
+                          "Name":  "Brandsentiment",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_abtesting",
+                          "Name":  "Abtesting",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_socialpostgenerator",
+                          "Name":  "Socialpostgenerator",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_videoreelautogen",
+                          "Name":  "Videoreelautogen",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_google_ads_budget_pacing_",
+                          "Name":  "Google Ads Budget Pacing ",
+                          "Module":  "marketing",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "rrhh_selectioncv",
+                          "Name":  "Selectioncv",
+                          "Module":  "rrhh",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "contabilidad_tributario",
+                          "Name":  "Tributario",
+                          "Module":  "contabilidad",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_sentimentanalyzer",
+                          "Name":  "Sentimentanalyzer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "presupuesto_presupuestopredictivo",
+                          "Name":  "Presupuestopredictivo",
+                          "Module":  "presupuesto",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "educacion_competencias",
+                          "Name":  "Competencias",
+                          "Module":  "educacion",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "contabilidad_analisis_financiero_super_",
+                          "Name":  "Analisis Financiero Super ",
+                          "Module":  "contabilidad",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "investigacion_tendencias",
+                          "Name":  "Tendencias",
+                          "Module":  "investigacion",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_productaffinity",
+                          "Name":  "Productaffinity",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_check_",
+                          "Name":  "Check ",
+                          "Module":  "unknown",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "unknown_controlpedidos",
+                          "Name":  "Controlpedidos",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_contentengagement",
+                          "Name":  "Contentengagement",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_audiencesegmenter",
+                          "Name":  "Audiencesegmenter",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_contactquality",
+                          "Name":  "Contactquality",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_messagepersonalizer",
+                          "Name":  "Messagepersonalizer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_leadscoring",
+                          "Name":  "Leadscoring",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_presupuestopredictivo",
+                          "Name":  "Presupuestopredictivo",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "rrhh_cvanalyzer",
+                          "Name":  "Cvanalyzer",
+                          "Module":  "rrhh",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "contabilidad_conciliacionbancar",
+                          "Name":  "Conciliacionbancar",
+                          "Module":  "contabilidad",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_emotiontracker",
+                          "Name":  "Emotiontracker",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_roiattribution",
+                          "Name":  "Roiattribution",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_google_ads_budget_pacing_",
+                          "Name":  "Google Ads Budget Pacing ",
+                          "Module":  "marketing",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "marketing_contentperformance",
+                          "Name":  "Contentperformance",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_optimizadorrutas",
+                          "Name":  "Optimizadorrutas",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_geosegmentation",
+                          "Name":  "Geosegmentation",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_offerspersonalization",
+                          "Name":  "Offerspersonalization",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "investigacion_innovacion",
+                          "Name":  "Innovacion",
+                          "Module":  "investigacion",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_influencermatching",
+                          "Name":  "Influencermatching",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_contentengagement",
+                          "Name":  "Contentengagement",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_capacitacion",
+                          "Name":  "Capacitacion",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_marketsegmentation",
+                          "Name":  "Marketsegmentation",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_contentgenerator",
+                          "Name":  "Contentgenerator",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "logistica_controlcalidad",
+                          "Name":  "Controlcalidad",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_influencermatcher",
+                          "Name":  "Influencermatcher",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_d",
+                          "Name":  "D",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_conversioncohort",
+                          "Name":  "Conversioncohort",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_budgetallocator",
+                          "Name":  "Budgetallocator",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_brandsentiment",
+                          "Name":  "Brandsentiment",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "contabilidad_flujocaja",
+                          "Name":  "Flujocaja",
+                          "Module":  "contabilidad",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "logistica_evaluadorproveedores",
+                          "Name":  "Evaluadorproveedores",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_fidelizedprofile",
+                          "Name":  "Fidelizedprofile",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_offerspersonalization",
+                          "Name":  "Offerspersonalization",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_tributario",
+                          "Name":  "Tributario",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "presupuesto_forecasting",
+                          "Name":  "Forecasting",
+                          "Module":  "presupuesto",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_cierrepredictivo",
+                          "Name":  "Cierrepredictivo",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "logistica_sostenibilidad",
+                          "Name":  "Sostenibilidad",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_cvanalyzer",
+                          "Name":  "Cvanalyzer",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_journeyoptimizer",
+                          "Name":  "Journeyoptimizer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_influencermatcher",
+                          "Name":  "Influencermatcher",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "ventascrm_cierrepredictivo",
+                          "Name":  "Cierrepredictivo",
+                          "Module":  "ventascrm",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_adschanneloptimizer",
+                          "Name":  "Adschanneloptimizer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_emailautomation",
+                          "Name":  "Emailautomation",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_viralpotential",
+                          "Name":  "Viralpotential",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_heatmapinsight",
+                          "Name":  "Heatmapinsight",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_heatmapinsight",
+                          "Name":  "Heatmapinsight",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_minimalform",
+                          "Name":  "Minimalform",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_tutorvirtual",
+                          "Name":  "Tutorvirtual",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "financialcore_flujocaja",
+                          "Name":  "Flujocaja",
+                          "Module":  "financialcore",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_leadscor",
+                          "Name":  "Leadscor",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_socialpostgenerator",
+                          "Name":  "Socialpostgenerator",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_geosegmentation",
+                          "Name":  "Geosegmentation",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_minimalform",
+                          "Name":  "Minimalform",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_competitorintelligence",
+                          "Name":  "Competitorintelligence",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_contentgenerator",
+                          "Name":  "Contentgenerator",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "ventascrm_clientelifecycle",
+                          "Name":  "Clientelifecycle",
+                          "Module":  "ventascrm",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_facturacion",
+                          "Name":  "Facturacion",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_rsa_ad_copy_generator_",
+                          "Name":  "Rsa Ad Copy Generator ",
+                          "Module":  "marketing",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "marketing_budgetforecast",
+                          "Name":  "Budgetforecast",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_funneloptimizer",
+                          "Name":  "Funneloptimizer",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "rrhh_capacitacion",
+                          "Name":  "Capacitacion",
+                          "Module":  "rrhh",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_competitoranalyzer",
+                          "Name":  "Competitoranalyzer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_conciliacionbancar",
+                          "Name":  "Conciliacionbancar",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_sostenibilidad",
+                          "Name":  "Sostenibilidad",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_geosegmentation",
+                          "Name":  "Geosegmentation",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "ventascrm_pipelinepredictivo",
+                          "Name":  "Pipelinepredictivo",
+                          "Module":  "ventascrm",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_funneloptimizer",
+                          "Name":  "Funneloptimizer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_marketingmixmodel",
+                          "Name":  "Marketingmixmodel",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_campaignoptimizer",
+                          "Name":  "Campaignoptimizer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "contabilidad_flujocaja",
+                          "Name":  "Flujocaja",
+                          "Module":  "contabilidad",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_competitorintelligence",
+                          "Name":  "Competitorintelligence",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "rrhh_selectioncv",
+                          "Name":  "Selectioncv",
+                          "Module":  "rrhh",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_seasonalityanalyzer",
+                          "Name":  "Seasonalityanalyzer",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_search_terms_cleaner_",
+                          "Name":  "Search Terms Cleaner ",
+                          "Module":  "marketing",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "unknown_event_trigger_",
+                          "Name":  "Event Trigger ",
+                          "Module":  "unknown",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "marketing_roiattribution",
+                          "Name":  "Roiattribution",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "contabilidad_facturacion",
+                          "Name":  "Facturacion",
+                          "Module":  "contabilidad",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_influencermatch",
+                          "Name":  "Influencermatch",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_abtestingimpact",
+                          "Name":  "Abtestingimpact",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "logistica_optimizadorrutas",
+                          "Name":  "Optimizadorrutas",
+                          "Module":  "logistica",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_personalizationengine",
+                          "Name":  "Personalizationengine",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_multichannelattribution",
+                          "Name":  "Multichannelattribution",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_search_terms_cleaner_",
+                          "Name":  "Search Terms Cleaner ",
+                          "Module":  "marketing",
+                          "Type":  "Agent"
+                      },
+                      {
+                          "id":  "contabilidad_tributario",
+                          "Name":  "Tributario",
+                          "Module":  "contabilidad",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "contabilidad_facturacion",
+                          "Name":  "Facturacion",
+                          "Module":  "contabilidad",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_influencermatcher",
+                          "Name":  "Influencermatcher",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_offersforecast",
+                          "Name":  "Offersforecast",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_leadsoptimizer",
+                          "Name":  "Leadsoptimizer",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_messagepersonalizer",
+                          "Name":  "Messagepersonalizer",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_influencermatch",
+                          "Name":  "Influencermatch",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_pipelinepredictivo",
+                          "Name":  "Pipelinepredictivo",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "unknown_test_contentperformance",
+                          "Name":  "Test Contentperformance",
+                          "Module":  "unknown",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "marketing_competitorintelligence",
+                          "Name":  "Competitorintelligence",
+                          "Module":  "marketing",
+                          "Type":  "IA"
+                      },
+                      {
+                          "id":  "ventascrm_pipelinepredictivo",
+                          "Name":  "Pipelinepredictivo",
+                          "Module":  "ventascrm",
+                          "Type":  "IA"
+                      }
+                  ]
+}

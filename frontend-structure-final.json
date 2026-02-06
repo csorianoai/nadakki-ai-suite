@@ -1,0 +1,826 @@
+﻿{
+    "totalAgents":  73,
+    "googleAdsAgents":  0,
+    "timestamp":  "2026-02-04 11:19:16",
+    "modules":  [
+                    {
+                        "id":  "marketing",
+                        "name":  "marketing",
+                        "displayName":  "Marketing",
+                        "agentCount":  44,
+                        "hasAgents":  true,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "analytics",
+                        "name":  "analytics",
+                        "displayName":  "Analytics",
+                        "agentCount":  0,
+                        "hasAgents":  false,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "contabilidad",
+                        "name":  "contabilidad",
+                        "displayName":  "Contabilidad",
+                        "agentCount":  5,
+                        "hasAgents":  true,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "content",
+                        "name":  "content",
+                        "displayName":  "Content",
+                        "agentCount":  0,
+                        "hasAgents":  false,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "decision",
+                        "name":  "decision",
+                        "displayName":  "Decision",
+                        "agentCount":  0,
+                        "hasAgents":  false,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "educacion",
+                        "name":  "educacion",
+                        "displayName":  "Educacion",
+                        "agentCount":  3,
+                        "hasAgents":  true,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "email",
+                        "name":  "email",
+                        "displayName":  "Email",
+                        "agentCount":  0,
+                        "hasAgents":  false,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "experiencia",
+                        "name":  "experiencia",
+                        "displayName":  "Experiencia",
+                        "agentCount":  0,
+                        "hasAgents":  false,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "fortaleza",
+                        "name":  "fortaleza",
+                        "displayName":  "Fortaleza",
+                        "agentCount":  0,
+                        "hasAgents":  false,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "inteligencia",
+                        "name":  "inteligencia",
+                        "displayName":  "Inteligencia",
+                        "agentCount":  0,
+                        "hasAgents":  false,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "investigacion",
+                        "name":  "investigacion",
+                        "displayName":  "Investigacion",
+                        "agentCount":  2,
+                        "hasAgents":  true,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "legal",
+                        "name":  "legal",
+                        "displayName":  "Legal",
+                        "agentCount":  0,
+                        "hasAgents":  false,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "logistica",
+                        "name":  "logistica",
+                        "displayName":  "Logistica",
+                        "agentCount":  7,
+                        "hasAgents":  true,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "operacional",
+                        "name":  "operacional",
+                        "displayName":  "Operacional",
+                        "agentCount":  0,
+                        "hasAgents":  false,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "originacion",
+                        "name":  "originacion",
+                        "displayName":  "Originacion",
+                        "agentCount":  0,
+                        "hasAgents":  false,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "presupuesto",
+                        "name":  "presupuesto",
+                        "displayName":  "Presupuesto",
+                        "agentCount":  2,
+                        "hasAgents":  true,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "recuperacion",
+                        "name":  "recuperacion",
+                        "displayName":  "Recuperacion",
+                        "agentCount":  0,
+                        "hasAgents":  false,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "regtech",
+                        "name":  "regtech",
+                        "displayName":  "Regtech",
+                        "agentCount":  0,
+                        "hasAgents":  false,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "rrhh",
+                        "name":  "rrhh",
+                        "displayName":  "Rrhh",
+                        "agentCount":  3,
+                        "hasAgents":  true,
+                        "isGoogleAds":  false
+                    },
+                    {
+                        "id":  "ventascrm",
+                        "name":  "ventascrm",
+                        "displayName":  "Ventascrm",
+                        "agentCount":  4,
+                        "hasAgents":  true,
+                        "isGoogleAds":  false
+                    }
+                ],
+    "agents":  [
+                   {
+                       "id":  "marketing_google_ads_budget_pacing_agent",
+                       "name":  "google ads budget pacing agent",
+                       "module":  "marketing",
+                       "type":  "Agent",
+                       "fileName":  "google_ads_budget_pacing_agent.py",
+                       "relativePath":  "\\agents\\marketing\\advertising\\agents\\marketing\\google_ads_budget_pacing_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_google_ads_strategist_agent",
+                       "name":  "google ads strategist agent",
+                       "module":  "marketing",
+                       "type":  "Agent",
+                       "fileName":  "google_ads_strategist_agent.py",
+                       "relativePath":  "\\agents\\marketing\\advertising\\agents\\marketing\\google_ads_strategist_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_orchestrator_agent",
+                       "name":  "orchestrator agent",
+                       "module":  "marketing",
+                       "type":  "Agent",
+                       "fileName":  "orchestrator_agent.py",
+                       "relativePath":  "\\agents\\marketing\\advertising\\agents\\marketing\\orchestrator_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_rsa_ad_copy_generator_agent",
+                       "name":  "rsa ad copy generator agent",
+                       "module":  "marketing",
+                       "type":  "Agent",
+                       "fileName":  "rsa_ad_copy_generator_agent.py",
+                       "relativePath":  "\\agents\\marketing\\advertising\\agents\\marketing\\rsa_ad_copy_generator_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_search_terms_cleaner_agent",
+                       "name":  "search terms cleaner agent",
+                       "module":  "marketing",
+                       "type":  "Agent",
+                       "fileName":  "search_terms_cleaner_agent.py",
+                       "relativePath":  "\\agents\\marketing\\advertising\\agents\\marketing\\search_terms_cleaner_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_abtestingia",
+                       "name":  "abtestingia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "abtestingia.py",
+                       "relativePath":  "\\agents\\marketing\\abtestingia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_abtestingimpactia",
+                       "name":  "abtestingimpactia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "abtestingimpactia.py",
+                       "relativePath":  "\\agents\\marketing\\abtestingimpactia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_attributionmodelia",
+                       "name":  "attributionmodelia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "attributionmodelia.py",
+                       "relativePath":  "\\agents\\marketing\\attributionmodelia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_audiencesegmenteria",
+                       "name":  "audiencesegmenteria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "audiencesegmenteria.py",
+                       "relativePath":  "\\agents\\marketing\\audiencesegmenteria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_budgetforecastia",
+                       "name":  "budgetforecastia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "budgetforecastia.py",
+                       "relativePath":  "\\agents\\marketing\\budgetforecastia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_campaignoptimizeria",
+                       "name":  "campaignoptimizeria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "campaignoptimizeria.py",
+                       "relativePath":  "\\agents\\marketing\\campaignoptimizeria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_campaignstrategyorchestratoria",
+                       "name":  "campaignstrategyorchestratoria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "campaignstrategyorchestratoria.py",
+                       "relativePath":  "\\agents\\marketing\\campaignstrategyorchestratoria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_cashofferfilteria",
+                       "name":  "cashofferfilteria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "cashofferfilteria.py",
+                       "relativePath":  "\\agents\\marketing\\cashofferfilteria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_channelattributia",
+                       "name":  "channelattributia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "channelattributia.py",
+                       "relativePath":  "\\agents\\marketing\\channelattributia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_competitoranalyzeria",
+                       "name":  "competitoranalyzeria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "competitoranalyzeria.py",
+                       "relativePath":  "\\agents\\marketing\\competitoranalyzeria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_competitorintelligenceia",
+                       "name":  "competitorintelligenceia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "competitorintelligenceia.py",
+                       "relativePath":  "\\agents\\marketing\\competitorintelligenceia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_contactqualityia",
+                       "name":  "contactqualityia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "contactqualityia.py",
+                       "relativePath":  "\\agents\\marketing\\contactqualityia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_contentgeneratoria",
+                       "name":  "contentgeneratoria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "contentgeneratoria.py",
+                       "relativePath":  "\\agents\\marketing\\contentgeneratoria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_contentperformanceia",
+                       "name":  "contentperformanceia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "contentperformanceia.py",
+                       "relativePath":  "\\agents\\marketing\\contentperformanceia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_conversioncohortia",
+                       "name":  "conversioncohortia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "conversioncohortia.py",
+                       "relativePath":  "\\agents\\marketing\\conversioncohortia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_creativeanalyzeria",
+                       "name":  "creativeanalyzeria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "creativeanalyzeria.py",
+                       "relativePath":  "\\agents\\marketing\\creativeanalyzeria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_customersegmentatonia",
+                       "name":  "customersegmentatonia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "customersegmentatonia.py",
+                       "relativePath":  "\\agents\\marketing\\customersegmentatonia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_emailautomationia",
+                       "name":  "emailautomationia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "emailautomationia.py",
+                       "relativePath":  "\\agents\\marketing\\emailautomationia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_geosegmentationia",
+                       "name":  "geosegmentationia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "geosegmentationia.py",
+                       "relativePath":  "\\agents\\marketing\\geosegmentationia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_influencermatcheria",
+                       "name":  "influencermatcheria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "influencermatcheria.py",
+                       "relativePath":  "\\agents\\marketing\\influencermatcheria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_influencermatchingia",
+                       "name":  "influencermatchingia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "influencermatchingia.py",
+                       "relativePath":  "\\agents\\marketing\\influencermatchingia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_journeyoptimizeria",
+                       "name":  "journeyoptimizeria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "journeyoptimizeria.py",
+                       "relativePath":  "\\agents\\marketing\\journeyoptimizeria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_leadscoria",
+                       "name":  "leadscoria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "leadscoria.py",
+                       "relativePath":  "\\agents\\marketing\\leadscoria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_leadscoringia",
+                       "name":  "leadscoringia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "leadscoringia.py",
+                       "relativePath":  "\\agents\\marketing\\leadscoringia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_marketingmixmodelia",
+                       "name":  "marketingmixmodelia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "marketingmixmodelia.py",
+                       "relativePath":  "\\agents\\marketing\\marketingmixmodelia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_minimalformia",
+                       "name":  "minimalformia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "minimalformia.py",
+                       "relativePath":  "\\agents\\marketing\\minimalformia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_personalizationengineia",
+                       "name":  "personalizationengineia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "personalizationengineia.py",
+                       "relativePath":  "\\agents\\marketing\\personalizationengineia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_predictiveleadia",
+                       "name":  "predictiveleadia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "predictiveleadia.py",
+                       "relativePath":  "\\agents\\marketing\\predictiveleadia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_pricingoptimizeria",
+                       "name":  "pricingoptimizeria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "pricingoptimizeria.py",
+                       "relativePath":  "\\agents\\marketing\\pricingoptimizeria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_productaffinityia",
+                       "name":  "productaffinityia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "productaffinityia.py",
+                       "relativePath":  "\\agents\\marketing\\productaffinityia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_retentionpredictoria",
+                       "name":  "retentionpredictoria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "retentionpredictoria.py",
+                       "relativePath":  "\\agents\\marketing\\retentionpredictoria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_sentimentanalyzeria",
+                       "name":  "sentimentanalyzeria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "sentimentanalyzeria.py",
+                       "relativePath":  "\\agents\\marketing\\sentimentanalyzeria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_sociallisteningia",
+                       "name":  "sociallisteningia",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "sociallisteningia.py",
+                       "relativePath":  "\\agents\\marketing\\sociallisteningia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_socialpostgeneratoria",
+                       "name":  "socialpostgeneratoria",
+                       "module":  "marketing",
+                       "type":  "IA",
+                       "fileName":  "socialpostgeneratoria.py",
+                       "relativePath":  "\\agents\\marketing\\socialpostgeneratoria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_google_ads_budget_pacing_agent",
+                       "name":  "google ads budget pacing agent",
+                       "module":  "marketing",
+                       "type":  "Agent",
+                       "fileName":  "google_ads_budget_pacing_agent.py",
+                       "relativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\google_ads_budget_pacing_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_google_ads_strategist_agent",
+                       "name":  "google ads strategist agent",
+                       "module":  "marketing",
+                       "type":  "Agent",
+                       "fileName":  "google_ads_strategist_agent.py",
+                       "relativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\google_ads_strategist_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_orchestrator_agent",
+                       "name":  "orchestrator agent",
+                       "module":  "marketing",
+                       "type":  "Agent",
+                       "fileName":  "orchestrator_agent.py",
+                       "relativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\orchestrator_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_rsa_ad_copy_generator_agent",
+                       "name":  "rsa ad copy generator agent",
+                       "module":  "marketing",
+                       "type":  "Agent",
+                       "fileName":  "rsa_ad_copy_generator_agent.py",
+                       "relativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\rsa_ad_copy_generator_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "marketing_search_terms_cleaner_agent",
+                       "name":  "search terms cleaner agent",
+                       "module":  "marketing",
+                       "type":  "Agent",
+                       "fileName":  "search_terms_cleaner_agent.py",
+                       "relativePath":  "\\nadakki-google-ads-mvp\\agents\\marketing\\search_terms_cleaner_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "educacion_competenciasia",
+                       "name":  "competenciasia",
+                       "module":  "educacion",
+                       "type":  "IA",
+                       "fileName":  "competenciasia.py",
+                       "relativePath":  "\\agents\\educacion\\competenciasia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "educacion_evaluacionia",
+                       "name":  "evaluacionia",
+                       "module":  "educacion",
+                       "type":  "IA",
+                       "fileName":  "evaluacionia.py",
+                       "relativePath":  "\\agents\\educacion\\evaluacionia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "educacion_tutorvirtualia",
+                       "name":  "tutorvirtualia",
+                       "module":  "educacion",
+                       "type":  "IA",
+                       "fileName":  "tutorvirtualia.py",
+                       "relativePath":  "\\agents\\educacion\\tutorvirtualia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "presupuesto_forecastingia",
+                       "name":  "forecastingia",
+                       "module":  "presupuesto",
+                       "type":  "IA",
+                       "fileName":  "forecastingia.py",
+                       "relativePath":  "\\agents\\presupuesto\\forecastingia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "presupuesto_presupuestopredictivoia",
+                       "name":  "presupuestopredictivoia",
+                       "module":  "presupuesto",
+                       "type":  "IA",
+                       "fileName":  "presupuestopredictivoia.py",
+                       "relativePath":  "\\agents\\presupuesto\\presupuestopredictivoia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "otros_check_agent",
+                       "name":  "check agent",
+                       "module":  "otros",
+                       "type":  "Agent",
+                       "fileName":  "check_agent.py",
+                       "relativePath":  "\\check_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "otros_evaluate_agent",
+                       "name":  "evaluate agent",
+                       "module":  "otros",
+                       "type":  "Agent",
+                       "fileName":  "evaluate_agent.py",
+                       "relativePath":  "\\evaluate_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "otros_run_superagent",
+                       "name":  "run superagent",
+                       "module":  "otros",
+                       "type":  "Agent",
+                       "fileName":  "run_superagent.py",
+                       "relativePath":  "\\run_superagent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "rrhh_capacitacionia",
+                       "name":  "capacitacionia",
+                       "module":  "rrhh",
+                       "type":  "IA",
+                       "fileName":  "capacitacionia.py",
+                       "relativePath":  "\\agents\\rrhh\\capacitacionia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "rrhh_cvanalyzeria",
+                       "name":  "cvanalyzeria",
+                       "module":  "rrhh",
+                       "type":  "IA",
+                       "fileName":  "cvanalyzeria.py",
+                       "relativePath":  "\\agents\\rrhh\\cvanalyzeria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "rrhh_selectioncvia",
+                       "name":  "selectioncvia",
+                       "module":  "rrhh",
+                       "type":  "IA",
+                       "fileName":  "selectioncvia.py",
+                       "relativePath":  "\\agents\\rrhh\\selectioncvia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "logistica_controlcalidadia",
+                       "name":  "controlcalidadia",
+                       "module":  "logistica",
+                       "type":  "IA",
+                       "fileName":  "controlcalidadia.py",
+                       "relativePath":  "\\agents\\logistica\\controlcalidadia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "logistica_controlpedidosia",
+                       "name":  "controlpedidosia",
+                       "module":  "logistica",
+                       "type":  "IA",
+                       "fileName":  "controlpedidosia.py",
+                       "relativePath":  "\\agents\\logistica\\controlpedidosia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "logistica_evaluadorproveedoresia",
+                       "name":  "evaluadorproveedoresia",
+                       "module":  "logistica",
+                       "type":  "IA",
+                       "fileName":  "evaluadorproveedoresia.py",
+                       "relativePath":  "\\agents\\logistica\\evaluadorproveedoresia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "logistica_optimizadorrutasia",
+                       "name":  "optimizadorrutasia",
+                       "module":  "logistica",
+                       "type":  "IA",
+                       "fileName":  "optimizadorrutasia.py",
+                       "relativePath":  "\\agents\\logistica\\optimizadorrutasia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "logistica_previsioninventarioia",
+                       "name":  "previsioninventarioia",
+                       "module":  "logistica",
+                       "type":  "IA",
+                       "fileName":  "previsioninventarioia.py",
+                       "relativePath":  "\\agents\\logistica\\previsioninventarioia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "logistica_sostenibilidadia",
+                       "name":  "sostenibilidadia",
+                       "module":  "logistica",
+                       "type":  "IA",
+                       "fileName":  "sostenibilidadia.py",
+                       "relativePath":  "\\agents\\logistica\\sostenibilidadia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "logistica_trazabilidadia",
+                       "name":  "trazabilidadia",
+                       "module":  "logistica",
+                       "type":  "IA",
+                       "fileName":  "trazabilidadia.py",
+                       "relativePath":  "\\agents\\logistica\\trazabilidadia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "contabilidad_analisis_financiero_super_agent",
+                       "name":  "analisis financiero super agent",
+                       "module":  "contabilidad",
+                       "type":  "Agent",
+                       "fileName":  "analisis_financiero_super_agent.py",
+                       "relativePath":  "\\agents\\contabilidad\\analisis_financiero_super_agent.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "contabilidad_conciliacionbancaria",
+                       "name":  "conciliacionbancaria",
+                       "module":  "contabilidad",
+                       "type":  "IA",
+                       "fileName":  "conciliacionbancaria.py",
+                       "relativePath":  "\\agents\\contabilidad\\conciliacionbancaria.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "contabilidad_facturacionia",
+                       "name":  "facturacionia",
+                       "module":  "contabilidad",
+                       "type":  "IA",
+                       "fileName":  "facturacionia.py",
+                       "relativePath":  "\\agents\\contabilidad\\facturacionia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "contabilidad_flujocajaia",
+                       "name":  "flujocajaia",
+                       "module":  "contabilidad",
+                       "type":  "IA",
+                       "fileName":  "flujocajaia.py",
+                       "relativePath":  "\\agents\\contabilidad\\flujocajaia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "contabilidad_tributarioia",
+                       "name":  "tributarioia",
+                       "module":  "contabilidad",
+                       "type":  "IA",
+                       "fileName":  "tributarioia.py",
+                       "relativePath":  "\\agents\\contabilidad\\tributarioia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "investigacion_innovacionia",
+                       "name":  "innovacionia",
+                       "module":  "investigacion",
+                       "type":  "IA",
+                       "fileName":  "innovacionia.py",
+                       "relativePath":  "\\agents\\investigacion\\innovacionia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "investigacion_tendenciasia",
+                       "name":  "tendenciasia",
+                       "module":  "investigacion",
+                       "type":  "IA",
+                       "fileName":  "tendenciasia.py",
+                       "relativePath":  "\\agents\\investigacion\\tendenciasia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "ventascrm_cierrepredictivoia",
+                       "name":  "cierrepredictivoia",
+                       "module":  "ventascrm",
+                       "type":  "IA",
+                       "fileName":  "cierrepredictivoia.py",
+                       "relativePath":  "\\agents\\ventascrm\\cierrepredictivoia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "ventascrm_clientelifecycleia",
+                       "name":  "clientelifecycleia",
+                       "module":  "ventascrm",
+                       "type":  "IA",
+                       "fileName":  "clientelifecycleia.py",
+                       "relativePath":  "\\agents\\ventascrm\\clientelifecycleia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "ventascrm_leadscoringia",
+                       "name":  "leadscoringia",
+                       "module":  "ventascrm",
+                       "type":  "IA",
+                       "fileName":  "leadscoringia.py",
+                       "relativePath":  "\\agents\\ventascrm\\leadscoringia.py",
+                       "isGoogleAds":  false
+                   },
+                   {
+                       "id":  "ventascrm_pipelinepredictivoia",
+                       "name":  "pipelinepredictivoia",
+                       "module":  "ventascrm",
+                       "type":  "IA",
+                       "fileName":  "pipelinepredictivoia.py",
+                       "relativePath":  "\\agents\\ventascrm\\pipelinepredictivoia.py",
+                       "isGoogleAds":  false
+                   }
+               ]
+}

@@ -1,0 +1,79 @@
+﻿{
+    "GeneratedAt":  "2026-02-04 11:15:42",
+    "Summary":  {
+                    "TotalAgents":  73,
+                    "TotalModules":  21,
+                    "GoogleAdsMVP":  7,
+                    "IssuesFound":  6
+                },
+    "ModuleMapping":  {
+                          "advertising":  0,
+                          "originacion":  0,
+                          "legal":  0,
+                          "analytics":  0,
+                          "logistica":  0,
+                          "marketing":  5,
+                          "presupuesto":  0,
+                          "decision":  0,
+                          "experiencia":  0,
+                          "investigacion":  0,
+                          "ventascrm":  0,
+                          "educacion":  0,
+                          "operacional":  0,
+                          "fortaleza":  0,
+                          "content":  0,
+                          "regtech":  0,
+                          "rrhh":  0,
+                          "recuperacion":  0,
+                          "email":  0,
+                          "inteligencia":  0,
+                          "contabilidad":  0
+                      },
+    "AgentsList":  [
+                       {
+                           "Id":  "marketing_google_ads_budget_pacing_agent",
+                           "Name":  "google_ads_budget_pacing_agent",
+                           "Module":  "marketing",
+                           "BackendModule":  "google-ads",
+                           "Type":  "Agent",
+                           "RelativePath":  "nadakki-google-ads-mvp/agents/marketing/google_ads_budget_pacing_agent.py",
+                           "IsGoogleAds":  true
+                       },
+                       {
+                           "Id":  "marketing_google_ads_strategist_agent",
+                           "Name":  "google_ads_strategist_agent",
+                           "Module":  "marketing",
+                           "BackendModule":  "google-ads",
+                           "Type":  "Agent",
+                           "RelativePath":  "nadakki-google-ads-mvp/agents/marketing/google_ads_strategist_agent.py",
+                           "IsGoogleAds":  true
+                       },
+                       {
+                           "Id":  "marketing_orchestrator_agent",
+                           "Name":  "orchestrator_agent",
+                           "Module":  "marketing",
+                           "BackendModule":  "google-ads",
+                           "Type":  "Agent",
+                           "RelativePath":  "nadakki-google-ads-mvp/agents/marketing/orchestrator_agent.py",
+                           "IsGoogleAds":  true
+                       },
+                       {
+                           "Id":  "marketing_rsa_ad_copy_generator_agent",
+                           "Name":  "rsa_ad_copy_generator_agent",
+                           "Module":  "marketing",
+                           "BackendModule":  "google-ads",
+                           "Type":  "Agent",
+                           "RelativePath":  "nadakki-google-ads-mvp/agents/marketing/rsa_ad_copy_generator_agent.py",
+                           "IsGoogleAds":  true
+                       },
+                       {
+                           "Id":  "marketing_search_terms_cleaner_agent",
+                           "Name":  "search_terms_cleaner_agent",
+                           "Module":  "marketing",
+                           "BackendModule":  "google-ads",
+                           "Type":  "Agent",
+                           "RelativePath":  "nadakki-google-ads-mvp/agents/marketing/search_terms_cleaner_agent.py",
+                           "IsGoogleAds":  true
+                       }
+                   ]
+}
