@@ -1,0 +1,313 @@
+{
+  "agents_with_binding": 36,
+  "gaps_altos": [
+    "RSACopyGeneratorIA",
+    "KeywordResearchIA",
+    "SearchTermsCleanerIA"
+  ],
+  "agents_with_executor": 1,
+  "gaps_criticos": [
+    "GoogleAdsOperatorIA",
+    "GoogleAdsAccountHealthIA",
+    "GoogleAdsTrackingIA",
+    "GoogleAdsExecutor"
+  ],
+  "agents": [
+    {
+      "has_operative": false,
+      "name": "abtestingia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "conversions, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "abtestingimpactia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "conversions, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "attributionmodelia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "attribution, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "audiencesegmenteria",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "campaigns, audience, conversions, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "budgetforecastia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "budget, forecast, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "campaignoptimizeria",
+      "mentions_google": true,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "campaigns, budget, creative, testing, geo"
+    },
+    {
+      "has_operative": false,
+      "name": "campaignstrategyorchestratoria",
+      "mentions_google": true,
+      "mentions_ads": true,
+      "has_binding": true,
+      "capabilities": "campaigns, budget, audience, creative, keywords, conversions, attribution, competitor, email, social, leads, pricing, retention, forecast, testing, influencer, journey, geo"
+    },
+    {
+      "has_operative": false,
+      "name": "cashofferfilteria",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "testing"
+    },
+    {
+      "has_operative": false,
+      "name": "channelattributia",
+      "mentions_google": true,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "budget, conversions, attribution, testing, geo"
+    },
+    {
+      "has_operative": false,
+      "name": "competitoranalyzeria",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "competitor, pricing, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "competitorintelligenceia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "competitor, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "contactqualityia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "email, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "contentgeneratoria",
+      "mentions_google": false,
+      "mentions_ads": true,
+      "has_binding": true,
+      "capabilities": "creative, keywords, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "contentperformanceia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "creative, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "conversioncohortia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "conversions, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "creativeanalyzeria",
+      "mentions_google": false,
+      "mentions_ads": true,
+      "has_binding": true,
+      "capabilities": "campaigns, creative, conversions, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "customersegmentatonia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "campaigns, audience, conversions"
+    },
+    {
+      "has_operative": false,
+      "name": "emailautomationia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "campaigns, audience, conversions, email, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "geosegmentationia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "campaigns, audience, conversions, geo"
+    },
+    {
+      "has_operative": false,
+      "name": "influencermatcheria",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "campaigns, budget, testing, influencer"
+    },
+    {
+      "has_operative": false,
+      "name": "influencermatchingia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "campaigns, budget, testing, influencer"
+    },
+    {
+      "has_operative": false,
+      "name": "journeyoptimizeria",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "conversions, retention, testing, journey"
+    },
+    {
+      "has_operative": false,
+      "name": "leadscoria",
+      "mentions_google": false,
+      "mentions_ads": true,
+      "has_binding": true,
+      "capabilities": "campaigns, budget, creative, conversions, leads, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "leadscoringia",
+      "mentions_google": false,
+      "mentions_ads": true,
+      "has_binding": true,
+      "capabilities": "leads, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "marketingmixmodelia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "testing"
+    },
+    {
+      "has_operative": false,
+      "name": "marketingorchestratorea",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "testing"
+    },
+    {
+      "has_operative": false,
+      "name": "minimalformia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "conversions, email, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "personalizationengineia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "creative, conversions, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "predictiveleadia",
+      "mentions_google": false,
+      "mentions_ads": true,
+      "has_binding": true,
+      "capabilities": "campaigns, budget, conversions, leads, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "pricingoptimizeria",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "conversions, competitor, pricing, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "productaffinityia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "budget, conversions, pricing"
+    },
+    {
+      "has_operative": false,
+      "name": "retentionpredictorea",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "retention, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "retentionpredictoria",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "retention, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "sentimentanalyzeria",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "creative, keywords, sentiment, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "sociallisteningia",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "creative, keywords, social, sentiment, testing"
+    },
+    {
+      "has_operative": false,
+      "name": "socialpostgeneratoria",
+      "mentions_google": false,
+      "mentions_ads": false,
+      "has_binding": true,
+      "capabilities": "creative, social, testing"
+    }
+  ],
+  "directly_applicable": 5,
+  "strategic_support": 5,
+  "easily_adaptable": 6,
+  "recommendation": "Crear 6 agentes especializados + 1 executor para Google Ads",
+  "agents_with_operative": 0,
+  "total_agents": 36,
+  "timestamp": "2026-01-30T20:02:56",
+  "google_ads_coverage": "92%"
+}
