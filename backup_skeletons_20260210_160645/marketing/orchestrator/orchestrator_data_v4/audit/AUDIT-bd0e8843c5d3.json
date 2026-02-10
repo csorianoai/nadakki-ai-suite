@@ -1,0 +1,16 @@
+{
+  "entry_id": "AUDIT-bd0e8843c5d3",
+  "timestamp": "2026-01-14T00:38:32.377409+00:00",
+  "action": "execution_completed",
+  "actor": "nadaki_miami_001",
+  "resource": "PLAN-36bd0048",
+  "details": {
+    "execution_id": "EXEC-2f9d510c",
+    "status": "success",
+    "duration_ms": 208,
+    "tasks_completed": 6,
+    "tasks_failed": 0
+  },
+  "previous_hash": "e2d9d88a5e69d2c50eb1c1fd765a63c78a7a94b32a661e6ad4fc11c2ff55b245",
+  "hash": "7cdda8a67ac5fb06294bdb66e6dd05b6725d500ef5a2fb56ec96d5bcfd34823a"
+}

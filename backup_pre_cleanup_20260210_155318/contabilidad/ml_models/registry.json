@@ -1,0 +1,15 @@
+{
+  "model_versions": {
+    "cash_flow": [
+      "v1"
+    ],
+    "anomaly_detection": [
+      "v1"
+    ],
+    "roa_prediction": [
+      "v1"
+    ]
+  },
+  "is_trained": true,
+  "last_updated": "2025-10-30T22:36:57.668552"
+}

@@ -1,0 +1,321 @@
+﻿{
+    "generated_at":  "2026-02-10T13:39:46Z",
+    "module_comparison":  {
+                              "otros":  {
+                                            "expected":  20,
+                                            "found":  38,
+                                            "status":  "found_and_correct",
+                                            "missing":  0
+                                        },
+                              "logistica":  {
+                                                "expected":  23,
+                                                "found":  16,
+                                                "status":  "found_but_mismatch",
+                                                "missing":  7
+                                            },
+                              "ventascrm":  {
+                                                "expected":  9,
+                                                "found":  7,
+                                                "status":  "found_but_mismatch",
+                                                "missing":  2
+                                            },
+                              "regtech":  {
+                                              "expected":  8,
+                                              "found":  6,
+                                              "status":  "found_but_mismatch",
+                                              "missing":  2
+                                          },
+                              "presupuesto":  {
+                                                  "expected":  13,
+                                                  "found":  11,
+                                                  "status":  "found_but_mismatch",
+                                                  "missing":  2
+                                              },
+                              "investigacion":  {
+                                                    "expected":  9,
+                                                    "found":  7,
+                                                    "status":  "found_but_mismatch",
+                                                    "missing":  2
+                                                },
+                              "educacion":  {
+                                                "expected":  9,
+                                                "found":  7,
+                                                "status":  "found_but_mismatch",
+                                                "missing":  2
+                                            },
+                              "marketing":  {
+                                                "expected":  44,
+                                                "found":  84,
+                                                "status":  "found_and_correct",
+                                                "missing":  0
+                                            },
+                              "originacion":  {
+                                                  "expected":  10,
+                                                  "found":  8,
+                                                  "status":  "found_but_mismatch",
+                                                  "missing":  2
+                                              },
+                              "rrhh":  {
+                                           "expected":  10,
+                                           "found":  7,
+                                           "status":  "found_but_mismatch",
+                                           "missing":  3
+                                       },
+                              "recuperacion":  {
+                                                   "expected":  5,
+                                                   "found":  5,
+                                                   "status":  "found_and_correct",
+                                                   "missing":  0
+                                               },
+                              "legal":  {
+                                            "expected":  33,
+                                            "found":  23,
+                                            "status":  "found_but_mismatch",
+                                            "missing":  10
+                                        },
+                              "contabilidad":  {
+                                                   "expected":  21,
+                                                   "found":  13,
+                                                   "status":  "found_but_mismatch",
+                                                   "missing":  8
+                                               }
+                          },
+    "marketing_analysis":  {
+                               "top_reasons":  [
+                                                   {
+                                                       "count":  36,
+                                                       "reason":  "execute_function | class_execute_method | autonomous_class"
+                                                   },
+                                                   {
+                                                       "count":  13,
+                                                       "reason":  "ai_ml_signals | substantial_codebase"
+                                                   },
+                                                   {
+                                                       "count":  7,
+                                                       "reason":  "autonomous_class | substantial_codebase"
+                                                   },
+                                                   {
+                                                       "count":  6,
+                                                       "reason":  "autonomous_class | ai_ml_signals | substantial_codebase"
+                                                   },
+                                                   {
+                                                       "count":  5,
+                                                       "reason":  "class_execute_method | substantial_codebase"
+                                                   },
+                                                   {
+                                                       "count":  4,
+                                                       "reason":  "substantial_codebase"
+                                                   },
+                                                   {
+                                                       "count":  4,
+                                                       "reason":  "class_execute_method | ai_ml_signals | substantial_codebase"
+                                                   },
+                                                   {
+                                                       "count":  4,
+                                                       "reason":  "autonomous_class | ai_ml_signals | agent_framework_imports"
+                                                   },
+                                                   {
+                                                       "count":  2,
+                                                       "reason":  "execute_function | autonomous_class | ai_ml_signals"
+                                                   },
+                                                   {
+                                                       "count":  1,
+                                                       "reason":  "class_execute_method | autonomous_class | substantial_codebase"
+                                                   },
+                                                   {
+                                                       "count":  1,
+                                                       "reason":  "class_execute_method | autonomous_class | ai_ml_signals"
+                                                   },
+                                                   {
+                                                       "count":  1,
+                                                       "reason":  "ai_ml_signals | agent_framework_imports | substantial_codebase"
+                                                   }
+                                               ],
+                               "total_found":  84,
+                               "false_positives_estimate":  40,
+                               "configured_agents":  31,
+                               "subfolders":  [
+                                                  {
+                                                      "folder":  "advertising",
+                                                      "count":  20
+                                                  },
+                                                  {
+                                                      "folder":  "layers",
+                                                      "count":  9
+                                                  },
+                                                  {
+                                                      "folder":  "_archived",
+                                                      "count":  6
+                                                  },
+                                                  {
+                                                      "folder":  "backup_placeholders_20251011_084324",
+                                                      "count":  5
+                                                  },
+                                                  {
+                                                      "folder":  "orchestrator",
+                                                      "count":  2
+                                                  },
+                                                  {
+                                                      "folder":  "operative",
+                                                      "count":  2
+                                                  },
+                                                  {
+                                                      "folder":  "executors",
+                                                      "count":  2
+                                                  },
+                                                  {
+                                                      "folder":  "minimalformia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "multi_industry_config.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "marketingmixmodelia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "leadscoringia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "journeyoptimizeria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "marketingorchestratorea.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "leadscoria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "sentimentanalyzeria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "retentionpredictoria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "sociallisteningia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "wrappers",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "socialpostgeneratoria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "predictiveleadia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "personalizationengineia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "pricingoptimizeria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "retentionpredictorea.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "productaffinityia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "influencermatchingia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "campaignstrategyorchestratoria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "campaignoptimizeria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "cashofferfilteria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "competitoranalyzeria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "channelattributia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "abtestingimpactia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "abtestingia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "attributionmodelia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "budgetforecastia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "audiencesegmenteria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "customersegmentatonia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "creativeanalyzeria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "emailautomationia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "influencermatcheria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "geosegmentationia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "contactqualityia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "competitorintelligenceia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "contentgeneratoria.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "conversioncohortia.py",
+                                                      "count":  1
+                                                  },
+                                                  {
+                                                      "folder":  "contentperformanceia.py",
+                                                      "count":  1
+                                                  }
+                                              ],
+                               "active_agents":  49
+                           }
+}

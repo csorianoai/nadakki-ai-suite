@@ -1,0 +1,6154 @@
+{
+  "category": "AGENTE_OPERATIVO",
+  "count": 52,
+  "files": [
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\abtestingia.py",
+      "filename": "abtestingia.py",
+      "size_bytes": 19639,
+      "lines": 281,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 229
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ABTestingAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "ABTestingAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\abtestingia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\abtestingimpactia.py",
+      "filename": "abtestingimpactia.py",
+      "size_bytes": 10745,
+      "lines": 145,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 125
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 19,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ABTestingImpactAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "ABTestingImpactAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\abtestingimpactia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\attributionmodelia.py",
+      "filename": "attributionmodelia.py",
+      "size_bytes": 9637,
+      "lines": 135,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 115
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 19,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "AttributionModelAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "AttributionModelAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\attributionmodelia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\audiencesegmenteria.py",
+      "filename": "audiencesegmenteria.py",
+      "size_bytes": 16731,
+      "lines": 264,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 219
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "AudienceSegmenterAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "AudienceSegmenterAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\audiencesegmenteria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\budgetforecastia.py",
+      "filename": "budgetforecastia.py",
+      "size_bytes": 9621,
+      "lines": 135,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 115
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 19,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "BudgetForecastAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "BudgetForecastAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\budgetforecastia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\campaignoptimizeria.py",
+      "filename": "campaignoptimizeria.py",
+      "size_bytes": 15645,
+      "lines": 245,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 197
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "CampaignOptimizerAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "CampaignOptimizerAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\campaignoptimizeria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\campaignstrategyorchestratoria.py",
+      "filename": "campaignstrategyorchestratoria.py",
+      "size_bytes": 71403,
+      "lines": 1783,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 85,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": true,
+        "lines_of_code": 1451
+      },
+      "ast_analysis": {
+        "class_count": 23,
+        "function_count": 51,
+        "async_function_count": 6,
+        "method_count": 54,
+        "classes": [
+          {
+            "name": "TaskType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "TaskStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "CircuitBreakerState",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "AlertSeverity",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "AlertType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "IndustryType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "AgentStats",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "Alert",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "AgentAllocationDecision",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PlannedTask",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ExecutionPhase",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ExecutionPlan",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ExecutionResult",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "KPIStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "SmartAgentAllocator",
+            "methods": [
+              "__init__",
+              "allocate_agent",
+              "get_allocation_summary",
+              "clear_log"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 4
+          },
+          {
+            "name": "ProactiveAlertSystem",
+            "methods": [
+              "__init__",
+              "_get_alerts_path",
+              "generate_alert",
+              "check_agent_alerts",
+              "get_active_alerts"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          },
+          {
+            "name": "AgentPerformanceTracker",
+            "methods": [
+              "__init__",
+              "_get_stats_path",
+              "_load_stats",
+              "_save_stats",
+              "record_task_result",
+              "get_agent_stats",
+              "get_all_stats",
+              "get_underperformers"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 8
+          },
+          {
+            "name": "StrategyParser",
+            "methods": [
+              "parse",
+              "_extract_business_name",
+              "_extract_audiences",
+              "_extract_objectives",
+              "_extract_kpis",
+              "_extract_budget",
+              "_extract_timeline",
+              "_extract_channels",
+              "_extract_tactics",
+              "_get_seasonal_context",
+              "_calculate_confidence"
+            ],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 11
+          },
+          {
+            "name": "TaskPlanner",
+            "methods": [
+              "__init__",
+              "create_plan",
+              "_identify_required_tasks",
+              "_create_planned_tasks",
+              "_determine_phase",
+              "_determine_priority",
+              "_determine_dependencies",
+              "_prepare_input_data",
+              "_organize_phases",
+              "_estimate_duration"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 10
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "record_failure",
+              "record_success",
+              "can_execute"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 4
+          },
+          {
+            "name": "ExecutionEngine",
+            "methods": [
+              "__init__",
+              "execute_plan",
+              "_generate_recommendations",
+              "_generate_audit_hash"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 4
+          },
+          {
+            "name": "CampaignStrategyOrchestrator",
+            "methods": [
+              "__init__",
+              "process_strategy",
+              "_plan_to_dict",
+              "_result_to_dict",
+              "get_supported_industries",
+              "get_task_agent_mapping"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 6
+          },
+          {
+            "name": "CampaignStrategyOrchestratorAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          }
+        ],
+        "module_functions": [
+          "get_circuit_breaker",
+          "execute",
+          "test_orchestrator"
+        ],
+        "execute_methods": [
+          "CampaignStrategyOrchestratorAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\campaignstrategyorchestratoria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\cashofferfilteria.py",
+      "filename": "cashofferfilteria.py",
+      "size_bytes": 9625,
+      "lines": 135,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 115
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 19,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "CashOfferFilterAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "CashOfferFilterAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\cashofferfilteria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\channelattributia.py",
+      "filename": "channelattributia.py",
+      "size_bytes": 16428,
+      "lines": 262,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 215
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ChannelAttributAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "ChannelAttributAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\channelattributia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\competitoranalyzeria.py",
+      "filename": "competitoranalyzeria.py",
+      "size_bytes": 13902,
+      "lines": 218,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 177
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "CompetitorAnalyzerAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "CompetitorAnalyzerAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\competitoranalyzeria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\competitorintelligenceia.py",
+      "filename": "competitorintelligenceia.py",
+      "size_bytes": 14805,
+      "lines": 223,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 182
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "CompetitorIntelligenceAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "CompetitorIntelligenceAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\competitorintelligenceia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\contactqualityia.py",
+      "filename": "contactqualityia.py",
+      "size_bytes": 15151,
+      "lines": 238,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 192
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ContactQualityAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "ContactQualityAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\contactqualityia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\contentgeneratoria.py",
+      "filename": "contentgeneratoria.py",
+      "size_bytes": 15574,
+      "lines": 251,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 206
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ContentGeneratorAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "ContentGeneratorAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\contentgeneratoria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\contentperformanceia.py",
+      "filename": "contentperformanceia.py",
+      "size_bytes": 9648,
+      "lines": 135,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 115
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 19,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ContentPerformanceAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "ContentPerformanceAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\contentperformanceia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\conversioncohortia.py",
+      "filename": "conversioncohortia.py",
+      "size_bytes": 15606,
+      "lines": 237,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 191
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ConversionCohortAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_generate_recommendations",
+          "_build_error_response",
+          "_build_validation_error_response",
+          "_build_compliance_blocked_response",
+          "health_check"
+        ],
+        "execute_methods": [
+          "ConversionCohortAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\conversioncohortia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\creativeanalyzeria.py",
+      "filename": "creativeanalyzeria.py",
+      "size_bytes": 14523,
+      "lines": 233,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 189
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "CreativeAnalyzerAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "CreativeAnalyzerAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\creativeanalyzeria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\customersegmentatonia.py",
+      "filename": "customersegmentatonia.py",
+      "size_bytes": 13800,
+      "lines": 214,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 174
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "CustomerSegmentationAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_generate_recommendations",
+          "_build_error_response",
+          "_build_validation_error_response",
+          "_build_compliance_blocked_response",
+          "health_check"
+        ],
+        "execute_methods": [
+          "CustomerSegmentationAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\customersegmentatonia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\emailautomationia.py",
+      "filename": "emailautomationia.py",
+      "size_bytes": 17143,
+      "lines": 249,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 202
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "EmailAutomationAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "EmailAutomationAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\emailautomationia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\geosegmentationia.py",
+      "filename": "geosegmentationia.py",
+      "size_bytes": 12639,
+      "lines": 202,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 165
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 19,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "GeoSegmentationAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_build_error_response",
+          "_build_validation_error_response",
+          "_build_compliance_blocked_response",
+          "health_check"
+        ],
+        "execute_methods": [
+          "GeoSegmentationAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\geosegmentationia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\influencermatcheria.py",
+      "filename": "influencermatcheria.py",
+      "size_bytes": 15091,
+      "lines": 227,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 186
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "InfluencerMatcherAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "InfluencerMatcherAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\influencermatcheria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\influencermatchingia.py",
+      "filename": "influencermatchingia.py",
+      "size_bytes": 13734,
+      "lines": 216,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 176
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "InfluencerMatchingAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "InfluencerMatchingAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\influencermatchingia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\journeyoptimizeria.py",
+      "filename": "journeyoptimizeria.py",
+      "size_bytes": 14646,
+      "lines": 226,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 185
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "JourneyOptimizerAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "JourneyOptimizerAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\journeyoptimizeria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\leadscoria.py",
+      "filename": "leadscoria.py",
+      "size_bytes": 16104,
+      "lines": 266,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 218
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "LeadScorAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "LeadScorAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\leadscoria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\leadscoringia.py",
+      "filename": "leadscoringia.py",
+      "size_bytes": 9594,
+      "lines": 135,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 115
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 19,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "LeadScoringAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "LeadScoringAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\leadscoringia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\marketingmixmodelia.py",
+      "filename": "marketingmixmodelia.py",
+      "size_bytes": 9637,
+      "lines": 135,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 115
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 19,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "MarketingMixModelAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "MarketingMixModelAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\marketingmixmodelia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\marketingorchestratorea.py",
+      "filename": "marketingorchestratorea.py",
+      "size_bytes": 9665,
+      "lines": 135,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 115
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 19,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "MarketingOrchestratorAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "MarketingOrchestratorAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\marketingorchestratorea.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\minimalformia.py",
+      "filename": "minimalformia.py",
+      "size_bytes": 13268,
+      "lines": 209,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 170
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 19,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "MinimalFormAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_build_error_response",
+          "_build_validation_error_response",
+          "_build_compliance_blocked_response",
+          "health_check"
+        ],
+        "execute_methods": [
+          "MinimalFormAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\minimalformia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\personalizationengineia.py",
+      "filename": "personalizationengineia.py",
+      "size_bytes": 14916,
+      "lines": 229,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 186
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PersonalizationEngineAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "PersonalizationEngineAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\personalizationengineia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\predictiveleadia.py",
+      "filename": "predictiveleadia.py",
+      "size_bytes": 15863,
+      "lines": 248,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 201
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PredictiveLeadAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "PredictiveLeadAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\predictiveleadia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\pricingoptimizeria.py",
+      "filename": "pricingoptimizeria.py",
+      "size_bytes": 17404,
+      "lines": 272,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 220
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PricingOptimizerAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "PricingOptimizerAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\pricingoptimizeria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\productaffinityia.py",
+      "filename": "productaffinityia.py",
+      "size_bytes": 14014,
+      "lines": 221,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 181
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ProductAffinityAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_calculate_affinity",
+          "_build_error_response",
+          "_build_validation_error_response",
+          "_build_compliance_blocked_response",
+          "health_check"
+        ],
+        "execute_methods": [
+          "ProductAffinityAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\productaffinityia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\retentionpredictorea.py",
+      "filename": "retentionpredictorea.py",
+      "size_bytes": 9651,
+      "lines": 135,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 115
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 19,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "RetentionPredictorAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "RetentionPredictorAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\retentionpredictorea.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\retentionpredictoria.py",
+      "filename": "retentionpredictoria.py",
+      "size_bytes": 16370,
+      "lines": 259,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 211
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "RetentionPredictorAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "RetentionPredictorAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\retentionpredictoria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\sentimentanalyzeria.py",
+      "filename": "sentimentanalyzeria.py",
+      "size_bytes": 15360,
+      "lines": 254,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 207
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "SentimentAnalyzerAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "SentimentAnalyzerAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\sentimentanalyzeria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\sociallisteningia.py",
+      "filename": "sociallisteningia.py",
+      "size_bytes": 15117,
+      "lines": 238,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 193
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 20,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "SocialListeningAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_validation_err",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "SocialListeningAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\sociallisteningia.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\socialpostgeneratoria.py",
+      "filename": "socialpostgeneratoria.py",
+      "size_bytes": 9652,
+      "lines": 135,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 75,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 115
+      },
+      "ast_analysis": {
+        "class_count": 5,
+        "function_count": 19,
+        "async_function_count": 0,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PriorityLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ComplianceStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "SocialPostGeneratorAgentOperative",
+            "methods": [
+              "__init__",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "allow_request",
+              "record_success",
+              "record_failure",
+              "get_state"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "get_config",
+          "execute",
+          "_error_resp",
+          "_compliance_blocked",
+          "health_check",
+          "_self_test_examples"
+        ],
+        "execute_methods": [
+          "SocialPostGeneratorAgentOperative.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\socialpostgeneratoria.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\executors\\email_executor.py",
+      "filename": "email_executor.py",
+      "size_bytes": 7494,
+      "lines": 202,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented"
+      ],
+      "score": 80,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": false,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": true,
+        "lines_of_code": 161
+      },
+      "ast_analysis": {
+        "class_count": 2,
+        "function_count": 4,
+        "async_function_count": 4,
+        "method_count": 8,
+        "classes": [
+          {
+            "name": "EmailExecutor",
+            "methods": [
+              "__init__",
+              "get_supported_actions",
+              "execute",
+              "_send_via_sendgrid",
+              "_send_via_smtp"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 5
+          },
+          {
+            "name": "MockEmailExecutor",
+            "methods": [
+              "__init__",
+              "get_supported_actions",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 3
+          }
+        ],
+        "module_functions": [],
+        "execute_methods": [
+          "EmailExecutor.execute",
+          "MockEmailExecutor.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\executors\\email_executor.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\executors\\meta_executor.py",
+      "filename": "meta_executor.py",
+      "size_bytes": 10527,
+      "lines": 258,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented"
+      ],
+      "score": 80,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": false,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": true,
+        "lines_of_code": 200
+      },
+      "ast_analysis": {
+        "class_count": 2,
+        "function_count": 4,
+        "async_function_count": 4,
+        "method_count": 8,
+        "classes": [
+          {
+            "name": "MetaExecutor",
+            "methods": [
+              "__init__",
+              "get_supported_actions",
+              "execute",
+              "_publish_post",
+              "_reply_comment"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 5
+          },
+          {
+            "name": "MockMetaExecutor",
+            "methods": [
+              "__init__",
+              "get_supported_actions",
+              "execute"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 3
+          }
+        ],
+        "module_functions": [],
+        "execute_methods": [
+          "MetaExecutor.execute",
+          "MockMetaExecutor.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\executors\\meta_executor.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\operative\\inject_operative.py",
+      "filename": "inject_operative.py",
+      "size_bytes": 11813,
+      "lines": 285,
+      "categories": [
+        "has_execute_method",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 60,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": false,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 205
+      },
+      "ast_analysis": {
+        "class_count": 0,
+        "function_count": 4,
+        "async_function_count": 0,
+        "method_count": 0,
+        "classes": [],
+        "module_functions": [
+          "backup_file",
+          "has_execute_operative",
+          "inject_operative_code",
+          "main"
+        ],
+        "execute_methods": [],
+        "run_methods": [],
+        "has_any_execute": false
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\operative\\inject_operative.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\operative\\test_operative.py",
+      "filename": "test_operative.py",
+      "size_bytes": 7336,
+      "lines": 202,
+      "categories": [
+        "has_execute_method",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 60,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": false,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 154
+      },
+      "ast_analysis": {
+        "class_count": 1,
+        "function_count": 1,
+        "async_function_count": 4,
+        "method_count": 1,
+        "classes": [
+          {
+            "name": "DummyAgent",
+            "methods": [
+              "execute"
+            ],
+            "has_init": false,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 1
+          }
+        ],
+        "module_functions": [
+          "test_content_generator",
+          "test_email_automation",
+          "test_wrapper_directly",
+          "main"
+        ],
+        "execute_methods": [
+          "DummyAgent.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\operative\\test_operative.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\orchestrator\\campaignstrategyorchestratoria_v4.py",
+      "filename": "campaignstrategyorchestratoria_v4.py",
+      "size_bytes": 140738,
+      "lines": 3659,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 85,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": true,
+        "lines_of_code": 2925
+      },
+      "ast_analysis": {
+        "class_count": 29,
+        "function_count": 107,
+        "async_function_count": 12,
+        "method_count": 116,
+        "classes": [
+          {
+            "name": "StructuredLogger",
+            "methods": [
+              "__init__",
+              "with_context",
+              "_log",
+              "info",
+              "warning",
+              "error",
+              "debug"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 7
+          },
+          {
+            "name": "TaskType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "TaskStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "CircuitBreakerState",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "AlertSeverity",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "AlertType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "IndustryType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ExecutionMode",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "SecurityLayer",
+            "methods": [
+              "__init__",
+              "_get_or_create_key",
+              "encrypt",
+              "decrypt",
+              "hash_data",
+              "create_audit_entry",
+              "verify_audit_chain",
+              "validate_tenant_access",
+              "rate_limit_check"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 9
+          },
+          {
+            "name": "Metric",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "TelemetrySystem",
+            "methods": [
+              "__init__",
+              "record_metric",
+              "record_latency",
+              "get_percentile",
+              "get_slo_status",
+              "_calculate_success_rate",
+              "start_span",
+              "end_span",
+              "export_prometheus_format"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 9
+          },
+          {
+            "name": "CacheLayer",
+            "methods": [
+              "__init__",
+              "get",
+              "set",
+              "invalidate",
+              "invalidate_pattern",
+              "get_stats"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 6
+          },
+          {
+            "name": "AgentStats",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "Alert",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "AgentAllocationDecision",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PlannedTask",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ExecutionPhase",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ExecutionPlan",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ExecutionResult",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ParsedStrategy",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "AIStrategyParser",
+            "methods": [
+              "__init__",
+              "parse",
+              "_extract_business_name",
+              "_extract_audiences",
+              "_estimate_audience_size",
+              "_extract_objectives",
+              "_extract_kpis",
+              "_extract_budget",
+              "_extract_timeline",
+              "_extract_channels",
+              "_extract_tactics",
+              "_extract_ai_insights",
+              "_extract_themes",
+              "_detect_tone",
+              "_detect_urgency",
+              "_recommend_focus",
+              "_analyze_sentiment",
+              "_extract_competitors",
+              "_extract_implicit_goals",
+              "_assess_risks",
+              "_predict_success",
+              "_get_seasonal_context",
+              "_calculate_confidence"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 23
+          },
+          {
+            "name": "NeuralAgentAllocator",
+            "methods": [
+              "__init__",
+              "allocate_agent",
+              "_extract_features",
+              "_score_agent",
+              "_generate_reason",
+              "_get_stats_summary",
+              "_handle_unknown_task",
+              "get_allocation_summary",
+              "clear_log"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 9
+          },
+          {
+            "name": "AgentPerformanceTracker",
+            "methods": [
+              "__init__",
+              "_get_stats_path",
+              "_load_stats",
+              "_save_stats",
+              "record_task_result",
+              "get_agent_stats",
+              "get_all_stats",
+              "get_underperformers",
+              "get_top_performers"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 9
+          },
+          {
+            "name": "ProactiveAlertSystem",
+            "methods": [
+              "__init__",
+              "generate_alert",
+              "check_slo_violations",
+              "check_agent_alerts",
+              "get_active_alerts",
+              "resolve_alert"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 6
+          },
+          {
+            "name": "AdaptiveCircuitBreaker",
+            "methods": [
+              "__init__",
+              "record_failure",
+              "record_success",
+              "_open_circuit",
+              "_close_circuit",
+              "can_execute",
+              "get_status"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 7
+          },
+          {
+            "name": "TaskPlanner",
+            "methods": [
+              "__init__",
+              "create_plan",
+              "_identify_required_tasks",
+              "_create_planned_tasks",
+              "_categorize_budget",
+              "_determine_phase",
+              "_determine_priority",
+              "_determine_dependencies",
+              "_prepare_input_data",
+              "_organize_phases"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 10
+          },
+          {
+            "name": "ExecutionEngine",
+            "methods": [
+              "__init__",
+              "execute_plan",
+              "_execute_phase_parallel",
+              "_execute_phase_sequential",
+              "_execute_task",
+              "_generate_summary",
+              "_generate_recommendations",
+              "_estimate_business_impact"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 8
+          },
+          {
+            "name": "ContinuousLearningLayer",
+            "methods": [
+              "__init__",
+              "learn_from_execution",
+              "_identify_success_factors",
+              "_identify_failure_factors",
+              "get_insights",
+              "_get_top_factors"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 6
+          },
+          {
+            "name": "CampaignStrategyOrchestrator",
+            "methods": [
+              "__init__",
+              "process_strategy",
+              "_plan_to_dict",
+              "_result_to_dict",
+              "get_supported_industries",
+              "get_system_status",
+              "get_task_agent_mapping"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 7
+          }
+        ],
+        "module_functions": [
+          "get_circuit_breaker",
+          "execute",
+          "test_orchestrator_v4"
+        ],
+        "execute_methods": [],
+        "run_methods": [],
+        "has_any_execute": false
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\orchestrator\\campaignstrategyorchestratoria_v4.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\orchestrator\\campaignstrategyorchestratoria_v5.py",
+      "filename": "campaignstrategyorchestratoria_v5.py",
+      "size_bytes": 97957,
+      "lines": 2666,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 85,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": true,
+        "lines_of_code": 2068
+      },
+      "ast_analysis": {
+        "class_count": 24,
+        "function_count": 69,
+        "async_function_count": 6,
+        "method_count": 71,
+        "classes": [
+          {
+            "name": "LogDeduplicator",
+            "methods": [
+              "__new__",
+              "_init_deduplicator",
+              "should_log",
+              "_cleanup_old_logs"
+            ],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 4
+          },
+          {
+            "name": "EnterpriseLogger",
+            "methods": [
+              "__init__",
+              "_should_log",
+              "info",
+              "warning",
+              "error",
+              "debug"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 6
+          },
+          {
+            "name": "TaskType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "TaskStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ExecutionMode",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "IndustryType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ConfidenceLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "OrchestratorConfig",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "BusinessMetrics",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PredictiveScore",
+            "methods": [
+              "should_auto_execute"
+            ],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 1
+          },
+          {
+            "name": "AgentStats",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PlannedTask",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ExecutionPlan",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ExecutionResult",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PredictiveSuccessScorer",
+            "methods": [
+              "__init__",
+              "calculate_score",
+              "_score_strategy_completeness",
+              "_score_budget_adequacy",
+              "_score_industry_experience",
+              "_score_agent_success",
+              "_score_seasonal_alignment",
+              "_score_kpi_realism",
+              "_score_audience_clarity",
+              "_get_historical_adjustment",
+              "_determine_confidence_level",
+              "_generate_recommendations",
+              "record_outcome"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 13
+          },
+          {
+            "name": "BusinessMetricsCalculator",
+            "methods": [
+              "__init__",
+              "calculate_estimated_metrics",
+              "calculate_actual_metrics"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 3
+          },
+          {
+            "name": "SmartAgentAllocator",
+            "methods": [
+              "__init__",
+              "get_agent_stats",
+              "get_all_agent_stats",
+              "allocate_agent",
+              "record_execution",
+              "get_allocation_summary"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 6
+          },
+          {
+            "name": "RealTimeAdaptationEngine",
+            "methods": [
+              "__init__",
+              "should_adapt",
+              "adapt",
+              "get_adaptation_summary"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 4
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "record_failure",
+              "record_success",
+              "can_execute",
+              "_transition_to"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          },
+          {
+            "name": "StrategyParser",
+            "methods": [
+              "parse",
+              "_extract_business_name",
+              "_extract_audiences",
+              "_extract_objectives",
+              "_extract_kpis",
+              "_extract_budget",
+              "_extract_channels",
+              "_extract_tactics",
+              "_extract_timeline",
+              "_calculate_confidence"
+            ],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 10
+          },
+          {
+            "name": "IntelligentTaskPlanner",
+            "methods": [
+              "__init__",
+              "create_plan",
+              "_identify_tasks",
+              "_get_phase",
+              "_get_priority",
+              "_get_priority_score",
+              "_get_dependencies",
+              "_group_by_phases"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 8
+          },
+          {
+            "name": "ExecutionEngine",
+            "methods": [
+              "__init__",
+              "_get_circuit_breaker",
+              "execute_plan",
+              "_check_dependencies",
+              "_generate_audit_hash",
+              "_generate_recommendations"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 6
+          },
+          {
+            "name": "CampaignStrategyOrchestratorV5Ultra",
+            "methods": [
+              "__init__",
+              "process_strategy",
+              "get_supported_industries",
+              "get_available_tasks",
+              "get_metrics"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          },
+          {
+            "name": "State",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          }
+        ],
+        "module_functions": [
+          "deduplicate_log",
+          "execute",
+          "test_orchestrator_v5"
+        ],
+        "execute_methods": [],
+        "run_methods": [],
+        "has_any_execute": false
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\orchestrator\\campaignstrategyorchestratoria_v5.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\wrappers\\operative_wrapper.py",
+      "filename": "operative_wrapper.py",
+      "size_bytes": 29328,
+      "lines": 682,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 85,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": true,
+        "lines_of_code": 505
+      },
+      "ast_analysis": {
+        "class_count": 10,
+        "function_count": 17,
+        "async_function_count": 2,
+        "method_count": 17,
+        "classes": [
+          {
+            "name": "AutonomyLevel",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ActionType",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ExecutionStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "OperativeResult",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "TenantConfig",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "SafetyFilter",
+            "methods": [
+              "__init__",
+              "check"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "AuditTrail",
+            "methods": [
+              "__init__",
+              "create_entry",
+              "_hash_data"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 3
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "can_execute",
+              "record_success",
+              "record_failure",
+              "reset"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          },
+          {
+            "name": "BaseExecutor",
+            "methods": [
+              "execute",
+              "get_supported_actions"
+            ],
+            "has_init": false,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "OperativeWrapper",
+            "methods": [
+              "__init__",
+              "_get_agent_name",
+              "execute_operative",
+              "_should_auto_execute",
+              "_prepare_execution_data"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 5
+          }
+        ],
+        "module_functions": [
+          "load_tenant_config",
+          "create_operative_agent"
+        ],
+        "execute_methods": [
+          "BaseExecutor.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\wrappers\\operative_wrapper.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\_archived\\leadscoringia_backup_20251012_120320.py",
+      "filename": "leadscoringia_backup_20251012_120320.py",
+      "size_bytes": 15340,
+      "lines": 380,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 85,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": true,
+        "lines_of_code": 309
+      },
+      "ast_analysis": {
+        "class_count": 6,
+        "function_count": 28,
+        "async_function_count": 3,
+        "method_count": 28,
+        "classes": [
+          {
+            "name": "TokenBucket",
+            "methods": [
+              "__init__",
+              "consume",
+              "stats"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 3
+          },
+          {
+            "name": "LRUCacheTTL",
+            "methods": [
+              "__init__",
+              "get",
+              "put",
+              "stats"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 4
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "__init__",
+              "call",
+              "status"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 3
+          },
+          {
+            "name": "FairnessMonitor",
+            "methods": [
+              "__init__",
+              "record",
+              "disparity"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 3
+          },
+          {
+            "name": "ModelRegistry",
+            "methods": [
+              "__init__",
+              "register",
+              "get",
+              "list_versions"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 4
+          },
+          {
+            "name": "LeadScoringIA",
+            "methods": [
+              "__init__",
+              "_register_default_models",
+              "execute",
+              "execute_batch",
+              "_default_config",
+              "_cache_key_hmac",
+              "_normalize",
+              "_engagement",
+              "_bucket_of",
+              "_score",
+              "health"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 11
+          }
+        ],
+        "module_functions": [
+          "create_agent_instance"
+        ],
+        "execute_methods": [
+          "LeadScoringIA.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\_archived\\leadscoringia_backup_20251012_120320.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\core\\database.py",
+      "filename": "database.py",
+      "size_bytes": 15069,
+      "lines": 424,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented"
+      ],
+      "score": 80,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": false,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": false,
+        "lines_of_code": 311
+      },
+      "ast_analysis": {
+        "class_count": 3,
+        "function_count": 10,
+        "async_function_count": 19,
+        "method_count": 28,
+        "classes": [
+          {
+            "name": "DatabaseInterface",
+            "methods": [
+              "execute",
+              "fetchone",
+              "fetch",
+              "initialize",
+              "close"
+            ],
+            "has_init": false,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 5
+          },
+          {
+            "name": "AsyncPGDatabase",
+            "methods": [
+              "__init__",
+              "initialize",
+              "execute",
+              "fetchone",
+              "fetch",
+              "close"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 6
+          },
+          {
+            "name": "InMemoryDatabase",
+            "methods": [
+              "__init__",
+              "initialize",
+              "execute",
+              "fetchone",
+              "fetch",
+              "close",
+              "_handle_insert",
+              "_handle_update",
+              "_handle_delete",
+              "_extract_table",
+              "_extract_columns",
+              "_extract_conflict_column",
+              "_apply_where",
+              "_matches_where",
+              "_extract_set_pairs",
+              "_extract_order_field",
+              "_extract_limit"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 17
+          }
+        ],
+        "module_functions": [
+          "create_database"
+        ],
+        "execute_methods": [
+          "DatabaseInterface.execute",
+          "AsyncPGDatabase.execute",
+          "InMemoryDatabase.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\advertising\\core\\database.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\scripts\\generate_phase1.py",
+      "filename": "generate_phase1.py",
+      "size_bytes": 57386,
+      "lines": 1527,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "api_integration",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 95,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": true,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": true,
+        "lines_of_code": 1154
+      },
+      "ast_analysis": {
+        "class_count": 0,
+        "function_count": 2,
+        "async_function_count": 0,
+        "method_count": 0,
+        "classes": [],
+        "module_functions": [
+          "create_file",
+          "main"
+        ],
+        "execute_methods": [],
+        "run_methods": [],
+        "has_any_execute": false
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\advertising\\scripts\\generate_phase1.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\scripts\\master_generator.py",
+      "filename": "master_generator.py",
+      "size_bytes": 54459,
+      "lines": 1344,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "api_integration",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 95,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": true,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": true,
+        "lines_of_code": 1025
+      },
+      "ast_analysis": {
+        "class_count": 0,
+        "function_count": 6,
+        "async_function_count": 0,
+        "method_count": 0,
+        "classes": [],
+        "module_functions": [
+          "create_file",
+          "create_init_files",
+          "print_phase_header",
+          "print_summary",
+          "generate_phase1",
+          "generate_phase2"
+        ],
+        "execute_methods": [],
+        "run_methods": [],
+        "has_any_execute": false
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\advertising\\scripts\\master_generator.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\core\\execution\\action_plan_executor.py",
+      "filename": "action_plan_executor.py",
+      "size_bytes": 13453,
+      "lines": 346,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 85,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": false,
+        "lines_of_code": 270
+      },
+      "ast_analysis": {
+        "class_count": 1,
+        "function_count": 5,
+        "async_function_count": 2,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ActionPlanExecutor",
+            "methods": [
+              "__init__",
+              "execute",
+              "rollback",
+              "_validate_plan_for_execution",
+              "_check_dependencies",
+              "get_execution_history",
+              "get_stats"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 7
+          }
+        ],
+        "module_functions": [],
+        "execute_methods": [
+          "ActionPlanExecutor.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\advertising\\core\\execution\\action_plan_executor.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\core\\google_ads\\connector.py",
+      "filename": "connector.py",
+      "size_bytes": 20704,
+      "lines": 535,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 85,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": false,
+        "lines_of_code": 411
+      },
+      "ast_analysis": {
+        "class_count": 2,
+        "function_count": 4,
+        "async_function_count": 4,
+        "method_count": 7,
+        "classes": [
+          {
+            "name": "ConnectorResult",
+            "methods": [
+              "to_dict"
+            ],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 1
+          },
+          {
+            "name": "GoogleAdsConnector",
+            "methods": [
+              "__init__",
+              "execute",
+              "validate_content",
+              "rollback",
+              "_handle_execution_failure",
+              "_error_result"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 6
+          }
+        ],
+        "module_functions": [],
+        "execute_methods": [
+          "GoogleAdsConnector.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\advertising\\core\\google_ads\\connector.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\core\\google_ads\\executor.py",
+      "filename": "executor.py",
+      "size_bytes": 13999,
+      "lines": 371,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented"
+      ],
+      "score": 80,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": false,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": true,
+        "lines_of_code": 277
+      },
+      "ast_analysis": {
+        "class_count": 6,
+        "function_count": 10,
+        "async_function_count": 1,
+        "method_count": 10,
+        "classes": [
+          {
+            "name": "ErrorCategory",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "CircuitState",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "CircuitBreaker",
+            "methods": [
+              "can_execute",
+              "record_success",
+              "record_failure",
+              "to_dict"
+            ],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 4
+          },
+          {
+            "name": "CircuitBreakerOpenError",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "MaxRetriesExceededError",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "GoogleAdsExecutor",
+            "methods": [
+              "__init__",
+              "execute",
+              "_calculate_delay",
+              "_get_circuit",
+              "get_circuit_status",
+              "reset_circuit"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 6
+          }
+        ],
+        "module_functions": [
+          "classify_error"
+        ],
+        "execute_methods": [
+          "GoogleAdsExecutor.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\advertising\\core\\google_ads\\executor.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\core\\operations\\registry.py",
+      "filename": "registry.py",
+      "size_bytes": 21480,
+      "lines": 570,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 85,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": true,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": false,
+        "lines_of_code": 451
+      },
+      "ast_analysis": {
+        "class_count": 6,
+        "function_count": 15,
+        "async_function_count": 3,
+        "method_count": 15,
+        "classes": [
+          {
+            "name": "ErrorCode",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "OperationContext",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "OperationRequest",
+            "methods": [
+              "operation_base",
+              "operation_version"
+            ],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "OperationResult",
+            "methods": [
+              "to_dict"
+            ],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 1
+          },
+          {
+            "name": "OperationSchema",
+            "methods": [
+              "validate",
+              "full_name"
+            ],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "OperationRegistry",
+            "methods": [
+              "__init__",
+              "register",
+              "get",
+              "list_operations",
+              "validate",
+              "execute",
+              "_classify_error",
+              "_register_builtin_operations",
+              "_register_get_campaign_metrics",
+              "_register_update_campaign_budget"
+            ],
+            "has_init": true,
+            "has_execute": true,
+            "has_run": false,
+            "method_count": 10
+          }
+        ],
+        "module_functions": [
+          "get_operation_registry"
+        ],
+        "execute_methods": [
+          "OperationRegistry.execute"
+        ],
+        "run_methods": [],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\advertising\\core\\operations\\registry.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\core\\workflows\\engine.py",
+      "filename": "engine.py",
+      "size_bytes": 19951,
+      "lines": 515,
+      "categories": [
+        "has_class",
+        "has_execute_method",
+        "has_constructor",
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 85,
+      "issues": [],
+      "recommendation": "Listo para producción",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": false,
+        "has_def_run": true,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": true,
+        "lines_of_code": 380
+      },
+      "ast_analysis": {
+        "class_count": 4,
+        "function_count": 11,
+        "async_function_count": 4,
+        "method_count": 15,
+        "classes": [
+          {
+            "name": "StepStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "WorkflowStatus",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "WorkflowExecution",
+            "methods": [
+              "__init__",
+              "to_dict"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 2
+          },
+          {
+            "name": "WorkflowEngine",
+            "methods": [
+              "__init__",
+              "load_workflows",
+              "load_workflow_file",
+              "register_workflow",
+              "run",
+              "_execute_step",
+              "_execute_builtin_action",
+              "_filter_params",
+              "resume",
+              "list_workflows",
+              "get_workflow",
+              "get_execution_history",
+              "get_stats"
+            ],
+            "has_init": true,
+            "has_execute": false,
+            "has_run": true,
+            "method_count": 13
+          }
+        ],
+        "module_functions": [],
+        "execute_methods": [],
+        "run_methods": [
+          "WorkflowEngine.run"
+        ],
+        "has_any_execute": true
+      },
+      "final_category": "AGENTE_OPERATIVO",
+      "relative_path": "marketing\\advertising\\core\\workflows\\engine.py",
+      "module": "marketing"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+﻿{
+    "total_modules":  0,
+    "total_agents":  0,
+    "data_source":  "final_inventory/agents_registry_final.json",
+    "recommendation":  "API should expose 0 agents across 0 modules",
+    "last_updated":  null,
+    "status":  "ready",
+    "project":  "NADAKKI AI Suite"
+}

@@ -1,0 +1,133 @@
+{
+  "expected": {
+    "marketing": 44,
+    "legal": 33,
+    "contabilidad": 21,
+    "logistica": 23,
+    "presupuesto": 13,
+    "rrhh": 10,
+    "educacion": 9,
+    "investigacion": 9,
+    "ventascrm": 9,
+    "regtech": 8,
+    "recuperacion": 5,
+    "originacion": 10,
+    "otros": 20
+  },
+  "found_raw": {
+    "contabilidad": 13,
+    "educacion": 7,
+    "investigacion": 7,
+    "legal": 20,
+    "logistica": 16,
+    "marketing": 77,
+    "originacion": 7,
+    "otros": 39,
+    "presupuesto": 11,
+    "recuperacion": 5,
+    "regtech": 4,
+    "rrhh": 7,
+    "ventascrm": 7
+  },
+  "found_ui": {
+    "contabilidad": 13,
+    "educacion": 7,
+    "investigacion": 7,
+    "legal": 20,
+    "logistica": 16,
+    "marketing": 77,
+    "originacion": 7,
+    "otros": 39,
+    "presupuesto": 11,
+    "recuperacion": 5,
+    "regtech": 4,
+    "rrhh": 7,
+    "ventascrm": 7
+  },
+  "comparison": {
+    "marketing": {
+      "expected": 44,
+      "found_ui": 77,
+      "missing": 0,
+      "status": "ok"
+    },
+    "legal": {
+      "expected": 33,
+      "found_ui": 20,
+      "missing": 13,
+      "status": "warn"
+    },
+    "contabilidad": {
+      "expected": 21,
+      "found_ui": 13,
+      "missing": 8,
+      "status": "warn"
+    },
+    "logistica": {
+      "expected": 23,
+      "found_ui": 16,
+      "missing": 7,
+      "status": "warn"
+    },
+    "presupuesto": {
+      "expected": 13,
+      "found_ui": 11,
+      "missing": 2,
+      "status": "warn"
+    },
+    "rrhh": {
+      "expected": 10,
+      "found_ui": 7,
+      "missing": 3,
+      "status": "warn"
+    },
+    "educacion": {
+      "expected": 9,
+      "found_ui": 7,
+      "missing": 2,
+      "status": "warn"
+    },
+    "investigacion": {
+      "expected": 9,
+      "found_ui": 7,
+      "missing": 2,
+      "status": "warn"
+    },
+    "ventascrm": {
+      "expected": 9,
+      "found_ui": 7,
+      "missing": 2,
+      "status": "warn"
+    },
+    "regtech": {
+      "expected": 8,
+      "found_ui": 4,
+      "missing": 4,
+      "status": "warn"
+    },
+    "recuperacion": {
+      "expected": 5,
+      "found_ui": 5,
+      "missing": 0,
+      "status": "ok"
+    },
+    "originacion": {
+      "expected": 10,
+      "found_ui": 7,
+      "missing": 3,
+      "status": "warn"
+    },
+    "otros": {
+      "expected": 20,
+      "found_ui": 39,
+      "missing": 0,
+      "status": "ok"
+    }
+  },
+  "summary": {
+    "files_total": 347,
+    "files_ignored": 5,
+    "agents_raw": 220,
+    "agents_ui": 220
+  }
+}

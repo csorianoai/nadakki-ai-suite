@@ -1,0 +1,375 @@
+{
+  "category": "UTILIDAD_SCRIPT",
+  "count": 7,
+  "files": [
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\agent_compat.py",
+      "filename": "agent_compat.py",
+      "size_bytes": 2360,
+      "lines": 83,
+      "categories": [
+        "moderate_size",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 30,
+      "issues": [
+        "syntax_error"
+      ],
+      "recommendation": "Mantener como utilidad",
+      "structure_analysis": {
+        "has_class_def": false,
+        "has_def_execute": false,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": false,
+        "lines_of_code": 61
+      },
+      "ast_analysis": {
+        "error": "Syntax error: invalid non-printable character U+FEFF (<unknown>, line 1)"
+      },
+      "final_category": "UTILIDAD_SCRIPT",
+      "relative_path": "agent_compat.py",
+      "module": "root"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\shared_layers\\ai_router\\__init__.py",
+      "filename": "__init__.py",
+      "size_bytes": 535,
+      "lines": 24,
+      "categories": [
+        "small_size",
+        "documented"
+      ],
+      "score": 10,
+      "issues": [
+        "syntax_error"
+      ],
+      "recommendation": "Mantener como utilidad",
+      "structure_analysis": {
+        "has_class_def": false,
+        "has_def_execute": false,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": false,
+        "has_api_calls": false,
+        "has_try_except": false,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 23
+      },
+      "ast_analysis": {
+        "error": "Syntax error: invalid non-printable character U+FEFF (<unknown>, line 1)"
+      },
+      "final_category": "UTILIDAD_SCRIPT",
+      "relative_path": "shared_layers\\ai_router\\__init__.py",
+      "module": "shared_layers"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\google_ads\\__init__.py",
+      "filename": "__init__.py",
+      "size_bytes": 909,
+      "lines": 29,
+      "categories": [
+        "small_size",
+        "documented",
+        "agent_named"
+      ],
+      "score": 15,
+      "issues": [
+        "syntax_error"
+      ],
+      "recommendation": "Mantener como utilidad",
+      "structure_analysis": {
+        "has_class_def": false,
+        "has_def_execute": false,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": false,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": false,
+        "lines_of_code": 22
+      },
+      "ast_analysis": {
+        "error": "Syntax error: invalid non-printable character U+FEFF (<unknown>, line 1)"
+      },
+      "final_category": "UTILIDAD_SCRIPT",
+      "relative_path": "marketing\\google_ads\\__init__.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\layers\\__init__.py",
+      "filename": "__init__.py",
+      "size_bytes": 491,
+      "lines": 17,
+      "categories": [
+        "documented",
+        "agent_named"
+      ],
+      "score": 10,
+      "issues": [],
+      "recommendation": "Mantener como utilidad",
+      "structure_analysis": {
+        "has_class_def": false,
+        "has_def_execute": false,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": false,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": false,
+        "lines_of_code": 15
+      },
+      "ast_analysis": {
+        "class_count": 0,
+        "function_count": 0,
+        "async_function_count": 0,
+        "method_count": 0,
+        "classes": [],
+        "module_functions": [],
+        "execute_methods": [],
+        "run_methods": [],
+        "has_any_execute": false
+      },
+      "final_category": "UTILIDAD_SCRIPT",
+      "relative_path": "marketing\\layers\\__init__.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\wrappers\\__init__.py",
+      "filename": "__init__.py",
+      "size_bytes": 464,
+      "lines": 23,
+      "categories": [
+        "small_size",
+        "agent_named"
+      ],
+      "score": 10,
+      "issues": [],
+      "recommendation": "Mantener como utilidad",
+      "structure_analysis": {
+        "has_class_def": false,
+        "has_def_execute": false,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": false,
+        "has_docstring": false,
+        "has_logging": false,
+        "has_config": true,
+        "lines_of_code": 22
+      },
+      "ast_analysis": {
+        "class_count": 0,
+        "function_count": 0,
+        "async_function_count": 0,
+        "method_count": 0,
+        "classes": [],
+        "module_functions": [],
+        "execute_methods": [],
+        "run_methods": [],
+        "has_any_execute": false
+      },
+      "final_category": "UTILIDAD_SCRIPT",
+      "relative_path": "marketing\\wrappers\\__init__.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\_archived\\validate_agents.py",
+      "filename": "validate_agents.py",
+      "size_bytes": 1674,
+      "lines": 54,
+      "categories": [
+        "moderate_size",
+        "error_handling",
+        "documented",
+        "agent_named"
+      ],
+      "score": 25,
+      "issues": [
+        "syntax_error"
+      ],
+      "recommendation": "Mantener como utilidad",
+      "structure_analysis": {
+        "has_class_def": false,
+        "has_def_execute": false,
+        "has_def_run": false,
+        "has_async_def": false,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": false,
+        "has_config": false,
+        "lines_of_code": 38
+      },
+      "ast_analysis": {
+        "error": "Syntax error: invalid non-printable character U+FEFF (<unknown>, line 1)"
+      },
+      "final_category": "UTILIDAD_SCRIPT",
+      "relative_path": "marketing\\_archived\\validate_agents.py",
+      "module": "marketing"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\marketing\\advertising\\api\\routes.py",
+      "filename": "routes.py",
+      "size_bytes": 23660,
+      "lines": 577,
+      "categories": [
+        "substantial_size",
+        "async_capable",
+        "error_handling",
+        "has_logging",
+        "documented",
+        "agent_named"
+      ],
+      "score": 40,
+      "issues": [],
+      "recommendation": "Mantener como utilidad",
+      "structure_analysis": {
+        "has_class_def": false,
+        "has_def_execute": false,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": true,
+        "has_docstring": true,
+        "has_logging": true,
+        "has_config": false,
+        "lines_of_code": 470
+      },
+      "ast_analysis": {
+        "class_count": 9,
+        "function_count": 1,
+        "async_function_count": 30,
+        "method_count": 0,
+        "classes": [
+          {
+            "name": "StrategyRequest",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "PerformanceAnalysisRequest",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "BudgetPacingRequest",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "RSAGenerateRequest",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "SearchCleanRequest",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "WorkflowRunRequest",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "OrchestratorRequest",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "TriageRequest",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          },
+          {
+            "name": "ScheduleRequest",
+            "methods": [],
+            "has_init": false,
+            "has_execute": false,
+            "has_run": false,
+            "method_count": 0
+          }
+        ],
+        "module_functions": [
+          "register_day6_routes"
+        ],
+        "execute_methods": [],
+        "run_methods": [],
+        "has_any_execute": false
+      },
+      "final_category": "UTILIDAD_SCRIPT",
+      "relative_path": "marketing\\advertising\\api\\routes.py",
+      "module": "marketing"
+    }
+  ]
+}

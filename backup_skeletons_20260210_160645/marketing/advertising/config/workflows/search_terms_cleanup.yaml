@@ -1,0 +1,43 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# WORKFLOW 5: Search Terms Cleanup
+# config/workflows/search_terms_cleanup.yaml
+# ═══════════════════════════════════════════════════════════════════════════════
+
+id: search_terms_cleanup
+name: "Search Terms Deep Cleanup"
+description: "Thorough search terms analysis with negative keyword implementation and performance tracking."
+trigger: schedule_weekly
+frequency: "every_wednesday"
+version: "1.0.0"
+
+steps:
+  - id: analyze_terms
+    name: "Analyze Search Terms"
+    agent: search_cleaner
+    action: analyze_and_clean
+    params:
+      industry: "financial_services"
+      search_terms:
+        - {term: "personal loan apply", impressions: 400, clicks: 20, cost: 40, conversions: 4}
+        - {term: "free money online", impressions: 150, clicks: 12, cost: 25, conversions: 0}
+        - {term: "loan calculator excel", impressions: 80, clicks: 5, cost: 8, conversions: 0}
+    on_failure: stop
+
+  - id: generate_report
+    name: "Generate Cleanup Report"
+    agent: search_cleaner
+    action: get_summary
+    params:
+      industry: "financial_services"
+      search_terms:
+        - {term: "personal loan apply", impressions: 400, clicks: 20, cost: 40, conversions: 4}
+        - {term: "free money online", impressions: 150, clicks: 12, cost: 25, conversions: 0}
+    on_failure: continue
+
+  - id: log_completion
+    name: "Log Completion"
+    agent: ""
+    action: log
+    params:
+      message: "Search terms cleanup workflow completed"
+    on_failure: continue

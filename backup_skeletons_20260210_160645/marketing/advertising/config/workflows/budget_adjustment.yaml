@@ -1,0 +1,39 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# WORKFLOW 3: Budget Adjustment
+# config/workflows/budget_adjustment.yaml
+# ═══════════════════════════════════════════════════════════════════════════════
+
+id: budget_adjustment
+name: "Safe Budget Adjustment"
+description: "Protocol for safely adjusting campaign budgets with pacing analysis, policy check, and monitoring."
+trigger: manual
+version: "1.0.0"
+
+steps:
+  - id: pacing_analysis
+    name: "Analyze Current Pacing"
+    agent: budget_pacing
+    action: analyze_and_plan
+    params:
+      industry: "financial_services"
+      campaigns:
+        - {campaign_id: "c1", campaign_name: "Main Campaign", daily_budget: 100, spend_today: 40, spend_mtd: 1200, monthly_target: 3000}
+    on_failure: stop
+
+  - id: strategy_check
+    name: "Strategy Validation"
+    agent: strategist
+    action: analyze_performance
+    params:
+      metrics: {ctr: 2.5, cpa: 45, conv_rate: 4.2}
+      industry: "financial_services"
+    on_failure: continue
+
+  - id: apply_changes
+    name: "Apply Budget Changes"
+    agent: ""
+    action: log
+    params:
+      message: "Budget changes calculated and ready to apply"
+    requires_approval: false
+    on_failure: stop

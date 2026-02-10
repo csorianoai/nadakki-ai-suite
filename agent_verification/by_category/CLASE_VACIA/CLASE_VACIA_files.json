@@ -1,0 +1,206 @@
+{
+  "category": "CLASE_VACIA",
+  "count": 5,
+  "files": [
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\orchestration\\coordinator.py",
+      "filename": "coordinator.py",
+      "size_bytes": 1654,
+      "lines": 28,
+      "categories": [
+        "has_class",
+        "has_constructor",
+        "small_size",
+        "async_capable",
+        "agent_named"
+      ],
+      "score": 35,
+      "issues": [
+        "syntax_error"
+      ],
+      "recommendation": "Considerar eliminación",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": false,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": true,
+        "has_imports": false,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": true,
+        "has_api_calls": false,
+        "has_try_except": false,
+        "has_docstring": false,
+        "has_logging": false,
+        "has_config": false,
+        "lines_of_code": 26
+      },
+      "ast_analysis": {
+        "error": "Syntax error: invalid non-printable character U+FEFF (<unknown>, line 1)"
+      },
+      "final_category": "CLASE_VACIA",
+      "relative_path": "orchestration\\coordinator.py",
+      "module": "orchestration"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\shared_layers\\executors\\providers\\anthropic_executor.py",
+      "filename": "anthropic_executor.py",
+      "size_bytes": 1720,
+      "lines": 22,
+      "categories": [
+        "has_class",
+        "small_size",
+        "async_capable"
+      ],
+      "score": 20,
+      "issues": [
+        "syntax_error"
+      ],
+      "recommendation": "Considerar eliminación",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": false,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": false,
+        "has_langchain_import": false,
+        "has_agent_string": false,
+        "has_api_calls": false,
+        "has_try_except": false,
+        "has_docstring": false,
+        "has_logging": false,
+        "has_config": false,
+        "lines_of_code": 19
+      },
+      "ast_analysis": {
+        "error": "Syntax error: invalid non-printable character U+FEFF (<unknown>, line 1)"
+      },
+      "final_category": "CLASE_VACIA",
+      "relative_path": "shared_layers\\executors\\providers\\anthropic_executor.py",
+      "module": "shared_layers"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\shared_layers\\executors\\providers\\deepseek_executor.py",
+      "filename": "deepseek_executor.py",
+      "size_bytes": 1435,
+      "lines": 22,
+      "categories": [
+        "has_class",
+        "small_size",
+        "uses_openai",
+        "async_capable"
+      ],
+      "score": 35,
+      "issues": [
+        "syntax_error"
+      ],
+      "recommendation": "Considerar eliminación",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": false,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": true,
+        "has_langchain_import": false,
+        "has_agent_string": false,
+        "has_api_calls": false,
+        "has_try_except": false,
+        "has_docstring": false,
+        "has_logging": false,
+        "has_config": false,
+        "lines_of_code": 19
+      },
+      "ast_analysis": {
+        "error": "Syntax error: invalid non-printable character U+FEFF (<unknown>, line 1)"
+      },
+      "final_category": "CLASE_VACIA",
+      "relative_path": "shared_layers\\executors\\providers\\deepseek_executor.py",
+      "module": "shared_layers"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\shared_layers\\executors\\providers\\grok_executor.py",
+      "filename": "grok_executor.py",
+      "size_bytes": 1407,
+      "lines": 22,
+      "categories": [
+        "has_class",
+        "small_size",
+        "uses_openai",
+        "async_capable"
+      ],
+      "score": 35,
+      "issues": [
+        "syntax_error"
+      ],
+      "recommendation": "Considerar eliminación",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": false,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": true,
+        "has_langchain_import": false,
+        "has_agent_string": false,
+        "has_api_calls": false,
+        "has_try_except": false,
+        "has_docstring": false,
+        "has_logging": false,
+        "has_config": false,
+        "lines_of_code": 19
+      },
+      "ast_analysis": {
+        "error": "Syntax error: invalid non-printable character U+FEFF (<unknown>, line 1)"
+      },
+      "final_category": "CLASE_VACIA",
+      "relative_path": "shared_layers\\executors\\providers\\grok_executor.py",
+      "module": "shared_layers"
+    },
+    {
+      "file_path": "C:\\Users\\ramon\\Projects\\nadakki-ai-suite\\agents\\shared_layers\\executors\\providers\\openai_executor.py",
+      "filename": "openai_executor.py",
+      "size_bytes": 1755,
+      "lines": 26,
+      "categories": [
+        "has_class",
+        "small_size",
+        "uses_openai",
+        "async_capable"
+      ],
+      "score": 35,
+      "issues": [
+        "syntax_error"
+      ],
+      "recommendation": "Considerar eliminación",
+      "structure_analysis": {
+        "has_class_def": true,
+        "has_def_execute": false,
+        "has_def_run": false,
+        "has_async_def": true,
+        "has_init_method": false,
+        "has_imports": true,
+        "has_openai_import": true,
+        "has_langchain_import": false,
+        "has_agent_string": false,
+        "has_api_calls": false,
+        "has_try_except": false,
+        "has_docstring": false,
+        "has_logging": false,
+        "has_config": false,
+        "lines_of_code": 23
+      },
+      "ast_analysis": {
+        "error": "Syntax error: invalid non-printable character U+FEFF (<unknown>, line 1)"
+      },
+      "final_category": "CLASE_VACIA",
+      "relative_path": "shared_layers\\executors\\providers\\openai_executor.py",
+      "module": "shared_layers"
+    }
+  ]
+}

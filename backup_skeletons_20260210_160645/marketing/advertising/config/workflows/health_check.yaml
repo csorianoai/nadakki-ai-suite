@@ -1,0 +1,88 @@
+# ============================================================================
+# NADAKKI AI Suite - Health Check Workflow
+# Account and integration health verification
+# ============================================================================
+
+name: health_check
+version: "1.0"
+description: "Verify account connectivity and data freshness"
+
+inputs:
+  tenant_id:
+    type: string
+    required: true
+  alert_on_failure:
+    type: boolean
+    default: true
+
+outputs:
+  healthy:
+    type: boolean
+  checks_passed:
+    type: integer
+  checks_failed:
+    type: integer
+
+tags:
+  - health
+  - monitoring
+  - automated
+
+timeout_minutes: 5
+
+steps:
+  - name: check_api_connectivity
+    type: operation
+    operation: get_account_info@v1
+    params: {}
+    next_step: check_campaign_access
+    on_error: api_failure
+
+  - name: check_campaign_access
+    type: operation
+    operation: get_campaign_metrics@v1
+    params:
+      limit: 1
+    next_step: check_data_freshness
+    on_error: campaign_access_failure
+
+  - name: check_data_freshness
+    type: condition
+    condition: "${steps.check_campaign_access.result.data.count} >= 0"
+    on_true: all_checks_passed
+    on_false: data_freshness_failure
+
+  - name: all_checks_passed
+    type: operation
+    operation: log_event@v1
+    params:
+      event: "health_check_passed"
+      checks: 3
+    next_step: null
+
+  - name: api_failure
+    type: operation
+    operation: log_event@v1
+    params:
+      event: "health_check_failed"
+      reason: "API connectivity failure"
+      severity: "critical"
+    next_step: null
+
+  - name: campaign_access_failure
+    type: operation
+    operation: log_event@v1
+    params:
+      event: "health_check_failed"
+      reason: "Campaign access failure"
+      severity: "high"
+    next_step: null
+
+  - name: data_freshness_failure
+    type: operation
+    operation: log_event@v1
+    params:
+      event: "health_check_failed"
+      reason: "Data freshness check failed"
+      severity: "medium"
+    next_step: null

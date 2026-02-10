@@ -1,0 +1,1242 @@
+{
+  "generated_at": "2026-02-10T19:13:08.197290Z",
+  "discovery_version": "v2.5_balanced",
+  "total_agents": 135,
+  "by_module": {
+    "contabilidad": 9,
+    "coordinacion": 10,
+    "core": 5,
+    "educacion": 3,
+    "investigacion": 3,
+    "legal": 10,
+    "logistica": 6,
+    "marketing": 55,
+    "originacion": 9,
+    "presupuesto": 5,
+    "recuperacion": 5,
+    "regtech": 7,
+    "rrhh": 4,
+    "ventascrm": 4
+  },
+  "agents": [
+    {
+      "agent_id": "compliance_coordinator_ffbf22",
+      "filename": "compliance_coordinator.py",
+      "file_path": "compliance/compliance_coordinator.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 97,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "compliancewatchdog_7e5d4b",
+      "filename": "compliancewatchdog.py",
+      "file_path": "compliance/compliancewatchdog.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "docguardian_5832df",
+      "filename": "docguardian.py",
+      "file_path": "compliance/docguardian.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "regulatory_radar_e3b635",
+      "filename": "regulatory_radar.py",
+      "file_path": "compliance/regulatory_radar.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 247,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "analisis_financiero_5a4143",
+      "filename": "analisis_financiero.py",
+      "file_path": "contabilidad/analisis_financiero.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 1130,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "analisis_financiero_super_agent_c5665c",
+      "filename": "analisis_financiero_super_agent.py",
+      "file_path": "contabilidad/analisis_financiero_super_agent.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 1442,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "auditoriainterna_6c49bd",
+      "filename": "auditoriainterna.py",
+      "file_path": "contabilidad/auditoriainterna.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "conciliacionbancaria_cacc09",
+      "filename": "conciliacionbancaria.py",
+      "file_path": "contabilidad/conciliacionbancaria.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "dgiiautoreporter_c692c4",
+      "filename": "dgiiautoreporter.py",
+      "file_path": "contabilidad/dgiiautoreporter.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "flujocajaia_43e0f5",
+      "filename": "flujocajaia.py",
+      "file_path": "contabilidad/flujocajaia.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "previsionfiscal_bfa8e3",
+      "filename": "previsionfiscal.py",
+      "file_path": "contabilidad/previsionfiscal.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "reconcilia_auto_2de0db",
+      "filename": "reconcilia_auto.py",
+      "file_path": "contabilidad/reconcilia_auto.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 315,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "tributarioia_8d0fea",
+      "filename": "tributarioia.py",
+      "file_path": "contabilidad/tributarioia.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "decision_coordinator_199bfe",
+      "filename": "decision_coordinator.py",
+      "file_path": "decision/decision_coordinator.py",
+      "module": "coordinacion",
+      "status": "configured",
+      "lines": 95,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "policyguardian_6f6198",
+      "filename": "policyguardian.py",
+      "file_path": "decision/policyguardian.py",
+      "module": "coordinacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "quantumdecision_6d3c8c",
+      "filename": "quantumdecision.py",
+      "file_path": "decision/quantumdecision.py",
+      "module": "coordinacion",
+      "status": "configured",
+      "lines": 273,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "riskoracle_7c7bec",
+      "filename": "riskoracle.py",
+      "file_path": "decision/riskoracle.py",
+      "module": "coordinacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "educacion_coordinator_7847f4",
+      "filename": "educacion_coordinator.py",
+      "file_path": "educacion/educacion_coordinator.py",
+      "module": "educacion",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "evaluacionia_a42266",
+      "filename": "evaluacionia.py",
+      "file_path": "educacion/evaluacionia.py",
+      "module": "educacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "progresionestudiante_ef19bd",
+      "filename": "progresionestudiante.py",
+      "file_path": "educacion/progresionestudiante.py",
+      "module": "educacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "experiencia_coordinator_750929",
+      "filename": "experiencia_coordinator.py",
+      "file_path": "experiencia/experiencia_coordinator.py",
+      "module": "core",
+      "status": "configured",
+      "lines": 111,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "cybersentinel_bc8472",
+      "filename": "cybersentinel.py",
+      "file_path": "fortaleza/cybersentinel.py",
+      "module": "core",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "fortaleza_coordinator_9f456a",
+      "filename": "fortaleza_coordinator.py",
+      "file_path": "fortaleza/fortaleza_coordinator.py",
+      "module": "core",
+      "status": "configured",
+      "lines": 111,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "cashfloworacle_d81619",
+      "filename": "cashfloworacle.py",
+      "file_path": "inteligencia/cashfloworacle.py",
+      "module": "core",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "inteligencia_coordinator_02c84f",
+      "filename": "inteligencia_coordinator.py",
+      "file_path": "inteligencia/inteligencia_coordinator.py",
+      "module": "core",
+      "status": "configured",
+      "lines": 111,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "investigacion_coordinator_88733d",
+      "filename": "investigacion_coordinator.py",
+      "file_path": "investigacion/investigacion_coordinator.py",
+      "module": "investigacion",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "patentesanalyzer_911d64",
+      "filename": "patentesanalyzer.py",
+      "file_path": "investigacion/patentesanalyzer.py",
+      "module": "investigacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "tendenciasia_d61502",
+      "filename": "tendenciasia.py",
+      "file_path": "investigacion/tendenciasia.py",
+      "module": "investigacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "derechocomercial_01fd46",
+      "filename": "derechocomercial.py",
+      "file_path": "legal/derechocomercial.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "derechocomercialephd_c2fb4d",
+      "filename": "derechocomercialephd.py",
+      "file_path": "legal/derechocomercialephd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "derechofamiliaphd_898556",
+      "filename": "derechofamiliaphd.py",
+      "file_path": "legal/derechofamiliaphd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "derechofamiliar_e23ca3",
+      "filename": "derechofamiliar.py",
+      "file_path": "legal/derechofamiliar.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "derechoinmobiliario_a5130f",
+      "filename": "derechoinmobiliario.py",
+      "file_path": "legal/derechoinmobiliario.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "derechoinmobiliariophd_710e11",
+      "filename": "derechoinmobiliariophd.py",
+      "file_path": "legal/derechoinmobiliariophd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "derechonotarial_e553b6",
+      "filename": "derechonotarial.py",
+      "file_path": "legal/derechonotarial.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "derechopenalphd_06ea06",
+      "filename": "derechopenalphd.py",
+      "file_path": "legal/derechopenalphd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 273,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "derechoprocesalpenalphd_241541",
+      "filename": "derechoprocesalpenalphd.py",
+      "file_path": "legal/derechoprocesalpenalphd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 273,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "legal_coordinator_f0b225",
+      "filename": "legal_coordinator.py",
+      "file_path": "legal/legal_coordinator.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 150,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "controlpedidosia_3c52bc",
+      "filename": "controlpedidosia.py",
+      "file_path": "logistica/controlpedidosia.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "evaluadorproveedoresia_138b98",
+      "filename": "evaluadorproveedoresia.py",
+      "file_path": "logistica/evaluadorproveedoresia.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "logistica_coordinator_4cecb1",
+      "filename": "logistica_coordinator.py",
+      "file_path": "logistica/logistica_coordinator.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 138,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "optimizadorrutasia_609b79",
+      "filename": "optimizadorrutasia.py",
+      "file_path": "logistica/optimizadorrutasia.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "previsioninventarioia_14b3e0",
+      "filename": "previsioninventarioia.py",
+      "file_path": "logistica/previsioninventarioia.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "trazabilidadia_af9284",
+      "filename": "trazabilidadia.py",
+      "file_path": "logistica/trazabilidadia.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "abtestingia_422097",
+      "filename": "abtestingia.py",
+      "file_path": "marketing/abtestingia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 282,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "abtestingimpactia_2f8003",
+      "filename": "abtestingimpactia.py",
+      "file_path": "marketing/abtestingimpactia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 146,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "google_ads_budget_pacing_agent_907189",
+      "filename": "google_ads_budget_pacing_agent.py",
+      "file_path": "marketing/advertising/agents/marketing/google_ads_budget_pacing_agent.py",
+      "module": "marketing",
+      "status": "configured",
+      "lines": 280,
+      "reason_detected": "marketing_balanced"
+    },
+    {
+      "agent_id": "google_ads_strategist_agent_4ae120",
+      "filename": "google_ads_strategist_agent.py",
+      "file_path": "marketing/advertising/agents/marketing/google_ads_strategist_agent.py",
+      "module": "marketing",
+      "status": "configured",
+      "lines": 410,
+      "reason_detected": "marketing_balanced"
+    },
+    {
+      "agent_id": "orchestrator_agent_d71b79",
+      "filename": "orchestrator_agent.py",
+      "file_path": "marketing/advertising/agents/marketing/orchestrator_agent.py",
+      "module": "marketing",
+      "status": "configured",
+      "lines": 349,
+      "reason_detected": "marketing_balanced"
+    },
+    {
+      "agent_id": "rsa_ad_copy_generator_agent_686357",
+      "filename": "rsa_ad_copy_generator_agent.py",
+      "file_path": "marketing/advertising/agents/marketing/rsa_ad_copy_generator_agent.py",
+      "module": "marketing",
+      "status": "configured",
+      "lines": 499,
+      "reason_detected": "marketing_balanced"
+    },
+    {
+      "agent_id": "search_terms_cleaner_agent_dc712e",
+      "filename": "search_terms_cleaner_agent.py",
+      "file_path": "marketing/advertising/agents/marketing/search_terms_cleaner_agent.py",
+      "module": "marketing",
+      "status": "configured",
+      "lines": 375,
+      "reason_detected": "marketing_balanced"
+    },
+    {
+      "agent_id": "routes_e3427b",
+      "filename": "routes.py",
+      "file_path": "marketing/advertising/api/routes.py",
+      "module": "marketing",
+      "status": "configured",
+      "lines": 578,
+      "reason_detected": "marketing_balanced"
+    },
+    {
+      "agent_id": "database_6b5ec9",
+      "filename": "database.py",
+      "file_path": "marketing/advertising/core/database.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 425,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "action_plan_executor_ab75fb",
+      "filename": "action_plan_executor.py",
+      "file_path": "marketing/advertising/core/execution/action_plan_executor.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 347,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "connector_589cfd",
+      "filename": "connector.py",
+      "file_path": "marketing/advertising/core/google_ads/connector.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 536,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "executor_010ac0",
+      "filename": "executor.py",
+      "file_path": "marketing/advertising/core/google_ads/executor.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 372,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "registry_4062b2",
+      "filename": "registry.py",
+      "file_path": "marketing/advertising/core/operations/registry.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 571,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "engine_d4a661",
+      "filename": "engine.py",
+      "file_path": "marketing/advertising/core/workflows/engine.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 516,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "main_b040a2",
+      "filename": "main.py",
+      "file_path": "marketing/advertising/main.py",
+      "module": "marketing",
+      "status": "configured",
+      "lines": 1452,
+      "reason_detected": "marketing_balanced"
+    },
+    {
+      "agent_id": "test_all_47b3a8",
+      "filename": "test_all.py",
+      "file_path": "marketing/advertising/tests/test_all.py",
+      "module": "marketing",
+      "status": "configured",
+      "lines": 550,
+      "reason_detected": "marketing_balanced"
+    },
+    {
+      "agent_id": "attributionmodelia_28ccb7",
+      "filename": "attributionmodelia.py",
+      "file_path": "marketing/attributionmodelia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 136,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "audiencesegmenteria_bc06dc",
+      "filename": "audiencesegmenteria.py",
+      "file_path": "marketing/audiencesegmenteria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 265,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "budgetforecastia_633564",
+      "filename": "budgetforecastia.py",
+      "file_path": "marketing/budgetforecastia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 136,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "campaignoptimizeria_125816",
+      "filename": "campaignoptimizeria.py",
+      "file_path": "marketing/campaignoptimizeria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 246,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "campaignstrategyorchestratoria_e32ec2",
+      "filename": "campaignstrategyorchestratoria.py",
+      "file_path": "marketing/campaignstrategyorchestratoria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 1784,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "cashofferfilteria_ec0d22",
+      "filename": "cashofferfilteria.py",
+      "file_path": "marketing/cashofferfilteria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 136,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "channelattributia_1e88fa",
+      "filename": "channelattributia.py",
+      "file_path": "marketing/channelattributia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 263,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "competitoranalyzeria_5900bf",
+      "filename": "competitoranalyzeria.py",
+      "file_path": "marketing/competitoranalyzeria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 219,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "competitorintelligenceia_df498e",
+      "filename": "competitorintelligenceia.py",
+      "file_path": "marketing/competitorintelligenceia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 224,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "contactqualityia_e2093e",
+      "filename": "contactqualityia.py",
+      "file_path": "marketing/contactqualityia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 239,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "contentgeneratoria_e8b83b",
+      "filename": "contentgeneratoria.py",
+      "file_path": "marketing/contentgeneratoria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 252,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "contentperformanceia_b20c4f",
+      "filename": "contentperformanceia.py",
+      "file_path": "marketing/contentperformanceia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 136,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "conversioncohortia_1f5499",
+      "filename": "conversioncohortia.py",
+      "file_path": "marketing/conversioncohortia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 238,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "creativeanalyzeria_6f3688",
+      "filename": "creativeanalyzeria.py",
+      "file_path": "marketing/creativeanalyzeria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 234,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "customersegmentatonia_91abeb",
+      "filename": "customersegmentatonia.py",
+      "file_path": "marketing/customersegmentatonia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 215,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "emailautomationia_4b7e64",
+      "filename": "emailautomationia.py",
+      "file_path": "marketing/emailautomationia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 250,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "email_executor_831c4d",
+      "filename": "email_executor.py",
+      "file_path": "marketing/executors/email_executor.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 203,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "meta_executor_d7d0e7",
+      "filename": "meta_executor.py",
+      "file_path": "marketing/executors/meta_executor.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 259,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "geosegmentationia_8ab17c",
+      "filename": "geosegmentationia.py",
+      "file_path": "marketing/geosegmentationia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 203,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "influencermatcheria_39447e",
+      "filename": "influencermatcheria.py",
+      "file_path": "marketing/influencermatcheria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 228,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "influencermatchingia_f61960",
+      "filename": "influencermatchingia.py",
+      "file_path": "marketing/influencermatchingia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 217,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "journeyoptimizeria_9a15c2",
+      "filename": "journeyoptimizeria.py",
+      "file_path": "marketing/journeyoptimizeria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 227,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "leadscoria_89c5fd",
+      "filename": "leadscoria.py",
+      "file_path": "marketing/leadscoria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 267,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "leadscoringia_a2f714",
+      "filename": "leadscoringia.py",
+      "file_path": "marketing/leadscoringia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 136,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "marketingmixmodelia_237dae",
+      "filename": "marketingmixmodelia.py",
+      "file_path": "marketing/marketingmixmodelia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 136,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "marketingorchestratorea_92c1f5",
+      "filename": "marketingorchestratorea.py",
+      "file_path": "marketing/marketingorchestratorea.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 136,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "minimalformia_9d7a7c",
+      "filename": "minimalformia.py",
+      "file_path": "marketing/minimalformia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 210,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "test_operative_336b76",
+      "filename": "test_operative.py",
+      "file_path": "marketing/operative/test_operative.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 203,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "campaignstrategyorchestratoria_v4_384646",
+      "filename": "campaignstrategyorchestratoria_v4.py",
+      "file_path": "marketing/orchestrator/campaignstrategyorchestratoria_v4.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 3660,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "campaignstrategyorchestratoria_v5_3f22bb",
+      "filename": "campaignstrategyorchestratoria_v5.py",
+      "file_path": "marketing/orchestrator/campaignstrategyorchestratoria_v5.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 2667,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "personalizationengineia_c616db",
+      "filename": "personalizationengineia.py",
+      "file_path": "marketing/personalizationengineia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 230,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "predictiveleadia_7e0b6a",
+      "filename": "predictiveleadia.py",
+      "file_path": "marketing/predictiveleadia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 249,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "pricingoptimizeria_018cab",
+      "filename": "pricingoptimizeria.py",
+      "file_path": "marketing/pricingoptimizeria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 273,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "productaffinityia_b4c168",
+      "filename": "productaffinityia.py",
+      "file_path": "marketing/productaffinityia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 222,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "retentionpredictorea_9cdc2e",
+      "filename": "retentionpredictorea.py",
+      "file_path": "marketing/retentionpredictorea.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 136,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "retentionpredictoria_c8d1a5",
+      "filename": "retentionpredictoria.py",
+      "file_path": "marketing/retentionpredictoria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 260,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "sentimentanalyzeria_278d9d",
+      "filename": "sentimentanalyzeria.py",
+      "file_path": "marketing/sentimentanalyzeria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 255,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "sociallisteningia_ae6393",
+      "filename": "sociallisteningia.py",
+      "file_path": "marketing/sociallisteningia.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 239,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "socialpostgeneratoria_43b7d9",
+      "filename": "socialpostgeneratoria.py",
+      "file_path": "marketing/socialpostgeneratoria.py",
+      "module": "marketing",
+      "status": "active",
+      "lines": 136,
+      "reason_detected": "marketing_execute"
+    },
+    {
+      "agent_id": "costoptimizer_30fde7",
+      "filename": "costoptimizer.py",
+      "file_path": "operacional/costoptimizer.py",
+      "module": "coordinacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "operacional_coordinator_bb6304",
+      "filename": "operacional_coordinator.py",
+      "file_path": "operacional/operacional_coordinator.py",
+      "module": "coordinacion",
+      "status": "configured",
+      "lines": 111,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "qualitycontroller_63c452",
+      "filename": "qualitycontroller.py",
+      "file_path": "operacional/qualitycontroller.py",
+      "module": "coordinacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "loadbalancer_d4b3c7",
+      "filename": "loadbalancer.py",
+      "file_path": "orchestration/loadbalancer.py",
+      "module": "coordinacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "orchestrationmaster_82f905",
+      "filename": "orchestrationmaster.py",
+      "file_path": "orchestration/orchestrationmaster.py",
+      "module": "coordinacion",
+      "status": "configured",
+      "lines": 273,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "resourcemanager_41f71f",
+      "filename": "resourcemanager.py",
+      "file_path": "orchestration/resourcemanager.py",
+      "module": "coordinacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "base_components_v2_aa0e3a",
+      "filename": "base_components_v2.py",
+      "file_path": "originacion/base_components_v2.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 635,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "behavior_miner_v2_25cbee",
+      "filename": "behavior_miner_v2.py",
+      "file_path": "originacion/behavior_miner_v2.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 220,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "dnaprofiler_755346",
+      "filename": "dnaprofiler.py",
+      "file_path": "originacion/dnaprofiler.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "incomeoracle_4d2d93",
+      "filename": "incomeoracle.py",
+      "file_path": "originacion/incomeoracle.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "originacion_coordinator_2eafb9",
+      "filename": "originacion_coordinator.py",
+      "file_path": "originacion/originacion_coordinator.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 95,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "sentinelbot_564384",
+      "filename": "sentinelbot.py",
+      "file_path": "originacion/sentinelbot.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "analisisvarianza_26c674",
+      "filename": "analisisvarianza.py",
+      "file_path": "presupuesto/analisisvarianza.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 122,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "budgetoptimizer_95db50",
+      "filename": "budgetoptimizer.py",
+      "file_path": "presupuesto/budgetoptimizer.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "forecastingia_46ffbc",
+      "filename": "forecastingia.py",
+      "file_path": "presupuesto/forecastingia.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "presupuesto_coordinator_669734",
+      "filename": "presupuesto_coordinator.py",
+      "file_path": "presupuesto/presupuesto_coordinator.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 121,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "varianzaanalisis_3de65e",
+      "filename": "varianzaanalisis.py",
+      "file_path": "presupuesto/varianzaanalisis.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "collectionmaster_7eea3f",
+      "filename": "collectionmaster.py",
+      "file_path": "recuperacion/collectionmaster.py",
+      "module": "recuperacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "legalpathway_d03dfc",
+      "filename": "legalpathway.py",
+      "file_path": "recuperacion/legalpathway.py",
+      "module": "recuperacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "negotiationbot_916556",
+      "filename": "negotiationbot.py",
+      "file_path": "recuperacion/negotiationbot.py",
+      "module": "recuperacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "recoveryoptimizer_2153e1",
+      "filename": "recoveryoptimizer.py",
+      "file_path": "recuperacion/recoveryoptimizer.py",
+      "module": "recuperacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "recuperacion_coordinator_26f874",
+      "filename": "recuperacion_coordinator.py",
+      "file_path": "recuperacion/recuperacion_coordinator.py",
+      "module": "recuperacion",
+      "status": "configured",
+      "lines": 95,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "amldetector_0f179e",
+      "filename": "amldetector.py",
+      "file_path": "regtech/amldetector.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 273,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "kycautomatico_c84fcd",
+      "filename": "kycautomatico.py",
+      "file_path": "regtech/kycautomatico.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 273,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "regtech_coordinator_b9303e",
+      "filename": "regtech_coordinator.py",
+      "file_path": "regtech/regtech_coordinator.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 114,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "capacitacionia_a002d2",
+      "filename": "capacitacionia.py",
+      "file_path": "rrhh/capacitacionia.py",
+      "module": "rrhh",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "cvanalyzeria_20a32d",
+      "filename": "cvanalyzeria.py",
+      "file_path": "rrhh/cvanalyzeria.py",
+      "module": "rrhh",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "rrhh_coordinator_c3b935",
+      "filename": "rrhh_coordinator.py",
+      "file_path": "rrhh/rrhh_coordinator.py",
+      "module": "rrhh",
+      "status": "configured",
+      "lines": 117,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "talentopredictor_5cd9aa",
+      "filename": "talentopredictor.py",
+      "file_path": "rrhh/talentopredictor.py",
+      "module": "rrhh",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "churnpredictor_8841c0",
+      "filename": "churnpredictor.py",
+      "file_path": "ventascrm/churnpredictor.py",
+      "module": "ventascrm",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_large_ai"
+    },
+    {
+      "agent_id": "leadscoringia_d4ed65",
+      "filename": "leadscoringia.py",
+      "file_path": "ventascrm/leadscoringia.py",
+      "module": "ventascrm",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "pipelineoptimizer_1fead1",
+      "filename": "pipelineoptimizer.py",
+      "file_path": "ventascrm/pipelineoptimizer.py",
+      "module": "ventascrm",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "ventascrm_coordinator_7ab6fa",
+      "filename": "ventascrm_coordinator.py",
+      "file_path": "ventascrm/ventascrm_coordinator.py",
+      "module": "ventascrm",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "portfoliosentinel_69fbbe",
+      "filename": "portfoliosentinel.py",
+      "file_path": "vigilancia/portfoliosentinel.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "stresstester_8ece08",
+      "filename": "stresstester.py",
+      "file_path": "vigilancia/stresstester.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "domain_agent_class"
+    },
+    {
+      "agent_id": "vigilancia_coordinator_92703f",
+      "filename": "vigilancia_coordinator.py",
+      "file_path": "vigilancia/vigilancia_coordinator.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 95,
+      "reason_detected": "domain_agent_class"
+    }
+  ],
+  "statistics": {
+    "files_total": 347,
+    "files_skipped": 46
+  }
+}

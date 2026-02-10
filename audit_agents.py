@@ -1,232 +1,227 @@
-﻿"""
-Auditoría completa de los 24 agentes marketing
-Prueba directa sin pasar por API o main.py
-"""
-
-import sys
-sys.path.append('.')
-import traceback
-import asyncio
-import inspect
-import json
+﻿#!/usr/bin/env python3
+import json, ast
+from pathlib import Path
+from collections import defaultdict
 from datetime import datetime
-from typing import Dict, Any, List
 
-# Colores para output
-class Colors:
-    GREEN = '\033[92m'
-    RED = '\033[91m'
-    YELLOW = '\033[93m'
-    CYAN = '\033[96m'
-    RESET = '\033[0m'
-    BOLD = '\033[1m'
+AGENTS_ROOT = Path.cwd() / 'agents'
 
-def print_header(text):
-    print(f"\n{Colors.CYAN}{'=' * 60}{Colors.RESET}")
-    print(f"{Colors.BOLD}{text}{Colors.RESET}")
-    print(f"{Colors.CYAN}{'=' * 60}{Colors.RESET}\n")
+def safe_read(fp):
+    for enc in ['utf-8', 'latin-1', 'cp1252', 'iso-8859-1']:
+        try:
+            return fp.read_text(encoding=enc)
+        except:
+            pass
+    return ''
 
-def print_success(text):
-    print(f"{Colors.GREEN}✓ {text}{Colors.RESET}")
+def extract_class_names(content):
+    try:
+        tree = ast.parse(content)
+    except:
+        return []
+    
+    classes = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.ClassDef):
+            methods = [n.name for n in node.body if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))]
+            classes.append({
+                'name': node.name,
+                'methods': methods,
+                'has_execute': 'execute' in methods or 'run' in methods,
+                'line': node.lineno
+            })
+    return classes
 
-def print_error(text):
-    print(f"{Colors.RED}✗ {text}{Colors.RESET}")
+def extract_functions(content):
+    try:
+        tree = ast.parse(content)
+    except:
+        return []
+    
+    functions = []
+    for node in tree.body:
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            functions.append({
+                'name': node.name,
+                'is_async': isinstance(node, ast.AsyncFunctionDef),
+                'line': node.lineno
+            })
+    return functions
 
-def print_info(text):
-    print(f"{Colors.CYAN}→ {text}{Colors.RESET}")
+def extract_imports(content):
+    try:
+        tree = ast.parse(content)
+    except:
+        return []
+    
+    imports = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            for alias in node.names:
+                imports.append(alias.name)
+        elif isinstance(node, ast.ImportFrom):
+            if node.module:
+                imports.append(node.module)
+    
+    return imports
 
-# Datos de prueba para cada agente
-TEST_DATA = {
-    "leadscoringia": {
-        "lead_id": "L-TEST-001",
-        "attributes": {
-            "credit_score": 820,
-            "income": 75000,
-            "age": 40,
-            "employment_years": 10
-        }
-    },
-    "customersegmentation": {
-        "customer_id": "C-TEST-001",
-        "attributes": {
-            "age": 35,
-            "income": 60000,
-            "account_balance": 15000,
-            "transaction_count": 50
-        }
-    },
-    "campaignoptimizer": {
-        "campaign_id": "CAMP-TEST-001",
-        "metrics": {
-            "impressions": 10000,
-            "clicks": 250,
-            "conversions": 15,
-            "cost": 500
-        }
-    },
-    # Datos genéricos para otros agentes
-    "default": {
-        "id": "TEST-001",
-        "data": {
-            "test_field": "test_value",
-            "numeric_field": 100
+def classify_agent(content, classes, functions):
+    has_execute_fn = any(f['name'] in ['execute', 'run'] for f in functions)
+    has_execute_method = any(c['has_execute'] for c in classes)
+    has_class = len(classes) > 0
+    lines = content.count('\n') + 1
+    
+    if has_execute_fn or has_execute_method:
+        status = 'active'
+    elif has_class and lines > 50:
+        status = 'configured'
+    else:
+        status = 'template'
+    
+    likely_agent = has_execute_fn or (has_class and lines > 50)
+    
+    return {
+        'status': status,
+        'likely_agent': likely_agent,
+        'has_execute': has_execute_fn or has_execute_method,
+        'has_class': has_class,
+        'lines': lines,
+        'signals': {
+            'top_level_execute': has_execute_fn,
+            'class_execute': has_execute_method,
+            'class_present': has_class,
+            'size': 'large' if lines > 200 else 'medium' if lines > 80 else 'small'
         }
     }
+
+print('\n' + '='*100)
+print('NADAKKI AI SUITE — AUDITORÍA FORENSE COMPLETA')
+print('='*100)
+
+print('\n[SCAN] Procesando archivos...')
+all_agents = {}
+by_module = defaultdict(lambda: {'agents': [], 'total_files': 0})
+count = 0
+
+for fp in sorted(AGENTS_ROOT.rglob('*.py')):
+    if any(x in str(fp) for x in ['__pycache__', '.git', '.venv', '.pytest']):
+        continue
+    
+    content = safe_read(fp)
+    if not content.strip():
+        continue
+    
+    rel_path = fp.relative_to(AGENTS_ROOT).as_posix()
+    module = rel_path.split('/')[0]
+    
+    classes = extract_class_names(content)
+    functions = extract_functions(content)
+    imports = extract_imports(content)
+    
+    classification = classify_agent(content, classes, functions)
+    
+    agent_record = {
+        'file_path': rel_path,
+        'filename': fp.name,
+        'module': module,
+        'classes': classes,
+        'functions': [{'name': f['name'], 'async': f['is_async']} for f in functions],
+        'imports_count': len(imports),
+        'ai_imports': [imp for imp in imports if any(ai in imp.lower() for ai in ['openai', 'anthropic', 'langchain', 'gpt', 'claude', 'llm', 'embedding', 'vector'])],
+        'status': classification['status'],
+        'likely_agent': classification['likely_agent'],
+        'has_execute': classification['has_execute'],
+        'lines': classification['lines'],
+        'signals': classification['signals'],
+        'primary_class': classes[0]['name'] if classes else None,
+        'confidence': 'HIGH' if classification['likely_agent'] else 'MEDIUM' if classification['has_class'] else 'LOW'
+    }
+    
+    all_agents[rel_path] = agent_record
+    
+    if classification['likely_agent']:
+        by_module[module]['agents'].append({
+            'file': fp.name,
+            'path': rel_path,
+            'class': classes[0]['name'] if classes else 'N/A',
+            'status': classification['status'],
+            'lines': classification['lines']
+        })
+    
+    by_module[module]['total_files'] += 1
+    count += 1
+
+print(f'✅ {count} archivos procesados')
+
+print('\n[REPORT] Generando reportes...')
+
+audit_detailed = {
+    'generated_at': datetime.now().isoformat(),
+    'summary': {
+        'total_files': count,
+        'total_modules': len(by_module),
+        'total_agents': sum(1 for a in all_agents.values() if a['likely_agent']),
+        'by_status': {
+            'active': sum(1 for a in all_agents.values() if a['status'] == 'active'),
+            'configured': sum(1 for a in all_agents.values() if a['status'] == 'configured'),
+            'template': sum(1 for a in all_agents.values() if a['status'] == 'template')
+        }
+    },
+    'agents': all_agents
 }
 
-async def test_agent(agent_id: str, agent_class, tenant_id: str) -> Dict[str, Any]:
-    """Prueba un agente específico"""
-    result = {
-        "agent_id": agent_id,
-        "success": False,
-        "error": None,
-        "execution_time_ms": 0,
-        "result_type": None,
-        "has_execute": False,
-        "is_async": False
+audit_summary = {
+    'generated_at': datetime.now().isoformat(),
+    'modules': {}
+}
+
+EXPECTED = {
+    'marketing': 44, 'legal': 33, 'contabilidad': 21, 'logistica': 23,
+    'presupuesto': 13, 'rrhh': 10, 'educacion': 9, 'investigacion': 9,
+    'ventascrm': 9, 'regtech': 8, 'recuperacion': 5, 'originacion': 10, 'otros': 20
+}
+
+for module in sorted(by_module.keys()):
+    agents_in_mod = by_module[module]['agents']
+    expected_count = EXPECTED.get(module, 0)
+    real_count = len(agents_in_mod)
+    
+    audit_summary['modules'][module] = {
+        'expected': expected_count,
+        'real': real_count,
+        'difference': real_count - expected_count,
+        'status': 'OK' if real_count >= expected_count else 'MISSING' if real_count > 0 else 'EMPTY',
+        'total_files': by_module[module]['total_files'],
+        'agents': agents_in_mod
     }
-    
-    try:
-        # Crear instancia
-        agent = agent_class(tenant_id=tenant_id)
-        result["has_execute"] = hasattr(agent, 'execute')
-        
-        if not result["has_execute"]:
-            result["error"] = "No tiene método execute()"
-            return result
-        
-        result["is_async"] = inspect.iscoroutinefunction(agent.execute)
-        
-        # Obtener datos de prueba
-        test_data = TEST_DATA.get(agent_id, TEST_DATA["default"])
-        
-        # Ejecutar
-        import time
-        start = time.perf_counter()
-        
-        if result["is_async"]:
-            agent_result = await agent.execute(test_data)
-        else:
-            agent_result = agent.execute(test_data)
-        
-        result["execution_time_ms"] = (time.perf_counter() - start) * 1000
-        result["result_type"] = type(agent_result).__name__
-        result["success"] = True
-        
-        # Intentar convertir resultado a dict para inspeccionarlo
-        if hasattr(agent_result, 'dict'):
-            result["sample_result"] = str(agent_result.dict())[:200]
-        elif hasattr(agent_result, '__dict__'):
-            result["sample_result"] = str(agent_result.__dict__)[:200]
-        else:
-            result["sample_result"] = str(agent_result)[:200]
-        
-    except Exception as e:
-        result["error"] = str(e)
-        result["traceback"] = traceback.format_exc()
-    
-    return result
 
-async def main():
-    print_header("AUDITORÍA DE AGENTES MARKETING")
-    
-    # Importar canonical
-    print_info("Importando canonical...")
-    try:
-        from agents.marketing.canonical import CANONICAL_AGENTS
-        print_success(f"Canonical cargado: {len(CANONICAL_AGENTS)} agentes")
-    except Exception as e:
-        print_error(f"Error importando canonical: {e}")
-        return
-    
-    # Configuración
-    tenant_id = "audit-test-tenant"
-    results = []
-    
-    print(f"\nProbando {len(CANONICAL_AGENTS)} agentes...\n")
-    
-    # Probar cada agente
-    for i, (agent_id, agent_info) in enumerate(CANONICAL_AGENTS.items(), 1):
-        agent_name = agent_info.get("name", agent_id)
-        agent_class = agent_info.get("class")
-        
-        print(f"{Colors.YELLOW}[{i}/{len(CANONICAL_AGENTS)}]{Colors.RESET} {agent_name} ({agent_id})")
-        
-        if not agent_class:
-            print_error("  No tiene clase definida")
-            results.append({
-                "agent_id": agent_id,
-                "success": False,
-                "error": "No class defined"
-            })
-            continue
-        
-        result = await test_agent(agent_id, agent_class, tenant_id)
-        results.append(result)
-        
-        if result["success"]:
-            print_success(f"  Ejecutado en {result['execution_time_ms']:.2f}ms")
-            print(f"    Tipo: {result['result_type']}, Async: {result['is_async']}")
-        else:
-            print_error(f"  Falló: {result['error']}")
-    
-    # Resumen
-    print_header("RESUMEN DE AUDITORÍA")
-    
-    successful = [r for r in results if r["success"]]
-    failed = [r for r in results if not r["success"]]
-    
-    print(f"Total agentes: {len(results)}")
-    print_success(f"Exitosos: {len(successful)} ({len(successful)/len(results)*100:.1f}%)")
-    print_error(f"Fallidos: {len(failed)} ({len(failed)/len(results)*100:.1f}%)")
-    
-    # Detalles de agentes fallidos
-    if failed:
-        print(f"\n{Colors.RED}AGENTES FALLIDOS:{Colors.RESET}")
-        for r in failed:
-            print(f"\n  • {r['agent_id']}")
-            print(f"    Error: {r['error']}")
-            if r.get('traceback'):
-                print(f"    Traceback (últimas 5 líneas):")
-                lines = r['traceback'].split('\n')[-6:-1]
-                for line in lines:
-                    print(f"      {line}")
-    
-    # Estadísticas de tipos
-    if successful:
-        print(f"\n{Colors.GREEN}ESTADÍSTICAS:{Colors.RESET}")
-        async_count = sum(1 for r in successful if r.get('is_async'))
-        sync_count = len(successful) - async_count
-        print(f"  Async: {async_count}")
-        print(f"  Sync: {sync_count}")
-        
-        avg_time = sum(r['execution_time_ms'] for r in successful) / len(successful)
-        print(f"  Tiempo promedio: {avg_time:.2f}ms")
-    
-    # Guardar reporte
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    report_file = f"audit_report_{timestamp}.json"
-    
-    with open(report_file, 'w') as f:
-        json.dump({
-            "timestamp": datetime.now().isoformat(),
-            "total": len(results),
-            "successful": len(successful),
-            "failed": len(failed),
-            "results": results
-        }, f, indent=2, default=str)
-    
-    print(f"\n{Colors.CYAN}Reporte guardado en: {report_file}{Colors.RESET}")
-    
-    # Resultado final
-    if len(failed) == 0:
-        print(f"\n{Colors.GREEN}{Colors.BOLD}✅ TODOS LOS AGENTES FUNCIONAN CORRECTAMENTE{Colors.RESET}")
-        print(f"{Colors.CYAN}→ El problema está en main.py o canonical.py{Colors.RESET}")
-    else:
-        print(f"\n{Colors.RED}{Colors.BOLD}❌ HAY AGENTES CON PROBLEMAS{Colors.RESET}")
-        print(f"{Colors.CYAN}→ Necesitamos corregir estos agentes primero{Colors.RESET}")
-    
-    return results
+Path('audit_reports').mkdir(exist_ok=True)
 
-if __name__ == "__main__":
-    asyncio.run(main())
+with open('audit_reports/audit_report_detailed.json', 'w', encoding='utf-8') as f:
+    json.dump(audit_detailed, f, ensure_ascii=False, indent=2)
+
+with open('audit_reports/audit_summary_by_module.json', 'w', encoding='utf-8') as f:
+    json.dump(audit_summary, f, ensure_ascii=False, indent=2)
+
+print(f'✅ audit_reports/audit_report_detailed.json')
+print(f'✅ audit_reports/audit_summary_by_module.json')
+
+print('\n' + '='*100)
+print('RESUMEN EJECUTIVO')
+print('='*100)
+
+print(f'\n📊 ESTADÍSTICAS GLOBALES:')
+print(f'  Total archivos: {count}')
+print(f'  Total módulos: {len(by_module)}')
+print(f'  Total agentes: {audit_detailed["summary"]["total_agents"]}')
+print(f'\n📈 DISTRIBUCIÓN POR STATUS:')
+for status, cnt in audit_detailed["summary"]["by_status"].items():
+    print(f'  {status:15} {cnt:3}')
+
+print(f'\n🏆 TOP 10 MÓDULOS POR AGENTES:')
+sorted_mods = sorted(audit_summary['modules'].items(), key=lambda x: x[1]['real'], reverse=True)
+for mod, data in sorted_mods[:10]:
+    icon = '✅' if data['status'] == 'OK' else '⚠️' if data['real'] > 0 else '❌'
+    print(f'  {icon} {mod:20} {data["real"]:3} agentes ({data["total_files"]:3} archivos) - {data["status"]}')
+
+print('\n' + '='*100 + '\n')

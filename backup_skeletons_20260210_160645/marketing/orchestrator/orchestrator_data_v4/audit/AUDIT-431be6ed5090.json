@@ -1,0 +1,13 @@
+{
+  "entry_id": "AUDIT-431be6ed5090",
+  "timestamp": "2026-01-14T00:38:32.169275+00:00",
+  "action": "execution_started",
+  "actor": "nadaki_miami_001",
+  "resource": "PLAN-36bd0048",
+  "details": {
+    "execution_id": "EXEC-2f9d510c",
+    "dry_run": true
+  },
+  "previous_hash": "GENESIS",
+  "hash": "e2d9d88a5e69d2c50eb1c1fd765a63c78a7a94b32a661e6ad4fc11c2ff55b245"
+}

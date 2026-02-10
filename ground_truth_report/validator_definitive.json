@@ -1,0 +1,534 @@
+{
+  "generated_at": "2026-02-10T14:31:04.423878",
+  "summary": {
+    "total_files_real": 308,
+    "total_expected": 214
+  },
+  "by_module": {
+    "agent_compat.py": {
+      "real": 1,
+      "expected": 0,
+      "difference": 1,
+      "status": "extra_files",
+      "files": [
+        "agent_compat.py"
+      ]
+    },
+    "compliance": {
+      "real": 5,
+      "expected": 0,
+      "difference": 5,
+      "status": "extra_files",
+      "files": [
+        "auditmaster.py",
+        "compliance_coordinator.py",
+        "compliancewatchdog.py",
+        "docguardian.py",
+        "regulatory_radar.py"
+      ]
+    },
+    "contabilidad": {
+      "real": 22,
+      "expected": 21,
+      "difference": 1,
+      "status": "extra_files",
+      "files": [
+        "activosfijos.py",
+        "analisis_financiero.py",
+        "analisis_financiero_super_agent.py",
+        "auditoriainterna.py",
+        "cierrecontable.py",
+        "compliance_contable.py",
+        "conciliacionbancaria.py",
+        "contabilidad_coordinator.py",
+        "contabilidadinteligente.py",
+        "controlgastos.py",
+        "dgiiautoreporter.py",
+        "facturacionelectronica.py",
+        "facturacionia.py",
+        "flujocajaia.py",
+        "flujocajaprediccion.py",
+        "inventariovaloracion.py",
+        "previsionfiscal.py",
+        "reconcilia_auto.py",
+        "reportes_fiscales.py",
+        "reportesejecutivos.py",
+        "reportingfinanciero.py",
+        "tributarioia.py"
+      ]
+    },
+    "decision": {
+      "real": 5,
+      "expected": 0,
+      "difference": 5,
+      "status": "extra_files",
+      "files": [
+        "decision_coordinator.py",
+        "policyguardian.py",
+        "quantumdecision.py",
+        "riskoracle.py",
+        "turboapprover.py"
+      ]
+    },
+    "educacion": {
+      "real": 9,
+      "expected": 9,
+      "difference": 0,
+      "status": "ok",
+      "files": [
+        "competenciasia.py",
+        "contenidopersonalizado.py",
+        "curriculumadaptativo.py",
+        "cursosautomaticos.py",
+        "educacion_coordinator.py",
+        "evaluacionadaptativa.py",
+        "evaluacionia.py",
+        "progresionestudiante.py",
+        "tutorvirtualia.py"
+      ]
+    },
+    "experiencia": {
+      "real": 5,
+      "expected": 0,
+      "difference": 5,
+      "status": "extra_files",
+      "files": [
+        "chatbotsupreme.py",
+        "customergenius.py",
+        "experiencia_coordinator.py",
+        "onboardingwizard.py",
+        "personalizationengine.py"
+      ]
+    },
+    "fortaleza": {
+      "real": 5,
+      "expected": 0,
+      "difference": 5,
+      "status": "extra_files",
+      "files": [
+        "backupguardian.py",
+        "cybersentinel.py",
+        "datavault.py",
+        "fortaleza_coordinator.py",
+        "systemhealthmonitor.py"
+      ]
+    },
+    "inteligencia": {
+      "real": 5,
+      "expected": 0,
+      "difference": 5,
+      "status": "extra_files",
+      "files": [
+        "cashfloworacle.py",
+        "inteligencia_coordinator.py",
+        "pricinggenius.py",
+        "profitmaximizer.py",
+        "roimaster.py"
+      ]
+    },
+    "investigacion": {
+      "real": 9,
+      "expected": 9,
+      "difference": 0,
+      "status": "ok",
+      "files": [
+        "analisistendencias.py",
+        "innovacionia.py",
+        "innovaciontracker.py",
+        "investigacion_coordinator.py",
+        "patentesanalyzer.py",
+        "patentesautomaticos.py",
+        "prototipogenerator.py",
+        "prototiposgenerativos.py",
+        "tendenciasia.py"
+      ]
+    },
+    "legal": {
+      "real": 32,
+      "expected": 33,
+      "difference": -1,
+      "status": "critical_missing",
+      "files": [
+        "derechoadministrativo.py",
+        "derechoadministrativophd.py",
+        "derechoambiental.py",
+        "derechobancario.py",
+        "derechocivilphd.py",
+        "derechocomercial.py",
+        "derechocomercialephd.py",
+        "derechoconstitucional.py",
+        "derechoconstitucionalphd.py",
+        "derechocontratacion.py",
+        "derechofamiliaphd.py",
+        "derechofamiliar.py",
+        "derechofinanciero.py",
+        "derechoinmobiliario.py",
+        "derechoinmobiliariophd.py",
+        "derechointelectual.py",
+        "derechointernacional.py",
+        "derecholaboral.py",
+        "derecholaboralphd.py",
+        "derechomarcario.py",
+        "derechomaritimo.py",
+        "derechomigratorio.py",
+        "derechominero.py",
+        "derechonotarial.py",
+        "derechopenal.py",
+        "derechopenalphd.py",
+        "derechoprocesalpenal.py",
+        "derechoprocesalpenalphd.py",
+        "derechoseguros.py",
+        "derechotributario.py",
+        "derechotributariophd.py",
+        "legal_coordinator.py"
+      ]
+    },
+    "logistica": {
+      "real": 23,
+      "expected": 23,
+      "difference": 0,
+      "status": "ok",
+      "files": [
+        "alertasinventario.py",
+        "almaceninteligente.py",
+        "analisisrendimiento.py",
+        "controlcalidad.py",
+        "controlcalidadia.py",
+        "controlpedidosia.py",
+        "costoslogisticos.py",
+        "evaluadorproveedoresia.py",
+        "gestionriesgos.py",
+        "logistica_coordinator.py",
+        "logisticareversa.py",
+        "optimizacionalmacen.py",
+        "optimizacioncostos.py",
+        "optimizadorrutasia.py",
+        "planificaciondemanda.py",
+        "predicciondemanda.py",
+        "previsioninventarioia.py",
+        "seguridadcarga.py",
+        "sostenibilidadia.py",
+        "transporteoptimizado.py",
+        "transportepredictivo.py",
+        "trazabilidadia.py",
+        "trazabilidadtotal.py"
+      ]
+    },
+    "marketing": {
+      "real": 98,
+      "expected": 44,
+      "difference": 54,
+      "status": "extra_files",
+      "files": [
+        "canonical.py",
+        "canonical_backup_20251011_084547.py",
+        "canonical_backup_20251012_091337.py",
+        "content_generator_v3.py",
+        "leadscoringia_backup_20251012_120320.py",
+        "schemas_from_sandbox.py",
+        "validate_agents.py",
+        "abtestingia.py",
+        "abtestingimpactia.py",
+        "google_ads_budget_pacing_agent.py",
+        "google_ads_strategist_agent.py",
+        "orchestrator_agent.py",
+        "rsa_ad_copy_generator_agent.py",
+        "search_terms_cleaner_agent.py",
+        "routes.py",
+        "action_plan.py",
+        "database.py",
+        "action_plan_executor.py",
+        "client_factory.py",
+        "connector.py",
+        "executor.py",
+        "yaml_store.py",
+        "telemetry.py",
+        "registry.py",
+        "engine.py",
+        "idempotency.py",
+        "journal.py",
+        "tenant_vault.py",
+        "engine.py",
+        "main.py",
+        "generate_phase1.py",
+        "master_generator.py",
+        "__init__.py",
+        "__init__.py",
+        "test_all.py",
+        "__init__.py",
+        "attributionmodelia.py",
+        "audiencesegmenteria.py",
+        "brandsentimentia.py",
+        "contentviralityia.py",
+        "fidelizedprofileia.py",
+        "influencermatchia.py",
+        "videoreelautogenia.py",
+        "budgetforecastia.py",
+        "campaignoptimizeria.py",
+        "campaignstrategyorchestratoria.py",
+        "cashofferfilteria.py",
+        "channelattributia.py",
+        "competitoranalyzeria.py",
+        "competitorintelligenceia.py",
+        "contactqualityia.py",
+        "contentgeneratoria.py",
+        "contentperformanceia.py",
+        "conversioncohortia.py",
+        "creativeanalyzeria.py",
+        "customersegmentatonia.py",
+        "emailautomationia.py",
+        "__init__.py",
+        "email_executor.py",
+        "meta_executor.py",
+        "geosegmentationia.py",
+        "__init__.py",
+        "influencermatcheria.py",
+        "influencermatchingia.py",
+        "journeyoptimizeria.py",
+        "__init__.py",
+        "audit_trail_layer.py",
+        "authority_layer.py",
+        "authority_layer_v2.py",
+        "business_impact_layer.py",
+        "compliance_layer.py",
+        "decision_layer.py",
+        "decision_layer_v2.py",
+        "error_handling_layer.py",
+        "reason_codes_layer.py",
+        "reason_codes_layer_v2.py",
+        "leadscoria.py",
+        "leadscoringia.py",
+        "marketingmixmodelia.py",
+        "marketingorchestratorea.py",
+        "minimalformia.py",
+        "multi_industry_config.py",
+        "inject_operative.py",
+        "test_operative.py",
+        "__init__.py",
+        "campaignstrategyorchestratoria_v4.py",
+        "campaignstrategyorchestratoria_v5.py",
+        "personalizationengineia.py",
+        "predictiveleadia.py",
+        "pricingoptimizeria.py",
+        "productaffinityia.py",
+        "retentionpredictorea.py",
+        "retentionpredictoria.py",
+        "sentimentanalyzeria.py",
+        "sociallisteningia.py",
+        "socialpostgeneratoria.py",
+        "__init__.py",
+        "operative_wrapper.py"
+      ]
+    },
+    "operacional": {
+      "real": 5,
+      "expected": 0,
+      "difference": 5,
+      "status": "extra_files",
+      "files": [
+        "costoptimizer.py",
+        "operacional_coordinator.py",
+        "processgenius.py",
+        "qualitycontroller.py",
+        "workflowmaster.py"
+      ]
+    },
+    "orchestration": {
+      "real": 5,
+      "expected": 0,
+      "difference": 5,
+      "status": "extra_files",
+      "files": [
+        "coordinator.py",
+        "healthchecker.py",
+        "loadbalancer.py",
+        "orchestrationmaster.py",
+        "resourcemanager.py"
+      ]
+    },
+    "originacion": {
+      "real": 10,
+      "expected": 10,
+      "difference": 0,
+      "status": "ok",
+      "files": [
+        "base_components_v2.py",
+        "behavior_miner_v2.py",
+        "behaviorminer.py",
+        "dna_profiler_v2.py",
+        "dnaprofiler.py",
+        "income_oracle_v2.py",
+        "incomeoracle.py",
+        "originacion_coordinator.py",
+        "sentinel_bot_v2.py",
+        "sentinelbot.py"
+      ]
+    },
+    "otros": {
+      "real": 0,
+      "expected": 20,
+      "difference": -20,
+      "status": "critical_missing",
+      "files": []
+    },
+    "presupuesto": {
+      "real": 13,
+      "expected": 13,
+      "difference": 0,
+      "status": "ok",
+      "files": [
+        "analisisvarianza.py",
+        "budgetoptimizer.py",
+        "controlpresupuestario.py",
+        "costocentros.py",
+        "forecastingavanzado.py",
+        "forecastingia.py",
+        "optimizacionrecursos.py",
+        "planificacionestrategica.py",
+        "presupuesto_coordinator.py",
+        "presupuestomaestro.py",
+        "presupuestopredictivoia.py",
+        "roipredictor.py",
+        "varianzaanalisis.py"
+      ]
+    },
+    "recuperacion": {
+      "real": 5,
+      "expected": 5,
+      "difference": 0,
+      "status": "ok",
+      "files": [
+        "collectionmaster.py",
+        "legalpathway.py",
+        "negotiationbot.py",
+        "recoveryoptimizer.py",
+        "recuperacion_coordinator.py"
+      ]
+    },
+    "registry.py": {
+      "real": 1,
+      "expected": 0,
+      "difference": 1,
+      "status": "extra_files",
+      "files": [
+        "registry.py"
+      ]
+    },
+    "registry_backup.py": {
+      "real": 1,
+      "expected": 0,
+      "difference": 1,
+      "status": "extra_files",
+      "files": [
+        "registry_backup.py"
+      ]
+    },
+    "regtech": {
+      "real": 8,
+      "expected": 8,
+      "difference": 0,
+      "status": "ok",
+      "files": [
+        "amldetector.py",
+        "amltiemporeal.py",
+        "kycautomatico.py",
+        "monitoreotransacciones.py",
+        "regtech_coordinator.py",
+        "reportesregulatorios.py",
+        "reportingregulatorio.py",
+        "sancioneschecker.py"
+      ]
+    },
+    "rrhh": {
+      "real": 10,
+      "expected": 10,
+      "difference": 0,
+      "status": "ok",
+      "files": [
+        "capacitacionia.py",
+        "cvanalyzeria.py",
+        "nominaautomatica.py",
+        "nominainteligente.py",
+        "performanceanalyzer.py",
+        "performancetracker.py",
+        "rrhh_coordinator.py",
+        "selectioncvia.py",
+        "talentoprediccion.py",
+        "talentopredictor.py"
+      ]
+    },
+    "shared_layers": {
+      "real": 17,
+      "expected": 0,
+      "difference": 17,
+      "status": "extra_files",
+      "files": [
+        "__init__.py",
+        "__init__.py",
+        "models_config.py",
+        "router.py",
+        "__init__.py",
+        "base_executor.py",
+        "llm_executor.py",
+        "__init__.py",
+        "anthropic_executor.py",
+        "deepseek_executor.py",
+        "grok_executor.py",
+        "openai_executor.py",
+        "__init__.py",
+        "base_social.py",
+        "facebook_executor.py",
+        "instagram_executor.py",
+        "social_manager.py"
+      ]
+    },
+    "ventascrm": {
+      "real": 9,
+      "expected": 9,
+      "difference": 0,
+      "status": "ok",
+      "files": [
+        "churnpredictor.py",
+        "cierrepredictivoia.py",
+        "clientelifecycleia.py",
+        "communicationbot.py",
+        "leadscoringia.py",
+        "pipelineoptimizer.py",
+        "pipelinepredictivoia.py",
+        "upsellengine.py",
+        "ventascrm_coordinator.py"
+      ]
+    },
+    "vigilancia": {
+      "real": 5,
+      "expected": 0,
+      "difference": 5,
+      "status": "extra_files",
+      "files": [
+        "earlywarning.py",
+        "marketradar.py",
+        "portfoliosentinel.py",
+        "stresstester.py",
+        "vigilancia_coordinator.py"
+      ]
+    }
+  },
+  "action_items": {
+    "files_found": 308,
+    "files_missing_estimate": 21,
+    "modules_to_investigate": [
+      {
+        "module": "legal",
+        "real": 32,
+        "expected": 33,
+        "missing": 1
+      },
+      {
+        "module": "otros",
+        "real": 0,
+        "expected": 20,
+        "missing": 20
+      }
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "audiencesegmenteria": {
+    "agent_id": "audiencesegmenteria",
+    "total_executions": 1,
+    "successful_executions": 1,
+    "failed_executions": 0,
+    "success_rate": 1.0,
+    "avg_duration_ms": 50,
+    "p50_duration_ms": 50,
+    "p95_duration_ms": 50,
+    "p99_duration_ms": 50,
+    "consecutive_failures": 0,
+    "durations_history": [
+      50
+    ],
+    "hourly_success_rate": {
+      "19": 1.0
+    },
+    "daily_success_rate": {},
+    "industry_success_rate": {
+      "boat_rental": 1.0
+    },
+    "error_types": {}
+  },
+  "predictiveleadia": {
+    "agent_id": "predictiveleadia",
+    "total_executions": 1,
+    "successful_executions": 1,
+    "failed_executions": 0,
+    "success_rate": 1.0,
+    "avg_duration_ms": 50,
+    "p50_duration_ms": 50,
+    "p95_duration_ms": 50,
+    "p99_duration_ms": 50,
+    "consecutive_failures": 0,
+    "durations_history": [
+      50
+    ],
+    "hourly_success_rate": {
+      "19": 1.0
+    },
+    "daily_success_rate": {},
+    "industry_success_rate": {
+      "boat_rental": 1.0
+    },
+    "error_types": {}
+  },
+  "campaignoptimizeria": {
+    "agent_id": "campaignoptimizeria",
+    "total_executions": 1,
+    "successful_executions": 1,
+    "failed_executions": 0,
+    "success_rate": 1.0,
+    "avg_duration_ms": 50,
+    "p50_duration_ms": 50,
+    "p95_duration_ms": 50,
+    "p99_duration_ms": 50,
+    "consecutive_failures": 0,
+    "durations_history": [
+      50
+    ],
+    "hourly_success_rate": {
+      "19": 1.0
+    },
+    "daily_success_rate": {},
+    "industry_success_rate": {
+      "boat_rental": 1.0
+    },
+    "error_types": {}
+  },
+  "emailautomationia": {
+    "agent_id": "emailautomationia",
+    "total_executions": 1,
+    "successful_executions": 1,
+    "failed_executions": 0,
+    "success_rate": 1.0,
+    "avg_duration_ms": 50,
+    "p50_duration_ms": 50,
+    "p95_duration_ms": 50,
+    "p99_duration_ms": 50,
+    "consecutive_failures": 0,
+    "durations_history": [
+      50
+    ],
+    "hourly_success_rate": {
+      "19": 1.0
+    },
+    "daily_success_rate": {},
+    "industry_success_rate": {
+      "boat_rental": 1.0
+    },
+    "error_types": {}
+  },
+  "contentgeneratoria": {
+    "agent_id": "contentgeneratoria",
+    "total_executions": 1,
+    "successful_executions": 1,
+    "failed_executions": 0,
+    "success_rate": 1.0,
+    "avg_duration_ms": 50,
+    "p50_duration_ms": 50,
+    "p95_duration_ms": 50,
+    "p99_duration_ms": 50,
+    "consecutive_failures": 0,
+    "durations_history": [
+      50
+    ],
+    "hourly_success_rate": {
+      "19": 1.0
+    },
+    "daily_success_rate": {},
+    "industry_success_rate": {
+      "boat_rental": 1.0
+    },
+    "error_types": {}
+  },
+  "abtestingia": {
+    "agent_id": "abtestingia",
+    "total_executions": 1,
+    "successful_executions": 1,
+    "failed_executions": 0,
+    "success_rate": 1.0,
+    "avg_duration_ms": 50,
+    "p50_duration_ms": 50,
+    "p95_duration_ms": 50,
+    "p99_duration_ms": 50,
+    "consecutive_failures": 0,
+    "durations_history": [
+      50
+    ],
+    "hourly_success_rate": {
+      "19": 1.0
+    },
+    "daily_success_rate": {},
+    "industry_success_rate": {
+      "boat_rental": 1.0
+    },
+    "error_types": {}
+  }
+}

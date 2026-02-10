@@ -1,0 +1,1685 @@
+{
+  "generated_at": "2026-02-10T15:31:23.206628",
+  "by_module": {
+    "agent_compat.py": {
+      "total_files": 1,
+      "active_operativo": [],
+      "configured_standby": [],
+      "template_incomplete": [
+        {
+          "file": "agent_compat.py",
+          "path": "agent_compat.py"
+        }
+      ]
+    },
+    "compliance": {
+      "total_files": 5,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "auditmaster.py",
+          "path": "compliance/auditmaster.py",
+          "class": "AuditmasterConfig"
+        },
+        {
+          "file": "compliance_coordinator.py",
+          "path": "compliance/compliance_coordinator.py",
+          "class": "ComplianceCoordinator"
+        },
+        {
+          "file": "compliancewatchdog.py",
+          "path": "compliance/compliancewatchdog.py",
+          "class": "CompliancewatchdogConfig"
+        },
+        {
+          "file": "docguardian.py",
+          "path": "compliance/docguardian.py",
+          "class": "DocguardianConfig"
+        }
+      ],
+      "template_incomplete": [
+        {
+          "file": "regulatory_radar.py",
+          "path": "compliance/regulatory_radar.py"
+        }
+      ]
+    },
+    "contabilidad": {
+      "total_files": 22,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "activosfijos.py",
+          "path": "contabilidad/activosfijos.py",
+          "class": "ActivosfijosConfig"
+        },
+        {
+          "file": "analisis_financiero.py",
+          "path": "contabilidad/analisis_financiero.py",
+          "class": "RatioFinanciero"
+        },
+        {
+          "file": "analisis_financiero_super_agent.py",
+          "path": "contabilidad/analisis_financiero_super_agent.py",
+          "class": "RiskLevel"
+        },
+        {
+          "file": "auditoriainterna.py",
+          "path": "contabilidad/auditoriainterna.py",
+          "class": "AuditoriainternaConfig"
+        },
+        {
+          "file": "cierrecontable.py",
+          "path": "contabilidad/cierrecontable.py",
+          "class": "CierrecontableConfig"
+        },
+        {
+          "file": "conciliacionbancaria.py",
+          "path": "contabilidad/conciliacionbancaria.py",
+          "class": "ConciliacionbancariaConfig"
+        },
+        {
+          "file": "contabilidadinteligente.py",
+          "path": "contabilidad/contabilidadinteligente.py",
+          "class": "IntelligentAccountingEngine"
+        },
+        {
+          "file": "controlgastos.py",
+          "path": "contabilidad/controlgastos.py",
+          "class": "ControlgastosConfig"
+        },
+        {
+          "file": "dgiiautoreporter.py",
+          "path": "contabilidad/dgiiautoreporter.py",
+          "class": "DgiiautoreporterConfig"
+        },
+        {
+          "file": "facturacionelectronica.py",
+          "path": "contabilidad/facturacionelectronica.py",
+          "class": "FacturacionelectronicaConfig"
+        },
+        {
+          "file": "facturacionia.py",
+          "path": "contabilidad/facturacionia.py",
+          "class": "InvoicingAIEngine"
+        },
+        {
+          "file": "flujocajaia.py",
+          "path": "contabilidad/flujocajaia.py",
+          "class": "FlujocajaiaConfig"
+        },
+        {
+          "file": "flujocajaprediccion.py",
+          "path": "contabilidad/flujocajaprediccion.py",
+          "class": "CashFlowPredictionEngine"
+        },
+        {
+          "file": "inventariovaloracion.py",
+          "path": "contabilidad/inventariovaloracion.py",
+          "class": "InventoryValuationEngine"
+        },
+        {
+          "file": "previsionfiscal.py",
+          "path": "contabilidad/previsionfiscal.py",
+          "class": "PrevisionfiscalConfig"
+        },
+        {
+          "file": "reconcilia_auto.py",
+          "path": "contabilidad/reconcilia_auto.py",
+          "class": "ReconciliaAutoConfig"
+        },
+        {
+          "file": "reportes_fiscales.py",
+          "path": "contabilidad/reportes_fiscales.py",
+          "class": "ContabilidadLogger"
+        },
+        {
+          "file": "reportesejecutivos.py",
+          "path": "contabilidad/reportesejecutivos.py",
+          "class": "ExecutiveReportingEngine"
+        },
+        {
+          "file": "reportingfinanciero.py",
+          "path": "contabilidad/reportingfinanciero.py",
+          "class": "ReportingfinancieroConfig"
+        },
+        {
+          "file": "tributarioia.py",
+          "path": "contabilidad/tributarioia.py",
+          "class": "TaxComplianceEngine"
+        }
+      ],
+      "template_incomplete": [
+        {
+          "file": "compliance_contable.py",
+          "path": "contabilidad/compliance_contable.py"
+        },
+        {
+          "file": "contabilidad_coordinator.py",
+          "path": "contabilidad/contabilidad_coordinator.py"
+        }
+      ]
+    },
+    "decision": {
+      "total_files": 5,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "decision_coordinator.py",
+          "path": "decision/decision_coordinator.py",
+          "class": "DecisionCoordinator"
+        },
+        {
+          "file": "policyguardian.py",
+          "path": "decision/policyguardian.py",
+          "class": "PolicyguardianConfig"
+        },
+        {
+          "file": "quantumdecision.py",
+          "path": "decision/quantumdecision.py",
+          "class": "QuantumdecisionConfig"
+        },
+        {
+          "file": "riskoracle.py",
+          "path": "decision/riskoracle.py",
+          "class": "RiskoracleConfig"
+        },
+        {
+          "file": "turboapprover.py",
+          "path": "decision/turboapprover.py",
+          "class": "TurboapproverConfig"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "educacion": {
+      "total_files": 9,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "competenciasia.py",
+          "path": "educacion/competenciasia.py",
+          "class": "CompetencyAIEngine"
+        },
+        {
+          "file": "contenidopersonalizado.py",
+          "path": "educacion/contenidopersonalizado.py",
+          "class": "ContenidopersonalizadoConfig"
+        },
+        {
+          "file": "curriculumadaptativo.py",
+          "path": "educacion/curriculumadaptativo.py",
+          "class": "CurriculumadaptativoConfig"
+        },
+        {
+          "file": "cursosautomaticos.py",
+          "path": "educacion/cursosautomaticos.py",
+          "class": "AutomaticCourseEngine"
+        },
+        {
+          "file": "educacion_coordinator.py",
+          "path": "educacion/educacion_coordinator.py",
+          "class": "EducacionCoordinator"
+        },
+        {
+          "file": "evaluacionadaptativa.py",
+          "path": "educacion/evaluacionadaptativa.py",
+          "class": "AdaptiveEvaluationEngine"
+        },
+        {
+          "file": "evaluacionia.py",
+          "path": "educacion/evaluacionia.py",
+          "class": "EvaluacioniaConfig"
+        },
+        {
+          "file": "progresionestudiante.py",
+          "path": "educacion/progresionestudiante.py",
+          "class": "ProgresionestudianteConfig"
+        },
+        {
+          "file": "tutorvirtualia.py",
+          "path": "educacion/tutorvirtualia.py",
+          "class": "VirtualTutorAIEngine"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "experiencia": {
+      "total_files": 5,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "chatbotsupreme.py",
+          "path": "experiencia/chatbotsupreme.py",
+          "class": "ChatbotsupremeConfig"
+        },
+        {
+          "file": "customergenius.py",
+          "path": "experiencia/customergenius.py",
+          "class": "CustomergeniusConfig"
+        },
+        {
+          "file": "experiencia_coordinator.py",
+          "path": "experiencia/experiencia_coordinator.py",
+          "class": "ExperienciaCoordinator"
+        },
+        {
+          "file": "onboardingwizard.py",
+          "path": "experiencia/onboardingwizard.py",
+          "class": "OnboardingwizardConfig"
+        },
+        {
+          "file": "personalizationengine.py",
+          "path": "experiencia/personalizationengine.py",
+          "class": "PersonalizationengineConfig"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "fortaleza": {
+      "total_files": 5,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "backupguardian.py",
+          "path": "fortaleza/backupguardian.py",
+          "class": "BackupguardianConfig"
+        },
+        {
+          "file": "cybersentinel.py",
+          "path": "fortaleza/cybersentinel.py",
+          "class": "CybersentinelConfig"
+        },
+        {
+          "file": "datavault.py",
+          "path": "fortaleza/datavault.py",
+          "class": "DatavaultConfig"
+        },
+        {
+          "file": "fortaleza_coordinator.py",
+          "path": "fortaleza/fortaleza_coordinator.py",
+          "class": "FortalezaCoordinator"
+        },
+        {
+          "file": "systemhealthmonitor.py",
+          "path": "fortaleza/systemhealthmonitor.py",
+          "class": "SystemhealthmonitorConfig"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "inteligencia": {
+      "total_files": 5,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "cashfloworacle.py",
+          "path": "inteligencia/cashfloworacle.py",
+          "class": "CashfloworacleConfig"
+        },
+        {
+          "file": "inteligencia_coordinator.py",
+          "path": "inteligencia/inteligencia_coordinator.py",
+          "class": "InteligenciaCoordinator"
+        },
+        {
+          "file": "pricinggenius.py",
+          "path": "inteligencia/pricinggenius.py",
+          "class": "PricinggeniusConfig"
+        },
+        {
+          "file": "profitmaximizer.py",
+          "path": "inteligencia/profitmaximizer.py",
+          "class": "ProfitmaximizerConfig"
+        },
+        {
+          "file": "roimaster.py",
+          "path": "inteligencia/roimaster.py",
+          "class": "RoimasterConfig"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "investigacion": {
+      "total_files": 9,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "analisistendencias.py",
+          "path": "investigacion/analisistendencias.py",
+          "class": "TrendAnalysisEngine"
+        },
+        {
+          "file": "innovacionia.py",
+          "path": "investigacion/innovacionia.py",
+          "class": "InnovationAIEngine"
+        },
+        {
+          "file": "innovaciontracker.py",
+          "path": "investigacion/innovaciontracker.py",
+          "class": "InnovaciontrackerConfig"
+        },
+        {
+          "file": "investigacion_coordinator.py",
+          "path": "investigacion/investigacion_coordinator.py",
+          "class": "InvestigacionCoordinator"
+        },
+        {
+          "file": "patentesanalyzer.py",
+          "path": "investigacion/patentesanalyzer.py",
+          "class": "PatentesanalyzerConfig"
+        },
+        {
+          "file": "patentesautomaticos.py",
+          "path": "investigacion/patentesautomaticos.py",
+          "class": "AutomaticPatentEngine"
+        },
+        {
+          "file": "prototipogenerator.py",
+          "path": "investigacion/prototipogenerator.py",
+          "class": "PrototipogeneratorConfig"
+        },
+        {
+          "file": "prototiposgenerativos.py",
+          "path": "investigacion/prototiposgenerativos.py",
+          "class": "GenerativePrototypeEngine"
+        },
+        {
+          "file": "tendenciasia.py",
+          "path": "investigacion/tendenciasia.py",
+          "class": "TendenciasiaConfig"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "legal": {
+      "total_files": 32,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "derechoadministrativo.py",
+          "path": "legal/derechoadministrativo.py",
+          "class": "DerechoAdministrativoExpert"
+        },
+        {
+          "file": "derechoadministrativophd.py",
+          "path": "legal/derechoadministrativophd.py",
+          "class": "DerechoadministrativophdConfig"
+        },
+        {
+          "file": "derechoambiental.py",
+          "path": "legal/derechoambiental.py",
+          "class": "DerechoambientalConfig"
+        },
+        {
+          "file": "derechobancario.py",
+          "path": "legal/derechobancario.py",
+          "class": "DerechoBancarioExpert"
+        },
+        {
+          "file": "derechocivilphd.py",
+          "path": "legal/derechocivilphd.py",
+          "class": "DerechocivilphdConfig"
+        },
+        {
+          "file": "derechocomercial.py",
+          "path": "legal/derechocomercial.py",
+          "class": "DerechoComercialExpert"
+        },
+        {
+          "file": "derechocomercialephd.py",
+          "path": "legal/derechocomercialephd.py",
+          "class": "DerechocomercialephdConfig"
+        },
+        {
+          "file": "derechoconstitucional.py",
+          "path": "legal/derechoconstitucional.py",
+          "class": "DerechoConstitucionalExpert"
+        },
+        {
+          "file": "derechoconstitucionalphd.py",
+          "path": "legal/derechoconstitucionalphd.py",
+          "class": "DerechoconstitucionalphdConfig"
+        },
+        {
+          "file": "derechocontratacion.py",
+          "path": "legal/derechocontratacion.py",
+          "class": "DerechocontratacionConfig"
+        },
+        {
+          "file": "derechofamiliaphd.py",
+          "path": "legal/derechofamiliaphd.py",
+          "class": "DerechofamiliaphdConfig"
+        },
+        {
+          "file": "derechofamiliar.py",
+          "path": "legal/derechofamiliar.py",
+          "class": "DerechoFamiliarExpert"
+        },
+        {
+          "file": "derechofinanciero.py",
+          "path": "legal/derechofinanciero.py",
+          "class": "DerechofinancieroConfig"
+        },
+        {
+          "file": "derechoinmobiliario.py",
+          "path": "legal/derechoinmobiliario.py",
+          "class": "DerechoInmobiliarioExpert"
+        },
+        {
+          "file": "derechoinmobiliariophd.py",
+          "path": "legal/derechoinmobiliariophd.py",
+          "class": "DerechoinmobiliariophdConfig"
+        },
+        {
+          "file": "derechointelectual.py",
+          "path": "legal/derechointelectual.py",
+          "class": "DerechoIntelectualExpert"
+        },
+        {
+          "file": "derechointernacional.py",
+          "path": "legal/derechointernacional.py",
+          "class": "DerechoInternacionalExpert"
+        },
+        {
+          "file": "derecholaboral.py",
+          "path": "legal/derecholaboral.py",
+          "class": "DerechoLaboralExpert"
+        },
+        {
+          "file": "derecholaboralphd.py",
+          "path": "legal/derecholaboralphd.py",
+          "class": "DerecholaboralphdConfig"
+        },
+        {
+          "file": "derechomarcario.py",
+          "path": "legal/derechomarcario.py",
+          "class": "DerechomarcarioConfig"
+        },
+        {
+          "file": "derechomaritimo.py",
+          "path": "legal/derechomaritimo.py",
+          "class": "DerechoMaritimoExpert"
+        },
+        {
+          "file": "derechomigratorio.py",
+          "path": "legal/derechomigratorio.py",
+          "class": "DerechomigratorioConfig"
+        },
+        {
+          "file": "derechominero.py",
+          "path": "legal/derechominero.py",
+          "class": "DerechoMineroExpert"
+        },
+        {
+          "file": "derechonotarial.py",
+          "path": "legal/derechonotarial.py",
+          "class": "DerechonotarialConfig"
+        },
+        {
+          "file": "derechopenal.py",
+          "path": "legal/derechopenal.py",
+          "class": "DerechoPenalExpert"
+        },
+        {
+          "file": "derechopenalphd.py",
+          "path": "legal/derechopenalphd.py",
+          "class": "DerechopenalphdConfig"
+        },
+        {
+          "file": "derechoprocesalpenal.py",
+          "path": "legal/derechoprocesalpenal.py",
+          "class": "DerechoProcesalPenalExpert"
+        },
+        {
+          "file": "derechoprocesalpenalphd.py",
+          "path": "legal/derechoprocesalpenalphd.py",
+          "class": "DerechoprocesalpenalphdConfig"
+        },
+        {
+          "file": "derechoseguros.py",
+          "path": "legal/derechoseguros.py",
+          "class": "DerechoSegurosExpert"
+        },
+        {
+          "file": "derechotributario.py",
+          "path": "legal/derechotributario.py",
+          "class": "DerechoTributarioExpert"
+        },
+        {
+          "file": "derechotributariophd.py",
+          "path": "legal/derechotributariophd.py",
+          "class": "DerechotributariophdConfig"
+        },
+        {
+          "file": "legal_coordinator.py",
+          "path": "legal/legal_coordinator.py",
+          "class": "LegalCoordinator"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "logistica": {
+      "total_files": 23,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "alertasinventario.py",
+          "path": "logistica/alertasinventario.py",
+          "class": "AlertasinventarioConfig"
+        },
+        {
+          "file": "almaceninteligente.py",
+          "path": "logistica/almaceninteligente.py",
+          "class": "IntelligentWarehouseEngine"
+        },
+        {
+          "file": "analisisrendimiento.py",
+          "path": "logistica/analisisrendimiento.py",
+          "class": "PerformanceAnalysisEngine"
+        },
+        {
+          "file": "controlcalidad.py",
+          "path": "logistica/controlcalidad.py",
+          "class": "ControlcalidadConfig"
+        },
+        {
+          "file": "controlcalidadia.py",
+          "path": "logistica/controlcalidadia.py",
+          "class": "QualityControlAIEngine"
+        },
+        {
+          "file": "controlpedidosia.py",
+          "path": "logistica/controlpedidosia.py",
+          "class": "ControlpedidosiaConfig"
+        },
+        {
+          "file": "costoslogisticos.py",
+          "path": "logistica/costoslogisticos.py",
+          "class": "CostoslogisticosConfig"
+        },
+        {
+          "file": "evaluadorproveedoresia.py",
+          "path": "logistica/evaluadorproveedoresia.py",
+          "class": "EvaluadorproveedoresiaConfig"
+        },
+        {
+          "file": "gestionriesgos.py",
+          "path": "logistica/gestionriesgos.py",
+          "class": "RiskManagementEngine"
+        },
+        {
+          "file": "logistica_coordinator.py",
+          "path": "logistica/logistica_coordinator.py",
+          "class": "LogisticaCoordinator"
+        },
+        {
+          "file": "logisticareversa.py",
+          "path": "logistica/logisticareversa.py",
+          "class": "LogisticareversaConfig"
+        },
+        {
+          "file": "optimizacionalmacen.py",
+          "path": "logistica/optimizacionalmacen.py",
+          "class": "OptimizacionalmacenConfig"
+        },
+        {
+          "file": "optimizacioncostos.py",
+          "path": "logistica/optimizacioncostos.py",
+          "class": "CostOptimizationEngine"
+        },
+        {
+          "file": "optimizadorrutasia.py",
+          "path": "logistica/optimizadorrutasia.py",
+          "class": "OptimizadorrutasiaConfig"
+        },
+        {
+          "file": "planificaciondemanda.py",
+          "path": "logistica/planificaciondemanda.py",
+          "class": "DemandPlanningEngine"
+        },
+        {
+          "file": "predicciondemanda.py",
+          "path": "logistica/predicciondemanda.py",
+          "class": "PredicciondemandaConfig"
+        },
+        {
+          "file": "previsioninventarioia.py",
+          "path": "logistica/previsioninventarioia.py",
+          "class": "PrevisioninventarioiaConfig"
+        },
+        {
+          "file": "seguridadcarga.py",
+          "path": "logistica/seguridadcarga.py",
+          "class": "SeguridadcargaConfig"
+        },
+        {
+          "file": "sostenibilidadia.py",
+          "path": "logistica/sostenibilidadia.py",
+          "class": "SustainabilityAIEngine"
+        },
+        {
+          "file": "transporteoptimizado.py",
+          "path": "logistica/transporteoptimizado.py",
+          "class": "TransportOptimizationEngine"
+        },
+        {
+          "file": "transportepredictivo.py",
+          "path": "logistica/transportepredictivo.py",
+          "class": "TransportepredictivoConfig"
+        },
+        {
+          "file": "trazabilidadia.py",
+          "path": "logistica/trazabilidadia.py",
+          "class": "TrazabilidadiaConfig"
+        },
+        {
+          "file": "trazabilidadtotal.py",
+          "path": "logistica/trazabilidadtotal.py",
+          "class": "TraceabilityEngine"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "marketing": {
+      "total_files": 98,
+      "active_operativo": [
+        {
+          "file": "leadscoringia_backup_20251012_120320.py",
+          "path": "marketing/_archived/leadscoringia_backup_20251012_120320.py",
+          "class": "TokenBucket"
+        },
+        {
+          "file": "abtestingia.py",
+          "path": "marketing/abtestingia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "abtestingimpactia.py",
+          "path": "marketing/abtestingimpactia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "database.py",
+          "path": "marketing/advertising/core/database.py",
+          "class": "DatabaseInterface"
+        },
+        {
+          "file": "action_plan_executor.py",
+          "path": "marketing/advertising/core/execution/action_plan_executor.py",
+          "class": "ActionPlanExecutor"
+        },
+        {
+          "file": "connector.py",
+          "path": "marketing/advertising/core/google_ads/connector.py",
+          "class": "ConnectorResult"
+        },
+        {
+          "file": "executor.py",
+          "path": "marketing/advertising/core/google_ads/executor.py",
+          "class": "ErrorCategory"
+        },
+        {
+          "file": "registry.py",
+          "path": "marketing/advertising/core/operations/registry.py",
+          "class": "ErrorCode"
+        },
+        {
+          "file": "engine.py",
+          "path": "marketing/advertising/core/workflows/engine.py",
+          "class": "StepStatus"
+        },
+        {
+          "file": "attributionmodelia.py",
+          "path": "marketing/attributionmodelia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "audiencesegmenteria.py",
+          "path": "marketing/audiencesegmenteria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "budgetforecastia.py",
+          "path": "marketing/budgetforecastia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "campaignoptimizeria.py",
+          "path": "marketing/campaignoptimizeria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "campaignstrategyorchestratoria.py",
+          "path": "marketing/campaignstrategyorchestratoria.py",
+          "class": "TaskType"
+        },
+        {
+          "file": "cashofferfilteria.py",
+          "path": "marketing/cashofferfilteria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "channelattributia.py",
+          "path": "marketing/channelattributia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "competitoranalyzeria.py",
+          "path": "marketing/competitoranalyzeria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "competitorintelligenceia.py",
+          "path": "marketing/competitorintelligenceia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "contactqualityia.py",
+          "path": "marketing/contactqualityia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "contentgeneratoria.py",
+          "path": "marketing/contentgeneratoria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "contentperformanceia.py",
+          "path": "marketing/contentperformanceia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "conversioncohortia.py",
+          "path": "marketing/conversioncohortia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "creativeanalyzeria.py",
+          "path": "marketing/creativeanalyzeria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "customersegmentatonia.py",
+          "path": "marketing/customersegmentatonia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "emailautomationia.py",
+          "path": "marketing/emailautomationia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "email_executor.py",
+          "path": "marketing/executors/email_executor.py",
+          "class": "EmailExecutor"
+        },
+        {
+          "file": "meta_executor.py",
+          "path": "marketing/executors/meta_executor.py",
+          "class": "MetaExecutor"
+        },
+        {
+          "file": "geosegmentationia.py",
+          "path": "marketing/geosegmentationia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "influencermatcheria.py",
+          "path": "marketing/influencermatcheria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "influencermatchingia.py",
+          "path": "marketing/influencermatchingia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "journeyoptimizeria.py",
+          "path": "marketing/journeyoptimizeria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "leadscoria.py",
+          "path": "marketing/leadscoria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "leadscoringia.py",
+          "path": "marketing/leadscoringia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "marketingmixmodelia.py",
+          "path": "marketing/marketingmixmodelia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "marketingorchestratorea.py",
+          "path": "marketing/marketingorchestratorea.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "minimalformia.py",
+          "path": "marketing/minimalformia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "test_operative.py",
+          "path": "marketing/operative/test_operative.py",
+          "class": "DummyAgent"
+        },
+        {
+          "file": "campaignstrategyorchestratoria_v4.py",
+          "path": "marketing/orchestrator/campaignstrategyorchestratoria_v4.py",
+          "class": "StructuredLogger"
+        },
+        {
+          "file": "campaignstrategyorchestratoria_v5.py",
+          "path": "marketing/orchestrator/campaignstrategyorchestratoria_v5.py",
+          "class": "LogDeduplicator"
+        },
+        {
+          "file": "personalizationengineia.py",
+          "path": "marketing/personalizationengineia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "predictiveleadia.py",
+          "path": "marketing/predictiveleadia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "pricingoptimizeria.py",
+          "path": "marketing/pricingoptimizeria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "productaffinityia.py",
+          "path": "marketing/productaffinityia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "retentionpredictorea.py",
+          "path": "marketing/retentionpredictorea.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "retentionpredictoria.py",
+          "path": "marketing/retentionpredictoria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "sentimentanalyzeria.py",
+          "path": "marketing/sentimentanalyzeria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "sociallisteningia.py",
+          "path": "marketing/sociallisteningia.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "socialpostgeneratoria.py",
+          "path": "marketing/socialpostgeneratoria.py",
+          "class": "ActionType"
+        },
+        {
+          "file": "operative_wrapper.py",
+          "path": "marketing/wrappers/operative_wrapper.py",
+          "class": "AutonomyLevel"
+        }
+      ],
+      "configured_standby": [
+        {
+          "file": "content_generator_v3.py",
+          "path": "marketing/_archived/content_generator_v3.py",
+          "class": "MLStrategy"
+        },
+        {
+          "file": "schemas_from_sandbox.py",
+          "path": "marketing/_archived/schemas_from_sandbox.py",
+          "class": "UTMParams"
+        },
+        {
+          "file": "google_ads_budget_pacing_agent.py",
+          "path": "marketing/advertising/agents/marketing/google_ads_budget_pacing_agent.py",
+          "class": "GoogleAdsBudgetPacingIA"
+        },
+        {
+          "file": "google_ads_strategist_agent.py",
+          "path": "marketing/advertising/agents/marketing/google_ads_strategist_agent.py",
+          "class": "GoogleAdsStrategistIA"
+        },
+        {
+          "file": "orchestrator_agent.py",
+          "path": "marketing/advertising/agents/marketing/orchestrator_agent.py",
+          "class": "OrchestratorIA"
+        },
+        {
+          "file": "rsa_ad_copy_generator_agent.py",
+          "path": "marketing/advertising/agents/marketing/rsa_ad_copy_generator_agent.py",
+          "class": "RSAAdCopyGeneratorIA"
+        },
+        {
+          "file": "search_terms_cleaner_agent.py",
+          "path": "marketing/advertising/agents/marketing/search_terms_cleaner_agent.py",
+          "class": "TermClassification"
+        },
+        {
+          "file": "routes.py",
+          "path": "marketing/advertising/api/routes.py",
+          "class": "StrategyRequest"
+        },
+        {
+          "file": "action_plan.py",
+          "path": "marketing/advertising/core/agents/action_plan.py",
+          "class": "PlanStatus"
+        },
+        {
+          "file": "client_factory.py",
+          "path": "marketing/advertising/core/google_ads/client_factory.py",
+          "class": "GoogleAdsClientFactory"
+        },
+        {
+          "file": "yaml_store.py",
+          "path": "marketing/advertising/core/knowledge/yaml_store.py",
+          "class": "YamlKnowledgeStore"
+        },
+        {
+          "file": "telemetry.py",
+          "path": "marketing/advertising/core/observability/telemetry.py",
+          "class": "Counter"
+        },
+        {
+          "file": "engine.py",
+          "path": "marketing/advertising/core/policies/engine.py",
+          "class": "PolicyDecision"
+        },
+        {
+          "file": "idempotency.py",
+          "path": "marketing/advertising/core/reliability/idempotency.py",
+          "class": "IdempotencyRecord"
+        },
+        {
+          "file": "journal.py",
+          "path": "marketing/advertising/core/saga/journal.py",
+          "class": "SagaStatus"
+        },
+        {
+          "file": "tenant_vault.py",
+          "path": "marketing/advertising/core/security/tenant_vault.py",
+          "class": "CredentialVaultInterface"
+        },
+        {
+          "file": "main.py",
+          "path": "marketing/advertising/main.py",
+          "class": "AppState"
+        },
+        {
+          "file": "test_all.py",
+          "path": "marketing/advertising/tests/test_all.py",
+          "class": "TestDatabase"
+        },
+        {
+          "file": "brandsentimentia.py",
+          "path": "marketing/backup_placeholders_20251011_084324/brandsentimentia.py",
+          "class": "BrandsentimentiaConfig"
+        },
+        {
+          "file": "contentviralityia.py",
+          "path": "marketing/backup_placeholders_20251011_084324/contentviralityia.py",
+          "class": "ContentviralityiaConfig"
+        },
+        {
+          "file": "fidelizedprofileia.py",
+          "path": "marketing/backup_placeholders_20251011_084324/fidelizedprofileia.py",
+          "class": "FidelizedprofileiaConfig"
+        },
+        {
+          "file": "influencermatchia.py",
+          "path": "marketing/backup_placeholders_20251011_084324/influencermatchia.py",
+          "class": "InfluencermatchiaConfig"
+        },
+        {
+          "file": "videoreelautogenia.py",
+          "path": "marketing/backup_placeholders_20251011_084324/videoreelautogenia.py",
+          "class": "VideoreelautogeniaConfig"
+        },
+        {
+          "file": "audit_trail_layer.py",
+          "path": "marketing/layers/audit_trail_layer.py",
+          "class": "AuditTrailLayer"
+        },
+        {
+          "file": "authority_layer.py",
+          "path": "marketing/layers/authority_layer.py",
+          "class": "RejectionReason"
+        },
+        {
+          "file": "authority_layer_v2.py",
+          "path": "marketing/layers/authority_layer_v2.py",
+          "class": "RejectionReason"
+        },
+        {
+          "file": "business_impact_layer.py",
+          "path": "marketing/layers/business_impact_layer.py",
+          "class": "ImpactType"
+        },
+        {
+          "file": "compliance_layer.py",
+          "path": "marketing/layers/compliance_layer.py",
+          "class": "ComplianceStatus"
+        },
+        {
+          "file": "decision_layer.py",
+          "path": "marketing/layers/decision_layer.py",
+          "class": "DecisionLayerConfig"
+        },
+        {
+          "file": "decision_layer_v2.py",
+          "path": "marketing/layers/decision_layer_v2.py",
+          "class": "DecisionLayerConfig"
+        },
+        {
+          "file": "error_handling_layer.py",
+          "path": "marketing/layers/error_handling_layer.py",
+          "class": "ErrorCategory"
+        },
+        {
+          "file": "reason_codes_layer.py",
+          "path": "marketing/layers/reason_codes_layer.py",
+          "class": "ImpactDirection"
+        },
+        {
+          "file": "reason_codes_layer_v2.py",
+          "path": "marketing/layers/reason_codes_layer_v2.py",
+          "class": "ImpactDirection"
+        },
+        {
+          "file": "multi_industry_config.py",
+          "path": "marketing/multi_industry_config.py",
+          "class": "IndustryType"
+        }
+      ],
+      "template_incomplete": [
+        {
+          "file": "canonical.py",
+          "path": "marketing/_archived/canonical.py"
+        },
+        {
+          "file": "canonical_backup_20251011_084547.py",
+          "path": "marketing/_archived/canonical_backup_20251011_084547.py"
+        },
+        {
+          "file": "canonical_backup_20251012_091337.py",
+          "path": "marketing/_archived/canonical_backup_20251012_091337.py"
+        },
+        {
+          "file": "validate_agents.py",
+          "path": "marketing/_archived/validate_agents.py"
+        },
+        {
+          "file": "generate_phase1.py",
+          "path": "marketing/advertising/scripts/generate_phase1.py"
+        },
+        {
+          "file": "master_generator.py",
+          "path": "marketing/advertising/scripts/master_generator.py"
+        },
+        {
+          "file": "__init__.py",
+          "path": "marketing/advertising/tests/chaos/__init__.py"
+        },
+        {
+          "file": "__init__.py",
+          "path": "marketing/advertising/tests/integration/__init__.py"
+        },
+        {
+          "file": "__init__.py",
+          "path": "marketing/advertising/tests/unit/__init__.py"
+        },
+        {
+          "file": "__init__.py",
+          "path": "marketing/executors/__init__.py"
+        },
+        {
+          "file": "__init__.py",
+          "path": "marketing/google_ads/__init__.py"
+        },
+        {
+          "file": "__init__.py",
+          "path": "marketing/layers/__init__.py"
+        },
+        {
+          "file": "inject_operative.py",
+          "path": "marketing/operative/inject_operative.py"
+        },
+        {
+          "file": "__init__.py",
+          "path": "marketing/orchestrator/__init__.py"
+        },
+        {
+          "file": "__init__.py",
+          "path": "marketing/wrappers/__init__.py"
+        }
+      ]
+    },
+    "operacional": {
+      "total_files": 5,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "costoptimizer.py",
+          "path": "operacional/costoptimizer.py",
+          "class": "CostoptimizerConfig"
+        },
+        {
+          "file": "operacional_coordinator.py",
+          "path": "operacional/operacional_coordinator.py",
+          "class": "OperacionalCoordinator"
+        },
+        {
+          "file": "processgenius.py",
+          "path": "operacional/processgenius.py",
+          "class": "ProcessgeniusConfig"
+        },
+        {
+          "file": "qualitycontroller.py",
+          "path": "operacional/qualitycontroller.py",
+          "class": "QualitycontrollerConfig"
+        },
+        {
+          "file": "workflowmaster.py",
+          "path": "operacional/workflowmaster.py",
+          "class": "WorkflowmasterConfig"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "orchestration": {
+      "total_files": 5,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "healthchecker.py",
+          "path": "orchestration/healthchecker.py",
+          "class": "HealthcheckerConfig"
+        },
+        {
+          "file": "loadbalancer.py",
+          "path": "orchestration/loadbalancer.py",
+          "class": "LoadbalancerConfig"
+        },
+        {
+          "file": "orchestrationmaster.py",
+          "path": "orchestration/orchestrationmaster.py",
+          "class": "OrchestrationmasterConfig"
+        },
+        {
+          "file": "resourcemanager.py",
+          "path": "orchestration/resourcemanager.py",
+          "class": "ResourcemanagerConfig"
+        }
+      ],
+      "template_incomplete": [
+        {
+          "file": "coordinator.py",
+          "path": "orchestration/coordinator.py"
+        }
+      ]
+    },
+    "originacion": {
+      "total_files": 10,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "base_components_v2.py",
+          "path": "originacion/base_components_v2.py",
+          "class": "TenantAwareLogger"
+        },
+        {
+          "file": "behaviorminer.py",
+          "path": "originacion/behaviorminer.py",
+          "class": "BehaviorminerConfig"
+        },
+        {
+          "file": "dnaprofiler.py",
+          "path": "originacion/dnaprofiler.py",
+          "class": "DnaprofilerConfig"
+        },
+        {
+          "file": "incomeoracle.py",
+          "path": "originacion/incomeoracle.py",
+          "class": "IncomeoracleConfig"
+        },
+        {
+          "file": "originacion_coordinator.py",
+          "path": "originacion/originacion_coordinator.py",
+          "class": "OriginacionCoordinator"
+        },
+        {
+          "file": "sentinelbot.py",
+          "path": "originacion/sentinelbot.py",
+          "class": "SentinelbotConfig"
+        }
+      ],
+      "template_incomplete": [
+        {
+          "file": "behavior_miner_v2.py",
+          "path": "originacion/behavior_miner_v2.py"
+        },
+        {
+          "file": "dna_profiler_v2.py",
+          "path": "originacion/dna_profiler_v2.py"
+        },
+        {
+          "file": "income_oracle_v2.py",
+          "path": "originacion/income_oracle_v2.py"
+        },
+        {
+          "file": "sentinel_bot_v2.py",
+          "path": "originacion/sentinel_bot_v2.py"
+        }
+      ]
+    },
+    "presupuesto": {
+      "total_files": 13,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "analisisvarianza.py",
+          "path": "presupuesto/analisisvarianza.py",
+          "class": "VarianceAnalysisEngine"
+        },
+        {
+          "file": "budgetoptimizer.py",
+          "path": "presupuesto/budgetoptimizer.py",
+          "class": "BudgetoptimizerConfig"
+        },
+        {
+          "file": "controlpresupuestario.py",
+          "path": "presupuesto/controlpresupuestario.py",
+          "class": "BudgetControlEngine"
+        },
+        {
+          "file": "costocentros.py",
+          "path": "presupuesto/costocentros.py",
+          "class": "CostocentrosConfig"
+        },
+        {
+          "file": "forecastingavanzado.py",
+          "path": "presupuesto/forecastingavanzado.py",
+          "class": "AdvancedForecastingEngine"
+        },
+        {
+          "file": "forecastingia.py",
+          "path": "presupuesto/forecastingia.py",
+          "class": "ForecastingiaConfig"
+        },
+        {
+          "file": "optimizacionrecursos.py",
+          "path": "presupuesto/optimizacionrecursos.py",
+          "class": "ResourceOptimizationEngine"
+        },
+        {
+          "file": "planificacionestrategica.py",
+          "path": "presupuesto/planificacionestrategica.py",
+          "class": "StrategicPlanningEngine"
+        },
+        {
+          "file": "presupuesto_coordinator.py",
+          "path": "presupuesto/presupuesto_coordinator.py",
+          "class": "PresupuestoCoordinator"
+        },
+        {
+          "file": "presupuestomaestro.py",
+          "path": "presupuesto/presupuestomaestro.py",
+          "class": "PresupuestomaestroConfig"
+        },
+        {
+          "file": "presupuestopredictivoia.py",
+          "path": "presupuesto/presupuestopredictivoia.py",
+          "class": "PredictiveBudgetEngine"
+        },
+        {
+          "file": "roipredictor.py",
+          "path": "presupuesto/roipredictor.py",
+          "class": "RoipredictorConfig"
+        },
+        {
+          "file": "varianzaanalisis.py",
+          "path": "presupuesto/varianzaanalisis.py",
+          "class": "VarianzaanalisisConfig"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "recuperacion": {
+      "total_files": 5,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "collectionmaster.py",
+          "path": "recuperacion/collectionmaster.py",
+          "class": "CollectionmasterConfig"
+        },
+        {
+          "file": "legalpathway.py",
+          "path": "recuperacion/legalpathway.py",
+          "class": "LegalpathwayConfig"
+        },
+        {
+          "file": "negotiationbot.py",
+          "path": "recuperacion/negotiationbot.py",
+          "class": "NegotiationbotConfig"
+        },
+        {
+          "file": "recoveryoptimizer.py",
+          "path": "recuperacion/recoveryoptimizer.py",
+          "class": "RecoveryoptimizerConfig"
+        },
+        {
+          "file": "recuperacion_coordinator.py",
+          "path": "recuperacion/recuperacion_coordinator.py",
+          "class": "RecuperacionCoordinator"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "registry.py": {
+      "total_files": 1,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "registry.py",
+          "path": "registry.py",
+          "class": "AgentRegistry"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "registry_backup.py": {
+      "total_files": 1,
+      "active_operativo": [],
+      "configured_standby": [],
+      "template_incomplete": [
+        {
+          "file": "registry_backup.py",
+          "path": "registry_backup.py"
+        }
+      ]
+    },
+    "regtech": {
+      "total_files": 8,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "amldetector.py",
+          "path": "regtech/amldetector.py",
+          "class": "AmldetectorConfig"
+        },
+        {
+          "file": "amltiemporeal.py",
+          "path": "regtech/amltiemporeal.py",
+          "class": "RealTimeAMLEngine"
+        },
+        {
+          "file": "kycautomatico.py",
+          "path": "regtech/kycautomatico.py",
+          "class": "KycautomaticoConfig"
+        },
+        {
+          "file": "monitoreotransacciones.py",
+          "path": "regtech/monitoreotransacciones.py",
+          "class": "TransactionMonitoringEngine"
+        },
+        {
+          "file": "regtech_coordinator.py",
+          "path": "regtech/regtech_coordinator.py",
+          "class": "RegtechCoordinator"
+        },
+        {
+          "file": "reportesregulatorios.py",
+          "path": "regtech/reportesregulatorios.py",
+          "class": "RegulatoryReportingEngine"
+        },
+        {
+          "file": "reportingregulatorio.py",
+          "path": "regtech/reportingregulatorio.py",
+          "class": "ReportingregulatorioConfig"
+        },
+        {
+          "file": "sancioneschecker.py",
+          "path": "regtech/sancioneschecker.py",
+          "class": "SancionescheckerConfig"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "rrhh": {
+      "total_files": 10,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "capacitacionia.py",
+          "path": "rrhh/capacitacionia.py",
+          "class": "CapacitacioniaConfig"
+        },
+        {
+          "file": "cvanalyzeria.py",
+          "path": "rrhh/cvanalyzeria.py",
+          "class": "CvanalyzeriaConfig"
+        },
+        {
+          "file": "nominaautomatica.py",
+          "path": "rrhh/nominaautomatica.py",
+          "class": "NominaautomaticaConfig"
+        },
+        {
+          "file": "nominainteligente.py",
+          "path": "rrhh/nominainteligente.py",
+          "class": "IntelligentPayrollEngine"
+        },
+        {
+          "file": "performanceanalyzer.py",
+          "path": "rrhh/performanceanalyzer.py",
+          "class": "PerformanceAnalysisEngine"
+        },
+        {
+          "file": "performancetracker.py",
+          "path": "rrhh/performancetracker.py",
+          "class": "PerformancetrackerConfig"
+        },
+        {
+          "file": "rrhh_coordinator.py",
+          "path": "rrhh/rrhh_coordinator.py",
+          "class": "RrhhCoordinator"
+        },
+        {
+          "file": "selectioncvia.py",
+          "path": "rrhh/selectioncvia.py",
+          "class": "CVSelectionEngine"
+        },
+        {
+          "file": "talentoprediccion.py",
+          "path": "rrhh/talentoprediccion.py",
+          "class": "TalentPredictionEngine"
+        },
+        {
+          "file": "talentopredictor.py",
+          "path": "rrhh/talentopredictor.py",
+          "class": "TalentopredictorConfig"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "shared_layers": {
+      "total_files": 17,
+      "active_operativo": [],
+      "configured_standby": [],
+      "template_incomplete": [
+        {
+          "file": "__init__.py",
+          "path": "shared_layers/__init__.py"
+        },
+        {
+          "file": "__init__.py",
+          "path": "shared_layers/ai_router/__init__.py"
+        },
+        {
+          "file": "models_config.py",
+          "path": "shared_layers/ai_router/models_config.py"
+        },
+        {
+          "file": "router.py",
+          "path": "shared_layers/ai_router/router.py"
+        },
+        {
+          "file": "__init__.py",
+          "path": "shared_layers/executors/__init__.py"
+        },
+        {
+          "file": "base_executor.py",
+          "path": "shared_layers/executors/base_executor.py"
+        },
+        {
+          "file": "llm_executor.py",
+          "path": "shared_layers/executors/llm_executor.py"
+        },
+        {
+          "file": "__init__.py",
+          "path": "shared_layers/executors/providers/__init__.py"
+        },
+        {
+          "file": "anthropic_executor.py",
+          "path": "shared_layers/executors/providers/anthropic_executor.py"
+        },
+        {
+          "file": "deepseek_executor.py",
+          "path": "shared_layers/executors/providers/deepseek_executor.py"
+        },
+        {
+          "file": "grok_executor.py",
+          "path": "shared_layers/executors/providers/grok_executor.py"
+        },
+        {
+          "file": "openai_executor.py",
+          "path": "shared_layers/executors/providers/openai_executor.py"
+        },
+        {
+          "file": "__init__.py",
+          "path": "shared_layers/executors/social/__init__.py"
+        },
+        {
+          "file": "base_social.py",
+          "path": "shared_layers/executors/social/base_social.py"
+        },
+        {
+          "file": "facebook_executor.py",
+          "path": "shared_layers/executors/social/facebook_executor.py"
+        },
+        {
+          "file": "instagram_executor.py",
+          "path": "shared_layers/executors/social/instagram_executor.py"
+        },
+        {
+          "file": "social_manager.py",
+          "path": "shared_layers/executors/social/social_manager.py"
+        }
+      ]
+    },
+    "ventascrm": {
+      "total_files": 9,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "churnpredictor.py",
+          "path": "ventascrm/churnpredictor.py",
+          "class": "ChurnpredictorConfig"
+        },
+        {
+          "file": "cierrepredictivoia.py",
+          "path": "ventascrm/cierrepredictivoia.py",
+          "class": "ClosingPredictionEngine"
+        },
+        {
+          "file": "clientelifecycleia.py",
+          "path": "ventascrm/clientelifecycleia.py",
+          "class": "CustomerLifecycleEngine"
+        },
+        {
+          "file": "communicationbot.py",
+          "path": "ventascrm/communicationbot.py",
+          "class": "CommunicationBotEngine"
+        },
+        {
+          "file": "leadscoringia.py",
+          "path": "ventascrm/leadscoringia.py",
+          "class": "LeadscoringiaConfig"
+        },
+        {
+          "file": "pipelineoptimizer.py",
+          "path": "ventascrm/pipelineoptimizer.py",
+          "class": "PipelineoptimizerConfig"
+        },
+        {
+          "file": "pipelinepredictivoia.py",
+          "path": "ventascrm/pipelinepredictivoia.py",
+          "class": "PredictivePipelineEngine"
+        },
+        {
+          "file": "upsellengine.py",
+          "path": "ventascrm/upsellengine.py",
+          "class": "UpsellengineConfig"
+        },
+        {
+          "file": "ventascrm_coordinator.py",
+          "path": "ventascrm/ventascrm_coordinator.py",
+          "class": "VentascrmCoordinator"
+        }
+      ],
+      "template_incomplete": []
+    },
+    "vigilancia": {
+      "total_files": 5,
+      "active_operativo": [],
+      "configured_standby": [
+        {
+          "file": "earlywarning.py",
+          "path": "vigilancia/earlywarning.py",
+          "class": "EarlywarningConfig"
+        },
+        {
+          "file": "marketradar.py",
+          "path": "vigilancia/marketradar.py",
+          "class": "MarketradarConfig"
+        },
+        {
+          "file": "portfoliosentinel.py",
+          "path": "vigilancia/portfoliosentinel.py",
+          "class": "PortfoliosentinelConfig"
+        },
+        {
+          "file": "stresstester.py",
+          "path": "vigilancia/stresstester.py",
+          "class": "StresstesterConfig"
+        },
+        {
+          "file": "vigilancia_coordinator.py",
+          "path": "vigilancia/vigilancia_coordinator.py",
+          "class": "VigilanciaCoordinator"
+        }
+      ],
+      "template_incomplete": []
+    }
+  },
+  "summary": {
+    "total_files": 308,
+    "total_modules": 24,
+    "claimed_agents": 266,
+    "active_operativo": 49,
+    "configured_standby": 217,
+    "template_incomplete": 42
+  }
+}

@@ -1,0 +1,1305 @@
+{
+  "generated_at": "2026-02-10T19:05:12.311377Z",
+  "discovery_version": "v2.4_real_world",
+  "total_agents": 142,
+  "by_module": {
+    "contabilidad": 20,
+    "coordinadores": 6,
+    "core": 4,
+    "educacion": 5,
+    "investigacion": 5,
+    "legal": 32,
+    "logistica": 23,
+    "originacion": 13,
+    "presupuesto": 8,
+    "recuperacion": 5,
+    "regtech": 10,
+    "rrhh": 6,
+    "ventascrm": 5
+  },
+  "agents": [
+    {
+      "agent_id": "auditmaster_62f359",
+      "filename": "auditmaster.py",
+      "file_path": "compliance/auditmaster.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "compliance_coordinator_ffbf22",
+      "filename": "compliance_coordinator.py",
+      "file_path": "compliance/compliance_coordinator.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 97,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "compliancewatchdog_7e5d4b",
+      "filename": "compliancewatchdog.py",
+      "file_path": "compliance/compliancewatchdog.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "docguardian_5832df",
+      "filename": "docguardian.py",
+      "file_path": "compliance/docguardian.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "regulatory_radar_e3b635",
+      "filename": "regulatory_radar.py",
+      "file_path": "compliance/regulatory_radar.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 247,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "activosfijos_711216",
+      "filename": "activosfijos.py",
+      "file_path": "contabilidad/activosfijos.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "analisis_financiero_5a4143",
+      "filename": "analisis_financiero.py",
+      "file_path": "contabilidad/analisis_financiero.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 1130,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "analisis_financiero_super_agent_c5665c",
+      "filename": "analisis_financiero_super_agent.py",
+      "file_path": "contabilidad/analisis_financiero_super_agent.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 1442,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "auditoriainterna_6c49bd",
+      "filename": "auditoriainterna.py",
+      "file_path": "contabilidad/auditoriainterna.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "cierrecontable_75c294",
+      "filename": "cierrecontable.py",
+      "file_path": "contabilidad/cierrecontable.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "conciliacionbancaria_cacc09",
+      "filename": "conciliacionbancaria.py",
+      "file_path": "contabilidad/conciliacionbancaria.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "contabilidadinteligente_92ade8",
+      "filename": "contabilidadinteligente.py",
+      "file_path": "contabilidad/contabilidadinteligente.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "controlgastos_3308b9",
+      "filename": "controlgastos.py",
+      "file_path": "contabilidad/controlgastos.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "dgiiautoreporter_c692c4",
+      "filename": "dgiiautoreporter.py",
+      "file_path": "contabilidad/dgiiautoreporter.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "facturacionelectronica_4486c7",
+      "filename": "facturacionelectronica.py",
+      "file_path": "contabilidad/facturacionelectronica.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "facturacionia_0b8da0",
+      "filename": "facturacionia.py",
+      "file_path": "contabilidad/facturacionia.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "flujocajaia_43e0f5",
+      "filename": "flujocajaia.py",
+      "file_path": "contabilidad/flujocajaia.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "flujocajaprediccion_7c6884",
+      "filename": "flujocajaprediccion.py",
+      "file_path": "contabilidad/flujocajaprediccion.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "inventariovaloracion_82f2ae",
+      "filename": "inventariovaloracion.py",
+      "file_path": "contabilidad/inventariovaloracion.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "previsionfiscal_bfa8e3",
+      "filename": "previsionfiscal.py",
+      "file_path": "contabilidad/previsionfiscal.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "reconcilia_auto_2de0db",
+      "filename": "reconcilia_auto.py",
+      "file_path": "contabilidad/reconcilia_auto.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 315,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "reportes_fiscales_9ac381",
+      "filename": "reportes_fiscales.py",
+      "file_path": "contabilidad/reportes_fiscales.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 671,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "reportesejecutivos_9eacd8",
+      "filename": "reportesejecutivos.py",
+      "file_path": "contabilidad/reportesejecutivos.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "reportingfinanciero_3ac331",
+      "filename": "reportingfinanciero.py",
+      "file_path": "contabilidad/reportingfinanciero.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "tributarioia_8d0fea",
+      "filename": "tributarioia.py",
+      "file_path": "contabilidad/tributarioia.py",
+      "module": "contabilidad",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "decision_coordinator_199bfe",
+      "filename": "decision_coordinator.py",
+      "file_path": "decision/decision_coordinator.py",
+      "module": "coordinadores",
+      "status": "configured",
+      "lines": 95,
+      "reason_detected": "coordinator_or_core"
+    },
+    {
+      "agent_id": "policyguardian_6f6198",
+      "filename": "policyguardian.py",
+      "file_path": "decision/policyguardian.py",
+      "module": "coordinadores",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "coordinator_or_core"
+    },
+    {
+      "agent_id": "contenidopersonalizado_725740",
+      "filename": "contenidopersonalizado.py",
+      "file_path": "educacion/contenidopersonalizado.py",
+      "module": "educacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "curriculumadaptativo_fb42c9",
+      "filename": "curriculumadaptativo.py",
+      "file_path": "educacion/curriculumadaptativo.py",
+      "module": "educacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "educacion_coordinator_7847f4",
+      "filename": "educacion_coordinator.py",
+      "file_path": "educacion/educacion_coordinator.py",
+      "module": "educacion",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "evaluacionia_a42266",
+      "filename": "evaluacionia.py",
+      "file_path": "educacion/evaluacionia.py",
+      "module": "educacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "progresionestudiante_ef19bd",
+      "filename": "progresionestudiante.py",
+      "file_path": "educacion/progresionestudiante.py",
+      "module": "educacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "experiencia_coordinator_750929",
+      "filename": "experiencia_coordinator.py",
+      "file_path": "experiencia/experiencia_coordinator.py",
+      "module": "core",
+      "status": "configured",
+      "lines": 111,
+      "reason_detected": "coordinator_or_core"
+    },
+    {
+      "agent_id": "backupguardian_d365dd",
+      "filename": "backupguardian.py",
+      "file_path": "fortaleza/backupguardian.py",
+      "module": "core",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "coordinator_or_core"
+    },
+    {
+      "agent_id": "fortaleza_coordinator_9f456a",
+      "filename": "fortaleza_coordinator.py",
+      "file_path": "fortaleza/fortaleza_coordinator.py",
+      "module": "core",
+      "status": "configured",
+      "lines": 111,
+      "reason_detected": "coordinator_or_core"
+    },
+    {
+      "agent_id": "inteligencia_coordinator_02c84f",
+      "filename": "inteligencia_coordinator.py",
+      "file_path": "inteligencia/inteligencia_coordinator.py",
+      "module": "core",
+      "status": "configured",
+      "lines": 111,
+      "reason_detected": "coordinator_or_core"
+    },
+    {
+      "agent_id": "innovaciontracker_e961b9",
+      "filename": "innovaciontracker.py",
+      "file_path": "investigacion/innovaciontracker.py",
+      "module": "investigacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "investigacion_coordinator_88733d",
+      "filename": "investigacion_coordinator.py",
+      "file_path": "investigacion/investigacion_coordinator.py",
+      "module": "investigacion",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "patentesanalyzer_911d64",
+      "filename": "patentesanalyzer.py",
+      "file_path": "investigacion/patentesanalyzer.py",
+      "module": "investigacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "prototipogenerator_fed3b0",
+      "filename": "prototipogenerator.py",
+      "file_path": "investigacion/prototipogenerator.py",
+      "module": "investigacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "tendenciasia_d61502",
+      "filename": "tendenciasia.py",
+      "file_path": "investigacion/tendenciasia.py",
+      "module": "investigacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "derechoadministrativo_09271a",
+      "filename": "derechoadministrativo.py",
+      "file_path": "legal/derechoadministrativo.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "derechoadministrativophd_50977f",
+      "filename": "derechoadministrativophd.py",
+      "file_path": "legal/derechoadministrativophd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "derechoambiental_c9e9ae",
+      "filename": "derechoambiental.py",
+      "file_path": "legal/derechoambiental.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "derechobancario_f3da1e",
+      "filename": "derechobancario.py",
+      "file_path": "legal/derechobancario.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "derechocivilphd_f182c5",
+      "filename": "derechocivilphd.py",
+      "file_path": "legal/derechocivilphd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "derechocomercial_01fd46",
+      "filename": "derechocomercial.py",
+      "file_path": "legal/derechocomercial.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "derechocomercialephd_c2fb4d",
+      "filename": "derechocomercialephd.py",
+      "file_path": "legal/derechocomercialephd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "derechoconstitucional_c69dd5",
+      "filename": "derechoconstitucional.py",
+      "file_path": "legal/derechoconstitucional.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "derechoconstitucionalphd_fcfbec",
+      "filename": "derechoconstitucionalphd.py",
+      "file_path": "legal/derechoconstitucionalphd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 273,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "derechocontratacion_60b89f",
+      "filename": "derechocontratacion.py",
+      "file_path": "legal/derechocontratacion.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "derechofamiliaphd_898556",
+      "filename": "derechofamiliaphd.py",
+      "file_path": "legal/derechofamiliaphd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "derechofamiliar_e23ca3",
+      "filename": "derechofamiliar.py",
+      "file_path": "legal/derechofamiliar.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "derechofinanciero_38bb56",
+      "filename": "derechofinanciero.py",
+      "file_path": "legal/derechofinanciero.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "derechoinmobiliario_a5130f",
+      "filename": "derechoinmobiliario.py",
+      "file_path": "legal/derechoinmobiliario.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "derechoinmobiliariophd_710e11",
+      "filename": "derechoinmobiliariophd.py",
+      "file_path": "legal/derechoinmobiliariophd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "derechointelectual_51a847",
+      "filename": "derechointelectual.py",
+      "file_path": "legal/derechointelectual.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "derechointernacional_e66fc7",
+      "filename": "derechointernacional.py",
+      "file_path": "legal/derechointernacional.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "derecholaboral_c67943",
+      "filename": "derecholaboral.py",
+      "file_path": "legal/derecholaboral.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "derecholaboralphd_0b40eb",
+      "filename": "derecholaboralphd.py",
+      "file_path": "legal/derecholaboralphd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "derechomarcario_1ccb61",
+      "filename": "derechomarcario.py",
+      "file_path": "legal/derechomarcario.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "derechomaritimo_03a56a",
+      "filename": "derechomaritimo.py",
+      "file_path": "legal/derechomaritimo.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "derechomigratorio_2761a7",
+      "filename": "derechomigratorio.py",
+      "file_path": "legal/derechomigratorio.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "derechominero_f50ca4",
+      "filename": "derechominero.py",
+      "file_path": "legal/derechominero.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "derechonotarial_e553b6",
+      "filename": "derechonotarial.py",
+      "file_path": "legal/derechonotarial.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "derechopenal_6e3af4",
+      "filename": "derechopenal.py",
+      "file_path": "legal/derechopenal.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "derechopenalphd_06ea06",
+      "filename": "derechopenalphd.py",
+      "file_path": "legal/derechopenalphd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 273,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "derechoprocesalpenal_e69d85",
+      "filename": "derechoprocesalpenal.py",
+      "file_path": "legal/derechoprocesalpenal.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "derechoprocesalpenalphd_241541",
+      "filename": "derechoprocesalpenalphd.py",
+      "file_path": "legal/derechoprocesalpenalphd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 273,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "derechoseguros_ad2ffa",
+      "filename": "derechoseguros.py",
+      "file_path": "legal/derechoseguros.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "derechotributario_28f9ca",
+      "filename": "derechotributario.py",
+      "file_path": "legal/derechotributario.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 116,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "derechotributariophd_2d538e",
+      "filename": "derechotributariophd.py",
+      "file_path": "legal/derechotributariophd.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "legal_coordinator_f0b225",
+      "filename": "legal_coordinator.py",
+      "file_path": "legal/legal_coordinator.py",
+      "module": "legal",
+      "status": "configured",
+      "lines": 150,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "alertasinventario_a1a23b",
+      "filename": "alertasinventario.py",
+      "file_path": "logistica/alertasinventario.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "almaceninteligente_f1368f",
+      "filename": "almaceninteligente.py",
+      "file_path": "logistica/almaceninteligente.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "analisisrendimiento_a7fd29",
+      "filename": "analisisrendimiento.py",
+      "file_path": "logistica/analisisrendimiento.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "controlcalidad_6d838f",
+      "filename": "controlcalidad.py",
+      "file_path": "logistica/controlcalidad.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "controlcalidadia_81a5d2",
+      "filename": "controlcalidadia.py",
+      "file_path": "logistica/controlcalidadia.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 149,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "controlpedidosia_3c52bc",
+      "filename": "controlpedidosia.py",
+      "file_path": "logistica/controlpedidosia.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "costoslogisticos_ff519c",
+      "filename": "costoslogisticos.py",
+      "file_path": "logistica/costoslogisticos.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "evaluadorproveedoresia_138b98",
+      "filename": "evaluadorproveedoresia.py",
+      "file_path": "logistica/evaluadorproveedoresia.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "gestionriesgos_82ec5c",
+      "filename": "gestionriesgos.py",
+      "file_path": "logistica/gestionriesgos.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "logistica_coordinator_4cecb1",
+      "filename": "logistica_coordinator.py",
+      "file_path": "logistica/logistica_coordinator.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 138,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "logisticareversa_82c3c7",
+      "filename": "logisticareversa.py",
+      "file_path": "logistica/logisticareversa.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "optimizacionalmacen_548105",
+      "filename": "optimizacionalmacen.py",
+      "file_path": "logistica/optimizacionalmacen.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "optimizacioncostos_85b782",
+      "filename": "optimizacioncostos.py",
+      "file_path": "logistica/optimizacioncostos.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "optimizadorrutasia_609b79",
+      "filename": "optimizadorrutasia.py",
+      "file_path": "logistica/optimizadorrutasia.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "planificaciondemanda_2b22f4",
+      "filename": "planificaciondemanda.py",
+      "file_path": "logistica/planificaciondemanda.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "predicciondemanda_e6ddc9",
+      "filename": "predicciondemanda.py",
+      "file_path": "logistica/predicciondemanda.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "previsioninventarioia_14b3e0",
+      "filename": "previsioninventarioia.py",
+      "file_path": "logistica/previsioninventarioia.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "seguridadcarga_9da12b",
+      "filename": "seguridadcarga.py",
+      "file_path": "logistica/seguridadcarga.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "sostenibilidadia_950138",
+      "filename": "sostenibilidadia.py",
+      "file_path": "logistica/sostenibilidadia.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "transporteoptimizado_d245b4",
+      "filename": "transporteoptimizado.py",
+      "file_path": "logistica/transporteoptimizado.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "transportepredictivo_805d8c",
+      "filename": "transportepredictivo.py",
+      "file_path": "logistica/transportepredictivo.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "trazabilidadia_af9284",
+      "filename": "trazabilidadia.py",
+      "file_path": "logistica/trazabilidadia.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "trazabilidadtotal_76e3b3",
+      "filename": "trazabilidadtotal.py",
+      "file_path": "logistica/trazabilidadtotal.py",
+      "module": "logistica",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "domain_keywords_large"
+    },
+    {
+      "agent_id": "costoptimizer_30fde7",
+      "filename": "costoptimizer.py",
+      "file_path": "operacional/costoptimizer.py",
+      "module": "coordinadores",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "coordinator_or_core"
+    },
+    {
+      "agent_id": "operacional_coordinator_bb6304",
+      "filename": "operacional_coordinator.py",
+      "file_path": "operacional/operacional_coordinator.py",
+      "module": "coordinadores",
+      "status": "configured",
+      "lines": 111,
+      "reason_detected": "coordinator_or_core"
+    },
+    {
+      "agent_id": "qualitycontroller_63c452",
+      "filename": "qualitycontroller.py",
+      "file_path": "operacional/qualitycontroller.py",
+      "module": "coordinadores",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "coordinator_or_core"
+    },
+    {
+      "agent_id": "resourcemanager_41f71f",
+      "filename": "resourcemanager.py",
+      "file_path": "orchestration/resourcemanager.py",
+      "module": "coordinadores",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "coordinator_or_core"
+    },
+    {
+      "agent_id": "base_components_v2_aa0e3a",
+      "filename": "base_components_v2.py",
+      "file_path": "originacion/base_components_v2.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 635,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "behavior_miner_v2_25cbee",
+      "filename": "behavior_miner_v2.py",
+      "file_path": "originacion/behavior_miner_v2.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 220,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "behaviorminer_bd619a",
+      "filename": "behaviorminer.py",
+      "file_path": "originacion/behaviorminer.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "dnaprofiler_755346",
+      "filename": "dnaprofiler.py",
+      "file_path": "originacion/dnaprofiler.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "income_oracle_v2_c3e93a",
+      "filename": "income_oracle_v2.py",
+      "file_path": "originacion/income_oracle_v2.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 180,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "incomeoracle_4d2d93",
+      "filename": "incomeoracle.py",
+      "file_path": "originacion/incomeoracle.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "originacion_coordinator_2eafb9",
+      "filename": "originacion_coordinator.py",
+      "file_path": "originacion/originacion_coordinator.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 95,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "sentinelbot_564384",
+      "filename": "sentinelbot.py",
+      "file_path": "originacion/sentinelbot.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "analisisvarianza_26c674",
+      "filename": "analisisvarianza.py",
+      "file_path": "presupuesto/analisisvarianza.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 122,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "budgetoptimizer_95db50",
+      "filename": "budgetoptimizer.py",
+      "file_path": "presupuesto/budgetoptimizer.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "costocentros_7e3f96",
+      "filename": "costocentros.py",
+      "file_path": "presupuesto/costocentros.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "forecastingia_46ffbc",
+      "filename": "forecastingia.py",
+      "file_path": "presupuesto/forecastingia.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "presupuesto_coordinator_669734",
+      "filename": "presupuesto_coordinator.py",
+      "file_path": "presupuesto/presupuesto_coordinator.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 121,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "presupuestomaestro_23543a",
+      "filename": "presupuestomaestro.py",
+      "file_path": "presupuesto/presupuestomaestro.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "roipredictor_59c3ea",
+      "filename": "roipredictor.py",
+      "file_path": "presupuesto/roipredictor.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "varianzaanalisis_3de65e",
+      "filename": "varianzaanalisis.py",
+      "file_path": "presupuesto/varianzaanalisis.py",
+      "module": "presupuesto",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "collectionmaster_7eea3f",
+      "filename": "collectionmaster.py",
+      "file_path": "recuperacion/collectionmaster.py",
+      "module": "recuperacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "legalpathway_d03dfc",
+      "filename": "legalpathway.py",
+      "file_path": "recuperacion/legalpathway.py",
+      "module": "recuperacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "negotiationbot_916556",
+      "filename": "negotiationbot.py",
+      "file_path": "recuperacion/negotiationbot.py",
+      "module": "recuperacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "recoveryoptimizer_2153e1",
+      "filename": "recoveryoptimizer.py",
+      "file_path": "recuperacion/recoveryoptimizer.py",
+      "module": "recuperacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "recuperacion_coordinator_26f874",
+      "filename": "recuperacion_coordinator.py",
+      "file_path": "recuperacion/recuperacion_coordinator.py",
+      "module": "recuperacion",
+      "status": "configured",
+      "lines": 95,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "amldetector_0f179e",
+      "filename": "amldetector.py",
+      "file_path": "regtech/amldetector.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 273,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "kycautomatico_c84fcd",
+      "filename": "kycautomatico.py",
+      "file_path": "regtech/kycautomatico.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 273,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "regtech_coordinator_b9303e",
+      "filename": "regtech_coordinator.py",
+      "file_path": "regtech/regtech_coordinator.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 114,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "reportingregulatorio_ed50a3",
+      "filename": "reportingregulatorio.py",
+      "file_path": "regtech/reportingregulatorio.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "sancioneschecker_c3a5d5",
+      "filename": "sancioneschecker.py",
+      "file_path": "regtech/sancioneschecker.py",
+      "module": "regtech",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "capacitacionia_a002d2",
+      "filename": "capacitacionia.py",
+      "file_path": "rrhh/capacitacionia.py",
+      "module": "rrhh",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "cvanalyzeria_20a32d",
+      "filename": "cvanalyzeria.py",
+      "file_path": "rrhh/cvanalyzeria.py",
+      "module": "rrhh",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "nominaautomatica_d825e5",
+      "filename": "nominaautomatica.py",
+      "file_path": "rrhh/nominaautomatica.py",
+      "module": "rrhh",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "performancetracker_9976fb",
+      "filename": "performancetracker.py",
+      "file_path": "rrhh/performancetracker.py",
+      "module": "rrhh",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "rrhh_coordinator_c3b935",
+      "filename": "rrhh_coordinator.py",
+      "file_path": "rrhh/rrhh_coordinator.py",
+      "module": "rrhh",
+      "status": "configured",
+      "lines": 117,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "talentopredictor_5cd9aa",
+      "filename": "talentopredictor.py",
+      "file_path": "rrhh/talentopredictor.py",
+      "module": "rrhh",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "churnpredictor_8841c0",
+      "filename": "churnpredictor.py",
+      "file_path": "ventascrm/churnpredictor.py",
+      "module": "ventascrm",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "leadscoringia_d4ed65",
+      "filename": "leadscoringia.py",
+      "file_path": "ventascrm/leadscoringia.py",
+      "module": "ventascrm",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "pipelineoptimizer_1fead1",
+      "filename": "pipelineoptimizer.py",
+      "file_path": "ventascrm/pipelineoptimizer.py",
+      "module": "ventascrm",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "upsellengine_aaf3ed",
+      "filename": "upsellengine.py",
+      "file_path": "ventascrm/upsellengine.py",
+      "module": "ventascrm",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "ventascrm_coordinator_7ab6fa",
+      "filename": "ventascrm_coordinator.py",
+      "file_path": "ventascrm/ventascrm_coordinator.py",
+      "module": "ventascrm",
+      "status": "configured",
+      "lines": 115,
+      "reason_detected": "has_agent_class"
+    },
+    {
+      "agent_id": "earlywarning_9f7197",
+      "filename": "earlywarning.py",
+      "file_path": "vigilancia/earlywarning.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "marketradar_fd3029",
+      "filename": "marketradar.py",
+      "file_path": "vigilancia/marketradar.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 173,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "portfoliosentinel_69fbbe",
+      "filename": "portfoliosentinel.py",
+      "file_path": "vigilancia/portfoliosentinel.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "stresstester_8ece08",
+      "filename": "stresstester.py",
+      "file_path": "vigilancia/stresstester.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 200,
+      "reason_detected": "large_complex_file"
+    },
+    {
+      "agent_id": "vigilancia_coordinator_92703f",
+      "filename": "vigilancia_coordinator.py",
+      "file_path": "vigilancia/vigilancia_coordinator.py",
+      "module": "originacion",
+      "status": "configured",
+      "lines": 95,
+      "reason_detected": "has_agent_class"
+    }
+  ],
+  "statistics": {
+    "files_total": 347,
+    "files_skipped": 43,
+    "modules_detected": 13
+  }
+}

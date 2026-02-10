@@ -1,0 +1,147 @@
+{
+  "summary": {
+    "total_expected": 214,
+    "total_found": 135,
+    "difference": -79
+  },
+  "expected": {
+    "marketing": 44,
+    "legal": 33,
+    "contabilidad": 21,
+    "logistica": 23,
+    "presupuesto": 13,
+    "rrhh": 10,
+    "educacion": 9,
+    "investigacion": 9,
+    "ventascrm": 9,
+    "regtech": 8,
+    "recuperacion": 5,
+    "originacion": 10,
+    "core": 0,
+    "coordinacion": 0,
+    "otros": 20
+  },
+  "found": {
+    "contabilidad": 9,
+    "coordinacion": 10,
+    "core": 5,
+    "educacion": 3,
+    "investigacion": 3,
+    "legal": 10,
+    "logistica": 6,
+    "marketing": 55,
+    "originacion": 9,
+    "presupuesto": 5,
+    "recuperacion": 5,
+    "regtech": 7,
+    "rrhh": 4,
+    "ventascrm": 4
+  },
+  "comparison": {
+    "marketing": {
+      "expected": 44,
+      "found": 55,
+      "missing": 0,
+      "extra": 11,
+      "status": "ok"
+    },
+    "legal": {
+      "expected": 33,
+      "found": 10,
+      "missing": 23,
+      "extra": 0,
+      "status": "warn"
+    },
+    "contabilidad": {
+      "expected": 21,
+      "found": 9,
+      "missing": 12,
+      "extra": 0,
+      "status": "warn"
+    },
+    "logistica": {
+      "expected": 23,
+      "found": 6,
+      "missing": 17,
+      "extra": 0,
+      "status": "warn"
+    },
+    "presupuesto": {
+      "expected": 13,
+      "found": 5,
+      "missing": 8,
+      "extra": 0,
+      "status": "warn"
+    },
+    "rrhh": {
+      "expected": 10,
+      "found": 4,
+      "missing": 6,
+      "extra": 0,
+      "status": "warn"
+    },
+    "educacion": {
+      "expected": 9,
+      "found": 3,
+      "missing": 6,
+      "extra": 0,
+      "status": "warn"
+    },
+    "investigacion": {
+      "expected": 9,
+      "found": 3,
+      "missing": 6,
+      "extra": 0,
+      "status": "warn"
+    },
+    "ventascrm": {
+      "expected": 9,
+      "found": 4,
+      "missing": 5,
+      "extra": 0,
+      "status": "warn"
+    },
+    "regtech": {
+      "expected": 8,
+      "found": 7,
+      "missing": 1,
+      "extra": 0,
+      "status": "warn"
+    },
+    "recuperacion": {
+      "expected": 5,
+      "found": 5,
+      "missing": 0,
+      "extra": 0,
+      "status": "ok"
+    },
+    "originacion": {
+      "expected": 10,
+      "found": 9,
+      "missing": 1,
+      "extra": 0,
+      "status": "warn"
+    },
+    "core": {
+      "expected": 0,
+      "found": 5,
+      "missing": 0,
+      "extra": 0,
+      "status": "info"
+    },
+    "coordinacion": {
+      "expected": 0,
+      "found": 10,
+      "missing": 0,
+      "extra": 0,
+      "status": "info"
+    },
+    "otros": {
+      "expected": 20,
+      "found": 0,
+      "missing": 20,
+      "extra": 0,
+      "status": "critical"
+    }
+  }
+}

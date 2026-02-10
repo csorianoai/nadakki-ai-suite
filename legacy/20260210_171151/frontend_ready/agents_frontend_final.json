@@ -1,0 +1,12 @@
+﻿{
+    "version":  "1.0_frontend",
+    "generated_at":  null,
+    "statistics":  null,
+    "agents_ready_for_ui":  [
+
+                            ],
+    "modules":  {
+
+                },
+    "discovery_method":  "final_inventory_analysis"
+}

@@ -1,0 +1,2080 @@
+{
+  "generated_at": "2026-02-10T15:31:23.206768",
+  "modules": {
+    "agent_compat.py": {
+      "expected": 0,
+      "real": 0,
+      "difference": 0,
+      "status": "OK",
+      "total_files": 1,
+      "agents": []
+    },
+    "compliance": {
+      "expected": 0,
+      "real": 4,
+      "difference": 4,
+      "status": "OK",
+      "total_files": 5,
+      "agents": [
+        {
+          "file": "auditmaster.py",
+          "path": "compliance/auditmaster.py",
+          "class": "AuditmasterConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "compliance_coordinator.py",
+          "path": "compliance/compliance_coordinator.py",
+          "class": "ComplianceCoordinator",
+          "status": "configured",
+          "lines": 97
+        },
+        {
+          "file": "compliancewatchdog.py",
+          "path": "compliance/compliancewatchdog.py",
+          "class": "CompliancewatchdogConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "docguardian.py",
+          "path": "compliance/docguardian.py",
+          "class": "DocguardianConfig",
+          "status": "configured",
+          "lines": 173
+        }
+      ]
+    },
+    "contabilidad": {
+      "expected": 21,
+      "real": 20,
+      "difference": -1,
+      "status": "MISSING",
+      "total_files": 22,
+      "agents": [
+        {
+          "file": "activosfijos.py",
+          "path": "contabilidad/activosfijos.py",
+          "class": "ActivosfijosConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "analisis_financiero.py",
+          "path": "contabilidad/analisis_financiero.py",
+          "class": "RatioFinanciero",
+          "status": "configured",
+          "lines": 1130
+        },
+        {
+          "file": "analisis_financiero_super_agent.py",
+          "path": "contabilidad/analisis_financiero_super_agent.py",
+          "class": "RiskLevel",
+          "status": "configured",
+          "lines": 1442
+        },
+        {
+          "file": "auditoriainterna.py",
+          "path": "contabilidad/auditoriainterna.py",
+          "class": "AuditoriainternaConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "cierrecontable.py",
+          "path": "contabilidad/cierrecontable.py",
+          "class": "CierrecontableConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "conciliacionbancaria.py",
+          "path": "contabilidad/conciliacionbancaria.py",
+          "class": "ConciliacionbancariaConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "contabilidadinteligente.py",
+          "path": "contabilidad/contabilidadinteligente.py",
+          "class": "IntelligentAccountingEngine",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "controlgastos.py",
+          "path": "contabilidad/controlgastos.py",
+          "class": "ControlgastosConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "dgiiautoreporter.py",
+          "path": "contabilidad/dgiiautoreporter.py",
+          "class": "DgiiautoreporterConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "facturacionelectronica.py",
+          "path": "contabilidad/facturacionelectronica.py",
+          "class": "FacturacionelectronicaConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "facturacionia.py",
+          "path": "contabilidad/facturacionia.py",
+          "class": "InvoicingAIEngine",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "flujocajaia.py",
+          "path": "contabilidad/flujocajaia.py",
+          "class": "FlujocajaiaConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "flujocajaprediccion.py",
+          "path": "contabilidad/flujocajaprediccion.py",
+          "class": "CashFlowPredictionEngine",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "inventariovaloracion.py",
+          "path": "contabilidad/inventariovaloracion.py",
+          "class": "InventoryValuationEngine",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "previsionfiscal.py",
+          "path": "contabilidad/previsionfiscal.py",
+          "class": "PrevisionfiscalConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "reconcilia_auto.py",
+          "path": "contabilidad/reconcilia_auto.py",
+          "class": "ReconciliaAutoConfig",
+          "status": "configured",
+          "lines": 315
+        },
+        {
+          "file": "reportes_fiscales.py",
+          "path": "contabilidad/reportes_fiscales.py",
+          "class": "ContabilidadLogger",
+          "status": "configured",
+          "lines": 671
+        },
+        {
+          "file": "reportesejecutivos.py",
+          "path": "contabilidad/reportesejecutivos.py",
+          "class": "ExecutiveReportingEngine",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "reportingfinanciero.py",
+          "path": "contabilidad/reportingfinanciero.py",
+          "class": "ReportingfinancieroConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "tributarioia.py",
+          "path": "contabilidad/tributarioia.py",
+          "class": "TaxComplianceEngine",
+          "status": "configured",
+          "lines": 116
+        }
+      ]
+    },
+    "decision": {
+      "expected": 0,
+      "real": 5,
+      "difference": 5,
+      "status": "OK",
+      "total_files": 5,
+      "agents": [
+        {
+          "file": "decision_coordinator.py",
+          "path": "decision/decision_coordinator.py",
+          "class": "DecisionCoordinator",
+          "status": "configured",
+          "lines": 95
+        },
+        {
+          "file": "policyguardian.py",
+          "path": "decision/policyguardian.py",
+          "class": "PolicyguardianConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "quantumdecision.py",
+          "path": "decision/quantumdecision.py",
+          "class": "QuantumdecisionConfig",
+          "status": "configured",
+          "lines": 273
+        },
+        {
+          "file": "riskoracle.py",
+          "path": "decision/riskoracle.py",
+          "class": "RiskoracleConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "turboapprover.py",
+          "path": "decision/turboapprover.py",
+          "class": "TurboapproverConfig",
+          "status": "configured",
+          "lines": 173
+        }
+      ]
+    },
+    "educacion": {
+      "expected": 9,
+      "real": 9,
+      "difference": 0,
+      "status": "OK",
+      "total_files": 9,
+      "agents": [
+        {
+          "file": "competenciasia.py",
+          "path": "educacion/competenciasia.py",
+          "class": "CompetencyAIEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "contenidopersonalizado.py",
+          "path": "educacion/contenidopersonalizado.py",
+          "class": "ContenidopersonalizadoConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "curriculumadaptativo.py",
+          "path": "educacion/curriculumadaptativo.py",
+          "class": "CurriculumadaptativoConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "cursosautomaticos.py",
+          "path": "educacion/cursosautomaticos.py",
+          "class": "AutomaticCourseEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "educacion_coordinator.py",
+          "path": "educacion/educacion_coordinator.py",
+          "class": "EducacionCoordinator",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "evaluacionadaptativa.py",
+          "path": "educacion/evaluacionadaptativa.py",
+          "class": "AdaptiveEvaluationEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "evaluacionia.py",
+          "path": "educacion/evaluacionia.py",
+          "class": "EvaluacioniaConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "progresionestudiante.py",
+          "path": "educacion/progresionestudiante.py",
+          "class": "ProgresionestudianteConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "tutorvirtualia.py",
+          "path": "educacion/tutorvirtualia.py",
+          "class": "VirtualTutorAIEngine",
+          "status": "configured",
+          "lines": 115
+        }
+      ]
+    },
+    "experiencia": {
+      "expected": 0,
+      "real": 5,
+      "difference": 5,
+      "status": "OK",
+      "total_files": 5,
+      "agents": [
+        {
+          "file": "chatbotsupreme.py",
+          "path": "experiencia/chatbotsupreme.py",
+          "class": "ChatbotsupremeConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "customergenius.py",
+          "path": "experiencia/customergenius.py",
+          "class": "CustomergeniusConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "experiencia_coordinator.py",
+          "path": "experiencia/experiencia_coordinator.py",
+          "class": "ExperienciaCoordinator",
+          "status": "configured",
+          "lines": 111
+        },
+        {
+          "file": "onboardingwizard.py",
+          "path": "experiencia/onboardingwizard.py",
+          "class": "OnboardingwizardConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "personalizationengine.py",
+          "path": "experiencia/personalizationengine.py",
+          "class": "PersonalizationengineConfig",
+          "status": "configured",
+          "lines": 200
+        }
+      ]
+    },
+    "fortaleza": {
+      "expected": 0,
+      "real": 5,
+      "difference": 5,
+      "status": "OK",
+      "total_files": 5,
+      "agents": [
+        {
+          "file": "backupguardian.py",
+          "path": "fortaleza/backupguardian.py",
+          "class": "BackupguardianConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "cybersentinel.py",
+          "path": "fortaleza/cybersentinel.py",
+          "class": "CybersentinelConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "datavault.py",
+          "path": "fortaleza/datavault.py",
+          "class": "DatavaultConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "fortaleza_coordinator.py",
+          "path": "fortaleza/fortaleza_coordinator.py",
+          "class": "FortalezaCoordinator",
+          "status": "configured",
+          "lines": 111
+        },
+        {
+          "file": "systemhealthmonitor.py",
+          "path": "fortaleza/systemhealthmonitor.py",
+          "class": "SystemhealthmonitorConfig",
+          "status": "configured",
+          "lines": 173
+        }
+      ]
+    },
+    "inteligencia": {
+      "expected": 0,
+      "real": 5,
+      "difference": 5,
+      "status": "OK",
+      "total_files": 5,
+      "agents": [
+        {
+          "file": "cashfloworacle.py",
+          "path": "inteligencia/cashfloworacle.py",
+          "class": "CashfloworacleConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "inteligencia_coordinator.py",
+          "path": "inteligencia/inteligencia_coordinator.py",
+          "class": "InteligenciaCoordinator",
+          "status": "configured",
+          "lines": 111
+        },
+        {
+          "file": "pricinggenius.py",
+          "path": "inteligencia/pricinggenius.py",
+          "class": "PricinggeniusConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "profitmaximizer.py",
+          "path": "inteligencia/profitmaximizer.py",
+          "class": "ProfitmaximizerConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "roimaster.py",
+          "path": "inteligencia/roimaster.py",
+          "class": "RoimasterConfig",
+          "status": "configured",
+          "lines": 173
+        }
+      ]
+    },
+    "investigacion": {
+      "expected": 9,
+      "real": 9,
+      "difference": 0,
+      "status": "OK",
+      "total_files": 9,
+      "agents": [
+        {
+          "file": "analisistendencias.py",
+          "path": "investigacion/analisistendencias.py",
+          "class": "TrendAnalysisEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "innovacionia.py",
+          "path": "investigacion/innovacionia.py",
+          "class": "InnovationAIEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "innovaciontracker.py",
+          "path": "investigacion/innovaciontracker.py",
+          "class": "InnovaciontrackerConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "investigacion_coordinator.py",
+          "path": "investigacion/investigacion_coordinator.py",
+          "class": "InvestigacionCoordinator",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "patentesanalyzer.py",
+          "path": "investigacion/patentesanalyzer.py",
+          "class": "PatentesanalyzerConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "patentesautomaticos.py",
+          "path": "investigacion/patentesautomaticos.py",
+          "class": "AutomaticPatentEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "prototipogenerator.py",
+          "path": "investigacion/prototipogenerator.py",
+          "class": "PrototipogeneratorConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "prototiposgenerativos.py",
+          "path": "investigacion/prototiposgenerativos.py",
+          "class": "GenerativePrototypeEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "tendenciasia.py",
+          "path": "investigacion/tendenciasia.py",
+          "class": "TendenciasiaConfig",
+          "status": "configured",
+          "lines": 173
+        }
+      ]
+    },
+    "legal": {
+      "expected": 33,
+      "real": 32,
+      "difference": -1,
+      "status": "MISSING",
+      "total_files": 32,
+      "agents": [
+        {
+          "file": "derechoadministrativo.py",
+          "path": "legal/derechoadministrativo.py",
+          "class": "DerechoAdministrativoExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechoadministrativophd.py",
+          "path": "legal/derechoadministrativophd.py",
+          "class": "DerechoadministrativophdConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "derechoambiental.py",
+          "path": "legal/derechoambiental.py",
+          "class": "DerechoambientalConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "derechobancario.py",
+          "path": "legal/derechobancario.py",
+          "class": "DerechoBancarioExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechocivilphd.py",
+          "path": "legal/derechocivilphd.py",
+          "class": "DerechocivilphdConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "derechocomercial.py",
+          "path": "legal/derechocomercial.py",
+          "class": "DerechoComercialExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechocomercialephd.py",
+          "path": "legal/derechocomercialephd.py",
+          "class": "DerechocomercialephdConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "derechoconstitucional.py",
+          "path": "legal/derechoconstitucional.py",
+          "class": "DerechoConstitucionalExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechoconstitucionalphd.py",
+          "path": "legal/derechoconstitucionalphd.py",
+          "class": "DerechoconstitucionalphdConfig",
+          "status": "configured",
+          "lines": 273
+        },
+        {
+          "file": "derechocontratacion.py",
+          "path": "legal/derechocontratacion.py",
+          "class": "DerechocontratacionConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "derechofamiliaphd.py",
+          "path": "legal/derechofamiliaphd.py",
+          "class": "DerechofamiliaphdConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "derechofamiliar.py",
+          "path": "legal/derechofamiliar.py",
+          "class": "DerechoFamiliarExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechofinanciero.py",
+          "path": "legal/derechofinanciero.py",
+          "class": "DerechofinancieroConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "derechoinmobiliario.py",
+          "path": "legal/derechoinmobiliario.py",
+          "class": "DerechoInmobiliarioExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechoinmobiliariophd.py",
+          "path": "legal/derechoinmobiliariophd.py",
+          "class": "DerechoinmobiliariophdConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "derechointelectual.py",
+          "path": "legal/derechointelectual.py",
+          "class": "DerechoIntelectualExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechointernacional.py",
+          "path": "legal/derechointernacional.py",
+          "class": "DerechoInternacionalExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derecholaboral.py",
+          "path": "legal/derecholaboral.py",
+          "class": "DerechoLaboralExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derecholaboralphd.py",
+          "path": "legal/derecholaboralphd.py",
+          "class": "DerecholaboralphdConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "derechomarcario.py",
+          "path": "legal/derechomarcario.py",
+          "class": "DerechomarcarioConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "derechomaritimo.py",
+          "path": "legal/derechomaritimo.py",
+          "class": "DerechoMaritimoExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechomigratorio.py",
+          "path": "legal/derechomigratorio.py",
+          "class": "DerechomigratorioConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "derechominero.py",
+          "path": "legal/derechominero.py",
+          "class": "DerechoMineroExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechonotarial.py",
+          "path": "legal/derechonotarial.py",
+          "class": "DerechonotarialConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "derechopenal.py",
+          "path": "legal/derechopenal.py",
+          "class": "DerechoPenalExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechopenalphd.py",
+          "path": "legal/derechopenalphd.py",
+          "class": "DerechopenalphdConfig",
+          "status": "configured",
+          "lines": 273
+        },
+        {
+          "file": "derechoprocesalpenal.py",
+          "path": "legal/derechoprocesalpenal.py",
+          "class": "DerechoProcesalPenalExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechoprocesalpenalphd.py",
+          "path": "legal/derechoprocesalpenalphd.py",
+          "class": "DerechoprocesalpenalphdConfig",
+          "status": "configured",
+          "lines": 273
+        },
+        {
+          "file": "derechoseguros.py",
+          "path": "legal/derechoseguros.py",
+          "class": "DerechoSegurosExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechotributario.py",
+          "path": "legal/derechotributario.py",
+          "class": "DerechoTributarioExpert",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "derechotributariophd.py",
+          "path": "legal/derechotributariophd.py",
+          "class": "DerechotributariophdConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "legal_coordinator.py",
+          "path": "legal/legal_coordinator.py",
+          "class": "LegalCoordinator",
+          "status": "configured",
+          "lines": 150
+        }
+      ]
+    },
+    "logistica": {
+      "expected": 23,
+      "real": 23,
+      "difference": 0,
+      "status": "OK",
+      "total_files": 23,
+      "agents": [
+        {
+          "file": "alertasinventario.py",
+          "path": "logistica/alertasinventario.py",
+          "class": "AlertasinventarioConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "almaceninteligente.py",
+          "path": "logistica/almaceninteligente.py",
+          "class": "IntelligentWarehouseEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "analisisrendimiento.py",
+          "path": "logistica/analisisrendimiento.py",
+          "class": "PerformanceAnalysisEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "controlcalidad.py",
+          "path": "logistica/controlcalidad.py",
+          "class": "ControlcalidadConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "controlcalidadia.py",
+          "path": "logistica/controlcalidadia.py",
+          "class": "QualityControlAIEngine",
+          "status": "configured",
+          "lines": 149
+        },
+        {
+          "file": "controlpedidosia.py",
+          "path": "logistica/controlpedidosia.py",
+          "class": "ControlpedidosiaConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "costoslogisticos.py",
+          "path": "logistica/costoslogisticos.py",
+          "class": "CostoslogisticosConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "evaluadorproveedoresia.py",
+          "path": "logistica/evaluadorproveedoresia.py",
+          "class": "EvaluadorproveedoresiaConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "gestionriesgos.py",
+          "path": "logistica/gestionriesgos.py",
+          "class": "RiskManagementEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "logistica_coordinator.py",
+          "path": "logistica/logistica_coordinator.py",
+          "class": "LogisticaCoordinator",
+          "status": "configured",
+          "lines": 138
+        },
+        {
+          "file": "logisticareversa.py",
+          "path": "logistica/logisticareversa.py",
+          "class": "LogisticareversaConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "optimizacionalmacen.py",
+          "path": "logistica/optimizacionalmacen.py",
+          "class": "OptimizacionalmacenConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "optimizacioncostos.py",
+          "path": "logistica/optimizacioncostos.py",
+          "class": "CostOptimizationEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "optimizadorrutasia.py",
+          "path": "logistica/optimizadorrutasia.py",
+          "class": "OptimizadorrutasiaConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "planificaciondemanda.py",
+          "path": "logistica/planificaciondemanda.py",
+          "class": "DemandPlanningEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "predicciondemanda.py",
+          "path": "logistica/predicciondemanda.py",
+          "class": "PredicciondemandaConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "previsioninventarioia.py",
+          "path": "logistica/previsioninventarioia.py",
+          "class": "PrevisioninventarioiaConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "seguridadcarga.py",
+          "path": "logistica/seguridadcarga.py",
+          "class": "SeguridadcargaConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "sostenibilidadia.py",
+          "path": "logistica/sostenibilidadia.py",
+          "class": "SustainabilityAIEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "transporteoptimizado.py",
+          "path": "logistica/transporteoptimizado.py",
+          "class": "TransportOptimizationEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "transportepredictivo.py",
+          "path": "logistica/transportepredictivo.py",
+          "class": "TransportepredictivoConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "trazabilidadia.py",
+          "path": "logistica/trazabilidadia.py",
+          "class": "TrazabilidadiaConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "trazabilidadtotal.py",
+          "path": "logistica/trazabilidadtotal.py",
+          "class": "TraceabilityEngine",
+          "status": "configured",
+          "lines": 115
+        }
+      ]
+    },
+    "marketing": {
+      "expected": 44,
+      "real": 83,
+      "difference": 39,
+      "status": "OK",
+      "total_files": 98,
+      "agents": [
+        {
+          "file": "content_generator_v3.py",
+          "path": "marketing/_archived/content_generator_v3.py",
+          "class": "MLStrategy",
+          "status": "configured",
+          "lines": 1208
+        },
+        {
+          "file": "leadscoringia_backup_20251012_120320.py",
+          "path": "marketing/_archived/leadscoringia_backup_20251012_120320.py",
+          "class": "TokenBucket",
+          "status": "active",
+          "lines": 380
+        },
+        {
+          "file": "schemas_from_sandbox.py",
+          "path": "marketing/_archived/schemas_from_sandbox.py",
+          "class": "UTMParams",
+          "status": "configured",
+          "lines": 458
+        },
+        {
+          "file": "abtestingia.py",
+          "path": "marketing/abtestingia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 282
+        },
+        {
+          "file": "abtestingimpactia.py",
+          "path": "marketing/abtestingimpactia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 146
+        },
+        {
+          "file": "google_ads_budget_pacing_agent.py",
+          "path": "marketing/advertising/agents/marketing/google_ads_budget_pacing_agent.py",
+          "class": "GoogleAdsBudgetPacingIA",
+          "status": "configured",
+          "lines": 280
+        },
+        {
+          "file": "google_ads_strategist_agent.py",
+          "path": "marketing/advertising/agents/marketing/google_ads_strategist_agent.py",
+          "class": "GoogleAdsStrategistIA",
+          "status": "configured",
+          "lines": 410
+        },
+        {
+          "file": "orchestrator_agent.py",
+          "path": "marketing/advertising/agents/marketing/orchestrator_agent.py",
+          "class": "OrchestratorIA",
+          "status": "configured",
+          "lines": 349
+        },
+        {
+          "file": "rsa_ad_copy_generator_agent.py",
+          "path": "marketing/advertising/agents/marketing/rsa_ad_copy_generator_agent.py",
+          "class": "RSAAdCopyGeneratorIA",
+          "status": "configured",
+          "lines": 499
+        },
+        {
+          "file": "search_terms_cleaner_agent.py",
+          "path": "marketing/advertising/agents/marketing/search_terms_cleaner_agent.py",
+          "class": "TermClassification",
+          "status": "configured",
+          "lines": 375
+        },
+        {
+          "file": "routes.py",
+          "path": "marketing/advertising/api/routes.py",
+          "class": "StrategyRequest",
+          "status": "configured",
+          "lines": 578
+        },
+        {
+          "file": "action_plan.py",
+          "path": "marketing/advertising/core/agents/action_plan.py",
+          "class": "PlanStatus",
+          "status": "configured",
+          "lines": 208
+        },
+        {
+          "file": "database.py",
+          "path": "marketing/advertising/core/database.py",
+          "class": "DatabaseInterface",
+          "status": "active",
+          "lines": 425
+        },
+        {
+          "file": "action_plan_executor.py",
+          "path": "marketing/advertising/core/execution/action_plan_executor.py",
+          "class": "ActionPlanExecutor",
+          "status": "active",
+          "lines": 347
+        },
+        {
+          "file": "client_factory.py",
+          "path": "marketing/advertising/core/google_ads/client_factory.py",
+          "class": "GoogleAdsClientFactory",
+          "status": "configured",
+          "lines": 310
+        },
+        {
+          "file": "connector.py",
+          "path": "marketing/advertising/core/google_ads/connector.py",
+          "class": "ConnectorResult",
+          "status": "active",
+          "lines": 536
+        },
+        {
+          "file": "executor.py",
+          "path": "marketing/advertising/core/google_ads/executor.py",
+          "class": "ErrorCategory",
+          "status": "active",
+          "lines": 372
+        },
+        {
+          "file": "yaml_store.py",
+          "path": "marketing/advertising/core/knowledge/yaml_store.py",
+          "class": "YamlKnowledgeStore",
+          "status": "configured",
+          "lines": 482
+        },
+        {
+          "file": "telemetry.py",
+          "path": "marketing/advertising/core/observability/telemetry.py",
+          "class": "Counter",
+          "status": "configured",
+          "lines": 422
+        },
+        {
+          "file": "registry.py",
+          "path": "marketing/advertising/core/operations/registry.py",
+          "class": "ErrorCode",
+          "status": "active",
+          "lines": 571
+        },
+        {
+          "file": "engine.py",
+          "path": "marketing/advertising/core/policies/engine.py",
+          "class": "PolicyDecision",
+          "status": "configured",
+          "lines": 491
+        },
+        {
+          "file": "idempotency.py",
+          "path": "marketing/advertising/core/reliability/idempotency.py",
+          "class": "IdempotencyRecord",
+          "status": "configured",
+          "lines": 245
+        },
+        {
+          "file": "journal.py",
+          "path": "marketing/advertising/core/saga/journal.py",
+          "class": "SagaStatus",
+          "status": "configured",
+          "lines": 543
+        },
+        {
+          "file": "tenant_vault.py",
+          "path": "marketing/advertising/core/security/tenant_vault.py",
+          "class": "CredentialVaultInterface",
+          "status": "configured",
+          "lines": 347
+        },
+        {
+          "file": "engine.py",
+          "path": "marketing/advertising/core/workflows/engine.py",
+          "class": "StepStatus",
+          "status": "active",
+          "lines": 516
+        },
+        {
+          "file": "main.py",
+          "path": "marketing/advertising/main.py",
+          "class": "AppState",
+          "status": "configured",
+          "lines": 1452
+        },
+        {
+          "file": "test_all.py",
+          "path": "marketing/advertising/tests/test_all.py",
+          "class": "TestDatabase",
+          "status": "configured",
+          "lines": 550
+        },
+        {
+          "file": "attributionmodelia.py",
+          "path": "marketing/attributionmodelia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 136
+        },
+        {
+          "file": "audiencesegmenteria.py",
+          "path": "marketing/audiencesegmenteria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 265
+        },
+        {
+          "file": "brandsentimentia.py",
+          "path": "marketing/backup_placeholders_20251011_084324/brandsentimentia.py",
+          "class": "BrandsentimentiaConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "contentviralityia.py",
+          "path": "marketing/backup_placeholders_20251011_084324/contentviralityia.py",
+          "class": "ContentviralityiaConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "fidelizedprofileia.py",
+          "path": "marketing/backup_placeholders_20251011_084324/fidelizedprofileia.py",
+          "class": "FidelizedprofileiaConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "influencermatchia.py",
+          "path": "marketing/backup_placeholders_20251011_084324/influencermatchia.py",
+          "class": "InfluencermatchiaConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "videoreelautogenia.py",
+          "path": "marketing/backup_placeholders_20251011_084324/videoreelautogenia.py",
+          "class": "VideoreelautogeniaConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "budgetforecastia.py",
+          "path": "marketing/budgetforecastia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 136
+        },
+        {
+          "file": "campaignoptimizeria.py",
+          "path": "marketing/campaignoptimizeria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 246
+        },
+        {
+          "file": "campaignstrategyorchestratoria.py",
+          "path": "marketing/campaignstrategyorchestratoria.py",
+          "class": "TaskType",
+          "status": "active",
+          "lines": 1784
+        },
+        {
+          "file": "cashofferfilteria.py",
+          "path": "marketing/cashofferfilteria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 136
+        },
+        {
+          "file": "channelattributia.py",
+          "path": "marketing/channelattributia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 263
+        },
+        {
+          "file": "competitoranalyzeria.py",
+          "path": "marketing/competitoranalyzeria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 219
+        },
+        {
+          "file": "competitorintelligenceia.py",
+          "path": "marketing/competitorintelligenceia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 224
+        },
+        {
+          "file": "contactqualityia.py",
+          "path": "marketing/contactqualityia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 239
+        },
+        {
+          "file": "contentgeneratoria.py",
+          "path": "marketing/contentgeneratoria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 252
+        },
+        {
+          "file": "contentperformanceia.py",
+          "path": "marketing/contentperformanceia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 136
+        },
+        {
+          "file": "conversioncohortia.py",
+          "path": "marketing/conversioncohortia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 238
+        },
+        {
+          "file": "creativeanalyzeria.py",
+          "path": "marketing/creativeanalyzeria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 234
+        },
+        {
+          "file": "customersegmentatonia.py",
+          "path": "marketing/customersegmentatonia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 215
+        },
+        {
+          "file": "emailautomationia.py",
+          "path": "marketing/emailautomationia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 250
+        },
+        {
+          "file": "email_executor.py",
+          "path": "marketing/executors/email_executor.py",
+          "class": "EmailExecutor",
+          "status": "active",
+          "lines": 203
+        },
+        {
+          "file": "meta_executor.py",
+          "path": "marketing/executors/meta_executor.py",
+          "class": "MetaExecutor",
+          "status": "active",
+          "lines": 259
+        },
+        {
+          "file": "geosegmentationia.py",
+          "path": "marketing/geosegmentationia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 203
+        },
+        {
+          "file": "influencermatcheria.py",
+          "path": "marketing/influencermatcheria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 228
+        },
+        {
+          "file": "influencermatchingia.py",
+          "path": "marketing/influencermatchingia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 217
+        },
+        {
+          "file": "journeyoptimizeria.py",
+          "path": "marketing/journeyoptimizeria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 227
+        },
+        {
+          "file": "audit_trail_layer.py",
+          "path": "marketing/layers/audit_trail_layer.py",
+          "class": "AuditTrailLayer",
+          "status": "configured",
+          "lines": 151
+        },
+        {
+          "file": "authority_layer.py",
+          "path": "marketing/layers/authority_layer.py",
+          "class": "RejectionReason",
+          "status": "configured",
+          "lines": 451
+        },
+        {
+          "file": "authority_layer_v2.py",
+          "path": "marketing/layers/authority_layer_v2.py",
+          "class": "RejectionReason",
+          "status": "configured",
+          "lines": 451
+        },
+        {
+          "file": "business_impact_layer.py",
+          "path": "marketing/layers/business_impact_layer.py",
+          "class": "ImpactType",
+          "status": "configured",
+          "lines": 376
+        },
+        {
+          "file": "compliance_layer.py",
+          "path": "marketing/layers/compliance_layer.py",
+          "class": "ComplianceStatus",
+          "status": "configured",
+          "lines": 213
+        },
+        {
+          "file": "decision_layer.py",
+          "path": "marketing/layers/decision_layer.py",
+          "class": "DecisionLayerConfig",
+          "status": "configured",
+          "lines": 387
+        },
+        {
+          "file": "decision_layer_v2.py",
+          "path": "marketing/layers/decision_layer_v2.py",
+          "class": "DecisionLayerConfig",
+          "status": "configured",
+          "lines": 387
+        },
+        {
+          "file": "error_handling_layer.py",
+          "path": "marketing/layers/error_handling_layer.py",
+          "class": "ErrorCategory",
+          "status": "configured",
+          "lines": 192
+        },
+        {
+          "file": "reason_codes_layer.py",
+          "path": "marketing/layers/reason_codes_layer.py",
+          "class": "ImpactDirection",
+          "status": "configured",
+          "lines": 571
+        },
+        {
+          "file": "reason_codes_layer_v2.py",
+          "path": "marketing/layers/reason_codes_layer_v2.py",
+          "class": "ImpactDirection",
+          "status": "configured",
+          "lines": 571
+        },
+        {
+          "file": "leadscoria.py",
+          "path": "marketing/leadscoria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 267
+        },
+        {
+          "file": "leadscoringia.py",
+          "path": "marketing/leadscoringia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 136
+        },
+        {
+          "file": "marketingmixmodelia.py",
+          "path": "marketing/marketingmixmodelia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 136
+        },
+        {
+          "file": "marketingorchestratorea.py",
+          "path": "marketing/marketingorchestratorea.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 136
+        },
+        {
+          "file": "minimalformia.py",
+          "path": "marketing/minimalformia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 210
+        },
+        {
+          "file": "multi_industry_config.py",
+          "path": "marketing/multi_industry_config.py",
+          "class": "IndustryType",
+          "status": "configured",
+          "lines": 967
+        },
+        {
+          "file": "test_operative.py",
+          "path": "marketing/operative/test_operative.py",
+          "class": "DummyAgent",
+          "status": "active",
+          "lines": 203
+        },
+        {
+          "file": "campaignstrategyorchestratoria_v4.py",
+          "path": "marketing/orchestrator/campaignstrategyorchestratoria_v4.py",
+          "class": "StructuredLogger",
+          "status": "active",
+          "lines": 3660
+        },
+        {
+          "file": "campaignstrategyorchestratoria_v5.py",
+          "path": "marketing/orchestrator/campaignstrategyorchestratoria_v5.py",
+          "class": "LogDeduplicator",
+          "status": "active",
+          "lines": 2667
+        },
+        {
+          "file": "personalizationengineia.py",
+          "path": "marketing/personalizationengineia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 230
+        },
+        {
+          "file": "predictiveleadia.py",
+          "path": "marketing/predictiveleadia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 249
+        },
+        {
+          "file": "pricingoptimizeria.py",
+          "path": "marketing/pricingoptimizeria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 273
+        },
+        {
+          "file": "productaffinityia.py",
+          "path": "marketing/productaffinityia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 222
+        },
+        {
+          "file": "retentionpredictorea.py",
+          "path": "marketing/retentionpredictorea.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 136
+        },
+        {
+          "file": "retentionpredictoria.py",
+          "path": "marketing/retentionpredictoria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 260
+        },
+        {
+          "file": "sentimentanalyzeria.py",
+          "path": "marketing/sentimentanalyzeria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 255
+        },
+        {
+          "file": "sociallisteningia.py",
+          "path": "marketing/sociallisteningia.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 239
+        },
+        {
+          "file": "socialpostgeneratoria.py",
+          "path": "marketing/socialpostgeneratoria.py",
+          "class": "ActionType",
+          "status": "active",
+          "lines": 136
+        },
+        {
+          "file": "operative_wrapper.py",
+          "path": "marketing/wrappers/operative_wrapper.py",
+          "class": "AutonomyLevel",
+          "status": "active",
+          "lines": 683
+        }
+      ]
+    },
+    "operacional": {
+      "expected": 0,
+      "real": 5,
+      "difference": 5,
+      "status": "OK",
+      "total_files": 5,
+      "agents": [
+        {
+          "file": "costoptimizer.py",
+          "path": "operacional/costoptimizer.py",
+          "class": "CostoptimizerConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "operacional_coordinator.py",
+          "path": "operacional/operacional_coordinator.py",
+          "class": "OperacionalCoordinator",
+          "status": "configured",
+          "lines": 111
+        },
+        {
+          "file": "processgenius.py",
+          "path": "operacional/processgenius.py",
+          "class": "ProcessgeniusConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "qualitycontroller.py",
+          "path": "operacional/qualitycontroller.py",
+          "class": "QualitycontrollerConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "workflowmaster.py",
+          "path": "operacional/workflowmaster.py",
+          "class": "WorkflowmasterConfig",
+          "status": "configured",
+          "lines": 173
+        }
+      ]
+    },
+    "orchestration": {
+      "expected": 0,
+      "real": 4,
+      "difference": 4,
+      "status": "OK",
+      "total_files": 5,
+      "agents": [
+        {
+          "file": "healthchecker.py",
+          "path": "orchestration/healthchecker.py",
+          "class": "HealthcheckerConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "loadbalancer.py",
+          "path": "orchestration/loadbalancer.py",
+          "class": "LoadbalancerConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "orchestrationmaster.py",
+          "path": "orchestration/orchestrationmaster.py",
+          "class": "OrchestrationmasterConfig",
+          "status": "configured",
+          "lines": 273
+        },
+        {
+          "file": "resourcemanager.py",
+          "path": "orchestration/resourcemanager.py",
+          "class": "ResourcemanagerConfig",
+          "status": "configured",
+          "lines": 200
+        }
+      ]
+    },
+    "originacion": {
+      "expected": 10,
+      "real": 6,
+      "difference": -4,
+      "status": "MISSING",
+      "total_files": 10,
+      "agents": [
+        {
+          "file": "base_components_v2.py",
+          "path": "originacion/base_components_v2.py",
+          "class": "TenantAwareLogger",
+          "status": "configured",
+          "lines": 635
+        },
+        {
+          "file": "behaviorminer.py",
+          "path": "originacion/behaviorminer.py",
+          "class": "BehaviorminerConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "dnaprofiler.py",
+          "path": "originacion/dnaprofiler.py",
+          "class": "DnaprofilerConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "incomeoracle.py",
+          "path": "originacion/incomeoracle.py",
+          "class": "IncomeoracleConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "originacion_coordinator.py",
+          "path": "originacion/originacion_coordinator.py",
+          "class": "OriginacionCoordinator",
+          "status": "configured",
+          "lines": 95
+        },
+        {
+          "file": "sentinelbot.py",
+          "path": "originacion/sentinelbot.py",
+          "class": "SentinelbotConfig",
+          "status": "configured",
+          "lines": 200
+        }
+      ]
+    },
+    "presupuesto": {
+      "expected": 13,
+      "real": 13,
+      "difference": 0,
+      "status": "OK",
+      "total_files": 13,
+      "agents": [
+        {
+          "file": "analisisvarianza.py",
+          "path": "presupuesto/analisisvarianza.py",
+          "class": "VarianceAnalysisEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "budgetoptimizer.py",
+          "path": "presupuesto/budgetoptimizer.py",
+          "class": "BudgetoptimizerConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "controlpresupuestario.py",
+          "path": "presupuesto/controlpresupuestario.py",
+          "class": "BudgetControlEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "costocentros.py",
+          "path": "presupuesto/costocentros.py",
+          "class": "CostocentrosConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "forecastingavanzado.py",
+          "path": "presupuesto/forecastingavanzado.py",
+          "class": "AdvancedForecastingEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "forecastingia.py",
+          "path": "presupuesto/forecastingia.py",
+          "class": "ForecastingiaConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "optimizacionrecursos.py",
+          "path": "presupuesto/optimizacionrecursos.py",
+          "class": "ResourceOptimizationEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "planificacionestrategica.py",
+          "path": "presupuesto/planificacionestrategica.py",
+          "class": "StrategicPlanningEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "presupuesto_coordinator.py",
+          "path": "presupuesto/presupuesto_coordinator.py",
+          "class": "PresupuestoCoordinator",
+          "status": "configured",
+          "lines": 121
+        },
+        {
+          "file": "presupuestomaestro.py",
+          "path": "presupuesto/presupuestomaestro.py",
+          "class": "PresupuestomaestroConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "presupuestopredictivoia.py",
+          "path": "presupuesto/presupuestopredictivoia.py",
+          "class": "PredictiveBudgetEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "roipredictor.py",
+          "path": "presupuesto/roipredictor.py",
+          "class": "RoipredictorConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "varianzaanalisis.py",
+          "path": "presupuesto/varianzaanalisis.py",
+          "class": "VarianzaanalisisConfig",
+          "status": "configured",
+          "lines": 173
+        }
+      ]
+    },
+    "recuperacion": {
+      "expected": 5,
+      "real": 5,
+      "difference": 0,
+      "status": "OK",
+      "total_files": 5,
+      "agents": [
+        {
+          "file": "collectionmaster.py",
+          "path": "recuperacion/collectionmaster.py",
+          "class": "CollectionmasterConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "legalpathway.py",
+          "path": "recuperacion/legalpathway.py",
+          "class": "LegalpathwayConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "negotiationbot.py",
+          "path": "recuperacion/negotiationbot.py",
+          "class": "NegotiationbotConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "recoveryoptimizer.py",
+          "path": "recuperacion/recoveryoptimizer.py",
+          "class": "RecoveryoptimizerConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "recuperacion_coordinator.py",
+          "path": "recuperacion/recuperacion_coordinator.py",
+          "class": "RecuperacionCoordinator",
+          "status": "configured",
+          "lines": 95
+        }
+      ]
+    },
+    "registry.py": {
+      "expected": 0,
+      "real": 1,
+      "difference": 1,
+      "status": "OK",
+      "total_files": 1,
+      "agents": [
+        {
+          "file": "registry.py",
+          "path": "registry.py",
+          "class": "AgentRegistry",
+          "status": "configured",
+          "lines": 182
+        }
+      ]
+    },
+    "registry_backup.py": {
+      "expected": 0,
+      "real": 0,
+      "difference": 0,
+      "status": "OK",
+      "total_files": 1,
+      "agents": []
+    },
+    "regtech": {
+      "expected": 8,
+      "real": 8,
+      "difference": 0,
+      "status": "OK",
+      "total_files": 8,
+      "agents": [
+        {
+          "file": "amldetector.py",
+          "path": "regtech/amldetector.py",
+          "class": "AmldetectorConfig",
+          "status": "configured",
+          "lines": 273
+        },
+        {
+          "file": "amltiemporeal.py",
+          "path": "regtech/amltiemporeal.py",
+          "class": "RealTimeAMLEngine",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "kycautomatico.py",
+          "path": "regtech/kycautomatico.py",
+          "class": "KycautomaticoConfig",
+          "status": "configured",
+          "lines": 273
+        },
+        {
+          "file": "monitoreotransacciones.py",
+          "path": "regtech/monitoreotransacciones.py",
+          "class": "TransactionMonitoringEngine",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "regtech_coordinator.py",
+          "path": "regtech/regtech_coordinator.py",
+          "class": "RegtechCoordinator",
+          "status": "configured",
+          "lines": 114
+        },
+        {
+          "file": "reportesregulatorios.py",
+          "path": "regtech/reportesregulatorios.py",
+          "class": "RegulatoryReportingEngine",
+          "status": "configured",
+          "lines": 116
+        },
+        {
+          "file": "reportingregulatorio.py",
+          "path": "regtech/reportingregulatorio.py",
+          "class": "ReportingregulatorioConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "sancioneschecker.py",
+          "path": "regtech/sancioneschecker.py",
+          "class": "SancionescheckerConfig",
+          "status": "configured",
+          "lines": 200
+        }
+      ]
+    },
+    "rrhh": {
+      "expected": 10,
+      "real": 10,
+      "difference": 0,
+      "status": "OK",
+      "total_files": 10,
+      "agents": [
+        {
+          "file": "capacitacionia.py",
+          "path": "rrhh/capacitacionia.py",
+          "class": "CapacitacioniaConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "cvanalyzeria.py",
+          "path": "rrhh/cvanalyzeria.py",
+          "class": "CvanalyzeriaConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "nominaautomatica.py",
+          "path": "rrhh/nominaautomatica.py",
+          "class": "NominaautomaticaConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "nominainteligente.py",
+          "path": "rrhh/nominainteligente.py",
+          "class": "IntelligentPayrollEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "performanceanalyzer.py",
+          "path": "rrhh/performanceanalyzer.py",
+          "class": "PerformanceAnalysisEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "performancetracker.py",
+          "path": "rrhh/performancetracker.py",
+          "class": "PerformancetrackerConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "rrhh_coordinator.py",
+          "path": "rrhh/rrhh_coordinator.py",
+          "class": "RrhhCoordinator",
+          "status": "configured",
+          "lines": 117
+        },
+        {
+          "file": "selectioncvia.py",
+          "path": "rrhh/selectioncvia.py",
+          "class": "CVSelectionEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "talentoprediccion.py",
+          "path": "rrhh/talentoprediccion.py",
+          "class": "TalentPredictionEngine",
+          "status": "configured",
+          "lines": 115
+        },
+        {
+          "file": "talentopredictor.py",
+          "path": "rrhh/talentopredictor.py",
+          "class": "TalentopredictorConfig",
+          "status": "configured",
+          "lines": 200
+        }
+      ]
+    },
+    "shared_layers": {
+      "expected": 0,
+      "real": 0,
+      "difference": 0,
+      "status": "OK",
+      "total_files": 17,
+      "agents": []
+    },
+    "ventascrm": {
+      "expected": 9,
+      "real": 9,
+      "difference": 0,
+      "status": "OK",
+      "total_files": 9,
+      "agents": [
+        {
+          "file": "churnpredictor.py",
+          "path": "ventascrm/churnpredictor.py",
+          "class": "ChurnpredictorConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "cierrepredictivoia.py",
+          "path": "ventascrm/cierrepredictivoia.py",
+          "class": "ClosingPredictionEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "clientelifecycleia.py",
+          "path": "ventascrm/clientelifecycleia.py",
+          "class": "CustomerLifecycleEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "communicationbot.py",
+          "path": "ventascrm/communicationbot.py",
+          "class": "CommunicationBotEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "leadscoringia.py",
+          "path": "ventascrm/leadscoringia.py",
+          "class": "LeadscoringiaConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "pipelineoptimizer.py",
+          "path": "ventascrm/pipelineoptimizer.py",
+          "class": "PipelineoptimizerConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "pipelinepredictivoia.py",
+          "path": "ventascrm/pipelinepredictivoia.py",
+          "class": "PredictivePipelineEngine",
+          "status": "configured",
+          "lines": 122
+        },
+        {
+          "file": "upsellengine.py",
+          "path": "ventascrm/upsellengine.py",
+          "class": "UpsellengineConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "ventascrm_coordinator.py",
+          "path": "ventascrm/ventascrm_coordinator.py",
+          "class": "VentascrmCoordinator",
+          "status": "configured",
+          "lines": 115
+        }
+      ]
+    },
+    "vigilancia": {
+      "expected": 0,
+      "real": 5,
+      "difference": 5,
+      "status": "OK",
+      "total_files": 5,
+      "agents": [
+        {
+          "file": "earlywarning.py",
+          "path": "vigilancia/earlywarning.py",
+          "class": "EarlywarningConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "marketradar.py",
+          "path": "vigilancia/marketradar.py",
+          "class": "MarketradarConfig",
+          "status": "configured",
+          "lines": 173
+        },
+        {
+          "file": "portfoliosentinel.py",
+          "path": "vigilancia/portfoliosentinel.py",
+          "class": "PortfoliosentinelConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "stresstester.py",
+          "path": "vigilancia/stresstester.py",
+          "class": "StresstesterConfig",
+          "status": "configured",
+          "lines": 200
+        },
+        {
+          "file": "vigilancia_coordinator.py",
+          "path": "vigilancia/vigilancia_coordinator.py",
+          "class": "VigilanciaCoordinator",
+          "status": "configured",
+          "lines": 95
+        }
+      ]
+    }
+  }
+}
