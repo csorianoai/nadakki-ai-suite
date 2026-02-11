@@ -19,6 +19,11 @@ v5.4.4 OPTIMIZACIONES:
    - Muestra qué agentes se detectan
    - Muestra scores
    RESULTADO: Visibilidad total
+
+✅ FIX 4: MARKETING STATS API INTEGRADA
+   - Endpoints para datos reales
+   - Campañas, journeys, contactos, conversión
+   RESULTADO: Dashboard con datos en tiempo real
 """
 
 from fastapi import FastAPI, Header, Query, Path as PathParam
@@ -32,12 +37,19 @@ from datetime import datetime
 from functools import lru_cache
 import re
 
+# ✅ IMPORTAR MARKETING STATS API
+try:
+    from marketing_stats_api import router as marketing_router
+except ImportError:
+    print("⚠️ marketing_stats_api no encontrado - endpoints de marketing no disponibles")
+    marketing_router = None
+
 # =============================================================================
 # APP CONFIGURACIÓN
 # =============================================================================
 app = FastAPI(
     title="NADAKKI AI Suite - Intelligent Discovery v5.4.4",
-    description="Production-grade (optimized scoring)",
+    description="Production-grade AI Agent Discovery Platform with Real-time Marketing Stats",
     version="5.4.4",
     docs_url="/docs",
     redoc_url="/redoc"
@@ -50,6 +62,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# ✅ INCLUIR MARKETING ROUTER
+if marketing_router:
+    app.include_router(marketing_router)
 
 # =============================================================================
 # CONFIGURACIÓN ROBUSTA
@@ -735,7 +751,7 @@ def intelligent_discovery() -> Tuple[Dict[str, dict], Dict[str, Any]]:
 # =============================================================================
 
 print("\n" + "="*120)
-print("🚀 NADAKKI v5.4.4 - OPTIMIZADO (Scoring mejorado + API version fix)")
+print("🚀 NADAKKI v5.4.4 - OPTIMIZADO (Scoring mejorado + API version fix + Marketing Stats)")
 print("="*120)
 
 ALL_AGENTS, DISCOVERY_STATS = intelligent_discovery()
@@ -743,6 +759,7 @@ ALL_AGENTS, DISCOVERY_STATS = intelligent_discovery()
 print("✅ COMPATIBILIDAD DASHBOARD: 100%")
 print("✅ COMPATIBLE PYTHON: 3.8+")
 print("✅ CPU OPTIMIZADO: AST parseado UNA sola vez")
+print("✅ MARKETING STATS: Integrada (campañas, journeys, contactos, conversión)")
 print("="*120 + "\n")
 
 # =============================================================================
@@ -774,7 +791,7 @@ async def get_all_agents(
 
     x_tenant_id: Optional[str] = Header(None)
 ):
-    """Endpoint principal"""
+    """Endpoint principal - Obtiene agentes con filtros avanzados"""
     agents_list = list(ALL_AGENTS.values())
     filtered = agents_list
 
@@ -842,7 +859,7 @@ async def get_all_agents(
 
 @app.get("/api/v1/agents/{agent_id}/analysis")
 async def get_agent_analysis(agent_id: str = PathParam(...)):
-    """Análisis profundo"""
+    """Análisis profundo de un agente"""
     if agent_id not in ALL_AGENTS:
         return {
             "success": False,
@@ -908,7 +925,7 @@ async def get_agent_analysis(agent_id: str = PathParam(...)):
 
 @app.get("/api/v1/reality")
 async def get_reality_report():
-    """Reporte de realidad"""
+    """Reporte de realidad - Estadísticas completas"""
     return {
         "success": True,
         "data": {
@@ -927,7 +944,7 @@ async def get_reality_report():
 @app.get("/health")
 @app.get("/api/v1/health")
 async def health_check():
-    """Health check"""
+    """Health check - Estado del sistema"""
     total = len(ALL_AGENTS)
     confirmed = DISCOVERY_STATS["quality"]["labels"].get("agent_confirmed", 0)
     status = "healthy" if total > 0 and confirmed > 0 else ("warning" if total > 0 else "critical")
@@ -938,6 +955,7 @@ async def health_check():
         "confirmed_agents": confirmed,
         "labels_distribution": DISCOVERY_STATS["quality"]["labels"],
         "api_versions_used": DISCOVERY_STATS["quality"]["api_versions"],
+        "marketing_stats_enabled": marketing_router is not None,
         "timestamp": datetime.utcnow().isoformat(),
         "version": "5.4.4",
         "python_compatible": "3.8+"
@@ -945,18 +963,20 @@ async def health_check():
 
 @app.get("/")
 async def root():
-    """Root"""
+    """Root endpoint"""
     return {
         "system": "NADAKKI Intelligent Discovery v5.4.4",
         "philosophy": "Detect reality, not assumptions",
         "agents_discovered": len(ALL_AGENTS),
         "labels": DISCOVERY_STATS["quality"]["labels"],
         "dashboard_compatibility": "100%",
+        "marketing_stats_available": marketing_router is not None,
         "endpoints": {
             "agents": "/api/agents",
             "analysis": "/api/v1/agents/{id}/analysis",
             "reality": "/api/v1/reality",
             "health": "/health",
+            "marketing": "/api/campaigns/stats/summary" if marketing_router else "Not available",
             "docs": "/docs"
         },
         "timestamp": datetime.utcnow().isoformat()
