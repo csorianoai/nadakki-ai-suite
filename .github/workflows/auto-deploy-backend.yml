@@ -1,0 +1,44 @@
+﻿name: 🚀 Auto Deploy Backend Cada Hora
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Descargar código
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: 🔍 Verificar cambios
+        id: check
+        run: |
+          CHANGES=$(git diff origin/main HEAD --name-only | wc -l)
+          echo "changes=$CHANGES" >> $GITHUB_OUTPUT
+          if [ $CHANGES -gt 0 ]; then
+            echo "✅ Cambios detectados: $CHANGES archivos"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Sin cambios detectados"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: 📝 Auto-commit si hay cambios
+        if: steps.check.outputs.has_changes == 'true'
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions Bot"
+          git add .
+          git commit -m "🔄 Auto-deploy: $(date +'%Y-%m-%d %H:%M:%S') UTC - $CHANGES archivos" || echo "No changes to commit"
+          git push origin main
+      
+      - name: ✅ Deploy completado
+        if: steps.check.outputs.has_changes == 'true'
+        run: |
+          echo "✅ Backend actualizado"
+          echo "⏰ Timestamp: $(date +'%Y-%m-%d %H:%M:%S')"
