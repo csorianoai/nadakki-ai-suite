@@ -46,3 +46,10 @@ test_*.py
 # ==========================
 API_REFERENCE.md
 nadakki-lambda-deployment.zip
+# caches
+**/.pytest_cache/
+**/__pycache__/
+**/*.pyc
+
+# legacy lambda deployment vendor libs (very large)
+legacy_flask/lambda-deployment/
