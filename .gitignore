@@ -1,36 +1,48 @@
+﻿# ==========================
+# Python
+# ==========================
 .venv/
 __pycache__/
 *.pyc
 .env
+
+# ==========================
+# Node
+# ==========================
 .next/
-node_modules/
-nadakki-lambda-deployment.zip
-
-nadakki-lambda-deployment.zip
-*.zip
-
-# API Reference con credenciales
-API_REFERENCE.md
-# builds
-**/build/
-**/dist/
+**/node_modules/
 **/.next/
 **/.turbo/
 **/.cache/
 
-# logs / reports / archives
-**/*.log
-audit_reports/
-_archive_local/
-**/*.bak
-**/*.zip
-
-# node
-**/node_modules/
+# ==========================
+# Builds / Dist
+# ==========================
 **/build/
-audit_reports/
-_archive_local/
+**/dist/
+
+# ==========================
+# Logs / Reports / Archives
+# ==========================
 **/*.log
 **/*.bak
 **/*.zip
-**/node_modules/
+audit_reports/
+_archive_local/
+
+# ==========================
+# Backups (root cleanup)
+# ==========================
+agents_backup_*/
+backup_pre_cleanup_*/
+backup_skeletons_*/
+*.backup_*
+main.py.backup_*
+main_backup_*.py
+test_*.py
+
+# ==========================
+# Secrets / Credentials
+# ==========================
+API_REFERENCE.md
+nadakki-lambda-deployment.zip
