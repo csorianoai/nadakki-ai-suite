@@ -11,3 +11,19 @@ nadakki-lambda-deployment.zip
 
 # API Reference con credenciales
 API_REFERENCE.md
+# builds
+**/build/
+**/dist/
+**/.next/
+**/.turbo/
+**/.cache/
+
+# logs / reports / archives
+**/*.log
+audit_reports/
+_archive_local/
+**/*.bak
+**/*.zip
+
+# node
+**/node_modules/
