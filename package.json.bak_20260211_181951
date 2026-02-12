@@ -1,0 +1,9 @@
+﻿{
+    "devDependencies":  {
+                            "@types/minimatch":  "^6.0.0",
+                            "minimatch":  "^10.1.2"
+                        },
+    "scripts":  {
+
+                }
+}
