@@ -27,3 +27,10 @@ _archive_local/
 
 # node
 **/node_modules/
+**/build/
+audit_reports/
+_archive_local/
+**/*.log
+**/*.bak
+**/*.zip
+**/node_modules/
