@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - SagaJournal
 # core/saga/journal.py
 # Day 2 - Component 4 of 5
@@ -540,3 +540,4 @@ CREATE TABLE IF NOT EXISTS saga_steps (
 CREATE INDEX IF NOT EXISTS idx_saga_steps_saga ON saga_steps(saga_id);
 CREATE INDEX IF NOT EXISTS idx_saga_steps_status ON saga_steps(status);
 """
+

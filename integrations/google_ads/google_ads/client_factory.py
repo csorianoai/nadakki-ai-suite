@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - GoogleAdsClientFactory
 # core/google_ads/client_factory.py
 # Day 1 - Component 2 of 4
@@ -307,3 +307,4 @@ class MockUpdateField:
     def __init__(self):
         self.resource_name = ""
         self.amount_micros = 0
+

@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - YamlKnowledgeStore
 # core/knowledge/yaml_store.py
 # Day 3 - Component 1 of 4
@@ -479,3 +479,4 @@ class YamlKnowledgeStore:
             "cache_size": len(self._cache),
             "has_yaml_parser": HAS_YAML,
         }
+

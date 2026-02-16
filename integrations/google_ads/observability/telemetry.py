@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - TelemetrySidecar
 # core/observability/telemetry.py
 # Day 2 - Component 3 of 5
@@ -419,3 +419,4 @@ class TelemetrySidecar:
         
         # Emit JSON log
         logger.info(json.dumps(event, default=str))
+

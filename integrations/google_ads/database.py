@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - Database Abstraction Layer
 # core/database.py
 # ===============================================================================
@@ -422,3 +422,4 @@ async def create_database(use_memory: bool = None) -> DatabaseInterface:
     
     await db.initialize()
     return db
+

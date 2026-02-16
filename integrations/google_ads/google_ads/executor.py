@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - GoogleAdsExecutor
 # core/google_ads/executor.py
 # Day 2 - Component 1 of 5
@@ -369,3 +369,4 @@ class GoogleAdsExecutor:
                 recovery_timeout_seconds=self.CB_RECOVERY_SECONDS,
             )
             logger.info(f"Circuit breaker manually reset for tenant: {tenant_id}")
+

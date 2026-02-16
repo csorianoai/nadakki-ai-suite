@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - PolicyEngine
 # core/policies/engine.py
 # Day 2 - Component 2 of 5
@@ -488,3 +488,4 @@ class PolicyEngine:
                 })
         
         return summary
+

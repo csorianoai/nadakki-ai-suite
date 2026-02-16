@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - IdempotencyStore
 # core/reliability/idempotency.py
 # Day 1 - Component 4 of 4
@@ -242,3 +242,4 @@ CREATE INDEX IF NOT EXISTS idx_idempotency_expires
 CREATE INDEX IF NOT EXISTS idx_idempotency_operation 
     ON idempotency_keys(operation_name);
 """
+

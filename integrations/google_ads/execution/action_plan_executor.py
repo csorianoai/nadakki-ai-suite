@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - ActionPlanExecutor
 # core/execution/action_plan_executor.py
 # Day 4 - Component 1 of 3
@@ -25,7 +25,7 @@ from datetime import datetime
 import logging
 import asyncio
 
-from core.agents.action_plan import ActionPlan, PlannedOperation, PlanStatus, OperationPriority
+from integrations.google_ads.agents.action_plan import ActionPlan, PlannedOperation, PlanStatus, OperationPriority
 
 logger = logging.getLogger("nadakki.execution.plan_executor")
 
@@ -344,3 +344,4 @@ class ActionPlanExecutor:
             "failed": failed,
             "success_rate": f"{completed/total*100:.0f}%" if total > 0 else "N/A",
         }
+

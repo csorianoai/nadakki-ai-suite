@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - TenantCredentialVault
 # core/security/tenant_vault.py
 # Day 1 - Component 1 of 4
@@ -344,3 +344,4 @@ CREATE INDEX IF NOT EXISTS idx_cred_access_tenant
 CREATE INDEX IF NOT EXISTS idx_cred_access_timestamp 
     ON credential_access_log(timestamp);
 """
+

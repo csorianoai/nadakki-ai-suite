@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - OperationRegistry
 # core/operations/registry.py
 # Day 1 - Component 3 of 4
@@ -568,3 +568,4 @@ def get_operation_registry() -> OperationRegistry:
     if _registry is None:
         _registry = OperationRegistry()
     return _registry
+

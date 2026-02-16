@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - GoogleAdsConnector
 # core/google_ads/connector.py
 # Day 2 - Component 5 of 5
@@ -36,17 +36,17 @@ import time
 import uuid
 import logging
 
-from core.operations.registry import (
+from integrations.google_ads.operations.registry import (
     OperationRegistry, OperationRequest, OperationContext,
     OperationResult, ErrorCode,
 )
-from core.reliability.idempotency import IdempotencyStore
-from core.policies.engine import PolicyEngine, PolicyDecision
-from core.google_ads.executor import (
+from integrations.google_ads.reliability.idempotency import IdempotencyStore
+from integrations.google_ads.policies.engine import PolicyEngine, PolicyDecision
+from integrations.google_ads.google_ads.executor import (
     GoogleAdsExecutor, CircuitBreakerOpenError, MaxRetriesExceededError,
 )
-from core.saga.journal import SagaJournal, SagaStatus
-from core.observability.telemetry import TelemetrySidecar
+from integrations.google_ads.saga.journal import SagaJournal, SagaStatus
+from integrations.google_ads.observability.telemetry import TelemetrySidecar
 
 logger = logging.getLogger("nadakki.google_ads.connector")
 
@@ -533,3 +533,4 @@ class GoogleAdsConnector:
             error_message=error_message,
             execution_time_ms=elapsed,
         )
+

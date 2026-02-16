@@ -1,4 +1,4 @@
-# ===============================================================================
+﻿# ===============================================================================
 # NADAKKI AI Suite - WorkflowEngine
 # core/workflows/engine.py
 # Day 5 - Component 1 of 3
@@ -370,7 +370,7 @@ class WorkflowEngine:
         result = method(**self._filter_params(method, params))
         
         # If result is an ActionPlan, optionally execute it
-        from core.agents.action_plan import ActionPlan
+        from integrations.google_ads.agents.action_plan import ActionPlan
         if isinstance(result, ActionPlan):
             execution.plans_generated.append(result.plan_id)
             
@@ -513,3 +513,4 @@ class WorkflowEngine:
             "success_rate": f"{completed/total*100:.0f}%" if total > 0 else "N/A",
             "agents_registered": list(self.agents.keys()),
         }
+
