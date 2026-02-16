@@ -1,4 +1,4 @@
-﻿# ═══════════════════════════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════════════════════════
 # NADAKKI AI Suite - Main Application v5.4.4 - OPTIMIZADO
 # ═══════════════════════════════════════════════════════════════════════════════
 """
@@ -857,6 +857,45 @@ async def get_all_agents(
         "discovery_method": "intelligent_scoring_v5.4.4"
     }
 
+
+@app.get("/api/catalog/{module_name}/agents")
+async def get_catalog_module_agents(
+    module_name: str = PathParam(..., description="Module name, e.g. marketing"),
+    submodule: Optional[str] = Query(None),
+    platform: Optional[str] = Query(None),
+    category: Optional[str] = Query(None),
+    status: Optional[str] = Query(None),
+    search: Optional[str] = Query(None),
+    min_score: float = Query(0.0, ge=0.0, le=10.0),
+    max_score: float = Query(10.0, ge=0.0, le=10.0),
+    confidence_min: float = Query(0.0, ge=0.0, le=1.0),
+    label_min: str = Query("not_agent"),
+    confirmed_only: bool = Query(False),
+    has_platform: Optional[bool] = Query(None),
+    api_version: Optional[str] = Query(None),
+    limit: int = Query(100, ge=1, le=1000),
+    offset: int = Query(0, ge=0),
+    x_tenant_id: Optional[str] = Header(None)
+):
+    """Alias: GET /api/catalog/{module}/agents -> delegates to get_all_agents"""
+    return await get_all_agents(
+        module=module_name,
+        submodule=submodule,
+        platform=platform,
+        category=category,
+        status=status,
+        search=search,
+        min_score=min_score,
+        max_score=max_score,
+        confidence_min=confidence_min,
+        label_min=label_min,
+        confirmed_only=confirmed_only,
+        has_platform=has_platform,
+        api_version=api_version,
+        limit=limit,
+        offset=offset,
+        x_tenant_id=x_tenant_id
+    )
 @app.get("/api/v1/agents/{agent_id}/analysis")
 async def get_agent_analysis(agent_id: str = PathParam(...)):
     """Análisis profundo de un agente"""
