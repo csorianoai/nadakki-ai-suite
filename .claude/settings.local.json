@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "Bash(PYTHONIOENCODING=utf-8 python:*)",
+      "Bash(curl:*)",
+      "Bash(python -c:*)",
+      "Bash(taskkill:*)",
+      "Bash(pip install:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
