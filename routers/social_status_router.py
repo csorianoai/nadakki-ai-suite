@@ -1,0 +1,157 @@
+"""
+Nadakki AI Suite - Social Status Router
+Returns connection status for all social platforms per tenant.
+Checks TokenStore (BD) first, env vars as fallback.
+"""
+import os
+import logging
+from datetime import datetime, timedelta
+
+from fastapi import APIRouter
+
+logger = logging.getLogger("SocialStatus")
+
+router = APIRouter(prefix="/api/social", tags=["Social Status"])
+
+_token_store = None
+
+
+def _get_store():
+    global _token_store
+    if _token_store is None:
+        try:
+            from database.token_store import TokenStore
+            _token_store = TokenStore()
+        except Exception as e:
+            logger.warning(f"TokenStore unavailable: {e}")
+    return _token_store
+
+
+@router.get("/status/{tenant_id}")
+async def get_social_status(tenant_id: str):
+    """Get connection status for all social platforms."""
+    store = _get_store()
+
+    meta_status = await _get_meta_status(store, tenant_id)
+    google_status = await _get_google_status(store, tenant_id)
+
+    return {
+        "tenant_id": tenant_id,
+        "platforms": {
+            "meta": meta_status,
+            "google": google_status,
+            "tiktok": {"connected": False, "status": "pending"},
+            "linkedin": {"connected": False, "status": "pending"},
+            "x": {"connected": False, "status": "pending"},
+            "pinterest": {"connected": False, "status": "pending"},
+            "youtube": {"connected": False, "status": "pending"},
+        },
+        "timestamp": datetime.utcnow().isoformat(),
+    }
+
+
+async def _get_meta_status(store, tenant_id: str) -> dict:
+    """Check Meta connection: BD first, env fallback."""
+    # Try TokenStore first
+    if store:
+        try:
+            integration = await store.get_integration(tenant_id, "meta")
+            if integration:
+                expires_at = integration.get("expires_at")
+                token_valid = True
+                needs_refresh = False
+
+                if expires_at:
+                    try:
+                        exp = datetime.fromisoformat(expires_at)
+                        now = datetime.utcnow()
+                        token_valid = now < exp
+                        needs_refresh = (exp - now) < timedelta(days=7)
+                    except (ValueError, TypeError):
+                        pass
+
+                return {
+                    "connected": True,
+                    "method": "oauth",
+                    "page_name": integration.get("page_name"),
+                    "page_id": integration.get("page_id"),
+                    "ig_connected": bool(integration.get("ig_account_id")),
+                    "token_valid": token_valid,
+                    "token_expires_at": expires_at,
+                    "needs_refresh": needs_refresh,
+                }
+        except Exception as e:
+            logger.warning(f"Error checking Meta integration: {e}")
+
+    # Env fallback
+    env_token = os.getenv("FACEBOOK_ACCESS_TOKEN")
+    if env_token:
+        return {
+            "connected": True,
+            "method": "legacy_env",
+            "page_name": None,
+            "page_id": os.getenv("FACEBOOK_PAGE_ID"),
+            "ig_connected": False,
+            "token_valid": True,
+            "token_expires_at": None,
+            "needs_refresh": False,
+        }
+
+    return {
+        "connected": False,
+        "method": None,
+        "page_name": None,
+        "page_id": None,
+        "ig_connected": False,
+        "token_valid": False,
+        "token_expires_at": None,
+        "needs_refresh": False,
+    }
+
+
+async def _get_google_status(store, tenant_id: str) -> dict:
+    """Check Google connection: BD first, env fallback."""
+    if store:
+        try:
+            integration = await store.get_integration(tenant_id, "google")
+            if integration:
+                expires_at = integration.get("expires_at")
+                token_valid = True
+                needs_refresh = False
+
+                if expires_at:
+                    try:
+                        exp = datetime.fromisoformat(expires_at)
+                        now = datetime.utcnow()
+                        token_valid = now < exp
+                        needs_refresh = (exp - now) < timedelta(minutes=30)
+                    except (ValueError, TypeError):
+                        pass
+
+                return {
+                    "connected": True,
+                    "method": "oauth",
+                    "user_email": integration.get("user_email"),
+                    "services": {
+                        "ads": {"connected": bool(integration.get("ads_customer_ids"))},
+                        "analytics": {"connected": bool(integration.get("analytics_property_id"))},
+                        "youtube": {"connected": bool(integration.get("youtube_channel_id"))},
+                    },
+                    "token_valid": token_valid,
+                    "needs_refresh": needs_refresh,
+                }
+        except Exception as e:
+            logger.warning(f"Error checking Google integration: {e}")
+
+    return {
+        "connected": False,
+        "method": None,
+        "user_email": None,
+        "services": {
+            "ads": {"connected": False},
+            "analytics": {"connected": False},
+            "youtube": {"connected": False},
+        },
+        "token_valid": False,
+        "needs_refresh": False,
+    }

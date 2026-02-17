@@ -59,3 +59,6 @@ nadakki-lambda-deployment.zip
 # Legacy / Vendor libs (very large)
 # ==========================
 legacy_flask/lambda-deployment/
+
+openapi*.json
+nadakki_audit_*.json
