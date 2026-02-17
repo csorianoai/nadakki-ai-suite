@@ -3,6 +3,7 @@ Agent Runner - Carga y ejecucion segura de agentes por file_path
 Usa importlib.util.spec_from_file_location porque file_path es ruta de archivo, no modulo Python.
 """
 
+import asyncio
 import importlib.util
 import sys
 from pathlib import Path
@@ -67,7 +68,8 @@ def safe_load(file_path: str, class_name: str) -> Any:
     """
     resolved = _validate_path(file_path)
 
-    module_name = f"_agent_runner_.{file_path.replace('/', '.').replace('.py', '')}"
+    # Flat module name — dots in name cause Python to look up parent packages
+    module_name = f"_dyn_agent_{file_path.replace('/', '_').replace('.py', '')}"
 
     # Enable absolute imports like 'from core.agents.action_plan import ...'
     _setup_import_paths(file_path)
@@ -97,7 +99,7 @@ def safe_load(file_path: str, class_name: str) -> Any:
         raise AgentLoadError(f"Error instanciando {class_name}: {e}")
 
 
-def execute_agent(
+async def execute_agent(
     file_path: str,
     class_name: str,
     payload: Dict[str, Any],
@@ -124,7 +126,15 @@ def execute_agent(
             f"{class_name} no tiene metodo execute()"
         )
 
+    # Merge tenant_id and dry_run into payload — compatible with all agent signatures
+    execution_payload = {**payload, "tenant_id": tenant_id}
     if dry_run:
-        payload = {**payload, "dry_run": True}
+        execution_payload["dry_run"] = True
 
-    return instance.execute(payload, tenant_id=tenant_id)
+    result = instance.execute(execution_payload)
+
+    # Handle async execute methods
+    if asyncio.iscoroutine(result):
+        result = await result
+
+    return result

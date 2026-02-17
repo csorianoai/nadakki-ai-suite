@@ -62,7 +62,7 @@ async def execute_agent_endpoint(agent_id: str, body: ExecuteRequest):
     class_name = agent.get("class_name", "")
 
     try:
-        result = execute_agent(
+        result = await execute_agent(
             file_path=file_path,
             class_name=class_name,
             payload=body.payload,

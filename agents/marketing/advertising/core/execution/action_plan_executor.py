@@ -37,24 +37,24 @@ class ActionPlanExecutor:
     
     VERSION = "1.0.0"
     
-    def __init__(self, connector, telemetry=None):
+    def __init__(self, connector=None, telemetry=None):
         """
         Args:
-            connector: GoogleAdsConnector instance
+            connector: GoogleAdsConnector instance (optional for runner mode)
             telemetry: TelemetrySidecar instance (optional)
         """
         self.connector = connector
         self.telemetry = telemetry
         self._execution_history: List[dict] = []
         logger.info(f"ActionPlanExecutor v{self.VERSION} initialized")
-    
+
     # ---------------------------------------------------------------------
     # Main Execution
     # ---------------------------------------------------------------------
-    
+
     async def execute(
         self,
-        plan: ActionPlan,
+        plan_or_payload,
         dry_run: bool = False,
         stop_on_failure: bool = True,
         source: str = "agent",
@@ -73,10 +73,24 @@ class ActionPlanExecutor:
         Returns:
             The same ActionPlan with updated operation statuses and results
         """
+        # Runner mode: called with dict payload from agent_runner
+        if isinstance(plan_or_payload, dict):
+            return {
+                "agent": "ActionPlanExecutor",
+                "version": self.VERSION,
+                "status": "ready",
+                "dry_run": plan_or_payload.get("dry_run", True),
+                "capabilities": ["execute_plan", "rollback", "validate"],
+                "history_count": len(self._execution_history),
+            }
+
+        # Pipeline mode: called with ActionPlan from internal code
+        plan = plan_or_payload
+
         # Validate plan is ready
         if not self._validate_plan_for_execution(plan, dry_run):
             return plan
-        
+
         plan.status = PlanStatus.EXECUTING
         start_time = datetime.utcnow()
         

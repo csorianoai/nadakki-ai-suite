@@ -255,15 +255,27 @@ class OperationRegistry:
     
     async def execute(
         self,
-        request: OperationRequest,
-        client,
-        customer_id: str,
+        request_or_payload,
+        client=None,
+        customer_id: str = None,
         tenant_id: str = None,
         **kwargs,
-    ) -> OperationResult:
+    ) -> "OperationResult | dict":
         """Execute an operation through its registered handler."""
+        # Runner mode: called with dict payload from agent_runner
+        if isinstance(request_or_payload, dict):
+            return {
+                "agent": "OperationRegistry",
+                "status": "ready",
+                "dry_run": request_or_payload.get("dry_run", True),
+                "registered_operations": len(self._operations),
+                "operations": [op["name"] for op in self._operations.values()],
+            }
+
+        # Pipeline mode
+        request = request_or_payload
         start = time.time()
-        
+
         op = self.get(request.operation_name)
         if not op:
             return OperationResult(

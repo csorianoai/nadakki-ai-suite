@@ -231,27 +231,43 @@ class GoogleAdsExecutor:
     
     async def execute(
         self,
-        tenant_id: str,
-        operation: Callable,
+        tenant_id_or_payload,
+        operation: Callable = None,
         operation_name: str = "",
         **kwargs,
     ) -> Any:
         """
         Execute an operation with circuit breaker and retry.
-        
+
         Args:
-            tenant_id: Tenant identifier for circuit isolation
+            tenant_id_or_payload: Tenant identifier or dict payload from runner
             operation: Async callable to execute
             operation_name: Name for logging
             **kwargs: Arguments passed to operation
-            
+
         Returns:
             Result from the operation
-            
+
         Raises:
             CircuitBreakerOpenError: Circuit is open
             MaxRetriesExceededError: All retries exhausted
         """
+        # Runner mode: called with dict payload from agent_runner
+        if isinstance(tenant_id_or_payload, dict):
+            return {
+                "agent": "GoogleAdsExecutor",
+                "status": "ready",
+                "dry_run": tenant_id_or_payload.get("dry_run", True),
+                "circuits": len(self._circuits),
+                "config": {
+                    "max_retries": self.MAX_RETRIES,
+                    "cb_failure_threshold": self.CB_FAILURE_THRESHOLD,
+                    "cb_recovery_seconds": self.CB_RECOVERY_SECONDS,
+                },
+            }
+
+        # Pipeline mode
+        tenant_id = tenant_id_or_payload
         circuit = self._get_circuit(tenant_id)
         
         # Check circuit
