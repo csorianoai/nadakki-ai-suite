@@ -132,14 +132,14 @@ class GoogleAdsConnector:
     
     def __init__(
         self,
-        registry: OperationRegistry,
-        idempotency: IdempotencyStore,
-        policy_engine: PolicyEngine,
-        executor: GoogleAdsExecutor,
-        client_factory,
-        credential_vault,
-        saga_journal: SagaJournal,
-        telemetry: TelemetrySidecar,
+        registry=None,
+        idempotency=None,
+        policy_engine=None,
+        executor=None,
+        client_factory=None,
+        credential_vault=None,
+        saga_journal=None,
+        telemetry=None,
     ):
         self.registry = registry
         self.idempotency = idempotency
@@ -149,8 +149,11 @@ class GoogleAdsConnector:
         self.vault = credential_vault
         self.saga = saga_journal
         self.telemetry = telemetry
-        
-        logger.info("GoogleAdsConnector initialized (full pipeline)")
+
+        if all(v is None for v in [registry, idempotency, policy_engine, executor]):
+            logger.warning("GoogleAdsConnector initialized without dependencies — runner mode only")
+        else:
+            logger.info("GoogleAdsConnector initialized (full pipeline)")
     
     async def execute(
         self,
