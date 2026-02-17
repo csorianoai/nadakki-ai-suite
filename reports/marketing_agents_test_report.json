@@ -1,0 +1,2501 @@
+{
+  "timestamp": "2026-02-17T05:55:32.068227",
+  "total_in_catalog": 249,
+  "tested": 249,
+  "passed": 0,
+  "failed": 0,
+  "no_endpoint": 249,
+  "note": "No /agents/{agent_id}/execute endpoint exists in current codebase. All agents discovered via catalog but lack execution endpoint.",
+  "agents": [
+    {
+      "id": "content_generator_v3__contentvariant",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.2,
+      "module": "marketing"
+    },
+    {
+      "id": "content_generator_v3__agenthealthmetrics",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.2,
+      "module": "marketing"
+    },
+    {
+      "id": "content_generator_v3__superagentconfig",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.45,
+      "module": "marketing"
+    },
+    {
+      "id": "content_generator_v3__hybridcachemanager",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.45,
+      "module": "marketing"
+    },
+    {
+      "id": "content_generator_v3__dynamicmlpipeline",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.65,
+      "module": "marketing"
+    },
+    {
+      "id": "content_generator_v3__blockchainauditsystem",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.65,
+      "module": "marketing"
+    },
+    {
+      "id": "content_generator_v3__selfhealingorchestrator",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.45,
+      "module": "marketing"
+    },
+    {
+      "id": "content_generator_v3__contentgenerationsuperagent",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.15,
+      "module": "marketing"
+    },
+    {
+      "id": "leadscoringia_backup_20251012_120320__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.8,
+      "module": "marketing"
+    },
+    {
+      "id": "leadscoringia_backup_20251012_120320__leadscoringia",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.6,
+      "module": "marketing"
+    },
+    {
+      "id": "abtestingia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "abtestingia__abtestingagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.9,
+      "module": "marketing"
+    },
+    {
+      "id": "abtestingia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "abtestingimpactia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "abtestingimpactia__abtestingimpactagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.9,
+      "module": "marketing"
+    },
+    {
+      "id": "abtestingimpactia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "google_ads_budget_pacing_agent__googleadsbudgetpacingia",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 7.25,
+      "module": "marketing"
+    },
+    {
+      "id": "google_ads_strategist_agent__googleadsstrategistia",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 7.25,
+      "module": "marketing"
+    },
+    {
+      "id": "orchestrator_agent__orchestratoria",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.85,
+      "module": "marketing"
+    },
+    {
+      "id": "rsa_ad_copy_generator_agent__rsaadcopygeneratoria",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.05,
+      "module": "marketing"
+    },
+    {
+      "id": "search_terms_cleaner_agent__searchtermscleaneria",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 7.25,
+      "module": "marketing"
+    },
+    {
+      "id": "routes__orchestratorrequest",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.2,
+      "module": "marketing"
+    },
+    {
+      "id": "routes__triagerequest",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.2,
+      "module": "marketing"
+    },
+    {
+      "id": "database__databaseinterface",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.8,
+      "module": "marketing"
+    },
+    {
+      "id": "database__asyncpgdatabase",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.8,
+      "module": "marketing"
+    },
+    {
+      "id": "database__inmemorydatabase",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.8,
+      "module": "marketing"
+    },
+    {
+      "id": "action_plan_executor__actionplanexecutor",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.6,
+      "module": "marketing"
+    },
+    {
+      "id": "client_factory__googleadsclientfactory",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "client_factory__mockgoogleadsclient",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.35,
+      "module": "marketing"
+    },
+    {
+      "id": "client_factory__mockservice",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.35,
+      "module": "marketing"
+    },
+    {
+      "id": "connector__connectorresult",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.85,
+      "module": "marketing"
+    },
+    {
+      "id": "connector__googleadsconnector",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.6,
+      "module": "marketing"
+    },
+    {
+      "id": "executor__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.05,
+      "module": "marketing"
+    },
+    {
+      "id": "executor__googleadsexecutor",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.8,
+      "module": "marketing"
+    },
+    {
+      "id": "yaml_store__yamlknowledgestore",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.05,
+      "module": "marketing"
+    },
+    {
+      "id": "telemetry__counter",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.05,
+      "module": "marketing"
+    },
+    {
+      "id": "telemetry__histogram",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.05,
+      "module": "marketing"
+    },
+    {
+      "id": "telemetry__gauge",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.05,
+      "module": "marketing"
+    },
+    {
+      "id": "telemetry__telemetrysidecar",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.05,
+      "module": "marketing"
+    },
+    {
+      "id": "registry__errorcode",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.6,
+      "module": "marketing"
+    },
+    {
+      "id": "registry__operationcontext",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.6,
+      "module": "marketing"
+    },
+    {
+      "id": "registry__operationrequest",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.65,
+      "module": "marketing"
+    },
+    {
+      "id": "registry__operationresult",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.65,
+      "module": "marketing"
+    },
+    {
+      "id": "registry__operationschema",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.65,
+      "module": "marketing"
+    },
+    {
+      "id": "registry__operationregistry",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.4,
+      "module": "marketing"
+    },
+    {
+      "id": "engine__policyresult",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.05,
+      "module": "marketing"
+    },
+    {
+      "id": "engine__contentvalidationresult",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.05,
+      "module": "marketing"
+    },
+    {
+      "id": "engine__policyengine",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.05,
+      "module": "marketing"
+    },
+    {
+      "id": "idempotency__idempotencystore",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.75,
+      "module": "marketing"
+    },
+    {
+      "id": "journal__sagastep",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.85,
+      "module": "marketing"
+    },
+    {
+      "id": "journal__saga",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.85,
+      "module": "marketing"
+    },
+    {
+      "id": "journal__sagajournal",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.85,
+      "module": "marketing"
+    },
+    {
+      "id": "tenant_vault__credentialvaultinterface",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.8,
+      "module": "marketing"
+    },
+    {
+      "id": "tenant_vault__tenantcredentialvault",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.35,
+      "module": "marketing"
+    },
+    {
+      "id": "engine__workflowexecution",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.75,
+      "module": "marketing"
+    },
+    {
+      "id": "engine__workflowengine",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.8,
+      "module": "marketing"
+    },
+    {
+      "id": "attributionmodelia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "attributionmodelia__attributionmodelagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "attributionmodelia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "audiencesegmenteria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "audiencesegmenteria__audiencesegmenteragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.2,
+      "module": "marketing"
+    },
+    {
+      "id": "audiencesegmenteria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.35,
+      "module": "marketing"
+    },
+    {
+      "id": "brandsentimentia__brandsentimentia",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.45,
+      "module": "marketing"
+    },
+    {
+      "id": "contentviralityia__contentviralityia",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.45,
+      "module": "marketing"
+    },
+    {
+      "id": "fidelizedprofileia__fidelizedprofileia",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.45,
+      "module": "marketing"
+    },
+    {
+      "id": "influencermatchia__influencermatchia",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.45,
+      "module": "marketing"
+    },
+    {
+      "id": "videoreelautogenia__videoreelautogenia",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.45,
+      "module": "marketing"
+    },
+    {
+      "id": "budgetforecastia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "budgetforecastia__budgetforecastagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "budgetforecastia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignoptimizeria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignoptimizeria__campaignoptimizeragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.2,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignoptimizeria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.35,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria__agentstats",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria__agentallocationdecision",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria__smartagentallocator",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.05,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria__proactivealertsystem",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.25,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria__agentperformancetracker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.15,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria__strategyparser",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria__taskplanner",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.25,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.35,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria__executionengine",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.25,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria__campaignstrategyorchestrator",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.05,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria__campaignstrategyorchestratoragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.2,
+      "module": "marketing"
+    },
+    {
+      "id": "cashofferfilteria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "cashofferfilteria__cashofferfilteragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "cashofferfilteria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "channelattributia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "channelattributia__channelattributagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.2,
+      "module": "marketing"
+    },
+    {
+      "id": "channelattributia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.35,
+      "module": "marketing"
+    },
+    {
+      "id": "competitoranalyzeria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "competitoranalyzeria__competitoranalyzeragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "competitoranalyzeria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "competitorintelligenceia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "competitorintelligenceia__competitorintelligenceagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "competitorintelligenceia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "contactqualityia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "contactqualityia__contactqualityagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "contactqualityia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "contentgeneratoria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "contentgeneratoria__contentgeneratoragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "contentgeneratoria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "contentperformanceia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "contentperformanceia__contentperformanceagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "contentperformanceia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "conversioncohortia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "conversioncohortia__conversioncohortagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "conversioncohortia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "creativeanalyzeria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "creativeanalyzeria__creativeanalyzeragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.2,
+      "module": "marketing"
+    },
+    {
+      "id": "creativeanalyzeria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.35,
+      "module": "marketing"
+    },
+    {
+      "id": "customersegmentatonia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "customersegmentatonia__customersegmentationagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.2,
+      "module": "marketing"
+    },
+    {
+      "id": "customersegmentatonia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.35,
+      "module": "marketing"
+    },
+    {
+      "id": "emailautomationia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "emailautomationia__emailautomationagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.2,
+      "module": "marketing"
+    },
+    {
+      "id": "emailautomationia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.35,
+      "module": "marketing"
+    },
+    {
+      "id": "email_executor__emailexecutor",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.1,
+      "module": "marketing"
+    },
+    {
+      "id": "email_executor__mockemailexecutor",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.6,
+      "module": "marketing"
+    },
+    {
+      "id": "meta_executor__metaexecutor",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.1,
+      "module": "marketing"
+    },
+    {
+      "id": "meta_executor__mockmetaexecutor",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.6,
+      "module": "marketing"
+    },
+    {
+      "id": "geosegmentationia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "geosegmentationia__geosegmentationagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.2,
+      "module": "marketing"
+    },
+    {
+      "id": "geosegmentationia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.35,
+      "module": "marketing"
+    },
+    {
+      "id": "influencermatcheria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "influencermatcheria__influencermatcheragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.2,
+      "module": "marketing"
+    },
+    {
+      "id": "influencermatcheria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.35,
+      "module": "marketing"
+    },
+    {
+      "id": "influencermatchingia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "influencermatchingia__influencermatchingagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.2,
+      "module": "marketing"
+    },
+    {
+      "id": "influencermatchingia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.35,
+      "module": "marketing"
+    },
+    {
+      "id": "journeyoptimizeria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "journeyoptimizeria__journeyoptimizeragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "journeyoptimizeria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "audit_trail_layer__audittraillayer",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.95,
+      "module": "marketing"
+    },
+    {
+      "id": "authority_layer__authoritylayer",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.05,
+      "module": "marketing"
+    },
+    {
+      "id": "authority_layer_v2__authoritylayer",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.05,
+      "module": "marketing"
+    },
+    {
+      "id": "decision_layer__decisionlayerconfig",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.05,
+      "module": "marketing"
+    },
+    {
+      "id": "decision_layer__decisionlayer",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.05,
+      "module": "marketing"
+    },
+    {
+      "id": "decision_layer_v2__decisionlayerconfig",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.05,
+      "module": "marketing"
+    },
+    {
+      "id": "decision_layer_v2__decisionlayer",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.05,
+      "module": "marketing"
+    },
+    {
+      "id": "reason_codes_layer__reasoncodeslayer",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.95,
+      "module": "marketing"
+    },
+    {
+      "id": "reason_codes_layer_v2__reasoncodeslayer",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.95,
+      "module": "marketing"
+    },
+    {
+      "id": "leadscoria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "leadscoria__leadscoragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.2,
+      "module": "marketing"
+    },
+    {
+      "id": "leadscoria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.35,
+      "module": "marketing"
+    },
+    {
+      "id": "leadscoringia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "leadscoringia__leadscoringagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "leadscoringia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "marketingmixmodelia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "marketingmixmodelia__marketingmixmodelagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "marketingmixmodelia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "marketingorchestratorea__marketingorchestratoragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.7,
+      "module": "marketing"
+    },
+    {
+      "id": "minimalformia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "minimalformia__minimalformagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "minimalformia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__industryparser",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.8,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__contextenricher",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.8,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__agentregistryprovider",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.3,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__financialservicesparser",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.35,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__financialservicescontextenricher",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.35,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__financialservicesagentregistry",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 10.0,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__boatrentalparser",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__boatrentalcontextenricher",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__boatrentalagentregistry",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 10.0,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__retailparser",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__retailcontextenricher",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.85,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__retailagentregistry",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 10.0,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__configurationregistry",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.85,
+      "module": "marketing"
+    },
+    {
+      "id": "multi_industry_config__tenantregistry",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.85,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__structuredlogger",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.35,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__tasktype",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__taskstatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__circuitbreakerstate",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__alertseverity",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__alerttype",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__industrytype",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__executionmode",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__securitylayer",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.35,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__metric",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__telemetrysystem",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.35,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__cachelayer",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.35,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__agentstats",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.9,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__alert",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__agentallocationdecision",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.9,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__plannedtask",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__executionphase",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__executionplan",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__executionresult",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__parsedstrategy",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.1,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__aistrategyparser",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.35,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__neuralagentallocator",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.85,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__agentperformancetracker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.15,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__proactivealertsystem",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.35,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__adaptivecircuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.35,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__taskplanner",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.35,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__executionengine",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.35,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__continuouslearninglayer",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.35,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v4__campaignstrategyorchestrator",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.85,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__logdeduplicator",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__enterpriselogger",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__tasktype",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.5,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__orchestratorconfig",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 5.3,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__businessmetrics",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.5,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__predictivescore",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.55,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__agentstats",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.0,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__plannedtask",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.5,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__executionplan",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.5,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__executionresult",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.5,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__predictivesuccessscorer",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__businessmetricscalculator",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__smartagentallocator",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.05,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__realtimeadaptationengine",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.25,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__strategyparser",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.25,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__intelligenttaskplanner",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__executionengine",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "campaignstrategyorchestratoria_v5__campaignstrategyorchestratorv5ultra",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.05,
+      "module": "marketing"
+    },
+    {
+      "id": "personalizationengineia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "personalizationengineia__personalizationengineagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "personalizationengineia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "predictiveleadia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.1,
+      "module": "marketing"
+    },
+    {
+      "id": "predictiveleadia__predictiveleadagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 8.2,
+      "module": "marketing"
+    },
+    {
+      "id": "predictiveleadia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.35,
+      "module": "marketing"
+    },
+    {
+      "id": "pricingoptimizeria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "pricingoptimizeria__pricingoptimizeragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "pricingoptimizeria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "productaffinityia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "productaffinityia__productaffinityagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "productaffinityia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "retentionpredictorea__retentionpredictoragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 6.7,
+      "module": "marketing"
+    },
+    {
+      "id": "retentionpredictoria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "retentionpredictoria__retentionpredictoragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "retentionpredictoria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "sentimentanalyzeria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "sentimentanalyzeria__sentimentanalyzeragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "sentimentanalyzeria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "sociallisteningia__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "sociallisteningia__sociallisteningagentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "sociallisteningia__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "socialpostgeneratoria__compliancestatus",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.3,
+      "module": "marketing"
+    },
+    {
+      "id": "socialpostgeneratoria__socialpostgeneratoragentoperative",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_confirmed",
+      "score": 7.4,
+      "module": "marketing"
+    },
+    {
+      "id": "socialpostgeneratoria__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.55,
+      "module": "marketing"
+    },
+    {
+      "id": "operative_wrapper__autonomylevel",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.5,
+      "module": "marketing"
+    },
+    {
+      "id": "operative_wrapper__actiontype",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_possible",
+      "score": 3.5,
+      "module": "marketing"
+    },
+    {
+      "id": "operative_wrapper__safetyfilter",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 4.85,
+      "module": "marketing"
+    },
+    {
+      "id": "operative_wrapper__audittrail",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "operative_wrapper__circuitbreaker",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    },
+    {
+      "id": "operative_wrapper__baseexecutor",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_likely",
+      "score": 5.4,
+      "module": "marketing"
+    },
+    {
+      "id": "operative_wrapper__operativewrapper",
+      "status": "no_endpoint",
+      "http_code": null,
+      "response_time_ms": null,
+      "error": "POST /agents/{agent_id}/execute endpoint not implemented",
+      "label": "agent_highly_likely",
+      "score": 5.55,
+      "module": "marketing"
+    }
+  ]
+}

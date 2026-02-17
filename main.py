@@ -36,6 +36,9 @@ from typing import Optional, Dict, Any, List, Tuple, Set
 from datetime import datetime
 from functools import lru_cache
 import re
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ✅ IMPORTAR MARKETING STATS API
 try:
@@ -43,6 +46,11 @@ try:
 except ImportError:
     print("⚠️ marketing_stats_api no encontrado - endpoints de marketing no disponibles")
     marketing_router = None
+
+# ✅ IMPORTAR ROUTERS OPERACIONALES
+from routers.social_status_router import router as social_status_router
+from routers.auth.meta_oauth import router as meta_oauth_router
+from routers.auth.google_oauth import router as google_oauth_router
 
 # =============================================================================
 # APP CONFIGURACIÓN
@@ -66,6 +74,11 @@ app.add_middleware(
 # ✅ INCLUIR MARKETING ROUTER
 if marketing_router:
     app.include_router(marketing_router)
+
+# ✅ INCLUIR ROUTERS OPERACIONALES
+app.include_router(social_status_router)
+app.include_router(meta_oauth_router)
+app.include_router(google_oauth_router)
 
 # =============================================================================
 # CONFIGURACIÓN ROBUSTA
