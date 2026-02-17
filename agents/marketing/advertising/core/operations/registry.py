@@ -258,6 +258,8 @@ class OperationRegistry:
         request: OperationRequest,
         client,
         customer_id: str,
+        tenant_id: str = None,
+        **kwargs,
     ) -> OperationResult:
         """Execute an operation through its registered handler."""
         start = time.time()
