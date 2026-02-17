@@ -154,19 +154,31 @@ class GoogleAdsConnector:
     
     async def execute(
         self,
-        tenant_id: str,
-        operation_name: str,
-        payload: dict,
+        tenant_id_or_payload,
+        operation_name: str = None,
+        payload: dict = None,
         dry_run: bool = False,
         source: str = "api",
         user_id: str = None,
         trace_id: str = None,
-    ) -> ConnectorResult:
+    ) -> "ConnectorResult | dict":
         """
         Execute a Google Ads operation through the full pipeline.
-        
+
         This is the main entry point. All operations flow through here.
+        Also handles runner-mode when called with a dict payload.
         """
+        # Runner mode: called with dict payload from agent_runner
+        if isinstance(tenant_id_or_payload, dict):
+            return {
+                "agent": "GoogleAdsConnector",
+                "status": "ready",
+                "dry_run": tenant_id_or_payload.get("dry_run", True),
+                "pipeline_stages": ["validate", "idempotency", "policy", "saga", "execute", "telemetry"],
+            }
+
+        # Pipeline mode
+        tenant_id = tenant_id_or_payload
         start_time = time.time()
         operation_id = str(uuid.uuid4())
         trace_id = trace_id or str(uuid.uuid4())
