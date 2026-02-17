@@ -40,6 +40,16 @@ def _validate_path(file_path: str) -> Path:
     return resolved
 
 
+def _setup_import_paths(file_path: str):
+    """Add parent directories to sys.path so absolute imports like 'from core.x' work."""
+    parts = Path(file_path).parts
+    if "core" in parts:
+        core_idx = parts.index("core")
+        parent = str(_AGENTS_ROOT / Path(*parts[:core_idx]))
+        if parent not in sys.path:
+            sys.path.insert(0, parent)
+
+
 def safe_load(file_path: str, class_name: str) -> Any:
     """
     Carga dinamica de un agente desde file_path (relativo a agents/).
@@ -58,6 +68,9 @@ def safe_load(file_path: str, class_name: str) -> Any:
     resolved = _validate_path(file_path)
 
     module_name = f"_agent_runner_.{file_path.replace('/', '.').replace('.py', '')}"
+
+    # Enable absolute imports like 'from core.agents.action_plan import ...'
+    _setup_import_paths(file_path)
 
     try:
         spec = importlib.util.spec_from_file_location(module_name, str(resolved))

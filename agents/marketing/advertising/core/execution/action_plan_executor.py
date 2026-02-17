@@ -25,7 +25,7 @@ from datetime import datetime
 import logging
 import asyncio
 
-from ..agents.action_plan import ActionPlan, PlannedOperation, PlanStatus, OperationPriority
+from core.agents.action_plan import ActionPlan, PlannedOperation, PlanStatus, OperationPriority
 
 logger = logging.getLogger("nadakki.execution.plan_executor")
 
