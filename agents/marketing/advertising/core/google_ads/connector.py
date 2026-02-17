@@ -36,17 +36,17 @@ import time
 import uuid
 import logging
 
-from ..operations.registry import (
+from core.operations.registry import (
     OperationRegistry, OperationRequest, OperationContext,
     OperationResult, ErrorCode,
 )
-from ..reliability.idempotency import IdempotencyStore
-from ..policies.engine import PolicyEngine, PolicyDecision
-from .executor import (
+from core.reliability.idempotency import IdempotencyStore
+from core.policies.engine import PolicyEngine, PolicyDecision
+from core.google_ads.executor import (
     GoogleAdsExecutor, CircuitBreakerOpenError, MaxRetriesExceededError,
 )
-from ..saga.journal import SagaJournal, SagaStatus
-from ..observability.telemetry import TelemetrySidecar
+from core.saga.journal import SagaJournal, SagaStatus
+from core.observability.telemetry import TelemetrySidecar
 
 logger = logging.getLogger("nadakki.google_ads.connector")
 
