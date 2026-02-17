@@ -51,11 +51,21 @@ class EmailBridge:
         )
 
 
+class _NoOpAgent:
+    """Fallback agent when no real agent is provided."""
+
+    def execute(self, input_data: Dict[str, Any]) -> Dict[str, Any]:
+        logger.warning("EmailOperationalWrapper: no real agent provided, returning dry_run result")
+        return {"dry_run": True, "status": "no_agent", "input": input_data}
+
+
 class EmailOperationalWrapper:
     """Wraps email agents to auto-send via EmailBridge."""
 
-    def __init__(self, agent, email_bridge: Optional[EmailBridge] = None):
-        self.agent = agent
+    def __init__(self, agent=None, email_bridge: Optional[EmailBridge] = None):
+        if agent is None:
+            logger.warning("EmailOperationalWrapper initialized without agent — using no-op fallback")
+        self.agent = agent or _NoOpAgent()
         self.bridge = email_bridge
 
     async def execute(self, input_data: Dict[str, Any]) -> Dict[str, Any]:

@@ -185,38 +185,47 @@ class MaxRetriesExceededError(Exception):
     pass
 
 
+class _NoOpClientFactory:
+    """Fallback client factory when no real factory is provided."""
+
+    def invalidate(self, tenant_id: str):
+        logger.warning(f"NoOpClientFactory.invalidate called for {tenant_id} — no real client factory")
+
+
 class GoogleAdsExecutor:
     """
     Resilient executor with circuit breaker and retry.
-    
+
     Usage:
         executor = GoogleAdsExecutor(client_factory)
-        
+
         result = await executor.execute(
             tenant_id="bank01",
             operation=my_async_function,
             operation_name="update_campaign_budget@v1",
         )
     """
-    
+
     # Retry configuration
     MAX_RETRIES = 3
     BASE_DELAY_SECONDS = 1.0
     MAX_DELAY_SECONDS = 30.0
     BACKOFF_MULTIPLIER = 2.0
     JITTER_MAX_SECONDS = 0.5
-    
+
     # Circuit breaker defaults
     CB_FAILURE_THRESHOLD = 5
     CB_RECOVERY_SECONDS = 60
-    
-    def __init__(self, client_factory, on_auth_failure: Callable = None):
+
+    def __init__(self, client_factory=None, on_auth_failure: Callable = None):
         """
         Args:
-            client_factory: GoogleAdsClientFactory for token refresh
+            client_factory: GoogleAdsClientFactory for token refresh (optional, uses no-op if None)
             on_auth_failure: Optional callback when auth fails (for alerts)
         """
-        self.client_factory = client_factory
+        if client_factory is None:
+            logger.warning("GoogleAdsExecutor initialized without client_factory — using no-op fallback")
+        self.client_factory = client_factory or _NoOpClientFactory()
         self.on_auth_failure = on_auth_failure
         self._circuits: Dict[str, CircuitBreaker] = {}
     
