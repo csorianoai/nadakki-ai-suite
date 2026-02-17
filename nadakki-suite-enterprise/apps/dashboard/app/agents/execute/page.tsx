@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const CATEGORY_COLORS: Record<string, string> = {
   leads: "#22c55e",
@@ -98,7 +99,12 @@ export default function AgentExecutePage() {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
         <div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: "#f8fafc", margin: 0 }}>Agent Execute Console</h1>
-          <p style={{ color: "#94a3b8", marginTop: 8 }}>Los {stats.total} agentes de IA de marketing</p>
+          <p style={{ color: "#94a3b8", marginTop: 8 }}>
+            Los {stats.total} agentes de IA de marketing &middot;{" "}
+            <Link href="/marketing/agents" style={{ color: "#8b5cf6", textDecoration: "none" }}>
+              Marketing Agents Hub
+            </Link>
+          </p>
         </div>
         <div style={{ display: "flex", gap: 12 }}>
           <span style={{ backgroundColor: "rgba(66,133,244,0.2)", color: "#4285f4", padding: "6px 14px", borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
