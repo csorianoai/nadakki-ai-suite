@@ -39,9 +39,14 @@ const ALL_AGENTS = [
   { id: "productaffinityia", name: "Analizador de Afinidad", cat: "segmentation", color: "#8b5cf6" },
   { id: "cashofferfilteria", name: "Filtrador de Ofertas", cat: "pricing", color: "#eab308" },
   { id: "marketingorchestratorea", name: "Orquestador de Marketing", cat: "campaigns", color: "#ef4444" },
+  { id: "social_bridge__socialbridgeconnector", name: "Social Bridge", cat: "social", color: "#3b82f6" },
+  { id: "email_bridge__emailoperationalwrapper", name: "Email Bridge", cat: "email", color: "#f97316" },
+  { id: "action_plan_executor__actionplanexecutor", name: "Action Plan Executor", cat: "google-ads", color: "#4285f4" },
+  { id: "connector__googleadsconnector", name: "Google Ads Connector", cat: "google-ads", color: "#4285f4" },
+  { id: "registry__operationregistry", name: "Operation Registry", cat: "google-ads", color: "#4285f4" },
 ];
 
-const CATEGORIES = ["all", "leads", "content", "social", "analytics", "campaigns", "segmentation", "retention", "testing", "competitive", "email", "pricing", "conversion"];
+const CATEGORIES = ["all", "leads", "content", "social", "analytics", "campaigns", "segmentation", "retention", "testing", "competitive", "email", "pricing", "conversion", "google-ads"];
 
 export default function AllAgentsPage() {
   const [filter, setFilter] = useState("all");
@@ -52,7 +57,7 @@ export default function AllAgentsPage() {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
         <div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: "#f8fafc", margin: 0 }}>🤖 Marketing Agents Hub</h1>
-          <p style={{ color: "#94a3b8", marginTop: 8 }}>Los 35 agentes de IA de marketing</p>
+          <p style={{ color: "#94a3b8", marginTop: 8 }}>Los {ALL_AGENTS.length} agentes de IA de marketing</p>
         </div>
         <span style={{ backgroundColor: "rgba(236,72,153,0.2)", color: "#ec4899", padding: "6px 14px", borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
           {filtered.length} / {ALL_AGENTS.length} agentes
