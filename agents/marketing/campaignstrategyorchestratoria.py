@@ -1775,9 +1775,22 @@ class CampaignStrategyOrchestratorAgentOperative:
         self.agent_name = AGENT_NAME
         self.version = VERSION
     
-    def execute(self, input_data, tenant_id="default", **kwargs):
-        context = {"tenant_id": tenant_id, **kwargs}
-        return orchestrate_campaign(input_data, context)
+    async def execute(self, input_data, tenant_id="default", **kwargs):
+        # Runner mode: single dict payload from agent_runner
+        if isinstance(input_data, dict):
+            dry_run = input_data.get("dry_run", True)
+            if dry_run:
+                return {
+                    "agent": AGENT_NAME,
+                    "agent_id": AGENT_ID,
+                    "status": "ready",
+                    "version": VERSION,
+                    "dry_run": True,
+                }
+            return await execute(input_data)
+        # Direct call mode
+        merged = {"strategy_document": input_data, "tenant_id": tenant_id, **kwargs}
+        return await execute(merged)
 
 OperativeMixin.bind(CampaignStrategyOrchestratorAgentOperative)
 campaignstrategyorchestratoria_operative = CampaignStrategyOrchestratorAgentOperative()
