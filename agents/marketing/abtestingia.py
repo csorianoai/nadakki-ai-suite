@@ -185,7 +185,7 @@ def execute(input_data: Dict[str, Any], context: Optional[Dict[str, Any]] = None
             result["_decision_layer_timestamp"] = datetime.utcnow().isoformat() + "Z"
             result["_decision_layer_version"] = "v2.0.0"
         
-        # Reason Codes (≥2 required)
+        # Reason Codes (â‰¥2 required)
         reason_codes = [
             {"code": "AB_TEST_ANALYZED", "category": "ANALYSIS", "description": f"Analyzed {len(variants)} variants", "factor": "variant_count", "value": len(variants), "contribution": 0.3, "impact": "positive"},
             {"code": "SIGNIFICANCE_CALCULATED", "category": "STATISTICS", "description": f"Statistical significance: {significance:.0%}", "factor": "significance", "value": round(significance, 4), "contribution": 0.4, "impact": "positive" if is_significant else "neutral"}
@@ -262,9 +262,9 @@ def _self_test_examples() -> Dict[str, Any]:
     return {"valid_result": r1, "invalid_result": r2, "checks": checks, "all_passed": all(checks.values())}
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # NADAKKI_OPERATIVE_BIND_V2 639047180933
-# ═══════════════════════════════════════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 from nadakki_operative_final import OperativeMixin
 
 class ABTestingAgentOperative:
