@@ -62,3 +62,8 @@ legacy_flask/lambda-deployment/
 
 openapi*.json
 nadakki_audit_*.json
+
+# ==========================
+# Runtime data
+# ==========================
+data/audit_logs.jsonl
