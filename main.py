@@ -871,10 +871,29 @@ async def get_all_agents(
     total = len(filtered)
     paginated = filtered[offset:offset + limit]
 
+    # Enrich agents with execute_endpoint and filter backup action_methods
+    enriched = []
+    for agent in paginated:
+        a = dict(agent)  # shallow copy
+        agent_id = a.get("id", "")
+        is_backup = "_backup_" in agent_id
+        action_methods = a.get("action_methods", [])
+        has_execute = "execute" in action_methods or "run" in action_methods
+
+        if is_backup:
+            # Backup agents: remove execute/run from visible action_methods
+            a["action_methods"] = [m for m in action_methods if m not in ("execute", "run")]
+            a["execute_endpoint"] = None
+        elif has_execute:
+            a["execute_endpoint"] = "/agents/execute"
+        else:
+            a["execute_endpoint"] = None
+        enriched.append(a)
+
     return {
         "success": True,
         "data": {
-            "agents": paginated,
+            "agents": enriched,
             "pagination": {
                 "total": total,
                 "limit": limit,

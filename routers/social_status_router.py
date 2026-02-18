@@ -6,8 +6,9 @@ Checks TokenStore (BD) first, env vars as fallback.
 import os
 import logging
 from datetime import datetime, timedelta
+from typing import Optional
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Header
 
 logger = logging.getLogger("SocialStatus")
 
@@ -154,4 +155,65 @@ async def _get_google_status(store, tenant_id: str) -> dict:
         },
         "token_valid": False,
         "needs_refresh": False,
+    }
+
+
+# ---------------------------------------------------------------------------
+# GET /api/social/connections — simplified connection status via X-Tenant-ID
+# ---------------------------------------------------------------------------
+@router.get("/connections")
+async def get_social_connections(
+    x_tenant_id: Optional[str] = Header(None),
+):
+    """
+    Returns social platform connection status for the tenant.
+    Reads X-Tenant-ID header. Always returns 200.
+    """
+    tenant_id = x_tenant_id or "default"
+    store = _get_store()
+
+    meta_connected = False
+    meta_page_name = None
+    meta_expires = None
+    google_connected = False
+    google_email = None
+
+    if store:
+        try:
+            meta_int = await store.get_integration(tenant_id, "meta")
+            if meta_int:
+                meta_connected = True
+                meta_page_name = meta_int.get("page_name")
+                meta_expires = meta_int.get("expires_at")
+        except Exception as e:
+            logger.warning(f"Error reading Meta integration: {e}")
+
+        try:
+            google_int = await store.get_integration(tenant_id, "google")
+            if google_int:
+                google_connected = True
+                google_email = google_int.get("user_email")
+        except Exception as e:
+            logger.warning(f"Error reading Google integration: {e}")
+
+    # Env fallback for meta
+    if not meta_connected and os.getenv("FACEBOOK_ACCESS_TOKEN"):
+        meta_connected = True
+        meta_page_name = None
+
+    return {
+        "tenant_id": tenant_id,
+        "platforms": [
+            {
+                "name": "meta",
+                "connected": meta_connected,
+                "page_name": meta_page_name,
+                "expires": meta_expires,
+            },
+            {
+                "name": "google",
+                "connected": google_connected,
+                "email": google_email,
+            },
+        ],
     }
