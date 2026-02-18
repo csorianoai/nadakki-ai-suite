@@ -72,7 +72,7 @@ async def get_session(tenant_id: Optional[str] = None) -> AsyncGenerator[AsyncSe
     async with _session_factory() as session:
         if tenant_id:
             await session.execute(
-                text("SET LOCAL app.tenant_id = :tid"),
+                text("SET LOCAL app.current_tenant_id = :tid"),
                 {"tid": tenant_id},
             )
         yield session

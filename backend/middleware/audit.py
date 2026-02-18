@@ -6,7 +6,6 @@ Falls back silently if DB is unavailable.
 import asyncio
 import logging
 import time
-from datetime import datetime
 
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
@@ -29,7 +28,7 @@ class AuditMiddleware(BaseHTTPMiddleware):
         if any(path.startswith(p) for p in _SKIP_PREFIXES):
             return await call_next(request)
 
-        tenant_id = request.headers.get("x-tenant-id", "credicefi")
+        tenant_slug = request.headers.get("x-tenant-id", "credicefi")
         user_id = request.headers.get("x-user-id")
         method = request.method
         start = time.time()
@@ -44,7 +43,7 @@ class AuditMiddleware(BaseHTTPMiddleware):
             loop = asyncio.get_running_loop()
             loop.create_task(
                 _write_audit_event(
-                    tenant_id=tenant_id,
+                    tenant_slug=tenant_slug,
                     user_id=user_id,
                     action=f"{method} {path}",
                     endpoint=path,
@@ -60,7 +59,7 @@ class AuditMiddleware(BaseHTTPMiddleware):
 
 
 async def _write_audit_event(
-    tenant_id: str,
+    tenant_slug: str,
     user_id: str | None,
     action: str,
     endpoint: str,
@@ -68,7 +67,7 @@ async def _write_audit_event(
     status_code: int,
     latency_ms: int,
 ) -> None:
-    """Insert audit event into PostgreSQL. Fails silently."""
+    """Insert audit event into PostgreSQL. Resolves tenant slug to UUID. Fails silently."""
     try:
         from services.db import db_available, get_session
 
@@ -76,20 +75,27 @@ async def _write_audit_event(
             return
 
         async with get_session() as session:
+            # Resolve tenant slug to UUID
+            result = await session.execute(
+                text("SELECT id FROM tenants WHERE slug = :slug LIMIT 1"),
+                {"slug": tenant_slug},
+            )
+            row = result.first()
+            tenant_uuid = str(row[0]) if row else None
+
             await session.execute(
                 text(
                     "INSERT INTO audit_events "
-                    "(tenant_id, user_id, action, endpoint, method, status_code, latency_ms) "
-                    "VALUES (:tenant_id, :user_id, :action, :endpoint, :method, :status_code, :latency_ms)"
+                    "(tenant_id, user_id, action, endpoint, method, status_code) "
+                    "VALUES (:tenant_id, :user_id, :action, :endpoint, :method, :status_code)"
                 ),
                 {
-                    "tenant_id": tenant_id,
+                    "tenant_id": tenant_uuid,
                     "user_id": user_id,
                     "action": action,
                     "endpoint": endpoint,
                     "method": method,
                     "status_code": status_code,
-                    "latency_ms": latency_ms,
                 },
             )
             await session.commit()

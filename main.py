@@ -104,6 +104,23 @@ app.include_router(audit_router)
 # ✅ INIT DATABASE (graceful — runs without DB)
 _db_ready = init_db()
 
+
+# ✅ DB SETUP: create tables + seed + RLS on startup
+@app.on_event("startup")
+async def _startup_db_setup():
+    if not _db_ready:
+        return
+    try:
+        from services.db import _engine
+        from backend.db.setup import run_setup
+        result = await run_setup(_engine)
+        print(f"DB setup: tables={result['tables']} seed={result['seed']} rls={result['rls']}")
+        if result["errors"]:
+            print(f"DB setup errors: {result['errors']}")
+    except Exception as e:
+        print(f"DB setup skipped: {e}")
+
+
 # =============================================================================
 # CONFIGURACIÓN ROBUSTA
 # =============================================================================
