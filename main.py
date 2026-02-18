@@ -53,6 +53,7 @@ from routers.auth.meta_oauth import router as meta_oauth_router
 from routers.auth.google_oauth import router as google_oauth_router
 from routers.agent_execution_router import router as agent_execution_router
 from routers.audit_router import router as audit_router
+from services.db import init_db, db_ping
 
 # =============================================================================
 # APP CONFIGURACIÓN
@@ -92,6 +93,9 @@ app.include_router(meta_oauth_router)
 app.include_router(google_oauth_router)
 app.include_router(agent_execution_router)
 app.include_router(audit_router)
+
+# ✅ INIT DATABASE (graceful — runs without DB)
+_db_ready = init_db()
 
 # =============================================================================
 # CONFIGURACIÓN ROBUSTA
@@ -1005,6 +1009,12 @@ async def get_reality_report():
         "timestamp": datetime.utcnow().isoformat(),
         "version": "5.4.4"
     }
+
+@app.get("/api/v1/health/db")
+async def health_db():
+    """Database health check."""
+    result = await db_ping()
+    return {"success": result.get("status") == "ok", "db": result}
 
 @app.get("/health")
 @app.get("/api/v1/health")
