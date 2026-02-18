@@ -1,0 +1,37 @@
+name: Nightly Smoke Test
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # 06:00 UTC daily
+  workflow_dispatch:       # manual trigger
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    env:
+      API_URL: https://nadakki-ai-suite.onrender.com
+      AGENT_ID: abtestingia__abtestingagentoperative
+      TENANT_ID: tenant_ci
+
+    steps:
+      - name: Health check
+        run: |
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" "$API_URL/api/v1/health")
+          echo "Health HTTP $CODE"
+          [ "$CODE" = "200" ] || exit 1
+
+      - name: Dry-run execute
+        run: |
+          RESP=$(curl -s -w "\n%{http_code}" -X POST \
+            "$API_URL/api/v1/agents/$AGENT_ID/execute" \
+            -H "Content-Type: application/json" \
+            -H "X-Tenant-ID: $TENANT_ID" \
+            --data-raw '{"payload":{},"dry_run":true}')
+          CODE=$(echo "$RESP" | tail -1)
+          BODY=$(echo "$RESP" | head -n -1)
+          echo "Execute HTTP $CODE"
+          [ "$CODE" = "200" ] || exit 1
+          echo "$BODY" | grep -q "trace_id" || { echo "Missing trace_id"; exit 1; }
+          echo "trace_id found"
