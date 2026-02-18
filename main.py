@@ -83,6 +83,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ✅ MIDDLEWARE: RLS tenant context + Audit logging
+from backend.db.rls import RLSMiddleware
+from backend.middleware.audit import AuditMiddleware
+
+app.add_middleware(RLSMiddleware)
+app.add_middleware(AuditMiddleware)
+
 # ✅ INCLUIR MARKETING ROUTER
 if marketing_router:
     app.include_router(marketing_router)

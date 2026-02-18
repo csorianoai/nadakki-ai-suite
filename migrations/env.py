@@ -1,6 +1,7 @@
 """Alembic env — reads DATABASE_URL from environment."""
 
 import os
+import sys
 from logging.config import fileConfig
 
 from alembic import context
@@ -8,6 +9,11 @@ from sqlalchemy import engine_from_config, pool, text
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Ensure project root is on sys.path so backend.db.models can be imported
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from backend.db.models import Base  # noqa: E402
 
 config = context.config
 
@@ -21,7 +27,7 @@ if db_url.startswith("postgres://"):
 if db_url:
     config.set_main_option("sqlalchemy.url", db_url)
 
-target_metadata = None
+target_metadata = Base.metadata
 
 
 def run_migrations_offline():

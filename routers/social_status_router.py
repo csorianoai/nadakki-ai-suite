@@ -1,7 +1,7 @@
 """
 Nadakki AI Suite - Social Status Router
 Returns connection status for all social platforms per tenant.
-Checks TokenStore (BD) first, env vars as fallback.
+Checks PostgreSQL first, then SQLite TokenStore, then env vars as fallback.
 """
 import os
 import logging
@@ -9,12 +9,42 @@ from datetime import datetime, timedelta
 from typing import Optional
 
 from fastapi import APIRouter, Header
+from sqlalchemy import text
 
 logger = logging.getLogger("SocialStatus")
 
 router = APIRouter(prefix="/api/social", tags=["Social Status"])
 
 _token_store = None
+
+
+def _pg_available() -> bool:
+    """Check if PostgreSQL is available."""
+    try:
+        from services.db import db_available
+        return db_available()
+    except Exception:
+        return False
+
+
+async def _pg_get_token(tenant_id: str, platform: str) -> Optional[dict]:
+    """Read OAuth token from PostgreSQL oauth_tokens table."""
+    try:
+        from services.db import get_session
+        async with get_session(tenant_id=tenant_id) as session:
+            result = await session.execute(
+                text(
+                    "SELECT platform, access_token, refresh_token, expires_at "
+                    "FROM oauth_tokens WHERE tenant_id = :tid AND platform = :plat "
+                    "ORDER BY created_at DESC LIMIT 1"
+                ),
+                {"tid": tenant_id, "plat": platform},
+            )
+            row = result.mappings().first()
+            return dict(row) if row else None
+    except Exception as e:
+        logger.warning(f"PG token read failed for {tenant_id}/{platform}: {e}")
+        return None
 
 
 def _get_store():
@@ -170,7 +200,6 @@ async def get_social_connections(
     Reads X-Tenant-ID header. Always returns 200.
     """
     tenant_id = x_tenant_id or "default"
-    store = _get_store()
 
     meta_connected = False
     meta_page_name = None
@@ -178,23 +207,36 @@ async def get_social_connections(
     google_connected = False
     google_email = None
 
-    if store:
-        try:
-            meta_int = await store.get_integration(tenant_id, "meta")
-            if meta_int:
-                meta_connected = True
-                meta_page_name = meta_int.get("page_name")
-                meta_expires = meta_int.get("expires_at")
-        except Exception as e:
-            logger.warning(f"Error reading Meta integration: {e}")
+    # Try PostgreSQL first
+    if _pg_available():
+        meta_row = await _pg_get_token(tenant_id, "meta")
+        if meta_row:
+            meta_connected = True
+            meta_expires = str(meta_row.get("expires_at")) if meta_row.get("expires_at") else None
 
-        try:
-            google_int = await store.get_integration(tenant_id, "google")
-            if google_int:
-                google_connected = True
-                google_email = google_int.get("user_email")
-        except Exception as e:
-            logger.warning(f"Error reading Google integration: {e}")
+        google_row = await _pg_get_token(tenant_id, "google")
+        if google_row:
+            google_connected = True
+    else:
+        # Fallback to SQLite TokenStore
+        store = _get_store()
+        if store:
+            try:
+                meta_int = await store.get_integration(tenant_id, "meta")
+                if meta_int:
+                    meta_connected = True
+                    meta_page_name = meta_int.get("page_name")
+                    meta_expires = meta_int.get("expires_at")
+            except Exception as e:
+                logger.warning(f"Error reading Meta integration: {e}")
+
+            try:
+                google_int = await store.get_integration(tenant_id, "google")
+                if google_int:
+                    google_connected = True
+                    google_email = google_int.get("user_email")
+            except Exception as e:
+                logger.warning(f"Error reading Google integration: {e}")
 
     # Env fallback for meta
     if not meta_connected and os.getenv("FACEBOOK_ACCESS_TOKEN"):
