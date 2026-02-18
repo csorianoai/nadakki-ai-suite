@@ -1,7 +1,7 @@
 """
 Agent Execution Router - POST /api/v1/agents/{agent_id}/execute
 Carga y ejecuta agentes del catalogo de forma segura con dry_run por defecto.
-Includes audit logging with trace_id.
+Includes audit logging, rate limiting, and live gate.
 """
 
 import logging
@@ -14,6 +14,7 @@ from pydantic import BaseModel, Field
 
 from services.agent_runner import execute_agent, AgentLoadError
 from services.audit_logger import generate_trace_id, write_log
+from services.security import rate_limit_check, live_gate_check
 
 logger = logging.getLogger("AgentExecution")
 
@@ -26,6 +27,7 @@ class ExecuteRequest(BaseModel):
     auto_publish: bool = Field(False, description="Publicar resultado automaticamente")
     auto_email: bool = Field(False, description="Enviar resultado por email")
     tenant_id: str = Field("default", description="ID del tenant")
+    role: Optional[str] = Field(None, description="User role for live gate")
 
 
 def _get_all_agents() -> Dict[str, dict]:
@@ -38,9 +40,11 @@ def _get_all_agents() -> Dict[str, dict]:
 async def execute_agent_endpoint(
     agent_id: str,
     body: ExecuteRequest,
+    request: Request,
     x_tenant_id: Optional[str] = Header(None),
     x_trace_id: Optional[str] = Header(None),
     x_user_id: Optional[str] = Header(None),
+    x_role: Optional[str] = Header(None),
 ):
     """Ejecuta un agente del catalogo por su ID."""
 
@@ -48,7 +52,24 @@ async def execute_agent_endpoint(
     tenant_id = x_tenant_id or body.tenant_id or "default"
     trace_id = x_trace_id or generate_trace_id()
     mode = "dry" if body.dry_run else "live"
+    role = x_role or body.role
     start_time = time.time()
+
+    # --- Rate limit (per tenant + IP) ---
+    client_ip = request.client.host if request.client else "unknown"
+    rate_key = f"{tenant_id}:{client_ip}"
+    if not rate_limit_check(rate_key):
+        _audit(trace_id, agent_id, tenant_id, mode, "rate_limited", 0, x_user_id, 429)
+        raise HTTPException(
+            status_code=429,
+            detail="Rate limit exceeded. Try again later.",
+        )
+
+    # --- Live gate ---
+    gate_error = live_gate_check(dry_run=body.dry_run, role=role)
+    if gate_error:
+        _audit(trace_id, agent_id, tenant_id, mode, "live_blocked", 0, x_user_id, 403, gate_error)
+        raise HTTPException(status_code=403, detail=gate_error)
 
     agents = _get_all_agents()
     agent = agents.get(agent_id)
