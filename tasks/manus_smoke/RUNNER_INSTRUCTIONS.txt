@@ -1,0 +1,3 @@
+﻿# Manus instruction (no paste)
+Tell Manus:
+"Open tasks/manus_smoke/MANUS_SMOKE.md and implement it fully. PR, merge, and provide the run commands."

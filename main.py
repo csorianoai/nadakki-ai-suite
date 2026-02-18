@@ -1064,3 +1064,7 @@ async def root():
 if __name__ == "__main__":
     print("🚀 INICIANDO SERVIDOR v5.4.4...")
     uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info", access_log=True)
+# DEBUG CONFIG ROUTER
+from backend.routers.config import router as config_router
+app.include_router(config_router)
+

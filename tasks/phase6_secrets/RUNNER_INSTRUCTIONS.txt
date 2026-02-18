@@ -1,0 +1,5 @@
+﻿# Runner Instructions (no copy/paste needed)
+
+In Claude Code, type exactly:
+"Read tasks/phase6_secrets/CLAUDE_P6.md and execute it fully. Create PRs, merge to main, and verify on Render. Do NOT commit any .env or secrets."
+
