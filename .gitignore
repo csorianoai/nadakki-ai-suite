@@ -67,3 +67,6 @@ nadakki_audit_*.json
 # Runtime data
 # ==========================
 data/audit_logs.jsonl
+
+req.json
+
