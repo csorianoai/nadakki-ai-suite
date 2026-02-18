@@ -4,7 +4,7 @@ Query execution audit logs by tenant, agent, limit.
 """
 
 from fastapi import APIRouter, Query
-from services.audit_logger import read_logs
+from services.audit_logger import read_logs_async
 
 router = APIRouter(prefix="/api/v1/audit", tags=["Audit"])
 
@@ -15,7 +15,7 @@ async def get_audit_logs(
     agent_id: str = Query(None, description="Filter by agent"),
     limit: int = Query(50, ge=1, le=500, description="Max entries to return"),
 ):
-    entries = read_logs(tenant_id=tenant_id, agent_id=agent_id, limit=limit)
+    entries = await read_logs_async(tenant_id=tenant_id, agent_id=agent_id, limit=limit)
     return {
         "success": True,
         "count": len(entries),
