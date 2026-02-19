@@ -84,3 +84,39 @@ async def db_status():
     except Exception as e:
         logger.warning("DB status check failed: %s", e)
         return {"db": "disconnected", "error": str(e)}
+
+
+@router.get("/db/audit-events")
+async def db_audit_events():
+    """Return recent audit_events rows (last 20)."""
+    try:
+        from services.db import db_available, get_session
+
+        if not db_available():
+            return {"error": "DATABASE_URL not set"}
+
+        async with get_session() as session:
+            result = await session.execute(text("SELECT count(*) FROM audit_events"))
+            total = result.scalar()
+
+            result = await session.execute(
+                text(
+                    "SELECT id, tenant_id, action, endpoint, method, status_code, timestamp "
+                    "FROM audit_events ORDER BY timestamp DESC LIMIT 20"
+                )
+            )
+            rows = [
+                {
+                    "id": str(r[0]),
+                    "tenant_id": str(r[1]) if r[1] else None,
+                    "action": r[2],
+                    "endpoint": r[3],
+                    "method": r[4],
+                    "status_code": r[5],
+                    "timestamp": r[6].isoformat() if r[6] else None,
+                }
+                for r in result.fetchall()
+            ]
+            return {"total": total, "recent": rows}
+    except Exception as e:
+        return {"error": str(e)}
