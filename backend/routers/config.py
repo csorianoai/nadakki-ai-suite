@@ -73,6 +73,20 @@ async def db_status():
             except Exception:
                 rls_policies = []
 
+            # Gates summary
+            gates_summary = []
+            if "gates" in tables:
+                try:
+                    result = await session.execute(
+                        text("SELECT gate_id, name, status FROM gates ORDER BY gate_id")
+                    )
+                    gates_summary = [
+                        {"gate_id": r[0], "name": r[1], "status": r[2]}
+                        for r in result.fetchall()
+                    ]
+                except Exception:
+                    gates_summary = []
+
             return {
                 "db": "connected",
                 "provider": "supabase",
@@ -80,6 +94,7 @@ async def db_status():
                 "default_tenant": default_tenant,
                 "tables": tables,
                 "rls_policies": rls_policies,
+                "gates": gates_summary,
             }
     except Exception as e:
         logger.warning("DB status check failed: %s", e)

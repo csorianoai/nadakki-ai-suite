@@ -29,6 +29,27 @@ class SocialBridge:
                 logger.warning(f"TokenManager failed for {platform}: {e}")
         return os.getenv("FACEBOOK_ACCESS_TOKEN")
 
+    async def _tenant_meta_live(self) -> bool:
+        """Check per-tenant meta_live_enabled from DB."""
+        try:
+            from services.db import db_available, get_session
+            if not db_available():
+                return False
+            async with get_session() as session:
+                from sqlalchemy import text
+                result = await session.execute(
+                    text(
+                        "SELECT tc.meta_live_enabled FROM tenant_config tc "
+                        "JOIN tenants t ON t.id = tc.tenant_id "
+                        "WHERE t.slug = :slug"
+                    ),
+                    {"slug": self.tenant_id},
+                )
+                row = result.first()
+                return bool(row and row[0])
+        except Exception:
+            return False
+
     async def publish(
         self,
         platform: str,
@@ -37,14 +58,19 @@ class SocialBridge:
     ) -> Dict[str, Any]:
         """Publish content to a social platform.
 
-        DRY_RUN by default unless META_POST_LIVE=true.
+        DRY_RUN by default unless META_POST_LIVE=true (env) AND
+        tenant_config.meta_live_enabled=true (DB).
         """
-        if os.getenv("META_POST_LIVE", "false").lower() != "true":
+        env_live = os.getenv("META_POST_LIVE", "false").lower() == "true"
+        tenant_live = await self._tenant_meta_live() if env_live else False
+
+        if not (env_live and tenant_live):
             return {
                 "dry_run": True,
                 "platform": platform,
                 "would_publish": content[:100],
                 "tenant_id": self.tenant_id,
+                "reason": "env" if not env_live else "tenant_config",
             }
 
         if platform in ("meta", "facebook"):

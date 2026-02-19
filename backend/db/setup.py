@@ -72,6 +72,17 @@ _TABLE_STATEMENTS = [
       updated_at TIMESTAMPTZ DEFAULT now()
     )
     """,
+    """
+    CREATE TABLE IF NOT EXISTS gates (
+      id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      gate_id TEXT UNIQUE NOT NULL,
+      name TEXT NOT NULL,
+      status TEXT DEFAULT 'pending',
+      approved_by TEXT,
+      notes TEXT,
+      updated_at TIMESTAMPTZ DEFAULT now()
+    )
+    """,
 ]
 
 # ── TAREA 2: Default tenant ─────────────────────────────────────────────────
@@ -86,6 +97,26 @@ _SEED_STATEMENTS = [
     INSERT INTO tenant_config (tenant_id, meta_live_enabled, sendgrid_live_enabled)
     SELECT id, false, false FROM tenants WHERE slug = 'credicefi'
     ON CONFLICT (tenant_id) DO NOTHING
+    """,
+    """
+    INSERT INTO gates (gate_id, name, status)
+    VALUES ('gate_a_security', 'Security Review', 'pending')
+    ON CONFLICT (gate_id) DO NOTHING
+    """,
+    """
+    INSERT INTO gates (gate_id, name, status)
+    VALUES ('gate_b_compliance', 'Compliance Check', 'pending')
+    ON CONFLICT (gate_id) DO NOTHING
+    """,
+    """
+    INSERT INTO gates (gate_id, name, status)
+    VALUES ('gate_c_integration', 'Integration Test', 'pending')
+    ON CONFLICT (gate_id) DO NOTHING
+    """,
+    """
+    INSERT INTO gates (gate_id, name, status)
+    VALUES ('gate_d_pilot', 'Pilot Approval', 'pending')
+    ON CONFLICT (gate_id) DO NOTHING
     """,
 ]
 

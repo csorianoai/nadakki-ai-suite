@@ -16,13 +16,37 @@ class AsyncSendGridClient:
 
     SENDGRID_API_URL = "https://api.sendgrid.com/v3/mail/send"
 
-    def __init__(self):
+    def __init__(self, tenant_slug: Optional[str] = None):
         self.api_key = os.getenv("SENDGRID_API_KEY")
         self.from_email = os.getenv(
             "SENDGRID_FROM_EMAIL", "ramonalmontesoriano@gmail.com"
         )
         self.from_name = os.getenv("SENDGRID_FROM_NAME", "Nadakki AI Suite")
         self.live = os.getenv("SENDGRID_LIVE", "false").lower() == "true"
+        self.tenant_slug = tenant_slug
+
+    async def _tenant_sendgrid_live(self) -> bool:
+        """Check per-tenant sendgrid_live_enabled from DB."""
+        if not self.tenant_slug:
+            return False
+        try:
+            from services.db import db_available, get_session
+            if not db_available():
+                return False
+            async with get_session() as session:
+                from sqlalchemy import text
+                result = await session.execute(
+                    text(
+                        "SELECT tc.sendgrid_live_enabled FROM tenant_config tc "
+                        "JOIN tenants t ON t.id = tc.tenant_id "
+                        "WHERE t.slug = :slug"
+                    ),
+                    {"slug": self.tenant_slug},
+                )
+                row = result.first()
+                return bool(row and row[0])
+        except Exception:
+            return False
 
     async def send_email(
         self,
@@ -33,9 +57,11 @@ class AsyncSendGridClient:
     ) -> Dict[str, Any]:
         """Send an email via SendGrid.
 
-        Returns dry_run result unless SENDGRID_LIVE=true.
+        Returns dry_run result unless SENDGRID_LIVE=true (env) AND
+        tenant_config.sendgrid_live_enabled=true (DB).
         """
-        if not self.live:
+        tenant_live = await self._tenant_sendgrid_live() if self.live else False
+        if not self.live or not tenant_live:
             logger.info(f"[DRY_RUN] Email to {to}: {subject}")
             return {
                 "dry_run": True,

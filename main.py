@@ -53,6 +53,7 @@ from routers.auth.meta_oauth import router as meta_oauth_router
 from routers.auth.google_oauth import router as google_oauth_router
 from routers.agent_execution_router import router as agent_execution_router
 from routers.audit_router import router as audit_router
+from backend.routers.tenant_router import router as tenant_router
 from services.db import init_db, db_ping
 
 # =============================================================================
@@ -100,6 +101,7 @@ app.include_router(meta_oauth_router)
 app.include_router(google_oauth_router)
 app.include_router(agent_execution_router)
 app.include_router(audit_router)
+app.include_router(tenant_router)
 
 # ✅ INIT DATABASE (graceful — runs without DB)
 _db_ready = init_db()
