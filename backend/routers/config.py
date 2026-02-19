@@ -71,13 +71,49 @@ async def db_setup_endpoint():
     """One-time DB setup: create tables, seed, enable RLS. Idempotent."""
     try:
         from services.db import db_available, _engine
-        from backend.db.setup import run_setup
-
         if not db_available():
             return {"error": "DATABASE_URL not set"}
 
+        from backend.db.setup import run_setup
         result = await run_setup(_engine)
         return {"setup": "complete", **result}
     except Exception as e:
         logger.error("DB setup failed: %s", e)
         return {"setup": "failed", "error": str(e)}
+
+
+@router.get("/db/tables")
+async def db_tables():
+    """Quick check: list tables and verify tenant exists."""
+    try:
+        from services.db import db_available, get_session
+        if not db_available():
+            return {"error": "no db"}
+
+        async with get_session() as session:
+            r = await session.execute(text(
+                "SELECT tablename FROM pg_tables WHERE schemaname = 'public' ORDER BY tablename"
+            ))
+            tables = [row[0] for row in r.fetchall()]
+
+            tenant = None
+            if "tenants" in tables:
+                r = await session.execute(text("SELECT id, name, slug, plan FROM tenants WHERE slug = 'credicefi'"))
+                row = r.first()
+                if row:
+                    tenant = {"id": str(row[0]), "name": row[1], "slug": row[2], "plan": row[3]}
+
+            rls_info = []
+            if "pg_policies" in tables or True:
+                r = await session.execute(text(
+                    "SELECT tablename, policyname FROM pg_policies WHERE schemaname = 'public'"
+                ))
+                rls_info = [{"table": row[0], "policy": row[1]} for row in r.fetchall()]
+
+            return {
+                "tables": tables,
+                "tenant_credicefi": tenant,
+                "rls_policies": rls_info,
+            }
+    except Exception as e:
+        return {"error": str(e)}
