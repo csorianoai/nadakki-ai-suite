@@ -36,7 +36,10 @@ from typing import Optional, Dict, Any, List, Tuple, Set
 from datetime import datetime
 from functools import lru_cache
 import re
+import time as _time_mod
 from dotenv import load_dotenv
+
+_APP_START_TIME = _time_mod.time()
 
 load_dotenv()
 
@@ -54,6 +57,9 @@ from routers.auth.google_oauth import router as google_oauth_router
 from routers.agent_execution_router import router as agent_execution_router
 from routers.audit_router import router as audit_router
 from backend.routers.tenant_router import router as tenant_router
+from backend.routers.api_keys_router import router as api_keys_router
+from backend.routers.usage_router import router as usage_router
+from backend.routers.billing_router import router as billing_router
 from services.db import init_db, db_ping
 
 # =============================================================================
@@ -84,12 +90,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ✅ MIDDLEWARE: RLS tenant context + Audit logging
+# ✅ MIDDLEWARE: RLS tenant context + Audit logging + Rate limit + Usage tracking
 from backend.db.rls import RLSMiddleware
 from backend.middleware.audit import AuditMiddleware
+from backend.middleware.rate_limit import GlobalRateLimitMiddleware
+from backend.middleware.usage import UsageTrackingMiddleware
 
 app.add_middleware(RLSMiddleware)
 app.add_middleware(AuditMiddleware)
+app.add_middleware(GlobalRateLimitMiddleware)
+app.add_middleware(UsageTrackingMiddleware)
 
 # ✅ INCLUIR MARKETING ROUTER
 if marketing_router:
@@ -102,6 +112,9 @@ app.include_router(google_oauth_router)
 app.include_router(agent_execution_router)
 app.include_router(audit_router)
 app.include_router(tenant_router)
+app.include_router(api_keys_router)
+app.include_router(usage_router)
+app.include_router(billing_router)
 
 # ✅ INIT DATABASE (graceful — runs without DB)
 _db_ready = init_db()
@@ -1069,16 +1082,44 @@ async def health_check():
     confirmed = DISCOVERY_STATS["quality"]["labels"].get("agent_confirmed", 0)
     status = "healthy" if total > 0 and confirmed > 0 else ("warning" if total > 0 else "critical")
 
+    uptime_seconds = round(_time_mod.time() - _APP_START_TIME)
+
+    # DB + RLS + gates status (lightweight)
+    db_connected = False
+    rls_active = False
+    gates_status = []
+    try:
+        from services.db import db_available, get_session
+        db_connected = db_available()
+        if db_connected:
+            async with get_session() as session:
+                from sqlalchemy import text as _text
+                result = await session.execute(
+                    _text("SELECT COUNT(*) FROM pg_policies WHERE schemaname = 'public'")
+                )
+                rls_count = result.scalar()
+                rls_active = rls_count > 0
+
+                result = await session.execute(
+                    _text("SELECT gate_id, status FROM gates ORDER BY gate_id")
+                )
+                gates_status = [{"gate_id": r[0], "status": r[1]} for r in result.fetchall()]
+    except Exception:
+        pass
+
     return {
         "status": status,
         "agents_total": total,
         "confirmed_agents": confirmed,
+        "db_connected": db_connected,
+        "rls_active": rls_active,
+        "gates_status": gates_status,
+        "uptime_seconds": uptime_seconds,
         "labels_distribution": DISCOVERY_STATS["quality"]["labels"],
         "api_versions_used": DISCOVERY_STATS["quality"]["api_versions"],
         "marketing_stats_enabled": marketing_router is not None,
         "timestamp": datetime.utcnow().isoformat(),
         "version": "5.4.4",
-        "python_compatible": "3.8+"
     }
 
 @app.get("/")

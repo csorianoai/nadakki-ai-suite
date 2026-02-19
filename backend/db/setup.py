@@ -83,6 +83,27 @@ _TABLE_STATEMENTS = [
       updated_at TIMESTAMPTZ DEFAULT now()
     )
     """,
+    """
+    CREATE TABLE IF NOT EXISTS api_keys (
+      id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      tenant_id UUID REFERENCES tenants(id),
+      key_hash TEXT NOT NULL,
+      prefix TEXT NOT NULL,
+      name TEXT NOT NULL,
+      active BOOLEAN DEFAULT true,
+      created_at TIMESTAMPTZ DEFAULT now()
+    )
+    """,
+    """
+    CREATE TABLE IF NOT EXISTS usage_tracking (
+      id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      tenant_id UUID REFERENCES tenants(id),
+      date DATE NOT NULL DEFAULT CURRENT_DATE,
+      executions_count INTEGER DEFAULT 0,
+      tokens_used INTEGER DEFAULT 0,
+      UNIQUE (tenant_id, date)
+    )
+    """,
 ]
 
 # ── TAREA 2: Default tenant ─────────────────────────────────────────────────
@@ -122,7 +143,7 @@ _SEED_STATEMENTS = [
 
 # ── TAREA 3: RLS policies ───────────────────────────────────────────────────
 
-_RLS_TABLES = ["users", "oauth_tokens", "agent_executions", "audit_events", "tenant_config"]
+_RLS_TABLES = ["users", "oauth_tokens", "agent_executions", "audit_events", "tenant_config", "api_keys", "usage_tracking"]
 
 
 def _rls_statements(table: str) -> list:

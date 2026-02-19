@@ -1,5 +1,6 @@
 import os
 import logging
+import time as _time_mod
 
 from fastapi import APIRouter
 from sqlalchemy import text
@@ -7,6 +8,8 @@ from sqlalchemy import text
 logger = logging.getLogger("nadakki.config")
 
 router = APIRouter(prefix="/api/v1", tags=["debug"])
+
+_CONFIG_ROUTER_START = _time_mod.time()
 
 
 @router.get("/config")
@@ -135,3 +138,39 @@ async def db_audit_events():
             return {"total": total, "recent": rows}
     except Exception as e:
         return {"error": str(e)}
+
+
+@router.get("/system/info")
+async def system_info():
+    """System-wide information: version, uptime, db, tenants, agents, executions."""
+    uptime_seconds = round(_time_mod.time() - _CONFIG_ROUTER_START)
+
+    info = {
+        "version": "5.4.4",
+        "uptime_seconds": uptime_seconds,
+        "db_provider": "none",
+        "total_tenants": 0,
+        "total_agents": 0,
+        "total_executions": 0,
+    }
+
+    try:
+        from services.db import db_available, get_session
+        if db_available():
+            info["db_provider"] = "supabase"
+            async with get_session() as session:
+                result = await session.execute(text("SELECT count(*) FROM tenants"))
+                info["total_tenants"] = result.scalar()
+
+                result = await session.execute(text("SELECT count(*) FROM agent_executions"))
+                info["total_executions"] = result.scalar()
+    except Exception:
+        pass
+
+    try:
+        from main import ALL_AGENTS
+        info["total_agents"] = len(ALL_AGENTS)
+    except Exception:
+        pass
+
+    return info
