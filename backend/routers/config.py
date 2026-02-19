@@ -40,11 +40,7 @@ async def db_status():
             return {"db": "disconnected", "error": "DATABASE_URL not set or engine not initialized"}
 
         async with get_session() as session:
-            # Count tenants
-            result = await session.execute(text("SELECT count(*) FROM tenants"))
-            tenant_count = result.scalar()
-
-            # List tables in public schema
+            # List tables in public schema (always works)
             result = await session.execute(
                 text(
                     "SELECT tablename FROM pg_tables "
@@ -52,6 +48,12 @@ async def db_status():
                 )
             )
             tables = [row[0] for row in result.fetchall()]
+
+            # Count tenants if table exists
+            tenant_count = 0
+            if "tenants" in tables:
+                result = await session.execute(text("SELECT count(*) FROM tenants"))
+                tenant_count = result.scalar()
 
             return {
                 "db": "connected",
@@ -62,3 +64,20 @@ async def db_status():
     except Exception as e:
         logger.warning("DB status check failed: %s", e)
         return {"db": "disconnected", "error": str(e)}
+
+
+@router.post("/db/setup")
+async def db_setup_endpoint():
+    """One-time DB setup: create tables, seed, enable RLS. Idempotent."""
+    try:
+        from services.db import db_available, _engine
+        from backend.db.setup import run_setup
+
+        if not db_available():
+            return {"error": "DATABASE_URL not set"}
+
+        result = await run_setup(_engine)
+        return {"setup": "complete", **result}
+    except Exception as e:
+        logger.error("DB setup failed: %s", e)
+        return {"setup": "failed", "error": str(e)}
