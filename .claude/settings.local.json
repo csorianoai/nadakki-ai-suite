@@ -14,7 +14,12 @@
       "Bash(gh pr create:*)",
       "Bash(gh pr merge:*)",
       "Bash(git branch:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(for f in backend/db/__init__.py backend/db/database.py backend/db/models.py backend/db/rls.py backend/middleware/__init__.py backend/middleware/audit.py migrations/versions/002_multi_tenant_schema.py migrations/versions/003_rls_policies.py scripts/migrate_tokens.py tests/db/test_rls.py migrations/env.py routers/social_status_router.py)",
+      "Bash(do python -c \"import ast; ast.parse\\(open\\(''$f'', encoding=''utf-8''\\).read\\(\\)\\); print\\(''OK: $f''\\)\")",
+      "Bash(done)",
+      "Bash(git check-ignore:*)",
+      "Bash(python3:*)"
     ]
   }
 }
