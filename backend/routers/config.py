@@ -140,6 +140,12 @@ async def db_audit_events():
         return {"error": str(e)}
 
 
+@router.get("/reports")
+async def reports():
+    """Reports stub — coming soon."""
+    return {"reports": [], "message": "Coming soon"}
+
+
 @router.get("/system/info")
 async def system_info():
     """System-wide information: version, uptime, db, tenants, agents, executions."""

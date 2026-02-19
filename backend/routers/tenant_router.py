@@ -1,20 +1,23 @@
 """
 Tenant management router — config, gates, onboarding.
+Path param {tenant_id} accepts both slug (e.g. 'credicefi') and UUID.
 """
 
 import logging
-from datetime import datetime, timezone
+import re
 from typing import Optional
 
-from fastapi import APIRouter, Depends, Header, HTTPException
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from sqlalchemy import text
-
-from admin_auth import verify_admin_key
 
 logger = logging.getLogger("nadakki.tenant_router")
 
 router = APIRouter(prefix="/api/v1", tags=["tenants"])
+
+_UUID_RE = re.compile(
+    r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", re.I
+)
 
 
 # ── Pydantic models ─────────────────────────────────────────────────────────
@@ -27,13 +30,13 @@ class TenantConfigUpdate(BaseModel):
 
 class OnboardRequest(BaseModel):
     name: str
-    slug: str
-    plan: str = "starter"
     admin_email: str
+    plan: str = "starter"
 
 
 class GateAction(BaseModel):
     approved_by: Optional[str] = None
+    rejected_by: Optional[str] = None
     notes: Optional[str] = None
 
 
@@ -47,30 +50,42 @@ def _get_session():
     return get_session
 
 
-# ── TAREA 1: PATCH tenant config (admin only) ───────────────────────────────
+async def _resolve_tenant(session, tenant_id: str):
+    """Resolve tenant_id (slug or UUID) to (uuid_str, slug, plan). Raises 404."""
+    if _UUID_RE.match(tenant_id):
+        result = await session.execute(
+            text("SELECT id, slug, plan FROM tenants WHERE id = :tid"),
+            {"tid": tenant_id},
+        )
+    else:
+        result = await session.execute(
+            text("SELECT id, slug, plan FROM tenants WHERE slug = :slug"),
+            {"slug": tenant_id},
+        )
+    row = result.first()
+    if not row:
+        raise HTTPException(404, {"error": f"Tenant '{tenant_id}' not found"})
+    return str(row[0]), row[1], row[2]
 
 
-@router.patch("/tenants/{tenant_slug}/config")
-async def update_tenant_config(
-    tenant_slug: str,
-    body: TenantConfigUpdate,
-    admin_info: dict = Depends(verify_admin_key),
-):
-    """Update per-tenant live flags. Admin only."""
+def _slugify(name: str) -> str:
+    """Generate URL-safe slug from name."""
+    slug = name.lower().strip()
+    slug = re.sub(r"[^a-z0-9]+", "-", slug)
+    return slug.strip("-")
+
+
+# ── PATCH tenant config ─────────────────────────────────────────────────────
+
+
+@router.patch("/tenants/{tenant_id}/config")
+async def update_tenant_config(tenant_id: str, body: TenantConfigUpdate):
+    """Update per-tenant live flags."""
     get_sess = _get_session()
 
     async with get_sess() as session:
-        # Resolve slug -> UUID
-        result = await session.execute(
-            text("SELECT id FROM tenants WHERE slug = :slug"),
-            {"slug": tenant_slug},
-        )
-        row = result.first()
-        if not row:
-            raise HTTPException(404, {"error": f"Tenant '{tenant_slug}' not found"})
-        tenant_id = str(row[0])
+        tid, slug, _ = await _resolve_tenant(session, tenant_id)
 
-        # Build SET clause dynamically
         updates = {}
         if body.meta_live_enabled is not None:
             updates["meta_live_enabled"] = body.meta_live_enabled
@@ -81,7 +96,7 @@ async def update_tenant_config(
             raise HTTPException(400, {"error": "No fields to update"})
 
         set_parts = []
-        params = {"tenant_id": tenant_id}
+        params = {"tenant_id": tid}
         for key, val in updates.items():
             set_parts.append(f"{key} = :{key}")
             params[key] = val
@@ -96,26 +111,24 @@ async def update_tenant_config(
         )
         await session.commit()
 
-        # Return updated config
         result = await session.execute(
             text(
                 "SELECT meta_live_enabled, sendgrid_live_enabled, updated_at "
                 "FROM tenant_config WHERE tenant_id = :tenant_id"
             ),
-            {"tenant_id": tenant_id},
+            {"tenant_id": tid},
         )
         row = result.first()
         return {
-            "tenant_slug": tenant_slug,
-            "tenant_id": tenant_id,
+            "tenant_id": tid,
+            "tenant_slug": slug,
             "meta_live_enabled": row[0] if row else None,
             "sendgrid_live_enabled": row[1] if row else None,
             "updated_at": row[2].isoformat() if row and row[2] else None,
-            "updated_by": admin_info.get("name", "unknown"),
         }
 
 
-# ── TAREA 2: Gate engine ────────────────────────────────────────────────────
+# ── Gate engine ──────────────────────────────────────────────────────────────
 
 
 @router.get("/gates")
@@ -145,12 +158,8 @@ async def list_gates():
 
 
 @router.post("/gates/{gate_id}/approve")
-async def approve_gate(
-    gate_id: str,
-    body: GateAction = GateAction(),
-    admin_info: dict = Depends(verify_admin_key),
-):
-    """Approve a gate. Admin only."""
+async def approve_gate(gate_id: str, body: GateAction = GateAction()):
+    """Approve a gate."""
     get_sess = _get_session()
 
     async with get_sess() as session:
@@ -158,11 +167,10 @@ async def approve_gate(
             text("SELECT status FROM gates WHERE gate_id = :gid"),
             {"gid": gate_id},
         )
-        row = result.first()
-        if not row:
+        if not result.first():
             raise HTTPException(404, {"error": f"Gate '{gate_id}' not found"})
 
-        approved_by = body.approved_by or admin_info.get("name", "admin")
+        approved_by = body.approved_by or "admin"
         await session.execute(
             text(
                 "UPDATE gates SET status = 'approved', approved_by = :by, "
@@ -176,12 +184,8 @@ async def approve_gate(
 
 
 @router.post("/gates/{gate_id}/reject")
-async def reject_gate(
-    gate_id: str,
-    body: GateAction = GateAction(),
-    admin_info: dict = Depends(verify_admin_key),
-):
-    """Reject a gate. Admin only."""
+async def reject_gate(gate_id: str, body: GateAction = GateAction()):
+    """Reject a gate."""
     get_sess = _get_session()
 
     async with get_sess() as session:
@@ -189,11 +193,10 @@ async def reject_gate(
             text("SELECT status FROM gates WHERE gate_id = :gid"),
             {"gid": gate_id},
         )
-        row = result.first()
-        if not row:
+        if not result.first():
             raise HTTPException(404, {"error": f"Gate '{gate_id}' not found"})
 
-        rejected_by = body.approved_by or admin_info.get("name", "admin")
+        rejected_by = body.rejected_by or body.approved_by or "admin"
         await session.execute(
             text(
                 "UPDATE gates SET status = 'rejected', approved_by = :by, "
@@ -206,25 +209,23 @@ async def reject_gate(
         return {"gate_id": gate_id, "status": "rejected", "rejected_by": rejected_by}
 
 
-# ── TAREA 3: Onboarding ─────────────────────────────────────────────────────
+# ── Onboarding ───────────────────────────────────────────────────────────────
 
 
 @router.post("/tenants/onboard")
-async def onboard_tenant(
-    body: OnboardRequest,
-    admin_info: dict = Depends(verify_admin_key),
-):
-    """Create a new tenant + admin user + tenant_config. Admin only."""
+async def onboard_tenant(body: OnboardRequest):
+    """Create a new tenant + admin user + tenant_config."""
     get_sess = _get_session()
+    slug = _slugify(body.name)
 
     async with get_sess() as session:
         # Check slug uniqueness
         result = await session.execute(
             text("SELECT id FROM tenants WHERE slug = :slug"),
-            {"slug": body.slug},
+            {"slug": slug},
         )
         if result.first():
-            raise HTTPException(409, {"error": f"Slug '{body.slug}' already exists"})
+            raise HTTPException(409, {"error": f"Slug '{slug}' already exists"})
 
         # Create tenant
         result = await session.execute(
@@ -232,21 +233,20 @@ async def onboard_tenant(
                 "INSERT INTO tenants (name, slug, plan) "
                 "VALUES (:name, :slug, :plan) RETURNING id"
             ),
-            {"name": body.name, "slug": body.slug, "plan": body.plan},
+            {"name": body.name, "slug": slug, "plan": body.plan},
         )
         tenant_id = str(result.scalar())
 
         # Create admin user
-        result = await session.execute(
+        await session.execute(
             text(
                 "INSERT INTO users (tenant_id, email, role) "
-                "VALUES (:tid, :email, 'admin') RETURNING id"
+                "VALUES (:tid, :email, 'admin')"
             ),
             {"tid": tenant_id, "email": body.admin_email},
         )
-        user_id = str(result.scalar())
 
-        # Create tenant_config (defaults: all live flags false)
+        # Create tenant_config
         await session.execute(
             text(
                 "INSERT INTO tenant_config (tenant_id, meta_live_enabled, sendgrid_live_enabled) "
@@ -259,10 +259,8 @@ async def onboard_tenant(
 
         return {
             "tenant_id": tenant_id,
-            "slug": body.slug,
+            "slug": slug,
             "name": body.name,
             "plan": body.plan,
-            "admin_user_id": user_id,
             "admin_email": body.admin_email,
-            "onboarded_by": admin_info.get("name", "unknown"),
         }

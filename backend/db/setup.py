@@ -126,12 +126,12 @@ _SEED_STATEMENTS = [
     """,
     """
     INSERT INTO gates (gate_id, name, status)
-    VALUES ('gate_b_compliance', 'Compliance Check', 'pending')
+    VALUES ('gate_b_data', 'Data Validation', 'pending')
     ON CONFLICT (gate_id) DO NOTHING
     """,
     """
     INSERT INTO gates (gate_id, name, status)
-    VALUES ('gate_c_integration', 'Integration Test', 'pending')
+    VALUES ('gate_c_quality', 'Quality Assurance', 'pending')
     ON CONFLICT (gate_id) DO NOTHING
     """,
     """

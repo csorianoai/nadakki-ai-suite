@@ -1,20 +1,23 @@
 """
 Billing stub router — plans, tenant billing, plan change (no real Stripe).
+{tenant_id} accepts both slug and UUID.
 """
 
 import logging
-from datetime import datetime, timezone, timedelta
-from typing import Optional
+import re
+from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from sqlalchemy import text
-
-from admin_auth import verify_admin_key
 
 logger = logging.getLogger("nadakki.billing")
 
 router = APIRouter(prefix="/api/v1", tags=["billing"])
+
+_UUID_RE = re.compile(
+    r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", re.I
+)
 
 PLANS = [
     {"name": "starter", "price": 999, "executions": 100, "description": "For small teams getting started"},
@@ -36,56 +39,60 @@ def _get_session():
     return get_session
 
 
+async def _resolve_tenant(session, tenant_id: str):
+    """Returns (uuid_str, slug, plan, created_at)."""
+    if _UUID_RE.match(tenant_id):
+        result = await session.execute(
+            text("SELECT id, slug, plan, created_at FROM tenants WHERE id = :tid"),
+            {"tid": tenant_id},
+        )
+    else:
+        result = await session.execute(
+            text("SELECT id, slug, plan, created_at FROM tenants WHERE slug = :slug"),
+            {"slug": tenant_id},
+        )
+    row = result.first()
+    if not row:
+        raise HTTPException(404, {"error": f"Tenant '{tenant_id}' not found"})
+    return str(row[0]), row[1], row[2] or "starter", row[3]
+
+
 @router.get("/billing/plans")
 async def list_plans():
     """Return available billing plans."""
     return {"plans": PLANS}
 
 
-@router.get("/tenants/{tenant_slug}/billing")
-async def get_tenant_billing(
-    tenant_slug: str,
-    admin_info: dict = Depends(verify_admin_key),
-):
+@router.get("/tenants/{tenant_id}/billing")
+async def get_tenant_billing(tenant_id: str):
     """Return billing info for a tenant."""
     get_sess = _get_session()
 
     async with get_sess() as session:
-        result = await session.execute(
-            text("SELECT id, plan, created_at FROM tenants WHERE slug = :slug"),
-            {"slug": tenant_slug},
-        )
-        row = result.first()
-        if not row:
-            raise HTTPException(404, {"error": f"Tenant '{tenant_slug}' not found"})
+        tid, slug, plan, created_at = await _resolve_tenant(session, tenant_id)
 
-        tenant_id = str(row[0])
-        plan = row[1] or "starter"
-        created_at = row[2]
-
-        # Calculate next billing date (1st of next month)
+        # Next billing date (1st of next month)
         now = datetime.now(timezone.utc)
         if now.month == 12:
             next_billing = datetime(now.year + 1, 1, 1, tzinfo=timezone.utc)
         else:
             next_billing = datetime(now.year, now.month + 1, 1, tzinfo=timezone.utc)
 
-        # Current month usage
+        # Current month usage from agent_executions
         result = await session.execute(
             text(
-                "SELECT COALESCE(SUM(executions_count), 0) "
-                "FROM usage_tracking "
-                "WHERE tenant_id = :tid AND date >= date_trunc('month', CURRENT_DATE)"
+                "SELECT count(*) FROM agent_executions "
+                "WHERE tenant_id = :tid "
+                "AND created_at >= date_trunc('month', CURRENT_TIMESTAMP)"
             ),
-            {"tid": tenant_id},
+            {"tid": tid},
         )
-        usage_row = result.first()
-        usage_this_month = int(usage_row[0]) if usage_row else 0
+        usage_this_month = result.scalar() or 0
 
         plan_info = next((p for p in PLANS if p["name"] == plan), PLANS[0])
 
         return {
-            "tenant_slug": tenant_slug,
+            "tenant_id": tid,
             "plan": plan,
             "price_cents": plan_info["price"],
             "max_executions": plan_info["executions"],
@@ -95,12 +102,8 @@ async def get_tenant_billing(
         }
 
 
-@router.patch("/tenants/{tenant_slug}/billing")
-async def change_plan(
-    tenant_slug: str,
-    body: PlanChangeRequest,
-    admin_info: dict = Depends(verify_admin_key),
-):
+@router.patch("/tenants/{tenant_id}/billing")
+async def change_plan(tenant_id: str, body: PlanChangeRequest):
     """Change tenant plan (stub — no real payment processing)."""
     if body.plan not in VALID_PLANS:
         raise HTTPException(400, {"error": f"Invalid plan '{body.plan}'", "valid": list(VALID_PLANS)})
@@ -108,26 +111,17 @@ async def change_plan(
     get_sess = _get_session()
 
     async with get_sess() as session:
-        result = await session.execute(
-            text("SELECT id, plan FROM tenants WHERE slug = :slug"),
-            {"slug": tenant_slug},
-        )
-        row = result.first()
-        if not row:
-            raise HTTPException(404, {"error": f"Tenant '{tenant_slug}' not found"})
-
-        old_plan = row[1]
+        tid, slug, old_plan, _ = await _resolve_tenant(session, tenant_id)
 
         await session.execute(
-            text("UPDATE tenants SET plan = :plan WHERE slug = :slug"),
-            {"plan": body.plan, "slug": tenant_slug},
+            text("UPDATE tenants SET plan = :plan WHERE id = :tid"),
+            {"plan": body.plan, "tid": tid},
         )
         await session.commit()
 
         return {
-            "tenant_slug": tenant_slug,
+            "tenant_id": tid,
             "old_plan": old_plan,
             "new_plan": body.plan,
-            "message": "Plan updated (stub — no payment processed)",
-            "changed_by": admin_info.get("name", "unknown"),
+            "message": "Plan updated successfully",
         }
