@@ -66,7 +66,7 @@ async def db_status():
         return {"db": "disconnected", "error": str(e)}
 
 
-@router.post("/db/setup")
+@router.get("/db/setup")
 async def db_setup_endpoint():
     """One-time DB setup: create tables, seed, enable RLS. Idempotent."""
     try:
